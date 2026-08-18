@@ -58,7 +58,7 @@ export function evaluateActiveRoll({
     const previous = players[previousPlayerIndex(currentPlayerIndex, players.length)]!;
     effects.push({
       kind: "sum-seven",
-      headline: "7",
+      headline: "7 : Le joueur précédent boit",
       detail: `${previous.name} boit 1 gorgée`,
       isReflex: false,
     });
@@ -67,7 +67,7 @@ export function evaluateActiveRoll({
   if (sum === 9 && !isSixThree) {
     effects.push({
       kind: "sum-nine",
-      headline: "9",
+      headline: "9 : Le joueur actuel boit",
       detail: `${current.name} boit 1 gorgée`,
       isReflex: false,
     });
@@ -77,7 +77,7 @@ export function evaluateActiveRoll({
     const next = players[nextPlayerIndex(currentPlayerIndex, players.length)]!;
     effects.push({
       kind: "sum-eleven",
-      headline: "11",
+      headline: "11 : Le joueur suivant boit",
       detail: `${next.name} boit 1 gorgée`,
       isReflex: false,
     });

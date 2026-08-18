@@ -6,7 +6,7 @@ import { Button } from "@/games/shared/components/ui";
 import { createGame, MAX_PLAYERS, MIN_PLAYERS } from "@/games/triman/lib/game/engine";
 import { saveCurrentGame } from "@/games/triman/lib/game/persistence";
 
-const DEFAULT_PLAYER_COUNT = 4;
+const DEFAULT_PLAYER_COUNT = 3;
 
 interface PlayerField {
   id: number;

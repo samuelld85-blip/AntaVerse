@@ -1,4 +1,5 @@
 :root {
+  --purple-accent: #a78bfa;
   --violet: #8b5cf6;
   --violet-deep: #5b21b6;
   --violet-glow: rgba(139, 92, 246, 0.18);
@@ -7,6 +8,7 @@
 }
 
 html[data-theme="light"] {
+  --purple-accent: #9333ea;
   --violet: #7c3aed;
   --violet-deep: #4c1d95;
   --violet-glow: rgba(124, 58, 237, 0.16);
@@ -72,9 +74,11 @@ html[data-theme="light"] .brand-mark--purple {
   height: 2.5rem;
   flex: 0 0 auto;
   place-items: center;
-  border-radius: 0.85rem;
-  background: linear-gradient(140deg, var(--violet), var(--violet-deep));
-  color: white;
+  border-radius: 50%;
+  border: 2px solid var(--purple-accent);
+  background: transparent;
+  color: var(--purple-accent);
+  font-size: 1rem;
   font-weight: 950;
 }
 .player-row input {
@@ -102,8 +106,8 @@ html[data-theme="light"] .brand-mark--purple {
   line-height: 1;
 }
 .player-remove:hover {
-  color: var(--card-red);
   border-color: var(--card-red);
+  color: var(--card-red);
 }
 .player-add {
   width: 100%;
@@ -111,12 +115,16 @@ html[data-theme="light"] .brand-mark--purple {
   border: 1px dashed var(--line);
   border-radius: 1.15rem;
   background: transparent;
-  color: var(--violet);
+  color: var(--muted);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 850;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+.player-add:hover {
+  border-color: var(--purple-accent);
+  color: var(--purple-accent);
 }
 .player-add:disabled {
   opacity: 0.4;
@@ -141,39 +149,44 @@ html[data-theme="light"] .brand-mark--purple {
 .purple-shell {
   display: grid;
   height: 100dvh;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
-  gap: clamp(0.6rem, 1.8vh, 1rem);
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  gap: clamp(0.5rem, 1.5vh, 0.85rem);
   overflow: hidden;
 }
 .purple-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
 }
-.purple-turn {
+
+.purple-active-player {
   display: grid;
-  min-width: 0;
-  flex: 1;
-  justify-items: end;
-  text-align: right;
+  justify-items: center;
+  text-align: center;
   gap: 0.1rem;
+  padding: 0.6rem 0 0.2rem;
 }
-.purple-turn-label {
+
+.purple-active-label {
   color: var(--muted);
-  font-size: 0.62rem;
+  font-size: clamp(0.75rem, 2.2vw, 1rem);
   font-weight: 850;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  opacity: 0.7;
 }
-.purple-turn-name {
-  max-width: 14rem;
+
+.purple-active-name {
+  max-width: 22rem;
   overflow: hidden;
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 900;
+  color: white;
+  font-size: clamp(2.2rem, 7.5vw, 3.2rem);
+  font-weight: 950;
+  letter-spacing: -0.02em;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.05;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .purple-stats {
@@ -386,16 +399,17 @@ html[data-theme="light"] .brand-mark--purple {
 .guess-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
   gap: 0.55rem;
 }
 .guess-button {
   position: relative;
   display: flex;
-  min-height: clamp(3.6rem, 10vh, 4.4rem);
+  min-height: clamp(4.2rem, 11vh, 5rem);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem;
+  gap: 0.25rem;
   overflow: hidden;
   border: 0;
   border-radius: 1.15rem;
@@ -425,24 +439,51 @@ html[data-theme="light"] .brand-mark--purple {
   background: linear-gradient(135deg, #3a3f4a, #14161b);
 }
 .guess-button--purple {
-  background: linear-gradient(135deg, #a78bfa, var(--violet));
+  background: linear-gradient(135deg, #a78bfa, var(--purple-accent));
 }
 .guess-button--doublePurple {
-  grid-column: span 2;
-  background: linear-gradient(135deg, var(--violet), var(--violet-deep));
+  background: linear-gradient(135deg, var(--purple-accent), var(--violet-deep));
 }
 .guess-button--skubrum {
   grid-column: span 2;
-  background: linear-gradient(135deg, #22d3ee, #0891b2);
+  background: linear-gradient(135deg, #34d399, #059669);
 }
 .guess-button-label {
   font-size: clamp(0.85rem, 3.6vw, 1.02rem);
+  line-height: 1.1;
+}
+.guess-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0.15rem 0;
+}
+.mini-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 2.2rem;
+  border-radius: 0.25rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.mini-card-suit {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.mini-card--red .mini-card-suit {
+  color: var(--card-red);
+}
+.mini-card--black .mini-card-suit {
+  color: #1a1a1a;
 }
 .guess-button-draw {
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 .pass-button {
   display: flex;
@@ -488,7 +529,7 @@ html[data-theme="light"] .brand-mark--purple {
     font-size: 1.25rem;
   }
   .guess-button {
-    min-height: 3.2rem;
+    min-height: 3.8rem;
   }
   .pass-button {
     min-height: 2.7rem;
