@@ -17,6 +17,14 @@ const routes = [
   "/sans-le-dire/",
   "/sans-le-dire/equipes/",
   "/sans-le-dire/partie/",
+  "/purple/",
+  "/purple/joueurs/",
+  "/purple/partie/",
+  "/purple/regles/",
+  "/triman/",
+  "/triman/joueurs/",
+  "/triman/partie/",
+  "/triman/regles/",
 ];
 const assets = new Set([
   ...routes,

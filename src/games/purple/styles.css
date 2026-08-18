@@ -1,0 +1,507 @@
+:root {
+  --violet: #8b5cf6;
+  --violet-deep: #5b21b6;
+  --violet-glow: rgba(139, 92, 246, 0.18);
+  --card-red: #e0304f;
+  --card-ink: #171320;
+}
+
+html[data-theme="light"] {
+  --violet: #7c3aed;
+  --violet-deep: #4c1d95;
+  --violet-glow: rgba(124, 58, 237, 0.16);
+  --card-red: #c81e40;
+}
+
+.brand-mark {
+  display: block;
+  width: 7.5rem;
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: none;
+}
+.brand-mark--small {
+  width: 5.4rem;
+}
+
+html[data-theme="light"] .brand-mark--purple {
+  content: url("/brand/games/purple-light.png");
+}
+
+/* ---------- Home ---------- */
+.purple-home-actions p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ---------- Setup: player list ---------- */
+.player-form {
+  display: grid;
+  flex: 1;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  padding-bottom: 0.25rem;
+}
+.player-list {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  overflow-y: auto;
+  padding-bottom: 0.25rem;
+}
+.player-row {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--surface);
+}
+.player-index {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.85rem;
+  background: linear-gradient(140deg, var(--violet), var(--violet-deep));
+  color: white;
+  font-weight: 950;
+}
+.player-row input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 750;
+  outline: 0;
+}
+.player-remove {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+.player-remove:hover {
+  color: var(--card-red);
+  border-color: var(--card-red);
+}
+.player-add {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px dashed var(--line);
+  border-radius: 1.15rem;
+  background: transparent;
+  color: var(--violet);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.player-add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.setup-note {
+  margin: 0.25rem 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  text-align: center;
+}
+.form-error {
+  margin: 0;
+  color: var(--card-red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ---------- Game shell ---------- */
+.purple-shell {
+  display: grid;
+  height: 100dvh;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: clamp(0.6rem, 1.8vh, 1rem);
+  overflow: hidden;
+}
+.purple-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.purple-turn {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  justify-items: end;
+  text-align: right;
+  gap: 0.1rem;
+}
+.purple-turn-label {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.purple-turn-name {
+  max-width: 14rem;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.purple-stats {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 0.55rem;
+}
+.purple-stat {
+  display: grid;
+  min-width: 0;
+  gap: 0.15rem;
+  border: 1px solid var(--line);
+  border-radius: 1.05rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--surface);
+}
+.purple-stat--pile {
+  background: linear-gradient(135deg, var(--violet-glow), var(--surface) 65%);
+  border-color: color-mix(in srgb, var(--violet) 45%, var(--line));
+}
+.purple-stat-label {
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.purple-stat-value {
+  font-size: 1.5rem;
+  font-weight: 950;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.purple-stat--pile .purple-stat-value {
+  color: var(--violet);
+}
+.purple-stat-hint {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+.purple-stat-hint--ready {
+  color: var(--lime);
+}
+
+.purple-stage {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  overflow: hidden;
+}
+.purple-deck-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+  text-align: center;
+  animation: purple-fade-in 200ms ease-out;
+}
+.purple-reshuffle-pill {
+  margin: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: var(--violet-glow);
+  color: var(--violet);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: purple-fade-in 200ms ease-out;
+}
+
+.cards-reveal-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.4rem, 2.2vw, 0.65rem);
+  perspective: 1400px;
+}
+
+.playing-card {
+  --reveal-delay: 0ms;
+  width: clamp(3.6rem, 15vw, 4.6rem);
+  height: clamp(5.2rem, 21.5vw, 6.6rem);
+  flex: 0 0 auto;
+}
+.playing-card--small {
+  width: clamp(2.6rem, 11vw, 3.2rem);
+  height: clamp(3.75rem, 15.5vw, 4.6rem);
+}
+.playing-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: playing-card-flip 560ms cubic-bezier(0.22, 0.9, 0.35, 1) both;
+  animation-delay: var(--reveal-delay);
+}
+.playing-card-back,
+.playing-card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: clamp(0.6rem, 2vw, 0.85rem);
+  backface-visibility: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+.playing-card-back {
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(150deg, var(--violet), var(--violet-deep));
+}
+.playing-card-back span {
+  width: 62%;
+  height: 74%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.4rem;
+}
+.playing-card-face {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  color: var(--card-ink);
+  transform: rotateY(180deg);
+}
+.playing-card--red .playing-card-face {
+  color: var(--card-red);
+}
+.playing-card-corner {
+  position: absolute;
+  font-size: clamp(0.62rem, 2.6vw, 0.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-align: center;
+}
+.playing-card-corner--top {
+  top: 0.3rem;
+  left: 0.32rem;
+}
+.playing-card-corner--bottom {
+  right: 0.32rem;
+  bottom: 0.3rem;
+  transform: rotate(180deg);
+}
+.playing-card-symbol {
+  font-size: clamp(1.5rem, 7vw, 2.1rem);
+}
+.playing-card--small .playing-card-symbol {
+  font-size: clamp(1.05rem, 5vw, 1.4rem);
+}
+
+.purple-result {
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  text-align: center;
+  animation: purple-fade-in 180ms ease-out;
+}
+.purple-result-outcome {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.purple-result--success .purple-result-outcome {
+  color: var(--lime);
+}
+.purple-result--failure .purple-result-outcome {
+  color: var(--card-red);
+}
+.purple-result-headline {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.5rem, 7vw, 2.1rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.purple-result--failure .purple-result-headline {
+  color: var(--card-red);
+}
+.purple-result-detail {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.purple-idle {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  text-align: center;
+  color: var(--muted);
+}
+.purple-idle p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.purple-actions {
+  display: grid;
+  gap: 0.55rem;
+}
+.guess-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+.guess-button {
+  position: relative;
+  display: flex;
+  min-height: clamp(3.6rem, 10vh, 4.4rem);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 1.15rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transition:
+    transform 120ms ease,
+    filter 120ms ease;
+}
+.guess-button:active {
+  transform: scale(0.96);
+}
+.guess-button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+  opacity: 0.55;
+  transform: none;
+}
+.guess-button--red {
+  background: linear-gradient(135deg, #ff5c8a, var(--card-red));
+}
+.guess-button--black {
+  background: linear-gradient(135deg, #3a3f4a, #14161b);
+}
+.guess-button--purple {
+  background: linear-gradient(135deg, #a78bfa, var(--violet));
+}
+.guess-button--doublePurple {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--violet), var(--violet-deep));
+}
+.guess-button--skubrum {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #22d3ee, #0891b2);
+}
+.guess-button-label {
+  font-size: clamp(0.85rem, 3.6vw, 1.02rem);
+}
+.guess-button-draw {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+.pass-button {
+  display: flex;
+  min-height: 3.1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--lime) 55%, var(--line));
+  border-radius: 1.1rem;
+  background: color-mix(in srgb, var(--lime) 10%, transparent);
+  color: var(--lime);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  touch-action: manipulation;
+}
+.pass-button:active {
+  transform: scale(0.98);
+}
+
+@keyframes playing-card-flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes purple-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (max-height: 680px) {
+  .purple-shell {
+    gap: 0.45rem;
+  }
+  .purple-stat-value {
+    font-size: 1.25rem;
+  }
+  .guess-button {
+    min-height: 3.2rem;
+  }
+  .pass-button {
+    min-height: 2.7rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .purple-shell {
+    height: calc(100dvh - 2rem);
+    margin-block: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 2rem;
+    background: rgba(12, 13, 18, 0.88);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  }
+}

@@ -227,7 +227,7 @@ a {
 }
 .resume-card {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.8rem;
   border: 1px solid var(--line);
@@ -235,8 +235,11 @@ a {
   padding: 0.75rem 0.8rem 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.04);
 }
+.resume-card > div {
+  min-width: 0;
+}
 .resume-teams {
-  max-width: 14rem;
+  max-width: 100%;
   margin: 0.2rem 0 0;
   overflow: hidden;
   color: var(--muted);

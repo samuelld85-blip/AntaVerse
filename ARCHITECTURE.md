@@ -1,12 +1,12 @@
 # Architecture
 
 AntaVerse is a small collection of party games — **Quoi de 9 ?**, **La
-Relance**, **Sans le dire** — served from one Next.js app and exported
-statically. This document describes the layers that exist today, the
-boundaries between them, and the rules a future contributor (human or AI)
-should follow when adding or changing code. It reflects the current scale of
-the app (three games, a handful of contributors) — it is deliberately not an
-attempt to future-proof for a scale AntaVerse doesn't have yet.
+Relance**, **Sans le dire**, **Purple**, **Triman** — served from one Next.js
+app and exported statically. This document describes the layers that exist
+today, the boundaries between them, and the rules a future contributor (human
+or AI) should follow when adding or changing code. It reflects the current
+scale of the app (five games, a handful of contributors) — it is deliberately
+not an attempt to future-proof for a scale AntaVerse doesn't have yet.
 
 ## Layers
 
@@ -18,8 +18,10 @@ src/
   games/
     shared/        → infrastructure used by 2+ games, never by only one
     la-relance/     ┐
-    quoi-de-9/      ├─ one folder per game, self-contained
-    sans-le-dire/   ┘
+    quoi-de-9/      │
+    sans-le-dire/   ├─ one folder per game, self-contained
+    purple/         │
+    triman/         ┘
 ```
 
 ### `src/app` — routing shell
@@ -37,7 +39,7 @@ selector, PWA/service-worker registration. Nothing here knows about a
 specific game's rules, scoring, or state shape. `game-home-nav.tsx` is the
 one acknowledged wart: it's shell-level (used from every game's home page)
 but hand-written with Tailwind classes even on the two games that don't use
-Tailwind elsewhere. It works today because Tailwind only *generates* classes
+Tailwind elsewhere. It works today because Tailwind only _generates_ classes
 it finds referenced in scanned source, and this component's classes happen
 to be common enough utilities. It's flagged here rather than fixed because
 "fixing" it would mean introducing a second styling convention just for one
@@ -97,7 +99,7 @@ Each game owns:
   logic.
 - `lib/game/` — the game's rules engine: `types.ts`, `engine.ts` (pure
   state-transition functions), `persistence.ts` (save/load the in-progress
-  game). This is where each game's *rules* live, and it is expected to be
+  game). This is where each game's _rules_ live, and it is expected to be
   different game to game — that's the point of having three games.
 
 Quoi de 9 additionally has `lib/i18n` (a handful of shared strings for that
@@ -162,6 +164,27 @@ considered and rejected.
 - **Score formatting.** Quoi de 9 has `formatScore`/`formatSignedScore` for
   its point system; the other two games display raw integers. No shared
   behavior exists to extract.
+- **Purple and Triman's player model vs. `two-team-setup.ts`.** Purple
+  (2–12 players) and Triman (an open-ended player list) are both N-player,
+  circular-turn games, not fixed two-team games — their `Player[]` shapes and
+  setup flows (add/remove rows) don't fit the shared two-team helpers, so
+  each engine builds its players locally (`createPlayers` in Purple's
+  `lib/game/engine.ts`, the equivalent in Triman's). Neither uses
+  `two-team-setup.ts`. They do reuse `page-shell.tsx`, `back-button.tsx`,
+  `theme-selector.tsx`, `ui.tsx`, `lib/random.ts`'s `shuffle`, and
+  `lib/local-storage-json.ts` as-is — those pieces were already generic
+  enough to take a fourth and fifth caller with no changes.
+- **`resume-game-card.tsx` generalized from two teams to any game shape.**
+  It originally took a fixed `{ status, teams: [{name},{name}] }` shape.
+  Purple and Triman both needed to resume an N-player game with no
+  "finished" status (both are infinite), which that shape couldn't express.
+  Rather than each writing its own bespoke resume card (as Purple briefly
+  did), the shared component was generalized to `<T extends object>` plus a
+  `summary(game) => ReactNode` render prop supplied by the caller — La
+  Relance and Sans le dire's wrappers pass a two-name summary, Purple and
+  Triman pass a joined player-name list. The "finished" check now reads
+  `status` defensively at runtime (via a loose cast) since the generic type
+  can't require a property only some games have.
 - **Design tokens (`:root` CSS variables).** La Relance and Sans le dire
   each define a `:root` block of design tokens (colors, spacing) with a
   large overlapping subset, but each also has game-specific accent tokens
@@ -180,7 +203,7 @@ considered and rejected.
 2. **Prefer the Rule of Three, but don't wait for three when two are already
    byte-identical and low-risk to parameterize** (as with `page-shell.tsx`
    and `resume-game-card.tsx` here). Do wait for three — or just leave
-   things separate — when the shapes only *look* similar (same JSX
+   things separate — when the shapes only _look_ similar (same JSX
    structure, different data/behavior underneath), as with `brand.tsx` and
    the audio/haptics code.
 3. **Quoi de 9 is allowed to be architecturally different.** It uses
