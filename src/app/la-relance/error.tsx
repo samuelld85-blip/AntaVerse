@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/games/la-relance/components/ui";
+import { Button } from "@/games/shared/components/ui";
 import { LogoMark } from "@/games/la-relance/components/brand";
 
 export default function GlobalError({ reset }: { reset: () => void }) {

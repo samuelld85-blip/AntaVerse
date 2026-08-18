@@ -4,13 +4,8 @@
     "slug": "xlsx-records-rankings-medium-01",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques automobiles très vendues.",
     "shortTitle": "marques automobiles très vendues",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-records-rankings-medium-02",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 sports très pratiqués dans le monde.",
     "shortTitle": "sports très pratiqués dans le monde",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-records-rankings-medium-03",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 animaux connus pour leur vitesse.",
     "shortTitle": "animaux connus pour leur vitesse",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-records-rankings-medium-04",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 villes parmi les plus visitées.",
     "shortTitle": "villes parmi les plus visitées",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-records-rankings-medium-05",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 films ayant marqué le box-office mondial.",
     "shortTitle": "films ayant marqué le box-office mondial",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-records-rankings-medium-06",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 sportifs détenteurs de nombreux titres.",
     "shortTitle": "sportifs détenteurs de nombreux titres",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-records-rankings-medium-07",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 sélections ayant disputé une finale de Coupe du monde de football.",
     "shortTitle": "sélections ayant disputé une finale de Coupe…",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-records-rankings-medium-08",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 langues très parlées dans le monde.",
     "shortTitle": "langues très parlées dans le monde",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-records-rankings-medium-09",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays ayant accueilli les Jeux olympiques d’été.",
     "shortTitle": "pays ayant accueilli les Jeux olympiques d’été",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-records-rankings-medium-10",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays ayant remporté ou atteint une finale de Coupe du monde masculine de football.",
     "shortTitle": "pays ayant remporté ou atteint une finale de…",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-records-rankings-medium-11",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 villes ayant accueilli les Jeux olympiques d’été.",
     "shortTitle": "villes ayant accueilli les Jeux olympiques d’été",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-records-rankings-medium-12",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 sportifs ayant remporté plusieurs titres du Grand Chelem en tennis.",
     "shortTitle": "sportifs ayant remporté plusieurs titres du G…",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-records-rankings-medium-13",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays ayant déjà été numéro 1 mondial FIFA chez les hommes ou champions du monde.",
     "shortTitle": "pays ayant déjà été numéro 1 mondial FIFA che…",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-records-rankings-medium-14",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 entreprises technologiques connues pour avoir atteint une valorisation boursière extrêmement élevée.",
     "shortTitle": "entreprises technologiques connues pour avoir…",
     "difficultyLevel": 2,

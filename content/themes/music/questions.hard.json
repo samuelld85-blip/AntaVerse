@@ -4,13 +4,8 @@
     "slug": "xlsx-music-hard-01",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 instruments utilisant une anche simple, double ou libre.",
     "shortTitle": "instruments utilisant une anche simple, doubl…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-music-hard-02",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 groupes ou artistes fortement associés à la scène grunge des années 1990.",
     "shortTitle": "groupes ou artistes fortement associés à la s…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-music-hard-03",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grands compositeurs russes.",
     "shortTitle": "grands compositeurs russes",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-music-hard-04",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 opéras célèbres du répertoire classique.",
     "shortTitle": "opéras célèbres du répertoire classique",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-music-hard-05",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 albums studio des Beatles.",
     "shortTitle": "albums studio des Beatles",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-music-hard-06",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 genres ou sous-genres majeurs de musique électronique.",
     "shortTitle": "genres ou sous-genres majeurs de musique élec…",
     "difficultyLevel": 3,

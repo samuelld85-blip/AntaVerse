@@ -4,13 +4,8 @@
     "slug": "xlsx-nature-body-easy-01",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 arbres feuillus communs en Europe.",
     "shortTitle": "arbres feuillus communs en Europe",
     "difficultyLevel": 1,
@@ -163,13 +158,8 @@
     "slug": "xlsx-nature-body-easy-02",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 insectes très familiers du grand public.",
     "shortTitle": "insectes très familiers du grand public",
     "difficultyLevel": 1,
@@ -322,13 +312,8 @@
     "slug": "xlsx-nature-body-easy-03",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 mammifères marins très connus.",
     "shortTitle": "mammifères marins très connus",
     "difficultyLevel": 1,
@@ -481,13 +466,8 @@
     "slug": "xlsx-nature-body-easy-04",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 races de chiens très répandues reconnues par l’American Kennel Club.",
     "shortTitle": "races de chiens très répandues reconnues par…",
     "difficultyLevel": 1,
@@ -640,13 +620,8 @@
     "slug": "xlsx-nature-body-easy-05",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 reptiles actuels bien connus.",
     "shortTitle": "reptiles actuels bien connus",
     "difficultyLevel": 1,
@@ -799,13 +774,8 @@
     "slug": "xlsx-nature-body-easy-06",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux de la ferme.",
     "shortTitle": "animaux de la ferme",
     "difficultyLevel": 1,
@@ -958,13 +928,8 @@
     "slug": "xlsx-nature-body-easy-07",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux sauvages d’Afrique.",
     "shortTitle": "animaux sauvages d’Afrique",
     "difficultyLevel": 1,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-nature-body-easy-08",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux marins.",
     "shortTitle": "animaux marins",
     "difficultyLevel": 1,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-nature-body-easy-09",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 parties du corps humain.",
     "shortTitle": "parties du corps humain",
     "difficultyLevel": 1,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-nature-body-easy-10",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 organes du corps humain.",
     "shortTitle": "organes du corps humain",
     "difficultyLevel": 1,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-nature-body-easy-11",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 oiseaux connus.",
     "shortTitle": "oiseaux connus",
     "difficultyLevel": 1,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-nature-body-easy-12",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 insectes connus.",
     "shortTitle": "insectes connus",
     "difficultyLevel": 1,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-nature-body-easy-13",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux domestiques ou de compagnie.",
     "shortTitle": "animaux domestiques ou de compagnie",
     "difficultyLevel": 1,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-nature-body-easy-14",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 fruits qui poussent sur un arbre.",
     "shortTitle": "fruits qui poussent sur un arbre",
     "difficultyLevel": 1,
@@ -2230,13 +2160,8 @@
     "slug": "xlsx-nature-body-easy-15",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux qui pondent des œufs.",
     "shortTitle": "animaux qui pondent des œufs",
     "difficultyLevel": 1,
@@ -2389,13 +2314,8 @@
     "slug": "xlsx-nature-body-easy-16",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 types de météo ou phénomènes météorologiques.",
     "shortTitle": "types de météo ou phénomènes météorologiques",
     "difficultyLevel": 1,
@@ -2548,13 +2468,8 @@
     "slug": "xlsx-nature-body-easy-17",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 arbres ou plantes très connus.",
     "shortTitle": "arbres ou plantes très connus",
     "difficultyLevel": 1,
@@ -2707,13 +2622,8 @@
     "slug": "xlsx-nature-body-easy-18",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux capables de voler.",
     "shortTitle": "animaux capables de voler",
     "difficultyLevel": 1,
@@ -2866,13 +2776,8 @@
     "slug": "xlsx-nature-body-easy-19",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 os ou parties du squelette humain connus.",
     "shortTitle": "os ou parties du squelette humain connus",
     "difficultyLevel": 1,
@@ -3025,13 +2930,8 @@
     "slug": "xlsx-nature-body-easy-20",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 animaux vivant dans les régions polaires ou subpolaires.",
     "shortTitle": "animaux vivant dans les régions polaires ou s…",
     "difficultyLevel": 1,

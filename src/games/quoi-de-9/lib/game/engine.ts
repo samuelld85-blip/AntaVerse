@@ -116,7 +116,7 @@ export function getDifficultyAvailability(
   ) as Record<DifficultyLevel, number>;
 }
 
-export interface ThemeAvailability {
+interface ThemeAvailability {
   theme: Theme;
   available: boolean;
   supportsAllDifficulties: boolean;
@@ -154,15 +154,6 @@ function activeTeamId(game: GameState): string {
 
 function opponentTeamId(game: GameState): string {
   return game.teams[opposingTeamIndex(game)].id;
-}
-
-export function shuffleUniformly<T>(items: readonly T[], random = Math.random): T[] {
-  const shuffled = [...items];
-  for (let currentIndex = shuffled.length - 1; currentIndex > 0; currentIndex -= 1) {
-    const swapIndex = Math.floor(random() * (currentIndex + 1));
-    [shuffled[currentIndex], shuffled[swapIndex]] = [shuffled[swapIndex]!, shuffled[currentIndex]!];
-  }
-  return shuffled;
 }
 
 export function drawEligibleThemes(
@@ -349,24 +340,6 @@ export function continueFromThemeReveal(game: GameState, questions: Question[]):
     selectedThemeId,
     jokerOpportunityStage: null,
   });
-}
-
-export function selectTheme(game: GameState, themeId: string, questions: Question[]): GameState {
-  assertStatus(game, "theme_reveal");
-  const availability = getDifficultyAvailability(questions, themeId, game.usedQuestionIds);
-  const completePublishedCoverage = DIFFICULTY_LEVELS.every((difficultyLevel) =>
-    questions.some(
-      (question) =>
-        question.status === "published" &&
-        question.language === "fr" &&
-        question.themeId === themeId &&
-        question.difficultyLevel === difficultyLevel,
-    ),
-  );
-  if (!completePublishedCoverage || Object.values(availability).every((count) => count === 0)) {
-    throw new Error("Ce thème ne dispose pas d’une couverture publiée complète ou inédite");
-  }
-  return touch({ ...game, status: "difficulty_selection", selectedThemeId: themeId });
 }
 
 export function chooseDifficulty(

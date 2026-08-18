@@ -4,13 +4,8 @@
     "slug": "xlsx-science-inventions-hard-01",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": [
-      "science-inventions:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["science-inventions:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 éléments chimiques nommés en hommage à un scientifique.",
     "shortTitle": "éléments chimiques nommés en hommage à un sci…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-science-inventions-hard-02",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": [
-      "science-inventions:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["science-inventions:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 unités dérivées du SI portant un nom propre.",
     "shortTitle": "unités dérivées du SI portant un nom propre",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-science-inventions-hard-03",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": [
-      "science-inventions:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["science-inventions:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 organites ou structures d’une cellule eucaryote.",
     "shortTitle": "organites ou structures d’une cellule eucaryote",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-science-inventions-hard-04",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": [
-      "science-inventions:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["science-inventions:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes branches des mathématiques.",
     "shortTitle": "grandes branches des mathématiques",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-science-inventions-hard-05",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": [
-      "science-inventions:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["science-inventions:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 hormones importantes du corps humain.",
     "shortTitle": "hormones importantes du corps humain",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-science-inventions-hard-06",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": [
-      "science-inventions:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["science-inventions:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes missions ou programmes d’exploration spatiale.",
     "shortTitle": "grandes missions ou programmes d’exploration…",
     "difficultyLevel": 3,

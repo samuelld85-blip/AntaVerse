@@ -8,7 +8,11 @@ export function LogoMark({ compact = false }: { compact?: boolean }) {
       alt="Sans le dire"
       width={115}
       height={115}
-      className={compact ? "brand-mark brand-mark--sans-le-dire brand-mark--small" : "brand-mark brand-mark--sans-le-dire"}
+      className={
+        compact
+          ? "brand-mark brand-mark--sans-le-dire brand-mark--small"
+          : "brand-mark brand-mark--sans-le-dire"
+      }
       priority
     />
   );

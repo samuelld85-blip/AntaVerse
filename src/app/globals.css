@@ -14,9 +14,20 @@
   --text-light-primary: #11151b;
   --text-light-secondary: #68707a;
   --border-light: rgba(17, 21, 27, 0.12);
-  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
-  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px;
-  --radius-sm: 10px; --radius-md: 14px; --radius-lg: 18px; --radius-xl: 22px; --radius-round: 999px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+  --radius-round: 999px;
   --motion-fast: 160ms ease;
   --launcher-page: var(--bg-light);
   --launcher-surface: var(--surface-light);
@@ -198,27 +209,6 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
-.brand-orbit {
-  position: relative;
-  display: grid;
-  width: 2.7rem;
-  height: 2.7rem;
-  place-items: center;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--antaverse-cyan) 48%, var(--antaverse-pink) 48%);
-  clip-path: polygon(50% 8%, 92% 88%, 68% 88%, 57% 65%, 43% 65%, 32% 88%, 8% 88%);
-}
-
-.brand-orbit::before {
-  display: none;
-  content: "";
-}
-
-.brand-orbit i {
-  display: none;
-}
-
 .launcher-intro {
   padding: clamp(2.25rem, 9vh, 4.5rem) 0 clamp(1.5rem, 5vh, 2.6rem);
 }
@@ -396,9 +386,15 @@ a {
   backdrop-filter: blur(10px);
 }
 
-.antaverse-brand em { color: var(--antaverse-pink); }
-.game-copy strong { font-family: "Space Grotesk", Inter, sans-serif; }
-.game-card:focus-visible { outline-color: var(--antaverse-cyan); }
+.antaverse-brand em {
+  color: var(--antaverse-pink);
+}
+.game-copy strong {
+  font-family: "Space Grotesk", Inter, sans-serif;
+}
+.game-card:focus-visible {
+  outline-color: var(--antaverse-cyan);
+}
 
 .install-shell {
   display: flex;

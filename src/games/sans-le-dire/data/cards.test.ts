@@ -5,6 +5,8 @@ describe("banque de cartes", () => {
     expect(cards.length).toBeGreaterThanOrEqual(500);
     expect(new Set(cards.map((card) => card.id)).size).toBe(cards.length);
     expect(new Set(cards.map((card) => card.word.toLocaleLowerCase("fr"))).size).toBe(cards.length);
-    expect(cards.every((card) => card.forbidden.length === 3 && card.forbidden.every(Boolean))).toBe(true);
+    expect(
+      cards.every((card) => card.forbidden.length === 3 && card.forbidden.every(Boolean)),
+    ).toBe(true);
   });
 });

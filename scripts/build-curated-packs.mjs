@@ -20,7 +20,9 @@ const obsoleteQuestionIds = new Set();
 const difficultyOverrides = new Map();
 
 for (const filename of packFiles) {
-  const packModule = await import(`${pathToFileURL(resolve(packDirectory, filename)).href}?v=${Date.now()}`);
+  const packModule = await import(
+    `${pathToFileURL(resolve(packDirectory, filename)).href}?v=${Date.now()}`
+  );
   for (const spec of packModule.questions ?? []) generated.push(questionFromSpec(spec, filename));
   for (const id of packModule.obsoleteQuestionIds ?? []) obsoleteQuestionIds.add(id);
   for (const [id, level] of Object.entries(packModule.difficultyOverrides ?? {})) {
@@ -55,12 +57,12 @@ const parsedGenerated = activeGenerated.map((question, index) => {
 
 const generatedById = new Map(parsedGenerated.map((question) => [question.id, question]));
 const merged = [
-  ...library.questions.filter(
-    (question) => !generatedById.has(question.id) && !obsoleteQuestionIds.has(question.id),
-  ).map((question) => ({
-    ...question,
-    questionText: polishQuestionText(question.id, question.questionText),
-  })),
+  ...library.questions
+    .filter((question) => !generatedById.has(question.id) && !obsoleteQuestionIds.has(question.id))
+    .map((question) => ({
+      ...question,
+      questionText: polishQuestionText(question.id, question.questionText),
+    })),
   ...parsedGenerated,
 ];
 

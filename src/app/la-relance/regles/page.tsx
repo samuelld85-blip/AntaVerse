@@ -1,5 +1,5 @@
 import { PageShell } from "@/games/la-relance/components/page-shell";
-import { ButtonLink } from "@/games/la-relance/components/ui";
+import { ButtonLink } from "@/games/shared/components/ui";
 
 const rules = [
   ["Choisissez", "Sélectionnez un thème pour lancer la partie."],

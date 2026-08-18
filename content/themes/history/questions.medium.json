@@ -4,13 +4,8 @@
     "slug": "xlsx-history-medium-01",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 grandes civilisations du monde antique.",
     "shortTitle": "grandes civilisations du monde antique",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-history-medium-02",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 révolutions ou soulèvements historiques.",
     "shortTitle": "révolutions ou soulèvements historiques",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-history-medium-03",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 explorateurs ou exploratrices célèbres.",
     "shortTitle": "explorateurs ou exploratrices célèbres",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-history-medium-04",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 dirigeantes ayant régné avant 1950.",
     "shortTitle": "dirigeantes ayant régné avant 1950",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-history-medium-05",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 événements marquants de la guerre froide.",
     "shortTitle": "événements marquants de la guerre froide",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-history-medium-06",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 grandes civilisations de l’Antiquité.",
     "shortTitle": "grandes civilisations de l’Antiquité",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-history-medium-07",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 éléments associés à la révolution industrielle.",
     "shortTitle": "éléments associés à la révolution industrielle",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-history-medium-08",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 voyages, expéditions ou conquêtes géographiques marquants.",
     "shortTitle": "voyages, expéditions ou conquêtes géographiqu…",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-history-medium-09",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 femmes ayant marqué l’histoire.",
     "shortTitle": "femmes ayant marqué l’histoire",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-history-medium-10",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 empereurs ou impératrices célèbres.",
     "shortTitle": "empereurs ou impératrices célèbres",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-history-medium-11",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 empereurs romains connus.",
     "shortTitle": "empereurs romains connus",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-history-medium-12",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 batailles majeures de la Seconde Guerre mondiale.",
     "shortTitle": "batailles majeures de la Seconde Guerre mondiale",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-history-medium-13",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 grandes figures de la Renaissance européenne.",
     "shortTitle": "grandes figures de la Renaissance européenne",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-history-medium-14",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 événements importants de la décolonisation au XXe siècle.",
     "shortTitle": "événements importants de la décolonisation au…",
     "difficultyLevel": 2,

@@ -4,13 +4,8 @@
     "slug": "xlsx-everyday-life-hard-01",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": [
-      "everyday-life:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["everyday-life:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 symboles ou indications d’entretien que l’on peut rencontrer sur une étiquette textile.",
     "shortTitle": "symboles ou indications d’entretien que l’on…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-everyday-life-hard-02",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": [
-      "everyday-life:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["everyday-life:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 documents souvent demandés dans des démarches administratives en France.",
     "shortTitle": "documents souvent demandés dans des démarches…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-everyday-life-hard-03",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": [
-      "everyday-life:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["everyday-life:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 voyants ou alertes courants du tableau de bord d’une voiture.",
     "shortTitle": "voyants ou alertes courants du tableau de bor…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-everyday-life-hard-04",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": [
-      "everyday-life:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["everyday-life:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types d’assurances qu’un particulier peut souscrire.",
     "shortTitle": "types d’assurances qu’un particulier peut sou…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-everyday-life-hard-05",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": [
-      "everyday-life:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["everyday-life:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 raisons techniques ou bancaires pouvant faire refuser un paiement par carte.",
     "shortTitle": "raisons techniques ou bancaires pouvant faire…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-everyday-life-hard-06",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": [
-      "everyday-life:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["everyday-life:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 extensions de fichiers très courantes sur ordinateur ou smartphone.",
     "shortTitle": "extensions de fichiers très courantes sur ord…",
     "difficultyLevel": 3,

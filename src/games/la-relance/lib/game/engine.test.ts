@@ -50,10 +50,19 @@ describe("moteur de La Relance", () => {
     game = {
       ...game,
       roundIndex: STANDARD_ROUNDS - 1,
-      teams: [{ ...game.teams[0], score: 2 }, { ...game.teams[1], score: 2 }],
+      teams: [
+        { ...game.teams[0], score: 2 },
+        { ...game.teams[1], score: 2 },
+      ],
     };
     game = awardPoint(game, 0);
-    game = { ...game, teams: [{ ...game.teams[0], score: 2 }, { ...game.teams[1], score: 2 }] };
+    game = {
+      ...game,
+      teams: [
+        { ...game.teams[0], score: 2 },
+        { ...game.teams[1], score: 2 },
+      ],
+    };
     game = continueGame(game);
 
     expect(game.status).toBe("playing");

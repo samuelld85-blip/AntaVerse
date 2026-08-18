@@ -1,7 +1,7 @@
 import { Brand } from "@/games/la-relance/components/brand";
 import { ResumeGameCard } from "@/games/la-relance/components/resume-game-card";
-import { ThemeSelector } from "@/games/la-relance/components/theme-selector";
-import { ButtonLink } from "@/games/la-relance/components/ui";
+import { ThemeSelector } from "@/games/shared/components/theme-selector";
+import { ButtonLink } from "@/games/shared/components/ui";
 import { GameHomeNav } from "@/components/game-home-nav";
 
 export default function HomePage() {

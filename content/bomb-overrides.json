@@ -1,482 +1,1916 @@
 {
-  "easy-neuf-travaux-heracles": {"display":"Jason","explanation":"Jason est un héros grec célèbre, mais il n’est pas l’un des travaux d’Héraclès."},
-  "easy-objets-mythologie-grecque": {"display":"Héraclès","explanation":"Héraclès est un héros de la mythologie grecque, pas un objet mythique."},
-  "medium-argonautes-neuf": {"display":"Pénélope","explanation":"Pénélope appartient à la mythologie grecque, mais ne fait pas partie de l’équipage des Argonautes."},
-  "medium-creatures-nordiques": {"display":"Cyclope","explanation":"Le cyclope est une créature de la mythologie grecque, pas nordique."},
-  "medium-divinites-romaines-domaines": {"display":"Odin","explanation":"Odin est une divinité nordique, pas romaine."},
-  "medium-heros-legendes-monde": {"display":"Hercule","explanation":"Hercule est un héros légendaire, pas une culture à laquelle associer un héros."},
-  "medium-metamorphoses-zeus": {"display":"Poséidon","explanation":"Poséidon est un dieu grec, pas une forme prise par Zeus."},
-  "medium-rois-mythiques-grecs": {"display":"Mont Olympe","explanation":"Le mont Olympe appartient à l’univers mythologique grec, mais ce n’est pas une cité ou région gouvernée par un roi mythique."},
-  "new-arts-litterature-patrimoine-difficile-1": {"display":"Victor Hugo","explanation":"Victor Hugo est le nom réel d’un écrivain, pas un nom de plume."},
-  "new-arts-litterature-patrimoine-difficile-2": {"display":"Virginia Woolf","explanation":"Virginia Woolf est une autrice majeure, mais elle appartient au monde anglophone."},
-  "new-arts-litterature-patrimoine-difficile-3": {"display":"Louvre","explanation":"Le Louvre est un musée, pas un site archéologique."},
-  "new-arts-litterature-patrimoine-difficile-4": {"display":"Guernica","explanation":"Guernica est une œuvre célèbre, mais elle ne représente pas une personne précise."},
-  "new-arts-litterature-patrimoine-difficile-5": {"display":"Palme d’or","explanation":"La Palme d’or est une récompense de cinéma, pas un prix littéraire."},
-  "new-arts-litterature-patrimoine-difficile-6": {"display":"Renaissance","explanation":"La Renaissance est une période culturelle, pas un mythe."},
-  "new-arts-litterature-patrimoine-facile-1": {"display":"Agatha Christie","explanation":"Agatha Christie est une écrivaine célèbre, mais elle est britannique et non française."},
-  "new-arts-litterature-patrimoine-moyen-1": {"display":"Stade de France","explanation":"Le Stade de France est un monument contemporain, mais il n’est pas classé ou protégé au sens patrimonial demandé."},
-  "easy-marques-alimentaires-produits": {"display":"Dior — parfum","explanation":"Dior et son parfum forment une association de marque très connue, mais ne relèvent pas de l’alimentaire."},
-  "easy-produits-entreprises-tech": {"display":"Nestlé — Nespresso","explanation":"Nestlé est bien derrière Nespresso, mais il ne s’agit pas d’une entreprise technologique."},
-  "medium-confiseries-groupes": {"display":"Nutella — Ferrero","explanation":"Nutella est fabriqué par Ferrero, mais c’est une pâte à tartiner et non une confiserie."},
-  "medium-fondateurs-marques-tech": {"display":"Tim Cook","explanation":"Tim Cook dirige Apple, mais il n’en est pas le fondateur."},
-  "medium-logos-formes-symboles": {"display":"Mickey","explanation":"Mickey est un personnage emblématique de Disney, mais pas un symbole de logo demandé."},
-  "medium-marques-groupes-automobiles": {"display":"Tesla — Toyota","explanation":"Tesla et Toyota sont deux marques automobiles, mais Toyota n’est pas le groupe propriétaire de Tesla."},
-  "medium-parfums-maisons": {"display":"Sephora","explanation":"Sephora vend des parfums, mais ce n’est pas une maison de parfumerie."},
-  "medium-slogans-marques": {"display":"Just Do It","explanation":"« Just Do It » est un slogan très connu, mais pas le nom d’une marque."},
-  "new-marques-produits-shopping-difficile-1": {"display":"Frais de dossier","explanation":"Les frais de dossier peuvent intervenir lors d’un achat, mais ils augmentent le prix au lieu d’être une promotion."},
-  "new-marques-produits-shopping-difficile-2": {"display":"T-shirt sans logo","explanation":"Un t-shirt est un produit courant, mais sans logo apparent il ne porte pas une marque visible comme le demande la question."},
-  "new-marques-produits-shopping-difficile-3": {"display":"Lacoste","explanation":"Lacoste est une marque très connue, mais elle n’est pas une marque alimentaire."},
-  "new-marques-produits-shopping-difficile-4": {"display":"Entrepôt","explanation":"Un entrepôt est lié au commerce, mais ce n’est pas un élément que l’on trouve habituellement dans un centre commercial."},
-  "new-marques-produits-shopping-difficile-5": {"display":"Remboursement","explanation":"Un remboursement intervient après un achat, mais ce n’est pas un moyen de recevoir une commande."},
-  "new-marques-produits-shopping-difficile-6": {"display":"Panier vide","explanation":"Un panier vide survient avant la commande, pas comme problème après une commande passée."},
-  "new-marques-produits-shopping-facile-1": {"display":"Lego","explanation":"Lego est une marque célèbre, mais elle ne fabrique pas de vêtements."},
-  "new-marques-produits-shopping-facile-2": {"display":"Michelin","explanation":"Michelin est une marque automobile très présente grâce aux pneus, mais ne fabrique pas d’automobiles."},
-  "new-marques-produits-shopping-facile-3": {"display":"Carte Vitale","explanation":"La carte Vitale est utilisée en pharmacie, mais ce n’est pas un produit que l’on y achète."},
-  "new-marques-produits-shopping-facile-4": {"display":"Produit parfait","explanation":"Un produit parfait n’est pas une raison de le retourner."},
-  "new-marques-produits-shopping-facile-5": {"display":"Sephora","explanation":"Sephora est une enseigne commerciale, mais ce n’est pas un supermarché."},
-  "easy-appareils-menagers": {"display":"Balai","explanation":"Un balai sert au ménage, mais ce n’est pas un appareil électroménager."},
-  "easy-arbres-feuillus-europe": {"display":"Sapin","explanation":"Le sapin est un conifère et non un arbre feuillu."},
-  "easy-biomes-terrestres": {"display":"Océan","explanation":"L’océan est un milieu marin, pas un biome terrestre."},
-  "easy-boissons-chaudes-neuf": {"display":"Gaspacho","explanation":"Le gaspacho est servi froid, pas comme boisson chaude."},
-  "easy-creatures-mythologiques-neuf": {"display":"Odin","explanation":"Odin est une divinité nordique, pas une créature grecque."},
-  "easy-desserts-francais-neuf": {"display":"Tiramisu","explanation":"Le tiramisu est italien, pas un dessert français."},
-  "easy-dieux-egyptiens-attributs": {"display":"Hadès","explanation":"Hadès est un dieu grec, pas égyptien."},
-  "easy-epices-neuf": {"display":"Romarin","explanation":"Le romarin est un aromate, pas une épice."},
-  "easy-fast-saga-neuf-premiers": {"display":"Need for Speed","explanation":"Need for Speed est un film automobile hors de la saga Fast & Furious."},
-  "easy-figures-nordiques-celebres": {"display":"Zeus","explanation":"Zeus appartient à la mythologie grecque, pas nordique."},
-  "easy-fournitures-scolaires": {"display":"Cartable","explanation":"Un cartable est un contenant scolaire, pas une fourniture."},
-  "easy-fromages-francais-neuf": {"display":"Mozzarella","explanation":"La mozzarella est un fromage italien, pas français."},
-  "easy-fruits-agrumes-neuf": {"display":"Kiwi","explanation":"Le kiwi est un fruit, mais pas un agrume."},
-  "easy-grands-felins": {"display":"Hyène","explanation":"La hyène est un carnivore, mais elle n’appartient pas aux félins."},
-  "easy-heros-guerre-troie": {"display":"Hercule","explanation":"Hercule est antérieur à la guerre de Troie."},
-  "new-musique-moyen-1": {"display":"Tambour","explanation":"Le tambour est un instrument à percussion, pas à cordes."},
-  "new-geographie-pays-monde-difficile-1": {"display":"New York","explanation":"New York est une grande ville, mais pas une capitale."},
-  "new-sport-facile-1": {"display":"Cyclisme","explanation":"Le cyclisme n’est pas un sport collectif au sens habituel."},
-  "medium-tarantino-neuf-jusqua-hateful-eight": {"display":"True Romance","explanation":"True Romance a été écrit par Tarantino, mais réalisé par Tony Scott."},
-  "new-sciences-inventions-moyen-1": {"display":"Éruption volcanique","explanation":"Une éruption volcanique est géologique, pas météorologique."},
-  "easy-neuf-civilisations-antiques": {"display":"Empire ottoman","explanation":"L’Empire ottoman est historique, mais n’appartient pas à l’Antiquité."},
-  "medium-neuf-premiers-need-for-speed": {"display":"Gran Turismo","explanation":"Gran Turismo est un jeu de course, mais pas Need for Speed."},
-  "new-economie-entreprises-consommation-difficile-1": {"display":"Responsable marketing","explanation":"Le marketing est voisin de la vente, mais n’est pas directement la vente."},
-  "easy-marques-sport": {"display":"Coca-Cola","explanation":"Coca-Cola sponsorise le sport sans fabriquer de vêtements ou équipements sportifs."},
-  "medium-cocktails-alcools-base": {"display":"Mojito — menthe","explanation":"La menthe est un ingrédient, pas l’alcool principal du mojito."},
-  "new-series-television-difficile-1": {"display":"Jack Bauer","explanation":"Jack Bauer est un agent, pas un enquêteur de série."},
-  "easy-logos-animaux": {"display":"Étoile","explanation":"Une étoile est un symbole de logo, mais pas un animal."},
-  "medium-elements-velo": {"display":"Casque","explanation":"Le casque équipe le cycliste, mais ne fait pas partie du vélo."},
-  "new-sexe-relations-substances-difficile-1": {"display":"Boire du café","explanation":"Le café ne fait pas dégriser et ne réduit pas les risques liés à l’alcool."},
-  "new-records-classements-faits-marquants-facile-1": {"display":"Guinness","explanation":"Guinness est lié aux records, mais n’est pas une catégorie de record."},
-  "easy-pixar-neuf-premiers": {"display":"Shrek","explanation":"Shrek est un film d’animation très connu, mais il a été produit par DreamWorks et non Pixar."},
-  "easy-princesses-neuf-films": {"display":"Le Roi Lion","explanation":"Le Roi Lion est un classique Disney, mais n’introduit pas une princesse Disney."},
-  "medium-david-fincher-neuf-premiers": {"display":"Inception","explanation":"Inception est un film très connu, mais il a été réalisé par Christopher Nolan et non David Fincher."},
-  "medium-don-bluth-neuf-premiers": {"display":"Toy Story","explanation":"Toy Story est un film d’animation, mais il a été réalisé par John Lasseter et non Don Bluth."},
-  "new-cinema-facile-1": {"display":"Titanic","explanation":"Titanic est un film très connu, mais pas une saga de cinéma."},
-  "new-cinema-facile-2": {"display":"Gandalf","explanation":"Gandalf est un personnage emblématique, mais il appartient au Seigneur des anneaux et non à Star Wars."},
-  "new-cinema-facile-3": {"display":"Shrek","explanation":"Shrek est un film d’animation célèbre, mais ne fait pas partie de Pixar."},
-  "new-cinema-facile-4": {"display":"Brad Pitt","explanation":"Brad Pitt est un acteur très connu, mais il n’est pas français."},
-  "new-cinema-facile-5": {"display":"Shrek","explanation":"Shrek est un film d’animation célèbre, mais ne vient pas des studios Pixar."},
-  "new-cinema-facile-6": {"display":"Télécommande","explanation":"Une télécommande est liée à l’écran, mais n’est pas un objet que l’on achète au cinéma."},
-  "new-rework-easy-mcu-neuf-premiers": {"display":"The Batman","explanation":"The Batman est un film de super-héros, mais il ne fait pas partie du Marvel Cinematic Universe."},
-  "new-rework-medium-aardman-neuf-longs": {"display":"Toy Story","explanation":"Toy Story est un film d’animation, mais ne relève pas du studio Aardman."},
-  "new-rework-medium-coen-neuf-premiers": {"display":"Pulp Fiction","explanation":"Pulp Fiction est un film culte, mais il a été réalisé par Quentin Tarantino et non les frères Coen."},
-  "new-rework-medium-miyazaki-neuf-premiers": {"display":"Wallace et Gromit","explanation":"Wallace et Gromit relèvent d’Aardman, pas de Hayao Miyazaki."},
-  "new-rework-medium-wes-anderson-neuf-premiers": {"display":"Le Fabuleux Destin d’Amélie Poulain","explanation":"Le Fabuleux Destin d’Amélie Poulain est un film stylisé, mais il n’a pas été réalisé par Wes Anderson."},
-  "play-animation-pixar": {"display":"Shrek","explanation":"Shrek est un personnage d’animation très connu, mais ne vient pas d’un film Pixar."},
-  "play-animation-vilains-disney": {"display":"Darth Vader","explanation":"Darth Vader est un méchant culte, mais il n’appartient pas aux classiques Disney."},
-  "play-cinema-star-wars": {"display":"Gandalf","explanation":"Gandalf est une figure de fantasy célèbre, mais n’appartient pas à Star Wars."},
-  "new-series-television-difficile-2":{"display":"The Mandalorian","explanation":"The Mandalorian appartient à Star Wars, mais n’est pas adapté d’un jeu vidéo."},
-  "new-series-television-difficile-3":{"display":"Lost","explanation":"Lost est une série célèbre, mais elle n’est pas centrée sur le travail."},
-  "new-series-television-difficile-4":{"display":"The Mandalorian","explanation":"The Mandalorian relève de la science-fiction, mais n’est pas une série de super-héros."},
-  "new-series-television-difficile-5":{"display":"Koh-Lanta","explanation":"Koh-Lanta est une compétition télévisée, mais les candidats n’y cuisinent pas comme dans un programme culinaire."},
-  "new-series-television-difficile-6":{"display":"Changer de chaîne","explanation":"Changer de chaîne est un geste de télévision, mais il ne s’applique pas à une série regardée à la demande."},
-  "new-series-television-facile-3":{"display":"Game of Thrones","explanation":"Game of Thrones est une série très connue, mais elle n’est pas disponible sur Netflix."},
-  "new-series-television-facile-4":{"display":"Breaking Bad","explanation":"Breaking Bad est une série célèbre, mais elle est américaine et non française."},
-  "new-series-television-moyen-1":{"display":"House of the Dragon","explanation":"House of the Dragon est une série connue, mais elle ne se déroule pas dans un hôpital."},
-  "new-series-television-moyen-2":{"display":"Grey’s Anatomy","explanation":"Grey’s Anatomy est une série médicale, pas une série policière."},
-  "play-tv-brooklyn-99":{"display":"Joey Tribbiani","explanation":"Joey Tribbiani est un personnage de Friends, pas de Brooklyn Nine-Nine."},
-  "play-tv-casa-papel":{"display":"Walter White","explanation":"Walter White est un personnage de Breaking Bad, pas un braqueur de La Casa de Papel."},
-  "play-tv-friends":{"display":"Sheldon Cooper","explanation":"Sheldon Cooper est un personnage de The Big Bang Theory, pas de Friends."},
-  "play-tv-game-thrones":{"display":"Darth Vader","explanation":"Darth Vader appartient à Star Wars, pas à Game of Thrones."},
-  "play-tv-kaamelott":{"display":"Obélix","explanation":"Obélix appartient à Astérix, pas à Kaamelott."},
-  "play-tv-office":{"display":"Barney Stinson","explanation":"Barney Stinson est un personnage de How I Met Your Mother, pas de The Office US."},
-  "play-tv-sex-education":{"display":"Rue Bennett","explanation":"Rue Bennett est un personnage d’Euphoria, pas de Sex Education."},
-  "play-tv-simpsons":{"display":"Peter Griffin","explanation":"Peter Griffin est un personnage de Family Guy, pas des Simpson."},
-  "play-tv-stranger-things":{"display":"Wednesday Addams","explanation":"Wednesday Addams appartient à La Famille Addams, pas à Stranger Things."},
-  "play-tv-the-boys":{"display":"Spider-Man","explanation":"Spider-Man est un super-héros connu, mais n’appartient pas à The Boys."},
-  "medium-dragon-ball-neuf-premiers-arcs":{"display":"Water 7","explanation":"Water 7 est un arc de One Piece, pas de Dragon Ball."},
-  "medium-one-piece-neuf-premiers-arcs":{"display":"Tournoi de Cell","explanation":"Le Tournoi de Cell est un arc de Dragon Ball, pas de One Piece."},
-  "medium-pokemon-neuf-premieres-sorties":{"display":"Pokémon Écarlate et Violet","explanation":"Ce sont bien des jeux Pokémon sortis au Japon, mais ils sont beaucoup trop récents pour faire partie des premières grandes sorties de la série."},
-  "medium-sandman-neuf-premiers-volumes":{"display":"Watchmen","explanation":"Watchmen est un comics célèbre, mais pas un recueil de The Sandman."},
-  "medium-walking-dead-neuf-premiers":{"display":"Batman: Year One","explanation":"Batman: Year One est un comics célèbre, mais pas un recueil de The Walking Dead."},
-  "new-jeux-jouets-divertissements-difficile-1":{"display":"Dobble","explanation":"Dobble est bien un jeu de société, mais il se joue avec des cartes et non avec des dés."},
-  "new-jeux-jouets-divertissements-difficile-2":{"display":"Mario","explanation":"Mario est un personnage de jeu vidéo, mais n’appartient pas à l’univers Pokémon."},
-  "new-jeux-jouets-divertissements-difficile-3":{"display":"Cinéma","explanation":"Le cinéma est un loisir populaire comme la fête foraine, mais il ne propose pas les attractions demandées."},
-  "new-jeux-jouets-divertissements-difficile-4":{"display":"Respecter les règles","explanation":"Respecter les règles concerne directement une partie, mais c’est l’inverse d’une façon de tricher."},
-  "new-jeux-jouets-divertissements-difficile-5":{"display":"Aller dormir","explanation":"Aller dormir est une activité de soirée, mais ce n’est pas une raison de sortir un jeu de société."},
-  "new-jeux-jouets-divertissements-difficile-6":{"display":"Frais d’inscription","explanation":"Les frais d’inscription peuvent être associés à un concours, mais ils constituent un coût et non une récompense à gagner."},
-  "new-jeux-jouets-divertissements-facile-1":{"display":"Tetris","explanation":"Tetris est un jeu vidéo, pas un jeu de société."},
-  "new-jeux-jouets-divertissements-facile-2":{"display":"Tablette","explanation":"Une tablette peut se trouver dans une chambre d’enfant, mais ce n’est pas un jouet."},
-  "new-jeux-jouets-divertissements-facile-3":{"display":"Plateau de jeu","explanation":"Un plateau sert à de nombreux jeux de société, mais il n’est pas utilisé dans un jeu de cartes."},
-  "new-jeux-jouets-divertissements-facile-4":{"display":"Uno","explanation":"Uno est un jeu très connu, mais il faut un jeu de cartes pour y jouer."},
-  "new-jeux-jouets-divertissements-facile-5":{"display":"Harry Potter","explanation":"Harry Potter est un personnage littéraire célèbre, mais pas un personnage de bande dessinée."},
-  "new-jeux-jouets-divertissements-facile-6":{"display":"Batman","explanation":"Batman est un super-héros DC, pas Marvel."},
-  "new-jeux-jouets-divertissements-facile-7":{"display":"Spider-Man","explanation":"Spider-Man est un super-héros Marvel, pas DC."},
-  "new-jeux-jouets-divertissements-moyen-1":{"display":"Monopoly","explanation":"Monopoly est un jeu de société, pas un jeu de casino."},
-  "new-jeux-jouets-divertissements-moyen-2":{"display":"Dessin","explanation":"On peut créer un dessin à côté d’une construction, mais ce n’est pas un objet que l’on construit avec des briques Lego."},
-  "medium-buteurs-finales-mondial-depuis-1986":{"display":"Neymar","explanation":"Neymar est un grand footballeur, mais il n’a pas marqué en finale de Coupe du monde."},
-  "medium-finalistes-euro-1960-1992":{"display":"Brésil","explanation":"Le Brésil est une grande sélection, mais ne peut pas atteindre une finale de l’Euro masculin."},
-  "new-sport-difficile-1":{"display":"Surf","explanation":"Le surf est un sport de glisse, mais pas un sport d’hiver."},
-  "new-sport-difficile-2":{"display":"100 mètres","explanation":"Le 100 mètres est une épreuve de vitesse, pas d’endurance."},
-  "new-sport-difficile-3":{"display":"Boxe anglaise","explanation":"La boxe anglaise est un sport de combat, mais elle n’est pas née en Asie."},
-  "new-sport-difficile-4":{"display":"Roland-Garros","explanation":"Roland-Garros est un stade de tennis, pas de football."},
-  "new-sport-difficile-5":{"display":"France — Allemagne","explanation":"France — Allemagne est une grande affiche, mais pas un derby de clubs."},
-  "new-sport-difficile-6":{"display":"Supporter","explanation":"Un supporter participe à l’ambiance sportive, mais ce n’est pas un métier professionnel."},
-  "new-sport-facile-2":{"display":"Football","explanation":"Le football est collectif, mais pas un sport de précision."},
-  "new-sport-facile-3":{"display":"Formule 1","explanation":"La Formule 1 est une compétition automobile, pas un sport olympique."},
-  "new-sport-facile-4":{"display":"Casque audio","explanation":"Un casque audio est portable pendant une activité, mais n’est pas un objet sportif."},
-  "new-sport-facile-5":{"display":"Ski","explanation":"Le ski est un sport de plein air, mais ne se pratique pas à la plage."},
-  "new-sport-facile-6":{"display":"Regarder la télévision","explanation":"Regarder la télévision est un loisir, pas une raison de faire du sport."},
-  "new-sport-moyen-1":{"display":"Basketball","explanation":"Le basketball est physique, mais pas un sport de combat."},
-  "new-sport-moyen-2":{"display":"Athlétisme","explanation":"L’athlétisme est une discipline, pas une compétition précise."},
-  "new-sport-moyen-3":{"display":"Entraîneur","explanation":"Un entraîneur appartient au sport, mais n’est pas une sportive ou un sportif."},
-  "play-sport-ball-games":{"display":"Tennis","explanation":"Le tennis se joue avec une balle, mais ce n’est pas un sport collectif."},
-  "play-sport-icons":{"display":"Beyoncé","explanation":"Beyoncé est une icône mondiale, mais pas une sportive."},
-  "play-sport-rackets":{"display":"Golf","explanation":"Le golf utilise un club, pas une raquette."},
-  "new-musique-difficile-1":{"display":"Guitare","explanation":"La guitare est un instrument, pas une musique liée à une décennie."},
-  "new-musique-difficile-2":{"display":"Hans Zimmer","explanation":"Hans Zimmer compose pour le cinéma, pas dans le répertoire classique demandé."},
-  "new-musique-difficile-3":{"display":"Stromae","explanation":"Stromae est un artiste, mais pas un DJ."},
-  "new-musique-difficile-4":{"display":"Oscar","explanation":"Un Oscar récompense le cinéma, pas la musique."},
-  "new-musique-difficile-5":{"display":"Tom Cruise","explanation":"Tom Cruise est acteur, pas artiste musicien ayant joué dans un film."},
-  "new-musique-difficile-6":{"display":"But de football","explanation":"Un but peut faire du bruit, mais ne se produit pas pendant un concert."},
-  "new-musique-facile-1":{"display":"Enceinte","explanation":"Une enceinte diffuse de la musique, mais n’est pas un instrument."},
-  "new-musique-facile-2":{"display":"Guitare","explanation":"La guitare est un instrument, pas un style musical."},
-  "new-musique-facile-3":{"display":"Adele","explanation":"Adele est britannique, pas française."},
-  "new-musique-facile-4":{"display":"Daft Punk","explanation":"Daft Punk est un duo électronique, pas un groupe de rock."},
-  "new-musique-facile-5":{"display":"Stromae","explanation":"Stromae est un chanteur, pas une chanteuse pop."},
-  "new-musique-facile-6":{"display":"Joyeux anniversaire","explanation":"Joyeux anniversaire est une chanson de fête, pas de mariage."},
-  "new-musique-facile-7":{"display":"Spectateur","explanation":"Un spectateur est devant la scène, pas sur celle-ci."},
-  "new-musique-moyen-2":{"display":"Guitare","explanation":"La guitare est à cordes, pas à vent."},
-  "new-musique-moyen-3":{"display":"Se faire opérer","explanation":"Se faire opérer n’est pas une raison d’écouter de la musique."},
-  "new-musique-moyen-4":{"display":"Angèle","explanation":"Angèle est une chanteuse pop, pas une rappeuse."},
-  "new-musique-moyen-5":{"display":"Spotify","explanation":"Spotify est un service d’écoute, pas un festival."},
-  "new-musique-moyen-6":{"display":"Fan","explanation":"Un fan n’est pas un membre ni un rôle d’un groupe."},
-  "new-musique-moyen-7":{"display":"Jean-Jacques Goldman","explanation":"Jean-Jacques Goldman est connu sous son nom réel, pas un nom de scène."},
-  "easy-taches-menageres":{"display":"Regarder une série","explanation":"Regarder une série se fait à la maison, mais ce n’est pas une tâche ménagère."},
-  "medium-documents-demarches":{"display":"Carte de fidélité","explanation":"Une carte de fidélité est personnelle, mais pas un document administratif."},
-  "new-vie-quotidienne-difficile-1":{"display":"Ne rien prévoir","explanation":"Ne rien prévoir ne constitue pas une raison de prendre rendez-vous."},
-  "new-vie-quotidienne-difficile-2":{"display":"La maison","explanation":"La maison est le lieu que l’on quitte, pas un objet qu’on oublie en partant."},
-  "new-vie-quotidienne-difficile-3":{"display":"Acheter sans regarder les prix","explanation":"Acheter sans regarder les prix va à l’encontre d’une habitude d’économie."},
-  "new-vie-quotidienne-difficile-4":{"display":"Dans son lit","explanation":"On peut attendre au lit, mais ce n’est pas une situation où l’on fait la queue."},
-  "new-vie-quotidienne-difficile-5":{"display":"Oreiller","explanation":"Un oreiller est un objet du quotidien, mais ne se recharge pas."},
-  "new-vie-quotidienne-difficile-6":{"display":"Rater son bus","explanation":"Rater son bus est une contrariété, pas une petite victoire."},
-  "new-vie-quotidienne-facile-1":{"display":"S’endormir","explanation":"S’endormir est l’inverse de ce que l’on fait après le réveil."},
-  "new-vie-quotidienne-facile-2":{"display":"Oreiller","explanation":"Un oreiller sert au sommeil, mais ne se garde pas dans une poche."},
-  "new-vie-quotidienne-facile-3":{"display":"Rester chez soi","explanation":"Rester chez soi est l’inverse d’une raison de sortir."},
-  "new-vie-quotidienne-facile-4":{"display":"Déjeuner","explanation":"Déjeuner se fait habituellement au début de la journée, pas avant de dormir."},
-  "new-vie-quotidienne-facile-5":{"display":"Télévision","explanation":"Une télévision permet d’utiliser des applications, mais n’est pas une application."},
-  "new-vie-quotidienne-facile-6":{"display":"Gagner à la loterie","explanation":"Gagner à la loterie est une bonne nouvelle, pas un problème quotidien."},
-  "new-vie-quotidienne-moyen-1":{"display":"Objet retrouvé","explanation":"Un objet retrouvé n’est plus un objet que l’on cherche."},
-  "new-vie-quotidienne-moyen-2":{"display":"Fermer les yeux","explanation":"Fermer les yeux ne donne pas de raison de regarder son téléphone."},
-  "new-vie-quotidienne-moyen-3":{"display":"Réunion obligatoire","explanation":"Une réunion obligatoire relève du travail, pas d’une activité typique du dimanche."},
-  "new-vie-quotidienne-moyen-4":{"display":"Volcan","explanation":"Un volcan peut être en ville, mais n’est pas un service urbain."},
-  "new-vie-quotidienne-moyen-5":{"display":"Recevoir un colis","explanation":"Recevoir un colis est lié au trajet, mais n’arrive pas dans les transports eux-mêmes."},
-  "new-vie-quotidienne-moyen-6":{"display":"Réveil","explanation":"Un réveil peut être transporté dans un sac, mais ce n’est pas l’un des objets que l’on y garde habituellement."},
-  "easy-metiers-sante":{"display":"Patient","explanation":"Un patient appartient au domaine de la santé, mais ce n’est pas un métier."},
-  "medium-disciplines-college":{"display":"Récréation","explanation":"La récréation fait partie de la vie au collège, mais n’est pas une discipline enseignée."},
-  "medium-metiers-batiment":{"display":"Architecte","explanation":"Un architecte conçoit le bâtiment, mais n’est pas un métier exercé sur le chantier au sens demandé."},
-  "new-travail-etudes-vie-de-bureau-difficile-1":{"display":"Bonjour","explanation":"Bonjour est une formule professionnelle, mais pas une expression de réunion."},
-  "new-travail-etudes-vie-de-bureau-difficile-2":{"display":"Ordinateur","explanation":"Un ordinateur est un équipement de bureau, mais pas une fourniture."},
-  "new-travail-etudes-vie-de-bureau-difficile-3":{"display":"Spectateur","explanation":"Un spectateur assiste à une présentation, mais n’est pas un élément à préparer."},
-  "new-travail-etudes-vie-de-bureau-difficile-4":{"display":"Plage","explanation":"La plage peut permettre le télétravail, mais n’est pas un lieu de travail habituel hors bureau."},
-  "new-travail-etudes-vie-de-bureau-difficile-5":{"display":"Être parfaitement satisfait","explanation":"Être parfaitement satisfait de son emploi n’est pas une raison de le changer."},
-  "new-travail-etudes-vie-de-bureau-difficile-6":{"display":"Partir en vacances","explanation":"Partir en vacances peut suivre un emploi, mais n’est pas une action du premier jour."},
-  "new-travail-etudes-vie-de-bureau-facile-1":{"display":"Collègue","explanation":"Un collègue travaille au bureau, mais n’est pas un objet posé dessus."},
-  "new-travail-etudes-vie-de-bureau-facile-2":{"display":"J’étais en avance","explanation":"Être en avance ne constitue pas une excuse pour arriver en retard."},
-  "new-travail-etudes-vie-de-bureau-facile-3":{"display":"Dormir profondément","explanation":"Dormir profondément ne fait pas partie d’une réunion de travail."},
-  "new-travail-etudes-vie-de-bureau-facile-4":{"display":"Imprimante","explanation":"Une imprimante est un outil de bureau, mais pas un outil collaboratif."},
-  "new-travail-etudes-vie-de-bureau-facile-5":{"display":"Client","explanation":"Un client peut interagir avec l’équipe, mais n’est pas un type de collègue."},
-  "new-travail-etudes-vie-de-bureau-moyen-1":{"display":"Mathématiques","explanation":"Les mathématiques sont une matière générale, mais pas une matière propre à l’école de commerce."},
-  "new-travail-etudes-vie-de-bureau-moyen-2":{"display":"Signature du contrat","explanation":"La signature clôt le recrutement, mais n’est pas une étape de sélection à proprement parler."},
-  "new-travail-etudes-vie-de-bureau-moyen-3":{"display":"Photo de vacances","explanation":"Une photo de vacances peut illustrer une personne, mais n’est pas un élément de CV."},
-  "new-travail-etudes-vie-de-bureau-moyen-4":{"display":"Trafic routier","explanation":"Le trafic routier peut affecter le travail, mais n’est pas un avantage proposé par l’entreprise."},
-  "play-tech-creative-software":{"display":"PowerPoint","explanation":"PowerPoint sert à préparer des présentations, mais ce n’est pas un logiciel de création d’images, de vidéos ou de sons."},
-  "easy-transports-urbains":{"display":"Remorque","explanation":"Une remorque circule sur la route, mais elle ne constitue pas un moyen de transport urbain autonome."},
-  "medium-neuf-langues-ue-alphabetique":{"display":"Euro","explanation":"L’euro est lié à l’Union européenne, mais ce n’est pas une langue officielle."},
-  "medium-panneaux-danger":{"display":"Parking autorisé","explanation":"Un parking autorisé est une indication, pas un danger signalé par un triangle."},
-  "new-voyage-vacances-difficile-1":{"display":"Bouilloire","explanation":"Une bouilloire peut être utile pendant des vacances, mais elle n’est pas un objet de plage."},
-  "new-voyage-vacances-difficile-2":{"display":"Tirage au sort","explanation":"Un tirage au sort peut décider d’un voyage, mais n’est pas une raison de choisir une destination."},
-  "new-voyage-vacances-difficile-3":{"display":"Billet de train","explanation":"Un billet de train est utile en voyage, mais n’est pas habituellement photographié comme souvenir."},
-  "new-voyage-vacances-difficile-4":{"display":"Prendre un taxi seul","explanation":"Prendre un taxi seul peut coûter plus cher et ne constitue pas une économie de voyage."},
-  "new-voyage-vacances-difficile-5":{"display":"Dans son salon","explanation":"On peut être désorienté chez soi, mais ce n’est pas une situation typique où l’on se perd."},
-  "new-voyage-vacances-difficile-6":{"display":"Refaire sa valise","explanation":"Refaire sa valise prépare un nouveau départ, pas le retour de vacances."},
-  "new-voyage-vacances-facile-1":{"display":"Chambre d’hôtel","explanation":"Une chambre d’hôtel est un lieu, pas un objet à mettre dans une valise."},
-  "new-voyage-vacances-facile-2":{"display":"Valise","explanation":"Une valise est un bagage, pas un document utile pour voyager."},
-  "new-voyage-vacances-facile-3":{"display":"Arriver trop tôt","explanation":"Arriver trop tôt à l’aéroport ne fait pas rater un avion."},
-  "new-voyage-vacances-facile-4":{"display":"Ski","explanation":"Le ski est une activité de vacances, mais pas une activité à la mer."},
-  "new-voyage-vacances-facile-5":{"display":"Passeport","explanation":"Un passeport est un document de voyage, pas un type d’hébergement."},
-  "new-voyage-vacances-facile-6":{"display":"Reçu d’hôtel","explanation":"Un reçu d’hôtel est bien lié au voyage, mais ce n’est pas un souvenir que l’on achète."},
-  "new-voyage-vacances-moyen-1":{"display":"Décoller","explanation":"Décoller est l’étape suivante du voyage, mais cela ne fait pas partie des activités effectuées dans l’aéroport avant le vol."},
-  "new-voyage-vacances-moyen-2":{"display":"Valise","explanation":"Une valise est utile pour voyager, mais ce n’est pas une destination européenne."},
-  "new-voyage-vacances-moyen-3":{"display":"Hôtel","explanation":"Un hôtel est un lieu d’hébergement, pas un moyen de transport."},
-  "new-voyage-vacances-moyen-4":{"display":"Vue magnifique","explanation":"Une vue magnifique décrit une qualité appréciée de l’hôtel, pas un problème rencontré sur place."},
-  "easy-pates-italiennes-neuf":{"display":"Risotto","explanation":"Le risotto est un plat de riz italien, pas un format de pâtes."},
-  "medium-decoupes-boeuf":{"display":"Saumon","explanation":"Le saumon est un poisson, pas un morceau de bœuf."},
-  "medium-fromages-pays":{"display":"Pizza — Italie","explanation":"La pizza est associée à l’Italie, mais ce n’est pas un fromage emblématique."},
-  "medium-piments-echelle-scoville":{"display":"Poivre noir","explanation":"Le poivre noir est une épice qu’on confond facilement avec les piments, mais il ne vient pas du genre Capsicum."},
-  "medium-riz-plats-monde":{"display":"Casserole","explanation":"Une casserole sert à cuisiner le riz, mais ce n’est pas une cuisine ou une région associée à un plat de riz."},
-  "new-gastronomie-du-monde-difficile-1":{"display":"Sucre blanc","explanation":"Le sucre blanc est un ingrédient courant en cuisine, mais ce n’est pas un aliment fermenté."},
-  "new-gastronomie-du-monde-difficile-2":{"display":"Mariner","explanation":"Mariner modifie la préparation d’un aliment, mais ce n’est pas une technique de cuisson."},
-  "new-gastronomie-du-monde-difficile-3":{"display":"Carotte","explanation":"La carotte est un légume courant, mais pas une légumineuse."},
-  "new-gastronomie-du-monde-difficile-4":{"display":"Soupe à l’oignon","explanation":"La soupe à l’oignon est un plat emblématique, mais pas une pâtisserie."},
-  "new-gastronomie-du-monde-difficile-5":{"display":"Tartare de bœuf","explanation":"Le tartare de bœuf est préparé cru comme certains plats de la liste, mais il ne contient pas de poisson cru."},
-  "new-gastronomie-du-monde-difficile-6":{"display":"Huile d’olive","explanation":"L’huile d’olive est un ingrédient de cuisine très courant, mais elle n’est pas typique de la cuisine asiatique comme ceux demandés."},
-  "new-gastronomie-du-monde-facile-1":{"display":"Pizza","explanation":"La pizza est un aliment très courant, mais ce n’est pas un aliment de petit-déjeuner."},
-  "new-gastronomie-du-monde-moyen-1":{"display":"Tomate","explanation":"La tomate est un légume très courant en cuisine, mais elle n’est pas classée parmi les légumes verts."},
-  "new-gastronomie-du-monde-moyen-2":{"display":"Soupe","explanation":"La soupe se mange avec une cuillère, pas avec les doigts."},
-  "new-gastronomie-du-monde-moyen-3":{"display":"Saladier","explanation":"Un saladier est directement associé à la préparation d’une salade, mais ce n’est pas un ingrédient."},
-  "easy-insectes-familiers":{"display":"Araignée","explanation":"L’araignée est un petit animal familier, mais ce n’est pas un insecte."},
-  "easy-mammiferes-marins":{"display":"Requin","explanation":"Le requin vit en mer, mais c’est un poisson et non un mammifère."},
-  "easy-mers-mediterranee":{"display":"Alpes","explanation":"Les Alpes sont une chaîne de montagnes, pas une mer méditerranéenne."},
-  "easy-oiseaux-incapables-voler":{"display":"Aigle","explanation":"L’aigle est un oiseau célèbre, mais il vole."},
-  "easy-parties-fleur":{"display":"Papillon","explanation":"Le papillon visite une fleur, mais n’en est pas une partie."},
-  "easy-races-chats":{"display":"Labrador","explanation":"Le labrador est une race de chien, pas de chat."},
-  "easy-races-chiens-populaires":{"display":"Siamois","explanation":"Le siamois est une race de chat, pas de chien."},
-  "easy-reptiles-connus":{"display":"Grenouille","explanation":"La grenouille est un amphibien, pas un reptile."},
-  "easy-types-precipitations":{"display":"Brouillard","explanation":"Le brouillard est bien un phénomène météorologique, mais ce n’est ni une précipitation ni un dépôt sur le sol."},
-  "medium-amphibiens-europe":{"display":"Lézard","explanation":"Le lézard est un reptile, pas un amphibien."},
-  "medium-coniferes-europe":{"display":"Chêne","explanation":"Le chêne est un arbre européen, mais pas un conifère."},
-  "medium-ecosystemes-cotiers":{"display":"Désert du Sahara","explanation":"Le Sahara est un milieu terrestre, pas un écosystème côtier ou marin."},
-  "medium-insectes-sociaux":{"display":"Coccinelle","explanation":"La coccinelle est un insecte, mais ne vit pas en société organisée."},
-  "medium-primates-anthropoides":{"display":"Lémurien","explanation":"Le lémurien est un primate, mais pas un anthropoïde."},
-  "medium-races-chiens-bergers":{"display":"Labrador","explanation":"Le labrador est un chien reconnu, mais pas une race de berger."},
-  "medium-rapaces-diurnes":{"display":"Hibou","explanation":"Le hibou est un rapace, mais il est nocturne."},
-  "medium-requins-emblematiques":{"display":"Dauphin","explanation":"Le dauphin vit en mer, mais c’est un mammifère et non un requin."},
-  "easy-neuf-pharaons-celebres":{"display":"Anubis","explanation":"Anubis est une figure majeure de l’Égypte antique, mais c’est un dieu et non un pharaon."},
-  "easy-neuf-premiers-presidents-usa":{"display":"Hillary Clinton","explanation":"Hillary Clinton est une grande figure politique américaine, mais elle n’a jamais été présidente des États-Unis."},
-  "medium-neuf-batailles-napoleoniennes":{"display":"Traité de Vienne","explanation":"Le traité de Vienne est un accord diplomatique, pas une bataille napoléonienne."},
-  "medium-neuf-dynasties-chinoises":{"display":"Grande Muraille","explanation":"La Grande Muraille appartient à l’histoire chinoise, mais n’est pas une dynastie."},
-  "medium-neuf-traites-historiques":{"display":"Waterloo","explanation":"Waterloo est une bataille, pas un traité de paix."},
-  "new-histoire-grandes-epoques-difficile-1":{"display":"Coup d’État","explanation":"Un coup d’État peut bouleverser un régime comme une révolution, mais ce n’est pas un soulèvement populaire révolutionnaire."},
-  "new-histoire-grandes-epoques-difficile-2":{"display":"Indiana Jones","explanation":"Indiana Jones est associé à l’exploration et à l’aventure, mais c’est un personnage de fiction et non un explorateur historique."},
-  "new-histoire-grandes-epoques-difficile-3":{"display":"Bataille de Verdun","explanation":"Verdun est une bataille, pas un traité."},
-  "new-histoire-grandes-epoques-difficile-4":{"display":"Napoléon","explanation":"Napoléon est un dirigeant historique, mais pas une dirigeante."},
-  "new-histoire-grandes-epoques-difficile-5":{"display":"Révolution française","explanation":"La Révolution française est historique, mais précède la guerre froide."},
-  "new-histoire-grandes-epoques-difficile-6":{"display":"Route 66","explanation":"La Route 66 est une route historique célèbre, mais elle n’est pas une route commerciale historique."},
-  "new-histoire-grandes-epoques-facile-2":{"display":"Manuel d’histoire","explanation":"Un manuel raconte l’histoire, mais n’est pas un personnage historique."},
-  "new-histoire-grandes-epoques-facile-3":{"display":"Inventeur","explanation":"Un inventeur crée une invention, mais n’est pas une invention."},
-  "new-histoire-grandes-epoques-facile-4":{"display":"Château de Versailles","explanation":"Le château de Versailles est un monument historique français majeur, mais il ne provient pas d’une civilisation ancienne."},
-  "new-histoire-grandes-epoques-moyen-1":{"display":"Cheval","explanation":"Le cheval a été utilisé dans l’industrie, mais n’est pas un élément caractéristique de la révolution industrielle."},
-  "new-histoire-grandes-epoques-moyen-2":{"display":"Indiana Jones","explanation":"Indiana Jones évoque les expéditions, mais c’est un personnage fictif et non un voyage ou une conquête géographique historique."},
-  "new-histoire-grandes-epoques-moyen-3":{"display":"Napoléon","explanation":"Napoléon est une figure historique, mais pas une femme."},
-  "new-histoire-grandes-epoques-moyen-4":{"display":"Louis XIV","explanation":"Louis XIV est un souverain célèbre, mais il est roi de France et non empereur."},
-  "easy-monnaies-neuf-pays":{"display":"Carte bancaire","explanation":"Une carte bancaire permet de payer, mais n’est pas une monnaie."},
-  "easy-neuf-monuments-parisiens":{"display":"Château de Versailles","explanation":"Le château de Versailles est un monument célèbre, mais n’est pas situé à Paris."},
-  "easy-neuf-regions-alphabetiques":{"display":"Métropole de Lyon","explanation":"La métropole de Lyon est une collectivité territoriale française, mais ce n’est pas une région."},
-  "easy-salutations-neuf-langues":{"display":"Au revoir","explanation":"Au revoir est une formule de départ, pas une façon de dire bonjour."},
-  "easy-symboles-neuf-pays":{"display":"Tour Eiffel","explanation":"La tour Eiffel est un symbole national très reconnaissable, mais la question demande le nom d’un pays."},
-  "medium-neuf-ecritures":{"display":"Français","explanation":"Le français est une langue, pas un système d’écriture."},
-  "medium-neuf-instruments-traditionnels":{"display":"Guitare","explanation":"La guitare est un instrument, pas une région ou culture associée."},
-  "medium-neuf-pays-carnavals":{"display":"Rio de Janeiro","explanation":"Rio est associé au carnaval, mais c’est une ville et non un pays."},
-  "medium-neuf-sites-merveilles-selection":{"display":"Pyramide de Gizeh","explanation":"La pyramide est un site historique, pas un pays qui l’abrite."},
-  "new-geographie-pays-monde-difficile-2":{"display":"Portugal","explanation":"Le Portugal est un pays voisin de l’Espagne et souvent associé à la péninsule Ibérique, mais il ne partage pas de frontière avec la France."},
-  "new-geographie-pays-monde-difficile-3":{"display":"Saint-Pétersbourg","explanation":"Saint-Pétersbourg est une grande ville russe, mais elle n’a jamais accueilli les Jeux olympiques d’été."},
-  "new-geographie-pays-monde-difficile-4":{"display":"France","explanation":"La France est un pays dont le drapeau est familier, mais son drapeau tricolore ne contient pas d’étoile."},
-  "new-geographie-pays-monde-difficile-5":{"display":"Lima","explanation":"Lima est une capitale sud-américaine, mais elle est loin du seuil de 1 000 mètres demandé."},
-  "new-geographie-pays-monde-difficile-6":{"display":"Argentine","explanation":"L’Argentine possède une vaste façade atlantique, mais elle n’est bordée que par un seul océan."},
-  "new-geographie-pays-monde-facile-1":{"display":"Australie","explanation":"L’Australie est bien un pays, mais elle n’est pas située en Europe."},
-  "new-geographie-pays-monde-facile-2":{"display":"New York","explanation":"New York est une ville très connue, mais ce n’est pas une capitale européenne."},
-  "new-geographie-pays-monde-moyen-1":{"display":"Haïti","explanation":"Haïti est un pays dont le nom peut se confondre dans une liste mondiale, mais il est situé dans les Caraïbes et non en Afrique."},
-  "new-geographie-pays-monde-moyen-2":{"display":"Le Caire","explanation":"Le Caire est une capitale majeure, mais elle est située en Afrique et non en Asie."},
-  "new-geographie-pays-monde-moyen-3":{"display":"Portugal","explanation":"Le Portugal est un pays du sud de l’Europe, mais sa côte donne sur l’Atlantique et non sur la Méditerranée."},
-  "medium-android-desserts":{"display":"Tiramisu","explanation":"Tiramisu est un nom de code Android lié à un dessert, mais pas l’un de ses noms publics."},
-  "medium-neuf-processeurs-intel":{"display":"AMD Athlon","explanation":"L’Athlon est bien un processeur historique, mais il est produit par AMD et non par Intel."},
-  "new-internet-reseaux-tendances-difficile-1":{"display":"Wikipedia","explanation":"Wikipedia est un site majeur de l’histoire du web, mais ce n’est pas un mème Internet."},
-  "new-internet-reseaux-tendances-difficile-2":{"display":"YouTube","explanation":"YouTube héberge des commentaires et des communautés, mais ce n’est pas une plateforme de discussion en ligne comme celles demandées."},
-  "new-internet-reseaux-tendances-difficile-3":{"display":"Steve Jobs","explanation":"Steve Jobs a marqué la technologie, mais il n’a pas façonné l’histoire du web au sens des personnalités demandées."},
-  "new-internet-reseaux-tendances-difficile-4":{"display":"La publication est parfaite","explanation":"Une publication parfaite n’est pas une raison de la supprimer."},
-  "new-internet-reseaux-tendances-difficile-5":{"display":"Mot de passe","explanation":"Un mot de passe est lié à un compte, mais il ne fait pas partie des informations visibles sur un profil."},
-  "new-internet-reseaux-tendances-difficile-6":{"display":"Câble Ethernet","explanation":"Un câble Ethernet concerne l’informatique en réseau, mais ce n’est pas un terme de cybersécurité."},
-  "new-internet-reseaux-tendances-facile-1":{"display":"Spotify","explanation":"Spotify est une plateforme numérique très utilisée, mais ce n’est pas un réseau social."},
-  "new-internet-reseaux-tendances-facile-2":{"display":"Mot de passe","explanation":"Un mot de passe est lié à un compte de réseau social, mais ce n’est pas du contenu que l’on publie."},
-  "new-internet-reseaux-tendances-facile-3":{"display":"Compte respectueux","explanation":"Un compte respectueux n’est pas une raison de le bloquer."},
-  "new-internet-reseaux-tendances-moyen-1":{"display":"Personne ne le partage","explanation":"Le partage est l’un des moteurs d’une publication virale ; l’absence de partage empêche précisément cette viralité."},
-  "new-rework-easy-neuf-reseaux-2003-2011":{"display":"Windows","explanation":"Windows est un système d’exploitation, pas un réseau ou service social."},
-  "play-internet-memes":{"display":"Navigateur web","explanation":"Un navigateur web sert à accéder aux mèmes, mais ce n’est pas un mème."},
-  "play-internet-slang":{"display":"Emoji","explanation":"Un emoji est très courant sur Internet, mais ce n’est ni un sigle ni une expression du web."},
-  "play-internet-video-platforms":{"display":"Télécommande","explanation":"Une télécommande sert à regarder des vidéos, mais ce n’est pas une plateforme vidéo."},
-  "play-tech-devices":{"display":"Livre papier","explanation":"Un livre papier peut contenir de l’information, mais ne se connecte pas à Internet."},
-"play-tech-languages":{"display":"CSS","explanation":"CSS sert à mettre en forme une page web, mais ce n’est pas un langage de programmation."},
-  "play-tech-operating-systems":{"display":"Ordinateur portable","explanation":"Un ordinateur portable utilise un système d’exploitation, mais ce n’est pas un système d’exploitation."},
-  "play-tech-storage":{"display":"Écran","explanation":"Un écran affiche des informations, mais il ne sert pas à stocker des données numériques."},
-  "new-economie-entreprises-consommation-difficile-2":{"display":"Salaire","explanation":"Le salaire est un revenu qui alimente le budget, mais ce n’est pas une dépense ni une ligne de charge comme les éléments demandés."},
-  "new-economie-entreprises-consommation-difficile-3":{"display":"Prix de vente","explanation":"Le prix de vente est une donnée commerciale, pas une forme de publicité."},
-  "new-economie-entreprises-consommation-difficile-4":{"display":"Importations","explanation":"Les importations concernent le commerce international d’une entreprise, mais elles vont dans le sens inverse des exportations demandées."},
-  "new-economie-entreprises-consommation-difficile-5":{"display":"Portefeuille","explanation":"Un portefeuille est un objet, pas un indicateur économique."},
-  "new-economie-entreprises-consommation-difficile-6":{"display":"Ne vouloir aucun client","explanation":"Ne vouloir aucun client contredit l’objectif d’une entreprise."},
-  "new-economie-entreprises-consommation-facile-1":{"display":"Carte bancaire","explanation":"Une carte bancaire appartient au monde de l’entreprise et de la finance, mais ce n’est pas un secteur d’activité."},
-  "new-economie-entreprises-consommation-facile-2":{"display":"Achats de marchandises","explanation":"C’est bien une charge d’entreprise, mais elle varie avec l’activité et ne constitue pas une dépense fixe."},
-  "new-economie-entreprises-consommation-facile-3":{"display":"Facture à payer","explanation":"Une facture déclenche un paiement, mais elle n’est pas elle-même un moyen de paiement."},
-  "new-economie-entreprises-consommation-facile-4":{"display":"Être satisfait","explanation":"Être satisfait de sa banque n’est pas une raison de la changer."},
-  "new-economie-entreprises-consommation-facile-5":{"display":"Couleur préférée","explanation":"Une couleur préférée peut guider un choix, mais ne fait pas varier le prix du produit."},
-  "new-economie-entreprises-consommation-facile-6":{"display":"Client","explanation":"Un client est central dans l’activité d’une entreprise, mais il n’occupe pas un poste dans son organisation."},
-  "new-economie-entreprises-consommation-facile-7":{"display":"Zara","explanation":"Zara est une marque très connue à l’international, mais elle est espagnole et non française."},
-  "new-economie-entreprises-consommation-moyen-1":{"display":"Billet de banque","explanation":"Un billet de banque est un moyen de paiement, pas un service bancaire."},
-  "new-economie-entreprises-consommation-moyen-2":{"display":"Titre-restaurant","explanation":"Un titre-restaurant peut être lié à l’emploi, mais il ne figure pas sur une fiche de paie comme les éléments demandés."},
-  "new-economie-entreprises-consommation-moyen-3":{"display":"Bénéfice","explanation":"Le bénéfice est ce que l’entreprise obtient après ses revenus et ses coûts, pas une façon de gagner de l’argent."},
-  "new-economie-entreprises-consommation-moyen-4":{"display":"iPhone","explanation":"L’iPhone est un produit technologique emblématique, mais il est fabriqué par Apple et n’est pas une entreprise."},
-  "new-economie-entreprises-consommation-moyen-5":{"display":"Période d’essai","explanation":"La période d’essai concerne bien l’embauche, mais c’est une clause d’un contrat et non un type de contrat."},
-  "new-economie-entreprises-consommation-moyen-6":{"display":"Baisse de la demande","explanation":"Une baisse de la demande pousse plutôt les prix à diminuer."},
-  "new-economie-entreprises-consommation-moyen-7":{"display":"Achat unique","explanation":"Un achat unique est une manière courante d’obtenir ces produits, mais ce n’est pas un produit vendu par abonnement."},
-  "new-mode-beaute-style-difficile-1":{"display":"Faire du sport","explanation":"Faire du sport est une activité, mais pas une occasion de s’habiller élégamment."},
-  "new-mode-beaute-style-difficile-2":{"display":"Porte-manteau","explanation":"Un porte-manteau se trouve près des vêtements, mais ce n’est pas un vêtement à ranger dans un dressing."},
-  "new-mode-beaute-style-difficile-3":{"display":"Porter un uniforme imposé","explanation":"Un uniforme imposé est l’inverse d’une personnalisation de tenue."},
-  "new-mode-beaute-style-difficile-4":{"display":"Mannequin de vitrine","explanation":"Un mannequin de vitrine est un objet, pas un métier de la mode ou beauté."},
-  "new-mode-beaute-style-difficile-5":{"display":"Miroir","explanation":"Un miroir aide à se coiffer, mais n’est pas un objet servant à coiffer les cheveux."},
-  "new-mode-beaute-style-difficile-6":{"display":"Retouche réussie","explanation":"Une retouche réussie améliore une tenue au lieu de la ruiner."},
-  "new-mode-beaute-style-facile-1":{"display":"Maillot de bain","explanation":"Le maillot de bain est un vêtement, mais pas un vêtement porté en hiver."},
-  "new-mode-beaute-style-facile-2":{"display":"Pull","explanation":"Un pull est un vêtement, pas un accessoire de mode."},
-  "new-mode-beaute-style-facile-3":{"display":"Brosse à cheveux","explanation":"Une brosse à cheveux appartient à la beauté, mais pas à la trousse de maquillage."},
-  "new-mode-beaute-style-facile-4":{"display":"Chapeau","explanation":"Un chapeau est un accessoire, pas un type de chaussure."},
-  "new-mode-beaute-style-facile-5":{"display":"Avoir la même coiffure","explanation":"Avoir la même coiffure n’est pas une raison de la changer."},
-  "new-mode-beaute-style-facile-6":{"display":"Verre","explanation":"Le verre peut être décoratif, mais n’est pas une matière de vêtement."},
-  "new-mode-beaute-style-moyen-1":{"display":"Client","explanation":"Un client se rend chez le coiffeur, mais n’est pas un objet du salon."},
-  "new-mode-beaute-style-moyen-2":{"display":"Guitare","explanation":"La guitare peut avoir du style, mais n’est pas un style vestimentaire."},
-  "new-mode-beaute-style-moyen-3":{"display":"Coca-Cola","explanation":"Coca-Cola est présente dans le sport, mais ne fabrique pas de vêtements de sport."},
-  "new-mode-beaute-style-moyen-4":{"display":"Shampooing","explanation":"Le shampooing sert aux cheveux, pas au soin du visage."},
-  "new-mode-beaute-style-moyen-5":{"display":"Marron et noir","explanation":"Le marron et le noir peuvent se porter, mais ne sont pas réputés faciles à associer."},
-  "new-mode-beaute-style-moyen-6":{"display":"Couleur unie","explanation":"Une couleur unie n’est pas un motif de vêtement."},
-  "new-mode-beaute-style-moyen-7":{"display":"Porte-clés","explanation":"Un porte-clés est un accessoire, mais pas un bijou."},
-  "new-soirees-alcool-fete-difficile-1":{"display":"Invité","explanation":"Un invité participe à la fête, mais n’est pas un accessoire."},
-  "new-soirees-alcool-fete-difficile-2":{"display":"Faire les courses","explanation":"Faire les courses peut préparer une fête, mais n’est pas un moment pour ouvrir du champagne."},
-  "new-soirees-alcool-fete-difficile-3":{"display":"Les invités arrivent","explanation":"L’arrivée des invités marque le début, pas la fin de la soirée."},
-  "new-soirees-alcool-fete-difficile-4":{"display":"Champagne","explanation":"Le champagne est une boisson festive, mais pas une bière."},
-  "new-soirees-alcool-fete-difficile-5":{"display":"Repartir avec le cadeau de l’hôte","explanation":"Repartir avec un cadeau est l’inverse de ce qu’on apporte à l’hôte."},
-  "new-soirees-alcool-fete-difficile-6":{"display":"Quand on est hydraté","explanation":"Être hydraté ne constitue pas une situation où il vaut mieux ne pas boire."},
-  "new-soirees-alcool-fete-facile-1":{"display":"Rentrer chez soi la veille","explanation":"Rentrer chez soi la veille n’est pas un élément à prévoir pour la soirée."},
-  "new-soirees-alcool-fete-facile-2":{"display":"La soirée commence","explanation":"Le début de la soirée n’est pas une raison de la quitter tôt."},
-  "new-soirees-alcool-fete-facile-3":{"display":"Café","explanation":"Le café peut être servi après le repas, mais n’est pas une boisson typique d’apéritif."},
-  "new-soirees-alcool-fete-facile-4":{"display":"Canapé","explanation":"Un canapé peut être dans le lieu de fête, mais pas sur la piste de danse."},
-  "new-soirees-alcool-fete-facile-5":{"display":"Regarder un film","explanation":"Regarder un film est une activité de soirée, mais pas un jeu."},
-  "new-soirees-alcool-fete-facile-6":{"display":"J’adore l’alcool","explanation":"Aimer l’alcool n’est pas une excuse pour refuser un verre."},
-  "new-soirees-alcool-fete-facile-7":{"display":"Tout le monde s’amuse","explanation":"Quand tout le monde s’amuse, la soirée n’est pas gâchée."},
-  "new-soirees-alcool-fete-moyen-1":{"display":"Verre à cocktail","explanation":"Un verre à cocktail est un contenant, pas un cocktail."},
-  "new-soirees-alcool-fete-moyen-2":{"display":"Assiette","explanation":"Une assiette sert les snacks, mais n’est pas un snack."},
-  "new-soirees-alcool-fete-moyen-3":{"display":"Salon","explanation":"Un salon peut accueillir des amis, mais n’est pas un type de lieu de fête."},
-  "new-soirees-alcool-fete-moyen-4":{"display":"Piste de danse","explanation":"La piste de danse est un lieu, pas un objet personnel que l’on perd."},
-  "new-soirees-alcool-fete-moyen-5":{"display":"Silence","explanation":"Le silence ne fait pas danser, contrairement à une musique."},
-  "new-soirees-alcool-fete-moyen-6":{"display":"Une mauvaise nouvelle","explanation":"Une mauvaise nouvelle ne donne pas de raison de porter un toast."},
-  "new-records-classements-faits-marquants-difficile-1":{"display":"Australie","explanation":"L’Australie est souvent prise pour une île, mais est considérée comme un continent."},
-  "new-records-classements-faits-marquants-difficile-2":{"display":"Michelin","explanation":"Michelin est une marque automobile de pneus, mais pas un constructeur automobile très vendu."},
-  "new-records-classements-faits-marquants-difficile-3":{"display":"Échecs","explanation":"Les échecs sont très pratiqués, mais ne sont pas un sport au sens demandé."},
-  "new-records-classements-faits-marquants-difficile-4":{"display":"Monopoly","explanation":"Monopoly est très vendu, mais c’est un jeu de société et non un jeu vidéo."},
-  "new-records-classements-faits-marquants-difficile-5":{"display":"Numéro de dossard","explanation":"Le numéro de dossard sert à identifier un coureur, mais ce n’est pas un record que l’on bat dans une course."},
-  "new-records-classements-faits-marquants-difficile-6":{"display":"Médaille","explanation":"Une médaille récompense un classement, mais n’est pas une catégorie de top 10."},
-  "new-records-classements-faits-marquants-facile-2":{"display":"Canada","explanation":"Le Canada est un très grand pays par sa superficie, mais sa population est trop faible pour compter parmi les pays les plus peuplés du monde."},
-  "new-records-classements-faits-marquants-facile-3":{"display":"Chronomètre","explanation":"Un chronomètre mesure la vitesse, mais n’est pas un animal."},
-  "new-records-classements-faits-marquants-facile-4":{"display":"Mont Blanc","explanation":"Le Mont Blanc est une montagne très célèbre, mais il est bien plus bas que les neuf plus hauts sommets du monde."},
-  "new-records-classements-faits-marquants-facile-5":{"display":"Lac Léman","explanation":"Le lac Léman est une grande étendue d’eau, mais pas un fleuve."},
-  "new-records-classements-faits-marquants-facile-6":{"display":"Nice","explanation":"Nice est une ville touristique très visitée, mais elle ne figure pas parmi les villes mondiales les plus visitées de cette sélection."},
-  "new-records-classements-faits-marquants-facile-7":{"display":"Avatar, le dernier maître de l’air","explanation":"Avatar, le dernier maître de l’air est une série, pas un film de box-office."},
-  "new-records-classements-faits-marquants-moyen-1":{"display":"Médaille d’or","explanation":"Une médaille est une récompense, pas une sportive ou un sportif."},
-  "new-records-classements-faits-marquants-moyen-2":{"display":"iPad","explanation":"L’iPad est un produit très connu d’Apple, mais ce n’est pas une entreprise."},
-  "new-records-classements-faits-marquants-moyen-3":{"display":"Ballon","explanation":"Un ballon est l’objet du football, pas une sélection nationale."},
-  "new-records-classements-faits-marquants-moyen-4":{"display":"Spotify","explanation":"Spotify permet d’écouter des albums, mais n’est pas un album."},
-  "new-records-classements-faits-marquants-moyen-5":{"display":"Navigateur web","explanation":"Un navigateur permet d’accéder aux réseaux, mais n’est pas un réseau social."},
-  "new-records-classements-faits-marquants-moyen-6":{"display":"Euro","explanation":"L’euro est une monnaie, pas une langue."},
-  "new-records-classements-faits-marquants-moyen-7":{"display":"Mont Blanc","explanation":"Le mont Blanc est très haut, mais ce n’est pas un monument."},
-  "new-sexe-relations-substances-difficile-2":{"display":"Choisir son dessert","explanation":"Choisir son dessert est une décision personnelle, mais ce n’est pas une situation qui demande un consentement explicite."},
-  "new-sexe-relations-substances-difficile-3":{"display":"Amitié","explanation":"L’amitié est une relation importante, mais pas une forme de relation amoureuse."},
-  "new-sexe-relations-substances-difficile-4":{"display":"Choisir un parfum","explanation":"Choisir un parfum relève du bien-être personnel, mais ce n’est pas un motif de consultation en santé sexuelle."},
-  "new-sexe-relations-substances-difficile-5":{"display":"Respect mutuel","explanation":"Le respect mutuel est un signe sain, pas un signe de relation toxique."},
-  "new-sexe-relations-substances-difficile-6":{"display":"Prévisions météo","explanation":"Les prévisions météo peuvent être personnelles, mais elles ne sont pas privées au point de nécessiter une autorisation de partage."},
-  "new-sexe-relations-substances-facile-1":{"display":"Regarder son téléphone sans arrêt","explanation":"Ignorer l’autre pour son téléphone est un signe négatif, pas un bon rendez-vous."},
-  "new-sexe-relations-substances-facile-2":{"display":"Ne vouloir rencontrer personne","explanation":"Ne vouloir rencontrer personne contredit l’objectif d’une application de rencontre."},
-  "new-sexe-relations-substances-facile-3":{"display":"Code de carte bancaire","explanation":"Le code bancaire est une information intime, mais ce n’est pas un sujet habituel à aborder au début d’une relation."},
-  "new-sexe-relations-substances-facile-4":{"display":"Ignorer tous les messages","explanation":"Ignorer l’autre ne montre pas de l’affection."},
-  "new-sexe-relations-substances-facile-5":{"display":"Respect mutuel","explanation":"Le respect mutuel est sain, pas une raison évidente de rompre."},
-  "new-sexe-relations-substances-facile-6":{"display":"Manipulation","explanation":"La manipulation caractérise une relation malsaine, pas une relation saine."},
-  "new-sexe-relations-substances-facile-7":{"display":"Salle d’attente","explanation":"Une salle d’attente est un lieu où l’on peut se retrouver, mais ce n’est pas un cadre classique de premier rendez-vous."},
-  "new-sexe-relations-substances-moyen-1":{"display":"Test de grossesse","explanation":"Un test de grossesse est lié à la santé sexuelle, mais ce n’est pas un moyen de contraception."},
-  "new-sexe-relations-substances-moyen-2":{"display":"Grossesse","explanation":"La grossesse est liée à la sexualité, mais ce n’est pas une infection sexuellement transmissible."},
-  "new-sexe-relations-substances-moyen-3":{"display":"Ne jamais dire non","explanation":"Ne jamais dire non est l’inverse d’une limite claire."},
-  "new-sexe-relations-substances-moyen-4":{"display":"Conduire prudemment","explanation":"Conduire prudemment est un comportement souhaitable, mais ce n’est pas un signe permettant de reconnaître une ivresse."},
-  "new-sexe-relations-substances-moyen-5":{"display":"Hydratation","explanation":"L’hydratation est un réflexe de soin, mais elle n’est pas un risque associé aux drogues."},
-  "new-sexe-relations-substances-moyen-6":{"display":"Dealer","explanation":"Un dealer peut être lié aux substances, mais il ne constitue pas une personne ou un service de secours à contacter."},
-  "new-sexe-relations-substances-moyen-7":{"display":"Boire de l’eau","explanation":"Boire de l’eau peut accompagner une soirée, mais cela n’empêche pas les interactions dangereuses entre alcool et médicaments."},
-  "new-histoire-grandes-epoques-facile-1":{"display":"Empire ottoman","explanation":"L’Empire ottoman est une grande civilisation historique, mais n’appartient pas à l’Antiquité."},
-  "easy-outils-bricolage":{"display":"Bricoleur","explanation":"Un bricoleur utilise des outils, mais n’est pas un outil."},
-  "easy-pieces-maison":{"display":"Façade","explanation":"La façade appartient bien à une maison, mais ce n’est ni une pièce ni un espace où l’on vit."},
-  "medium-symboles-entretien-textile":{"display":"Taille M","explanation":"Une taille peut figurer sur une étiquette de vêtement, mais ce n’est pas une indication d’entretien."},
-  "medium-zones-refrigerateur":{"display":"Ustensiles de cuisine","explanation":"Les ustensiles servent à cuisiner, mais ils ne constituent pas un type de produit à ranger dans le réfrigérateur."},
-  "new-maison-objets-bricolage-difficile-1":{"display":"Tissu","explanation":"Le tissu est un matériau utilisé pour l’ameublement, mais pas un matériau de bricolage courant comme ceux demandés."},
-  "new-maison-objets-bricolage-difficile-2":{"display":"Télécommande","explanation":"Une télécommande peut traîner près du lit, mais elle ne fait pas partie des objets typiquement posés sur une table de nuit."},
-  "new-maison-objets-bricolage-difficile-3":{"display":"Mettre du désordre","explanation":"Le désordre concerne l’organisation de la maison, mais c’est l’opposé d’une raison de ranger."},
-  "new-maison-objets-bricolage-difficile-4":{"display":"Panne d’ordinateur","explanation":"Une panne d’ordinateur peut appeler une réparation, mais elle ne fait pas partie des petits objets domestiques qu’on répare soi-même ici."},
-  "new-maison-objets-bricolage-difficile-5":{"display":"Réfrigérateur classique","explanation":"Un réfrigérateur classique est un appareil domestique, mais pas un objet connecté."},
-  "new-maison-objets-bricolage-difficile-6":{"display":"Salle à manger","explanation":"Une salle à manger est une pièce de la maison, mais ce n’est pas un lieu prévu pour stocker des affaires."},
-  "new-maison-objets-bricolage-facile-1":{"display":"Lave-linge","explanation":"Un lave-linge est un appareil du foyer, mais on ne le trouve pas normalement dans une cuisine."},
-  "new-maison-objets-bricolage-facile-2":{"display":"Tabouret de bar","explanation":"Un tabouret de bar est un meuble, mais il ne fait pas partie du mobilier typique d’un salon."},
-  "new-maison-objets-bricolage-facile-3":{"display":"Télécommande","explanation":"Une télécommande est un objet domestique courant, mais elle ne sert pas à nettoyer."},
-  "new-maison-objets-bricolage-facile-4":{"display":"Changer de décoration","explanation":"Changer la décoration concerne un logement, mais ce n’est pas une étape nécessaire à un déménagement."},
-  "new-maison-objets-bricolage-moyen-1":{"display":"Balai","explanation":"Un balai sert au ménage, mais n’est pas un appareil électroménager."},
-  "new-maison-objets-bricolage-moyen-2":{"display":"Télévision","explanation":"Une télévision est un objet domestique, mais elle n’est pas habituellement rangée dans un garage."},
-  "new-maison-objets-bricolage-moyen-3":{"display":"Rideau","explanation":"Un rideau est fixé à une tringle, mais on ne l’accroche pas directement au mur comme les objets demandés."},
-  "new-maison-objets-bricolage-moyen-4":{"display":"Toit","explanation":"Le toit est un élément de la maison, mais ce n’est pas une pièce."},
-  "new-maison-objets-bricolage-moyen-5":{"display":"Panne d’ascenseur","explanation":"Une panne d’ascenseur concerne un immeuble, mais ce n’est pas un problème domestique à l’intérieur d’une maison."},
-  "medium-doctor-who-neuf-incarnations":{"display":"Le Maître","explanation":"Le Maître est un personnage de Doctor Who, mais pas une incarnation du Docteur."},
-  "medium-ghostbusters-neuf-personnages":{"display":"Gandalf","explanation":"Gandalf est une figure culte, mais n’est pas un personnage de Ghostbusters."},
-  "medium-mcu-disney-plus-neuf-premieres":{"display":"The Batman","explanation":"The Batman est lié aux super-héros, mais ce n’est pas une série Marvel Studios sur Disney+."},
-  "new-celebrites-personnalites-difficile-1":{"display":"Taylor Swift","explanation":"Taylor Swift est connue dans le monde entier, mais elle n’est pas française."},
-  "new-celebrites-personnalites-facile-1":{"display":"Ryan Gosling","explanation":"Ryan Gosling est un acteur connu, mais il est canadien et non américain."},
-  "new-celebrites-personnalites-facile-2":{"display":"Audrey Hepburn","explanation":"Audrey Hepburn est une actrice culte, mais elle n’est pas française."},
-  "new-celebrites-personnalites-facile-3":{"display":"Zinedine Zidane","explanation":"Zinedine Zidane est célèbre mondialement, mais pas grâce à Internet."},
-  "new-celebrites-personnalites-facile-4":{"display":"Nagui","explanation":"Nagui est une figure de télévision, mais pas un chef."},
-  "new-celebrites-personnalites-facile-5":{"display":"Nagui","explanation":"Nagui peut être drôle à la télévision, mais n’est pas un humoriste."},
-  "new-celebrites-personnalites-facile-6":{"display":"Jean Dujardin","explanation":"Jean Dujardin est connu sous son prénom et son nom, pas un seul nom ou pseudonyme."},
-  "new-celebrites-personnalites-facile-7":{"display":"Zinedine Zidane","explanation":"Zinedine Zidane est une personnalité très connue, mais il n’a pas lancé une marque au sens demandé."},
-  "play-celebrities-denzel":{"display":"Titanic","explanation":"Titanic est un film célèbre, mais Denzel Washington n’y joue pas."},
-  "play-celebrities-dicaprio":{"display":"Men in Black","explanation":"Men in Black est un film connu, mais Leonardo DiCaprio n’y joue pas."},
-  "play-celebrities-dujardin":{"display":"Inception","explanation":"Inception est un film célèbre, mais Jean Dujardin n’y joue pas."},
-  "play-celebrities-jennifer-lawrence":{"display":"Titanic","explanation":"Titanic est un film célèbre, mais Jennifer Lawrence n’y joue pas."},
-  "play-celebrities-meryl":{"display":"Fight Club","explanation":"Fight Club est un film culte, mais Meryl Streep n’y joue pas."},
-  "play-celebrities-portman":{"display":"Titanic","explanation":"Titanic est un film célèbre, mais Natalie Portman n’y joue pas."},
-  "play-celebrities-scarlett":{"display":"Jurassic Park","explanation":"Jurassic Park est un film célèbre, mais Scarlett Johansson n’y joue pas."},
-  "play-celebrities-tom-cruise":{"display":"Die Hard","explanation":"Die Hard est un film d’action culte, mais Tom Cruise n’y joue pas."},
-  "play-celebrities-will-smith":{"display":"Titanic","explanation":"Titanic est un film célèbre, mais Will Smith n’y joue pas."},
-  "new-jeux-video-difficile-1":{"display":"The Sims","explanation":"The Sims est un jeu vidéo connu, mais pas un jeu de course."},
-  "new-jeux-video-difficile-2":{"display":"FIFA","explanation":"FIFA est un jeu de sport, pas un jeu de survie."},
-  "new-jeux-video-difficile-3":{"display":"Box Internet","explanation":"Une box Internet aide à jouer en ligne, mais ce n’est pas un accessoire de jeu."},
-  "new-jeux-video-difficile-4":{"display":"Grand Theft Auto V","explanation":"Grand Theft Auto V est un jeu vidéo très connu, mais il n’a pas été adapté officiellement au cinéma ou en série."},
-  "new-jeux-video-difficile-5":{"display":"Console","explanation":"Une console sert à jouer en ligne, mais ce n’est pas un terme de jargon utilisé dans les parties."},
-  "new-jeux-video-difficile-6":{"display":"Batterie vide","explanation":"Une batterie vide peut interrompre une session, mais elle ne donne pas une raison de recommencer la partie."},
-  "new-jeux-video-facile-1":{"display":"Pikachu","explanation":"Pikachu est un personnage Pokémon, pas un personnage de Mario."},
-  "new-jeux-video-facile-2":{"display":"Mario Kart","explanation":"Mario Kart est un jeu de course, pas un jeu vidéo de sport."},
-  "new-jeux-video-facile-3":{"display":"Mario","explanation":"Mario est un personnage de jeu vidéo, mais ce n’est pas une console."},
-  "new-jeux-video-facile-4":{"display":"Manette","explanation":"La manette sert à contrôler le jeu, mais ce n’est pas un objet que le personnage ramasse dans le jeu."},
-  "new-jeux-video-facile-5":{"display":"Tetris","explanation":"Tetris est un jeu célèbre, mais pas un jeu en monde ouvert."},
-  "new-jeux-video-facile-6":{"display":"Mario","explanation":"Mario est une mascotte majeure du jeu vidéo, mais ce n’est pas un Pokémon."},
-  "new-jeux-video-facile-7":{"display":"Gagner la partie","explanation":"Gagner met normalement fin à la partie avec succès, mais ce n’est pas une cause de défaite."},
-  "new-jeux-video-moyen-1":{"display":"PlayStation","explanation":"La PlayStation permet de jouer à de nombreux genres, mais elle est une console et non un genre de jeu."},
-  "new-jeux-video-moyen-2":{"display":"Tetris","explanation":"Tetris se joue seul, pas en équipe."},
-  "new-jeux-video-moyen-3":{"display":"Joueur professionnel","explanation":"Un joueur professionnel travaille dans l’univers du jeu vidéo, mais il ne participe pas directement à la création d’un jeu."},
-  "new-jeux-video-moyen-4":{"display":"Mario","explanation":"Mario est un personnage de jeu vidéo très connu, mais ce n’est pas une héroïne."},
-  "new-jeux-video-moyen-5":{"display":"Joystick","explanation":"Un joystick est du matériel utilisé pour jouer, mais ce n’est pas un studio de développement."},
-  "new-jeux-video-moyen-6":{"display":"Pikachu","explanation":"Pikachu est un personnage populaire, mais pas un méchant de jeu vidéo."},
-  "new-sciences-inventions-difficile-1":{"display":"Caoutchouc","explanation":"Le caoutchouc est couramment isolant, pas conducteur électrique."},
-  "new-sciences-inventions-difficile-2":{"display":"Drone","explanation":"Un drone est une technologie aérienne, mais ce n’est pas une technologie utilisée dans l’espace."},
-  "new-sciences-inventions-difficile-3":{"display":"Antibiotique","explanation":"Un antibiotique peut soigner certaines infections, mais ce n’est ni une maladie ni un vaccin."},
-  "new-sciences-inventions-difficile-4":{"display":"Napoléon","explanation":"Napoléon a marqué l’histoire, mais n’est pas une femme scientifique."},
-  "new-sciences-inventions-difficile-5":{"display":"Calculatrice","explanation":"Une calculatrice sert à faire des calculs, mais elle n’observe ni ne mesure directement une grandeur."},
-  "new-sciences-inventions-difficile-6":{"display":"Astrologie","explanation":"L’astrologie évoque les astres comme les sciences, mais ce n’est pas une notion scientifique enseignée comme telle."},
-  "new-sciences-inventions-facile-1":{"display":"Foie","explanation":"Le foie est un organe important, mais il n’est pas visible à l’extérieur du corps."},
-  "new-sciences-inventions-facile-2":{"display":"Cœur","explanation":"Le cœur est un organe, pas un os."},
-  "new-sciences-inventions-facile-3":{"display":"Chaise","explanation":"Une chaise est un objet quotidien, mais elle n’a pas constitué une invention transformatrice comme celles demandées."},
-  "new-sciences-inventions-facile-4":{"display":"Mesurer","explanation":"« Mesurer » est l’action réalisée, pas une grandeur que l’on mesure."},
-  "new-sciences-inventions-facile-5":{"display":"Panneau solaire","explanation":"Un panneau solaire capte l’énergie, mais ce n’est pas une source d’énergie."},
-  "new-sciences-inventions-facile-6":{"display":"Microscope","explanation":"Le microscope est un outil de recherche, pas un animal utilisé dans la recherche."},
-  "new-sciences-inventions-facile-7":{"display":"Orage","explanation":"Un orage peut perturber les appareils, mais ce n’est pas un objet qui fonctionne avec une batterie."},
-  "new-sciences-inventions-moyen-2":{"display":"Technicien de laboratoire","explanation":"Un technicien de laboratoire travaille en science, mais il n’est pas un scientifique célèbre comme ceux demandés."},
-  "new-sciences-inventions-moyen-3":{"display":"Balance","explanation":"Une balance sert à mesurer une masse, mais ce n’est pas une unité de mesure."},
-  "new-sciences-inventions-moyen-4":{"display":"Prix Nobel","explanation":"Un prix Nobel est une récompense scientifique, pas un élément de laboratoire."},
-  "new-sciences-inventions-moyen-5":{"display":"Piste cyclable","explanation":"Une piste cyclable sert aux transports, mais n’est pas une invention."},
-  "play-science-moons":{"display":"Mars","explanation":"Mars est une planète, pas une lune."},
-  "play-science-organs":{"display":"Fémur","explanation":"Le fémur est un os, pas un organe."}
+  "easy-neuf-travaux-heracles": {
+    "display": "Jason",
+    "explanation": "Jason est un héros grec célèbre, mais il n’est pas l’un des travaux d’Héraclès."
+  },
+  "easy-objets-mythologie-grecque": {
+    "display": "Héraclès",
+    "explanation": "Héraclès est un héros de la mythologie grecque, pas un objet mythique."
+  },
+  "medium-argonautes-neuf": {
+    "display": "Pénélope",
+    "explanation": "Pénélope appartient à la mythologie grecque, mais ne fait pas partie de l’équipage des Argonautes."
+  },
+  "medium-creatures-nordiques": {
+    "display": "Cyclope",
+    "explanation": "Le cyclope est une créature de la mythologie grecque, pas nordique."
+  },
+  "medium-divinites-romaines-domaines": {
+    "display": "Odin",
+    "explanation": "Odin est une divinité nordique, pas romaine."
+  },
+  "medium-heros-legendes-monde": {
+    "display": "Hercule",
+    "explanation": "Hercule est un héros légendaire, pas une culture à laquelle associer un héros."
+  },
+  "medium-metamorphoses-zeus": {
+    "display": "Poséidon",
+    "explanation": "Poséidon est un dieu grec, pas une forme prise par Zeus."
+  },
+  "medium-rois-mythiques-grecs": {
+    "display": "Mont Olympe",
+    "explanation": "Le mont Olympe appartient à l’univers mythologique grec, mais ce n’est pas une cité ou région gouvernée par un roi mythique."
+  },
+  "new-arts-litterature-patrimoine-difficile-1": {
+    "display": "Victor Hugo",
+    "explanation": "Victor Hugo est le nom réel d’un écrivain, pas un nom de plume."
+  },
+  "new-arts-litterature-patrimoine-difficile-2": {
+    "display": "Virginia Woolf",
+    "explanation": "Virginia Woolf est une autrice majeure, mais elle appartient au monde anglophone."
+  },
+  "new-arts-litterature-patrimoine-difficile-3": {
+    "display": "Louvre",
+    "explanation": "Le Louvre est un musée, pas un site archéologique."
+  },
+  "new-arts-litterature-patrimoine-difficile-4": {
+    "display": "Guernica",
+    "explanation": "Guernica est une œuvre célèbre, mais elle ne représente pas une personne précise."
+  },
+  "new-arts-litterature-patrimoine-difficile-5": {
+    "display": "Palme d’or",
+    "explanation": "La Palme d’or est une récompense de cinéma, pas un prix littéraire."
+  },
+  "new-arts-litterature-patrimoine-difficile-6": {
+    "display": "Renaissance",
+    "explanation": "La Renaissance est une période culturelle, pas un mythe."
+  },
+  "new-arts-litterature-patrimoine-facile-1": {
+    "display": "Agatha Christie",
+    "explanation": "Agatha Christie est une écrivaine célèbre, mais elle est britannique et non française."
+  },
+  "new-arts-litterature-patrimoine-moyen-1": {
+    "display": "Stade de France",
+    "explanation": "Le Stade de France est un monument contemporain, mais il n’est pas classé ou protégé au sens patrimonial demandé."
+  },
+  "easy-marques-alimentaires-produits": {
+    "display": "Dior — parfum",
+    "explanation": "Dior et son parfum forment une association de marque très connue, mais ne relèvent pas de l’alimentaire."
+  },
+  "easy-produits-entreprises-tech": {
+    "display": "Nestlé — Nespresso",
+    "explanation": "Nestlé est bien derrière Nespresso, mais il ne s’agit pas d’une entreprise technologique."
+  },
+  "medium-confiseries-groupes": {
+    "display": "Nutella — Ferrero",
+    "explanation": "Nutella est fabriqué par Ferrero, mais c’est une pâte à tartiner et non une confiserie."
+  },
+  "medium-fondateurs-marques-tech": {
+    "display": "Tim Cook",
+    "explanation": "Tim Cook dirige Apple, mais il n’en est pas le fondateur."
+  },
+  "medium-logos-formes-symboles": {
+    "display": "Mickey",
+    "explanation": "Mickey est un personnage emblématique de Disney, mais pas un symbole de logo demandé."
+  },
+  "medium-marques-groupes-automobiles": {
+    "display": "Tesla — Toyota",
+    "explanation": "Tesla et Toyota sont deux marques automobiles, mais Toyota n’est pas le groupe propriétaire de Tesla."
+  },
+  "medium-parfums-maisons": {
+    "display": "Sephora",
+    "explanation": "Sephora vend des parfums, mais ce n’est pas une maison de parfumerie."
+  },
+  "medium-slogans-marques": {
+    "display": "Just Do It",
+    "explanation": "« Just Do It » est un slogan très connu, mais pas le nom d’une marque."
+  },
+  "new-marques-produits-shopping-difficile-1": {
+    "display": "Frais de dossier",
+    "explanation": "Les frais de dossier peuvent intervenir lors d’un achat, mais ils augmentent le prix au lieu d’être une promotion."
+  },
+  "new-marques-produits-shopping-difficile-2": {
+    "display": "T-shirt sans logo",
+    "explanation": "Un t-shirt est un produit courant, mais sans logo apparent il ne porte pas une marque visible comme le demande la question."
+  },
+  "new-marques-produits-shopping-difficile-3": {
+    "display": "Lacoste",
+    "explanation": "Lacoste est une marque très connue, mais elle n’est pas une marque alimentaire."
+  },
+  "new-marques-produits-shopping-difficile-4": {
+    "display": "Entrepôt",
+    "explanation": "Un entrepôt est lié au commerce, mais ce n’est pas un élément que l’on trouve habituellement dans un centre commercial."
+  },
+  "new-marques-produits-shopping-difficile-5": {
+    "display": "Remboursement",
+    "explanation": "Un remboursement intervient après un achat, mais ce n’est pas un moyen de recevoir une commande."
+  },
+  "new-marques-produits-shopping-difficile-6": {
+    "display": "Panier vide",
+    "explanation": "Un panier vide survient avant la commande, pas comme problème après une commande passée."
+  },
+  "new-marques-produits-shopping-facile-1": {
+    "display": "Lego",
+    "explanation": "Lego est une marque célèbre, mais elle ne fabrique pas de vêtements."
+  },
+  "new-marques-produits-shopping-facile-2": {
+    "display": "Michelin",
+    "explanation": "Michelin est une marque automobile très présente grâce aux pneus, mais ne fabrique pas d’automobiles."
+  },
+  "new-marques-produits-shopping-facile-3": {
+    "display": "Carte Vitale",
+    "explanation": "La carte Vitale est utilisée en pharmacie, mais ce n’est pas un produit que l’on y achète."
+  },
+  "new-marques-produits-shopping-facile-4": {
+    "display": "Produit parfait",
+    "explanation": "Un produit parfait n’est pas une raison de le retourner."
+  },
+  "new-marques-produits-shopping-facile-5": {
+    "display": "Sephora",
+    "explanation": "Sephora est une enseigne commerciale, mais ce n’est pas un supermarché."
+  },
+  "easy-appareils-menagers": {
+    "display": "Balai",
+    "explanation": "Un balai sert au ménage, mais ce n’est pas un appareil électroménager."
+  },
+  "easy-arbres-feuillus-europe": {
+    "display": "Sapin",
+    "explanation": "Le sapin est un conifère et non un arbre feuillu."
+  },
+  "easy-biomes-terrestres": {
+    "display": "Océan",
+    "explanation": "L’océan est un milieu marin, pas un biome terrestre."
+  },
+  "easy-boissons-chaudes-neuf": {
+    "display": "Gaspacho",
+    "explanation": "Le gaspacho est servi froid, pas comme boisson chaude."
+  },
+  "easy-creatures-mythologiques-neuf": {
+    "display": "Odin",
+    "explanation": "Odin est une divinité nordique, pas une créature grecque."
+  },
+  "easy-desserts-francais-neuf": {
+    "display": "Tiramisu",
+    "explanation": "Le tiramisu est italien, pas un dessert français."
+  },
+  "easy-dieux-egyptiens-attributs": {
+    "display": "Hadès",
+    "explanation": "Hadès est un dieu grec, pas égyptien."
+  },
+  "easy-epices-neuf": {
+    "display": "Romarin",
+    "explanation": "Le romarin est un aromate, pas une épice."
+  },
+  "easy-fast-saga-neuf-premiers": {
+    "display": "Need for Speed",
+    "explanation": "Need for Speed est un film automobile hors de la saga Fast & Furious."
+  },
+  "easy-figures-nordiques-celebres": {
+    "display": "Zeus",
+    "explanation": "Zeus appartient à la mythologie grecque, pas nordique."
+  },
+  "easy-fournitures-scolaires": {
+    "display": "Cartable",
+    "explanation": "Un cartable est un contenant scolaire, pas une fourniture."
+  },
+  "easy-fromages-francais-neuf": {
+    "display": "Mozzarella",
+    "explanation": "La mozzarella est un fromage italien, pas français."
+  },
+  "easy-fruits-agrumes-neuf": {
+    "display": "Kiwi",
+    "explanation": "Le kiwi est un fruit, mais pas un agrume."
+  },
+  "easy-grands-felins": {
+    "display": "Hyène",
+    "explanation": "La hyène est un carnivore, mais elle n’appartient pas aux félins."
+  },
+  "easy-heros-guerre-troie": {
+    "display": "Hercule",
+    "explanation": "Hercule est antérieur à la guerre de Troie."
+  },
+  "new-musique-moyen-1": {
+    "display": "Tambour",
+    "explanation": "Le tambour est un instrument à percussion, pas à cordes."
+  },
+  "new-geographie-pays-monde-difficile-1": {
+    "display": "New York",
+    "explanation": "New York est une grande ville, mais pas une capitale."
+  },
+  "new-sport-facile-1": {
+    "display": "Cyclisme",
+    "explanation": "Le cyclisme n’est pas un sport collectif au sens habituel."
+  },
+  "medium-tarantino-neuf-jusqua-hateful-eight": {
+    "display": "True Romance",
+    "explanation": "True Romance a été écrit par Tarantino, mais réalisé par Tony Scott."
+  },
+  "new-sciences-inventions-moyen-1": {
+    "display": "Éruption volcanique",
+    "explanation": "Une éruption volcanique est géologique, pas météorologique."
+  },
+  "easy-neuf-civilisations-antiques": {
+    "display": "Empire ottoman",
+    "explanation": "L’Empire ottoman est historique, mais n’appartient pas à l’Antiquité."
+  },
+  "medium-neuf-premiers-need-for-speed": {
+    "display": "Gran Turismo",
+    "explanation": "Gran Turismo est un jeu de course, mais pas Need for Speed."
+  },
+  "new-economie-entreprises-consommation-difficile-1": {
+    "display": "Responsable marketing",
+    "explanation": "Le marketing est voisin de la vente, mais n’est pas directement la vente."
+  },
+  "easy-marques-sport": {
+    "display": "Coca-Cola",
+    "explanation": "Coca-Cola sponsorise le sport sans fabriquer de vêtements ou équipements sportifs."
+  },
+  "medium-cocktails-alcools-base": {
+    "display": "Mojito — menthe",
+    "explanation": "La menthe est un ingrédient, pas l’alcool principal du mojito."
+  },
+  "new-series-television-difficile-1": {
+    "display": "Jack Bauer",
+    "explanation": "Jack Bauer est un agent, pas un enquêteur de série."
+  },
+  "easy-logos-animaux": {
+    "display": "Étoile",
+    "explanation": "Une étoile est un symbole de logo, mais pas un animal."
+  },
+  "medium-elements-velo": {
+    "display": "Casque",
+    "explanation": "Le casque équipe le cycliste, mais ne fait pas partie du vélo."
+  },
+  "new-sexe-relations-substances-difficile-1": {
+    "display": "Boire du café",
+    "explanation": "Le café ne fait pas dégriser et ne réduit pas les risques liés à l’alcool."
+  },
+  "new-records-classements-faits-marquants-facile-1": {
+    "display": "Guinness",
+    "explanation": "Guinness est lié aux records, mais n’est pas une catégorie de record."
+  },
+  "easy-pixar-neuf-premiers": {
+    "display": "Shrek",
+    "explanation": "Shrek est un film d’animation très connu, mais il a été produit par DreamWorks et non Pixar."
+  },
+  "easy-princesses-neuf-films": {
+    "display": "Le Roi Lion",
+    "explanation": "Le Roi Lion est un classique Disney, mais n’introduit pas une princesse Disney."
+  },
+  "medium-david-fincher-neuf-premiers": {
+    "display": "Inception",
+    "explanation": "Inception est un film très connu, mais il a été réalisé par Christopher Nolan et non David Fincher."
+  },
+  "medium-don-bluth-neuf-premiers": {
+    "display": "Toy Story",
+    "explanation": "Toy Story est un film d’animation, mais il a été réalisé par John Lasseter et non Don Bluth."
+  },
+  "new-cinema-facile-1": {
+    "display": "Titanic",
+    "explanation": "Titanic est un film très connu, mais pas une saga de cinéma."
+  },
+  "new-cinema-facile-2": {
+    "display": "Gandalf",
+    "explanation": "Gandalf est un personnage emblématique, mais il appartient au Seigneur des anneaux et non à Star Wars."
+  },
+  "new-cinema-facile-3": {
+    "display": "Shrek",
+    "explanation": "Shrek est un film d’animation célèbre, mais ne fait pas partie de Pixar."
+  },
+  "new-cinema-facile-4": {
+    "display": "Brad Pitt",
+    "explanation": "Brad Pitt est un acteur très connu, mais il n’est pas français."
+  },
+  "new-cinema-facile-5": {
+    "display": "Shrek",
+    "explanation": "Shrek est un film d’animation célèbre, mais ne vient pas des studios Pixar."
+  },
+  "new-cinema-facile-6": {
+    "display": "Télécommande",
+    "explanation": "Une télécommande est liée à l’écran, mais n’est pas un objet que l’on achète au cinéma."
+  },
+  "new-rework-easy-mcu-neuf-premiers": {
+    "display": "The Batman",
+    "explanation": "The Batman est un film de super-héros, mais il ne fait pas partie du Marvel Cinematic Universe."
+  },
+  "new-rework-medium-aardman-neuf-longs": {
+    "display": "Toy Story",
+    "explanation": "Toy Story est un film d’animation, mais ne relève pas du studio Aardman."
+  },
+  "new-rework-medium-coen-neuf-premiers": {
+    "display": "Pulp Fiction",
+    "explanation": "Pulp Fiction est un film culte, mais il a été réalisé par Quentin Tarantino et non les frères Coen."
+  },
+  "new-rework-medium-miyazaki-neuf-premiers": {
+    "display": "Wallace et Gromit",
+    "explanation": "Wallace et Gromit relèvent d’Aardman, pas de Hayao Miyazaki."
+  },
+  "new-rework-medium-wes-anderson-neuf-premiers": {
+    "display": "Le Fabuleux Destin d’Amélie Poulain",
+    "explanation": "Le Fabuleux Destin d’Amélie Poulain est un film stylisé, mais il n’a pas été réalisé par Wes Anderson."
+  },
+  "play-animation-pixar": {
+    "display": "Shrek",
+    "explanation": "Shrek est un personnage d’animation très connu, mais ne vient pas d’un film Pixar."
+  },
+  "play-animation-vilains-disney": {
+    "display": "Darth Vader",
+    "explanation": "Darth Vader est un méchant culte, mais il n’appartient pas aux classiques Disney."
+  },
+  "play-cinema-star-wars": {
+    "display": "Gandalf",
+    "explanation": "Gandalf est une figure de fantasy célèbre, mais n’appartient pas à Star Wars."
+  },
+  "new-series-television-difficile-2": {
+    "display": "The Mandalorian",
+    "explanation": "The Mandalorian appartient à Star Wars, mais n’est pas adapté d’un jeu vidéo."
+  },
+  "new-series-television-difficile-3": {
+    "display": "Lost",
+    "explanation": "Lost est une série célèbre, mais elle n’est pas centrée sur le travail."
+  },
+  "new-series-television-difficile-4": {
+    "display": "The Mandalorian",
+    "explanation": "The Mandalorian relève de la science-fiction, mais n’est pas une série de super-héros."
+  },
+  "new-series-television-difficile-5": {
+    "display": "Koh-Lanta",
+    "explanation": "Koh-Lanta est une compétition télévisée, mais les candidats n’y cuisinent pas comme dans un programme culinaire."
+  },
+  "new-series-television-difficile-6": {
+    "display": "Changer de chaîne",
+    "explanation": "Changer de chaîne est un geste de télévision, mais il ne s’applique pas à une série regardée à la demande."
+  },
+  "new-series-television-facile-3": {
+    "display": "Game of Thrones",
+    "explanation": "Game of Thrones est une série très connue, mais elle n’est pas disponible sur Netflix."
+  },
+  "new-series-television-facile-4": {
+    "display": "Breaking Bad",
+    "explanation": "Breaking Bad est une série célèbre, mais elle est américaine et non française."
+  },
+  "new-series-television-moyen-1": {
+    "display": "House of the Dragon",
+    "explanation": "House of the Dragon est une série connue, mais elle ne se déroule pas dans un hôpital."
+  },
+  "new-series-television-moyen-2": {
+    "display": "Grey’s Anatomy",
+    "explanation": "Grey’s Anatomy est une série médicale, pas une série policière."
+  },
+  "play-tv-brooklyn-99": {
+    "display": "Joey Tribbiani",
+    "explanation": "Joey Tribbiani est un personnage de Friends, pas de Brooklyn Nine-Nine."
+  },
+  "play-tv-casa-papel": {
+    "display": "Walter White",
+    "explanation": "Walter White est un personnage de Breaking Bad, pas un braqueur de La Casa de Papel."
+  },
+  "play-tv-friends": {
+    "display": "Sheldon Cooper",
+    "explanation": "Sheldon Cooper est un personnage de The Big Bang Theory, pas de Friends."
+  },
+  "play-tv-game-thrones": {
+    "display": "Darth Vader",
+    "explanation": "Darth Vader appartient à Star Wars, pas à Game of Thrones."
+  },
+  "play-tv-kaamelott": {
+    "display": "Obélix",
+    "explanation": "Obélix appartient à Astérix, pas à Kaamelott."
+  },
+  "play-tv-office": {
+    "display": "Barney Stinson",
+    "explanation": "Barney Stinson est un personnage de How I Met Your Mother, pas de The Office US."
+  },
+  "play-tv-sex-education": {
+    "display": "Rue Bennett",
+    "explanation": "Rue Bennett est un personnage d’Euphoria, pas de Sex Education."
+  },
+  "play-tv-simpsons": {
+    "display": "Peter Griffin",
+    "explanation": "Peter Griffin est un personnage de Family Guy, pas des Simpson."
+  },
+  "play-tv-stranger-things": {
+    "display": "Wednesday Addams",
+    "explanation": "Wednesday Addams appartient à La Famille Addams, pas à Stranger Things."
+  },
+  "play-tv-the-boys": {
+    "display": "Spider-Man",
+    "explanation": "Spider-Man est un super-héros connu, mais n’appartient pas à The Boys."
+  },
+  "medium-dragon-ball-neuf-premiers-arcs": {
+    "display": "Water 7",
+    "explanation": "Water 7 est un arc de One Piece, pas de Dragon Ball."
+  },
+  "medium-one-piece-neuf-premiers-arcs": {
+    "display": "Tournoi de Cell",
+    "explanation": "Le Tournoi de Cell est un arc de Dragon Ball, pas de One Piece."
+  },
+  "medium-pokemon-neuf-premieres-sorties": {
+    "display": "Pokémon Écarlate et Violet",
+    "explanation": "Ce sont bien des jeux Pokémon sortis au Japon, mais ils sont beaucoup trop récents pour faire partie des premières grandes sorties de la série."
+  },
+  "medium-sandman-neuf-premiers-volumes": {
+    "display": "Watchmen",
+    "explanation": "Watchmen est un comics célèbre, mais pas un recueil de The Sandman."
+  },
+  "medium-walking-dead-neuf-premiers": {
+    "display": "Batman: Year One",
+    "explanation": "Batman: Year One est un comics célèbre, mais pas un recueil de The Walking Dead."
+  },
+  "new-jeux-jouets-divertissements-difficile-1": {
+    "display": "Dobble",
+    "explanation": "Dobble est bien un jeu de société, mais il se joue avec des cartes et non avec des dés."
+  },
+  "new-jeux-jouets-divertissements-difficile-2": {
+    "display": "Mario",
+    "explanation": "Mario est un personnage de jeu vidéo, mais n’appartient pas à l’univers Pokémon."
+  },
+  "new-jeux-jouets-divertissements-difficile-3": {
+    "display": "Cinéma",
+    "explanation": "Le cinéma est un loisir populaire comme la fête foraine, mais il ne propose pas les attractions demandées."
+  },
+  "new-jeux-jouets-divertissements-difficile-4": {
+    "display": "Respecter les règles",
+    "explanation": "Respecter les règles concerne directement une partie, mais c’est l’inverse d’une façon de tricher."
+  },
+  "new-jeux-jouets-divertissements-difficile-5": {
+    "display": "Aller dormir",
+    "explanation": "Aller dormir est une activité de soirée, mais ce n’est pas une raison de sortir un jeu de société."
+  },
+  "new-jeux-jouets-divertissements-difficile-6": {
+    "display": "Frais d’inscription",
+    "explanation": "Les frais d’inscription peuvent être associés à un concours, mais ils constituent un coût et non une récompense à gagner."
+  },
+  "new-jeux-jouets-divertissements-facile-1": {
+    "display": "Tetris",
+    "explanation": "Tetris est un jeu vidéo, pas un jeu de société."
+  },
+  "new-jeux-jouets-divertissements-facile-2": {
+    "display": "Tablette",
+    "explanation": "Une tablette peut se trouver dans une chambre d’enfant, mais ce n’est pas un jouet."
+  },
+  "new-jeux-jouets-divertissements-facile-3": {
+    "display": "Plateau de jeu",
+    "explanation": "Un plateau sert à de nombreux jeux de société, mais il n’est pas utilisé dans un jeu de cartes."
+  },
+  "new-jeux-jouets-divertissements-facile-4": {
+    "display": "Uno",
+    "explanation": "Uno est un jeu très connu, mais il faut un jeu de cartes pour y jouer."
+  },
+  "new-jeux-jouets-divertissements-facile-5": {
+    "display": "Harry Potter",
+    "explanation": "Harry Potter est un personnage littéraire célèbre, mais pas un personnage de bande dessinée."
+  },
+  "new-jeux-jouets-divertissements-facile-6": {
+    "display": "Batman",
+    "explanation": "Batman est un super-héros DC, pas Marvel."
+  },
+  "new-jeux-jouets-divertissements-facile-7": {
+    "display": "Spider-Man",
+    "explanation": "Spider-Man est un super-héros Marvel, pas DC."
+  },
+  "new-jeux-jouets-divertissements-moyen-1": {
+    "display": "Monopoly",
+    "explanation": "Monopoly est un jeu de société, pas un jeu de casino."
+  },
+  "new-jeux-jouets-divertissements-moyen-2": {
+    "display": "Dessin",
+    "explanation": "On peut créer un dessin à côté d’une construction, mais ce n’est pas un objet que l’on construit avec des briques Lego."
+  },
+  "medium-buteurs-finales-mondial-depuis-1986": {
+    "display": "Neymar",
+    "explanation": "Neymar est un grand footballeur, mais il n’a pas marqué en finale de Coupe du monde."
+  },
+  "medium-finalistes-euro-1960-1992": {
+    "display": "Brésil",
+    "explanation": "Le Brésil est une grande sélection, mais ne peut pas atteindre une finale de l’Euro masculin."
+  },
+  "new-sport-difficile-1": {
+    "display": "Surf",
+    "explanation": "Le surf est un sport de glisse, mais pas un sport d’hiver."
+  },
+  "new-sport-difficile-2": {
+    "display": "100 mètres",
+    "explanation": "Le 100 mètres est une épreuve de vitesse, pas d’endurance."
+  },
+  "new-sport-difficile-3": {
+    "display": "Boxe anglaise",
+    "explanation": "La boxe anglaise est un sport de combat, mais elle n’est pas née en Asie."
+  },
+  "new-sport-difficile-4": {
+    "display": "Roland-Garros",
+    "explanation": "Roland-Garros est un stade de tennis, pas de football."
+  },
+  "new-sport-difficile-5": {
+    "display": "France — Allemagne",
+    "explanation": "France — Allemagne est une grande affiche, mais pas un derby de clubs."
+  },
+  "new-sport-difficile-6": {
+    "display": "Supporter",
+    "explanation": "Un supporter participe à l’ambiance sportive, mais ce n’est pas un métier professionnel."
+  },
+  "new-sport-facile-2": {
+    "display": "Football",
+    "explanation": "Le football est collectif, mais pas un sport de précision."
+  },
+  "new-sport-facile-3": {
+    "display": "Formule 1",
+    "explanation": "La Formule 1 est une compétition automobile, pas un sport olympique."
+  },
+  "new-sport-facile-4": {
+    "display": "Casque audio",
+    "explanation": "Un casque audio est portable pendant une activité, mais n’est pas un objet sportif."
+  },
+  "new-sport-facile-5": {
+    "display": "Ski",
+    "explanation": "Le ski est un sport de plein air, mais ne se pratique pas à la plage."
+  },
+  "new-sport-facile-6": {
+    "display": "Regarder la télévision",
+    "explanation": "Regarder la télévision est un loisir, pas une raison de faire du sport."
+  },
+  "new-sport-moyen-1": {
+    "display": "Basketball",
+    "explanation": "Le basketball est physique, mais pas un sport de combat."
+  },
+  "new-sport-moyen-2": {
+    "display": "Athlétisme",
+    "explanation": "L’athlétisme est une discipline, pas une compétition précise."
+  },
+  "new-sport-moyen-3": {
+    "display": "Entraîneur",
+    "explanation": "Un entraîneur appartient au sport, mais n’est pas une sportive ou un sportif."
+  },
+  "play-sport-ball-games": {
+    "display": "Tennis",
+    "explanation": "Le tennis se joue avec une balle, mais ce n’est pas un sport collectif."
+  },
+  "play-sport-icons": {
+    "display": "Beyoncé",
+    "explanation": "Beyoncé est une icône mondiale, mais pas une sportive."
+  },
+  "play-sport-rackets": {
+    "display": "Golf",
+    "explanation": "Le golf utilise un club, pas une raquette."
+  },
+  "new-musique-difficile-1": {
+    "display": "Guitare",
+    "explanation": "La guitare est un instrument, pas une musique liée à une décennie."
+  },
+  "new-musique-difficile-2": {
+    "display": "Hans Zimmer",
+    "explanation": "Hans Zimmer compose pour le cinéma, pas dans le répertoire classique demandé."
+  },
+  "new-musique-difficile-3": {
+    "display": "Stromae",
+    "explanation": "Stromae est un artiste, mais pas un DJ."
+  },
+  "new-musique-difficile-4": {
+    "display": "Oscar",
+    "explanation": "Un Oscar récompense le cinéma, pas la musique."
+  },
+  "new-musique-difficile-5": {
+    "display": "Tom Cruise",
+    "explanation": "Tom Cruise est acteur, pas artiste musicien ayant joué dans un film."
+  },
+  "new-musique-difficile-6": {
+    "display": "But de football",
+    "explanation": "Un but peut faire du bruit, mais ne se produit pas pendant un concert."
+  },
+  "new-musique-facile-1": {
+    "display": "Enceinte",
+    "explanation": "Une enceinte diffuse de la musique, mais n’est pas un instrument."
+  },
+  "new-musique-facile-2": {
+    "display": "Guitare",
+    "explanation": "La guitare est un instrument, pas un style musical."
+  },
+  "new-musique-facile-3": {
+    "display": "Adele",
+    "explanation": "Adele est britannique, pas française."
+  },
+  "new-musique-facile-4": {
+    "display": "Daft Punk",
+    "explanation": "Daft Punk est un duo électronique, pas un groupe de rock."
+  },
+  "new-musique-facile-5": {
+    "display": "Stromae",
+    "explanation": "Stromae est un chanteur, pas une chanteuse pop."
+  },
+  "new-musique-facile-6": {
+    "display": "Joyeux anniversaire",
+    "explanation": "Joyeux anniversaire est une chanson de fête, pas de mariage."
+  },
+  "new-musique-facile-7": {
+    "display": "Spectateur",
+    "explanation": "Un spectateur est devant la scène, pas sur celle-ci."
+  },
+  "new-musique-moyen-2": {
+    "display": "Guitare",
+    "explanation": "La guitare est à cordes, pas à vent."
+  },
+  "new-musique-moyen-3": {
+    "display": "Se faire opérer",
+    "explanation": "Se faire opérer n’est pas une raison d’écouter de la musique."
+  },
+  "new-musique-moyen-4": {
+    "display": "Angèle",
+    "explanation": "Angèle est une chanteuse pop, pas une rappeuse."
+  },
+  "new-musique-moyen-5": {
+    "display": "Spotify",
+    "explanation": "Spotify est un service d’écoute, pas un festival."
+  },
+  "new-musique-moyen-6": {
+    "display": "Fan",
+    "explanation": "Un fan n’est pas un membre ni un rôle d’un groupe."
+  },
+  "new-musique-moyen-7": {
+    "display": "Jean-Jacques Goldman",
+    "explanation": "Jean-Jacques Goldman est connu sous son nom réel, pas un nom de scène."
+  },
+  "easy-taches-menageres": {
+    "display": "Regarder une série",
+    "explanation": "Regarder une série se fait à la maison, mais ce n’est pas une tâche ménagère."
+  },
+  "medium-documents-demarches": {
+    "display": "Carte de fidélité",
+    "explanation": "Une carte de fidélité est personnelle, mais pas un document administratif."
+  },
+  "new-vie-quotidienne-difficile-1": {
+    "display": "Ne rien prévoir",
+    "explanation": "Ne rien prévoir ne constitue pas une raison de prendre rendez-vous."
+  },
+  "new-vie-quotidienne-difficile-2": {
+    "display": "La maison",
+    "explanation": "La maison est le lieu que l’on quitte, pas un objet qu’on oublie en partant."
+  },
+  "new-vie-quotidienne-difficile-3": {
+    "display": "Acheter sans regarder les prix",
+    "explanation": "Acheter sans regarder les prix va à l’encontre d’une habitude d’économie."
+  },
+  "new-vie-quotidienne-difficile-4": {
+    "display": "Dans son lit",
+    "explanation": "On peut attendre au lit, mais ce n’est pas une situation où l’on fait la queue."
+  },
+  "new-vie-quotidienne-difficile-5": {
+    "display": "Oreiller",
+    "explanation": "Un oreiller est un objet du quotidien, mais ne se recharge pas."
+  },
+  "new-vie-quotidienne-difficile-6": {
+    "display": "Rater son bus",
+    "explanation": "Rater son bus est une contrariété, pas une petite victoire."
+  },
+  "new-vie-quotidienne-facile-1": {
+    "display": "S’endormir",
+    "explanation": "S’endormir est l’inverse de ce que l’on fait après le réveil."
+  },
+  "new-vie-quotidienne-facile-2": {
+    "display": "Oreiller",
+    "explanation": "Un oreiller sert au sommeil, mais ne se garde pas dans une poche."
+  },
+  "new-vie-quotidienne-facile-3": {
+    "display": "Rester chez soi",
+    "explanation": "Rester chez soi est l’inverse d’une raison de sortir."
+  },
+  "new-vie-quotidienne-facile-4": {
+    "display": "Déjeuner",
+    "explanation": "Déjeuner se fait habituellement au début de la journée, pas avant de dormir."
+  },
+  "new-vie-quotidienne-facile-5": {
+    "display": "Télévision",
+    "explanation": "Une télévision permet d’utiliser des applications, mais n’est pas une application."
+  },
+  "new-vie-quotidienne-facile-6": {
+    "display": "Gagner à la loterie",
+    "explanation": "Gagner à la loterie est une bonne nouvelle, pas un problème quotidien."
+  },
+  "new-vie-quotidienne-moyen-1": {
+    "display": "Objet retrouvé",
+    "explanation": "Un objet retrouvé n’est plus un objet que l’on cherche."
+  },
+  "new-vie-quotidienne-moyen-2": {
+    "display": "Fermer les yeux",
+    "explanation": "Fermer les yeux ne donne pas de raison de regarder son téléphone."
+  },
+  "new-vie-quotidienne-moyen-3": {
+    "display": "Réunion obligatoire",
+    "explanation": "Une réunion obligatoire relève du travail, pas d’une activité typique du dimanche."
+  },
+  "new-vie-quotidienne-moyen-4": {
+    "display": "Volcan",
+    "explanation": "Un volcan peut être en ville, mais n’est pas un service urbain."
+  },
+  "new-vie-quotidienne-moyen-5": {
+    "display": "Recevoir un colis",
+    "explanation": "Recevoir un colis est lié au trajet, mais n’arrive pas dans les transports eux-mêmes."
+  },
+  "new-vie-quotidienne-moyen-6": {
+    "display": "Réveil",
+    "explanation": "Un réveil peut être transporté dans un sac, mais ce n’est pas l’un des objets que l’on y garde habituellement."
+  },
+  "easy-metiers-sante": {
+    "display": "Patient",
+    "explanation": "Un patient appartient au domaine de la santé, mais ce n’est pas un métier."
+  },
+  "medium-disciplines-college": {
+    "display": "Récréation",
+    "explanation": "La récréation fait partie de la vie au collège, mais n’est pas une discipline enseignée."
+  },
+  "medium-metiers-batiment": {
+    "display": "Architecte",
+    "explanation": "Un architecte conçoit le bâtiment, mais n’est pas un métier exercé sur le chantier au sens demandé."
+  },
+  "new-travail-etudes-vie-de-bureau-difficile-1": {
+    "display": "Bonjour",
+    "explanation": "Bonjour est une formule professionnelle, mais pas une expression de réunion."
+  },
+  "new-travail-etudes-vie-de-bureau-difficile-2": {
+    "display": "Ordinateur",
+    "explanation": "Un ordinateur est un équipement de bureau, mais pas une fourniture."
+  },
+  "new-travail-etudes-vie-de-bureau-difficile-3": {
+    "display": "Spectateur",
+    "explanation": "Un spectateur assiste à une présentation, mais n’est pas un élément à préparer."
+  },
+  "new-travail-etudes-vie-de-bureau-difficile-4": {
+    "display": "Plage",
+    "explanation": "La plage peut permettre le télétravail, mais n’est pas un lieu de travail habituel hors bureau."
+  },
+  "new-travail-etudes-vie-de-bureau-difficile-5": {
+    "display": "Être parfaitement satisfait",
+    "explanation": "Être parfaitement satisfait de son emploi n’est pas une raison de le changer."
+  },
+  "new-travail-etudes-vie-de-bureau-difficile-6": {
+    "display": "Partir en vacances",
+    "explanation": "Partir en vacances peut suivre un emploi, mais n’est pas une action du premier jour."
+  },
+  "new-travail-etudes-vie-de-bureau-facile-1": {
+    "display": "Collègue",
+    "explanation": "Un collègue travaille au bureau, mais n’est pas un objet posé dessus."
+  },
+  "new-travail-etudes-vie-de-bureau-facile-2": {
+    "display": "J’étais en avance",
+    "explanation": "Être en avance ne constitue pas une excuse pour arriver en retard."
+  },
+  "new-travail-etudes-vie-de-bureau-facile-3": {
+    "display": "Dormir profondément",
+    "explanation": "Dormir profondément ne fait pas partie d’une réunion de travail."
+  },
+  "new-travail-etudes-vie-de-bureau-facile-4": {
+    "display": "Imprimante",
+    "explanation": "Une imprimante est un outil de bureau, mais pas un outil collaboratif."
+  },
+  "new-travail-etudes-vie-de-bureau-facile-5": {
+    "display": "Client",
+    "explanation": "Un client peut interagir avec l’équipe, mais n’est pas un type de collègue."
+  },
+  "new-travail-etudes-vie-de-bureau-moyen-1": {
+    "display": "Mathématiques",
+    "explanation": "Les mathématiques sont une matière générale, mais pas une matière propre à l’école de commerce."
+  },
+  "new-travail-etudes-vie-de-bureau-moyen-2": {
+    "display": "Signature du contrat",
+    "explanation": "La signature clôt le recrutement, mais n’est pas une étape de sélection à proprement parler."
+  },
+  "new-travail-etudes-vie-de-bureau-moyen-3": {
+    "display": "Photo de vacances",
+    "explanation": "Une photo de vacances peut illustrer une personne, mais n’est pas un élément de CV."
+  },
+  "new-travail-etudes-vie-de-bureau-moyen-4": {
+    "display": "Trafic routier",
+    "explanation": "Le trafic routier peut affecter le travail, mais n’est pas un avantage proposé par l’entreprise."
+  },
+  "play-tech-creative-software": {
+    "display": "PowerPoint",
+    "explanation": "PowerPoint sert à préparer des présentations, mais ce n’est pas un logiciel de création d’images, de vidéos ou de sons."
+  },
+  "easy-transports-urbains": {
+    "display": "Remorque",
+    "explanation": "Une remorque circule sur la route, mais elle ne constitue pas un moyen de transport urbain autonome."
+  },
+  "medium-neuf-langues-ue-alphabetique": {
+    "display": "Euro",
+    "explanation": "L’euro est lié à l’Union européenne, mais ce n’est pas une langue officielle."
+  },
+  "medium-panneaux-danger": {
+    "display": "Parking autorisé",
+    "explanation": "Un parking autorisé est une indication, pas un danger signalé par un triangle."
+  },
+  "new-voyage-vacances-difficile-1": {
+    "display": "Bouilloire",
+    "explanation": "Une bouilloire peut être utile pendant des vacances, mais elle n’est pas un objet de plage."
+  },
+  "new-voyage-vacances-difficile-2": {
+    "display": "Tirage au sort",
+    "explanation": "Un tirage au sort peut décider d’un voyage, mais n’est pas une raison de choisir une destination."
+  },
+  "new-voyage-vacances-difficile-3": {
+    "display": "Billet de train",
+    "explanation": "Un billet de train est utile en voyage, mais n’est pas habituellement photographié comme souvenir."
+  },
+  "new-voyage-vacances-difficile-4": {
+    "display": "Prendre un taxi seul",
+    "explanation": "Prendre un taxi seul peut coûter plus cher et ne constitue pas une économie de voyage."
+  },
+  "new-voyage-vacances-difficile-5": {
+    "display": "Dans son salon",
+    "explanation": "On peut être désorienté chez soi, mais ce n’est pas une situation typique où l’on se perd."
+  },
+  "new-voyage-vacances-difficile-6": {
+    "display": "Refaire sa valise",
+    "explanation": "Refaire sa valise prépare un nouveau départ, pas le retour de vacances."
+  },
+  "new-voyage-vacances-facile-1": {
+    "display": "Chambre d’hôtel",
+    "explanation": "Une chambre d’hôtel est un lieu, pas un objet à mettre dans une valise."
+  },
+  "new-voyage-vacances-facile-2": {
+    "display": "Valise",
+    "explanation": "Une valise est un bagage, pas un document utile pour voyager."
+  },
+  "new-voyage-vacances-facile-3": {
+    "display": "Arriver trop tôt",
+    "explanation": "Arriver trop tôt à l’aéroport ne fait pas rater un avion."
+  },
+  "new-voyage-vacances-facile-4": {
+    "display": "Ski",
+    "explanation": "Le ski est une activité de vacances, mais pas une activité à la mer."
+  },
+  "new-voyage-vacances-facile-5": {
+    "display": "Passeport",
+    "explanation": "Un passeport est un document de voyage, pas un type d’hébergement."
+  },
+  "new-voyage-vacances-facile-6": {
+    "display": "Reçu d’hôtel",
+    "explanation": "Un reçu d’hôtel est bien lié au voyage, mais ce n’est pas un souvenir que l’on achète."
+  },
+  "new-voyage-vacances-moyen-1": {
+    "display": "Décoller",
+    "explanation": "Décoller est l’étape suivante du voyage, mais cela ne fait pas partie des activités effectuées dans l’aéroport avant le vol."
+  },
+  "new-voyage-vacances-moyen-2": {
+    "display": "Valise",
+    "explanation": "Une valise est utile pour voyager, mais ce n’est pas une destination européenne."
+  },
+  "new-voyage-vacances-moyen-3": {
+    "display": "Hôtel",
+    "explanation": "Un hôtel est un lieu d’hébergement, pas un moyen de transport."
+  },
+  "new-voyage-vacances-moyen-4": {
+    "display": "Vue magnifique",
+    "explanation": "Une vue magnifique décrit une qualité appréciée de l’hôtel, pas un problème rencontré sur place."
+  },
+  "easy-pates-italiennes-neuf": {
+    "display": "Risotto",
+    "explanation": "Le risotto est un plat de riz italien, pas un format de pâtes."
+  },
+  "medium-decoupes-boeuf": {
+    "display": "Saumon",
+    "explanation": "Le saumon est un poisson, pas un morceau de bœuf."
+  },
+  "medium-fromages-pays": {
+    "display": "Pizza — Italie",
+    "explanation": "La pizza est associée à l’Italie, mais ce n’est pas un fromage emblématique."
+  },
+  "medium-piments-echelle-scoville": {
+    "display": "Poivre noir",
+    "explanation": "Le poivre noir est une épice qu’on confond facilement avec les piments, mais il ne vient pas du genre Capsicum."
+  },
+  "medium-riz-plats-monde": {
+    "display": "Casserole",
+    "explanation": "Une casserole sert à cuisiner le riz, mais ce n’est pas une cuisine ou une région associée à un plat de riz."
+  },
+  "new-gastronomie-du-monde-difficile-1": {
+    "display": "Sucre blanc",
+    "explanation": "Le sucre blanc est un ingrédient courant en cuisine, mais ce n’est pas un aliment fermenté."
+  },
+  "new-gastronomie-du-monde-difficile-2": {
+    "display": "Mariner",
+    "explanation": "Mariner modifie la préparation d’un aliment, mais ce n’est pas une technique de cuisson."
+  },
+  "new-gastronomie-du-monde-difficile-3": {
+    "display": "Carotte",
+    "explanation": "La carotte est un légume courant, mais pas une légumineuse."
+  },
+  "new-gastronomie-du-monde-difficile-4": {
+    "display": "Soupe à l’oignon",
+    "explanation": "La soupe à l’oignon est un plat emblématique, mais pas une pâtisserie."
+  },
+  "new-gastronomie-du-monde-difficile-5": {
+    "display": "Tartare de bœuf",
+    "explanation": "Le tartare de bœuf est préparé cru comme certains plats de la liste, mais il ne contient pas de poisson cru."
+  },
+  "new-gastronomie-du-monde-difficile-6": {
+    "display": "Huile d’olive",
+    "explanation": "L’huile d’olive est un ingrédient de cuisine très courant, mais elle n’est pas typique de la cuisine asiatique comme ceux demandés."
+  },
+  "new-gastronomie-du-monde-facile-1": {
+    "display": "Pizza",
+    "explanation": "La pizza est un aliment très courant, mais ce n’est pas un aliment de petit-déjeuner."
+  },
+  "new-gastronomie-du-monde-moyen-1": {
+    "display": "Tomate",
+    "explanation": "La tomate est un légume très courant en cuisine, mais elle n’est pas classée parmi les légumes verts."
+  },
+  "new-gastronomie-du-monde-moyen-2": {
+    "display": "Soupe",
+    "explanation": "La soupe se mange avec une cuillère, pas avec les doigts."
+  },
+  "new-gastronomie-du-monde-moyen-3": {
+    "display": "Saladier",
+    "explanation": "Un saladier est directement associé à la préparation d’une salade, mais ce n’est pas un ingrédient."
+  },
+  "easy-insectes-familiers": {
+    "display": "Araignée",
+    "explanation": "L’araignée est un petit animal familier, mais ce n’est pas un insecte."
+  },
+  "easy-mammiferes-marins": {
+    "display": "Requin",
+    "explanation": "Le requin vit en mer, mais c’est un poisson et non un mammifère."
+  },
+  "easy-mers-mediterranee": {
+    "display": "Alpes",
+    "explanation": "Les Alpes sont une chaîne de montagnes, pas une mer méditerranéenne."
+  },
+  "easy-oiseaux-incapables-voler": {
+    "display": "Aigle",
+    "explanation": "L’aigle est un oiseau célèbre, mais il vole."
+  },
+  "easy-parties-fleur": {
+    "display": "Papillon",
+    "explanation": "Le papillon visite une fleur, mais n’en est pas une partie."
+  },
+  "easy-races-chats": {
+    "display": "Labrador",
+    "explanation": "Le labrador est une race de chien, pas de chat."
+  },
+  "easy-races-chiens-populaires": {
+    "display": "Siamois",
+    "explanation": "Le siamois est une race de chat, pas de chien."
+  },
+  "easy-reptiles-connus": {
+    "display": "Grenouille",
+    "explanation": "La grenouille est un amphibien, pas un reptile."
+  },
+  "easy-types-precipitations": {
+    "display": "Brouillard",
+    "explanation": "Le brouillard est bien un phénomène météorologique, mais ce n’est ni une précipitation ni un dépôt sur le sol."
+  },
+  "medium-amphibiens-europe": {
+    "display": "Lézard",
+    "explanation": "Le lézard est un reptile, pas un amphibien."
+  },
+  "medium-coniferes-europe": {
+    "display": "Chêne",
+    "explanation": "Le chêne est un arbre européen, mais pas un conifère."
+  },
+  "medium-ecosystemes-cotiers": {
+    "display": "Désert du Sahara",
+    "explanation": "Le Sahara est un milieu terrestre, pas un écosystème côtier ou marin."
+  },
+  "medium-insectes-sociaux": {
+    "display": "Coccinelle",
+    "explanation": "La coccinelle est un insecte, mais ne vit pas en société organisée."
+  },
+  "medium-primates-anthropoides": {
+    "display": "Lémurien",
+    "explanation": "Le lémurien est un primate, mais pas un anthropoïde."
+  },
+  "medium-races-chiens-bergers": {
+    "display": "Labrador",
+    "explanation": "Le labrador est un chien reconnu, mais pas une race de berger."
+  },
+  "medium-rapaces-diurnes": {
+    "display": "Hibou",
+    "explanation": "Le hibou est un rapace, mais il est nocturne."
+  },
+  "medium-requins-emblematiques": {
+    "display": "Dauphin",
+    "explanation": "Le dauphin vit en mer, mais c’est un mammifère et non un requin."
+  },
+  "easy-neuf-pharaons-celebres": {
+    "display": "Anubis",
+    "explanation": "Anubis est une figure majeure de l’Égypte antique, mais c’est un dieu et non un pharaon."
+  },
+  "easy-neuf-premiers-presidents-usa": {
+    "display": "Hillary Clinton",
+    "explanation": "Hillary Clinton est une grande figure politique américaine, mais elle n’a jamais été présidente des États-Unis."
+  },
+  "medium-neuf-batailles-napoleoniennes": {
+    "display": "Traité de Vienne",
+    "explanation": "Le traité de Vienne est un accord diplomatique, pas une bataille napoléonienne."
+  },
+  "medium-neuf-dynasties-chinoises": {
+    "display": "Grande Muraille",
+    "explanation": "La Grande Muraille appartient à l’histoire chinoise, mais n’est pas une dynastie."
+  },
+  "medium-neuf-traites-historiques": {
+    "display": "Waterloo",
+    "explanation": "Waterloo est une bataille, pas un traité de paix."
+  },
+  "new-histoire-grandes-epoques-difficile-1": {
+    "display": "Coup d’État",
+    "explanation": "Un coup d’État peut bouleverser un régime comme une révolution, mais ce n’est pas un soulèvement populaire révolutionnaire."
+  },
+  "new-histoire-grandes-epoques-difficile-2": {
+    "display": "Indiana Jones",
+    "explanation": "Indiana Jones est associé à l’exploration et à l’aventure, mais c’est un personnage de fiction et non un explorateur historique."
+  },
+  "new-histoire-grandes-epoques-difficile-3": {
+    "display": "Bataille de Verdun",
+    "explanation": "Verdun est une bataille, pas un traité."
+  },
+  "new-histoire-grandes-epoques-difficile-4": {
+    "display": "Napoléon",
+    "explanation": "Napoléon est un dirigeant historique, mais pas une dirigeante."
+  },
+  "new-histoire-grandes-epoques-difficile-5": {
+    "display": "Révolution française",
+    "explanation": "La Révolution française est historique, mais précède la guerre froide."
+  },
+  "new-histoire-grandes-epoques-difficile-6": {
+    "display": "Route 66",
+    "explanation": "La Route 66 est une route historique célèbre, mais elle n’est pas une route commerciale historique."
+  },
+  "new-histoire-grandes-epoques-facile-2": {
+    "display": "Manuel d’histoire",
+    "explanation": "Un manuel raconte l’histoire, mais n’est pas un personnage historique."
+  },
+  "new-histoire-grandes-epoques-facile-3": {
+    "display": "Inventeur",
+    "explanation": "Un inventeur crée une invention, mais n’est pas une invention."
+  },
+  "new-histoire-grandes-epoques-facile-4": {
+    "display": "Château de Versailles",
+    "explanation": "Le château de Versailles est un monument historique français majeur, mais il ne provient pas d’une civilisation ancienne."
+  },
+  "new-histoire-grandes-epoques-moyen-1": {
+    "display": "Cheval",
+    "explanation": "Le cheval a été utilisé dans l’industrie, mais n’est pas un élément caractéristique de la révolution industrielle."
+  },
+  "new-histoire-grandes-epoques-moyen-2": {
+    "display": "Indiana Jones",
+    "explanation": "Indiana Jones évoque les expéditions, mais c’est un personnage fictif et non un voyage ou une conquête géographique historique."
+  },
+  "new-histoire-grandes-epoques-moyen-3": {
+    "display": "Napoléon",
+    "explanation": "Napoléon est une figure historique, mais pas une femme."
+  },
+  "new-histoire-grandes-epoques-moyen-4": {
+    "display": "Louis XIV",
+    "explanation": "Louis XIV est un souverain célèbre, mais il est roi de France et non empereur."
+  },
+  "easy-monnaies-neuf-pays": {
+    "display": "Carte bancaire",
+    "explanation": "Une carte bancaire permet de payer, mais n’est pas une monnaie."
+  },
+  "easy-neuf-monuments-parisiens": {
+    "display": "Château de Versailles",
+    "explanation": "Le château de Versailles est un monument célèbre, mais n’est pas situé à Paris."
+  },
+  "easy-neuf-regions-alphabetiques": {
+    "display": "Métropole de Lyon",
+    "explanation": "La métropole de Lyon est une collectivité territoriale française, mais ce n’est pas une région."
+  },
+  "easy-salutations-neuf-langues": {
+    "display": "Au revoir",
+    "explanation": "Au revoir est une formule de départ, pas une façon de dire bonjour."
+  },
+  "easy-symboles-neuf-pays": {
+    "display": "Tour Eiffel",
+    "explanation": "La tour Eiffel est un symbole national très reconnaissable, mais la question demande le nom d’un pays."
+  },
+  "medium-neuf-ecritures": {
+    "display": "Français",
+    "explanation": "Le français est une langue, pas un système d’écriture."
+  },
+  "medium-neuf-instruments-traditionnels": {
+    "display": "Guitare",
+    "explanation": "La guitare est un instrument, pas une région ou culture associée."
+  },
+  "medium-neuf-pays-carnavals": {
+    "display": "Rio de Janeiro",
+    "explanation": "Rio est associé au carnaval, mais c’est une ville et non un pays."
+  },
+  "medium-neuf-sites-merveilles-selection": {
+    "display": "Pyramide de Gizeh",
+    "explanation": "La pyramide est un site historique, pas un pays qui l’abrite."
+  },
+  "new-geographie-pays-monde-difficile-2": {
+    "display": "Portugal",
+    "explanation": "Le Portugal est un pays voisin de l’Espagne et souvent associé à la péninsule Ibérique, mais il ne partage pas de frontière avec la France."
+  },
+  "new-geographie-pays-monde-difficile-3": {
+    "display": "Saint-Pétersbourg",
+    "explanation": "Saint-Pétersbourg est une grande ville russe, mais elle n’a jamais accueilli les Jeux olympiques d’été."
+  },
+  "new-geographie-pays-monde-difficile-4": {
+    "display": "France",
+    "explanation": "La France est un pays dont le drapeau est familier, mais son drapeau tricolore ne contient pas d’étoile."
+  },
+  "new-geographie-pays-monde-difficile-5": {
+    "display": "Lima",
+    "explanation": "Lima est une capitale sud-américaine, mais elle est loin du seuil de 1 000 mètres demandé."
+  },
+  "new-geographie-pays-monde-difficile-6": {
+    "display": "Argentine",
+    "explanation": "L’Argentine possède une vaste façade atlantique, mais elle n’est bordée que par un seul océan."
+  },
+  "new-geographie-pays-monde-facile-1": {
+    "display": "Australie",
+    "explanation": "L’Australie est bien un pays, mais elle n’est pas située en Europe."
+  },
+  "new-geographie-pays-monde-facile-2": {
+    "display": "New York",
+    "explanation": "New York est une ville très connue, mais ce n’est pas une capitale européenne."
+  },
+  "new-geographie-pays-monde-moyen-1": {
+    "display": "Haïti",
+    "explanation": "Haïti est un pays dont le nom peut se confondre dans une liste mondiale, mais il est situé dans les Caraïbes et non en Afrique."
+  },
+  "new-geographie-pays-monde-moyen-2": {
+    "display": "Le Caire",
+    "explanation": "Le Caire est une capitale majeure, mais elle est située en Afrique et non en Asie."
+  },
+  "new-geographie-pays-monde-moyen-3": {
+    "display": "Portugal",
+    "explanation": "Le Portugal est un pays du sud de l’Europe, mais sa côte donne sur l’Atlantique et non sur la Méditerranée."
+  },
+  "medium-android-desserts": {
+    "display": "Tiramisu",
+    "explanation": "Tiramisu est un nom de code Android lié à un dessert, mais pas l’un de ses noms publics."
+  },
+  "medium-neuf-processeurs-intel": {
+    "display": "AMD Athlon",
+    "explanation": "L’Athlon est bien un processeur historique, mais il est produit par AMD et non par Intel."
+  },
+  "new-internet-reseaux-tendances-difficile-1": {
+    "display": "Wikipedia",
+    "explanation": "Wikipedia est un site majeur de l’histoire du web, mais ce n’est pas un mème Internet."
+  },
+  "new-internet-reseaux-tendances-difficile-2": {
+    "display": "YouTube",
+    "explanation": "YouTube héberge des commentaires et des communautés, mais ce n’est pas une plateforme de discussion en ligne comme celles demandées."
+  },
+  "new-internet-reseaux-tendances-difficile-3": {
+    "display": "Steve Jobs",
+    "explanation": "Steve Jobs a marqué la technologie, mais il n’a pas façonné l’histoire du web au sens des personnalités demandées."
+  },
+  "new-internet-reseaux-tendances-difficile-4": {
+    "display": "La publication est parfaite",
+    "explanation": "Une publication parfaite n’est pas une raison de la supprimer."
+  },
+  "new-internet-reseaux-tendances-difficile-5": {
+    "display": "Mot de passe",
+    "explanation": "Un mot de passe est lié à un compte, mais il ne fait pas partie des informations visibles sur un profil."
+  },
+  "new-internet-reseaux-tendances-difficile-6": {
+    "display": "Câble Ethernet",
+    "explanation": "Un câble Ethernet concerne l’informatique en réseau, mais ce n’est pas un terme de cybersécurité."
+  },
+  "new-internet-reseaux-tendances-facile-1": {
+    "display": "Spotify",
+    "explanation": "Spotify est une plateforme numérique très utilisée, mais ce n’est pas un réseau social."
+  },
+  "new-internet-reseaux-tendances-facile-2": {
+    "display": "Mot de passe",
+    "explanation": "Un mot de passe est lié à un compte de réseau social, mais ce n’est pas du contenu que l’on publie."
+  },
+  "new-internet-reseaux-tendances-facile-3": {
+    "display": "Compte respectueux",
+    "explanation": "Un compte respectueux n’est pas une raison de le bloquer."
+  },
+  "new-internet-reseaux-tendances-moyen-1": {
+    "display": "Personne ne le partage",
+    "explanation": "Le partage est l’un des moteurs d’une publication virale ; l’absence de partage empêche précisément cette viralité."
+  },
+  "new-rework-easy-neuf-reseaux-2003-2011": {
+    "display": "Windows",
+    "explanation": "Windows est un système d’exploitation, pas un réseau ou service social."
+  },
+  "play-internet-memes": {
+    "display": "Navigateur web",
+    "explanation": "Un navigateur web sert à accéder aux mèmes, mais ce n’est pas un mème."
+  },
+  "play-internet-slang": {
+    "display": "Emoji",
+    "explanation": "Un emoji est très courant sur Internet, mais ce n’est ni un sigle ni une expression du web."
+  },
+  "play-internet-video-platforms": {
+    "display": "Télécommande",
+    "explanation": "Une télécommande sert à regarder des vidéos, mais ce n’est pas une plateforme vidéo."
+  },
+  "play-tech-devices": {
+    "display": "Livre papier",
+    "explanation": "Un livre papier peut contenir de l’information, mais ne se connecte pas à Internet."
+  },
+  "play-tech-languages": {
+    "display": "CSS",
+    "explanation": "CSS sert à mettre en forme une page web, mais ce n’est pas un langage de programmation."
+  },
+  "play-tech-operating-systems": {
+    "display": "Ordinateur portable",
+    "explanation": "Un ordinateur portable utilise un système d’exploitation, mais ce n’est pas un système d’exploitation."
+  },
+  "play-tech-storage": {
+    "display": "Écran",
+    "explanation": "Un écran affiche des informations, mais il ne sert pas à stocker des données numériques."
+  },
+  "new-economie-entreprises-consommation-difficile-2": {
+    "display": "Salaire",
+    "explanation": "Le salaire est un revenu qui alimente le budget, mais ce n’est pas une dépense ni une ligne de charge comme les éléments demandés."
+  },
+  "new-economie-entreprises-consommation-difficile-3": {
+    "display": "Prix de vente",
+    "explanation": "Le prix de vente est une donnée commerciale, pas une forme de publicité."
+  },
+  "new-economie-entreprises-consommation-difficile-4": {
+    "display": "Importations",
+    "explanation": "Les importations concernent le commerce international d’une entreprise, mais elles vont dans le sens inverse des exportations demandées."
+  },
+  "new-economie-entreprises-consommation-difficile-5": {
+    "display": "Portefeuille",
+    "explanation": "Un portefeuille est un objet, pas un indicateur économique."
+  },
+  "new-economie-entreprises-consommation-difficile-6": {
+    "display": "Ne vouloir aucun client",
+    "explanation": "Ne vouloir aucun client contredit l’objectif d’une entreprise."
+  },
+  "new-economie-entreprises-consommation-facile-1": {
+    "display": "Carte bancaire",
+    "explanation": "Une carte bancaire appartient au monde de l’entreprise et de la finance, mais ce n’est pas un secteur d’activité."
+  },
+  "new-economie-entreprises-consommation-facile-2": {
+    "display": "Achats de marchandises",
+    "explanation": "C’est bien une charge d’entreprise, mais elle varie avec l’activité et ne constitue pas une dépense fixe."
+  },
+  "new-economie-entreprises-consommation-facile-3": {
+    "display": "Facture à payer",
+    "explanation": "Une facture déclenche un paiement, mais elle n’est pas elle-même un moyen de paiement."
+  },
+  "new-economie-entreprises-consommation-facile-4": {
+    "display": "Être satisfait",
+    "explanation": "Être satisfait de sa banque n’est pas une raison de la changer."
+  },
+  "new-economie-entreprises-consommation-facile-5": {
+    "display": "Couleur préférée",
+    "explanation": "Une couleur préférée peut guider un choix, mais ne fait pas varier le prix du produit."
+  },
+  "new-economie-entreprises-consommation-facile-6": {
+    "display": "Client",
+    "explanation": "Un client est central dans l’activité d’une entreprise, mais il n’occupe pas un poste dans son organisation."
+  },
+  "new-economie-entreprises-consommation-facile-7": {
+    "display": "Zara",
+    "explanation": "Zara est une marque très connue à l’international, mais elle est espagnole et non française."
+  },
+  "new-economie-entreprises-consommation-moyen-1": {
+    "display": "Billet de banque",
+    "explanation": "Un billet de banque est un moyen de paiement, pas un service bancaire."
+  },
+  "new-economie-entreprises-consommation-moyen-2": {
+    "display": "Titre-restaurant",
+    "explanation": "Un titre-restaurant peut être lié à l’emploi, mais il ne figure pas sur une fiche de paie comme les éléments demandés."
+  },
+  "new-economie-entreprises-consommation-moyen-3": {
+    "display": "Bénéfice",
+    "explanation": "Le bénéfice est ce que l’entreprise obtient après ses revenus et ses coûts, pas une façon de gagner de l’argent."
+  },
+  "new-economie-entreprises-consommation-moyen-4": {
+    "display": "iPhone",
+    "explanation": "L’iPhone est un produit technologique emblématique, mais il est fabriqué par Apple et n’est pas une entreprise."
+  },
+  "new-economie-entreprises-consommation-moyen-5": {
+    "display": "Période d’essai",
+    "explanation": "La période d’essai concerne bien l’embauche, mais c’est une clause d’un contrat et non un type de contrat."
+  },
+  "new-economie-entreprises-consommation-moyen-6": {
+    "display": "Baisse de la demande",
+    "explanation": "Une baisse de la demande pousse plutôt les prix à diminuer."
+  },
+  "new-economie-entreprises-consommation-moyen-7": {
+    "display": "Achat unique",
+    "explanation": "Un achat unique est une manière courante d’obtenir ces produits, mais ce n’est pas un produit vendu par abonnement."
+  },
+  "new-mode-beaute-style-difficile-1": {
+    "display": "Faire du sport",
+    "explanation": "Faire du sport est une activité, mais pas une occasion de s’habiller élégamment."
+  },
+  "new-mode-beaute-style-difficile-2": {
+    "display": "Porte-manteau",
+    "explanation": "Un porte-manteau se trouve près des vêtements, mais ce n’est pas un vêtement à ranger dans un dressing."
+  },
+  "new-mode-beaute-style-difficile-3": {
+    "display": "Porter un uniforme imposé",
+    "explanation": "Un uniforme imposé est l’inverse d’une personnalisation de tenue."
+  },
+  "new-mode-beaute-style-difficile-4": {
+    "display": "Mannequin de vitrine",
+    "explanation": "Un mannequin de vitrine est un objet, pas un métier de la mode ou beauté."
+  },
+  "new-mode-beaute-style-difficile-5": {
+    "display": "Miroir",
+    "explanation": "Un miroir aide à se coiffer, mais n’est pas un objet servant à coiffer les cheveux."
+  },
+  "new-mode-beaute-style-difficile-6": {
+    "display": "Retouche réussie",
+    "explanation": "Une retouche réussie améliore une tenue au lieu de la ruiner."
+  },
+  "new-mode-beaute-style-facile-1": {
+    "display": "Maillot de bain",
+    "explanation": "Le maillot de bain est un vêtement, mais pas un vêtement porté en hiver."
+  },
+  "new-mode-beaute-style-facile-2": {
+    "display": "Pull",
+    "explanation": "Un pull est un vêtement, pas un accessoire de mode."
+  },
+  "new-mode-beaute-style-facile-3": {
+    "display": "Brosse à cheveux",
+    "explanation": "Une brosse à cheveux appartient à la beauté, mais pas à la trousse de maquillage."
+  },
+  "new-mode-beaute-style-facile-4": {
+    "display": "Chapeau",
+    "explanation": "Un chapeau est un accessoire, pas un type de chaussure."
+  },
+  "new-mode-beaute-style-facile-5": {
+    "display": "Avoir la même coiffure",
+    "explanation": "Avoir la même coiffure n’est pas une raison de la changer."
+  },
+  "new-mode-beaute-style-facile-6": {
+    "display": "Verre",
+    "explanation": "Le verre peut être décoratif, mais n’est pas une matière de vêtement."
+  },
+  "new-mode-beaute-style-moyen-1": {
+    "display": "Client",
+    "explanation": "Un client se rend chez le coiffeur, mais n’est pas un objet du salon."
+  },
+  "new-mode-beaute-style-moyen-2": {
+    "display": "Guitare",
+    "explanation": "La guitare peut avoir du style, mais n’est pas un style vestimentaire."
+  },
+  "new-mode-beaute-style-moyen-3": {
+    "display": "Coca-Cola",
+    "explanation": "Coca-Cola est présente dans le sport, mais ne fabrique pas de vêtements de sport."
+  },
+  "new-mode-beaute-style-moyen-4": {
+    "display": "Shampooing",
+    "explanation": "Le shampooing sert aux cheveux, pas au soin du visage."
+  },
+  "new-mode-beaute-style-moyen-5": {
+    "display": "Marron et noir",
+    "explanation": "Le marron et le noir peuvent se porter, mais ne sont pas réputés faciles à associer."
+  },
+  "new-mode-beaute-style-moyen-6": {
+    "display": "Couleur unie",
+    "explanation": "Une couleur unie n’est pas un motif de vêtement."
+  },
+  "new-mode-beaute-style-moyen-7": {
+    "display": "Porte-clés",
+    "explanation": "Un porte-clés est un accessoire, mais pas un bijou."
+  },
+  "new-soirees-alcool-fete-difficile-1": {
+    "display": "Invité",
+    "explanation": "Un invité participe à la fête, mais n’est pas un accessoire."
+  },
+  "new-soirees-alcool-fete-difficile-2": {
+    "display": "Faire les courses",
+    "explanation": "Faire les courses peut préparer une fête, mais n’est pas un moment pour ouvrir du champagne."
+  },
+  "new-soirees-alcool-fete-difficile-3": {
+    "display": "Les invités arrivent",
+    "explanation": "L’arrivée des invités marque le début, pas la fin de la soirée."
+  },
+  "new-soirees-alcool-fete-difficile-4": {
+    "display": "Champagne",
+    "explanation": "Le champagne est une boisson festive, mais pas une bière."
+  },
+  "new-soirees-alcool-fete-difficile-5": {
+    "display": "Repartir avec le cadeau de l’hôte",
+    "explanation": "Repartir avec un cadeau est l’inverse de ce qu’on apporte à l’hôte."
+  },
+  "new-soirees-alcool-fete-difficile-6": {
+    "display": "Quand on est hydraté",
+    "explanation": "Être hydraté ne constitue pas une situation où il vaut mieux ne pas boire."
+  },
+  "new-soirees-alcool-fete-facile-1": {
+    "display": "Rentrer chez soi la veille",
+    "explanation": "Rentrer chez soi la veille n’est pas un élément à prévoir pour la soirée."
+  },
+  "new-soirees-alcool-fete-facile-2": {
+    "display": "La soirée commence",
+    "explanation": "Le début de la soirée n’est pas une raison de la quitter tôt."
+  },
+  "new-soirees-alcool-fete-facile-3": {
+    "display": "Café",
+    "explanation": "Le café peut être servi après le repas, mais n’est pas une boisson typique d’apéritif."
+  },
+  "new-soirees-alcool-fete-facile-4": {
+    "display": "Canapé",
+    "explanation": "Un canapé peut être dans le lieu de fête, mais pas sur la piste de danse."
+  },
+  "new-soirees-alcool-fete-facile-5": {
+    "display": "Regarder un film",
+    "explanation": "Regarder un film est une activité de soirée, mais pas un jeu."
+  },
+  "new-soirees-alcool-fete-facile-6": {
+    "display": "J’adore l’alcool",
+    "explanation": "Aimer l’alcool n’est pas une excuse pour refuser un verre."
+  },
+  "new-soirees-alcool-fete-facile-7": {
+    "display": "Tout le monde s’amuse",
+    "explanation": "Quand tout le monde s’amuse, la soirée n’est pas gâchée."
+  },
+  "new-soirees-alcool-fete-moyen-1": {
+    "display": "Verre à cocktail",
+    "explanation": "Un verre à cocktail est un contenant, pas un cocktail."
+  },
+  "new-soirees-alcool-fete-moyen-2": {
+    "display": "Assiette",
+    "explanation": "Une assiette sert les snacks, mais n’est pas un snack."
+  },
+  "new-soirees-alcool-fete-moyen-3": {
+    "display": "Salon",
+    "explanation": "Un salon peut accueillir des amis, mais n’est pas un type de lieu de fête."
+  },
+  "new-soirees-alcool-fete-moyen-4": {
+    "display": "Piste de danse",
+    "explanation": "La piste de danse est un lieu, pas un objet personnel que l’on perd."
+  },
+  "new-soirees-alcool-fete-moyen-5": {
+    "display": "Silence",
+    "explanation": "Le silence ne fait pas danser, contrairement à une musique."
+  },
+  "new-soirees-alcool-fete-moyen-6": {
+    "display": "Une mauvaise nouvelle",
+    "explanation": "Une mauvaise nouvelle ne donne pas de raison de porter un toast."
+  },
+  "new-records-classements-faits-marquants-difficile-1": {
+    "display": "Australie",
+    "explanation": "L’Australie est souvent prise pour une île, mais est considérée comme un continent."
+  },
+  "new-records-classements-faits-marquants-difficile-2": {
+    "display": "Michelin",
+    "explanation": "Michelin est une marque automobile de pneus, mais pas un constructeur automobile très vendu."
+  },
+  "new-records-classements-faits-marquants-difficile-3": {
+    "display": "Échecs",
+    "explanation": "Les échecs sont très pratiqués, mais ne sont pas un sport au sens demandé."
+  },
+  "new-records-classements-faits-marquants-difficile-4": {
+    "display": "Monopoly",
+    "explanation": "Monopoly est très vendu, mais c’est un jeu de société et non un jeu vidéo."
+  },
+  "new-records-classements-faits-marquants-difficile-5": {
+    "display": "Numéro de dossard",
+    "explanation": "Le numéro de dossard sert à identifier un coureur, mais ce n’est pas un record que l’on bat dans une course."
+  },
+  "new-records-classements-faits-marquants-difficile-6": {
+    "display": "Médaille",
+    "explanation": "Une médaille récompense un classement, mais n’est pas une catégorie de top 10."
+  },
+  "new-records-classements-faits-marquants-facile-2": {
+    "display": "Canada",
+    "explanation": "Le Canada est un très grand pays par sa superficie, mais sa population est trop faible pour compter parmi les pays les plus peuplés du monde."
+  },
+  "new-records-classements-faits-marquants-facile-3": {
+    "display": "Chronomètre",
+    "explanation": "Un chronomètre mesure la vitesse, mais n’est pas un animal."
+  },
+  "new-records-classements-faits-marquants-facile-4": {
+    "display": "Mont Blanc",
+    "explanation": "Le Mont Blanc est une montagne très célèbre, mais il est bien plus bas que les neuf plus hauts sommets du monde."
+  },
+  "new-records-classements-faits-marquants-facile-5": {
+    "display": "Lac Léman",
+    "explanation": "Le lac Léman est une grande étendue d’eau, mais pas un fleuve."
+  },
+  "new-records-classements-faits-marquants-facile-6": {
+    "display": "Nice",
+    "explanation": "Nice est une ville touristique très visitée, mais elle ne figure pas parmi les villes mondiales les plus visitées de cette sélection."
+  },
+  "new-records-classements-faits-marquants-facile-7": {
+    "display": "Avatar, le dernier maître de l’air",
+    "explanation": "Avatar, le dernier maître de l’air est une série, pas un film de box-office."
+  },
+  "new-records-classements-faits-marquants-moyen-1": {
+    "display": "Médaille d’or",
+    "explanation": "Une médaille est une récompense, pas une sportive ou un sportif."
+  },
+  "new-records-classements-faits-marquants-moyen-2": {
+    "display": "iPad",
+    "explanation": "L’iPad est un produit très connu d’Apple, mais ce n’est pas une entreprise."
+  },
+  "new-records-classements-faits-marquants-moyen-3": {
+    "display": "Ballon",
+    "explanation": "Un ballon est l’objet du football, pas une sélection nationale."
+  },
+  "new-records-classements-faits-marquants-moyen-4": {
+    "display": "Spotify",
+    "explanation": "Spotify permet d’écouter des albums, mais n’est pas un album."
+  },
+  "new-records-classements-faits-marquants-moyen-5": {
+    "display": "Navigateur web",
+    "explanation": "Un navigateur permet d’accéder aux réseaux, mais n’est pas un réseau social."
+  },
+  "new-records-classements-faits-marquants-moyen-6": {
+    "display": "Euro",
+    "explanation": "L’euro est une monnaie, pas une langue."
+  },
+  "new-records-classements-faits-marquants-moyen-7": {
+    "display": "Mont Blanc",
+    "explanation": "Le mont Blanc est très haut, mais ce n’est pas un monument."
+  },
+  "new-sexe-relations-substances-difficile-2": {
+    "display": "Choisir son dessert",
+    "explanation": "Choisir son dessert est une décision personnelle, mais ce n’est pas une situation qui demande un consentement explicite."
+  },
+  "new-sexe-relations-substances-difficile-3": {
+    "display": "Amitié",
+    "explanation": "L’amitié est une relation importante, mais pas une forme de relation amoureuse."
+  },
+  "new-sexe-relations-substances-difficile-4": {
+    "display": "Choisir un parfum",
+    "explanation": "Choisir un parfum relève du bien-être personnel, mais ce n’est pas un motif de consultation en santé sexuelle."
+  },
+  "new-sexe-relations-substances-difficile-5": {
+    "display": "Respect mutuel",
+    "explanation": "Le respect mutuel est un signe sain, pas un signe de relation toxique."
+  },
+  "new-sexe-relations-substances-difficile-6": {
+    "display": "Prévisions météo",
+    "explanation": "Les prévisions météo peuvent être personnelles, mais elles ne sont pas privées au point de nécessiter une autorisation de partage."
+  },
+  "new-sexe-relations-substances-facile-1": {
+    "display": "Regarder son téléphone sans arrêt",
+    "explanation": "Ignorer l’autre pour son téléphone est un signe négatif, pas un bon rendez-vous."
+  },
+  "new-sexe-relations-substances-facile-2": {
+    "display": "Ne vouloir rencontrer personne",
+    "explanation": "Ne vouloir rencontrer personne contredit l’objectif d’une application de rencontre."
+  },
+  "new-sexe-relations-substances-facile-3": {
+    "display": "Code de carte bancaire",
+    "explanation": "Le code bancaire est une information intime, mais ce n’est pas un sujet habituel à aborder au début d’une relation."
+  },
+  "new-sexe-relations-substances-facile-4": {
+    "display": "Ignorer tous les messages",
+    "explanation": "Ignorer l’autre ne montre pas de l’affection."
+  },
+  "new-sexe-relations-substances-facile-5": {
+    "display": "Respect mutuel",
+    "explanation": "Le respect mutuel est sain, pas une raison évidente de rompre."
+  },
+  "new-sexe-relations-substances-facile-6": {
+    "display": "Manipulation",
+    "explanation": "La manipulation caractérise une relation malsaine, pas une relation saine."
+  },
+  "new-sexe-relations-substances-facile-7": {
+    "display": "Salle d’attente",
+    "explanation": "Une salle d’attente est un lieu où l’on peut se retrouver, mais ce n’est pas un cadre classique de premier rendez-vous."
+  },
+  "new-sexe-relations-substances-moyen-1": {
+    "display": "Test de grossesse",
+    "explanation": "Un test de grossesse est lié à la santé sexuelle, mais ce n’est pas un moyen de contraception."
+  },
+  "new-sexe-relations-substances-moyen-2": {
+    "display": "Grossesse",
+    "explanation": "La grossesse est liée à la sexualité, mais ce n’est pas une infection sexuellement transmissible."
+  },
+  "new-sexe-relations-substances-moyen-3": {
+    "display": "Ne jamais dire non",
+    "explanation": "Ne jamais dire non est l’inverse d’une limite claire."
+  },
+  "new-sexe-relations-substances-moyen-4": {
+    "display": "Conduire prudemment",
+    "explanation": "Conduire prudemment est un comportement souhaitable, mais ce n’est pas un signe permettant de reconnaître une ivresse."
+  },
+  "new-sexe-relations-substances-moyen-5": {
+    "display": "Hydratation",
+    "explanation": "L’hydratation est un réflexe de soin, mais elle n’est pas un risque associé aux drogues."
+  },
+  "new-sexe-relations-substances-moyen-6": {
+    "display": "Dealer",
+    "explanation": "Un dealer peut être lié aux substances, mais il ne constitue pas une personne ou un service de secours à contacter."
+  },
+  "new-sexe-relations-substances-moyen-7": {
+    "display": "Boire de l’eau",
+    "explanation": "Boire de l’eau peut accompagner une soirée, mais cela n’empêche pas les interactions dangereuses entre alcool et médicaments."
+  },
+  "new-histoire-grandes-epoques-facile-1": {
+    "display": "Empire ottoman",
+    "explanation": "L’Empire ottoman est une grande civilisation historique, mais n’appartient pas à l’Antiquité."
+  },
+  "easy-outils-bricolage": {
+    "display": "Bricoleur",
+    "explanation": "Un bricoleur utilise des outils, mais n’est pas un outil."
+  },
+  "easy-pieces-maison": {
+    "display": "Façade",
+    "explanation": "La façade appartient bien à une maison, mais ce n’est ni une pièce ni un espace où l’on vit."
+  },
+  "medium-symboles-entretien-textile": {
+    "display": "Taille M",
+    "explanation": "Une taille peut figurer sur une étiquette de vêtement, mais ce n’est pas une indication d’entretien."
+  },
+  "medium-zones-refrigerateur": {
+    "display": "Ustensiles de cuisine",
+    "explanation": "Les ustensiles servent à cuisiner, mais ils ne constituent pas un type de produit à ranger dans le réfrigérateur."
+  },
+  "new-maison-objets-bricolage-difficile-1": {
+    "display": "Tissu",
+    "explanation": "Le tissu est un matériau utilisé pour l’ameublement, mais pas un matériau de bricolage courant comme ceux demandés."
+  },
+  "new-maison-objets-bricolage-difficile-2": {
+    "display": "Télécommande",
+    "explanation": "Une télécommande peut traîner près du lit, mais elle ne fait pas partie des objets typiquement posés sur une table de nuit."
+  },
+  "new-maison-objets-bricolage-difficile-3": {
+    "display": "Mettre du désordre",
+    "explanation": "Le désordre concerne l’organisation de la maison, mais c’est l’opposé d’une raison de ranger."
+  },
+  "new-maison-objets-bricolage-difficile-4": {
+    "display": "Panne d’ordinateur",
+    "explanation": "Une panne d’ordinateur peut appeler une réparation, mais elle ne fait pas partie des petits objets domestiques qu’on répare soi-même ici."
+  },
+  "new-maison-objets-bricolage-difficile-5": {
+    "display": "Réfrigérateur classique",
+    "explanation": "Un réfrigérateur classique est un appareil domestique, mais pas un objet connecté."
+  },
+  "new-maison-objets-bricolage-difficile-6": {
+    "display": "Salle à manger",
+    "explanation": "Une salle à manger est une pièce de la maison, mais ce n’est pas un lieu prévu pour stocker des affaires."
+  },
+  "new-maison-objets-bricolage-facile-1": {
+    "display": "Lave-linge",
+    "explanation": "Un lave-linge est un appareil du foyer, mais on ne le trouve pas normalement dans une cuisine."
+  },
+  "new-maison-objets-bricolage-facile-2": {
+    "display": "Tabouret de bar",
+    "explanation": "Un tabouret de bar est un meuble, mais il ne fait pas partie du mobilier typique d’un salon."
+  },
+  "new-maison-objets-bricolage-facile-3": {
+    "display": "Télécommande",
+    "explanation": "Une télécommande est un objet domestique courant, mais elle ne sert pas à nettoyer."
+  },
+  "new-maison-objets-bricolage-facile-4": {
+    "display": "Changer de décoration",
+    "explanation": "Changer la décoration concerne un logement, mais ce n’est pas une étape nécessaire à un déménagement."
+  },
+  "new-maison-objets-bricolage-moyen-1": {
+    "display": "Balai",
+    "explanation": "Un balai sert au ménage, mais n’est pas un appareil électroménager."
+  },
+  "new-maison-objets-bricolage-moyen-2": {
+    "display": "Télévision",
+    "explanation": "Une télévision est un objet domestique, mais elle n’est pas habituellement rangée dans un garage."
+  },
+  "new-maison-objets-bricolage-moyen-3": {
+    "display": "Rideau",
+    "explanation": "Un rideau est fixé à une tringle, mais on ne l’accroche pas directement au mur comme les objets demandés."
+  },
+  "new-maison-objets-bricolage-moyen-4": {
+    "display": "Toit",
+    "explanation": "Le toit est un élément de la maison, mais ce n’est pas une pièce."
+  },
+  "new-maison-objets-bricolage-moyen-5": {
+    "display": "Panne d’ascenseur",
+    "explanation": "Une panne d’ascenseur concerne un immeuble, mais ce n’est pas un problème domestique à l’intérieur d’une maison."
+  },
+  "medium-doctor-who-neuf-incarnations": {
+    "display": "Le Maître",
+    "explanation": "Le Maître est un personnage de Doctor Who, mais pas une incarnation du Docteur."
+  },
+  "medium-ghostbusters-neuf-personnages": {
+    "display": "Gandalf",
+    "explanation": "Gandalf est une figure culte, mais n’est pas un personnage de Ghostbusters."
+  },
+  "medium-mcu-disney-plus-neuf-premieres": {
+    "display": "The Batman",
+    "explanation": "The Batman est lié aux super-héros, mais ce n’est pas une série Marvel Studios sur Disney+."
+  },
+  "new-celebrites-personnalites-difficile-1": {
+    "display": "Taylor Swift",
+    "explanation": "Taylor Swift est connue dans le monde entier, mais elle n’est pas française."
+  },
+  "new-celebrites-personnalites-facile-1": {
+    "display": "Ryan Gosling",
+    "explanation": "Ryan Gosling est un acteur connu, mais il est canadien et non américain."
+  },
+  "new-celebrites-personnalites-facile-2": {
+    "display": "Audrey Hepburn",
+    "explanation": "Audrey Hepburn est une actrice culte, mais elle n’est pas française."
+  },
+  "new-celebrites-personnalites-facile-3": {
+    "display": "Zinedine Zidane",
+    "explanation": "Zinedine Zidane est célèbre mondialement, mais pas grâce à Internet."
+  },
+  "new-celebrites-personnalites-facile-4": {
+    "display": "Nagui",
+    "explanation": "Nagui est une figure de télévision, mais pas un chef."
+  },
+  "new-celebrites-personnalites-facile-5": {
+    "display": "Nagui",
+    "explanation": "Nagui peut être drôle à la télévision, mais n’est pas un humoriste."
+  },
+  "new-celebrites-personnalites-facile-6": {
+    "display": "Jean Dujardin",
+    "explanation": "Jean Dujardin est connu sous son prénom et son nom, pas un seul nom ou pseudonyme."
+  },
+  "new-celebrites-personnalites-facile-7": {
+    "display": "Zinedine Zidane",
+    "explanation": "Zinedine Zidane est une personnalité très connue, mais il n’a pas lancé une marque au sens demandé."
+  },
+  "play-celebrities-denzel": {
+    "display": "Titanic",
+    "explanation": "Titanic est un film célèbre, mais Denzel Washington n’y joue pas."
+  },
+  "play-celebrities-dicaprio": {
+    "display": "Men in Black",
+    "explanation": "Men in Black est un film connu, mais Leonardo DiCaprio n’y joue pas."
+  },
+  "play-celebrities-dujardin": {
+    "display": "Inception",
+    "explanation": "Inception est un film célèbre, mais Jean Dujardin n’y joue pas."
+  },
+  "play-celebrities-jennifer-lawrence": {
+    "display": "Titanic",
+    "explanation": "Titanic est un film célèbre, mais Jennifer Lawrence n’y joue pas."
+  },
+  "play-celebrities-meryl": {
+    "display": "Fight Club",
+    "explanation": "Fight Club est un film culte, mais Meryl Streep n’y joue pas."
+  },
+  "play-celebrities-portman": {
+    "display": "Titanic",
+    "explanation": "Titanic est un film célèbre, mais Natalie Portman n’y joue pas."
+  },
+  "play-celebrities-scarlett": {
+    "display": "Jurassic Park",
+    "explanation": "Jurassic Park est un film célèbre, mais Scarlett Johansson n’y joue pas."
+  },
+  "play-celebrities-tom-cruise": {
+    "display": "Die Hard",
+    "explanation": "Die Hard est un film d’action culte, mais Tom Cruise n’y joue pas."
+  },
+  "play-celebrities-will-smith": {
+    "display": "Titanic",
+    "explanation": "Titanic est un film célèbre, mais Will Smith n’y joue pas."
+  },
+  "new-jeux-video-difficile-1": {
+    "display": "The Sims",
+    "explanation": "The Sims est un jeu vidéo connu, mais pas un jeu de course."
+  },
+  "new-jeux-video-difficile-2": {
+    "display": "FIFA",
+    "explanation": "FIFA est un jeu de sport, pas un jeu de survie."
+  },
+  "new-jeux-video-difficile-3": {
+    "display": "Box Internet",
+    "explanation": "Une box Internet aide à jouer en ligne, mais ce n’est pas un accessoire de jeu."
+  },
+  "new-jeux-video-difficile-4": {
+    "display": "Grand Theft Auto V",
+    "explanation": "Grand Theft Auto V est un jeu vidéo très connu, mais il n’a pas été adapté officiellement au cinéma ou en série."
+  },
+  "new-jeux-video-difficile-5": {
+    "display": "Console",
+    "explanation": "Une console sert à jouer en ligne, mais ce n’est pas un terme de jargon utilisé dans les parties."
+  },
+  "new-jeux-video-difficile-6": {
+    "display": "Batterie vide",
+    "explanation": "Une batterie vide peut interrompre une session, mais elle ne donne pas une raison de recommencer la partie."
+  },
+  "new-jeux-video-facile-1": {
+    "display": "Pikachu",
+    "explanation": "Pikachu est un personnage Pokémon, pas un personnage de Mario."
+  },
+  "new-jeux-video-facile-2": {
+    "display": "Mario Kart",
+    "explanation": "Mario Kart est un jeu de course, pas un jeu vidéo de sport."
+  },
+  "new-jeux-video-facile-3": {
+    "display": "Mario",
+    "explanation": "Mario est un personnage de jeu vidéo, mais ce n’est pas une console."
+  },
+  "new-jeux-video-facile-4": {
+    "display": "Manette",
+    "explanation": "La manette sert à contrôler le jeu, mais ce n’est pas un objet que le personnage ramasse dans le jeu."
+  },
+  "new-jeux-video-facile-5": {
+    "display": "Tetris",
+    "explanation": "Tetris est un jeu célèbre, mais pas un jeu en monde ouvert."
+  },
+  "new-jeux-video-facile-6": {
+    "display": "Mario",
+    "explanation": "Mario est une mascotte majeure du jeu vidéo, mais ce n’est pas un Pokémon."
+  },
+  "new-jeux-video-facile-7": {
+    "display": "Gagner la partie",
+    "explanation": "Gagner met normalement fin à la partie avec succès, mais ce n’est pas une cause de défaite."
+  },
+  "new-jeux-video-moyen-1": {
+    "display": "PlayStation",
+    "explanation": "La PlayStation permet de jouer à de nombreux genres, mais elle est une console et non un genre de jeu."
+  },
+  "new-jeux-video-moyen-2": {
+    "display": "Tetris",
+    "explanation": "Tetris se joue seul, pas en équipe."
+  },
+  "new-jeux-video-moyen-3": {
+    "display": "Joueur professionnel",
+    "explanation": "Un joueur professionnel travaille dans l’univers du jeu vidéo, mais il ne participe pas directement à la création d’un jeu."
+  },
+  "new-jeux-video-moyen-4": {
+    "display": "Mario",
+    "explanation": "Mario est un personnage de jeu vidéo très connu, mais ce n’est pas une héroïne."
+  },
+  "new-jeux-video-moyen-5": {
+    "display": "Joystick",
+    "explanation": "Un joystick est du matériel utilisé pour jouer, mais ce n’est pas un studio de développement."
+  },
+  "new-jeux-video-moyen-6": {
+    "display": "Pikachu",
+    "explanation": "Pikachu est un personnage populaire, mais pas un méchant de jeu vidéo."
+  },
+  "new-sciences-inventions-difficile-1": {
+    "display": "Caoutchouc",
+    "explanation": "Le caoutchouc est couramment isolant, pas conducteur électrique."
+  },
+  "new-sciences-inventions-difficile-2": {
+    "display": "Drone",
+    "explanation": "Un drone est une technologie aérienne, mais ce n’est pas une technologie utilisée dans l’espace."
+  },
+  "new-sciences-inventions-difficile-3": {
+    "display": "Antibiotique",
+    "explanation": "Un antibiotique peut soigner certaines infections, mais ce n’est ni une maladie ni un vaccin."
+  },
+  "new-sciences-inventions-difficile-4": {
+    "display": "Napoléon",
+    "explanation": "Napoléon a marqué l’histoire, mais n’est pas une femme scientifique."
+  },
+  "new-sciences-inventions-difficile-5": {
+    "display": "Calculatrice",
+    "explanation": "Une calculatrice sert à faire des calculs, mais elle n’observe ni ne mesure directement une grandeur."
+  },
+  "new-sciences-inventions-difficile-6": {
+    "display": "Astrologie",
+    "explanation": "L’astrologie évoque les astres comme les sciences, mais ce n’est pas une notion scientifique enseignée comme telle."
+  },
+  "new-sciences-inventions-facile-1": {
+    "display": "Foie",
+    "explanation": "Le foie est un organe important, mais il n’est pas visible à l’extérieur du corps."
+  },
+  "new-sciences-inventions-facile-2": {
+    "display": "Cœur",
+    "explanation": "Le cœur est un organe, pas un os."
+  },
+  "new-sciences-inventions-facile-3": {
+    "display": "Chaise",
+    "explanation": "Une chaise est un objet quotidien, mais elle n’a pas constitué une invention transformatrice comme celles demandées."
+  },
+  "new-sciences-inventions-facile-4": {
+    "display": "Mesurer",
+    "explanation": "« Mesurer » est l’action réalisée, pas une grandeur que l’on mesure."
+  },
+  "new-sciences-inventions-facile-5": {
+    "display": "Panneau solaire",
+    "explanation": "Un panneau solaire capte l’énergie, mais ce n’est pas une source d’énergie."
+  },
+  "new-sciences-inventions-facile-6": {
+    "display": "Microscope",
+    "explanation": "Le microscope est un outil de recherche, pas un animal utilisé dans la recherche."
+  },
+  "new-sciences-inventions-facile-7": {
+    "display": "Orage",
+    "explanation": "Un orage peut perturber les appareils, mais ce n’est pas un objet qui fonctionne avec une batterie."
+  },
+  "new-sciences-inventions-moyen-2": {
+    "display": "Technicien de laboratoire",
+    "explanation": "Un technicien de laboratoire travaille en science, mais il n’est pas un scientifique célèbre comme ceux demandés."
+  },
+  "new-sciences-inventions-moyen-3": {
+    "display": "Balance",
+    "explanation": "Une balance sert à mesurer une masse, mais ce n’est pas une unité de mesure."
+  },
+  "new-sciences-inventions-moyen-4": {
+    "display": "Prix Nobel",
+    "explanation": "Un prix Nobel est une récompense scientifique, pas un élément de laboratoire."
+  },
+  "new-sciences-inventions-moyen-5": {
+    "display": "Piste cyclable",
+    "explanation": "Une piste cyclable sert aux transports, mais n’est pas une invention."
+  },
+  "play-science-moons": { "display": "Mars", "explanation": "Mars est une planète, pas une lune." },
+  "play-science-organs": { "display": "Fémur", "explanation": "Le fémur est un os, pas un organe." }
 }

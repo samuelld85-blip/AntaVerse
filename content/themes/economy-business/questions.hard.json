@@ -4,13 +4,8 @@
     "slug": "xlsx-economy-business-hard-01",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": [
-      "economy-business:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["economy-business:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de contrats de travail.",
     "shortTitle": "types de contrats de travail",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-economy-business-hard-02",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": [
-      "economy-business:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["economy-business:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grands indices boursiers internationaux.",
     "shortTitle": "grands indices boursiers internationaux",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-economy-business-hard-03",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": [
-      "economy-business:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["economy-business:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes banques centrales du monde.",
     "shortTitle": "grandes banques centrales du monde",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-economy-business-hard-04",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": [
-      "economy-business:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["economy-business:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 notions que l’on retrouve dans les états financiers ou l’analyse financière d’une entreprise.",
     "shortTitle": "notions que l’on retrouve dans les états fina…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-economy-business-hard-05",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": [
-      "economy-business:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["economy-business:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 modèles ou mécanismes permettant à une entreprise de générer des revenus.",
     "shortTitle": "modèles ou mécanismes permettant à une entrep…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-economy-business-hard-06",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": [
-      "economy-business:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["economy-business:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 ordres ou notions courantes du marché boursier.",
     "shortTitle": "ordres ou notions courantes du marché boursier",
     "difficultyLevel": 3,

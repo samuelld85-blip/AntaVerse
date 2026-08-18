@@ -4,13 +4,8 @@
     "slug": "xlsx-geography-world-medium-01",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays reconnaissables à un symbole national célèbre.",
     "shortTitle": "pays reconnaissables à un symbole national cé…",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-geography-world-medium-02",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 régions ou cultures associées à un instrument traditionnel.",
     "shortTitle": "régions ou cultures associées à un instrument…",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-geography-world-medium-03",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays connus pour un carnaval emblématique.",
     "shortTitle": "pays connus pour un carnaval emblématique",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-geography-world-medium-04",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays qui abritent un site historique mondialement connu.",
     "shortTitle": "pays qui abritent un site historique mondiale…",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-geography-world-medium-05",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 capitales traversées par un fleuve.",
     "shortTitle": "capitales traversées par un fleuve",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-geography-world-medium-06",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays partageant une frontière avec la France.",
     "shortTitle": "pays partageant une frontière avec la France",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-geography-world-medium-07",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 villes ayant accueilli les Jeux olympiques.",
     "shortTitle": "villes ayant accueilli les Jeux olympiques",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-geography-world-medium-08",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays dont le drapeau contient une étoile.",
     "shortTitle": "pays dont le drapeau contient une étoile",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-geography-world-medium-09",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays d’Afrique.",
     "shortTitle": "pays d’Afrique",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-geography-world-medium-10",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 capitales situées en Asie.",
     "shortTitle": "capitales situées en Asie",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-geography-world-medium-11",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays ayant une façade sur la Méditerranée.",
     "shortTitle": "pays ayant une façade sur la Méditerranée",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-geography-world-medium-12",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays traversés par le Danube.",
     "shortTitle": "pays traversés par le Danube",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-geography-world-medium-13",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 capitales nationales commençant par la lettre B.",
     "shortTitle": "capitales nationales commençant par la lettre B",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-geography-world-medium-14",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 pays dont le drapeau contient au moins une étoile blanche, jaune ou rouge.",
     "shortTitle": "pays dont le drapeau contient au moins une ét…",
     "difficultyLevel": 2,

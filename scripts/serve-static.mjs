@@ -22,12 +22,17 @@ createServer((request, response) => {
   const pathname = decodeURIComponent(new URL(request.url ?? "/", "http://localhost").pathname);
   let filePath = resolve(root, `.${pathname}`);
   if (!filePath.startsWith(`${root}${sep}`) && filePath !== root) return send404(response);
-  if (pathname.endsWith("/") || (existsSync(filePath) && statSync(filePath).isDirectory())) filePath = resolve(filePath, "index.html");
-  if (!existsSync(filePath) && !extname(pathname)) filePath = resolve(root, `.${pathname}`, "index.html");
+  if (pathname.endsWith("/") || (existsSync(filePath) && statSync(filePath).isDirectory()))
+    filePath = resolve(filePath, "index.html");
+  if (!existsSync(filePath) && !extname(pathname))
+    filePath = resolve(root, `.${pathname}`, "index.html");
   if (!existsSync(filePath) || !statSync(filePath).isFile()) return send404(response);
   response.writeHead(200, {
     "Content-Type": mimeTypes[extname(filePath)] ?? "application/octet-stream",
-    "Cache-Control": pathname === "/sw.js" || pathname === "/precache-manifest.js" ? "no-cache" : "public, max-age=0",
+    "Cache-Control":
+      pathname === "/sw.js" || pathname === "/precache-manifest.js"
+        ? "no-cache"
+        : "public, max-age=0",
   });
   createReadStream(filePath).pipe(response);
 }).listen(port, "127.0.0.1", () => {

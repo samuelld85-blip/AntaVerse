@@ -32,12 +32,6 @@
       "description": "Actions, habitudes et situations typiques du thème"
     }
   ],
-  "tags": [
-    "essentials",
-    "people",
-    "places",
-    "objects",
-    "situations"
-  ],
+  "tags": ["essentials", "people", "places", "objects", "situations"],
   "contentVersion": "2026.08.17-excel-import"
 }

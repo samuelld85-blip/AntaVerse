@@ -1,5 +1,5 @@
 import { PageShell } from "@/games/sans-le-dire/components/page-shell";
-import { ButtonLink } from "@/games/sans-le-dire/components/ui";
+import { ButtonLink } from "@/games/shared/components/ui";
 
 const rules = [
   ["Découvrez", "Un mot à faire deviner apparaît à l’écran."],

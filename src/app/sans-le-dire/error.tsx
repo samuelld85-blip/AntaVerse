@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/games/sans-le-dire/components/ui";
+import { Button } from "@/games/shared/components/ui";
 import { LogoMark } from "@/games/sans-le-dire/components/brand";
 
 export default function GlobalError({ reset }: { reset: () => void }) {

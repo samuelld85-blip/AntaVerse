@@ -1,3 +1,4 @@
+import { readJson, removeJson, writeJson } from "@/lib/local-storage-json";
 import type { GameState } from "./types";
 import { STANDARD_ROUNDS } from "./engine";
 
@@ -5,31 +6,15 @@ const STORAGE_KEY = "la-relance:current-game";
 const MAX_ROUND_INDEX = STANDARD_ROUNDS;
 
 export function loadCurrentGame(): GameState | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const value: unknown = JSON.parse(raw);
-    if (!isGameState(value)) {
-      window.localStorage.removeItem(STORAGE_KEY);
-      return null;
-    }
-    return value;
-  } catch {
-    return null;
-  }
+  return readJson(STORAGE_KEY, isGameState);
 }
 
 export function saveCurrentGame(game: GameState): void {
-  if (typeof window !== "undefined") {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(game));
-  }
+  writeJson(STORAGE_KEY, game);
 }
 
 export function clearCurrentGame(): void {
-  if (typeof window !== "undefined") {
-    window.localStorage.removeItem(STORAGE_KEY);
-  }
+  removeJson(STORAGE_KEY);
 }
 
 function isGameState(value: unknown): value is GameState {

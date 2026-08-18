@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Brand, LogoMark } from "@/games/la-relance/components/brand";
-import { Button, ButtonLink } from "@/games/la-relance/components/ui";
+import { Button, ButtonLink } from "@/games/shared/components/ui";
 import { themes } from "@/games/la-relance/data/themes";
 import {
   STANDARD_ROUNDS,
@@ -13,7 +13,11 @@ import {
   getWinnerIndex,
   replayGame,
 } from "@/games/la-relance/lib/game/engine";
-import { clearCurrentGame, loadCurrentGame, saveCurrentGame } from "@/games/la-relance/lib/game/persistence";
+import {
+  clearCurrentGame,
+  loadCurrentGame,
+  saveCurrentGame,
+} from "@/games/la-relance/lib/game/persistence";
 import type { GameState, TeamIndex } from "@/games/la-relance/lib/game/types";
 
 export function GameClient() {

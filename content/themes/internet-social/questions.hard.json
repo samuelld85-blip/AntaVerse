@@ -4,13 +4,8 @@
     "slug": "xlsx-internet-social-hard-01",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 noms publics sucrés d’Android.",
     "shortTitle": "noms publics sucrés d’Android",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-internet-social-hard-02",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 microprocesseurs historiques d’Intel.",
     "shortTitle": "microprocesseurs historiques d’Intel",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-internet-social-hard-03",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 personnalités ayant marqué l’histoire du web.",
     "shortTitle": "personnalités ayant marqué l’histoire du web",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-internet-social-hard-04",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 extensions Internet nationales européennes.",
     "shortTitle": "extensions Internet nationales européennes",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-internet-social-hard-05",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 plateformes ou services Internet lancés avant 2010.",
     "shortTitle": "plateformes ou services Internet lancés avant…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-internet-social-hard-06",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 sigles ou acronymes fondamentaux du Web et d’Internet.",
     "shortTitle": "sigles ou acronymes fondamentaux du Web et d’…",
     "difficultyLevel": 3,

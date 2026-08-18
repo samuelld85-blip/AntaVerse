@@ -4,13 +4,8 @@
     "slug": "xlsx-fashion-beauty-medium-01",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 métiers de la mode et de la beauté.",
     "shortTitle": "métiers de la mode et de la beauté",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-fashion-beauty-medium-02",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 styles vestimentaires connus.",
     "shortTitle": "styles vestimentaires connus",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-fashion-beauty-medium-03",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 produits de soin du visage.",
     "shortTitle": "produits de soin du visage",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-fashion-beauty-medium-04",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 couleurs faciles à associer.",
     "shortTitle": "couleurs faciles à associer",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-fashion-beauty-medium-05",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 motifs présents sur des vêtements.",
     "shortTitle": "motifs présents sur des vêtements",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-fashion-beauty-medium-06",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 coupes ou formes de pantalon.",
     "shortTitle": "coupes ou formes de pantalon",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-fashion-beauty-medium-07",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 types de manteaux ou vestes.",
     "shortTitle": "types de manteaux ou vestes",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-fashion-beauty-medium-08",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 styles de coiffure ou coupes connues.",
     "shortTitle": "styles de coiffure ou coupes connues",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-fashion-beauty-medium-09",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 types de bijoux.",
     "shortTitle": "types de bijoux",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-fashion-beauty-medium-10",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 ingrédients courants des soins cosmétiques.",
     "shortTitle": "ingrédients courants des soins cosmétiques",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-fashion-beauty-medium-11",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 styles vestimentaires reconnaissables.",
     "shortTitle": "styles vestimentaires reconnaissables",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-fashion-beauty-medium-12",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 types de tissus ou étoffes utilisés en habillement.",
     "shortTitle": "types de tissus ou étoffes utilisés en habill…",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-fashion-beauty-medium-13",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 éléments ou techniques d’une manucure.",
     "shortTitle": "éléments ou techniques d’une manucure",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-fashion-beauty-medium-14",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 types de lunettes ou formes de montures.",
     "shortTitle": "types de lunettes ou formes de montures",
     "difficultyLevel": 2,

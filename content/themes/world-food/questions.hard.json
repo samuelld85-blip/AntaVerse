@@ -4,13 +4,8 @@
     "slug": "xlsx-world-food-hard-01",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 plats contenant traditionnellement du poisson cru.",
     "shortTitle": "plats contenant traditionnellement du poisson…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-world-food-hard-02",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 préparations du monde faites avec une pâte farcie.",
     "shortTitle": "préparations du monde faites avec une pâte fa…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-world-food-hard-03",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 sauces, pâtes ou condiments traditionnellement fermentés.",
     "shortTitle": "sauces, pâtes ou condiments traditionnellemen…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-world-food-hard-04",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 boissons alcoolisées traditionnellement produites à partir de céréales.",
     "shortTitle": "boissons alcoolisées traditionnellement produ…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-world-food-hard-05",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 spécialités françaises dont le nom renvoie directement à une ville ou une région.",
     "shortTitle": "spécialités françaises dont le nom renvoie di…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-world-food-hard-06",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 herbes aromatiques courantes de la cuisine méditerranéenne.",
     "shortTitle": "herbes aromatiques courantes de la cuisine mé…",
     "difficultyLevel": 3,

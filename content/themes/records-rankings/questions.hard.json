@@ -4,13 +4,8 @@
     "slug": "xlsx-records-rankings-hard-01",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 îles parmi les plus grandes.",
     "shortTitle": "îles parmi les plus grandes",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-records-rankings-hard-02",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 jeux vidéo parmi les plus vendus.",
     "shortTitle": "jeux vidéo parmi les plus vendus",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-records-rankings-hard-03",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 plus hautes montagnes connues.",
     "shortTitle": "plus hautes montagnes connues",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-records-rankings-hard-04",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 albums parmi les plus vendus.",
     "shortTitle": "albums parmi les plus vendus",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-records-rankings-hard-05",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 monuments parmi les plus hauts.",
     "shortTitle": "monuments parmi les plus hauts",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-records-rankings-hard-06",
     "language": "fr",
     "themeId": "records-rankings",
-    "subthemeIds": [
-      "records-rankings:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["records-rankings:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 animaux connus pour détenir un record physique ou biologique marquant.",
     "shortTitle": "animaux connus pour détenir un record physiqu…",
     "difficultyLevel": 3,

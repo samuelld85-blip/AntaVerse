@@ -2,17 +2,28 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/games/sans-le-dire/components/ui";
+import { Button } from "@/games/shared/components/ui";
 import { cards } from "@/games/sans-le-dire/data/cards";
 import { createGame } from "@/games/sans-le-dire/lib/game/engine";
-import { loadTeamNames, saveCurrentGame, saveTeamNames } from "@/games/sans-le-dire/lib/game/persistence";
+import {
+  loadTeamNames,
+  saveCurrentGame,
+  saveTeamNames,
+} from "@/games/sans-le-dire/lib/game/persistence";
 
 export function SetupForm() {
   const router = useRouter();
   const [teamOneName, setTeamOneName] = useState("Les Antagonistes");
   const [teamTwoName, setTeamTwoName] = useState("Les Sanglieeers");
   const [error, setError] = useState<string | null>(null);
-  useEffect(() => { const timer = window.setTimeout(() => { const [one, two] = loadTeamNames(); setTeamOneName(one); setTeamTwoName(two); }, 0); return () => window.clearTimeout(timer); }, []);
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      const [one, two] = loadTeamNames();
+      setTeamOneName(one);
+      setTeamTwoName(two);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -73,9 +84,7 @@ export function SetupForm() {
         </label>
       </div>
 
-      <p className="setup-note">
-        4 manches · 45 secondes · 2 passes
-      </p>
+      <p className="setup-note">4 manches · 45 secondes · 2 passes</p>
       {error ? (
         <p className="form-error" role="alert">
           {error}

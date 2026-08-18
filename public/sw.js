@@ -47,9 +47,7 @@ self.addEventListener("fetch", (event) => {
           const exact = await caches.match(event.request, { ignoreSearch: true });
           if (exact) return exact;
           const url = new URL(event.request.url);
-          const normalizedPath = url.pathname.endsWith("/")
-            ? url.pathname
-            : `${url.pathname}/`;
+          const normalizedPath = url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
           return (await caches.match(normalizedPath)) ?? caches.match(OFFLINE_URL);
         }),
     );

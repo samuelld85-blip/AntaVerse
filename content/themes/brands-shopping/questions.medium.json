@@ -4,13 +4,8 @@
     "slug": "xlsx-brands-shopping-medium-01",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 entreprises derrière des produits tech très connus.",
     "shortTitle": "entreprises derrière des produits tech très c…",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-brands-shopping-medium-02",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 confiseries avec le groupe qui les produit.",
     "shortTitle": "confiseries avec le groupe qui les produit",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-brands-shopping-medium-03",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques automobiles avec leur groupe propriétaire.",
     "shortTitle": "marques automobiles avec leur groupe propriét…",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-brands-shopping-medium-04",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 grandes maisons derrière des parfums cultes.",
     "shortTitle": "grandes maisons derrière des parfums cultes",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-brands-shopping-medium-05",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques connues pour leur slogan culte.",
     "shortTitle": "marques connues pour leur slogan culte",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-brands-shopping-medium-06",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques appartenant au secteur de l’électroménager.",
     "shortTitle": "marques appartenant au secteur de l’électromé…",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-brands-shopping-medium-07",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques françaises de mode ou de luxe.",
     "shortTitle": "marques françaises de mode ou de luxe",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-brands-shopping-medium-08",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 enseignes ou marques spécialisées dans le bricolage ou la maison.",
     "shortTitle": "enseignes ou marques spécialisées dans le bri…",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-brands-shopping-medium-09",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques de chaussures connues.",
     "shortTitle": "marques de chaussures connues",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-brands-shopping-medium-10",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques historiques d’appareils photo.",
     "shortTitle": "marques historiques d’appareils photo",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-brands-shopping-medium-11",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques de montres connues.",
     "shortTitle": "marques de montres connues",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-brands-shopping-medium-12",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 groupes ou marques automobiles allemands.",
     "shortTitle": "groupes ou marques automobiles allemands",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-brands-shopping-medium-13",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques de cosmétiques ou beauté vendues à grande échelle.",
     "shortTitle": "marques de cosmétiques ou beauté vendues à gr…",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-brands-shopping-medium-14",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 marques associées au café ou aux machines à café.",
     "shortTitle": "marques associées au café ou aux machines à café",
     "difficultyLevel": 2,

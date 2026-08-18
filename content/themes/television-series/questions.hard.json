@@ -4,13 +4,8 @@
     "slug": "xlsx-television-series-hard-01",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 enquêteurs célèbres de séries.",
     "shortTitle": "enquêteurs célèbres de séries",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-television-series-hard-02",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes maisons nobles de Game of Thrones.",
     "shortTitle": "grandes maisons nobles de Game of Thrones",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-television-series-hard-03",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 séries ou mini-séries emblématiques produites pour HBO.",
     "shortTitle": "séries ou mini-séries emblématiques produites…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-television-series-hard-04",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 médecins célèbres de séries télévisées.",
     "shortTitle": "médecins célèbres de séries télévisées",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-television-series-hard-05",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 séries dont le titre est aussi le nom d’un lieu fictif ou réel.",
     "shortTitle": "séries dont le titre est aussi le nom d’un li…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-television-series-hard-06",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 séries d’anthologie dont les histoires ou personnages changent fortement selon les épisodes ou saisons.",
     "shortTitle": "séries d’anthologie dont les histoires ou per…",
     "difficultyLevel": 3,

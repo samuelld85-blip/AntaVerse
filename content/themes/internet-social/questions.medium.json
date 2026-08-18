@@ -4,13 +4,8 @@
     "slug": "xlsx-internet-social-medium-01",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 mèmes Internet connus.",
     "shortTitle": "mèmes Internet connus",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-internet-social-medium-02",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 termes liés à la cybersécurité.",
     "shortTitle": "termes liés à la cybersécurité",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-internet-social-medium-03",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 raisons pour lesquelles une publication devient virale.",
     "shortTitle": "raisons pour lesquelles une publication devie…",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-internet-social-medium-04",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 mèmes Internet devenus cultes.",
     "shortTitle": "mèmes Internet devenus cultes",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-internet-social-medium-05",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 sigles ou expressions courantes du web.",
     "shortTitle": "sigles ou expressions courantes du web",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-internet-social-medium-06",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 langages de programmation connus.",
     "shortTitle": "langages de programmation connus",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-internet-social-medium-07",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 systèmes d’exploitation connus du grand public.",
     "shortTitle": "systèmes d’exploitation connus du grand public",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-internet-social-medium-08",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 supports ou services de stockage numérique.",
     "shortTitle": "supports ou services de stockage numérique",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-internet-social-medium-09",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 plateformes ou services ayant popularisé un format de contenu spécifique.",
     "shortTitle": "plateformes ou services ayant popularisé un f…",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-internet-social-medium-10",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 termes liés au référencement ou au marketing digital.",
     "shortTitle": "termes liés au référencement ou au marketing…",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-internet-social-medium-11",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 grands services cloud ou de stockage en ligne.",
     "shortTitle": "grands services cloud ou de stockage en ligne",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-internet-social-medium-12",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 protocoles ou technologies utilisés pour communiquer sur Internet.",
     "shortTitle": "protocoles ou technologies utilisés pour comm…",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-internet-social-medium-13",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 phénomènes ou pratiques problématiques liés aux réseaux sociaux.",
     "shortTitle": "phénomènes ou pratiques problématiques liés a…",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-internet-social-medium-14",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["internet-social:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 plateformes connues ayant été créées avant 2012.",
     "shortTitle": "plateformes connues ayant été créées avant 2012",
     "difficultyLevel": 2,

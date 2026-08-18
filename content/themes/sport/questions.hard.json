@@ -4,13 +4,8 @@
     "slug": "xlsx-sport-hard-01",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": [
-      "sport:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["sport:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 joueurs ayant marqué en finale du Mondial depuis 1986.",
     "shortTitle": "joueurs ayant marqué en finale du Mondial dep…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-sport-hard-02",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": [
-      "sport:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["sport:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 sélections différentes à avoir atteint une finale de l’Euro masculin.",
     "shortTitle": "sélections différentes à avoir atteint une fi…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-sport-hard-03",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": [
-      "sport:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["sport:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grands derbies ou classiques du football.",
     "shortTitle": "grands derbies ou classiques du football",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-sport-hard-04",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": [
-      "sport:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["sport:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 sports qui se jouent avec une raquette ou une palette.",
     "shortTitle": "sports qui se jouent avec une raquette ou une…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-sport-hard-05",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": [
-      "sport:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["sport:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de coups ou gestes techniques au tennis.",
     "shortTitle": "types de coups ou gestes techniques au tennis",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-sport-hard-06",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": [
-      "sport:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["sport:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 postes ou positions du football américain.",
     "shortTitle": "postes ou positions du football américain",
     "difficultyLevel": 3,

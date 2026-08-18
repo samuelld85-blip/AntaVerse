@@ -4,13 +4,8 @@
     "slug": "xlsx-geography-world-hard-01",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 systèmes d’écriture encore utilisés aujourd’hui.",
     "shortTitle": "systèmes d’écriture encore utilisés aujourd’hui",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-geography-world-hard-02",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 capitales situées à plus de 1 000 mètres d’altitude.",
     "shortTitle": "capitales situées à plus de 1 000 mètres d’al…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-geography-world-hard-03",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 pays bordés par deux mers ou océans.",
     "shortTitle": "pays bordés par deux mers ou océans",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-geography-world-hard-04",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 capitales nationales installées sur les rives d’un grand fleuve.",
     "shortTitle": "capitales nationales installées sur les rives…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-geography-world-hard-05",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 pays enclavés, sans accès direct à la mer.",
     "shortTitle": "pays enclavés, sans accès direct à la mer",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-geography-world-hard-06",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": [
-      "geography-world:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["geography-world:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 États insulaires constitués d’un archipel ou de nombreux groupes d’îles.",
     "shortTitle": "États insulaires constitués d’un archipel ou…",
     "difficultyLevel": 3,

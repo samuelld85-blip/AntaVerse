@@ -4,13 +4,8 @@
     "slug": "xlsx-cinema-easy-01",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 sagas de cinéma connues.",
     "shortTitle": "sagas de cinéma connues",
     "difficultyLevel": 1,
@@ -163,13 +158,8 @@
     "slug": "xlsx-cinema-easy-02",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnages de Star Wars.",
     "shortTitle": "personnages de Star Wars",
     "difficultyLevel": 1,
@@ -322,13 +312,8 @@
     "slug": "xlsx-cinema-easy-03",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films d’animation Pixar.",
     "shortTitle": "films d’animation Pixar",
     "difficultyLevel": 1,
@@ -481,13 +466,8 @@
     "slug": "xlsx-cinema-easy-04",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 acteurs français connus.",
     "shortTitle": "acteurs français connus",
     "difficultyLevel": 1,
@@ -640,13 +620,8 @@
     "slug": "xlsx-cinema-easy-05",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films d’animation des studios Pixar.",
     "shortTitle": "films d’animation des studios Pixar",
     "difficultyLevel": 1,
@@ -799,13 +774,8 @@
     "slug": "xlsx-cinema-easy-06",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 objets que l’on achète au cinéma.",
     "shortTitle": "objets que l’on achète au cinéma",
     "difficultyLevel": 1,
@@ -958,13 +928,8 @@
     "slug": "xlsx-cinema-easy-07",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnages de films Pixar.",
     "shortTitle": "personnages de films Pixar",
     "difficultyLevel": 1,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-cinema-easy-08",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnages très connus de Star Wars.",
     "shortTitle": "personnages très connus de Star Wars",
     "difficultyLevel": 1,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-cinema-easy-09",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films Disney ou Pixar très connus.",
     "shortTitle": "films Disney ou Pixar très connus",
     "difficultyLevel": 1,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-cinema-easy-10",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films ou séries appartenant à l’univers Star Wars.",
     "shortTitle": "films ou séries appartenant à l’univers Star…",
     "difficultyLevel": 1,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-cinema-easy-11",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films avec Leonardo DiCaprio.",
     "shortTitle": "films avec Leonardo DiCaprio",
     "difficultyLevel": 1,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-cinema-easy-12",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 super-héros apparus au cinéma.",
     "shortTitle": "super-héros apparus au cinéma",
     "difficultyLevel": 1,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-cinema-easy-13",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films appartenant à l’univers Harry Potter / Wizarding World.",
     "shortTitle": "films appartenant à l’univers Harry Potter /…",
     "difficultyLevel": 1,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-cinema-easy-14",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 acteurs ou actrices ayant joué un super-héros célèbre.",
     "shortTitle": "acteurs ou actrices ayant joué un super-héros…",
     "difficultyLevel": 1,
@@ -2230,13 +2160,8 @@
     "slug": "xlsx-cinema-easy-15",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films d’animation DreamWorks connus.",
     "shortTitle": "films d’animation DreamWorks connus",
     "difficultyLevel": 1,
@@ -2389,13 +2314,8 @@
     "slug": "xlsx-cinema-easy-16",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 méchants célèbres du cinéma.",
     "shortTitle": "méchants célèbres du cinéma",
     "difficultyLevel": 1,
@@ -2548,13 +2468,8 @@
     "slug": "xlsx-cinema-easy-17",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films avec Tom Hanks.",
     "shortTitle": "films avec Tom Hanks",
     "difficultyLevel": 1,
@@ -2707,13 +2622,8 @@
     "slug": "xlsx-cinema-easy-18",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films mettant en scène des dinosaures ou créatures préhistoriques.",
     "shortTitle": "films mettant en scène des dinosaures ou créa…",
     "difficultyLevel": 1,
@@ -2866,13 +2776,8 @@
     "slug": "xlsx-cinema-easy-19",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 sagas ou franchises de cinéma connues.",
     "shortTitle": "sagas ou franchises de cinéma connues",
     "difficultyLevel": 1,
@@ -3025,13 +2930,8 @@
     "slug": "xlsx-cinema-easy-20",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 métiers du cinéma.",
     "shortTitle": "métiers du cinéma",
     "difficultyLevel": 1,

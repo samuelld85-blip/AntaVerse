@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import "@/games/shared/game-base.css";
 import "@/games/sans-le-dire/styles.css";
 
 export const metadata: Metadata = {

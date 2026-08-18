@@ -4,13 +4,8 @@
     "slug": "xlsx-nature-body-hard-01",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 mers ou grands bassins nommés de l’ensemble méditerranéen.",
     "shortTitle": "mers ou grands bassins nommés de l’ensemble m…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-nature-body-hard-02",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 amphibiens présents en France métropolitaine.",
     "shortTitle": "amphibiens présents en France métropolitaine",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-nature-body-hard-03",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 conifères indigènes ou largement naturels d’Europe.",
     "shortTitle": "conifères indigènes ou largement naturels d’E…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-nature-body-hard-04",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grands types d’écosystèmes côtiers ou marins peu profonds.",
     "shortTitle": "grands types d’écosystèmes côtiers ou marins…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-nature-body-hard-05",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 primates anthropoïdes connus, humains exclus.",
     "shortTitle": "primates anthropoïdes connus, humains exclus",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-nature-body-hard-06",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": [
-      "nature-body:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["nature-body:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 requins facilement distinguables par leur nom commun.",
     "shortTitle": "requins facilement distinguables par leur nom…",
     "difficultyLevel": 3,
