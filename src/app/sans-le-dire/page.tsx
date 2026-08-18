@@ -7,7 +7,7 @@ import { GameHomeNav } from "@/components/game-home-nav";
 export default function HomePage() {
   return (
     <main className="home-shell safe-shell">
-      <header>
+      <header className="game-home-header">
         <Brand />
         <GameHomeNav rulesHref="/sans-le-dire/regles" />
       </header>

@@ -149,6 +149,10 @@ a {
   text-transform: uppercase;
 }
 
+html[data-theme="light"] .quoi-brand-mark {
+  content: url("/brand/games/quoi-de-9-light.png");
+}
+
 .glass-panel {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.045);

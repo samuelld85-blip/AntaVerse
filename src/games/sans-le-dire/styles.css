@@ -90,18 +90,25 @@ a {
 }
 .brand-mark {
   display: block;
-  width: 8.5rem;
+  width: 6.5rem;
   height: auto;
   flex: 0 0 auto;
   object-fit: contain;
   filter: none;
 }
 .brand-mark--small {
-  width: 6rem;
+  width: 4.75rem;
+}
+
+.game-home-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 html[data-theme="light"] .brand-mark--sans-le-dire {
-  content: url("/brand/sans-le-dire-logo-light.png");
+  content: url("/brand/games/sans-le-dire-light.png");
 }
 
 .button {

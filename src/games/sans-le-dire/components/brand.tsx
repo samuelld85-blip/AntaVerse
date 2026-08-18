@@ -4,7 +4,7 @@ import Link from "next/link";
 export function LogoMark({ compact = false }: { compact?: boolean }) {
   return (
     <Image
-      src="/brand/sans-le-dire-logo.png"
+      src="/brand/games/sans-le-dire-dark.png"
       alt="Sans le dire"
       width={115}
       height={115}

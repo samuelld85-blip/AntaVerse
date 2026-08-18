@@ -4,7 +4,7 @@ import Link from "next/link";
 export function LogoMark({ compact = false }: { compact?: boolean }) {
   return (
     <Image
-      src="/brand/la-relance-logo.png"
+      src="/brand/games/la-relance-dark.png"
       alt=""
       width={133}
       height={76}

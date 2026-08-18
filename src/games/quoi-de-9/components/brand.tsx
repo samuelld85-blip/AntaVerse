@@ -6,12 +6,16 @@ export function Brand({ compact = false }: { compact?: boolean }) {
     <Link
       href="/quoi-de-9"
       aria-label="Quoi de 9, accueil"
-      className="inline-flex items-center gap-2 rounded-xl"
+      className="inline-flex items-center rounded-xl"
     >
-      <Image src="/brand/v1/quoi-de-9-mark.svg" alt="" width={compact ? 32 : 40} height={compact ? 32 : 40} aria-hidden="true" />
-      <span className={`${compact ? "text-xl" : "text-2xl"} display-face tracking-tight`}>
-        Quoi de 9 ?
-      </span>
+      <Image
+        src="/brand/games/quoi-de-9-dark.png"
+        alt="Quoi des 9"
+        width={1072}
+        height={696}
+        className={compact ? "quoi-brand-mark h-8 w-auto" : "quoi-brand-mark h-12 w-auto"}
+        priority
+      />
     </Link>
   );
 }

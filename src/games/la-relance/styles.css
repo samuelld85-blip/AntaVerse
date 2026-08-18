@@ -102,8 +102,15 @@ a {
   height: auto;
 }
 
+.game-home-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 html[data-theme="light"] .brand-mark--la-relance {
-  content: url("/brand/la-relance-logo-light.png");
+  content: url("/brand/games/la-relance-light.png");
 }
 .brand-name {
   font-family: "Space Grotesk", Inter, sans-serif;
