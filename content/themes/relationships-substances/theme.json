@@ -1,0 +1,43 @@
+{
+  "id": "relationships-substances",
+  "label": "Sexe, relations & substances",
+  "description": "Relations, santé sexuelle et réduction des risques",
+  "icon": "💬",
+  "category": "Vie quotidienne & société",
+  "weight": 2,
+  "subthemes": [
+    {
+      "id": "relationships-substances:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "relationships-substances:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "relationships-substances:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "relationships-substances:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "relationships-substances:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

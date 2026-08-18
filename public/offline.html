@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#11110f" />
+    <title>Hors ligne · AntaVerse</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #11110f;
+        color: #f3f0e7;
+        font-family: system-ui, sans-serif;
+        text-align: center;
+      }
+      main {
+        max-width: 360px;
+      }
+      b {
+        display: grid;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 28px;
+        place-items: center;
+        border-radius: 20px;
+        background: #d8ff45;
+        color: #11110f;
+        font-size: 30px;
+        transform: rotate(-4deg);
+      }
+      h1 {
+        margin: 0;
+        font-size: 40px;
+        line-height: 1;
+      }
+      p {
+        color: #aaa99f;
+        line-height: 1.6;
+      }
+      button {
+        min-height: 54px;
+        width: 100%;
+        margin-top: 18px;
+        border: 0;
+        border-radius: 18px;
+        background: #38d9ff;
+        color: #11110f;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <b>AV</b>
+      <h1>Pas de réseau.</h1>
+      <p>
+        Ce jeu n’a pas encore été chargé sur l’appareil. Vos parties locales restent sauvegardées.
+      </p>
+      <button onclick="location.reload()">Réessayer</button>
+    </main>
+  </body>
+</html>

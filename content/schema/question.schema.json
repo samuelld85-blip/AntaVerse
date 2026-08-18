@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "language": { "type": "string", "const": "fr" },
+    "themeId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "subthemeIds": {
+      "minItems": 1,
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+:[a-z0-9-]+$" }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "questionText": { "type": "string", "minLength": 12 },
+    "shortTitle": { "type": "string", "minLength": 2, "maxLength": 80 },
+    "difficultyLevel": {
+      "anyOf": [
+        { "type": "number", "const": 1 },
+        { "type": "number", "const": 2 },
+        { "type": "number", "const": 3 }
+      ]
+    },
+    "difficultyLabel": { "type": "string", "enum": ["Facile", "Moyen", "Difficile"] },
+    "editorialDifficultyScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "specificityScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "popularityScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "recallDifficultyScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "answerSetHomogeneityScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "expectedAverageAnswers": { "type": "number", "minimum": 0, "maximum": 9 },
+    "observedAverageAnswers": { "type": "number", "minimum": 0, "maximum": 9 },
+    "playCount": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "difficultyConfidence": { "type": "string", "enum": ["low", "medium", "high"] },
+    "validationMode": { "type": "string", "enum": ["documentary", "editorial_panel"] },
+    "answers": {
+      "minItems": 9,
+      "maxItems": 9,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "display": { "type": "string", "minLength": 1 },
+          "normalized": { "type": "string", "minLength": 1 },
+          "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "abbreviations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "alternativeSpellings": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "accentInsensitiveVariants": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "hyphenationVariants": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "originalName": { "type": "string", "minLength": 1 },
+          "explanation": { "type": "string", "minLength": 2 },
+          "displayOrder": { "type": "integer", "minimum": 1, "maximum": 9 },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+                "title": { "type": "string", "minLength": 2 },
+                "publisher": { "type": "string", "minLength": 2 },
+                "url": { "type": "string", "format": "uri" },
+                "accessedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+                },
+                "publishedAt": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                "isPrimarySource": { "type": "boolean" },
+                "notes": { "type": "string", "minLength": 2 }
+              },
+              "required": ["id", "title", "publisher", "url", "accessedAt", "isPrimarySource"],
+              "additionalProperties": false
+            }
+          },
+          "sensitivityNote": { "type": "string", "minLength": 2 }
+        },
+        "required": [
+          "id",
+          "display",
+          "normalized",
+          "aliases",
+          "abbreviations",
+          "alternativeSpellings",
+          "accentInsensitiveVariants",
+          "hyphenationVariants",
+          "displayOrder",
+          "sources"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bomb": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "display": { "type": "string", "minLength": 1 },
+        "normalized": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "abbreviations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "alternativeSpellings": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "accentInsensitiveVariants": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "hyphenationVariants": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "explanation": { "type": "string", "minLength": 12 }
+      },
+      "required": [
+        "id",
+        "display",
+        "normalized",
+        "aliases",
+        "abbreviations",
+        "alternativeSpellings",
+        "accentInsensitiveVariants",
+        "hyphenationVariants",
+        "explanation"
+      ],
+      "additionalProperties": false
+    },
+    "explanation": { "type": "string", "minLength": 12 },
+    "qualificationRule": { "type": "string", "minLength": 12 },
+    "exclusionNotes": { "type": "string", "minLength": 2 },
+    "referenceDate": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+    },
+    "timeSensitive": { "type": "boolean" },
+    "recommendedReviewAt": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "title": { "type": "string", "minLength": 2 },
+          "publisher": { "type": "string", "minLength": 2 },
+          "url": { "type": "string", "format": "uri" },
+          "accessedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "isPrimarySource": { "type": "boolean" },
+          "notes": { "type": "string", "minLength": 2 }
+        },
+        "required": ["id", "title", "publisher", "url", "accessedAt", "isPrimarySource"],
+        "additionalProperties": false
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "needs_review", "verified", "published", "rejected", "archived"]
+    },
+    "reviewer": { "type": "string", "minLength": 2 },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+    },
+    "rejectionReason": { "type": "string", "minLength": 4 },
+    "duplicateJustification": { "type": "string", "minLength": 12 },
+    "answerSetFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "version": { "type": "integer", "exclusiveMinimum": 0, "maximum": 9007199254740991 },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+    }
+  },
+  "required": [
+    "id",
+    "slug",
+    "language",
+    "themeId",
+    "subthemeIds",
+    "tags",
+    "questionText",
+    "shortTitle",
+    "difficultyLevel",
+    "difficultyLabel",
+    "editorialDifficultyScore",
+    "specificityScore",
+    "popularityScore",
+    "recallDifficultyScore",
+    "answerSetHomogeneityScore",
+    "expectedAverageAnswers",
+    "playCount",
+    "difficultyConfidence",
+    "validationMode",
+    "answers",
+    "bomb",
+    "explanation",
+    "qualificationRule",
+    "timeSensitive",
+    "sources",
+    "status",
+    "answerSetFingerprint",
+    "version",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false,
+  "$id": "https://qui-des-9.local/schema/2026.08.17/question.schema.json",
+  "title": "Question Qui des 9",
+  "x-content-version": "2026.08.17"
+}

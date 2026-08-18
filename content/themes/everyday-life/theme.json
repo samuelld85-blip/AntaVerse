@@ -1,0 +1,43 @@
+{
+  "id": "everyday-life",
+  "label": "Vie quotidienne",
+  "description": "Objets, habitudes et petites situations de tous les jours",
+  "icon": "☀️",
+  "category": "Vie quotidienne & société",
+  "weight": 6,
+  "subthemes": [
+    {
+      "id": "everyday-life:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "everyday-life:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "everyday-life:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "everyday-life:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "everyday-life:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "nature-body",
+  "label": "Nature, animaux & corps humain",
+  "description": "Animaux, nature et fonctionnement du corps humain",
+  "icon": "🐾",
+  "category": "Culture générale accessible",
+  "weight": 6,
+  "subthemes": [
+    {
+      "id": "nature-body:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "nature-body:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "nature-body:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "nature-body:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "nature-body:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "science-inventions",
+  "label": "Sciences & inventions",
+  "description": "Découvertes, inventions et notions scientifiques familières",
+  "icon": "🔬",
+  "category": "Culture générale accessible",
+  "weight": 6,
+  "subthemes": [
+    {
+      "id": "science-inventions:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "science-inventions:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "science-inventions:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "science-inventions:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "science-inventions:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

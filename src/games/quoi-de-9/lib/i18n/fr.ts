@@ -1,0 +1,21 @@
+export const FR = {
+  appName: "Quoi de 9 ?",
+  newGame: "Nouvelle partie",
+  resumeGame: "Reprendre la partie",
+  abandonGame: "Abandonner la partie",
+  howToPlay: "Comment jouer",
+  next: "Continuer",
+  back: "Retour",
+  round: "Manche",
+  turn: "Tour",
+  answering: "répond",
+  gameMaster: "maître du jeu",
+  found: "trouvées",
+  points: "points",
+  localMode: "Jeu local",
+  errors: {
+    load: "Impossible de récupérer la partie enregistrée.",
+    save: "La partie n’a pas pu être enregistrée sur cet appareil.",
+    missing: "Aucune partie en cours n’a été trouvée.",
+  },
+} as const;

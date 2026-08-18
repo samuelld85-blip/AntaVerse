@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">AntaVerse</title>
+  <rect width="512" height="512" rx="116" fill="#10110f"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#d8ff45" stroke-width="18" transform="rotate(-18 256 256)"/>
+  <circle cx="256" cy="256" r="75" fill="#d8ff45"/>
+  <circle cx="238" cy="92" r="25" fill="#38d9ff"/>
+  <path d="M218 290l38-105 38 105h-25l-7-23h-32l-7 23zm19-45h18l-9-31z" fill="#10110f"/>
+</svg>

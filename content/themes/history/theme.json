@@ -1,0 +1,43 @@
+{
+  "id": "history",
+  "label": "Histoire & grandes époques",
+  "description": "Époques, civilisations et événements historiques accessibles",
+  "icon": "🏛️",
+  "category": "Culture générale accessible",
+  "weight": 6,
+  "subthemes": [
+    {
+      "id": "history:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "history:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "history:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "history:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "history:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

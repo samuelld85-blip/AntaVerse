@@ -1,0 +1,43 @@
+{
+  "id": "brands-shopping",
+  "label": "Marques, produits & shopping",
+  "description": "Marques, achats, produits et habitudes de shopping",
+  "icon": "🛍️",
+  "category": "Vie quotidienne & société",
+  "weight": 3,
+  "subthemes": [
+    {
+      "id": "brands-shopping:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "brands-shopping:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "brands-shopping:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "brands-shopping:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "brands-shopping:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

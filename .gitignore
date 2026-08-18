@@ -1,0 +1,43 @@
+# dependencies
+/node_modules
+
+# next
+/.next
+/out
+
+# testing
+/coverage
+/playwright-report
+/test-results
+
+# production
+/build
+
+# local files
+.DS_Store
+*.pem
+.codex-work/**/node_modules/
+.codex-work/content-themes*/
+.codex-work/question-audit/final-*.png
+outputs/*.inspect.ndjson
+outputs/**/*.inspect.ndjson
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (keep the example)
+.env*
+!.env.example
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# supabase local state
+/supabase/.branches
+/supabase/.temp
+
+.vercel

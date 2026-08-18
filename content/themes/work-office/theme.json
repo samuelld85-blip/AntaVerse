@@ -1,0 +1,43 @@
+{
+  "id": "work-office",
+  "label": "Travail, études & vie de bureau",
+  "description": "Bureau, études, métiers et vie professionnelle",
+  "icon": "🗂️",
+  "category": "Vie quotidienne & société",
+  "weight": 3,
+  "subthemes": [
+    {
+      "id": "work-office:essentials",
+      "label": "Les essentiels",
+      "description": "Références immédiatement associées au thème"
+    },
+    {
+      "id": "work-office:people",
+      "label": "Personnes & personnages",
+      "description": "Personnes réelles ou fictives liées au thème"
+    },
+    {
+      "id": "work-office:places",
+      "label": "Lieux & destinations",
+      "description": "Lieux, régions et espaces liés au thème"
+    },
+    {
+      "id": "work-office:objects",
+      "label": "Objets & produits",
+      "description": "Objets, produits et éléments concrets du thème"
+    },
+    {
+      "id": "work-office:situations",
+      "label": "Usages & situations",
+      "description": "Actions, habitudes et situations typiques du thème"
+    }
+  ],
+  "tags": [
+    "essentials",
+    "people",
+    "places",
+    "objects",
+    "situations"
+  ],
+  "contentVersion": "2026.08.17-excel-import"
+}

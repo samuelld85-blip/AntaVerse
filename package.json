@@ -1,0 +1,70 @@
+{
+  "name": "antaverse",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "overrides": {
+    "postcss": "8.5.19"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "npm run encoding:check && npm run content:schema && npm run content:bundle && npm run questions:editorial && npm run questions:playability",
+    "build": "next build",
+    "postbuild": "node scripts/prepare-static-pwa.mjs",
+    "preview": "node scripts/serve-static.mjs",
+    "pwa:icons": "node scripts/generate-pwa-icons.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "npm run build && playwright test",
+    "encoding:check": "node scripts/audit-encoding.mjs",
+    "questions:validate": "node scripts/validate-questions.mjs",
+    "questions:editorial": "node scripts/audit-question-editorial.mjs",
+    "questions:playability": "node scripts/audit-question-playability.mjs",
+    "questions:simulate": "node scripts/simulate-question-loop.mjs",
+    "questions:bombs": "node scripts/apply-bomb-overrides.mjs",
+    "questions:import": "node scripts/import-questions.mjs",
+    "questions:import:xlsx": "python scripts/import-question-bank-xlsx.py",
+    "content:taxonomy": "node scripts/seed-taxonomy.mjs",
+    "content:migrate-legacy": "node scripts/migrate-legacy-content.mjs",
+    "content:review-existing": "node scripts/review-existing-content.mjs --write",
+    "content:packs": "node scripts/build-curated-packs.mjs",
+    "content:import": "node scripts/import-content.mjs",
+    "content:schema": "node scripts/export-content-schema.mjs",
+    "content:validate": "node scripts/validate-content.mjs",
+    "content:validate:structural": "node scripts/validate-content.mjs --allow-gaps",
+    "content:bundle": "node scripts/build-content-bundle.mjs",
+    "content:stats": "node scripts/generate-content-report.mjs",
+    "content:duplicates": "node scripts/list-content-duplicates.mjs",
+    "content:review-report": "node scripts/generate-review-report.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "npm run encoding:check && npm run content:validate && npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "idb": "8.0.3",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-hook-form": "7.81.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@tailwindcss/postcss": "4.3.2",
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.10",
+    "fake-indexeddb": "6.2.5",
+    "jsdom": "29.1.1",
+    "prettier": "3.9.5",
+    "tailwindcss": "4.3.2",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  }
+}
