@@ -158,6 +158,37 @@ html[data-theme="light"] .brand-mark--purple {
   align-items: center;
   gap: 0.75rem;
 }
+.purple-reveal-toggle {
+  display: inline-flex;
+  margin-left: auto;
+  gap: 0.15rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.2rem;
+  background: var(--surface);
+}
+.purple-reveal-toggle-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.03em;
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+.purple-reveal-toggle-button.is-selected {
+  background: var(--violet);
+  color: white;
+}
+.purple-reveal-toggle-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 
 .purple-active-player {
   display: grid;
@@ -240,6 +271,9 @@ html[data-theme="light"] .brand-mark--purple {
   justify-content: center;
   gap: 0.9rem;
   overflow: hidden;
+}
+.purple-stage--tappable {
+  cursor: pointer;
 }
 .purple-deck-note {
   margin: 0;

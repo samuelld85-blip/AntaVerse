@@ -1,6 +1,7 @@
 import type { Route } from "next";
 
-export type GameId = "quoi-de-9" | "la-relance" | "sans-le-dire" | "purple" | "triman";
+export type GameId =
+  "quoi-de-9" | "la-relance" | "sans-le-dire" | "purple" | "triman" | "roulette-du-chaos";
 
 export interface GameDefinition {
   id: GameId;
@@ -57,6 +58,16 @@ export const games: readonly GameDefinition[] = [
     route: "/triman",
     icon: "/brand/games/triman-dark.png",
     accent: "#FF5C2B",
+    iconBackground: "#0B1118",
+  },
+  {
+    id: "roulette-du-chaos",
+    name: "Roulette du Chaos",
+    description:
+      "Tournez la roue et laissez le hasard décider : distribution, duel, règle ou jackpot",
+    route: "/roulette-du-chaos",
+    icon: "/brand/games/roulette-du-chaos-dark.png",
+    accent: "#FF4D6D",
     iconBackground: "#0B1118",
   },
 ] as const;

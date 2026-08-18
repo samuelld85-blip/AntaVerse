@@ -66,6 +66,9 @@ const REVEAL_BASE_MS = 560;
 const REVEAL_STAGGER_MS = 90;
 const REVEAL_BUFFER_MS = 220;
 
+type RevealMode = "auto" | "manual";
+const REVEAL_MODE_STORAGE_KEY = "purple:reveal-mode";
+
 export function GameClient() {
   const router = useRouter();
   const [game, setGame] = useState<GameState | null>(null);
@@ -73,6 +76,8 @@ export function GameClient() {
   const [revealing, setRevealing] = useState(false);
   const [revealGame, setRevealGame] = useState<GameState | null>(null);
   const [roundKey, setRoundKey] = useState(0);
+  const [revealMode, setRevealModeState] = useState<RevealMode>("auto");
+  const [manualCardsShown, setManualCardsShown] = useState(0);
   const busy = useRef(false);
 
   useEffect(() => {
@@ -84,20 +89,33 @@ export function GameClient() {
       }
       setGame(stored);
       setReady(true);
+
+      const storedMode = window.localStorage.getItem(REVEAL_MODE_STORAGE_KEY);
+      if (storedMode === "auto" || storedMode === "manual") setRevealModeState(storedMode);
     }, 0);
     return () => window.clearTimeout(timer);
   }, [router]);
+
+  function setRevealMode(mode: RevealMode) {
+    setRevealModeState(mode);
+    window.localStorage.setItem(REVEAL_MODE_STORAGE_KEY, mode);
+  }
 
   function act(guessType: GuessType) {
     if (!game || busy.current) return;
     busy.current = true;
     const next = submitGuess(game, guessType);
+    const cardCount = next.lastGuess?.cards.length ?? 1;
     setRevealGame(next);
     setRevealing(true);
     setRoundKey((key) => key + 1);
-    feedback(next.lastGuess?.outcome === "success" ? "success" : "failure");
 
-    const cardCount = next.lastGuess?.cards.length ?? 1;
+    if (revealMode === "manual" && cardCount > 1) {
+      setManualCardsShown(1);
+      return;
+    }
+
+    feedback(next.lastGuess?.outcome === "success" ? "success" : "failure");
     const revealMs = REVEAL_BASE_MS + cardCount * REVEAL_STAGGER_MS + REVEAL_BUFFER_MS;
     window.setTimeout(() => {
       saveCurrentGame(next);
@@ -105,6 +123,22 @@ export function GameClient() {
       setRevealing(false);
       busy.current = false;
     }, revealMs);
+  }
+
+  function revealNextCard() {
+    if (!revealGame || manualCardsShown === 0) return;
+    const cardCount = revealGame.lastGuess?.cards.length ?? 1;
+    const nextCount = manualCardsShown + 1;
+    if (nextCount < cardCount) {
+      setManualCardsShown(nextCount);
+      return;
+    }
+    feedback(revealGame.lastGuess?.outcome === "success" ? "success" : "failure");
+    saveCurrentGame(revealGame);
+    setGame(revealGame);
+    setRevealing(false);
+    setManualCardsShown(0);
+    busy.current = false;
   }
 
   function pass() {
@@ -127,11 +161,45 @@ export function GameClient() {
   const currentPlayer = game.players[game.currentPlayerIndex];
   const lastGuess = displayGame.lastGuess;
   const passAllowed = !revealing && canPass(game);
+  const isManualPending = revealing && revealMode === "manual" && manualCardsShown > 0;
+  const visibleCards = lastGuess
+    ? isManualPending
+      ? lastGuess.cards.slice(0, manualCardsShown)
+      : lastGuess.cards
+    : [];
 
   return (
     <main className="purple-shell safe-shell">
       <header className="purple-header">
         <BackButton homeHref="/purple" />
+        <div className="purple-reveal-toggle" role="group" aria-label="Mode de révélation">
+          <button
+            type="button"
+            className={
+              revealMode === "auto"
+                ? "purple-reveal-toggle-button is-selected"
+                : "purple-reveal-toggle-button"
+            }
+            aria-pressed={revealMode === "auto"}
+            disabled={revealing}
+            onClick={() => setRevealMode("auto")}
+          >
+            Auto
+          </button>
+          <button
+            type="button"
+            className={
+              revealMode === "manual"
+                ? "purple-reveal-toggle-button is-selected"
+                : "purple-reveal-toggle-button"
+            }
+            aria-pressed={revealMode === "manual"}
+            disabled={revealing}
+            onClick={() => setRevealMode("manual")}
+          >
+            Manuel
+          </button>
+        </div>
       </header>
 
       <section className="purple-stats" aria-label="État de la partie">
@@ -162,11 +230,15 @@ export function GameClient() {
         <span className="purple-active-name">{currentPlayer?.name}</span>
       </div>
 
-      <section className="purple-stage" aria-live="polite">
+      <section
+        className={isManualPending ? "purple-stage purple-stage--tappable" : "purple-stage"}
+        aria-live="polite"
+        onClick={isManualPending ? revealNextCard : undefined}
+      >
         {lastGuess ? (
           <>
             <div className="cards-reveal-row" key={roundKey}>
-              {lastGuess.cards.map((card, index) => (
+              {visibleCards.map((card, index) => (
                 <PlayingCard card={card} index={index} key={card.id} />
               ))}
             </div>
