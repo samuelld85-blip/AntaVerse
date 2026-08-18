@@ -1,6 +1,6 @@
 import type { Route } from "next";
 
-export type GameId = "quoi-de-9" | "la-relance" | "sans-le-dire";
+export type GameId = "quoi-de-9" | "la-relance" | "sans-le-dire" | "purple" | "triman";
 
 export interface GameDefinition {
   id: GameId;
@@ -38,6 +38,25 @@ export const games: readonly GameDefinition[] = [
     route: "/sans-le-dire",
     icon: "/brand/games/sans-le-dire-dark.png",
     accent: "#16C7E8",
+    iconBackground: "#0B1118",
+  },
+  {
+    id: "purple",
+    name: "Purple",
+    description:
+      "Devinez la couleur des cartes tirées du paquet, le pot commun grimpe à chaque réussite",
+    route: "/purple",
+    icon: "/brand/games/purple-dark.png",
+    accent: "#8B5CF6",
+    iconBackground: "#0B1118",
+  },
+  {
+    id: "triman",
+    name: "Triman",
+    description: "Lancez les dés, trouvez le Triman et enchaînez les règles qui se déclenchent",
+    route: "/triman",
+    icon: "/brand/games/triman-dark.png",
+    accent: "#FF5C2B",
     iconBackground: "#0B1118",
   },
 ] as const;

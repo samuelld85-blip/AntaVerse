@@ -1,24 +1,30 @@
 "use client";
 
 import type { Route } from "next";
+import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "./ui";
 
-// The "resume your in-progress game" card is identical for La Relance and
-// Sans le dire: same markup, same "load after mount, hide once finished"
-// behavior, only the persistence lookup and the resume link differ. Quoi de
-// 9 has its own IndexedDB-backed resume flow and does not use this.
-type ResumableGame = {
-  status: string;
-  teams: readonly [{ name: string }, { name: string }];
-};
-
-export function ResumeGameCard<T extends ResumableGame>({
+// The "resume your in-progress game" card is identical across games that use
+// this simple localStorage persistence: same markup, same "load after mount,
+// hide once finished" behavior. Only the persistence lookup, the resume
+// link, and how to summarize the in-progress game (two team names, a list of
+// player names, ...) differ, so callers supply that summary. Quoi de 9 has
+// its own IndexedDB-backed resume flow and does not use this.
+//
+// The constraint is intentionally just `object`, not `{ status?: string }`:
+// a game state that has no "status" concept at all (Triman never finishes)
+// would still structurally satisfy an all-optional shape, but TypeScript's
+// weak-type check rejects it anyway for sharing zero property names. Reading
+// `status` is done with a loose runtime check below instead.
+export function ResumeGameCard<T extends object>({
   load,
   resumeHref,
+  summary,
 }: {
   load: () => T | null;
   resumeHref: Route;
+  summary: (game: T) => ReactNode;
 }) {
   const [game, setGame] = useState<T | null>(null);
 
@@ -28,15 +34,13 @@ export function ResumeGameCard<T extends ResumableGame>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!game || game.status === "finished") return null;
+  if (!game || (game as { status?: unknown }).status === "finished") return null;
 
   return (
     <section className="resume-card" aria-label="Partie en cours">
       <div>
         <p className="eyebrow">Partie en cours</p>
-        <p className="resume-teams">
-          {game.teams[0].name} · {game.teams[1].name}
-        </p>
+        <p className="resume-teams">{summary(game)}</p>
       </div>
       <ButtonLink href={resumeHref} variant="secondary" className="resume-button">
         Reprendre

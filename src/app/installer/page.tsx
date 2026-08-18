@@ -8,7 +8,7 @@ export default function InstallPage() {
       </Link>
       <p className="launcher-eyebrow">Toujours à portée de main</p>
       <h1>Installez AntaVerse.</h1>
-      <p>Vos trois jeux s’ouvrent alors en plein écran, comme une application mobile.</p>
+      <p>Vos cinq jeux s’ouvrent alors en plein écran, comme une application mobile.</p>
       <div className="install-grid">
         <section>
           <span>iPhone · Safari</span>
