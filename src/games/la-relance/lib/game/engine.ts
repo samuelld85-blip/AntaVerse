@@ -1,7 +1,7 @@
 import type { CreateGameInput, GameState, TeamIndex, Theme } from "./types";
 
 export const STANDARD_ROUNDS = 5;
-export const REQUIRED_THEME_COUNT = STANDARD_ROUNDS + 1;
+const REQUIRED_THEME_COUNT = STANDARD_ROUNDS + 1;
 
 const TEAM_COLORS = ["#E83DFF", "#16C7E8"] as const;
 
@@ -114,7 +114,7 @@ export function getWinnerIndex(game: GameState): TeamIndex | null {
   return game.teams[0].score > game.teams[1].score ? 0 : 1;
 }
 
-export function shuffle<T>(values: readonly T[], random: () => number = Math.random): T[] {
+function shuffle<T>(values: readonly T[], random: () => number = Math.random): T[] {
   const result = [...values];
   for (let index = result.length - 1; index > 0; index -= 1) {
     const swapIndex = Math.floor(random() * (index + 1));

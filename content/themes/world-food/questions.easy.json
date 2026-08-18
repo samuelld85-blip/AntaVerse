@@ -4,13 +4,8 @@
     "slug": "xlsx-world-food-easy-01",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 boissons chaudes consommées dans le monde.",
     "shortTitle": "boissons chaudes consommées dans le monde",
     "difficultyLevel": 1,
@@ -163,13 +158,8 @@
     "slug": "xlsx-world-food-easy-02",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 desserts ou pâtisseries classiques de France.",
     "shortTitle": "desserts ou pâtisseries classiques de France",
     "difficultyLevel": 1,
@@ -322,13 +312,8 @@
     "slug": "xlsx-world-food-easy-03",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 épices courantes.",
     "shortTitle": "épices courantes",
     "difficultyLevel": 1,
@@ -481,13 +466,8 @@
     "slug": "xlsx-world-food-easy-04",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 fromages français célèbres.",
     "shortTitle": "fromages français célèbres",
     "difficultyLevel": 1,
@@ -640,13 +620,8 @@
     "slug": "xlsx-world-food-easy-05",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 formats de pâtes italiennes très connus.",
     "shortTitle": "formats de pâtes italiennes très connus",
     "difficultyLevel": 1,
@@ -799,13 +774,8 @@
     "slug": "xlsx-world-food-easy-06",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 techniques de cuisson.",
     "shortTitle": "techniques de cuisson",
     "difficultyLevel": 1,
@@ -958,13 +928,8 @@
     "slug": "xlsx-world-food-easy-07",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 ingrédients typiques de la cuisine asiatique.",
     "shortTitle": "ingrédients typiques de la cuisine asiatique",
     "difficultyLevel": 1,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-world-food-easy-08",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 aliments que l’on trouve au petit-déjeuner.",
     "shortTitle": "aliments que l’on trouve au petit-déjeuner",
     "difficultyLevel": 1,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-world-food-easy-09",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 fruits tropicaux.",
     "shortTitle": "fruits tropicaux",
     "difficultyLevel": 1,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-world-food-easy-10",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 types de pâtes italiennes.",
     "shortTitle": "types de pâtes italiennes",
     "difficultyLevel": 1,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-world-food-easy-11",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 fromages français connus.",
     "shortTitle": "fromages français connus",
     "difficultyLevel": 1,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-world-food-easy-12",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 plats italiens connus.",
     "shortTitle": "plats italiens connus",
     "difficultyLevel": 1,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-world-food-easy-13",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 aliments que l’on peut griller au barbecue.",
     "shortTitle": "aliments que l’on peut griller au barbecue",
     "difficultyLevel": 1,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-world-food-easy-14",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 condiments ou sauces courants.",
     "shortTitle": "condiments ou sauces courants",
     "difficultyLevel": 1,
@@ -2230,13 +2160,8 @@
     "slug": "xlsx-world-food-easy-15",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 desserts contenant souvent du chocolat.",
     "shortTitle": "desserts contenant souvent du chocolat",
     "difficultyLevel": 1,
@@ -2389,13 +2314,8 @@
     "slug": "xlsx-world-food-easy-16",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 plats ou préparations à base de pommes de terre.",
     "shortTitle": "plats ou préparations à base de pommes de terre",
     "difficultyLevel": 1,
@@ -2548,13 +2468,8 @@
     "slug": "xlsx-world-food-easy-17",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 aliments fermentés connus.",
     "shortTitle": "aliments fermentés connus",
     "difficultyLevel": 1,
@@ -2707,13 +2622,8 @@
     "slug": "xlsx-world-food-easy-18",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 boissons sans alcool courantes.",
     "shortTitle": "boissons sans alcool courantes",
     "difficultyLevel": 1,
@@ -2866,13 +2776,8 @@
     "slug": "xlsx-world-food-easy-19",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 cuisines nationales très connues.",
     "shortTitle": "cuisines nationales très connues",
     "difficultyLevel": 1,
@@ -3025,13 +2930,8 @@
     "slug": "xlsx-world-food-easy-20",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["world-food:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 fruits rouges ou baies courantes.",
     "shortTitle": "fruits rouges ou baies courantes",
     "difficultyLevel": 1,

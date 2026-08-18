@@ -4,13 +4,8 @@
     "slug": "xlsx-party-alcohol-hard-01",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["party-alcohol:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 cocktails classiques contenant du gin.",
     "shortTitle": "cocktails classiques contenant du gin",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-party-alcohol-hard-02",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["party-alcohol:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 cocktails classiques contenant du rhum.",
     "shortTitle": "cocktails classiques contenant du rhum",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-party-alcohol-hard-03",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["party-alcohol:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 liqueurs ou apéritifs très utilisés dans les cocktails.",
     "shortTitle": "liqueurs ou apéritifs très utilisés dans les…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-party-alcohol-hard-04",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["party-alcohol:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de verres couramment utilisés dans un bar à cocktails.",
     "shortTitle": "types de verres couramment utilisés dans un b…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-party-alcohol-hard-05",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["party-alcohol:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 styles de bière connus.",
     "shortTitle": "styles de bière connus",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-party-alcohol-hard-06",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["party-alcohol:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 spiritueux fortement associés à un pays ou une région.",
     "shortTitle": "spiritueux fortement associés à un pays ou un…",
     "difficultyLevel": 3,

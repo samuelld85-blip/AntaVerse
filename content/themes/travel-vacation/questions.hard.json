@@ -4,13 +4,8 @@
     "slug": "xlsx-travel-vacation-hard-01",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["travel-vacation:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 codes IATA de grands aéroports internationaux.",
     "shortTitle": "codes IATA de grands aéroports internationaux",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-travel-vacation-hard-02",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["travel-vacation:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 pays où l’on conduit à gauche.",
     "shortTitle": "pays où l’on conduit à gauche",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-travel-vacation-hard-03",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["travel-vacation:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 informations ou éléments visibles sur la page d’identité d’un passeport.",
     "shortTitle": "informations ou éléments visibles sur la page…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-travel-vacation-hard-04",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["travel-vacation:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 trains ou itinéraires ferroviaires touristiques célèbres dans le monde.",
     "shortTitle": "trains ou itinéraires ferroviaires touristiqu…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-travel-vacation-hard-05",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["travel-vacation:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grands itinéraires de randonnée ou trekking célèbres.",
     "shortTitle": "grands itinéraires de randonnée ou trekking c…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-travel-vacation-hard-06",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["travel-vacation:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 formes d’hébergement typiques ou particulières que l’on peut rencontrer en voyage.",
     "shortTitle": "formes d’hébergement typiques ou particulière…",
     "difficultyLevel": 3,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ButtonLink } from "@/games/la-relance/components/ui";
+import { ButtonLink } from "@/games/shared/components/ui";
 import { loadCurrentGame } from "@/games/la-relance/lib/game/persistence";
 import type { GameState } from "@/games/la-relance/lib/game/types";
 

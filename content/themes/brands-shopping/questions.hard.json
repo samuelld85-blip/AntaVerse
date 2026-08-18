@@ -4,13 +4,8 @@
     "slug": "xlsx-brands-shopping-hard-01",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 personnes ou équipes à l’origine de géants de la tech.",
     "shortTitle": "personnes ou équipes à l’origine de géants de…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-brands-shopping-hard-02",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 symboles reconnaissables dans des logos célèbres.",
     "shortTitle": "symboles reconnaissables dans des logos célèbres",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-brands-shopping-hard-03",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 marques dont le logo repose largement sur des initiales ou un monogramme.",
     "shortTitle": "marques dont le logo repose largement sur des…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-brands-shopping-hard-04",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 marques ou fabricants ayant commercialisé une console de jeux.",
     "shortTitle": "marques ou fabricants ayant commercialisé une…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-brands-shopping-hard-05",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes enseignes ou marques de distribution nées en France.",
     "shortTitle": "grandes enseignes ou marques de distribution…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-brands-shopping-hard-06",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["brands-shopping:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes marques dont le nom vient directement du nom de leur fondateur ou de sa famille.",
     "shortTitle": "grandes marques dont le nom vient directement…",
     "difficultyLevel": 3,

@@ -4,13 +4,8 @@
     "slug": "xlsx-fashion-beauty-hard-01",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de cols utilisés en mode.",
     "shortTitle": "types de cols utilisés en mode",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-fashion-beauty-hard-02",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 techniques ou effets textiles utilisés pour décorer ou structurer un vêtement.",
     "shortTitle": "techniques ou effets textiles utilisés pour d…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-fashion-beauty-hard-03",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 pierres précieuses ou fines couramment utilisées en joaillerie.",
     "shortTitle": "pierres précieuses ou fines couramment utilis…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-fashion-beauty-hard-04",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de sacs à main ou sacs de mode.",
     "shortTitle": "types de sacs à main ou sacs de mode",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-fashion-beauty-hard-05",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 matières textiles naturelles d’origine végétale ou animale.",
     "shortTitle": "matières textiles naturelles d’origine végéta…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-fashion-beauty-hard-06",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": [
-      "fashion-beauty:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["fashion-beauty:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 techniques de couture ou de finition d’un vêtement.",
     "shortTitle": "techniques de couture ou de finition d’un vêt…",
     "difficultyLevel": 3,

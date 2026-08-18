@@ -47,7 +47,7 @@ const answerSchema = z.object({
   displayOrder: z.number().int().min(1).max(GAME_CONFIG.answerCount),
 });
 
-export const questionImportSchema = z
+const questionImportSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/),
     themeId: z
@@ -128,32 +128,4 @@ export const questionCollectionSchema = z
     }
   });
 
-export const themeSchema = z.object({
-  id: z.string().regex(/^[a-z0-9-]+$/),
-  name: z.string().min(2),
-  icon: z.string().min(1),
-  description: z.string().min(4),
-});
-
-export const themeCollectionSchema = z
-  .array(themeSchema)
-  .min(12)
-  .superRefine((themes, context) => {
-    for (const finding of findSuspiciousMojibake(themes)) {
-      context.addIssue({
-        code: "custom",
-        message: "Motif de mojibake suspect",
-        path: finding.path,
-      });
-    }
-    const ids = themes.map((theme) => theme.id);
-    if (new Set(ids).size !== ids.length) {
-      context.addIssue({
-        code: "custom",
-        message: "Les identifiants de thème doivent être uniques",
-      });
-    }
-  });
-
 export type CreateGameForm = z.infer<typeof createGameSchema>;
-export type QuestionImport = z.infer<typeof questionImportSchema>;

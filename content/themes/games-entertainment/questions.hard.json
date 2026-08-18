@@ -4,13 +4,8 @@
     "slug": "xlsx-games-entertainment-hard-01",
     "language": "fr",
     "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["games-entertainment:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grands arcs du manga Dragon Ball.",
     "shortTitle": "grands arcs du manga Dragon Ball",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-games-entertainment-hard-02",
     "language": "fr",
     "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["games-entertainment:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 arcs narratifs du manga One Piece.",
     "shortTitle": "arcs narratifs du manga One Piece",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-games-entertainment-hard-03",
     "language": "fr",
     "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["games-entertainment:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 des premières grandes sorties Pokémon au Japon.",
     "shortTitle": "des premières grandes sorties Pokémon au Japon",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-games-entertainment-hard-04",
     "language": "fr",
     "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["games-entertainment:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 recueils de la série The Sandman de Neil Gaiman.",
     "shortTitle": "recueils de la série The Sandman de Neil Gaiman",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-games-entertainment-hard-05",
     "language": "fr",
     "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["games-entertainment:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 recueils de comics The Walking Dead.",
     "shortTitle": "recueils de comics The Walking Dead",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-games-entertainment-hard-06",
     "language": "fr",
     "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["games-entertainment:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 jeux de cartes traditionnels jouables avec un paquet standard.",
     "shortTitle": "jeux de cartes traditionnels jouables avec un…",
     "difficultyLevel": 3,

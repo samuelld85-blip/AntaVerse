@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/games/la-relance/components/ui";
+import { Button } from "@/games/shared/components/ui";
 import { themes } from "@/games/la-relance/data/themes";
 import { createGame } from "@/games/la-relance/lib/game/engine";
 import { saveCurrentGame } from "@/games/la-relance/lib/game/persistence";
@@ -71,9 +71,7 @@ export function SetupForm() {
         </label>
       </div>
 
-      <p className="setup-note">
-        5 manches · 1 point par manche
-      </p>
+      <p className="setup-note">5 manches · 1 point par manche</p>
       {error ? (
         <p className="form-error" role="alert">
           {error}

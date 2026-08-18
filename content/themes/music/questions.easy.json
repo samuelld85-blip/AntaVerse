@@ -4,13 +4,8 @@
     "slug": "xlsx-music-easy-01",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 compositeurs de musique classique célèbres.",
     "shortTitle": "compositeurs de musique classique célèbres",
     "difficultyLevel": 1,
@@ -163,13 +158,8 @@
     "slug": "xlsx-music-easy-02",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 DJ connus internationalement.",
     "shortTitle": "DJ connus internationalement",
     "difficultyLevel": 1,
@@ -322,13 +312,8 @@
     "slug": "xlsx-music-easy-03",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 choses qui peuvent arriver pendant un concert.",
     "shortTitle": "choses qui peuvent arriver pendant un concert",
     "difficultyLevel": 1,
@@ -481,13 +466,8 @@
     "slug": "xlsx-music-easy-04",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 instruments de musique.",
     "shortTitle": "instruments de musique",
     "difficultyLevel": 1,
@@ -640,13 +620,8 @@
     "slug": "xlsx-music-easy-05",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 styles musicaux.",
     "shortTitle": "styles musicaux",
     "difficultyLevel": 1,
@@ -799,13 +774,8 @@
     "slug": "xlsx-music-easy-06",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 artistes français très connus.",
     "shortTitle": "artistes français très connus",
     "difficultyLevel": 1,
@@ -958,13 +928,8 @@
     "slug": "xlsx-music-easy-07",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 groupes de rock célèbres.",
     "shortTitle": "groupes de rock célèbres",
     "difficultyLevel": 1,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-music-easy-08",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 chanteuses pop internationales.",
     "shortTitle": "chanteuses pop internationales",
     "difficultyLevel": 1,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-music-easy-09",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 chansons que l’on entend souvent en mariage.",
     "shortTitle": "chansons que l’on entend souvent en mariage",
     "difficultyLevel": 1,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-music-easy-10",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 objets présents sur une scène de concert.",
     "shortTitle": "objets présents sur une scène de concert",
     "difficultyLevel": 1,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-music-easy-11",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 raisons d’écouter de la musique.",
     "shortTitle": "raisons d’écouter de la musique",
     "difficultyLevel": 1,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-music-easy-12",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 membres ou rôles possibles dans un groupe.",
     "shortTitle": "membres ou rôles possibles dans un groupe",
     "difficultyLevel": 1,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-music-easy-13",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 instruments de musique connus.",
     "shortTitle": "instruments de musique connus",
     "difficultyLevel": 1,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-music-easy-14",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 chanteuses ou chanteurs français connus.",
     "shortTitle": "chanteuses ou chanteurs français connus",
     "difficultyLevel": 1,
@@ -2230,13 +2160,8 @@
     "slug": "xlsx-music-easy-15",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 groupes de rock très connus.",
     "shortTitle": "groupes de rock très connus",
     "difficultyLevel": 1,
@@ -2389,13 +2314,8 @@
     "slug": "xlsx-music-easy-16",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 styles de musique.",
     "shortTitle": "styles de musique",
     "difficultyLevel": 1,
@@ -2548,13 +2468,8 @@
     "slug": "xlsx-music-easy-17",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 chanteuses internationales connues.",
     "shortTitle": "chanteuses internationales connues",
     "difficultyLevel": 1,
@@ -2707,13 +2622,8 @@
     "slug": "xlsx-music-easy-18",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 instruments que l’on peut retrouver dans ou autour d’un orchestre.",
     "shortTitle": "instruments que l’on peut retrouver dans ou a…",
     "difficultyLevel": 1,
@@ -2866,13 +2776,8 @@
     "slug": "xlsx-music-easy-19",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 éléments qu’on peut trouver dans un concert.",
     "shortTitle": "éléments qu’on peut trouver dans un concert",
     "difficultyLevel": 1,
@@ -3025,13 +2930,8 @@
     "slug": "xlsx-music-easy-20",
     "language": "fr",
     "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["music:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 artistes ou groupes français de rap connus.",
     "shortTitle": "artistes ou groupes français de rap connus",
     "difficultyLevel": 1,

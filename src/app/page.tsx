@@ -9,7 +9,13 @@ export default function HomePage() {
     <main className="launcher-shell">
       <header className="launcher-header">
         <div className="antaverse-brand" aria-label="AntaVerse">
-          <Image src="/brand/antaverse-logo.png" alt="AntaVerse" width={588} height={568} priority />
+          <Image
+            src="/brand/antaverse-logo.png"
+            alt="AntaVerse"
+            width={588}
+            height={568}
+            priority
+          />
         </div>
         <div className="launcher-header-actions">
           <p>

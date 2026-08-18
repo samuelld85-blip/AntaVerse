@@ -122,7 +122,9 @@ export function SetupForm() {
         </div>
 
         <fieldset className="rounded-2xl border border-white/10 bg-white/[.035] p-3">
-          <legend className="px-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">Qui commence ?</legend>
+          <legend className="px-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">
+            Qui commence ?
+          </legend>
           <Controller
             control={control}
             name="startingTeamIndex"
@@ -191,7 +193,11 @@ export function SetupForm() {
           </p>
         ) : null}
         <div className="-mx-1 bg-[linear-gradient(to_top,var(--page)_70%,transparent)] px-1 pt-1">
-          <Button type="submit" disabled={!isReady || isSubmitting} className="min-h-12 rounded-2xl">
+          <Button
+            type="submit"
+            disabled={!isReady || isSubmitting}
+            className="min-h-12 rounded-2xl"
+          >
             {isSubmitting ? "Préparation…" : "Lancer la partie"}
           </Button>
         </div>

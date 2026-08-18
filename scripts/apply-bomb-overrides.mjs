@@ -3,9 +3,7 @@ import { resolve } from "node:path";
 import { format } from "prettier";
 import { normalizeAnswer } from "./content-fingerprint.mjs";
 
-const overrides = JSON.parse(
-  await readFile(resolve("content", "bomb-overrides.json"), "utf8"),
-);
+const overrides = JSON.parse(await readFile(resolve("content", "bomb-overrides.json"), "utf8"));
 const themesRoot = resolve("content", "themes");
 let applied = 0;
 
@@ -20,7 +18,9 @@ for (const directory of await readdir(themesRoot, { withFileTypes: true })) {
       const override = overrides[question.id];
       if (!override) continue;
       const normalized = normalizeAnswer(override.display);
-      const accepted = new Set(question.answers.map((answer) => normalizeAnswer(answer.normalized)));
+      const accepted = new Set(
+        question.answers.map((answer) => normalizeAnswer(answer.normalized)),
+      );
       if (accepted.has(normalized)) {
         throw new Error(`${question.id}: « ${override.display} » est une réponse acceptée.`);
       }
@@ -40,7 +40,11 @@ for (const directory of await readdir(themesRoot, { withFileTypes: true })) {
     }
 
     if (changed) {
-      await writeFile(questionPath, await format(JSON.stringify(questions), { parser: "json" }), "utf8");
+      await writeFile(
+        questionPath,
+        await format(JSON.stringify(questions), { parser: "json" }),
+        "utf8",
+      );
     }
   }
 }

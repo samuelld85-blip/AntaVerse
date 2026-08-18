@@ -58,8 +58,6 @@ if (mojibake.length > 0) {
   throw new Error(`Le bundle contient du texte corrompu à ${mojibake[0]?.path.join(".")}`);
 }
 
-export const contentVersion = bundle.contentVersion;
-
 function capitalizeAnswer(display: string): string {
   const [firstCharacter, ...remainingCharacters] = Array.from(display);
   return firstCharacter

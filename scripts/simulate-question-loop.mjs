@@ -9,16 +9,56 @@ import { loadContentLibrary } from "./content-loader.mjs";
  */
 const PROFILE_COUNT = 360;
 const APPLIED_CHANGES = [
-  ["medium-amphibiens-europe", "answers_only", "Remplace des espèces trop pointues par des noms communs de groupes, sans baisser la difficulté."],
-  ["medium-neuf-premiers-need-for-speed", "rewrite_question", "Précise que les réponses attendues sont des jeux de la série."],
-  ["easy-fast-saga-neuf-premiers", "rewrite_question", "Délimite la saga principale afin que les dérivés ne créent pas de litige."],
-  ["new-rework-medium-aardman-neuf-longs", "rewrite_question", "Remplace le critère de production ambigu par le lien clair au studio."],
-  ["new-rework-easy-mcu-neuf-premiers", "rewrite_question", "Ajoute la période correspondant au panel de neuf films."],
-  ["new-histoire-grandes-epoques-moyen-2", "rewrite_question", "Aligne l’énoncé sur les voyages, expéditions et conquêtes présents dans les réponses."],
-  ["new-histoire-grandes-epoques-moyen-4", "answers_only", "Conserve l’énoncé simple et remplace deux souverains hors périmètre par Néron et Hadrien."],
-  ["medium-fondateurs-marques-tech", "rewrite_question", "Accepte explicitement les équipes fondatrices, présentes dans le panel."],
-  ["new-voyage-vacances-moyen-1", "answers_only", "Retire le doublon fonctionnel du dépôt de bagage et ajoute le contrôle des passeports."],
-  ["new-histoire-grandes-epoques-difficile-6", "answers_only", "Remplace le quasi-doublon transsaharien par la route de l’étain."],
+  [
+    "medium-amphibiens-europe",
+    "answers_only",
+    "Remplace des espèces trop pointues par des noms communs de groupes, sans baisser la difficulté.",
+  ],
+  [
+    "medium-neuf-premiers-need-for-speed",
+    "rewrite_question",
+    "Précise que les réponses attendues sont des jeux de la série.",
+  ],
+  [
+    "easy-fast-saga-neuf-premiers",
+    "rewrite_question",
+    "Délimite la saga principale afin que les dérivés ne créent pas de litige.",
+  ],
+  [
+    "new-rework-medium-aardman-neuf-longs",
+    "rewrite_question",
+    "Remplace le critère de production ambigu par le lien clair au studio.",
+  ],
+  [
+    "new-rework-easy-mcu-neuf-premiers",
+    "rewrite_question",
+    "Ajoute la période correspondant au panel de neuf films.",
+  ],
+  [
+    "new-histoire-grandes-epoques-moyen-2",
+    "rewrite_question",
+    "Aligne l’énoncé sur les voyages, expéditions et conquêtes présents dans les réponses.",
+  ],
+  [
+    "new-histoire-grandes-epoques-moyen-4",
+    "answers_only",
+    "Conserve l’énoncé simple et remplace deux souverains hors périmètre par Néron et Hadrien.",
+  ],
+  [
+    "medium-fondateurs-marques-tech",
+    "rewrite_question",
+    "Accepte explicitement les équipes fondatrices, présentes dans le panel.",
+  ],
+  [
+    "new-voyage-vacances-moyen-1",
+    "answers_only",
+    "Retire le doublon fonctionnel du dépôt de bagage et ajoute le contrôle des passeports.",
+  ],
+  [
+    "new-histoire-grandes-epoques-difficile-6",
+    "answers_only",
+    "Remplace le quasi-doublon transsaharien par la route de l’étain.",
+  ],
 ].map(([questionId, action, reason]) => ({ questionId, action, reason }));
 const DIFFICULTY_TARGETS = {
   1: { minimum: 5.5, maximum: 7.5 },
@@ -37,7 +77,8 @@ const actions = evaluations.reduce((totals, evaluation) => {
 }, {});
 const summary = {
   generatedAt: new Date().toISOString(),
-  methodology: "simulation heuristique locale et déterministe ; ce ne sont pas des données de joueurs réels",
+  methodology:
+    "simulation heuristique locale et déterministe ; ce ne sont pas des données de joueurs réels",
   simulatedGames: PROFILE_COUNT,
   questionCount: evaluations.length,
   weights: { answerQuality: 0.45, difficultyFit: 0.4, fun: 0.15 },
@@ -63,7 +104,11 @@ console.log(
   `${summary.questionCount} questions × ${summary.simulatedGames} profils · ` +
     `réponses ${summary.averages.answerQuality}/10 · difficulté ${summary.averages.difficultyFit}/10 · fun ${summary.averages.fun}/10`,
 );
-console.log(`Actions : ${Object.entries(actions).map(([name, count]) => `${name} ${count}`).join(", ")}`);
+console.log(
+  `Actions : ${Object.entries(actions)
+    .map(([name, count]) => `${name} ${count}`)
+    .join(", ")}`,
+);
 console.log(`Corrections éditoriales appliquées : ${APPLIED_CHANGES.length}`);
 
 function profileFor(index) {
@@ -81,30 +126,40 @@ function evaluate(question, profiles) {
   const simulatedAnswers = profiles.map((profile) =>
     Math.min(
       9,
-      question.expectedAverageAnswers * profile.recall *
+      question.expectedAverageAnswers *
+        profile.recall *
         (1 - answerComplexity * (1 - profile.toleranceForSpecificity) * 0.35),
     ),
   );
   const recoveredAverage = mean(simulatedAnswers);
   const target = DIFFICULTY_TARGETS[question.difficultyLevel];
-  const distance = recoveredAverage < target.minimum
-    ? target.minimum - recoveredAverage
-    : Math.max(0, recoveredAverage - target.maximum);
+  const distance =
+    recoveredAverage < target.minimum
+      ? target.minimum - recoveredAverage
+      : Math.max(0, recoveredAverage - target.maximum);
   const difficultyFit = clamp10(10 - distance * 2.4);
   const answerQuality = clamp10(
     5.5 + question.answerSetHomogeneityScore / 25 - answerComplexity * 2.2,
   );
   // Le thème reste prioritaire : le fun n'annule jamais une question claire et bien calibrée.
-  const fun = clamp10(6.4 + (question.popularityScore / 100) * 2 + mean(profiles.map((p) => p.interest)) * 0.8 - answerComplexity * 0.35);
+  const fun = clamp10(
+    6.4 +
+      (question.popularityScore / 100) * 2 +
+      mean(profiles.map((p) => p.interest)) * 0.8 -
+      answerComplexity * 0.35,
+  );
   const overall = answerQuality * 0.45 + difficultyFit * 0.4 + fun * 0.15;
-  const wordingIssue = /(?:selon |dans l’ordre|par ordre|jusqu’à|entre \d{4}|de \d{4})/iu.test(question.questionText);
-  const action = answerQuality < 6
-    ? "answers_only"
-    : difficultyFit < 6
-      ? "reclassify_difficulty"
-      : wordingIssue && overall < 6.5
-        ? "rewrite_question"
-        : "keep";
+  const wordingIssue = /(?:selon |dans l’ordre|par ordre|jusqu’à|entre \d{4}|de \d{4})/iu.test(
+    question.questionText,
+  );
+  const action =
+    answerQuality < 6
+      ? "answers_only"
+      : difficultyFit < 6
+        ? "reclassify_difficulty"
+        : wordingIssue && overall < 6.5
+          ? "rewrite_question"
+          : "keep";
   return {
     questionId: question.id,
     themeId: question.themeId,
@@ -124,13 +179,18 @@ function evaluate(question, profiles) {
 function complexityOf(answer) {
   const value = answer.display;
   const words = value.trim().split(/\s+/u).length;
-  return Math.min(1, (words - 1) * 0.16 + (/[\-’']/u.test(value) ? 0.08 : 0) + (value.length > 22 ? 0.12 : 0));
+  return Math.min(
+    1,
+    (words - 1) * 0.16 + (/[\-’']/u.test(value) ? 0.08 : 0) + (value.length > 22 ? 0.12 : 0),
+  );
 }
 
 function reasonsFor({ answerComplexity, difficultyFit, answerQuality, wordingIssue, target }) {
   const reasons = [];
-  if (answerComplexity >= 0.3) reasons.push("plusieurs réponses demandent un nom composé ou très précis");
-  if (difficultyFit < 6) reasons.push(`moyenne simulée hors cible ${target.minimum}–${target.maximum}`);
+  if (answerComplexity >= 0.3)
+    reasons.push("plusieurs réponses demandent un nom composé ou très précis");
+  if (difficultyFit < 6)
+    reasons.push(`moyenne simulée hors cible ${target.minimum}–${target.maximum}`);
   if (answerQuality < 6) reasons.push("ensemble de réponses peu homogène ou trop spécifique");
   if (wordingIssue) reasons.push("énoncé à contrainte de liste ou de chronologie");
   return reasons.length ? reasons : ["ensemble cohérent pour la simulation locale"];
@@ -160,7 +220,9 @@ function renderMarkdown(summary) {
     `| Difficulté adaptée | 40 % | ${summary.averages.difficultyFit}/10 |`,
     `| Fun | 15 % | ${summary.averages.fun}/10 |`,
     "",
-    `Décisions : ${Object.entries(summary.actions).map(([name, count]) => `\`${name}\` ${count}`).join(" · ")}.`,
+    `Décisions : ${Object.entries(summary.actions)
+      .map(([name, count]) => `\`${name}\` ${count}`)
+      .join(" · ")}.`,
     "",
     "## Corrections appliquées",
     "",

@@ -4,13 +4,8 @@
     "slug": "xlsx-video-games-hard-01",
     "language": "fr",
     "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["video-games:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 jeux principaux de la série Need for Speed.",
     "shortTitle": "jeux principaux de la série Need for Speed",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-video-games-hard-02",
     "language": "fr",
     "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["video-games:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 jeux développés par un studio Rockstar Games.",
     "shortTitle": "jeux développés par un studio Rockstar Games",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-video-games-hard-03",
     "language": "fr",
     "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["video-games:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes franchises associées à Nintendo.",
     "shortTitle": "grandes franchises associées à Nintendo",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-video-games-hard-04",
     "language": "fr",
     "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["video-games:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 armes emblématiques de Counter-Strike.",
     "shortTitle": "armes emblématiques de Counter-Strike",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-video-games-hard-05",
     "language": "fr",
     "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["video-games:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite les 9 jeux élus Game of the Year aux Game Awards de 2014 à 2022.",
     "shortTitle": "Cite les 9 jeux élus Game of the Year aux Gam…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-video-games-hard-06",
     "language": "fr",
     "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["video-games:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 jeux développés par Valve.",
     "shortTitle": "jeux développés par Valve",
     "difficultyLevel": 3,

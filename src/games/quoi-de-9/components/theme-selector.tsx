@@ -9,10 +9,9 @@ const THEME_CHANGE_EVENT = "antaverse:theme-change";
 
 function applyTheme(theme: ThemeMode) {
   document.documentElement.dataset.theme = theme;
-  document.querySelector('meta[name="theme-color"]')?.setAttribute(
-    "content",
-    theme === "light" ? "#F7F7F4" : "#0B1118",
-  );
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", theme === "light" ? "#F7F7F4" : "#0B1118");
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
   } catch {
@@ -34,11 +33,7 @@ function getServerThemeSnapshot(): ThemeMode {
 }
 
 export function ThemeSelector() {
-  const theme = useSyncExternalStore(
-    subscribeToTheme,
-    getThemeSnapshot,
-    getServerThemeSnapshot,
-  );
+  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, getServerThemeSnapshot);
 
   function selectTheme(nextTheme: ThemeMode) {
     applyTheme(nextTheme);
@@ -47,10 +42,12 @@ export function ThemeSelector() {
 
   return (
     <div className="grid grid-cols-2 gap-2" role="group" aria-label="Apparence du jeu">
-      {([
-        ["dark", "Mode sombre", "◐"],
-        ["light", "Mode clair", "☀"],
-      ] as const).map(([value, label, icon]) => {
+      {(
+        [
+          ["dark", "Mode sombre", "◐"],
+          ["light", "Mode clair", "☀"],
+        ] as const
+      ).map(([value, label, icon]) => {
         const selected = theme === value;
         return (
           <button

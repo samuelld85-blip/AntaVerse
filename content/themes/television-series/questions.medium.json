@@ -4,13 +4,8 @@
     "slug": "xlsx-television-series-medium-01",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 séries adaptées d’un jeu vidéo.",
     "shortTitle": "séries adaptées d’un jeu vidéo",
     "difficultyLevel": 2,
@@ -163,13 +158,8 @@
     "slug": "xlsx-television-series-medium-02",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 séries centrées sur le travail.",
     "shortTitle": "séries centrées sur le travail",
     "difficultyLevel": 2,
@@ -322,13 +312,8 @@
     "slug": "xlsx-television-series-medium-03",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 programmes où des candidats cuisinent.",
     "shortTitle": "programmes où des candidats cuisinent",
     "difficultyLevel": 2,
@@ -481,13 +466,8 @@
     "slug": "xlsx-television-series-medium-04",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 séries françaises connues.",
     "shortTitle": "séries françaises connues",
     "difficultyLevel": 2,
@@ -640,13 +620,8 @@
     "slug": "xlsx-television-series-medium-05",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 séries situées dans un hôpital.",
     "shortTitle": "séries situées dans un hôpital",
     "difficultyLevel": 2,
@@ -799,13 +774,8 @@
     "slug": "xlsx-television-series-medium-06",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 séries policières connues.",
     "shortTitle": "séries policières connues",
     "difficultyLevel": 2,
@@ -958,13 +928,8 @@
     "slug": "xlsx-television-series-medium-07",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Brooklyn Nine-Nine.",
     "shortTitle": "personnages de Brooklyn Nine-Nine",
     "difficultyLevel": 2,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-television-series-medium-08",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 braqueurs de La Casa de Papel.",
     "shortTitle": "braqueurs de La Casa de Papel",
     "difficultyLevel": 2,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-television-series-medium-09",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Friends.",
     "shortTitle": "personnages de Friends",
     "difficultyLevel": 2,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-television-series-medium-10",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Game of Thrones.",
     "shortTitle": "personnages de Game of Thrones",
     "difficultyLevel": 2,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-television-series-medium-11",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Kaamelott.",
     "shortTitle": "personnages de Kaamelott",
     "difficultyLevel": 2,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-television-series-medium-12",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de The Office US.",
     "shortTitle": "personnages de The Office US",
     "difficultyLevel": 2,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-television-series-medium-13",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Sex Education.",
     "shortTitle": "personnages de Sex Education",
     "difficultyLevel": 2,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-television-series-medium-14",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": [
-      "television-series:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
+    "subthemeIds": ["television-series:essentials"],
+    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de The Boys.",
     "shortTitle": "personnages de The Boys",
     "difficultyLevel": 2,

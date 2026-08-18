@@ -4,13 +4,8 @@
     "slug": "xlsx-celebrities-easy-01",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 acteurs américains très connus.",
     "shortTitle": "acteurs américains très connus",
     "difficultyLevel": 1,
@@ -163,13 +158,8 @@
     "slug": "xlsx-celebrities-easy-02",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 actrices françaises connues.",
     "shortTitle": "actrices françaises connues",
     "difficultyLevel": 1,
@@ -322,13 +312,8 @@
     "slug": "xlsx-celebrities-easy-03",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités devenues célèbres grâce à Internet.",
     "shortTitle": "personnalités devenues célèbres grâce à Internet",
     "difficultyLevel": 1,
@@ -481,13 +466,8 @@
     "slug": "xlsx-celebrities-easy-04",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 chefs célèbres à la télévision.",
     "shortTitle": "chefs célèbres à la télévision",
     "difficultyLevel": 1,
@@ -640,13 +620,8 @@
     "slug": "xlsx-celebrities-easy-05",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 humoristes français connus.",
     "shortTitle": "humoristes français connus",
     "difficultyLevel": 1,
@@ -799,13 +774,8 @@
     "slug": "xlsx-celebrities-easy-06",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 stars connues sous un seul prénom ou pseudonyme.",
     "shortTitle": "stars connues sous un seul prénom ou pseudonyme",
     "difficultyLevel": 1,
@@ -958,13 +928,8 @@
     "slug": "xlsx-celebrities-easy-07",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités ayant lancé une marque.",
     "shortTitle": "personnalités ayant lancé une marque",
     "difficultyLevel": 1,
@@ -1117,13 +1082,8 @@
     "slug": "xlsx-celebrities-easy-08",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 célébrités françaises connues à la télévision ou au cinéma.",
     "shortTitle": "célébrités françaises connues à la télévision…",
     "difficultyLevel": 1,
@@ -1276,13 +1236,8 @@
     "slug": "xlsx-celebrities-easy-09",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités connues portant le prénom Michael.",
     "shortTitle": "personnalités connues portant le prénom Michael",
     "difficultyLevel": 1,
@@ -1435,13 +1390,8 @@
     "slug": "xlsx-celebrities-easy-10",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 célébrités connues portant le prénom Jennifer.",
     "shortTitle": "célébrités connues portant le prénom Jennifer",
     "difficultyLevel": 1,
@@ -1594,13 +1544,8 @@
     "slug": "xlsx-celebrities-easy-11",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités françaises prénommées Jean.",
     "shortTitle": "personnalités françaises prénommées Jean",
     "difficultyLevel": 1,
@@ -1753,13 +1698,8 @@
     "slug": "xlsx-celebrities-easy-12",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 célébrités ayant été sportives ou sportifs de haut niveau.",
     "shortTitle": "célébrités ayant été sportives ou sportifs de…",
     "difficultyLevel": 1,
@@ -1912,13 +1852,8 @@
     "slug": "xlsx-celebrities-easy-13",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 célébrités américaines connues dans la musique.",
     "shortTitle": "célébrités américaines connues dans la musique",
     "difficultyLevel": 1,
@@ -2071,13 +2006,8 @@
     "slug": "xlsx-celebrities-easy-14",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités connues ayant le prénom David.",
     "shortTitle": "personnalités connues ayant le prénom David",
     "difficultyLevel": 1,
@@ -2230,13 +2160,8 @@
     "slug": "xlsx-celebrities-easy-15",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités françaises connues pour avoir fait du stand-up ou un one-man-show.",
     "shortTitle": "personnalités françaises connues pour avoir f…",
     "difficultyLevel": 1,
@@ -2389,13 +2314,8 @@
     "slug": "xlsx-celebrities-easy-16",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 célébrités connues pour la mode ou le mannequinat.",
     "shortTitle": "célébrités connues pour la mode ou le mannequ…",
     "difficultyLevel": 1,
@@ -2548,13 +2468,8 @@
     "slug": "xlsx-celebrities-easy-17",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 chefs cuisiniers français célèbres.",
     "shortTitle": "chefs cuisiniers français célèbres",
     "difficultyLevel": 1,
@@ -2707,13 +2622,8 @@
     "slug": "xlsx-celebrities-easy-18",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités connues prénommées Emma.",
     "shortTitle": "personnalités connues prénommées Emma",
     "difficultyLevel": 1,
@@ -2866,13 +2776,8 @@
     "slug": "xlsx-celebrities-easy-19",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 célébrités connues pour avoir joué dans Friends.",
     "shortTitle": "célébrités connues pour avoir joué dans Friends",
     "difficultyLevel": 1,
@@ -3025,13 +2930,8 @@
     "slug": "xlsx-celebrities-easy-20",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnalités françaises connues dans la musique.",
     "shortTitle": "personnalités françaises connues dans la musique",
     "difficultyLevel": 1,

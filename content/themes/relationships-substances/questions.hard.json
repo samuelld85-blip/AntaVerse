@@ -4,13 +4,8 @@
     "slug": "xlsx-relationships-substances-hard-01",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": [
-      "relationships-substances:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["relationships-substances:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 infections sexuellement transmissibles connues.",
     "shortTitle": "infections sexuellement transmissibles connues",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-relationships-substances-hard-02",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": [
-      "relationships-substances:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["relationships-substances:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 termes modernes décrivant des comportements ou dynamiques de rencontre.",
     "shortTitle": "termes modernes décrivant des comportements o…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-relationships-substances-hard-03",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": [
-      "relationships-substances:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["relationships-substances:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 hormones ou neurotransmetteurs souvent associés au désir, au plaisir, au stress ou à l’attachement.",
     "shortTitle": "hormones ou neurotransmetteurs souvent associ…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-relationships-substances-hard-04",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": [
-      "relationships-substances:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["relationships-substances:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 catégories de médicaments ou substances dont l’association avec l’alcool peut augmenter les risques.",
     "shortTitle": "catégories de médicaments ou substances dont…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-relationships-substances-hard-05",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": [
-      "relationships-substances:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["relationships-substances:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 moyens ou outils utilisés pour réduire le risque d’IST.",
     "shortTitle": "moyens ou outils utilisés pour réduire le ris…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-relationships-substances-hard-06",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": [
-      "relationships-substances:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["relationships-substances:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 voies courantes d’administration de médicaments ou substances.",
     "shortTitle": "voies courantes d’administration de médicamen…",
     "difficultyLevel": 3,

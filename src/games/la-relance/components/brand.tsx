@@ -8,7 +8,11 @@ export function LogoMark({ compact = false }: { compact?: boolean }) {
       alt=""
       width={133}
       height={76}
-      className={compact ? "brand-mark brand-mark--la-relance brand-mark--small" : "brand-mark brand-mark--la-relance"}
+      className={
+        compact
+          ? "brand-mark brand-mark--la-relance brand-mark--small"
+          : "brand-mark brand-mark--la-relance"
+      }
       aria-hidden="true"
       priority
     />

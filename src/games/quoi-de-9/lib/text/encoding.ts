@@ -11,7 +11,7 @@ export const REPRESENTATIVE_FRENCH_STRINGS = [
   "Ça dépend de l’époque.",
 ] as const;
 
-export const SUSPICIOUS_MOJIBAKE = [
+const SUSPICIOUS_MOJIBAKE = [
   /\u00c3/u,
   /\u00c2(?!\p{L})/u,
   /\u00e2\u20ac\u2122/u,

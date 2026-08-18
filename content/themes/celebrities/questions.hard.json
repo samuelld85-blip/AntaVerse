@@ -4,13 +4,8 @@
     "slug": "xlsx-celebrities-hard-01",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite le nom des 9 premières incarnations du Docteur dans Doctor Who.",
     "shortTitle": "Cite le nom des 9 premières incarnations du D…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-celebrities-hard-02",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 personnages de Ghostbusters.",
     "shortTitle": "personnages de Ghostbusters",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-celebrities-hard-03",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 séries Marvel Studios diffusées sur Disney+.",
     "shortTitle": "séries Marvel Studios diffusées sur Disney+",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-celebrities-hard-04",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 films connus avec Natalie Portman.",
     "shortTitle": "films connus avec Natalie Portman",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-celebrities-hard-05",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 films connus avec Scarlett Johansson.",
     "shortTitle": "films connus avec Scarlett Johansson",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-celebrities-hard-06",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["celebrities:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 célébrités connues sous un nom de scène très différent de leur nom de naissance.",
     "shortTitle": "célébrités connues sous un nom de scène très…",
     "difficultyLevel": 3,

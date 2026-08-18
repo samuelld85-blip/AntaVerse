@@ -4,13 +4,8 @@
     "slug": "xlsx-history-hard-01",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 pharaons majeurs de l’Égypte antique.",
     "shortTitle": "pharaons majeurs de l’Égypte antique",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-history-hard-02",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 batailles majeures livrées par Napoléon Ier entre 1800 et 1815.",
     "shortTitle": "batailles majeures livrées par Napoléon Ier e…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-history-hard-03",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 grandes dynasties de la Chine impériale.",
     "shortTitle": "grandes dynasties de la Chine impériale",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-history-hard-04",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 traités de paix européens conclus entre 1648 et 1992.",
     "shortTitle": "traités de paix européens conclus entre 1648…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-history-hard-05",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 traités ayant marqué l’histoire.",
     "shortTitle": "traités ayant marqué l’histoire",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-history-hard-06",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": [
-      "history:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["history:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 routes commerciales historiques distinctes.",
     "shortTitle": "routes commerciales historiques distinctes",
     "difficultyLevel": 3,

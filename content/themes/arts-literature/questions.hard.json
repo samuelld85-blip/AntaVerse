@@ -4,13 +4,8 @@
     "slug": "xlsx-arts-literature-hard-01",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["arts-literature:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 travaux d’Héraclès.",
     "shortTitle": "travaux d’Héraclès",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-arts-literature-hard-02",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["arts-literature:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 membres célèbres de l’équipage des Argonautes.",
     "shortTitle": "membres célèbres de l’équipage des Argonautes",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-arts-literature-hard-03",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["arts-literature:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 créatures ou êtres de la mythologie nordique.",
     "shortTitle": "créatures ou êtres de la mythologie nordique",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-arts-literature-hard-04",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["arts-literature:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 divinités romaines moins connues que Jupiter ou Mars.",
     "shortTitle": "divinités romaines moins connues que Jupiter…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-arts-literature-hard-05",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["arts-literature:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 formes prises par Zeus dans la mythologie.",
     "shortTitle": "formes prises par Zeus dans la mythologie",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-arts-literature-hard-06",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["arts-literature:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 noms de plume d’écrivains.",
     "shortTitle": "noms de plume d’écrivains",
     "difficultyLevel": 3,

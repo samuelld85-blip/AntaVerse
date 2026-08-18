@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 import { createGame } from "@/games/quoi-de-9/lib/game/engine";
 import type { GameState, TurnResult } from "@/games/quoi-de-9/lib/game/types";
-import { FinalScreen, TurnResultsScreen } from "./game-client";
+import { FinalScreen, TurnResultsScreen } from "./screens";
 
 function completedTurn({ themeSelection, ...overrides }: Partial<TurnResult> = {}): TurnResult {
   return {

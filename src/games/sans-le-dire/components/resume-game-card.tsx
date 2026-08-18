@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ButtonLink } from "@/games/sans-le-dire/components/ui";
+import { ButtonLink } from "@/games/shared/components/ui";
 import { loadCurrentGame } from "@/games/sans-le-dire/lib/game/persistence";
 import type { GameState } from "@/games/sans-le-dire/lib/game/types";
 

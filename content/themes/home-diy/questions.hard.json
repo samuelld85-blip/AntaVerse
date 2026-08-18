@@ -4,13 +4,8 @@
     "slug": "xlsx-home-diy-hard-01",
     "language": "fr",
     "themeId": "home-diy",
-    "subthemeIds": [
-      "home-diy:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["home-diy:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types d’empreintes de vis.",
     "shortTitle": "types d’empreintes de vis",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-home-diy-hard-02",
     "language": "fr",
     "themeId": "home-diy",
-    "subthemeIds": [
-      "home-diy:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["home-diy:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 outils ou appareils servant à mesurer précisément en bricolage.",
     "shortTitle": "outils ou appareils servant à mesurer précisé…",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-home-diy-hard-03",
     "language": "fr",
     "themeId": "home-diy",
-    "subthemeIds": [
-      "home-diy:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["home-diy:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 matériaux utilisés pour isoler thermiquement un logement.",
     "shortTitle": "matériaux utilisés pour isoler thermiquement…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-home-diy-hard-04",
     "language": "fr",
     "themeId": "home-diy",
-    "subthemeIds": [
-      "home-diy:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["home-diy:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 éléments que l’on peut trouver dans ou autour d’un tableau électrique domestique.",
     "shortTitle": "éléments que l’on peut trouver dans ou autour…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-home-diy-hard-05",
     "language": "fr",
     "themeId": "home-diy",
-    "subthemeIds": [
-      "home-diy:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["home-diy:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 essences de bois couramment utilisées en menuiserie ou ameublement.",
     "shortTitle": "essences de bois couramment utilisées en menu…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-home-diy-hard-06",
     "language": "fr",
     "themeId": "home-diy",
-    "subthemeIds": [
-      "home-diy:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["home-diy:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de clés utilisées pour serrer ou desserrer en bricolage.",
     "shortTitle": "types de clés utilisées pour serrer ou desser…",
     "difficultyLevel": 3,

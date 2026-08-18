@@ -4,13 +4,8 @@
     "slug": "xlsx-work-office-hard-01",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["work-office:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 fonctions Excel courantes mais déjà un peu avancées.",
     "shortTitle": "fonctions Excel courantes mais déjà un peu av…",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-work-office-hard-02",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["work-office:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 termes ou outils courants de gestion de projet.",
     "shortTitle": "termes ou outils courants de gestion de projet",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-work-office-hard-03",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["work-office:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 éléments que l’on peut trouver dans un contrat de travail.",
     "shortTitle": "éléments que l’on peut trouver dans un contra…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-work-office-hard-04",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["work-office:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 indicateurs couramment suivis par les ressources humaines.",
     "shortTitle": "indicateurs couramment suivis par les ressour…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-work-office-hard-05",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["work-office:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 types de réunions ou rituels que l’on retrouve en entreprise.",
     "shortTitle": "types de réunions ou rituels que l’on retrouv…",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-work-office-hard-06",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["work-office:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 documents financiers ou administratifs courants dans une entreprise.",
     "shortTitle": "documents financiers ou administratifs couran…",
     "difficultyLevel": 3,

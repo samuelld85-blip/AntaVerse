@@ -4,13 +4,8 @@
     "slug": "xlsx-cinema-hard-01",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 longs-métrages réalisés par David Fincher.",
     "shortTitle": "longs-métrages réalisés par David Fincher",
     "difficultyLevel": 3,
@@ -163,13 +158,8 @@
     "slug": "xlsx-cinema-hard-02",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 longs-métrages réalisés par Don Bluth.",
     "shortTitle": "longs-métrages réalisés par Don Bluth",
     "difficultyLevel": 3,
@@ -322,13 +312,8 @@
     "slug": "xlsx-cinema-hard-03",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 films du Marvel Cinematic Universe sortis entre 2008 et 2013.",
     "shortTitle": "films du Marvel Cinematic Universe sortis ent…",
     "difficultyLevel": 3,
@@ -481,13 +466,8 @@
     "slug": "xlsx-cinema-hard-04",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 longs-métrages d’animation liés au studio Aardman.",
     "shortTitle": "longs-métrages d’animation liés au studio Aar…",
     "difficultyLevel": 3,
@@ -640,13 +620,8 @@
     "slug": "xlsx-cinema-hard-05",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 longs-métrages réalisés par les frères Coen.",
     "shortTitle": "longs-métrages réalisés par les frères Coen",
     "difficultyLevel": 3,
@@ -799,13 +774,8 @@
     "slug": "xlsx-cinema-hard-06",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": [
-      "cinema:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
+    "subthemeIds": ["cinema:essentials"],
+    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 longs-métrages réalisés par Wes Anderson.",
     "shortTitle": "longs-métrages réalisés par Wes Anderson",
     "difficultyLevel": 3,
