@@ -27,13 +27,13 @@ export function createGame(
     teams: [
       {
         id: "team-1",
-        name: cleanTeamName(input.teamOneName, "Équipe 1"),
+        name: cleanTeamName(input.teamOneName, "Les Antagonistes"),
         color: TEAM_COLORS[0],
         score: 0,
       },
       {
         id: "team-2",
-        name: cleanTeamName(input.teamTwoName, "Équipe 2"),
+        name: cleanTeamName(input.teamTwoName, "Les Sanglieeers"),
         color: TEAM_COLORS[1],
         score: 0,
       },

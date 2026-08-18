@@ -9,8 +9,8 @@ import { saveCurrentGame } from "@/games/la-relance/lib/game/persistence";
 
 export function SetupForm() {
   const router = useRouter();
-  const [teamOneName, setTeamOneName] = useState("Équipe 1");
-  const [teamTwoName, setTeamTwoName] = useState("Équipe 2");
+  const [teamOneName, setTeamOneName] = useState("Les Antagonistes");
+  const [teamTwoName, setTeamTwoName] = useState("Les Sanglieeers");
   const [error, setError] = useState<string | null>(null);
 
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -25,7 +25,7 @@ export function SetupForm() {
 
     try {
       const game = createGame(
-        { teamOneName: first || "Équipe 1", teamTwoName: second || "Équipe 2" },
+        { teamOneName: first || "Les Antagonistes", teamTwoName: second || "Les Sanglieeers" },
         themes,
       );
       saveCurrentGame(game);

@@ -21,8 +21,8 @@ export function SetupForm() {
     formState: { errors, isSubmitting },
   } = useForm<CreateGameForm>({
     defaultValues: {
-      teamAName: "Les Éclairs",
-      teamBName: "Les Comètes",
+      teamAName: "Les Antagonistes",
+      teamBName: "Les Sanglieeers",
       teamAColor: "#E83DFF",
       teamBColor: "#16C7E8",
       startingTeamIndex: 0,

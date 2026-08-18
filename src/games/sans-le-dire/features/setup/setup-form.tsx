@@ -9,8 +9,8 @@ import { loadTeamNames, saveCurrentGame, saveTeamNames } from "@/games/sans-le-d
 
 export function SetupForm() {
   const router = useRouter();
-  const [teamOneName, setTeamOneName] = useState("Équipe 1");
-  const [teamTwoName, setTeamTwoName] = useState("Équipe 2");
+  const [teamOneName, setTeamOneName] = useState("Les Antagonistes");
+  const [teamTwoName, setTeamTwoName] = useState("Les Sanglieeers");
   const [error, setError] = useState<string | null>(null);
   useEffect(() => { const timer = window.setTimeout(() => { const [one, two] = loadTeamNames(); setTeamOneName(one); setTeamTwoName(two); }, 0); return () => window.clearTimeout(timer); }, []);
 
@@ -26,7 +26,7 @@ export function SetupForm() {
 
     try {
       const game = createGame(
-        { teamOneName: first || "Équipe 1", teamTwoName: second || "Équipe 2" },
+        { teamOneName: first || "Les Antagonistes", teamTwoName: second || "Les Sanglieeers" },
         cards,
       );
       saveCurrentGame(game);

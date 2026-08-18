@@ -11,8 +11,8 @@ export function createGame(input: CreateGameInput, cards: readonly Card[], rando
   const timestamp = new Date(now).toISOString();
   return { schemaVersion: 2, id: createId(now, random), status: "preparation", mode: "standard",
     teams: [
-      { id: "team-1", name: cleanTeamName(input.teamOneName, "Équipe 1"), color: TEAM_COLORS[0], score: 0 },
-      { id: "team-2", name: cleanTeamName(input.teamTwoName, "Équipe 2"), color: TEAM_COLORS[1], score: 0 },
+      { id: "team-1", name: cleanTeamName(input.teamOneName, "Les Antagonistes"), color: TEAM_COLORS[0], score: 0 },
+      { id: "team-2", name: cleanTeamName(input.teamTwoName, "Les Sanglieeers"), color: TEAM_COLORS[1], score: 0 },
     ], roundIndex: 0, activeTeam: 0, passesRemaining: STANDARD_PASSES, roundScore: 0,
     tiebreakScores: [0, 0], tiebreakCycle: 1, deck: shuffle(cards, random).map((card) => card.id),
     deckPosition: 0, roundEndsAt: null, createdAt: timestamp, updatedAt: timestamp };
