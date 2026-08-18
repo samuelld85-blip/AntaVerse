@@ -4,8 +4,8 @@ import { useSyncExternalStore } from "react";
 
 type ThemeMode = "dark" | "light";
 
-const THEME_STORAGE_KEY = "la-relance:theme";
-const THEME_CHANGE_EVENT = "la-relance:theme-change";
+const THEME_STORAGE_KEY = "antaverse:theme";
+const THEME_CHANGE_EVENT = "antaverse:theme-change";
 
 function applyTheme(theme: ThemeMode) {
   document.documentElement.dataset.theme = theme;

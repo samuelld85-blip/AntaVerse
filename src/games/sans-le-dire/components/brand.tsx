@@ -4,11 +4,11 @@ import Link from "next/link";
 export function LogoMark({ compact = false }: { compact?: boolean }) {
   return (
     <Image
-      src="/brand/v1/sans-le-dire-mark.svg"
+      src="/brand/sans-le-dire-logo.png"
       alt="Sans le dire"
-      width={96}
-      height={96}
-      className={compact ? "brand-mark brand-mark--small" : "brand-mark"}
+      width={115}
+      height={115}
+      className={compact ? "brand-mark brand-mark--sans-le-dire brand-mark--small" : "brand-mark brand-mark--sans-le-dire"}
       priority
     />
   );

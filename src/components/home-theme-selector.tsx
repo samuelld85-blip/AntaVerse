@@ -29,39 +29,29 @@ function getThemeSnapshot(): ThemeMode {
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 }
 
-function getServerThemeSnapshot(): ThemeMode {
-  return "light";
-}
-
-export function ThemeSelector() {
-  const theme = useSyncExternalStore(
-    subscribeToTheme,
-    getThemeSnapshot,
-    getServerThemeSnapshot,
-  );
-
-  function selectTheme(nextTheme: ThemeMode) {
-    applyTheme(nextTheme);
-    window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
-  }
+export function HomeThemeSelector() {
+  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, () => "dark");
 
   return (
-    <div className="grid grid-cols-2 gap-2" role="group" aria-label="Apparence du jeu">
+    <div className="home-theme-selector" role="group" aria-label="Apparence d’AntaVerse">
       {([
-        ["dark", "Mode sombre", "◐"],
         ["light", "Mode clair", "☀"],
+        ["dark", "Mode sombre", "◐"],
       ] as const).map(([value, label, icon]) => {
         const selected = theme === value;
         return (
           <button
             key={value}
             type="button"
-            onClick={() => selectTheme(value)}
+            onClick={() => {
+              applyTheme(value);
+              window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
+            }}
             aria-pressed={selected}
-            className={`flex min-h-11 items-center justify-center gap-2 rounded-xl border px-3 text-xs font-semibold transition ${selected ? "border-[var(--lime)] bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/15 bg-white/[.045] text-white/70"}`}
+            className={selected ? "home-theme-button is-selected" : "home-theme-button"}
           >
             <span aria-hidden="true">{icon}</span>
-            {label}
+            <span className="home-theme-label">{label}</span>
           </button>
         );
       })}

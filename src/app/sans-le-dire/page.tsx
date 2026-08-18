@@ -2,14 +2,14 @@ import { Brand } from "@/games/sans-le-dire/components/brand";
 import { ResumeGameCard } from "@/games/sans-le-dire/components/resume-game-card";
 import { ThemeSelector } from "@/games/sans-le-dire/components/theme-selector";
 import { ButtonLink } from "@/games/sans-le-dire/components/ui";
-import { GlobalHomeLink } from "@/components/global-home-link";
+import { GameHomeNav } from "@/components/game-home-nav";
 
 export default function HomePage() {
   return (
     <main className="home-shell safe-shell">
       <header>
         <Brand />
-        <GlobalHomeLink />
+        <GameHomeNav rulesHref="/sans-le-dire/regles" />
       </header>
       <section className="home-hero">
         <p className="eyebrow">Le jeu des mots qu’il ne faut pas dire</p>

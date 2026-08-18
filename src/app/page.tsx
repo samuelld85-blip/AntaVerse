@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { GameCard } from "@/components/game-card";
+import { HomeThemeSelector } from "@/components/home-theme-selector";
 import { games } from "@/lib/games";
 
 export default function HomePage() {
@@ -7,21 +9,20 @@ export default function HomePage() {
     <main className="launcher-shell">
       <header className="launcher-header">
         <div className="antaverse-brand" aria-label="AntaVerse">
-          <span className="brand-orbit" aria-hidden="true">
-            <i />
-          </span>
-          <span>
-            <strong>ANTA</strong>
-            <em>VERSE</em>
-          </span>
+          <Image src="/brand/antaverse-logo.png" alt="AntaVerse" width={588} height={568} priority />
         </div>
-        <p>La galaxie des jeux de soirée</p>
+        <div className="launcher-header-actions">
+          <p>
+            <span>LES JEUX PRÉFÉRÉS DES</span>
+            <span>SANGLIEEEERS !</span>
+          </p>
+          <HomeThemeSelector />
+        </div>
       </header>
 
       <section className="launcher-intro" aria-labelledby="launcher-title">
         <p className="launcher-eyebrow">Prêts à jouer ?</p>
         <h1 id="launcher-title">Choisissez votre jeu.</h1>
-        <p>Un téléphone suffit. Touchez une carte et lancez la partie.</p>
       </section>
 
       <section className="launcher-games" aria-label="Jeux disponibles">

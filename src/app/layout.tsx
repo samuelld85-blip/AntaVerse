@@ -39,9 +39,16 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="fr" data-theme="dark" suppressHydrationWarning>
       <head>
+        {process.env.NODE_ENV === "development" ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(r){if(r.length){return Promise.all(r.map(function(x){return x.unregister()})).then(function(){location.reload()})}})}`,
+            }}
+          />
+        ) : null}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var p=location.pathname,g=p.startsWith("/quoi-de-9")?"qui-des-9:theme":p.startsWith("/la-relance")?"la-relance:theme":p.startsWith("/sans-le-dire")?"sans-le-dire:theme":"",k=g||"antaverse:theme",s=localStorage.getItem(k);document.documentElement.dataset.theme=s==="dark"?"dark":s==="light"?"light":g?"light":"dark"}catch(e){}`,
+            __html: `try{var s=localStorage.getItem("antaverse:theme");document.documentElement.dataset.theme=s==="light"?"light":"dark"}catch(e){}`,
           }}
         />
       </head>

@@ -3,24 +3,17 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const themeKeys = [
-  ["/quoi-de-9", "qui-des-9:theme"],
-  ["/la-relance", "la-relance:theme"],
-  ["/sans-le-dire", "sans-le-dire:theme"],
-] as const;
-
 export function RouteThemeSync() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const gameKey = themeKeys.find(([prefix]) => pathname.startsWith(prefix))?.[1];
-    const key = gameKey ?? "antaverse:theme";
-    let theme = gameKey ? "light" : "dark";
+    const key = "antaverse:theme";
+    let theme = "dark";
     try {
       const storedTheme = window.localStorage.getItem(key);
       theme = storedTheme === "dark" ? "dark" : storedTheme === "light" ? "light" : theme;
     } catch {
-      // Le thème sombre reste le repli lorsque le stockage est indisponible.
+      // Le thème clair reste le repli lorsque le stockage est indisponible.
     }
     document.documentElement.dataset.theme = theme;
     document

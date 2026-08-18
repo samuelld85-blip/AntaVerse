@@ -94,10 +94,14 @@ a {
   height: auto;
   flex: 0 0 auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 18px var(--accent-glow));
+  filter: none;
 }
 .brand-mark--small {
   width: 6rem;
+}
+
+html[data-theme="light"] .brand-mark--sans-le-dire {
+  content: url("/brand/sans-le-dire-logo-light.png");
 }
 
 .button {
@@ -293,6 +297,50 @@ a {
 .setup-heading > p:last-child {
   margin: 1rem 0 0;
   color: var(--muted);
+}
+
+.rules-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rules-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.045);
+}
+.rules-list li > span {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+.rules-list h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+.rules-list p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.rules-cta {
+  margin-top: auto;
+  padding-top: 2rem;
 }
 .team-form {
   display: grid;

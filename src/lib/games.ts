@@ -16,7 +16,7 @@ export const games: readonly GameDefinition[] = [
   {
     id: "quoi-de-9",
     name: "Quoi de 9 ?",
-    description: "Deux équipes cherchent les neuf réponses cachées à chaque question.",
+    description: "Essayez de deviner les 9 réponses à la question posée",
     route: "/quoi-de-9",
     icon: "/brand/v1/quoi-de-9-mark.svg",
     accent: "#16C7E8",
@@ -25,19 +25,19 @@ export const games: readonly GameDefinition[] = [
   {
     id: "la-relance",
     name: "La Relance",
-    description: "À tour de rôle, trouvez une réponse au thème avant l’équipe adverse.",
+    description: "À tour de rôle, trouvez une réponse liée au thème jusqu’à épuisement",
     route: "/la-relance",
-    icon: "/brand/v1/la-relance-mark.svg",
+    icon: "/brand/la-relance-logo.png",
     accent: "#E83DFF",
     iconBackground: "#0B1118",
   },
   {
     id: "sans-le-dire",
     name: "Sans le dire",
-    description: "Faites deviner le mot sans prononcer les trois mots interdits.",
+    description: "Faites deviner le mot sans prononcer les mots interdits",
     route: "/sans-le-dire",
-    icon: "/brand/v1/sans-le-dire-mark.svg",
-    accent: "#E83DFF",
+    icon: "/brand/sans-le-dire-logo.png",
+    accent: "#16C7E8",
     iconBackground: "#0B1118",
   },
 ] as const;

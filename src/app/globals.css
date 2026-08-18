@@ -18,14 +18,34 @@
   --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px;
   --radius-sm: 10px; --radius-md: 14px; --radius-lg: 18px; --radius-xl: 22px; --radius-round: 999px;
   --motion-fast: 160ms ease;
+  --launcher-page: var(--bg-light);
+  --launcher-surface: var(--surface-light);
+  --launcher-surface-hover: #eef2f4;
+  --launcher-ink: var(--text-light-primary);
+  --launcher-muted: var(--text-light-secondary);
+  --launcher-line: var(--border-light);
+  --launcher-accent: var(--antaverse-cyan);
+  --launcher-cyan-glow: rgba(22, 199, 232, 0.1);
+  --launcher-pink-glow: rgba(174, 63, 255, 0.13);
+  --launcher-gradient: linear-gradient(155deg, #f7f7f4 0%, #f3f7f7 52%, #faf4fa 100%);
+  --launcher-index: rgba(17, 21, 27, 0.2);
+  --launcher-icon-ring: rgba(17, 21, 27, 0.05);
+  --launcher-radius: var(--radius-lg);
+  --launcher-font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html[data-theme="dark"] {
   --launcher-page: var(--bg-dark);
   --launcher-surface: var(--surface-dark);
+  --launcher-surface-hover: var(--surface-dark-secondary);
   --launcher-ink: var(--text-dark-primary);
   --launcher-muted: var(--text-dark-secondary);
   --launcher-line: var(--border-dark);
-  --launcher-accent: var(--antaverse-cyan);
-  --launcher-radius: var(--radius-lg);
-  --launcher-font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --launcher-cyan-glow: rgba(22, 199, 232, 0.1);
+  --launcher-pink-glow: rgba(174, 63, 255, 0.13);
+  --launcher-gradient: linear-gradient(155deg, #0b1118 0%, #0c1119 52%, #110d18 100%);
+  --launcher-index: rgba(255, 255, 255, 0.19);
+  --launcher-icon-ring: rgba(255, 255, 255, 0.04);
 }
 
 * {
@@ -74,7 +94,10 @@ a {
   margin-inline: auto;
   padding: max(1.25rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right))
     max(1.25rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
-  background: var(--launcher-page);
+  background:
+    radial-gradient(ellipse 85% 46% at 0% 0%, var(--launcher-cyan-glow), transparent 68%),
+    radial-gradient(ellipse 74% 48% at 100% 0%, var(--launcher-pink-glow), transparent 70%),
+    var(--launcher-gradient);
 }
 
 .launcher-header {
@@ -84,8 +107,14 @@ a {
   gap: 1rem;
 }
 
-.launcher-header > p {
-  max-width: 8rem;
+.launcher-header-actions {
+  display: grid;
+  justify-items: end;
+  gap: 0.55rem;
+}
+
+.launcher-header-actions > p {
+  max-width: 12rem;
   margin: 0;
   color: var(--launcher-muted);
   font-size: 0.68rem;
@@ -96,10 +125,55 @@ a {
   letter-spacing: 0.1em;
 }
 
+.launcher-header-actions > p span {
+  display: block;
+  white-space: nowrap;
+}
+
+.launcher-header-actions > p span + span {
+  margin-top: 0.18rem;
+}
+
+.home-theme-selector {
+  display: inline-flex;
+  padding: 0.18rem;
+  border: 1px solid var(--launcher-line);
+  border-radius: var(--radius-round);
+  background: color-mix(in srgb, var(--launcher-surface) 88%, transparent);
+}
+
+.home-theme-button {
+  display: inline-flex;
+  min-height: 1.95rem;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  border-radius: var(--radius-round);
+  background: transparent;
+  color: var(--launcher-muted);
+  font-size: 0.67rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.home-theme-button.is-selected {
+  background: var(--launcher-ink);
+  color: var(--launcher-page);
+}
+
 .antaverse-brand {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+}
+
+.antaverse-brand img {
+  display: block;
+  width: 7.2rem;
+  height: auto;
+  object-fit: contain;
 }
 
 .antaverse-brand > span:last-child {
@@ -117,7 +191,11 @@ a {
 }
 
 .antaverse-brand em {
-  color: var(--launcher-accent);
+  background: linear-gradient(90deg, var(--antaverse-cyan), var(--antaverse-pink));
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .brand-orbit {
@@ -220,7 +298,7 @@ a {
 
 .game-card:hover {
   border-color: color-mix(in srgb, var(--game-accent) 56%, transparent);
-  background: var(--surface-dark-secondary);
+  background: var(--launcher-surface-hover);
 }
 
 .game-card:active {
@@ -231,7 +309,7 @@ a {
   position: absolute;
   top: 0.65rem;
   right: 0.85rem;
-  color: rgba(255, 255, 255, 0.19);
+  color: var(--launcher-index);
   font-size: 0.62rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -247,7 +325,7 @@ a {
   border: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent);
   border-radius: 50%;
   background: var(--icon-background);
-  box-shadow: inset 0 0 0 0.35rem rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 0.35rem var(--launcher-icon-ring);
 }
 
 .game-icon img {
@@ -304,7 +382,7 @@ a {
   justify-content: center;
   gap: 0.42rem;
   padding: 0.65rem 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--launcher-line);
   border-radius: var(--radius-md);
   background: var(--launcher-surface);
   color: currentColor;
@@ -318,9 +396,7 @@ a {
   backdrop-filter: blur(10px);
 }
 
-.antaverse-brand em,
-.launcher-eyebrow,
-.game-arrow { color: var(--antaverse-pink); }
+.antaverse-brand em { color: var(--antaverse-pink); }
 .game-copy strong { font-family: "Space Grotesk", Inter, sans-serif; }
 .game-card:focus-visible { outline-color: var(--antaverse-cyan); }
 
@@ -406,7 +482,7 @@ a {
 }
 
 @media (max-width: 350px) {
-  .launcher-header > p {
+  .launcher-header-actions > p {
     display: none;
   }
 

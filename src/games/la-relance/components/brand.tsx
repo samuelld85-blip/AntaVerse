@@ -4,11 +4,11 @@ import Link from "next/link";
 export function LogoMark({ compact = false }: { compact?: boolean }) {
   return (
     <Image
-      src="/brand/v1/la-relance-mark.svg"
+      src="/brand/la-relance-logo.png"
       alt=""
-      width={96}
-      height={96}
-      className={compact ? "brand-mark brand-mark--small" : "brand-mark"}
+      width={133}
+      height={76}
+      className={compact ? "brand-mark brand-mark--la-relance brand-mark--small" : "brand-mark brand-mark--la-relance"}
       aria-hidden="true"
       priority
     />
@@ -19,7 +19,6 @@ export function Brand({ compact = false }: { compact?: boolean }) {
   return (
     <Link href="/la-relance" aria-label="La Relance, accueil" className="brand">
       <LogoMark compact={compact} />
-      <span className={compact ? "brand-name brand-name--small" : "brand-name"}>La Relance</span>
     </Link>
   );
 }

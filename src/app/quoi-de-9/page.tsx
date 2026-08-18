@@ -3,22 +3,14 @@ import { Brand } from "@/games/quoi-de-9/components/brand";
 import { ButtonLink } from "@/games/quoi-de-9/components/ui";
 import { ResumeGameCard } from "@/games/quoi-de-9/components/resume-game-card";
 import { ThemeSelector } from "@/games/quoi-de-9/components/theme-selector";
-import { GlobalHomeLink } from "@/components/global-home-link";
+import { GameHomeNav } from "@/components/game-home-nav";
 
 export default function HomePage() {
   return (
     <main className="home-shell safe-shell mx-auto flex w-full max-w-[520px] flex-col rounded-[2rem] sm:my-4 sm:border sm:border-white/10">
       <header className="flex items-center justify-between">
         <Brand />
-        <div className="flex items-center gap-2">
-          <GlobalHomeLink label="Jeux" />
-          <Link
-            href="/quoi-de-9/regles"
-            className="min-h-11 rounded-full border border-white/15 px-3 py-3 text-[10px] font-black uppercase tracking-[0.08em] text-white/70"
-          >
-            Règles
-          </Link>
-        </div>
+        <GameHomeNav rulesHref="/quoi-de-9/regles" />
       </header>
 
       <section className="home-hero flex flex-1 flex-col justify-center py-[clamp(1.5rem,6vh,2.5rem)]">

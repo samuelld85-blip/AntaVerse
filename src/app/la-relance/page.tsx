@@ -2,14 +2,14 @@ import { Brand } from "@/games/la-relance/components/brand";
 import { ResumeGameCard } from "@/games/la-relance/components/resume-game-card";
 import { ThemeSelector } from "@/games/la-relance/components/theme-selector";
 import { ButtonLink } from "@/games/la-relance/components/ui";
-import { GlobalHomeLink } from "@/components/global-home-link";
+import { GameHomeNav } from "@/components/game-home-nav";
 
 export default function HomePage() {
   return (
     <main className="home-shell safe-shell">
       <header>
         <Brand />
-        <GlobalHomeLink />
+        <GameHomeNav rulesHref="/la-relance/regles" />
       </header>
       <section className="home-hero">
         <p className="eyebrow">Le jeu qui ne vous laisse pas souffler</p>
