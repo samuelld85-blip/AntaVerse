@@ -208,13 +208,21 @@ function ResultPanel({
 }
 
 function Die({ value, rolling }: { value: number; rolling: boolean }) {
-  const active = new Set(PIP_LAYOUTS[value] ?? []);
   return (
-    <div className={rolling ? "die die--rolling" : "die"} aria-hidden="true">
-      <div className="die-grid">
-        {Array.from({ length: 9 }, (_, cell) => (
-          <span key={cell} className={active.has(cell) ? "pip pip--on" : "pip"} />
-        ))}
+    <div className="die-scene" aria-hidden="true">
+      <div className={rolling ? "die-cube die-cube--rolling" : "die-cube"} data-value={value}>
+        {[1, 2, 3, 4, 5, 6].map((face) => {
+          const active = new Set(PIP_LAYOUTS[face] ?? []);
+          return (
+            <div key={face} className={`die-face die-face--${face}`}>
+              <div className="die-grid">
+                {Array.from({ length: 9 }, (_, cell) => (
+                  <span key={cell} className={active.has(cell) ? "pip pip--on" : "pip"} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { BackButton } from "@/games/shared/components/back-button";
 import { Brand } from "@/games/purple/components/brand";
 import { PlayingCard } from "@/games/purple/components/playing-card";
+import { MiniCard } from "@/games/purple/components/mini-card";
 import { GUESS_DRAW_COUNT, canPass, passTurn, submitGuess } from "@/games/purple/lib/game/engine";
 import { loadCurrentGame, saveCurrentGame } from "@/games/purple/lib/game/persistence";
 import type { GameState, GuessType } from "@/games/purple/lib/game/types";
@@ -14,10 +15,52 @@ const GUESS_ORDER: readonly GuessType[] = ["red", "black", "purple", "doublePurp
 const GUESS_LABEL: Record<GuessType, string> = {
   red: "Rouge",
   black: "Noir",
-  purple: "Violet",
-  doublePurple: "Double violet",
+  purple: "Purple",
+  doublePurple: "Double Purple",
   skubrum: "Skubrum",
 };
+
+function GuessExample({ guessType }: { guessType: GuessType }) {
+  switch (guessType) {
+    case "red":
+      return (
+        <div className="guess-cards">
+          <MiniCard suit="diamonds" />
+        </div>
+      );
+    case "black":
+      return (
+        <div className="guess-cards">
+          <MiniCard suit="spades" />
+        </div>
+      );
+    case "purple":
+      return (
+        <div className="guess-cards">
+          <MiniCard suit="hearts" />
+          <MiniCard suit="clubs" />
+        </div>
+      );
+    case "doublePurple":
+      return (
+        <div className="guess-cards">
+          <MiniCard suit="hearts" />
+          <MiniCard suit="clubs" />
+          <MiniCard suit="diamonds" />
+          <MiniCard suit="spades" />
+        </div>
+      );
+    case "skubrum":
+      return (
+        <div className="guess-cards">
+          <MiniCard suit="hearts" />
+          <MiniCard suit="hearts" />
+          <MiniCard suit="hearts" />
+          <MiniCard suit="spades" />
+        </div>
+      );
+  }
+}
 
 const REVEAL_BASE_MS = 560;
 const REVEAL_STAGGER_MS = 90;
@@ -89,17 +132,9 @@ export function GameClient() {
     <main className="purple-shell safe-shell">
       <header className="purple-header">
         <BackButton homeHref="/purple" />
-        <div className="purple-turn">
-          <span className="purple-turn-label">Au tour de</span>
-          <span className="purple-turn-name">{currentPlayer?.name}</span>
-        </div>
       </header>
 
       <section className="purple-stats" aria-label="État de la partie">
-        <div className="purple-stat purple-stat--pile">
-          <span className="purple-stat-label">Pot commun</span>
-          <strong className="purple-stat-value">{game.pile}</strong>
-        </div>
         <div className="purple-stat">
           <span className="purple-stat-label">Manche</span>
           <strong className="purple-stat-value">{game.progress}</strong>
@@ -111,12 +146,21 @@ export function GameClient() {
             {canPass(game) ? "Peut passer" : "3 pour passer"}
           </span>
         </div>
+        <div className="purple-stat purple-stat--pile">
+          <span className="purple-stat-label">Pot commun</span>
+          <strong className="purple-stat-value">{game.pile}</strong>
+        </div>
         <div className="purple-stat">
           <span className="purple-stat-label">Paquet</span>
           <strong className="purple-stat-value">{game.deck.length}</strong>
           <span className="purple-stat-hint">cartes</span>
         </div>
       </section>
+
+      <div className="purple-active-player">
+        <span className="purple-active-label">AU TOUR DE</span>
+        <span className="purple-active-name">{currentPlayer?.name}</span>
+      </div>
 
       <section className="purple-stage" aria-live="polite">
         {lastGuess ? (
@@ -171,6 +215,7 @@ export function GameClient() {
               disabled={revealing}
             >
               <span className="guess-button-label">{GUESS_LABEL[guessType]}</span>
+              <GuessExample guessType={guessType} />
               <span className="guess-button-draw">
                 {GUESS_DRAW_COUNT[guessType]} carte{GUESS_DRAW_COUNT[guessType] > 1 ? "s" : ""}
               </span>

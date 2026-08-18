@@ -6,13 +6,13 @@ import { Button } from "@/games/shared/components/ui";
 import { MAX_PLAYERS, MIN_PLAYERS, createGame } from "@/games/purple/lib/game/engine";
 import { saveCurrentGame } from "@/games/purple/lib/game/persistence";
 
-function defaultName(index: number) {
-  return `Joueur ${index + 1}`;
-}
+const DEFAULT_PLAYER_COUNT = 3;
 
 export function SetupForm() {
   const router = useRouter();
-  const [names, setNames] = useState<string[]>([defaultName(0), defaultName(1)]);
+  const [names, setNames] = useState<string[]>(() =>
+    Array.from({ length: DEFAULT_PLAYER_COUNT }, () => ""),
+  );
   const [error, setError] = useState<string | null>(null);
 
   function updateName(index: number, value: string) {
@@ -21,7 +21,7 @@ export function SetupForm() {
 
   function addPlayer() {
     if (names.length >= MAX_PLAYERS) return;
-    setNames((current) => [...current, defaultName(current.length)]);
+    setNames((current) => [...current, ""]);
   }
 
   function removePlayer(index: number) {
@@ -31,8 +31,15 @@ export function SetupForm() {
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const trimmedNames = names.map((name) => name.trim());
+
+    if (trimmedNames.some((name) => name.length === 0)) {
+      setError("Chaque joueur doit avoir un nom.");
+      return;
+    }
+
     try {
-      const game = createGame({ playerNames: names });
+      const game = createGame({ playerNames: trimmedNames });
       saveCurrentGame(game);
       router.push("/purple/partie");
     } catch {
@@ -51,10 +58,10 @@ export function SetupForm() {
             <input
               value={name}
               onChange={(event) => updateName(index, event.target.value)}
-              placeholder={defaultName(index)}
+              placeholder="Son prénom"
               maxLength={24}
               autoComplete="off"
-              aria-label={`Joueur ${index + 1}`}
+              aria-label={`Nom du joueur ${index + 1}`}
             />
             {names.length > MIN_PLAYERS ? (
               <button

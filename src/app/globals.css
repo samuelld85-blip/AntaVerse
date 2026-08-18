@@ -210,7 +210,7 @@ a {
 }
 
 .launcher-intro {
-  padding: clamp(2.25rem, 9vh, 4.5rem) 0 clamp(1.5rem, 5vh, 2.6rem);
+  padding: clamp(1.8rem, 7vh, 3.5rem) 0 clamp(1.2rem, 4vh, 2.2rem);
 }
 
 .launcher-eyebrow {
@@ -228,7 +228,7 @@ a {
   max-width: 10ch;
   margin: 0;
   font-family: "Space Grotesk", Inter, sans-serif;
-  font-size: clamp(2.8rem, 13vw, 4.7rem);
+  font-size: clamp(2.3rem, 11vw, 3.8rem);
   font-weight: 700;
   line-height: 0.92;
   text-transform: uppercase;
