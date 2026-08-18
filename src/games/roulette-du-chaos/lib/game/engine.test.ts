@@ -1,0 +1,326 @@
+import { describe, expect, it } from "vitest";
+import { EVENTS_BY_CATEGORY } from "../../data/events";
+import {
+  clearActiveRule,
+  completeMiniGame,
+  completeTurn,
+  createGame,
+  finishSpin,
+  getActivePlayer,
+  MAX_PLAYERS,
+  MIN_PLAYERS,
+  replayGame,
+  revealEvent,
+  spinWheel,
+  submitChoice,
+  submitNeighbor,
+  submitTargets,
+} from "./engine";
+import { CATEGORIES } from "./wheel";
+import type { CategoryId, GameState } from "./types";
+
+const PLAYER_NAMES = ["Samuel", "Diane", "Thomas", "Emma"];
+
+/** The exact 0..1 slot that makes `pickWeightedCategory` land on `id`. */
+function categorySlot(id: CategoryId): number {
+  let offset = 0;
+  for (const category of CATEGORIES) {
+    if (category.id === id) return (offset + category.weight * 0.5) / 100;
+    offset += category.weight;
+  }
+  throw new Error(`unknown category ${id}`);
+}
+
+/** A `random()` stub that returns the given values in order, then throws if exhausted. */
+function queueRandom(values: number[]): () => number {
+  let cursor = 0;
+  return () => {
+    const value = values[cursor];
+    cursor += 1;
+    if (value === undefined) throw new Error("random queue exhausted");
+    return value;
+  };
+}
+
+/** createGame consumes one random() call for the starting player index and a second for the game id. */
+function startingIndexZero(): () => number {
+  return queueRandom([0, 0.42]);
+}
+
+/**
+ * Spins straight to a specific event and reveals it, replicating pickEvent's
+ * own anti-repeat filtering so the target event stays reachable (and the
+ * test stays correct) no matter what already happened this game.
+ */
+function spinToEvent(
+  game: GameState,
+  category: CategoryId,
+  eventId: string,
+  extraRandom: number[] = [],
+): GameState {
+  const events = EVENTS_BY_CATEGORY[category];
+  const avoided = new Set(game.recentEventIds.slice(-2));
+  const candidates = events.filter((event) => !avoided.has(event.id));
+  const pool = candidates.length > 0 ? candidates : events;
+  const index = pool.findIndex((event) => event.id === eventId);
+  if (index === -1) {
+    throw new Error(
+      `${eventId} isn't selectable right now (anti-repeat) — pick a different id for this test`,
+    );
+  }
+  const slot = (index + 0.5) / pool.length;
+  const random = queueRandom([categorySlot(category), slot, ...extraRandom]);
+  let next = spinWheel(game, random);
+  next = finishSpin(next);
+  next = revealEvent(next, random);
+  return next;
+}
+
+describe("createGame", () => {
+  it("creates players in order and starts idle", () => {
+    const game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    expect(game.players.map((player) => player.name)).toEqual(PLAYER_NAMES);
+    expect(game.phase).toBe("idle");
+    expect(game.activeRule).toBeNull();
+    expect(game.resolution).toBeNull();
+  });
+
+  it("enforces the player count bounds", () => {
+    expect(() => createGame({ playerNames: ["A", "B"] })).toThrow();
+    expect(() => createGame({ playerNames: Array(MIN_PLAYERS).fill("Ok") })).not.toThrow();
+    expect(() => createGame({ playerNames: Array(MAX_PLAYERS).fill("Ok") })).not.toThrow();
+    expect(() => createGame({ playerNames: Array(MAX_PLAYERS + 1).fill("Ok") })).toThrow();
+  });
+
+  it("rejects empty names", () => {
+    expect(() => createGame({ playerNames: ["Ana", "  ", "Bo"] })).toThrow();
+  });
+});
+
+describe("a zero-input event resolves immediately and completes the turn exactly once", () => {
+  it("SUBIS s1 (Classique) needs no input at all", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const startingPlayer = getActivePlayer(game);
+
+    game = spinToEvent(game, "SUBIS", "s1");
+    expect(game.phase).toBe("event");
+    expect(game.resolution?.outcome).not.toBeNull();
+    expect(game.resolution?.outcome?.lines[0]).toContain(startingPlayer.name);
+
+    game = completeTurn(game);
+    expect(game.phase).toBe("idle");
+    expect(game.resolution).toBeNull();
+    expect(getActivePlayer(game).id).not.toBe(startingPlayer.id);
+
+    // Completing again with no active event is a no-op — never double-advances.
+    const again = completeTurn(game);
+    expect(again.activePlayerIndex).toBe(game.activePlayerIndex);
+  });
+});
+
+describe("target picking", () => {
+  it("D4 Double cible excludes the active player and requires exactly 2 targets", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const active = getActivePlayer(game);
+    game = spinToEvent(game, "DISTRIBUE", "d4");
+
+    const pending = game.resolution?.pending;
+    expect(pending?.kind).toBe("pickTargets");
+    if (pending?.kind !== "pickTargets") throw new Error("expected pickTargets");
+    expect(pending.min).toBe(2);
+    expect(pending.max).toBe(2);
+    expect(pending.excludeIds).toEqual([active.id]);
+
+    const others = game.players.filter((player) => player.id !== active.id).slice(0, 2);
+    game = submitTargets(
+      game,
+      others.map((player) => player.id),
+    );
+    expect(game.resolution?.outcome?.lines).toHaveLength(2);
+    expect(game.resolution?.outcome?.lines[0]).toContain(others[0]!.name);
+  });
+
+  it("D7 Un pour chacun adapts its target count when fewer than 3 others are available", () => {
+    let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero()); // 3 players -> 2 others
+    game = spinToEvent(game, "DISTRIBUE", "d7");
+
+    const pending = game.resolution?.pending;
+    if (pending?.kind !== "pickTargets") throw new Error("expected pickTargets");
+    expect(pending.min).toBe(2);
+    expect(pending.max).toBe(2);
+
+    const others = game.players.filter((player) => player.id !== getActivePlayer(game).id);
+    game = submitTargets(
+      game,
+      others.map((player) => player.id),
+    );
+    // splitEvenly(3, 2) -> [2, 1]
+    expect(game.resolution?.outcome?.lines[0]).toContain("2 gorgées");
+    expect(game.resolution?.outcome?.lines[1]).toContain("1 gorgée");
+  });
+});
+
+describe("neighbor picking wraps around", () => {
+  it("D5 Voisinage resolves left/right relative to the active player, wrapping at the ends", () => {
+    const game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero()); // active = index 0 (Samuel)
+
+    let withLeft = spinToEvent(game, "DISTRIBUE", "d5");
+    withLeft = submitNeighbor(withLeft, "left");
+    // index 0's left neighbor wraps to the last player (Emma).
+    expect(withLeft.resolution?.outcome?.lines[0]).toContain("Emma");
+
+    let withRight = spinToEvent(game, "DISTRIBUE", "d5");
+    withRight = submitNeighbor(withRight, "right");
+    expect(withRight.resolution?.outcome?.lines[0]).toContain("Diane");
+  });
+});
+
+describe("temporary rules", () => {
+  it("R1 activates a rule that expires when play returns to its owner", () => {
+    let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
+    const owner = getActivePlayer(game); // Samuel
+
+    game = spinToEvent(game, "REGLE", "r1");
+    expect(game.activeRule?.ownerId).toBe(owner.id);
+    game = completeTurn(game); // -> Diane's turn, rule still active
+    expect(game.activeRule).not.toBeNull();
+
+    game = spinToEvent(game, "SUBIS", "s1");
+    game = completeTurn(game); // -> Thomas's turn, rule still active
+    expect(game.activeRule).not.toBeNull();
+
+    game = spinToEvent(game, "SUBIS", "s2");
+    game = completeTurn(game); // -> back to Samuel (the owner): rule expires
+    expect(getActivePlayer(game).id).toBe(owner.id);
+    expect(game.activeRule).toBeNull();
+  });
+
+  it("a new REGLE event replaces any existing rule (V1 supports only one at a time)", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "REGLE", "r1");
+    expect(game.activeRule?.ruleId).toBe("r1");
+    game = completeTurn(game);
+    game = spinToEvent(game, "REGLE", "r3");
+    expect(game.activeRule?.ruleId).toBe("r3");
+  });
+
+  it("clearActiveRule manually ends a firstViolation/timer rule", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "REGLE", "r5");
+    expect(game.activeRule).not.toBeNull();
+    game = clearActiveRule(game);
+    expect(game.activeRule).toBeNull();
+  });
+});
+
+describe("mini-games never double-advance the turn", () => {
+  it("a DUEL event runs through a mini-game and completes the turn exactly once", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const active = getActivePlayer(game);
+    game = spinToEvent(game, "DUEL", "dl1"); // reflex
+
+    const opponent = game.players.find((player) => player.id !== active.id)!;
+    game = submitTargets(game, [opponent.id]);
+    expect(game.phase).toBe("miniGame");
+    expect(game.miniGame?.kind).toBe("reflex");
+    expect(game.miniGame?.playerAId).toBe(active.id);
+    expect(game.miniGame?.playerBId).toBe(opponent.id);
+
+    game = completeMiniGame(game, {
+      mode: "duel",
+      winnerId: active.id,
+      loserId: opponent.id,
+      success: null,
+      tie: false,
+    });
+    expect(game.phase).toBe("event");
+    expect(game.resolution?.outcome?.lines.join(" ")).toContain(opponent.name);
+
+    const before = game.activePlayerIndex;
+    game = completeTurn(game);
+    expect(game.activePlayerIndex).toBe((before + 1) % game.players.length);
+
+    // Rapidly tapping "complete" again must not advance a second time.
+    const again = completeTurn(game);
+    expect(again.activePlayerIndex).toBe(game.activePlayerIndex);
+  });
+
+  it("a tied mini-game result asks the event to replay it, not to finish", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const active = getActivePlayer(game);
+    game = spinToEvent(game, "DUEL", "dl1");
+    const opponent = game.players.find((player) => player.id !== active.id)!;
+    game = submitTargets(game, [opponent.id]);
+
+    game = completeMiniGame(game, {
+      mode: "duel",
+      winnerId: null,
+      loserId: null,
+      success: null,
+      tie: true,
+    });
+    expect(game.phase).toBe("miniGame");
+    expect(game.resolution?.outcome).toBeNull();
+  });
+});
+
+describe("multi-step target resolution (J5 Royal Duel)", () => {
+  it("keeps opponent-picking and the winner's distribution as separate rounds", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const active = getActivePlayer(game);
+    game = spinToEvent(game, "JACKPOT", "j5");
+
+    const opponent = game.players.find((player) => player.id !== active.id)!;
+    game = submitTargets(game, [opponent.id]);
+    expect(game.phase).toBe("miniGame");
+
+    game = completeMiniGame(game, {
+      mode: "duel",
+      winnerId: opponent.id,
+      loserId: active.id,
+      success: null,
+      tie: false,
+    });
+    expect(game.phase).toBe("event");
+    const pending = game.resolution?.pending;
+    expect(pending?.kind).toBe("pickTargets");
+    if (pending?.kind !== "pickTargets") throw new Error("expected pickTargets");
+    // The winner can't distribute sips to themself.
+    expect(pending.excludeIds).toEqual([opponent.id]);
+
+    const recipients = game.players.filter((player) => player.id !== opponent.id).slice(0, 1);
+    game = submitTargets(
+      game,
+      recipients.map((player) => player.id),
+    );
+    expect(game.resolution?.outcome?.headline).toBe("Royal Duel");
+  });
+});
+
+describe("choices", () => {
+  it("SUBIS s5 Sauve-toi: taking the sips ends the event without a mini-game", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "SUBIS", "s5");
+    expect(game.resolution?.pending?.kind).toBe("choice");
+    game = submitChoice(game, "prendre");
+    expect(game.phase).toBe("event");
+    expect(game.resolution?.outcome).not.toBeNull();
+    expect(game.miniGame).toBeNull();
+  });
+});
+
+describe("replayGame", () => {
+  it("resets to a clean idle state, keeping the same player names", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "REGLE", "r1");
+    expect(game.activeRule).not.toBeNull();
+
+    const restarted = replayGame(game, startingIndexZero());
+    expect(restarted.players.map((player) => player.name)).toEqual(PLAYER_NAMES);
+    expect(restarted.phase).toBe("idle");
+    expect(restarted.activeRule).toBeNull();
+    expect(restarted.resolution).toBeNull();
+    expect(restarted.miniGame).toBeNull();
+    expect(restarted.recentEventIds).toEqual([]);
+  });
+});

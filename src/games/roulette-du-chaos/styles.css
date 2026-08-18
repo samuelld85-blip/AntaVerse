@@ -1,0 +1,931 @@
+:root {
+  --rdc-accent: #ff4d6d;
+  --rdc-accent-glow: rgba(255, 77, 109, 0.18);
+  --rdc-gold: #ffc94d;
+  --rdc-distribue: #ff4d6d;
+  --rdc-subis: #ff5c3d;
+  --rdc-duel: #ff9a3d;
+  --rdc-tous: #3ddc8a;
+  --rdc-choisis: #3dc9e8;
+  --rdc-destin: #5b7cfa;
+  --rdc-regle: #9b5bfa;
+  --rdc-jackpot: #ffc94d;
+}
+
+/* Brand ------------------------------------------------------------------ */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 1rem;
+}
+.brand-mark {
+  display: block;
+  width: 6.8rem;
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: none;
+}
+.brand-mark--small {
+  width: 5rem;
+}
+html[data-theme="light"] .brand-mark--rdc {
+  content: url("/brand/games/roulette-du-chaos-light.png");
+}
+
+/* Player setup ------------------------------------------------------------ */
+
+.player-form {
+  display: grid;
+  flex: 1;
+  align-content: end;
+  gap: 1rem;
+  padding-bottom: 0.25rem;
+}
+.player-fields {
+  display: grid;
+  gap: 0.65rem;
+  max-height: 52vh;
+  overflow-y: auto;
+  padding-right: 0.15rem;
+}
+.player-field {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--surface);
+}
+.player-number {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--rdc-accent);
+  background: transparent;
+  color: var(--rdc-accent);
+  font-size: 1rem;
+  font-weight: 950;
+}
+.player-input-wrap {
+  min-width: 0;
+  flex: 1;
+}
+.player-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.player-field input {
+  width: 100%;
+  margin-top: 0.2rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 750;
+  outline: 0;
+}
+.player-remove-button {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+.player-remove-button:hover {
+  border-color: var(--rdc-accent);
+  color: var(--rdc-accent);
+}
+.add-player-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px dashed var(--line);
+  border-radius: 1.15rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.add-player-button:hover {
+  border-color: var(--rdc-accent);
+  color: var(--rdc-accent);
+}
+.add-player-button span {
+  font-size: 1rem;
+  font-weight: 950;
+}
+.add-player-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rules-subheading {
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* Game shell --------------------------------------------------------------
+   Phases swap freely (wheel stage / event card / mini-game), so — like
+   Triman — this is a flex column that grows to fill whatever's current
+   rather than the shared fixed-row grid. */
+
+.rdc-shell {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 2vh, 1rem);
+}
+.rdc-loading {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.restart-button {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+.restart-button:hover {
+  border-color: var(--rdc-accent);
+  color: var(--rdc-accent);
+}
+.game-header {
+  align-items: center;
+}
+.game-header > .brand {
+  margin: 0 auto;
+}
+
+.current-player-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.current-player-name {
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(2.1rem, 10vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  text-wrap: balance;
+  white-space: nowrap;
+  animation: theme-enter 220ms ease-out;
+}
+
+/* Wheel --------------------------------------------------------------------
+   8 equal 45° wedges. Each `.wheel-sector` shares one clip-path shaped as a
+   45°-wide triangle centered on 12 o'clock and reaching well past the box
+   edge — the circular `.wheel-disc` (border-radius + overflow:hidden) is
+   what actually trims it to a clean pie slice, so every sector can reuse
+   the exact same clip-path and just rotate into place. */
+
+.wheel-stage {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.6rem, 2.5vh, 1.2rem);
+  padding: 0.5rem 0.25rem;
+}
+.wheel-wrap {
+  position: relative;
+  width: min(78vw, 20rem);
+  aspect-ratio: 1;
+}
+.wheel-pointer {
+  position: absolute;
+  top: -0.4rem;
+  left: 50%;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 1.1rem solid var(--rdc-accent);
+  border-left: 0.8rem solid transparent;
+  border-right: 0.8rem solid transparent;
+  transform: translateX(-50%) rotate(180deg);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+}
+.wheel-disc {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--surface-raised);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  transition: none;
+}
+.wheel-disc--spinning {
+  transition: transform 3.2s cubic-bezier(0.18, 0.82, 0.16, 1);
+}
+.wheel-sector {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 50%, -7.5% -88.5%, 107.5% -88.5%);
+  transform-origin: 50% 50%;
+}
+.wheel-sector--distribue {
+  background: var(--rdc-distribue);
+}
+.wheel-sector--subis {
+  background: var(--rdc-subis);
+}
+.wheel-sector--duel {
+  background: var(--rdc-duel);
+}
+.wheel-sector--tous {
+  background: var(--rdc-tous);
+}
+.wheel-sector--choisis {
+  background: var(--rdc-choisis);
+}
+.wheel-sector--destin {
+  background: var(--rdc-destin);
+}
+.wheel-sector--regle {
+  background: var(--rdc-regle);
+}
+.wheel-sector--jackpot {
+  background: var(--rdc-jackpot);
+}
+.wheel-sector-content {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  display: flex;
+  width: 4.6rem;
+  margin-left: -2.3rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-align: center;
+}
+.wheel-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.wheel-label {
+  color: rgba(11, 17, 24, 0.85);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.wheel-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  width: 3.2rem;
+  height: 3.2rem;
+  place-items: center;
+  border: 3px solid var(--surface-raised);
+  border-radius: 50%;
+  background: var(--page);
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+
+.spin-button {
+  display: inline-flex;
+  width: 100%;
+  min-height: 3.65rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 1.15rem;
+  padding: 0.9rem 1.25rem;
+  background: var(--rdc-accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 14px 40px var(--rdc-accent-glow);
+  transition:
+    transform 120ms ease,
+    filter 120ms ease;
+}
+.spin-button:active {
+  transform: scale(0.98);
+}
+.spin-button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.3rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  animation: point-enter 240ms ease-out;
+}
+
+/* Event card ---------------------------------------------------------------
+   One accent border/color per category, driven by `event-card--<category>`. */
+
+.event-card {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  animation: theme-enter 220ms ease-out;
+}
+.event-card--distribue {
+  border-top: 4px solid var(--rdc-distribue);
+}
+.event-card--subis {
+  border-top: 4px solid var(--rdc-subis);
+}
+.event-card--duel {
+  border-top: 4px solid var(--rdc-duel);
+}
+.event-card--tous {
+  border-top: 4px solid var(--rdc-tous);
+}
+.event-card--choisis {
+  border-top: 4px solid var(--rdc-choisis);
+}
+.event-card--destin {
+  border-top: 4px solid var(--rdc-destin);
+}
+.event-card--regle {
+  border-top: 4px solid var(--rdc-regle);
+}
+.event-card--jackpot {
+  border-top: 4px solid var(--rdc-jackpot);
+}
+.event-card-category {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.event-card-title {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.7rem, 8vw, 2.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.event-card-prompt {
+  max-width: 26rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.event-outcome {
+  display: grid;
+  width: 100%;
+  gap: 0.85rem;
+  border-radius: 1.15rem;
+  padding: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  animation: point-enter 220ms ease-out;
+}
+.event-outcome--jackpot {
+  background: color-mix(in srgb, var(--rdc-gold) 16%, transparent);
+  box-shadow: 0 0 40px rgba(255, 201, 77, 0.22);
+}
+.event-outcome--rule {
+  background: color-mix(in srgb, var(--rdc-regle) 16%, transparent);
+}
+.event-outcome-headline {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.event-outcome-lines {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Target / choice / neighbor / mystery pickers ---------------------------- */
+
+.target-picker {
+  display: grid;
+  width: 100%;
+  gap: 0.75rem;
+}
+.target-picker-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.target-picker-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.target-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 750;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+.target-chip--selected {
+  border-color: var(--rdc-accent);
+  background: var(--rdc-accent);
+  color: white;
+}
+.target-picker-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.choice-buttons {
+  display: grid;
+  width: 100%;
+  gap: 0.75rem;
+}
+.choice-buttons-prompt {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 750;
+}
+.choice-buttons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+.choice-button {
+  display: flex;
+  min-height: 3.4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  transition:
+    background 120ms ease,
+    transform 120ms ease;
+}
+.choice-button:active {
+  transform: scale(0.97);
+}
+.choice-button--rouge {
+  border-color: #ff4d6d;
+  color: #ff4d6d;
+}
+.choice-button--noir {
+  border-color: var(--text);
+}
+
+.mystery-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.mystery-card {
+  display: grid;
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: linear-gradient(150deg, var(--surface-raised), var(--surface));
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 950;
+  transition: transform 120ms ease;
+}
+.mystery-card:disabled {
+  cursor: default;
+}
+.mystery-card--flipping {
+  border-color: var(--rdc-accent);
+  color: var(--rdc-accent);
+  transform: scale(0.94) rotateY(90deg);
+}
+
+/* Die / coin flourishes ----------------------------------------------------- */
+
+.die-face-2d {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.9rem;
+  background: #f7f7f4;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.die-face-2d--rolling {
+  animation: die-shake 140ms ease-in-out infinite;
+}
+.die-face-2d-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 6%;
+  padding: 14%;
+}
+.pip {
+  visibility: hidden;
+  border-radius: 50%;
+  background: #11151b;
+}
+.pip--on {
+  visibility: visible;
+}
+.coin {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  border: 3px solid var(--rdc-gold);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--rdc-gold) 18%, transparent);
+  color: var(--rdc-gold);
+  font-size: 1.3rem;
+  font-weight: 950;
+}
+.coin--flipping {
+  animation: coin-flip 140ms linear infinite;
+}
+
+/* Rule banner ---------------------------------------------------------------- */
+
+.rule-banner {
+  border: 1px solid color-mix(in srgb, var(--rdc-regle) 45%, var(--line));
+  border-radius: 1.15rem;
+  background: color-mix(in srgb, var(--rdc-regle) 12%, transparent);
+  overflow: hidden;
+}
+.rule-banner-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.6rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+.rule-banner-icon {
+  font-size: 1rem;
+}
+.rule-banner-title {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.03em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.rule-banner-detail {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0 0.9rem 0.9rem;
+}
+.rule-banner-detail p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.rule-banner-report {
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Mini-games ------------------------------------------------------------------ */
+
+.mini-game-shell {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  animation: theme-enter 220ms ease-out;
+}
+.mini-game-eyebrow {
+  margin: 0;
+  color: var(--rdc-accent);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.mini-game-title {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.5rem, 7vw, 2rem);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.mini-game-instruction {
+  max-width: 24rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.mini-game-body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.mini-game-result {
+  display: grid;
+  width: 100%;
+  gap: 0.9rem;
+  justify-items: center;
+}
+.mini-game-result-headline {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.pass-and-hide {
+  display: grid;
+  width: 100%;
+  gap: 0.75rem;
+  justify-items: center;
+  padding: 1.5rem 0;
+}
+.pass-and-hide-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pass-and-hide-name {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.8rem, 8vw, 2.4rem);
+  text-transform: uppercase;
+}
+
+.reflex-arena {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  min-height: 12rem;
+}
+.reflex-zone {
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--line);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: background 120ms ease;
+}
+.reflex-arena[data-armed="true"] .reflex-zone {
+  border-color: var(--rdc-accent);
+  background: var(--rdc-accent-glow);
+  color: var(--rdc-accent);
+}
+
+.stop-timer-runner {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+.stop-timer-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.rps-choice {
+  display: grid;
+  width: 100%;
+  gap: 0.65rem;
+}
+
+.plus-minus-choice {
+  display: grid;
+  width: 100%;
+  gap: 0.75rem;
+  justify-items: center;
+}
+.plus-minus-start {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 950;
+}
+
+.secret-number-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.estimation-form {
+  display: grid;
+  width: 100%;
+  gap: 0.75rem;
+}
+.estimation-question {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 750;
+}
+.estimation-input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.tap-battle-countdown {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 950;
+}
+.tap-battle-arena {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  min-height: 12rem;
+}
+.tap-battle-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid var(--rdc-accent);
+  border-radius: 1.15rem;
+  background: var(--rdc-accent-glow);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.tap-battle-count {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 950;
+}
+
+@keyframes die-shake {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes coin-flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (max-height: 680px) {
+  .current-player-name {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+  .wheel-wrap {
+    width: min(62vw, 15rem);
+  }
+  .player-field {
+    min-height: 3.9rem;
+  }
+  .player-fields {
+    max-height: 44vh;
+  }
+  .event-card,
+  .mini-game-shell {
+    padding: 1.1rem 1rem;
+  }
+}
