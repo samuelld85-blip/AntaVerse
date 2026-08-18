@@ -1,15 +1,11 @@
 import type { ReactNode } from "react";
-import { BackButton } from "@/games/shared/components/back-button";
+import { PageShell as SharedPageShell } from "@/games/shared/components/page-shell";
 import { Brand } from "./brand";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <main className="page-shell safe-shell">
-      <header className="page-header">
-        <BackButton homeHref="/sans-le-dire" />
-        <Brand compact />
-      </header>
+    <SharedPageShell homeHref="/sans-le-dire" brand={<Brand compact />}>
       {children}
-    </main>
+    </SharedPageShell>
   );
 }

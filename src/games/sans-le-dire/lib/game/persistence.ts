@@ -1,30 +1,18 @@
+import { readJson, removeJson, writeJson } from "@/lib/local-storage-json";
 import type { GameState } from "./types";
 const STORAGE_KEY = "sans-le-dire:current-game";
 const TEAM_NAMES_KEY = "sans-le-dire:team-names";
 export function loadCurrentGame(): GameState | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const value: unknown = JSON.parse(raw);
-    if (!isGameState(value)) {
-      window.localStorage.removeItem(STORAGE_KEY);
-      return null;
-    }
-    return value;
-  } catch {
-    return null;
-  }
+  return readJson(STORAGE_KEY, isGameState);
 }
 export function saveCurrentGame(game: GameState): void {
-  if (typeof window !== "undefined") window.localStorage.setItem(STORAGE_KEY, JSON.stringify(game));
+  writeJson(STORAGE_KEY, game);
 }
 export function clearCurrentGame(): void {
-  if (typeof window !== "undefined") window.localStorage.removeItem(STORAGE_KEY);
+  removeJson(STORAGE_KEY);
 }
 export function saveTeamNames(names: readonly [string, string]): void {
-  if (typeof window !== "undefined")
-    window.localStorage.setItem(TEAM_NAMES_KEY, JSON.stringify(names));
+  writeJson(TEAM_NAMES_KEY, names);
 }
 export function loadTeamNames(): [string, string] {
   if (typeof window === "undefined") return ["Les Antagonistes", "Les Sanglieeers"];

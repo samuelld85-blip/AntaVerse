@@ -1,10 +1,11 @@
+import { shuffle } from "@/lib/random";
+import { createGameId, createTwoTeams } from "@/games/shared/lib/two-team-setup";
 import type { Card, CreateGameInput, GameState, TeamIndex } from "./types";
 export const STANDARD_ROUNDS = 4;
 const STANDARD_DURATION_MS = 45_000;
 const TIEBREAK_DURATION_MS = 30_000;
 const STANDARD_PASSES = 2;
 const TIEBREAK_PASSES = 1;
-const TEAM_COLORS = ["#E83DFF", "#16C7E8"] as const;
 
 export function createGame(
   input: CreateGameInput,
@@ -16,23 +17,13 @@ export function createGame(
   const timestamp = new Date(now).toISOString();
   return {
     schemaVersion: 2,
-    id: createId(now, random),
+    id: createGameId(now, random),
     status: "preparation",
     mode: "standard",
-    teams: [
-      {
-        id: "team-1",
-        name: cleanTeamName(input.teamOneName, "Les Antagonistes"),
-        color: TEAM_COLORS[0],
-        score: 0,
-      },
-      {
-        id: "team-2",
-        name: cleanTeamName(input.teamTwoName, "Les Sanglieeers"),
-        color: TEAM_COLORS[1],
-        score: 0,
-      },
-    ],
+    teams: createTwoTeams({
+      teamOneName: input.teamOneName,
+      teamTwoName: input.teamTwoName,
+    }),
     roundIndex: 0,
     activeTeam: 0,
     passesRemaining: STANDARD_PASSES,
@@ -159,14 +150,6 @@ export function getWinnerIndex(game: GameState): TeamIndex | null {
   if (scores[0] === scores[1]) return null;
   return scores[0]! > scores[1]! ? 0 : 1;
 }
-function shuffle<T>(values: readonly T[], random = Math.random): T[] {
-  const result = [...values];
-  for (let index = result.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(random() * (index + 1));
-    [result[index], result[swapIndex]] = [result[swapIndex]!, result[index]!];
-  }
-  return result;
-}
 function prepare(game: GameState, now: number): GameState {
   return touch(
     {
@@ -192,12 +175,6 @@ function validateCards(cards: readonly Card[]): void {
     throw new Error("Chaque carte doit avoir un identifiant unique.");
   if (cards.some((card) => card.forbidden.length !== 3))
     throw new Error("Chaque carte doit contenir trois mots interdits.");
-}
-function cleanTeamName(value: string, fallback: string): string {
-  return value.trim().replace(/\s+/gu, " ").slice(0, 24) || fallback;
-}
-function createId(now: number, random: () => number): string {
-  return `game-${now.toString(36)}-${Math.floor(random() * 1_000_000).toString(36)}`;
 }
 function touch(game: GameState, now: number): GameState {
   return { ...game, updatedAt: new Date(now).toISOString() };
