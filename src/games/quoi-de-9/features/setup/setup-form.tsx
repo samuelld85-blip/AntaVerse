@@ -9,8 +9,11 @@ import { createGame } from "@/games/quoi-de-9/lib/game/engine";
 import { saveCurrentGame } from "@/games/quoi-de-9/lib/game/persistence";
 import { createGameSchema, type CreateGameForm } from "@/games/quoi-de-9/lib/game/schemas";
 import type { GameMode } from "@/games/quoi-de-9/lib/game/types";
+import { AddParticipantButton } from "@/games/shared/components/add-participant-button";
+import { ParticipantCard } from "@/games/shared/components/participant-card";
+import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 
-const DEFAULT_COLORS = ["#E83DFF", "#16C7E8", "#FF5C2B"];
+const DEFAULT_COLORS = TEAM_PALETTE;
 
 export function SetupForm({ mode }: { mode: GameMode }) {
   const router = useRouter();
@@ -75,120 +78,52 @@ export function SetupForm({ mode }: { mode: GameMode }) {
     >
       <fieldset className="contents" disabled={isSubmitting}>
         <div className="grid gap-3.5">
-          {(["A", "B"] as const).map((letter) => {
-            const isA = letter === "A";
-            const nameField = isA ? "teamAName" : "teamBName";
-            const colorField = isA ? "teamAColor" : "teamBColor";
-            const selectedColor = isA ? values.teamAColor : values.teamBColor;
+          {(["A", "B"] as const).map((letter, index) => {
+            const nameField = letter === "A" ? "teamAName" : "teamBName";
+            const colorField = letter === "A" ? "teamAColor" : "teamBColor";
+            const selectedColor = DEFAULT_COLORS[index]!;
             return (
-              <section
-                key={letter}
-                className="relative overflow-hidden rounded-[1.5rem] border border-subtle px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
-                style={{
-                  background: `linear-gradient(115deg, ${selectedColor}20, rgba(255,255,255,.045) 48%)`,
-                }}
-              >
-                <div
-                  className="absolute inset-y-0 left-0 w-1.5"
-                  style={{ backgroundColor: selectedColor }}
-                  aria-hidden="true"
+              <div key={letter}>
+                <ParticipantCard
+                  badge={letter}
+                  color={selectedColor}
+                  label={`Équipe ${letter}`}
+                  error={errors[nameField]?.message}
+                  inputProps={{
+                    ...register(nameField),
+                    id: `team-${letter}-name`,
+                    "aria-invalid": Boolean(errors[nameField]),
+                  }}
                 />
-                <div className="flex items-center gap-4 pl-1">
-                  <span
-                    className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-sm font-black text-[var(--accent-ink)] shadow-lg"
-                    style={{ backgroundColor: selectedColor }}
-                  >
-                    {letter}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <label
-                      htmlFor={`team-${letter}-name`}
-                      className="block text-[9px] font-bold uppercase tracking-[0.16em] text-tertiary"
-                    >
-                      Équipe {letter}
-                    </label>
-                    <input
-                      {...register(nameField)}
-                      id={`team-${letter}-name`}
-                      aria-invalid={Boolean(errors[nameField])}
-                      className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-quaternary"
-                      maxLength={24}
-                      autoComplete="off"
-                    />
-                  </div>
-                </div>
-                {errors[nameField]?.message ? (
-                  <p role="alert" className="mt-1 pl-14 text-[10px] font-bold text-[var(--coral)]">
-                    {errors[nameField]?.message}
-                  </p>
-                ) : null}
                 <input type="hidden" {...register(colorField)} />
-              </section>
+              </div>
             );
           })}
 
           {hasThirdTeam && (
-            <section
-              className="relative overflow-hidden rounded-[1.5rem] border border-subtle px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
-              style={{
-                background: `linear-gradient(115deg, ${values.teamCColor}20, rgba(255,255,255,.045) 48%)`,
-              }}
-            >
-              <div
-                className="absolute inset-y-0 left-0 w-1.5"
-                style={{ backgroundColor: values.teamCColor }}
-                aria-hidden="true"
+            <div>
+              <ParticipantCard
+                badge="C"
+                color={DEFAULT_COLORS[2]}
+                label="Équipe C"
+                error={errors.teamCName?.message}
+                onRemove={() => setHasThirdTeam(false)}
+                removeLabel="Supprimer équipe C"
+                inputProps={{
+                  ...register("teamCName"),
+                  id: "team-c-name",
+                  "aria-invalid": Boolean(errors.teamCName),
+                }}
               />
-              <button
-                type="button"
-                onClick={() => setHasThirdTeam(false)}
-                className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/60 transition hover:bg-white/20 hover:text-primary"
-                aria-label="Supprimer équipe C"
-              >
-                ×
-              </button>
-              <div className="flex items-center gap-4 pl-1">
-                <span
-                  className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-sm font-black text-[var(--accent-ink)] shadow-lg"
-                  style={{ backgroundColor: values.teamCColor }}
-                >
-                  C
-                </span>
-                <div className="min-w-0 flex-1">
-                  <label
-                    htmlFor="team-c-name"
-                    className="block text-[9px] font-bold uppercase tracking-[0.16em] text-tertiary"
-                  >
-                    Équipe C
-                  </label>
-                  <input
-                    {...register("teamCName")}
-                    id="team-c-name"
-                    aria-invalid={Boolean(errors.teamCName)}
-                    className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-quaternary"
-                    maxLength={24}
-                    autoComplete="off"
-                  />
-                </div>
-              </div>
-              {errors.teamCName?.message ? (
-                <p role="alert" className="mt-1 pl-14 text-[10px] font-bold text-[var(--coral)]">
-                  {errors.teamCName?.message}
-                </p>
-              ) : null}
               <input type="hidden" {...register("teamCColor")} />
-            </section>
+            </div>
           )}
         </div>
 
         {!hasThirdTeam && (
-          <button
-            type="button"
-            onClick={() => setHasThirdTeam(true)}
-            className="px-2 py-1 text-center text-sm text-tertiary transition hover:text-primary/80"
-          >
-            + Ajouter équipe 3
-          </button>
+          <AddParticipantButton onClick={() => setHasThirdTeam(true)} color={DEFAULT_COLORS[2]}>
+            Ajouter équipe 3
+          </AddParticipantButton>
         )}
 
         <fieldset className="rounded-2xl border border-white/10 bg-white/[.035] p-3">

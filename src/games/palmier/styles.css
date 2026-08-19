@@ -1,6 +1,10 @@
 :root {
-  --plm-accent: #ff7a45;
-  --plm-accent-glow: rgba(255, 122, 69, 0.18);
+  /* Main tier: vibrant glowy yellow. Dark tier for gradient depth/tinted surfaces,
+     light tier for highlights — see GameAccent in shared/lib/game-accent.ts. */
+  --plm-accent: #ffc940;
+  --plm-accent-dark: #c99a00;
+  --plm-accent-light: #ffe680;
+  --plm-accent-glow: rgba(255, 201, 64, 0.2);
   --plm-gold: #ffc15e;
   --plm-danger: #ff6b6b;
   --plm-trunk: #a9713f;
@@ -10,6 +14,23 @@
   --plm-coconut: #6b4226;
   --plm-card-red: #c62828;
   --plm-card-dark: #1a1a1a;
+}
+
+/* --game-accent* is shared by NAME across every game's stylesheet, and
+   Next.js keeps previously-visited routes' CSS chunks loaded in <head> after
+   client-side navigation (confirmed: navigating / -> /palmier -> /triman via
+   Link leaves both games' stylesheets present simultaneously). A plain
+   `:root { --game-accent: ... }` in each game's file would collide — the
+   LAST-loaded stylesheet wins for the whole document regardless of which
+   route is actually showing. Scoping via :has() on this game's own brand
+   mark (only ever rendered when this game's page is actually mounted) makes
+   the declaration depend on real DOM content instead of stylesheet load
+   order, so it can never leak into another game. */
+:root:has(.brand-mark--plm) {
+  --game-accent: var(--plm-accent);
+  --game-accent-dark: var(--plm-accent-dark);
+  --game-accent-light: var(--plm-accent-light);
+  --game-accent-glow: var(--plm-accent-glow);
 }
 
 /* Brand ------------------------------------------------------------------ */
@@ -33,6 +54,11 @@ html[data-theme="light"] .brand-mark--plm {
   content: url("/brand/games/palmier-light.png");
 }
 
+/* Resume card — only the "Partie en cours" label uses game accent. */
+.resume-card .eyebrow {
+  color: var(--game-accent);
+}
+
 /* Player setup ------------------------------------------------------------ */
 
 .player-form {
@@ -48,93 +74,6 @@ html[data-theme="light"] .brand-mark--plm {
   max-height: 52vh;
   overflow-y: auto;
   padding-right: 0.15rem;
-}
-.player-field {
-  display: flex;
-  min-height: 4rem;
-  align-items: center;
-  gap: 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 1.15rem;
-  padding: 0.6rem 0.75rem;
-  background: var(--surface);
-}
-.player-number {
-  display: grid;
-  width: 2.5rem;
-  height: 2.5rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  border: 2px solid var(--plm-accent);
-  background: transparent;
-  color: var(--plm-accent);
-  font-size: 1rem;
-  font-weight: 950;
-}
-.player-input-wrap {
-  min-width: 0;
-  flex: 1;
-}
-.player-label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.63rem;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-.player-field input {
-  width: 100%;
-  margin-top: 0.2rem;
-  border: 0;
-  background: transparent;
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 750;
-  outline: 0;
-}
-.player-remove-button {
-  display: grid;
-  width: 2.2rem;
-  height: 2.2rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 0.7rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-}
-.player-remove-button:hover {
-  border-color: var(--plm-accent);
-  color: var(--plm-accent);
-}
-.add-player-button {
-  display: inline-flex;
-  min-height: 3rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: 1px dashed var(--line);
-  border-radius: 1.15rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 850;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.add-player-button:hover {
-  border-color: var(--plm-accent);
-  color: var(--plm-accent);
-}
-.add-player-button span {
-  font-size: 1rem;
-  font-weight: 950;
 }
 
 .rules-subheading {
@@ -755,9 +694,6 @@ html[data-theme="light"] .palm-ground-shadow {
 }
 
 @media (max-height: 680px) {
-  .player-field {
-    min-height: 3.6rem;
-  }
   .palm-tree {
     width: min(56vw, 12rem);
   }

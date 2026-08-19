@@ -77,6 +77,71 @@ assumptions baked in:
   so each game passes its own `loadCurrentGame` and resume URL.
 - `lib/two-team-setup.ts` — team-color palette, name-cleaning, id
   generation and two-team creation, shared by La Relance and Sans le dire.
+- `lib/team-palette.ts` — `TEAM_PALETTE`, the ordered team-color list every
+  team game (Quoi de 9, La Relance, Sans le dire) indexes into so a team's
+  position always maps to the same color everywhere.
+- `lib/game-accent.ts` — documents the `main`/`dark`/`light` convention a
+  game's own CSS accent variables should follow (`--<game>-accent`,
+  `--<game>-accent-dark`, `--<game>-accent-light`). A type/doc only — each
+  game still owns its own values in its `styles.css`.
+- **`components/ui.tsx` (`.button--primary`), `game-base.css` (`.eyebrow`,
+  `.theme-selector-button.is-selected`) consume a shared-by-NAME custom
+  property, `--game-accent` (+`-dark`/`-light`/`-glow`), instead of a
+  hardcoded color — this is what makes them "shared but themeable".** Every
+  game's own `styles.css` redefines these four properties to point at that
+  game's own accent variables. **This redefinition must never be a bare
+  `:root { --game-accent: ... }`.** `:root` is `<html>` — one scope for the
+  whole document — and Next.js's App Router does **not** unload a previous
+  route's CSS `<link>` on client-side navigation (confirmed empirically:
+  navigating `/` → `/palmier` → `/triman` via `<Link>` leaves both games'
+  stylesheets present in `<head>` at once). Two `:root` blocks defining the
+  same property name collide, and CSS cascade order — last `<link>` inserted
+  wins — decides the value for the *entire document*, independent of which
+  route is actually showing. A game whose stylesheet happens to load after
+  another's would silently repaint that other game's topline/CTA/theme-toggle
+  in its own color. The fix: scope the redefinition to
+  `:root:has(.brand-mark--<game>)` (or the game's own unique brand-mark
+  class), so the declaration is conditioned on that game's markup actually
+  being mounted in the DOM — true per-route isolation — rather than on
+  stylesheet load order. See `palmier/styles.css` for the pattern and full
+  rationale in its comment. **Never add a new `:root { --game-accent: ... }`
+  rule anywhere; always use the `:has()`-scoped form.** Every other per-game
+  variable (`--plm-trunk`, `--rdc-jackpot`, ...) is uniquely named per game
+  and does not need this — the risk is specific to names reused verbatim
+  across multiple games' stylesheets.
+- Known residual risk, not fixed (out of scope for the above): Quoi de 9
+  does not import `game-base.css` and keeps its own parallel `:root` block
+  with some of the *same* generic names (`--ink`, `--text`, `--muted`,
+  `--lime`, ...) as `game-base.css`'s shared design tokens — by design, per
+  "Quoi de 9 deliberately does not use most of this folder" below. If its
+  stylesheet and another game's are simultaneously loaded (same client-side
+  navigation mechanism as above), whichever loaded last could in principle
+  win for those shared-name tokens. Not currently a game-*accent* bug (Quoi
+  de 9 has no `--game-accent` declaration at all), and not exercised by
+  today's navigation paths in testing — flagged here rather than fixed,
+  since resolving it means reconciling Quoi de 9's intentionally separate
+  design-token universe with `game-base.css`'s, which is a larger change
+  than this file's existing "don't force Quoi de 9 into the shared shape"
+  stance invites.
+- `lib/launcher-accents.ts` — each game's main accent as a plain constant,
+  imported by `lib/games.ts` for the launcher card so that color isn't
+  hardcoded a second time outside the game's own styles.css.
+- `components/participant-card.tsx`, `components/add-participant-button.tsx`
+  (+ `components/participant-setup.css`) — the shared visual system for
+  every participant-setup screen (team cards and player cards): badge, side
+  bar, tinted gradient, name field, and remove button. Team games pass a
+  `TEAM_PALETTE` color by index; individual games pass their own game
+  accent — same component, different color source.
+- `lib/participant-list.ts` + `lib/use-player-fields.ts` — the shared
+  player-list convention for individual games (Purple, Triman, Roulette du
+  Chaos, Palmier): a screen may pre-fill more fields than the game's
+  minimum requires, and removability is derived from each field's current
+  index versus `minPlayers`, not from the total count — so entries beyond
+  the minimum are removable immediately (including on first render) and the
+  first `minPlayers` entries never are, regardless of what gets added or
+  removed later. `participant-list.ts` holds the pure, tested logic;
+  `use-player-fields.ts` is the thin `useState` wrapper each setup form
+  calls.
 
 Everything in this folder is here because it is used, unmodified in
 behavior, by at least two games today — not because it might be useful

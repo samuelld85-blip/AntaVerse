@@ -1,3 +1,35 @@
+/* La Relance has no identity distinct from the shared team-color palette —
+   its "main accent" is team 1's color (TEAM_PALETTE[0] /
+   games/shared/lib/team-palette.ts, mirrored for the launcher in
+   games/shared/lib/launcher-accents.ts). Kept as a literal here since CSS
+   can't import the TS constant directly. */
+:root {
+  --la-relance-accent: #e83dff;
+  --la-relance-accent-dark: #b313c2;
+  --la-relance-accent-light: #f157ff;
+  --la-relance-accent-glow: rgba(232, 61, 255, 0.2);
+}
+html[data-theme="light"] {
+  --la-relance-accent: #b313c2;
+  --la-relance-accent-dark: #7a0a7a;
+  --la-relance-accent-light: #d946ef;
+  --la-relance-accent-glow: rgba(179, 19, 194, 0.2);
+}
+
+/* --game-accent* is shared by NAME across every game's stylesheet, and
+   Next.js keeps previously-visited routes' CSS chunks loaded in <head> after
+   client-side navigation — a plain `:root { --game-accent: ... }` here would
+   collide with another game's, with the LAST-loaded stylesheet winning
+   regardless of the active route. Scoping via :has() on this game's own
+   brand mark (only rendered when its page is actually mounted) ties the
+   declaration to real DOM content instead of stylesheet load order. */
+:root:has(.brand-mark--la-relance) {
+  --game-accent: var(--la-relance-accent);
+  --game-accent-dark: var(--la-relance-accent-dark);
+  --game-accent-light: var(--la-relance-accent-light);
+  --game-accent-glow: var(--la-relance-accent-glow);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -20,3 +52,4 @@
 html[data-theme="light"] .brand-mark--la-relance {
   content: url("/brand/games/la-relance-light.png");
 }
+

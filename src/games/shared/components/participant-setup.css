@@ -1,0 +1,169 @@
+/* Shared visual system for participant setup (team & player cards) across
+   every game. Self-contained tokens (`--av-*`) so this works whether the
+   host game uses the shared game-base.css tokens or Tailwind (Quoi de 9) —
+   it never depends on a game's own --text/--surface/--line variables. */
+
+.av-participant-card {
+  --av-text: #f7f8fa;
+  --av-muted: #9199a3;
+  --av-surface: rgba(255, 255, 255, 0.045);
+  --av-line: rgba(255, 255, 255, 0.12);
+  --av-danger: #ff5c8a;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  min-height: 4.5rem;
+  padding: 0.85rem 1rem;
+  overflow: hidden;
+  border: 1px solid var(--av-line);
+  border-radius: 1.35rem;
+  background: linear-gradient(115deg, color-mix(in srgb, var(--av-color) 20%, transparent), var(--av-surface) 55%);
+}
+
+.av-participant-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+html[data-theme="light"] .av-participant-card {
+  --av-text: #11151b;
+  --av-muted: #68707a;
+  --av-surface: rgba(0, 0, 0, 0.03);
+  --av-line: rgba(17, 21, 27, 0.12);
+}
+
+.av-participant-bar {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 0.35rem;
+  background: var(--av-color);
+}
+
+.av-participant-badge {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: 0.35rem;
+  place-items: center;
+  border-radius: 0.9rem;
+  background: var(--av-color);
+  color: var(--av-badge-ink, #11151b);
+  font-size: 0.95rem;
+  font-weight: 950;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--av-color) 45%, transparent);
+}
+
+.av-participant-body {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.av-participant-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--av-muted);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.av-participant-input {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--av-text);
+  font-size: 1.15rem;
+  font-weight: 800;
+  outline: 0;
+}
+.av-participant-input::placeholder {
+  color: var(--av-muted);
+  font-weight: 700;
+}
+
+.av-participant-card--removable {
+  padding-right: 3.1rem;
+}
+.av-participant-remove {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--av-line);
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--av-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition:
+    background 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+html[data-theme="light"] .av-participant-remove {
+  background: rgba(0, 0, 0, 0.04);
+}
+.av-participant-remove:hover {
+  border-color: var(--av-color);
+  background: var(--av-color);
+  color: #fff;
+}
+.av-participant-remove:focus-visible {
+  outline: 2px solid var(--av-color);
+  outline-offset: 2px;
+}
+
+.av-participant-error {
+  margin: 0 0 0 3.6rem;
+  color: var(--av-danger);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.av-add-participant {
+  display: flex;
+  width: 100%;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1.5px dashed var(--av-line, rgba(255, 255, 255, 0.16));
+  border-radius: 1.15rem;
+  background: transparent;
+  color: var(--av-muted, #9199a3);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    border-color 120ms ease,
+    color 120ms ease,
+    background 120ms ease;
+}
+html[data-theme="light"] .av-add-participant {
+  --av-line: rgba(17, 21, 27, 0.15);
+  --av-muted: #68707a;
+}
+.av-add-participant:hover:not(:disabled) {
+  border-color: var(--av-add-color, var(--av-text, currentColor));
+  color: var(--av-add-color, var(--av-text, currentColor));
+}
+.av-add-participant:focus-visible {
+  outline: 2px solid var(--av-add-color, currentColor);
+  outline-offset: 2px;
+}
+.av-add-participant:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}

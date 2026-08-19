@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/games/shared/components/ui";
+import { AddParticipantButton } from "@/games/shared/components/add-participant-button";
+import { ParticipantCard } from "@/games/shared/components/participant-card";
+import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import { cards } from "@/games/sans-le-dire/data/cards";
 import { createGame } from "@/games/sans-le-dire/lib/game/engine";
 import {
@@ -90,78 +93,50 @@ export function SetupForm({ playMode }: { playMode: PlayMode }) {
     >
       <fieldset disabled={isSubmitting} className="contents">
         <div className="team-fields">
-          <label className="team-field team-field--one">
-            <span className="team-number" aria-hidden="true">
-              1
-            </span>
-            <span className="team-input-wrap">
-              <span className="team-label">Nom de l’équipe 1</span>
-              <input
-                value={teamOneName}
-                onChange={(event) => setTeamOneName(event.target.value)}
-                maxLength={24}
-                autoComplete="off"
-                aria-label="Équipe 1"
-              />
-            </span>
-          </label>
-
-          <label className="team-field team-field--two">
-            <span className="team-number" aria-hidden="true">
-              2
-            </span>
-            <span className="team-input-wrap">
-              <span className="team-label">Nom de l’équipe 2</span>
-              <input
-                value={teamTwoName}
-                onChange={(event) => setTeamTwoName(event.target.value)}
-                maxLength={24}
-                autoComplete="off"
-                aria-label="Équipe 2"
-              />
-            </span>
-          </label>
+          <ParticipantCard
+            badge={1}
+            color={TEAM_PALETTE[0]}
+            label="Nom de l’équipe 1"
+            inputProps={{
+              value: teamOneName,
+              onChange: (event) => setTeamOneName(event.target.value),
+              "aria-label": "Équipe 1",
+            }}
+          />
+          <ParticipantCard
+            badge={2}
+            color={TEAM_PALETTE[1]}
+            label="Nom de l’équipe 2"
+            inputProps={{
+              value: teamTwoName,
+              onChange: (event) => setTeamTwoName(event.target.value),
+              "aria-label": "Équipe 2",
+            }}
+          />
 
           {hasThirdTeam && (
-            <label className="team-field team-field--three">
-              <span className="team-number" aria-hidden="true">
-                3
-              </span>
-              <span className="team-input-wrap">
-                <span className="team-label">Nom de l’équipe 3</span>
-                <input
-                  value={teamThreeName}
-                  onChange={(event) => setTeamThreeName(event.target.value)}
-                  maxLength={24}
-                  autoComplete="off"
-                  aria-label="Équipe 3"
-                />
-              </span>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setHasThirdTeam(false);
-                  setTeamThreeName("");
-                }}
-                className="team-remove-button"
-                aria-label="Supprimer l’équipe 3"
-                title="Supprimer cette équipe"
-              >
-                ×
-              </button>
-            </label>
+            <ParticipantCard
+              badge={3}
+              color={TEAM_PALETTE[2]}
+              label="Nom de l’équipe 3"
+              onRemove={() => {
+                setHasThirdTeam(false);
+                setTeamThreeName("");
+              }}
+              removeLabel="Supprimer l’équipe 3"
+              inputProps={{
+                value: teamThreeName,
+                onChange: (event) => setTeamThreeName(event.target.value),
+                "aria-label": "Équipe 3",
+              }}
+            />
           )}
         </div>
 
         {!hasThirdTeam && (
-          <button
-            type="button"
-            onClick={() => setHasThirdTeam(true)}
-            className="text-center text-sm text-tertiary transition hover:text-primary/80"
-          >
-            + Ajouter une équipe
-          </button>
+          <AddParticipantButton onClick={() => setHasThirdTeam(true)} color={TEAM_PALETTE[2]}>
+            Ajouter une équipe
+          </AddParticipantButton>
         )}
 
         <p className="setup-note">
@@ -173,7 +148,7 @@ export function SetupForm({ playMode }: { playMode: PlayMode }) {
           </p>
         ) : null}
         <Button type="submit" disabled={isSubmitting}>
-          Commencer la partie <span aria-hidden="true">→</span>
+          Lancer la partie <span aria-hidden="true">→</span>
         </Button>
       </fieldset>
     </form>

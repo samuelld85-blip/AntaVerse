@@ -1,51 +1,36 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/games/shared/components/ui";
+import { AddParticipantButton } from "@/games/shared/components/add-participant-button";
+import { ParticipantCard } from "@/games/shared/components/participant-card";
+import { hasEmptyName } from "@/games/shared/lib/participant-list";
+import { usePlayerFields } from "@/games/shared/lib/use-player-fields";
 import { createGame, MAX_PLAYERS, MIN_PLAYERS } from "@/games/roulette-du-chaos/lib/game/engine";
 import { saveCurrentGame } from "@/games/roulette-du-chaos/lib/game/persistence";
 
 const DEFAULT_PLAYER_COUNT = 3;
-
-interface PlayerField {
-  id: number;
-  value: string;
-}
+const ACCENT = "var(--rdc-accent)";
 
 export function SetupForm() {
   const router = useRouter();
-  const nextId = useRef(DEFAULT_PLAYER_COUNT);
-  const [fields, setFields] = useState<PlayerField[]>(() =>
-    Array.from({ length: DEFAULT_PLAYER_COUNT }, (_, index) => ({ id: index, value: "" })),
-  );
+  const { fields, updateName, addPlayer, removePlayer, isRemovable, canAddMore } = usePlayerFields({
+    minPlayers: MIN_PLAYERS,
+    maxPlayers: MAX_PLAYERS,
+    defaultCount: DEFAULT_PLAYER_COUNT,
+  });
   const [error, setError] = useState<string | null>(null);
-
-  function updateName(id: number, value: string) {
-    setFields((current) => current.map((field) => (field.id === id ? { ...field, value } : field)));
-  }
-
-  function addPlayer() {
-    if (fields.length >= MAX_PLAYERS) return;
-    setFields((current) => [...current, { id: nextId.current++, value: "" }]);
-  }
-
-  function removePlayer(id: number) {
-    if (fields.length <= MIN_PLAYERS) return;
-    setFields((current) => current.filter((field) => field.id !== id));
-  }
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const trimmedNames = fields.map((field) => field.value.trim());
-
-    if (trimmedNames.some((name) => name.length === 0)) {
+    if (hasEmptyName(fields)) {
       setError("Chaque joueur doit avoir un nom.");
       return;
     }
 
     try {
-      const game = createGame({ playerNames: trimmedNames });
+      const game = createGame({ playerNames: fields.map((field) => field.value.trim()) });
       saveCurrentGame(game);
       router.push("/roulette-du-chaos/partie");
     } catch {
@@ -57,39 +42,27 @@ export function SetupForm() {
     <form className="player-form" onSubmit={submit} noValidate>
       <div className="player-fields">
         {fields.map((field, index) => (
-          <div className="player-field" key={field.id}>
-            <span className="player-number" aria-hidden="true">
-              {index + 1}
-            </span>
-            <span className="player-input-wrap">
-              <span className="player-label">Joueur {index + 1}</span>
-              <input
-                value={field.value}
-                onChange={(event) => updateName(field.id, event.target.value)}
-                maxLength={24}
-                autoComplete="off"
-                aria-label={`Nom du joueur ${index + 1}`}
-                placeholder="Son prénom"
-              />
-            </span>
-            {fields.length > MIN_PLAYERS ? (
-              <button
-                type="button"
-                className="player-remove-button"
-                onClick={() => removePlayer(field.id)}
-                aria-label={`Retirer le joueur ${index + 1}`}
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            ) : null}
-          </div>
+          <ParticipantCard
+            key={field.id}
+            badge={index + 1}
+            color={ACCENT}
+            label={`Joueur ${index + 1}`}
+            onRemove={isRemovable(index) ? () => removePlayer(field.id) : undefined}
+            removeLabel={`Retirer le joueur ${index + 1}`}
+            inputProps={{
+              value: field.value,
+              onChange: (event) => updateName(field.id, event.target.value),
+              placeholder: "Son prénom",
+              "aria-label": `Nom du joueur ${index + 1}`,
+            }}
+          />
         ))}
       </div>
 
-      {fields.length < MAX_PLAYERS ? (
-        <button type="button" className="add-player-button" onClick={addPlayer}>
-          <span aria-hidden="true">+</span> Ajouter un joueur
-        </button>
+      {canAddMore ? (
+        <AddParticipantButton onClick={addPlayer} color={ACCENT}>
+          Ajouter un joueur
+        </AddParticipantButton>
       ) : null}
 
       <p className="setup-note">

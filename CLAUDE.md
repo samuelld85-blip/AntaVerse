@@ -221,6 +221,15 @@ For relevant UI changes, preserve:
 
 Use existing visual tokens/styles where practical.
 
+Never declare a game's accent color as a bare `:root { --game-accent: ... }`
+(or any shared-by-name custom property) in a game's `styles.css`. Next.js
+does not unload a previous route's CSS on client-side navigation, so two
+games' `:root` blocks defining the same property name collide — whichever
+stylesheet loaded last wins for the *entire document*, silently recoloring
+another game. Scope it to `:root:has(.brand-mark--<game>)` instead — see
+`ARCHITECTURE.md` ("shared-by-NAME custom property") and `palmier/styles.css`
+for the pattern.
+
 Use dedicated UX/UI or visual-design skills only when the task actually concerns those areas.
 
 Do not invoke design-oriented skills for trivial implementation changes that do not require design reasoning.

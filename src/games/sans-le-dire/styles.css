@@ -1,3 +1,33 @@
+/* Game identity — see GameAccent in shared/lib/game-accent.ts for the
+   main/dark/light convention. Sans le dire's own accent (emerald) is
+   distinct from the shared team-color palette: never use these vars for
+   anything that represents a specific team. */
+:root {
+  --sld-accent: #10b981;
+  --sld-accent-dark: #064e3b;
+  --sld-accent-light: #34d399;
+  --sld-accent-glow: rgba(16, 185, 129, 0.2);
+}
+html[data-theme="light"] {
+  --sld-accent: #059669;
+  --sld-accent-dark: #064e3b;
+  --sld-accent-light: #10b981;
+}
+
+/* --game-accent* is shared by NAME across every game's stylesheet, and
+   Next.js keeps previously-visited routes' CSS chunks loaded in <head> after
+   client-side navigation — a plain `:root { --game-accent: ... }` here would
+   collide with another game's, with the LAST-loaded stylesheet winning
+   regardless of the active route. Scoping via :has() on this game's own
+   brand mark (only rendered when its page is actually mounted) ties the
+   declaration to real DOM content instead of stylesheet load order. */
+:root:has(.brand-mark--sans-le-dire) {
+  --game-accent: var(--sld-accent);
+  --game-accent-dark: var(--sld-accent-dark);
+  --game-accent-light: var(--sld-accent-light);
+  --game-accent-glow: var(--sld-accent-glow);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -17,6 +47,11 @@
 
 html[data-theme="light"] .brand-mark--sans-le-dire {
   content: url("/brand/games/sans-le-dire-light.png");
+}
+
+/* Resume card — only the "Partie en cours" label uses game accent. */
+.resume-card .eyebrow {
+  color: var(--game-accent);
 }
 
 .play-shell {
@@ -81,7 +116,7 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
   line-height: 1;
 }
 .timer--urgent {
-  color: var(--pink);
+  color: var(--sld-accent-light);
 }
 .word-card {
   display: flex;
@@ -109,7 +144,7 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
 }
 .word-card > p {
   margin: clamp(0.9rem, 3vh, 1.5rem) 0 0.55rem;
-  color: var(--pink);
+  color: var(--sld-accent);
   font-size: 0.68rem;
   font-weight: 950;
   letter-spacing: 0.16em;
@@ -126,7 +161,7 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
 .word-card li {
   border-radius: 0.75rem;
   padding: clamp(0.45rem, 1.5vh, 0.7rem) 0.6rem;
-  background: color-mix(in srgb, var(--pink) 12%, transparent);
+  background: color-mix(in srgb, var(--sld-accent) 14%, transparent);
   font-size: clamp(1rem, 5vw, 1.45rem);
   font-weight: 900;
   text-transform: uppercase;
@@ -179,9 +214,9 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
   opacity: 0.38;
 }
 .action-fault {
-  border: 1px solid color-mix(in srgb, var(--pink) 45%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--sld-accent) 45%, transparent) !important;
   background: transparent;
-  color: var(--pink);
+  color: var(--sld-accent);
 }
 .preparation-card,
 .round-result {
@@ -205,7 +240,7 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
   line-height: 1.55;
 }
 .preparation-card .tiebreak-rule {
-  color: var(--pink) !important;
+  color: var(--sld-accent) !important;
   font-weight: 900;
 }
 .round-result {
@@ -310,5 +345,5 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
 }
 
 .consequence--penalty {
-  border-color: color-mix(in srgb, var(--pink) 35%, transparent);
+  border-color: color-mix(in srgb, var(--sld-accent) 35%, transparent);
 }

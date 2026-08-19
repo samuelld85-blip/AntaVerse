@@ -4,6 +4,8 @@
 // form-validated name (no fallback), so it is a genuinely different setup
 // flow and stays with its own team-creation code.
 
+import { TEAM_PALETTE } from "./team-palette";
+
 export interface TwoTeamSetupInput {
   teamOneName: string;
   teamTwoName: string;
@@ -16,7 +18,6 @@ export interface TwoTeamSetupTeam {
   score: number;
 }
 
-const TEAM_COLORS = ["#E83DFF", "#16C7E8"] as const;
 const DEFAULT_TEAM_NAMES = ["Les Antagonistes", "Les Sanglieeers"] as const;
 
 export function cleanTeamName(value: string, fallback: string): string {
@@ -32,13 +33,13 @@ export function createTwoTeams(input: TwoTeamSetupInput): [TwoTeamSetupTeam, Two
     {
       id: "team-1",
       name: cleanTeamName(input.teamOneName, DEFAULT_TEAM_NAMES[0]),
-      color: TEAM_COLORS[0],
+      color: TEAM_PALETTE[0],
       score: 0,
     },
     {
       id: "team-2",
       name: cleanTeamName(input.teamTwoName, DEFAULT_TEAM_NAMES[1]),
-      color: TEAM_COLORS[1],
+      color: TEAM_PALETTE[1],
       score: 0,
     },
   ];

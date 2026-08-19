@@ -11,6 +11,11 @@
   --pink: #e83dff;
   --blue: #16c7e8;
   --orange: #ff5c2b;
+  /* Game-specific accent — each game's styles.css redefines these. */
+  --game-accent: #16c7e8;
+  --game-accent-dark: #087f99;
+  --game-accent-light: #34d399;
+  --game-accent-glow: rgba(22, 199, 232, 0.16);
 }
 
 html[data-theme="light"] {
@@ -26,6 +31,11 @@ html[data-theme="light"] {
   --pink: #b313c2;
   --blue: #087f99;
   --orange: #e55100;
+  /* Game-specific accent light theme — each game's styles.css redefines these. */
+  --game-accent: #087f99;
+  --game-accent-dark: #054e69;
+  --game-accent-light: #16c7e8;
+  --game-accent-glow: rgba(8, 127, 153, 0.16);
   color-scheme: light;
 }
 
@@ -115,9 +125,9 @@ a {
   transform: scale(0.98);
 }
 .button--primary {
-  background: var(--lime);
+  background: var(--game-accent);
   color: var(--ink);
-  box-shadow: 0 14px 40px var(--accent-glow);
+  box-shadow: 0 14px 40px var(--game-accent-glow);
 }
 .button--secondary {
   border-color: var(--line);
@@ -130,7 +140,7 @@ a {
 
 .eyebrow {
   margin: 0;
-  color: var(--lime);
+  color: var(--game-accent);
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -223,9 +233,12 @@ a {
     color 120ms ease;
 }
 .theme-selector-button.is-selected {
-  border-color: var(--lime);
-  background: var(--lime);
-  color: var(--ink);
+  /* Neutral active state: no game-specific colors. Inverts text and background
+     across themes for consistent high contrast (white-on-black in dark mode,
+     black-on-white in light mode). */
+  border-color: var(--text);
+  background: var(--ink);
+  color: var(--text);
 }
 .resume-card {
   display: grid;
@@ -343,94 +356,6 @@ a {
 .team-fields {
   display: grid;
   gap: 0.75rem;
-}
-.team-field {
-  display: flex;
-  min-height: 5.6rem;
-  align-items: center;
-  gap: 1rem;
-  border: 1px solid var(--line);
-  border-radius: 1.35rem;
-  padding: 0.9rem 1rem;
-  background: var(--surface);
-  position: relative;
-}
-.team-field--one {
-  background: linear-gradient(110deg, rgba(255, 92, 138, 0.16), var(--surface) 55%);
-}
-.team-field--two {
-  background: linear-gradient(110deg, rgba(41, 199, 246, 0.16), var(--surface) 55%);
-}
-.team-field--three {
-  background: linear-gradient(110deg, rgba(255, 92, 43, 0.16), var(--surface) 55%);
-}
-.team-number {
-  display: grid;
-  width: 3.1rem;
-  height: 3.1rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 1rem;
-  background: var(--pink);
-  color: white;
-  font-weight: 950;
-}
-.team-field--two .team-number {
-  background: var(--blue);
-  color: var(--ink);
-}
-.team-field--three .team-number {
-  background: var(--orange);
-  color: white;
-}
-.team-input-wrap {
-  min-width: 0;
-  flex: 1;
-}
-.team-label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.team-field input {
-  width: 100%;
-  margin-top: 0.25rem;
-  border: 0;
-  background: transparent;
-  color: var(--text);
-  font-size: 1.25rem;
-  font-weight: 800;
-  outline: 0;
-}
-.team-remove-button {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 0.5rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 1;
-  padding: 0;
-  transition: color 160ms ease, border-color 160ms ease;
-}
-.team-remove-button:hover {
-  color: var(--text);
-  border-color: var(--text);
-}
-.team-remove-button:active {
-  transform: translateY(-50%) scale(0.92);
 }
 .setup-note {
   margin: 0.25rem 0;
@@ -840,13 +765,6 @@ a {
   }
   .setup-heading h1 {
     font-size: 2.8rem;
-  }
-  .team-field {
-    min-height: 4.6rem;
-  }
-  .team-number {
-    width: 2.6rem;
-    height: 2.6rem;
   }
   .game-shell {
     gap: 0.5rem;

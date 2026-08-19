@@ -37,7 +37,7 @@ export function ModeSelectionScreen({
         <button
           type="button"
           onClick={() => onModeSelected("fun")}
-          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[#E83DFF]/35 bg-[#E83DFF]/[.1] px-4 py-3 text-left transition hover:border-[#E83DFF]/60 hover:bg-[#E83DFF]/[.15] active:scale-[.98]"
+          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--sld-accent)]/35 bg-[var(--sld-accent)]/[.1] px-4 py-3 text-left transition hover:border-[var(--sld-accent)]/60 hover:bg-[var(--sld-accent-light)]/[.15] active:scale-[.98]"
         >
           <span className="text-2xl" aria-hidden="true">
             🍺

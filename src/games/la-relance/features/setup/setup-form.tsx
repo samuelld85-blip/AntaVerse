@@ -3,6 +3,8 @@
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/games/shared/components/ui";
+import { ParticipantCard } from "@/games/shared/components/participant-card";
+import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import { themes } from "@/games/la-relance/data/themes";
 import { createGame } from "@/games/la-relance/lib/game/engine";
 import { saveCurrentGame } from "@/games/la-relance/lib/game/persistence";
@@ -38,37 +40,26 @@ export function SetupForm() {
   return (
     <form className="team-form" onSubmit={submit} noValidate>
       <div className="team-fields">
-        <label className="team-field team-field--one">
-          <span className="team-number" aria-hidden="true">
-            1
-          </span>
-          <span className="team-input-wrap">
-            <span className="team-label">Nom de l’équipe 1</span>
-            <input
-              value={teamOneName}
-              onChange={(event) => setTeamOneName(event.target.value)}
-              maxLength={24}
-              autoComplete="off"
-              aria-label="Équipe 1"
-            />
-          </span>
-        </label>
-
-        <label className="team-field team-field--two">
-          <span className="team-number" aria-hidden="true">
-            2
-          </span>
-          <span className="team-input-wrap">
-            <span className="team-label">Nom de l’équipe 2</span>
-            <input
-              value={teamTwoName}
-              onChange={(event) => setTeamTwoName(event.target.value)}
-              maxLength={24}
-              autoComplete="off"
-              aria-label="Équipe 2"
-            />
-          </span>
-        </label>
+        <ParticipantCard
+          badge={1}
+          color={TEAM_PALETTE[0]}
+          label="Nom de l’équipe 1"
+          inputProps={{
+            value: teamOneName,
+            onChange: (event) => setTeamOneName(event.target.value),
+            "aria-label": "Équipe 1",
+          }}
+        />
+        <ParticipantCard
+          badge={2}
+          color={TEAM_PALETTE[1]}
+          label="Nom de l’équipe 2"
+          inputProps={{
+            value: teamTwoName,
+            onChange: (event) => setTeamTwoName(event.target.value),
+            "aria-label": "Équipe 2",
+          }}
+        />
       </div>
 
       <p className="setup-note">5 manches · 1 point par manche</p>
@@ -78,7 +69,7 @@ export function SetupForm() {
         </p>
       ) : null}
       <Button type="submit">
-        Commencer la partie <span aria-hidden="true">→</span>
+        Lancer la partie <span aria-hidden="true">→</span>
       </Button>
     </form>
   );

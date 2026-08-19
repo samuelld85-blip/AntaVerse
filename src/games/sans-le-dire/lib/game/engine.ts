@@ -1,8 +1,8 @@
 import { shuffle } from "@/lib/random";
 import { createGameId } from "@/games/shared/lib/two-team-setup";
+import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import type { Card, CreateGameInput, GameState, PlayMode, Team } from "./types";
 
-const COLORS = ["#e83dff", "#16c7e8", "#ff5c2b"];
 export const STANDARD_ROUNDS = 4;
 const STANDARD_DURATION_MS = 45_000;
 const TIEBREAK_DURATION_MS = 30_000;
@@ -24,7 +24,7 @@ export function createGame(
     return {
       id,
       name,
-      color: COLORS[i]!,
+      color: TEAM_PALETTE[i]!,
       score: 0,
     };
   });

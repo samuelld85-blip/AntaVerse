@@ -1,8 +1,13 @@
 :root {
-  --purple-accent: #a78bfa;
-  --violet: #8b5cf6;
+  /* Main tier matched against the Purple logo's dominant violet
+     (#9d4afa sampled from public/brand/games/purple-dark.png). --violet is
+     the light tier (highlights/gradient light stop), --violet-deep the dark
+     tier (tinted surfaces/deep gradient stop) — see GameAccent in
+     shared/lib/game-accent.ts for the convention. */
+  --purple-accent: #9d4afa;
+  --violet: #c084fc;
   --violet-deep: #5b21b6;
-  --violet-glow: rgba(139, 92, 246, 0.18);
+  --violet-glow: rgba(157, 74, 250, 0.2);
   --card-red: #e0304f;
   --card-ink: #171320;
 }
@@ -13,6 +18,20 @@ html[data-theme="light"] {
   --violet-deep: #4c1d95;
   --violet-glow: rgba(124, 58, 237, 0.16);
   --card-red: #c81e40;
+}
+
+/* --game-accent* is shared by NAME across every game's stylesheet, and
+   Next.js keeps previously-visited routes' CSS chunks loaded in <head> after
+   client-side navigation — a plain `:root { --game-accent: ... }` here would
+   collide with another game's, with the LAST-loaded stylesheet winning
+   regardless of the active route. Scoping via :has() on Purple's own brand
+   mark (only rendered when Purple's page is actually mounted) ties the
+   declaration to real DOM content instead of stylesheet load order. */
+:root:has(.brand-mark--purple) {
+  --game-accent: var(--purple-accent);
+  --game-accent-dark: var(--violet-deep);
+  --game-accent-light: var(--violet);
+  --game-accent-glow: var(--violet-glow);
 }
 
 .brand-mark {
@@ -32,6 +51,12 @@ html[data-theme="light"] .brand-mark--purple {
 }
 
 /* ---------- Home ---------- */
+
+/* Resume card — only the "Partie en cours" label uses game accent. */
+.resume-card .eyebrow {
+  color: var(--game-accent);
+}
+
 .purple-home-actions p {
   margin: 0.2rem 0 0;
   color: var(--muted);
@@ -57,78 +82,6 @@ html[data-theme="light"] .brand-mark--purple {
   gap: 0.6rem;
   overflow-y: auto;
   padding-bottom: 0.25rem;
-}
-.player-row {
-  display: flex;
-  min-height: 4rem;
-  align-items: center;
-  gap: 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 1.15rem;
-  padding: 0.6rem 0.75rem;
-  background: var(--surface);
-}
-.player-index {
-  display: grid;
-  width: 2.5rem;
-  height: 2.5rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  border: 2px solid var(--purple-accent);
-  background: transparent;
-  color: var(--purple-accent);
-  font-size: 1rem;
-  font-weight: 950;
-}
-.player-row input {
-  min-width: 0;
-  flex: 1;
-  border: 0;
-  background: transparent;
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 750;
-  outline: 0;
-}
-.player-remove {
-  display: grid;
-  width: 2.2rem;
-  height: 2.2rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 0.7rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-}
-.player-remove:hover {
-  border-color: var(--card-red);
-  color: var(--card-red);
-}
-.player-add {
-  width: 100%;
-  min-height: 3rem;
-  border: 1px dashed var(--line);
-  border-radius: 1.15rem;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 850;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.player-add:hover {
-  border-color: var(--purple-accent);
-  color: var(--purple-accent);
-}
-.player-add:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
 }
 .setup-note {
   margin: 0.25rem 0;
@@ -531,7 +484,7 @@ html[data-theme="light"] .brand-mark--purple {
 .guess-button--purple {
   grid-area: purple;
   min-height: clamp(3.8rem, 9vh, 4.6rem);
-  background: linear-gradient(135deg, #a78bfa, var(--purple-accent));
+  background: linear-gradient(135deg, var(--violet), var(--purple-accent));
 }
 .guess-button--doublePurple {
   grid-area: double-purple;
