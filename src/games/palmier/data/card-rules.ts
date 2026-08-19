@@ -24,7 +24,7 @@ export const CARD_RULES: Record<CardValue, CardRuleDefinition> = {
   },
   "6": {
     title: "Binôme",
-    body: "Choisis un partenaire. Jusqu'au prochain 6 : chaque fois que l'un de vous boit à cause du jeu, l'autre boit 1 gorgée supplémentaire.",
+    body: "Choisis un partenaire. Jusqu'au prochain 6 : vous êtes liés. Chaque fois que l'un de vous boit, l'autre boit exactement le même nombre de gorgées.",
   },
   "7": {
     title: "Dans ma valise",
@@ -48,7 +48,7 @@ export const CARD_RULES: Record<CardValue, CardRuleDefinition> = {
   },
   "Q": {
     title: "Maître des questions",
-    body: "Tu es le nouveau Maître des questions. Si tu poses une question et que quelqu'un y répond naturellement, cette personne boit 1 gorgée. Ce rôle reste actif jusqu'à la prochaine Dame.",
+    body: "Tu es le nouveau Maître des questions. Si tu poses une question et que quelqu'un y répond naturellement, cette personne boit 2 gorgées. Ce rôle reste actif jusqu'à la prochaine Dame.",
   },
   "K": {
     title: "Roi du Palmier",
@@ -118,7 +118,7 @@ const RULE_CATEGORIE_7: CardRuleDefinition = {
 
 const RULE_JAMAIS: CardRuleDefinition = {
   title: "Je n'ai jamais",
-  body: "Dis « Je n'ai jamais… » suivi de quelque chose que tu n'as jamais fait. Tous ceux qui l'ont fait boivent 1 gorgée.",
+  body: "Dis « Je n'ai jamais… » suivi de quelque chose que tu n'as jamais fait. Tous ceux qui l'ont fait boivent 2 gorgées.",
 };
 
 const RULE_RIME: CardRuleDefinition = {
