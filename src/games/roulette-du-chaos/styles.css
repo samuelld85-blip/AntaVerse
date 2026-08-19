@@ -243,13 +243,15 @@ html[data-theme="light"] .brand-mark--rdc {
   top: -0.4rem;
   left: 50%;
   z-index: 2;
-  width: 0;
-  height: 0;
-  border-top: 1.1rem solid var(--rdc-accent);
-  border-left: 0.8rem solid transparent;
-  border-right: 0.8rem solid transparent;
+  width: 2rem;
+  height: 1.4rem;
   transform: translateX(-50%);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+  background: radial-gradient(circle at center, #b91c1c 0%, #7a1414 100%);
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  box-shadow:
+    0 6px 16px rgba(185, 28, 28, 0.4),
+    0 2px 8px rgba(185, 28, 28, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15);
 }
 .wheel-artwork-container {
   position: relative;
@@ -277,7 +279,7 @@ html[data-theme="light"] .brand-mark--rdc {
   border: 1px solid transparent;
   border-radius: 1.15rem;
   padding: 0.9rem 1.25rem;
-  background: var(--rdc-accent);
+  background: linear-gradient(120deg, #ffc94d, #b91c1c);
   color: white;
   cursor: pointer;
   font-weight: 900;
