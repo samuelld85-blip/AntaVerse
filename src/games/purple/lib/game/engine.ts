@@ -81,7 +81,7 @@ export function evaluateGuess(
     case "skubrum":
       return red === 3 || black === 3 ? "success" : "failure";
     case "sandwich":
-      return (red === 2 && black === 1) || (red === 1 && black === 2) ? "success" : "failure";
+      return isAlternatingSandwich(cards) ? "success" : "failure";
     case "higher":
       if (!referenceCard || cards.length === 0) return "failure";
       return getRankValue(cards[0]!.rank) > getRankValue(referenceCard.rank) ? "success" : "failure";
@@ -91,6 +91,11 @@ export function evaluateGuess(
     default:
       return "failure";
   }
+}
+
+function isAlternatingSandwich(cards: readonly Card[]): boolean {
+  const pattern = cards.map((card) => card.color).join(":");
+  return pattern === "red:black:red" || pattern === "black:red:black";
 }
 
 export function canPass(game: GameState): boolean {

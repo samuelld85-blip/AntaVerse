@@ -102,12 +102,16 @@ describe("evaluateGuess", () => {
     expect(evaluateGuess("skubrum", [RED_1, BLACK_1, BLACK_2])).toBe("failure");
   });
 
-  it("SANDWICH succeeds with 2 red + 1 black or 2 black + 1 red", () => {
-    expect(evaluateGuess("sandwich", [RED_1, RED_2, BLACK_1])).toBe("success");
-    expect(evaluateGuess("sandwich", [BLACK_1, BLACK_2, RED_1])).toBe("success");
+  it("SANDWICH succeeds only with alternating colors", () => {
+    expect(evaluateGuess("sandwich", [RED_1, BLACK_1, RED_2])).toBe("success");
+    expect(evaluateGuess("sandwich", [BLACK_1, RED_1, BLACK_2])).toBe("success");
   });
 
-  it("SANDWICH fails with 3 of one color", () => {
+  it("SANDWICH fails when the colors are not alternating", () => {
+    expect(evaluateGuess("sandwich", [RED_1, RED_2, BLACK_1])).toBe("failure");
+    expect(evaluateGuess("sandwich", [BLACK_1, BLACK_2, RED_1])).toBe("failure");
+    expect(evaluateGuess("sandwich", [RED_1, BLACK_1, BLACK_2])).toBe("failure");
+    expect(evaluateGuess("sandwich", [BLACK_1, RED_1, RED_2])).toBe("failure");
     expect(evaluateGuess("sandwich", [RED_1, RED_2, card("2", "hearts")])).toBe("failure");
     expect(evaluateGuess("sandwich", [BLACK_1, BLACK_2, card("9", "clubs")])).toBe("failure");
   });
@@ -177,7 +181,7 @@ describe("submitGuess", () => {
   });
 
   it("a successful SANDWICH adds 3 to pile and progress", () => {
-    const game = makeGame([RED_1, RED_2, BLACK_1]);
+    const game = makeGame([RED_1, BLACK_1, RED_2]);
     const next = submitGuess(game, "sandwich", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("success");
     expect(next.pile).toBe(3);

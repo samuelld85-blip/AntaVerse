@@ -754,7 +754,7 @@ html[data-theme="light"] .brand-mark--purple {
   }
 
   .guess-button--doublePurple .guess-cards {
-    transform: translateX(-0.60rem);
+    transform: translateX(-0.20rem);
   }
 
   .playing-card {

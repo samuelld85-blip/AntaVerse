@@ -118,33 +118,35 @@ export function GameClient() {
 
       <button
         type="button"
-        className="roll-surface"
+        className={isSearching ? "roll-surface roll-surface--search" : "roll-surface"}
         onClick={roll}
         disabled={rolling}
         aria-label="Lancer les dés"
       >
-        <p className="current-player-label">{isSearching ? "Cherche le Triman" : "Au tour de"}</p>
-        <h1 className="current-player-name" key={`${game.currentPlayerIndex}-${game.phase}`}>
-          {currentPlayer.name}
-        </h1>
+        <section className="effects-panel" aria-live="polite">
+          <ResultPanel lastRoll={lastRoll} roller={roller} />
+        </section>
 
-        <div className={rolling ? "dice-row dice-row--rolling" : "dice-row"}>
-          <Die value={diceA} rolling={rolling} />
-          <Die value={diceB} rolling={rolling} />
+        <div className="roll-content">
+          <p className="current-player-label">{isSearching ? "Cherche le Triman" : "Au tour de"}</p>
+          <h1 className="current-player-name" key={`${game.currentPlayerIndex}-${game.phase}`}>
+            {currentPlayer.name}
+          </h1>
+
+          <div className={rolling ? "dice-row dice-row--rolling" : "dice-row"}>
+            <Die value={diceA} rolling={rolling} />
+            <Die value={diceB} rolling={rolling} />
+          </div>
+
+          <p className="tap-hint">
+            {rolling
+              ? "…"
+              : lastRoll?.rollAgain
+                ? "Retapez pour relancer"
+                : "Touchez l’écran pour lancer les dés"}
+          </p>
         </div>
-
-        <p className="tap-hint">
-          {rolling
-            ? "…"
-            : lastRoll?.rollAgain
-              ? "Retapez pour relancer"
-              : "Touchez l’écran pour lancer les dés"}
-        </p>
       </button>
-
-      <section className="effects-panel" aria-live="polite">
-        <ResultPanel lastRoll={lastRoll} roller={roller} />
-      </section>
 
       {announcement ? (
         <div
