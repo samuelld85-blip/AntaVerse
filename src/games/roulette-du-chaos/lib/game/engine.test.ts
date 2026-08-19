@@ -13,6 +13,7 @@ import {
   revealEvent,
   spinWheel,
   submitChoice,
+  submitMysteryPick,
   submitNeighbor,
   submitTargets,
 } from "./engine";
@@ -119,44 +120,43 @@ describe("a zero-input event resolves immediately and completes the turn exactly
 });
 
 describe("target picking", () => {
-  it("D4 Double cible excludes the active player and requires exactly 2 targets", () => {
+  it("D11 Passe le pouvoir excludes the active player and requires exactly 1 target", () => {
     let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
     const active = getActivePlayer(game);
-    game = spinToEvent(game, "DISTRIBUE", "d4");
+    game = spinToEvent(game, "DISTRIBUE", "d11");
 
     const pending = game.resolution?.pending;
     expect(pending?.kind).toBe("pickTargets");
     if (pending?.kind !== "pickTargets") throw new Error("expected pickTargets");
-    expect(pending.min).toBe(2);
-    expect(pending.max).toBe(2);
+    expect(pending.min).toBe(1);
+    expect(pending.max).toBe(1);
     expect(pending.excludeIds).toEqual([active.id]);
 
-    const others = game.players.filter((player) => player.id !== active.id).slice(0, 2);
-    game = submitTargets(
-      game,
-      others.map((player) => player.id),
-    );
-    expect(game.resolution?.outcome?.lines).toHaveLength(2);
-    expect(game.resolution?.outcome?.lines[0]).toContain(others[0]!.name);
+    const heir = game.players.find((player) => player.id !== active.id)!;
+    game = submitTargets(game, [heir.id]);
+    const lines = game.resolution?.outcome?.lines ?? [];
+    expect(lines[0]).toContain(heir.name);
+    // The heir may not hand sips back to the player who empowered them.
+    expect(lines[1]).toContain(active.name);
   });
 
-  it("D7 Un pour chacun adapts its target count when fewer than 3 others are available", () => {
-    let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero()); // 3 players -> 2 others
+  it("D9 La chaîne names the first link the active player picked", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const active = getActivePlayer(game);
+    game = spinToEvent(game, "DISTRIBUE", "d9");
+
+    const first = game.players.find((player) => player.id !== active.id)!;
+    game = submitTargets(game, [first.id]);
+    expect(game.resolution?.outcome?.lines[0]).toContain(first.name);
+    expect(game.resolution?.outcome?.lines[0]).toContain("1 gorgée");
+  });
+
+  it("D7 Un pour chacun narrates its distribution without asking for targets", () => {
+    let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
     game = spinToEvent(game, "DISTRIBUE", "d7");
 
-    const pending = game.resolution?.pending;
-    if (pending?.kind !== "pickTargets") throw new Error("expected pickTargets");
-    expect(pending.min).toBe(2);
-    expect(pending.max).toBe(2);
-
-    const others = game.players.filter((player) => player.id !== getActivePlayer(game).id);
-    game = submitTargets(
-      game,
-      others.map((player) => player.id),
-    );
-    // splitEvenly(3, 2) -> [2, 1]
-    expect(game.resolution?.outcome?.lines[0]).toContain("2 gorgées");
-    expect(game.resolution?.outcome?.lines[1]).toContain("1 gorgée");
+    expect(game.resolution?.pending).toBeNull();
+    expect(game.resolution?.outcome?.lines[0]).toContain("3 gorgées");
   });
 });
 
@@ -264,8 +264,8 @@ describe("mini-games never double-advance the turn", () => {
   });
 });
 
-describe("multi-step target resolution (J5 Royal Duel)", () => {
-  it("keeps opponent-picking and the winner's distribution as separate rounds", () => {
+describe("J5 Royal Duel", () => {
+  it("picks an opponent, runs the duel, then names the winner as the distributor", () => {
     let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
     const active = getActivePlayer(game);
     game = spinToEvent(game, "JACKPOT", "j5");
@@ -282,18 +282,103 @@ describe("multi-step target resolution (J5 Royal Duel)", () => {
       tie: false,
     });
     expect(game.phase).toBe("event");
-    const pending = game.resolution?.pending;
-    expect(pending?.kind).toBe("pickTargets");
-    if (pending?.kind !== "pickTargets") throw new Error("expected pickTargets");
-    // The winner can't distribute sips to themself.
-    expect(pending.excludeIds).toEqual([opponent.id]);
-
-    const recipients = game.players.filter((player) => player.id !== opponent.id).slice(0, 1);
-    game = submitTargets(
-      game,
-      recipients.map((player) => player.id),
-    );
+    expect(game.resolution?.pending).toBeNull();
     expect(game.resolution?.outcome?.headline).toBe("Royal Duel");
+    expect(game.resolution?.outcome?.lines[0]).toContain(opponent.name);
+  });
+});
+
+describe("J8 Roi de la roulette", () => {
+  it("pays 9 sips when the challenger wins the Duel Royal and 4 when they lose", () => {
+    const base = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const active = getActivePlayer(base);
+    const opponent = base.players.find((player) => player.id !== active.id)!;
+
+    function playDuel(winnerId: string): GameState {
+      let game = spinToEvent(base, "JACKPOT", "j8");
+      game = submitChoice(game, "duel");
+      game = submitTargets(game, [opponent.id]);
+      expect(game.phase).toBe("miniGame");
+      return completeMiniGame(game, {
+        mode: "duel",
+        winnerId,
+        loserId: winnerId === active.id ? opponent.id : active.id,
+        success: null,
+        tie: false,
+      });
+    }
+
+    const won = playDuel(active.id);
+    expect(won.resolution?.outcome?.lines[0]).toContain("9 gorgées");
+
+    const lost = playDuel(opponent.id);
+    expect(lost.resolution?.outcome?.lines[0]).toContain(active.name);
+    expect(lost.resolution?.outcome?.lines[0]).toContain("4 gorgées");
+  });
+});
+
+describe("event catalogue", () => {
+  it("carries the full 8 x 12 rule set with unique ids", () => {
+    const categories = Object.keys(EVENTS_BY_CATEGORY) as CategoryId[];
+    expect(categories).toHaveLength(8);
+
+    const ids = new Set<string>();
+    for (const category of categories) {
+      const events = EVENTS_BY_CATEGORY[category];
+      expect(events).toHaveLength(12);
+      for (const event of events) {
+        expect(event.category).toBe(category);
+        expect(event.title.length).toBeGreaterThan(0);
+        expect(event.prompt.length).toBeGreaterThan(0);
+        expect(ids.has(event.id)).toBe(false);
+        ids.add(event.id);
+      }
+    }
+    expect(ids.size).toBe(96);
+  });
+
+  it("resolves every event to an outcome from a plain first spin, whatever it asks for", () => {
+    // Guards against an event that can never reach `done` — every rule must be
+    // reachable and finishable with only the engine's existing primitives.
+    for (const category of Object.keys(EVENTS_BY_CATEGORY) as CategoryId[]) {
+      for (const event of EVENTS_BY_CATEGORY[category]) {
+        let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+        // Generous random supply: some events draw a slot per player.
+        game = spinToEvent(game, category, event.id, Array<number>(40).fill(0.42));
+
+        for (let step = 0; step < 6 && !game.resolution?.outcome; step += 1) {
+          if (game.phase === "miniGame") {
+            const session = game.miniGame!;
+            game = completeMiniGame(game, {
+              mode: session.mode,
+              winnerId: session.playerAId,
+              loserId: session.playerBId ?? session.playerAId,
+              success: true,
+              tie: false,
+            });
+            continue;
+          }
+          const pending = game.resolution?.pending;
+          if (!pending) break;
+          if (pending.kind === "pickTargets") {
+            const pool = game.players.filter((player) => !pending.excludeIds.includes(player.id));
+            game = submitTargets(
+              game,
+              pool.slice(0, pending.min).map((player) => player.id),
+            );
+          } else if (pending.kind === "pickNeighbor") {
+            game = submitNeighbor(game, "left");
+          } else if (pending.kind === "choice") {
+            game = submitChoice(game, pending.options[0]!.key);
+          } else if (pending.kind === "mysteryPick") {
+            game = submitMysteryPick(game, 0);
+          }
+        }
+
+        expect(game.resolution?.outcome, `${event.id} never resolved`).toBeTruthy();
+        expect(game.resolution?.outcome?.lines.length).toBeGreaterThan(0);
+      }
+    }
   });
 });
 

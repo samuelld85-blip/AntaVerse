@@ -39,7 +39,7 @@ describe("evaluateActiveRoll — sum rules", () => {
       trimanPlayerId: "none",
     });
     expect(effects).toHaveLength(1);
-    expect(effects[0]).toMatchObject({ kind: "sum-seven", headline: "7" });
+    expect(effects[0]).toMatchObject({ kind: "sum-seven", headline: "7 : Le joueur précédent boit" });
     expect(effects[0]!.detail).toBe("Chloé boit 1 gorgée");
   });
 
@@ -62,7 +62,7 @@ describe("evaluateActiveRoll — sum rules", () => {
       trimanPlayerId: "none",
     });
     expect(effects).toHaveLength(1);
-    expect(effects[0]).toMatchObject({ kind: "sum-nine", headline: "9" });
+    expect(effects[0]).toMatchObject({ kind: "sum-nine", headline: "9 : Le joueur actuel boit" });
     expect(effects[0]!.detail).toBe("Emma boit 1 gorgée");
   });
 
@@ -74,7 +74,7 @@ describe("evaluateActiveRoll — sum rules", () => {
       trimanPlayerId: "none",
     });
     expect(effects).toHaveLength(1);
-    expect(effects[0]).toMatchObject({ kind: "sum-eleven", headline: "11" });
+    expect(effects[0]).toMatchObject({ kind: "sum-eleven", headline: "11 : Le joueur suivant boit" });
     expect(effects[0]!.detail).toBe("Samuel boit 1 gorgée");
   });
 });

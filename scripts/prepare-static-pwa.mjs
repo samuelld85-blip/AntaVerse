@@ -29,6 +29,10 @@ const routes = [
   "/roulette-du-chaos/joueurs/",
   "/roulette-du-chaos/partie/",
   "/roulette-du-chaos/regles/",
+  "/palmier/",
+  "/palmier/joueurs/",
+  "/palmier/partie/",
+  "/palmier/regles/",
 ];
 const assets = new Set([
   ...routes,

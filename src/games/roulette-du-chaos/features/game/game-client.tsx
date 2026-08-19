@@ -106,6 +106,9 @@ export function GameClient() {
         <RuleBanner
           key={game.activeRule.ruleId}
           rule={game.activeRule}
+          ownerName={
+            game.players.find((p) => p.id === game.activeRule!.ownerId)?.name ?? "Joueur inconnu"
+          }
           onClear={() => commit(clearActiveRule(game))}
         />
       ) : null}

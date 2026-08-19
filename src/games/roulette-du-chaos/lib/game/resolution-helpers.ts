@@ -13,6 +13,7 @@ import type {
   ResolveResult,
   RuleExpiry,
   TurnOutcome,
+  VisualHint,
 } from "./types";
 
 export function sipsWord(amount: number): string {
@@ -167,8 +168,6 @@ export function freeDistributeEvent(
   title: string,
   prompt: string,
   total: number,
-  maxTargets: number = total,
-  minTargets = 1,
 ): EventDefinition {
   return {
     id,
@@ -176,21 +175,35 @@ export function freeDistributeEvent(
     title,
     prompt,
     visualHint: "none",
-    resolve(input) {
-      const others = eligibleOthers(input.players, input.activePlayerId);
-      const cap = Math.min(maxTargets, others.length);
-      const floor = Math.min(minTargets, cap);
-      const targets = input.targetRounds[0];
-      if (!targets) {
-        return needTargets(floor, cap, {
-          excludeIds: [input.activePlayerId],
-          label: `Distribue ${total} gorgée${total > 1 ? "s" : ""}`,
-        });
-      }
-      const amounts = splitEvenly(total, targets.length);
-      const lines = targets.map((targetId, index) =>
-        receives(playerName(input.players, targetId), amounts[index]!),
+    resolve() {
+      return done(
+        outcome(title, [`Distribue ${total} gorgée${total > 1 ? "s" : ""} — gérez entre vous.`]),
       );
+    },
+  };
+}
+
+/**
+ * Builds an event that needs no input at all: the app just narrates the rule
+ * and the table applies it. Used by the many group-arbitrated events (nobody
+ * can detect who pointed at whom, or who spoke first) where the phone is a
+ * referee card rather than a game controller.
+ */
+export function narratedEvent(
+  id: string,
+  category: CategoryId,
+  title: string,
+  prompt: string,
+  lines: string[],
+  visualHint: VisualHint = "none",
+): EventDefinition {
+  return {
+    id,
+    category,
+    title,
+    prompt,
+    visualHint,
+    resolve() {
       return done(outcome(title, lines));
     },
   };

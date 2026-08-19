@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Button } from "@/games/shared/components/ui";
 import {
+  STOP_TIMER_SOLO_TOLERANCE_MS,
+  STOP_TIMER_TARGET_MS,
   resolveStopTimerDuel,
   resolveStopTimerSolo,
 } from "@/games/roulette-du-chaos/lib/game/mini-games/stop-timer";
@@ -15,6 +17,10 @@ type SoloStep = "handoff" | "play" | "result";
 
 const INSTRUCTION = "Arrête le chrono caché le plus près possible de 5,00 secondes.";
 
+function formatMs(ms: number): string {
+  return (ms / 1000).toFixed(2).replace(".", ",") + " s";
+}
+
 export function StopTimer(props: MiniGameProps) {
   return props.mode === "solo" ? <StopTimerSolo {...props} /> : <StopTimerDuel {...props} />;
 }
@@ -24,6 +30,7 @@ function StopTimerDuel({ playerA, playerB, onComplete }: MiniGameProps) {
   const [step, setStep] = useState<DuelStep>("handoffA");
   const [startedAt, setStartedAt] = useState(0);
   const [elapsedA, setElapsedA] = useState(0);
+  const [elapsedB, setElapsedB] = useState(0);
   const [winner, setWinner] = useState<"a" | "b" | null>(null);
 
   function start() {
@@ -36,6 +43,7 @@ function StopTimerDuel({ playerA, playerB, onComplete }: MiniGameProps) {
       setElapsedA(elapsed);
       setStep("handoffB");
     } else {
+      setElapsedB(elapsed);
       const result = resolveStopTimerDuel(elapsedA, elapsed);
       setWinner(result === "tie" ? "a" : result);
       setStep("result");
@@ -61,6 +69,10 @@ function StopTimerDuel({ playerA, playerB, onComplete }: MiniGameProps) {
           <p className="mini-game-result-headline">
             {winner === "a" ? playerA.name : opponent.name} gagne !
           </p>
+          <p className="mini-game-result-detail">
+            {playerA.name} : {formatMs(elapsedA)} · {opponent.name} : {formatMs(elapsedB)} · Cible :{" "}
+            {formatMs(STOP_TIMER_TARGET_MS)}
+          </p>
           <Button
             type="button"
             onClick={() =>
@@ -84,6 +96,7 @@ function StopTimerDuel({ playerA, playerB, onComplete }: MiniGameProps) {
 function StopTimerSolo({ playerA, onComplete }: MiniGameProps) {
   const [step, setStep] = useState<SoloStep>("handoff");
   const [startedAt, setStartedAt] = useState(0);
+  const [elapsed, setElapsed] = useState(0);
   const [success, setSuccess] = useState(false);
 
   function start() {
@@ -91,10 +104,14 @@ function StopTimerSolo({ playerA, onComplete }: MiniGameProps) {
   }
 
   function stop() {
-    const elapsed = Date.now() - startedAt;
-    setSuccess(resolveStopTimerSolo(elapsed));
+    const ms = Date.now() - startedAt;
+    setElapsed(ms);
+    setSuccess(resolveStopTimerSolo(ms));
     setStep("result");
   }
+
+  const minMs = STOP_TIMER_TARGET_MS - STOP_TIMER_SOLO_TOLERANCE_MS;
+  const maxMs = STOP_TIMER_TARGET_MS + STOP_TIMER_SOLO_TOLERANCE_MS;
 
   return (
     <MiniGameShell title="Défi Stop Timer" instruction={INSTRUCTION}>
@@ -105,6 +122,9 @@ function StopTimerSolo({ playerA, onComplete }: MiniGameProps) {
       {step === "result" ? (
         <div className="mini-game-result">
           <p className="mini-game-result-headline">{success ? "Défi réussi !" : "Défi manqué"}</p>
+          <p className="mini-game-result-detail">
+            Ton temps : {formatMs(elapsed)} · Plage acceptée : {formatMs(minMs)} – {formatMs(maxMs)}
+          </p>
           <Button
             type="button"
             onClick={() =>
