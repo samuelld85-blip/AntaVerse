@@ -18,6 +18,7 @@ describe("CATEGORIES", () => {
 
   it("has exactly the eight documented categories", () => {
     expect(CATEGORIES.map((category) => category.id)).toEqual([
+      "JACKPOT",
       "DISTRIBUE",
       "SUBIS",
       "DUEL",
@@ -25,7 +26,6 @@ describe("CATEGORIES", () => {
       "CHOISIS",
       "DESTIN",
       "REGLE",
-      "JACKPOT",
     ]);
   });
 });
@@ -37,9 +37,9 @@ describe("pickWeightedCategory", () => {
     }
   });
 
-  it("picks JACKPOT only inside its slice at the end of the roll", () => {
-    expect(pickWeightedCategory(0.96)).toBe("JACKPOT");
-    expect(pickWeightedCategory(0.91)).not.toBe("JACKPOT");
+  it("picks JACKPOT only inside its slice at the start of the roll", () => {
+    expect(pickWeightedCategory(0.04)).toBe("JACKPOT");
+    expect(pickWeightedCategory(0.09)).not.toBe("JACKPOT");
   });
 
   it("never throws for boundary slot values", () => {

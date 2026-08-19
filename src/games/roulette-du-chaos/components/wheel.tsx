@@ -3,20 +3,24 @@
 import { useEffect, useRef, useState } from "react";
 import { CATEGORIES } from "@/games/roulette-du-chaos/lib/game/wheel";
 import type { CategoryId } from "@/games/roulette-du-chaos/lib/game/types";
+import Image from "next/image";
 
-// The wheel keeps 8 visually equal sectors (spec §8 explicitly allows this
-// when it's the more robust implementation) — the weighted probability
-// table lives entirely in wheel.ts and only ever affects which category is
-// picked, never how the sectors are drawn. The category is decided by the
-// engine before this component ever animates (see spinWheel/engine.ts): the
-// wheel only ever plays catch-up to an already-known result.
+// The wheel uses a pre-rendered PNG artwork with 8 equal 45° segments.
+// PNG orientation: JACKPOT is centered at 0° (top), and segments proceed
+// clockwise (DISTRIBUE at 45°, SUBIS at 90°, etc.).
+// The pointer is fixed at the top. The PNG rotates to position the winning
+// segment's center exactly under the pointer.
 
-const SECTOR_ANGLE = 360 / CATEGORIES.length;
+const SEGMENT_ANGLE = 360 / CATEGORIES.length;
 const SPIN_TURNS = 4;
+// Pointer aims at the center of each segment, offset slightly counterclockwise
+// to hit the middle of the segment, not the border
+const POINTER_OFFSET_DEG = -SEGMENT_ANGLE / 2; // -22.5° to correct alignment
 
 function sectorCenterAngle(id: CategoryId): number {
   const index = CATEGORIES.findIndex((category) => category.id === id);
-  return index * SECTOR_ANGLE + SECTOR_ANGLE / 2;
+  // Each segment center offset to ensure pointer lands at correct segment center
+  return index * SEGMENT_ANGLE + POINTER_OFFSET_DEG;
 }
 
 export function Wheel({
@@ -33,12 +37,17 @@ export function Wheel({
 
   useEffect(() => {
     if (!spinning || !targetCategory) return;
+
+    // Reset rotation to 0 at the start of each spin
+    rotationRef.current = 0;
+
     const base = (360 - sectorCenterAngle(targetCategory)) % 360;
-    const currentMod = ((rotationRef.current % 360) + 360) % 360;
+    // Since we reset to 0, currentMod is always 0
+    const currentMod = 0;
     let delta = base - currentMod;
     delta = ((delta % 360) + 360) % 360;
     if (delta === 0) delta = 360;
-    const next = rotationRef.current + SPIN_TURNS * 360 + delta;
+    const next = SPIN_TURNS * 360 + delta;
     rotationRef.current = next;
     setRotation(next);
   }, [spinning, targetCategory]);
@@ -47,32 +56,20 @@ export function Wheel({
     <div className="wheel-wrap">
       <div className="wheel-pointer" aria-hidden="true" />
       <div
-        className={spinning ? "wheel-disc wheel-disc--spinning" : "wheel-disc"}
+        className={spinning ? "wheel-artwork-container wheel-artwork-container--spinning" : "wheel-artwork-container"}
         style={{ transform: `rotate(${rotation}deg)` }}
         onTransitionEnd={() => {
           if (spinning) onSpinEnd?.();
         }}
       >
-        {CATEGORIES.map((category, index) => {
-          const angle = index * SECTOR_ANGLE + SECTOR_ANGLE / 2;
-          return (
-            <div
-              key={category.id}
-              className={`wheel-sector wheel-sector--${category.id.toLowerCase()}`}
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              <div className="wheel-sector-content" style={{ transform: `rotate(${-angle}deg)` }}>
-                <span className="wheel-icon" aria-hidden="true">
-                  {category.icon}
-                </span>
-                <span className="wheel-label">{category.label}</span>
-              </div>
-            </div>
-          );
-        })}
-        <div className="wheel-hub" aria-hidden="true">
-          <span>🎡</span>
-        </div>
+        <Image
+          src="/brand/games/roulette_du_chaos.png"
+          alt=""
+          fill
+          priority
+          quality={95}
+          className="wheel-artwork"
+        />
       </div>
     </div>
   );

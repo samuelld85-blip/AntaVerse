@@ -2,14 +2,14 @@
   --rdc-accent: #ff4d6d;
   --rdc-accent-glow: rgba(255, 77, 109, 0.18);
   --rdc-gold: #ffc94d;
-  --rdc-distribue: #ff4d6d;
-  --rdc-subis: #ff5c3d;
+  --rdc-jackpot: #ffc94d;
+  --rdc-distribue: #ff2e7e;
+  --rdc-subis: #ff3d3d;
   --rdc-duel: #ff9a3d;
   --rdc-tous: #3ddc8a;
-  --rdc-choisis: #3dc9e8;
+  --rdc-choisis: #00d4ff;
   --rdc-destin: #5b7cfa;
   --rdc-regle: #9b5bfa;
-  --rdc-jackpot: #ffc94d;
 }
 
 /* Brand ------------------------------------------------------------------ */
@@ -245,90 +245,23 @@ html[data-theme="light"] .brand-mark--rdc {
   border-top: 1.1rem solid var(--rdc-accent);
   border-left: 0.8rem solid transparent;
   border-right: 0.8rem solid transparent;
-  transform: translateX(-50%) rotate(180deg);
+  transform: translateX(-50%);
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
 }
-.wheel-disc {
+.wheel-artwork-container {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 4px solid var(--surface-raised);
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  transform-origin: center center;
   transition: none;
 }
-.wheel-disc--spinning {
+.wheel-artwork-container--spinning {
   transition: transform 3.2s cubic-bezier(0.18, 0.82, 0.16, 1);
 }
-.wheel-sector {
-  position: absolute;
-  inset: 0;
-  clip-path: polygon(50% 50%, -7.5% -88.5%, 107.5% -88.5%);
-  transform-origin: 50% 50%;
-}
-.wheel-sector--distribue {
-  background: var(--rdc-distribue);
-}
-.wheel-sector--subis {
-  background: var(--rdc-subis);
-}
-.wheel-sector--duel {
-  background: var(--rdc-duel);
-}
-.wheel-sector--tous {
-  background: var(--rdc-tous);
-}
-.wheel-sector--choisis {
-  background: var(--rdc-choisis);
-}
-.wheel-sector--destin {
-  background: var(--rdc-destin);
-}
-.wheel-sector--regle {
-  background: var(--rdc-regle);
-}
-.wheel-sector--jackpot {
-  background: var(--rdc-jackpot);
-}
-.wheel-sector-content {
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  display: flex;
-  width: 4.6rem;
-  margin-left: -2.3rem;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  text-align: center;
-}
-.wheel-icon {
-  font-size: 1.3rem;
-  line-height: 1;
-}
-.wheel-label {
-  color: rgba(11, 17, 24, 0.85);
-  font-size: 0.58rem;
-  font-weight: 950;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-.wheel-hub {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  display: grid;
-  width: 3.2rem;
-  height: 3.2rem;
-  place-items: center;
-  border: 3px solid var(--surface-raised);
-  border-radius: 50%;
-  background: var(--page);
-  font-size: 1.3rem;
-  transform: translate(-50%, -50%);
+.wheel-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .spin-button {

@@ -6,6 +6,13 @@ import type { CategoryDefinition, CategoryId, EventDefinition } from "./types";
 
 export const CATEGORIES: readonly CategoryDefinition[] = [
   {
+    id: "JACKPOT",
+    label: "Jackpot",
+    weight: 8,
+    icon: "👑",
+    description: "Rare et spectaculaire.",
+  },
+  {
     id: "DISTRIBUE",
     label: "Distribue",
     weight: 15,
@@ -53,13 +60,6 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
     weight: 8,
     icon: "📜",
     description: "Une règle temporaire s'applique au groupe.",
-  },
-  {
-    id: "JACKPOT",
-    label: "Jackpot",
-    weight: 8,
-    icon: "👑",
-    description: "Rare et spectaculaire.",
   },
 ] as const;
 
