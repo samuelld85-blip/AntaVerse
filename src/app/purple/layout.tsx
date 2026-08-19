@@ -6,7 +6,7 @@ import "@/games/purple/styles.css";
 export const metadata: Metadata = {
   title: { default: "Purple", template: "%s · Purple" },
   description:
-    "Rouge, noir ou Skubrum : devinez les cartes, le pot grimpe, la partie ne s’arrête jamais.",
+    "Rouge, noir, Skubrum ou Sandwich : devinez les cartes, le pot grimpe, la partie ne s’arrête jamais.",
 };
 
 export default function PurpleLayout({ children }: { children: ReactNode }) {

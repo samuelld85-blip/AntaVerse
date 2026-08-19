@@ -17,7 +17,8 @@ export const GUESS_DRAW_COUNT: Record<GuessType, number> = {
   black: 1,
   purple: 2,
   doublePurple: 4,
-  skubrum: 4,
+  skubrum: 3,
+  sandwich: 3,
   higher: 1,
   lower: 1,
 };
@@ -78,7 +79,9 @@ export function evaluateGuess(
     case "doublePurple":
       return red === 2 && black === 2 ? "success" : "failure";
     case "skubrum":
-      return (red === 3 && black === 1) || (red === 1 && black === 3) ? "success" : "failure";
+      return red === 3 || black === 3 ? "success" : "failure";
+    case "sandwich":
+      return (red === 2 && black === 1) || (red === 1 && black === 2) ? "success" : "failure";
     case "higher":
       if (!referenceCard || cards.length === 0) return "failure";
       return getRankValue(cards[0]!.rank) > getRankValue(referenceCard.rank) ? "success" : "failure";

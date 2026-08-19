@@ -7,11 +7,20 @@ import { Brand } from "@/games/purple/components/brand";
 import { PlayingCard } from "@/games/purple/components/playing-card";
 import { MiniCard } from "@/games/purple/components/mini-card";
 import type { Card } from "@/games/purple/lib/game/types";
-import { GUESS_DRAW_COUNT, canPass, canPlayHigherLower, passTurn, submitGuess } from "@/games/purple/lib/game/engine";
+import { canPass, canPlayHigherLower, passTurn, submitGuess } from "@/games/purple/lib/game/engine";
 import { loadCurrentGame, saveCurrentGame } from "@/games/purple/lib/game/persistence";
 import type { GameState, GuessType } from "@/games/purple/lib/game/types";
 
-const GUESS_ORDER: readonly GuessType[] = ["lower", "higher", "red", "black", "purple", "doublePurple", "skubrum"];
+const GUESS_ORDER: readonly GuessType[] = [
+  "lower",
+  "higher",
+  "red",
+  "black",
+  "purple",
+  "doublePurple",
+  "skubrum",
+  "sandwich",
+];
 
 const GUESS_LABEL: Record<GuessType, string> = {
   red: "Rouge",
@@ -19,6 +28,7 @@ const GUESS_LABEL: Record<GuessType, string> = {
   purple: "Purple",
   doublePurple: "Double Purple",
   skubrum: "Skubrum",
+  sandwich: "Sandwich",
   higher: "Plus",
   lower: "Moins",
 };
@@ -57,8 +67,15 @@ function GuessExample({ guessType, referenceCard }: { guessType: GuessType; refe
       return (
         <div className="guess-cards">
           <MiniCard suit="hearts" />
+          <MiniCard suit="diamonds" />
           <MiniCard suit="hearts" />
+        </div>
+      );
+    case "sandwich":
+      return (
+        <div className="guess-cards">
           <MiniCard suit="hearts" />
+          <MiniCard suit="diamonds" />
           <MiniCard suit="spades" />
         </div>
       );
@@ -300,11 +317,6 @@ export function GameClient() {
               >
                 <span className="guess-button-label">{label}</span>
                 <GuessExample guessType={guessType} referenceCard={game.lastCard} />
-                {!isHigherLower ? (
-                  <span className="guess-button-draw">
-                    {GUESS_DRAW_COUNT[guessType]} carte{GUESS_DRAW_COUNT[guessType] > 1 ? "s" : ""}
-                  </span>
-                ) : null}
               </button>
             );
           })}
