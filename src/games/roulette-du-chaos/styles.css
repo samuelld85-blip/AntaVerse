@@ -15,20 +15,21 @@
 /* Brand ------------------------------------------------------------------ */
 
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 1rem;
 }
 .brand-mark {
   display: block;
-  width: 6.8rem;
+  width: 8.16rem;
   height: auto;
   flex: 0 0 auto;
   object-fit: contain;
   filter: none;
 }
 .brand-mark--small {
-  width: 5rem;
+  width: 6rem;
 }
 html[data-theme="light"] .brand-mark--rdc {
   content: url("/brand/games/roulette-du-chaos-light.png");
@@ -182,10 +183,12 @@ html[data-theme="light"] .brand-mark--rdc {
   color: var(--rdc-accent);
 }
 .game-header {
-  align-items: center;
+  position: relative;
 }
 .game-header > .brand {
-  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .current-player-label {

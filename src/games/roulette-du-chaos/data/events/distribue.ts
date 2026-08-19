@@ -54,14 +54,13 @@ export const distribueEvents: EventDefinition[] = [
     visualHint: "none",
     resolve(input) {
       if (!input.neighborSide) return needNeighbor();
-      const count = input.players.length;
-      const index = activeIndex(input);
-      const neighborIndex =
-        input.neighborSide === "left"
-          ? previousPlayerIndex(index, count)
-          : nextPlayerIndex(index, count);
-      const neighbor = input.players[neighborIndex]!;
-      return done(outcome("Voisinage", [receives(neighbor.name, 3)]));
+      const side = input.neighborSide === "left" ? "gauche" : "droite";
+      return done(
+        outcome("Voisinage", [
+          `Tu as choisi ton voisin de ${side}.`,
+          "Il ou elle boit 3 gorgées.",
+        ]),
+      );
     },
   },
   {
