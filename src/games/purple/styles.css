@@ -575,6 +575,7 @@ html[data-theme="light"] .brand-mark--purple {
   opacity: 0.7;
 }
 .mini-card {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -584,6 +585,14 @@ html[data-theme="light"] .brand-mark--purple {
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+.mini-card-rank {
+  position: absolute;
+  top: 0.14rem;
+  left: 0.18rem;
+  font-size: 0.48rem;
+  font-weight: 900;
+  line-height: 1;
+}
 .mini-card-suit {
   font-size: 1.1rem;
   line-height: 1;
@@ -591,7 +600,13 @@ html[data-theme="light"] .brand-mark--purple {
 .mini-card--red .mini-card-suit {
   color: var(--card-red);
 }
+.mini-card--red .mini-card-rank {
+  color: var(--card-red);
+}
 .mini-card--black .mini-card-suit {
+  color: #1a1a1a;
+}
+.mini-card--black .mini-card-rank {
   color: #1a1a1a;
 }
 .pass-button {
@@ -702,7 +717,7 @@ html[data-theme="light"] .brand-mark--purple {
   }
 
   .guess-button {
-    min-height: 2.75rem;
+    min-height: 2.9rem;
     flex-direction: row;
     gap: 0.55rem;
     padding: 0.35rem 0.45rem;
@@ -716,7 +731,7 @@ html[data-theme="light"] .brand-mark--purple {
   .guess-button--doublePurple,
   .guess-button--skubrum,
   .guess-button--sandwich {
-    min-height: 2.75rem;
+    min-height: 2.9rem;
   }
 
   .guess-button-label {
@@ -724,12 +739,22 @@ html[data-theme="light"] .brand-mark--purple {
   }
 
   .mini-card {
-    width: 1.1rem;
-    height: 1.52rem;
+    width: 1.15rem;
+    height: 1.6rem;
   }
 
   .mini-card-suit {
     font-size: 0.78rem;
+  }
+
+  .mini-card-rank {
+    top: 0.12rem;
+    left: 0.14rem;
+    font-size: 0.4rem;
+  }
+
+  .guess-button--doublePurple .guess-cards {
+    transform: translateX(-0.60rem);
   }
 
   .playing-card {

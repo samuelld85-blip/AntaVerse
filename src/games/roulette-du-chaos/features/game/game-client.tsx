@@ -19,6 +19,7 @@ import {
   spinWheel,
   submitChoice,
   submitMysteryPick,
+  submitReveal,
   submitNeighbor,
   submitTargets,
 } from "@/games/roulette-du-chaos/lib/game/engine";
@@ -146,6 +147,7 @@ export function GameClient() {
           onSubmitNeighbor={(side) => commit(submitNeighbor(game, side))}
           onSubmitChoice={(key) => commit(submitChoice(game, key))}
           onSubmitMysteryPick={(index) => commit(submitMysteryPick(game, index))}
+          onReveal={() => commit(submitReveal(game))}
           onContinue={() => commit(completeTurn(game))}
         />
       ) : null}

@@ -116,6 +116,10 @@ export function needMystery(count: number): ResolveResult {
   return { status: "needsInput", next: { kind: "mysteryPick", count } };
 }
 
+export function needReveal(label: string): ResolveResult {
+  return { status: "needsInput", next: { kind: "reveal", label } };
+}
+
 export function needMiniGame(
   kind: MiniGameKind,
   mode: "duel" | "solo",

@@ -80,9 +80,9 @@ function GuessExample({ guessType, referenceCard }: { guessType: GuessType; refe
         </div>
       );
     case "higher":
-      return referenceCard ? <MiniCard suit={referenceCard.suit} /> : null;
+      return referenceCard ? <MiniCard rank={referenceCard.rank} suit={referenceCard.suit} /> : null;
     case "lower":
-      return referenceCard ? <MiniCard suit={referenceCard.suit} /> : null;
+      return referenceCard ? <MiniCard rank={referenceCard.rank} suit={referenceCard.suit} /> : null;
   }
 }
 

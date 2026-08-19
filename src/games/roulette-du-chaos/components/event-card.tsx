@@ -83,6 +83,7 @@ export function EventCard({
   onSubmitNeighbor,
   onSubmitChoice,
   onSubmitMysteryPick,
+  onReveal,
   onContinue,
 }: {
   game: GameState;
@@ -90,6 +91,7 @@ export function EventCard({
   onSubmitNeighbor: (side: "left" | "right") => void;
   onSubmitChoice: (key: string) => void;
   onSubmitMysteryPick: (index: number) => void;
+  onReveal: () => void;
   onContinue: () => void;
 }) {
   const resolution = game.resolution;
@@ -137,6 +139,17 @@ export function EventCard({
       ) : null}
       {!outcome && resolution.pending?.kind === "mysteryPick" ? (
         <MysteryPicker count={resolution.pending.count} onPick={onSubmitMysteryPick} />
+      ) : null}
+      {!outcome && resolution.pending?.kind === "reveal" ? (
+        <div className="reveal-picker">
+          <div className="reveal-card" aria-label="Nombre maudit masqué">
+            <span aria-hidden="true">?</span>
+          </div>
+          <p className="reveal-picker-label">Tout le monde a choisi ?</p>
+          <Button type="button" onClick={onReveal}>
+            {resolution.pending.label}
+          </Button>
+        </div>
       ) : null}
     </section>
   );

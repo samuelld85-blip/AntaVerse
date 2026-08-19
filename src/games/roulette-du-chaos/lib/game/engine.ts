@@ -111,6 +111,7 @@ export function revealEvent(
     neighborSide: null,
     choiceKey: null,
     mysteryPickIndex: null,
+    revealConfirmed: false,
     miniGameResult: null,
     pending: null,
     outcome: null,
@@ -170,6 +171,16 @@ export function submitMysteryPick(
   const resolution = expectingPending(game, "mysteryPick");
   if (!resolution) return game;
   return runResolutionLoop(game, { ...resolution, mysteryPickIndex: index }, random, now);
+}
+
+export function submitReveal(
+  game: GameState,
+  random: () => number = Math.random,
+  now = Date.now(),
+): GameState {
+  const resolution = expectingPending(game, "reveal");
+  if (!resolution) return game;
+  return runResolutionLoop(game, { ...resolution, revealConfirmed: true }, random, now);
 }
 
 /** A mini-game session finished — feed its outcome back into the event that requested it. */
@@ -235,6 +246,7 @@ function buildResolveInput(game: GameState, resolution: ResolutionState): Resolv
     neighborSide: resolution.neighborSide,
     choiceKey: resolution.choiceKey,
     mysteryPickIndex: resolution.mysteryPickIndex,
+    revealConfirmed: resolution.revealConfirmed,
     miniGameResult: resolution.miniGameResult,
   };
 }

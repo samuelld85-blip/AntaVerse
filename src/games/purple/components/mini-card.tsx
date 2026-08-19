@@ -1,8 +1,11 @@
+import type { Rank, Suit } from "@/games/purple/lib/game/types";
+
 interface MiniCardProps {
-  suit: "hearts" | "diamonds" | "clubs" | "spades";
+  rank?: Rank;
+  suit: Suit;
 }
 
-export function MiniCard({ suit }: MiniCardProps) {
+export function MiniCard({ rank, suit }: MiniCardProps) {
   const isRed = suit === "hearts" || suit === "diamonds";
   const suitSymbol = {
     hearts: "♥",
@@ -13,6 +16,7 @@ export function MiniCard({ suit }: MiniCardProps) {
 
   return (
     <div className={isRed ? "mini-card mini-card--red" : "mini-card mini-card--black"}>
+      {rank ? <span className="mini-card-rank">{rank}</span> : null}
       <span className="mini-card-suit">{suitSymbol}</span>
     </div>
   );

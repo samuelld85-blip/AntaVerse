@@ -15,6 +15,7 @@ import {
   submitChoice,
   submitMysteryPick,
   submitNeighbor,
+  submitReveal,
   submitTargets,
 } from "./engine";
 import { CATEGORIES } from "./wheel";
@@ -318,6 +319,18 @@ describe("J8 Roi de la roulette", () => {
 });
 
 describe("event catalogue", () => {
+  it("keeps Nombre maudit hidden until the group reveals the card", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "TOUS", "t7", [0.42]);
+
+    expect(game.resolution?.pending?.kind).toBe("reveal");
+    expect(game.resolution?.outcome).toBeNull();
+
+    game = submitReveal(game);
+    expect(game.resolution?.pending).toBeNull();
+    expect(game.resolution?.outcome?.lines[0]).toBe("Nombre maudit : 3");
+  });
+
   it("carries the full 8 x 12 rule set with unique ids", () => {
     const categories = Object.keys(EVENTS_BY_CATEGORY) as CategoryId[];
     expect(categories).toHaveLength(8);
@@ -372,6 +385,8 @@ describe("event catalogue", () => {
             game = submitChoice(game, pending.options[0]!.key);
           } else if (pending.kind === "mysteryPick") {
             game = submitMysteryPick(game, 0);
+          } else if (pending.kind === "reveal") {
+            game = submitReveal(game);
           }
         }
 

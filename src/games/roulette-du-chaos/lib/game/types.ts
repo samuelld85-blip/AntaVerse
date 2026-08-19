@@ -67,6 +67,11 @@ export interface MysteryPickRequest {
   count: number;
 }
 
+export interface RevealRequest {
+  kind: "reveal";
+  label: string;
+}
+
 export interface EngineRandomRequest {
   kind: "engineRandom";
   slots: string[];
@@ -77,6 +82,7 @@ export type NextInputRequest =
   | PickNeighborRequest
   | ChoiceRequest
   | MysteryPickRequest
+  | RevealRequest
   | EngineRandomRequest;
 
 export type MiniGameKind =
@@ -132,6 +138,7 @@ export interface ResolveInput {
   neighborSide: "left" | "right" | null;
   choiceKey: string | null;
   mysteryPickIndex: number | null;
+  revealConfirmed: boolean;
   miniGameResult: MiniGameOutcome | null;
 }
 
@@ -159,6 +166,7 @@ export interface ResolutionState {
   neighborSide: "left" | "right" | null;
   choiceKey: string | null;
   mysteryPickIndex: number | null;
+  revealConfirmed: boolean;
   miniGameResult: MiniGameOutcome | null;
   pending: NextInputRequest | null;
   outcome: TurnOutcome | null;

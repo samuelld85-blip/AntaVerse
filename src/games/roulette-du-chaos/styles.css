@@ -591,6 +591,32 @@ html[data-theme="light"] .brand-mark--rdc {
   transform: scale(0.94) rotateY(90deg);
 }
 
+.reveal-picker {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  gap: 0.8rem;
+}
+.reveal-card {
+  display: grid;
+  width: min(10rem, 42vw);
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  border: 1px solid var(--rdc-regle);
+  border-radius: 1.15rem;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--rdc-regle) 25%, var(--surface-raised)), var(--surface));
+  color: var(--rdc-regle);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  font-size: 3rem;
+  font-weight: 950;
+}
+.reveal-picker-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
 /* Die / coin flourishes ----------------------------------------------------- */
 
 .die-face-2d {

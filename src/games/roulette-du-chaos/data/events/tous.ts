@@ -16,6 +16,7 @@ import {
   hasSlots,
   needChoice,
   needRandom,
+  needReveal,
   outcome,
   pickIndexFromSlot,
 } from "../../lib/game/resolution-helpers";
@@ -129,11 +130,12 @@ export const tousEvents: EventDefinition[] = [
     category: "TOUS",
     title: "Nombre maudit",
     prompt:
-      "Tout le monde montre simultanément entre 0 et 5 doigts. L'application tire ensuite un nombre de 0 à 5 : ceux qui ont exactement ce nombre boivent 2 ; si personne ne l'a, le ou les plus proches boivent 1.",
+      "Tout le monde montre simultanément entre 1 et 5 doigts. Quand tout le monde a choisi, révélez le nombre maudit : ceux qui ont exactement ce nombre boivent 2 ; si personne ne l'a, le ou les plus proches boivent 1.",
     visualHint: "none",
     resolve(input) {
       if (!hasSlots(input.randomSlots, "cursed")) return needRandom("cursed");
-      const cursed = pickIndexFromSlot(input.randomSlots.cursed!, 6);
+      if (!input.revealConfirmed) return needReveal("Révéler la carte");
+      const cursed = pickIndexFromSlot(input.randomSlots.cursed!, 5) + 1;
       return done(
         outcome("Nombre maudit", [
           `Nombre maudit : ${cursed}`,
