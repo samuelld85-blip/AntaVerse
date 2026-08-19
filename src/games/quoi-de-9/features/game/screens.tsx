@@ -56,7 +56,7 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
         <button
           type="button"
           onClick={onAbandon}
-          className="min-h-11 rounded-full px-3 text-[10px] font-bold uppercase tracking-[0.12em] text-white/55"
+          className="min-h-11 rounded-full px-3 text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary"
         >
           Quitter
         </button>
@@ -116,7 +116,7 @@ function HudTeam({
 }) {
   return (
     <div className={`min-w-0 ${align === "right" ? "text-right" : align === "center" ? "text-center" : ""}`}>
-      <p className={`truncate text-[10px] font-bold ${active ? "text-white" : "text-white/58"}`}>
+      <p className={`truncate text-[10px] font-bold ${active ? "text-white" : "text-tertiary"}`}>
         <span
           className="mr-1.5 inline-block h-2 w-2 rounded-full"
           style={{ backgroundColor: team.color }}
@@ -207,7 +207,7 @@ export function RoundSetupScreen({
         <h1 className="balance text-[clamp(2rem,7vw,3rem)] font-black leading-[1.02] tracking-[-0.025em]">
           {active.name} répond
         </h1>
-        <p className="mt-3 text-sm leading-relaxed text-white/58">
+        <p className="mt-3 text-sm leading-relaxed text-tertiary">
           {waitingForPhone ? "Passez le téléphone à " : null}
           <strong style={{ color: master.color }}>{master.name}</strong>
           {!waitingForPhone ? " garde le téléphone" : null}
@@ -222,7 +222,7 @@ export function RoundSetupScreen({
 
         {waitingForPhone ? (
           <div>
-            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[.045] p-3">
+            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[color:var(--surface-subtle)] p-3">
               <span
                 className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[.07] text-xl text-[var(--accent-text)]"
                 aria-hidden="true"
@@ -231,7 +231,7 @@ export function RoundSetupScreen({
               </span>
               <div className="min-w-0 text-left">
                 <p className="truncate text-base font-black leading-snug">{master.name}</p>
-                <p className="mt-0.5 text-[11px] leading-relaxed text-white/55">
+                <p className="mt-0.5 text-[11px] leading-relaxed text-tertiary">
                   Choisit le thème, puis valide les réponses
                 </p>
               </div>
@@ -257,7 +257,7 @@ export function RoundSetupScreen({
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-sm font-black">Thème au hasard</span>
-                <span className="mt-0.5 block text-[10px] font-medium text-white/58">
+                <span className="mt-0.5 block text-[10px] font-medium text-tertiary">
                   Choix standard · aucun joker utilisé
                 </span>
               </span>
@@ -311,7 +311,7 @@ export function RoundSetupScreen({
 
         {choosingDifficulty && availability ? (
           <div>
-            <div className="mb-3 flex items-center gap-2 rounded-xl bg-white/[.045] px-3 py-2">
+            <div className="mb-3 flex items-center gap-2 rounded-xl bg-[color:var(--surface-subtle)] px-3 py-2">
               <span className="text-xl" aria-hidden="true">
                 {theme.icon}
               </span>
@@ -354,7 +354,7 @@ export function RoundSetupScreen({
         ) : null}
       </div>
       {!waitingForPhone ? (
-        <p className="mt-3 text-center text-[11px] text-white/55">
+        <p className="mt-3 text-center text-[11px] text-tertiary">
           Ensuite, {master.name} affiche les réponses à l’abri des regards.
         </p>
       ) : null}
@@ -385,13 +385,13 @@ function JokerChoice({
       className="flex min-h-16 items-center gap-3 rounded-2xl border border-white/10 bg-white/[.04] px-4 py-3 text-left transition active:scale-[.98] disabled:opacity-35"
     >
       <span
-        className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/[.06] text-lg text-[var(--accent-text)]"
+        className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[color:var(--surface-subtle)] text-lg text-[var(--accent-text)]"
         aria-hidden="true"
       >
         {icon}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.12em] text-white/58">
+        <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.12em] text-tertiary">
           <span
             className="h-1.5 w-1.5 shrink-0 rounded-full"
             style={{ backgroundColor: teamColor }}
@@ -400,10 +400,10 @@ function JokerChoice({
         </span>
         <span className="mt-1 block truncate text-sm font-black">{label}</span>
         {!available ? (
-          <span className="mt-0.5 block truncate text-[9px] text-white/50">Joker déjà utilisé</span>
+          <span className="mt-0.5 block truncate text-[9px] text-tertiary">Joker déjà utilisé</span>
         ) : null}
       </span>
-      <span className="pr-1 text-sm text-white/38" aria-hidden="true">
+      <span className="pr-1 text-sm text-quaternary" aria-hidden="true">
         {available ? "→" : "×"}
       </span>
     </button>
@@ -432,7 +432,7 @@ function SetupChoice({
       type="button"
       disabled={disabled}
       onClick={onClick}
-      className={`flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[.045] text-center transition active:scale-[.97] disabled:opacity-35 ${primaryChoice ? "min-h-28 px-3 py-4" : "min-h-24 px-2 py-3"}`}
+      className={`flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-[color:var(--surface-subtle)] text-center transition active:scale-[.97] disabled:opacity-35 ${primaryChoice ? "min-h-28 px-3 py-4" : "min-h-24 px-2 py-3"}`}
     >
       {primaryChoice ? (
         <>
@@ -456,7 +456,7 @@ function SetupChoice({
             {icon}
           </span>
           <span className="mt-2 text-xs font-bold leading-tight">{label}</span>
-          <span className="mt-1 text-[9px] leading-tight text-white/55">{meta}</span>
+          <span className="mt-1 text-[9px] leading-tight text-tertiary">{meta}</span>
         </>
       )}
     </button>
@@ -481,7 +481,7 @@ export function JokerConfirmationScreen({
         Joker à confirmer
       </p>
       <h1 className="display-face mt-3 text-6xl">{theme?.name}</h1>
-      <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/55">
+      <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-tertiary">
         {isOpponent
           ? "Ce thème sera imposé à l’équipe adverse."
           : "Ce thème sera choisi pour votre tour."}{" "}
@@ -516,7 +516,7 @@ export function ThemeRevealScreen({
   return (
     <section className="flex flex-1 flex-col justify-center text-center">
       <span className="text-6xl text-[var(--accent-text)]">{theme.icon}</span>
-      <p className="mt-5 text-xs font-bold uppercase tracking-[.18em] text-white/58">{label}</p>
+      <p className="mt-5 text-xs font-bold uppercase tracking-[.18em] text-tertiary">{label}</p>
       <h1 className="display-face mt-3 text-6xl leading-[.86]">{theme.name}</h1>
       <p className="mx-auto mt-5 max-w-sm text-sm text-white/65">
         L’équipe qui répond choisit maintenant le niveau de difficulté.
@@ -547,7 +547,7 @@ export function ChoiceConfirmationScreen({
       <span className="text-5xl text-[var(--accent-text)]" aria-hidden="true">
         {theme.icon}
       </span>
-      <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-white/58">
+      <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-tertiary">
         Choix définitif
       </p>
       <h1 className="display-face balance mt-3 text-6xl leading-[.86]">
@@ -582,7 +582,7 @@ export function PreparationScreen({
   return (
     <section className="flex flex-1 flex-col justify-center text-center">
       <div
-        className="mx-auto grid h-24 w-24 place-items-center rounded-full border border-white/15 bg-white/[.05] text-4xl"
+        className="mx-auto grid h-24 w-24 place-items-center rounded-full border border-subtle bg-[color:var(--surface-subtle)] text-4xl"
         aria-hidden="true"
       >
         ◉
@@ -647,7 +647,7 @@ export function QuestionScreen({
         <div className="p-3 pb-2">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/58">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
                 {theme.name} · {question.difficultyLabel}
               </p>
               <p className="mt-1 text-xs font-bold" style={{ color: active.color }}>
@@ -660,7 +660,7 @@ export function QuestionScreen({
               <span className="display-face block text-4xl leading-none tabular-nums">
                 {isCorrection ? "—" : formatTime(remainingSeconds)}
               </span>
-              <span className="text-[9px] font-bold uppercase tracking-wider text-white/55">
+              <span className="text-[9px] font-bold uppercase tracking-wider text-tertiary">
                 {isReady ? "prêt" : isCorrection ? "correction" : expired ? "terminé" : "restantes"}
               </span>
             </div>
@@ -674,7 +674,7 @@ export function QuestionScreen({
           <h1 className="balance mt-3 text-[clamp(1.15rem,5.5vw,1.7rem)] font-black leading-[1.08]">
             {question.question}
           </h1>
-          <p className="mt-1.5 text-[10px] text-white/58">{master.name} lit à voix haute.</p>
+          <p className="mt-1.5 text-[10px] text-tertiary">{master.name} lit à voix haute.</p>
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col gap-1.5 border-t border-white/10 bg-black/10 p-2">
@@ -749,16 +749,16 @@ export function QuestionScreen({
 
       <div className="mt-2 flex items-end justify-between gap-4 px-1">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/55">
+          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
             Réponses
           </p>
           <p className="display-face text-3xl">
             {game.revealedAnswerIds.length}
-            <span className="text-white/45">/9</span>
+            <span className="text-quaternary">/9</span>
           </p>
         </div>
         <div className="text-right">
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/55">
+          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
             Score provisoire
           </p>
           <p
@@ -869,7 +869,7 @@ export function TurnResultsScreen({
             </>
           )}
         </p>
-        <p className="mt-2 text-[11px] text-white/58">
+        <p className="mt-2 text-[11px] text-tertiary">
           {result.themeLabel} · Niveau {result.difficultyLevel} — {result.difficultyLabel}
         </p>
         <h1 className="balance mx-auto mt-1.5 max-w-xl text-[clamp(1rem,3.8vw,1.3rem)] font-black leading-tight">
@@ -968,7 +968,7 @@ export function ScoreboardScreen({
                     style={{ backgroundColor: team.color }}
                   />
                   <h2 className="text-lg font-black">{team.name}</h2>
-                  <p className="mt-1 text-xs text-white/58">
+                  <p className="mt-1 text-xs text-tertiary">
                     {teamTurns.reduce((sum, turn) => sum + turn.foundAnswerIds.length, 0)} réponses
                     trouvées
                   </p>
@@ -979,7 +979,7 @@ export function ScoreboardScreen({
           );
         })}
       </div>
-      <p className="mt-5 text-center text-xs text-white/55">
+      <p className="mt-5 text-center text-xs text-tertiary">
         Il reste {game.roundsPerTeam * game.teams.length - game.history.length} tours.
       </p>
       <Button className="mt-6" onClick={onContinue}>
@@ -1028,14 +1028,14 @@ export function FinalScreen({
               />
               <h2 className="mt-4 truncate font-black">{team.name}</h2>
               <p className="display-face mt-2 text-4xl">{formatScore(team.score)}</p>
-              <p className="mt-1 text-[10px] uppercase tracking-wider text-white/55">
+              <p className="mt-1 text-[10px] uppercase tracking-wider text-tertiary">
                 {answers} bonnes réponses
               </p>
               <div className="mt-4 flex gap-1.5">
                 {DIFFICULTY_LEVELS.map((difficultyLevel) => (
                   <span
                     key={difficultyLevel}
-                    className="rounded-lg bg-white/[.06] px-2 py-1 text-[9px] font-semibold text-white/60"
+                    className="rounded-lg bg-[color:var(--surface-subtle)] px-2 py-1 text-[9px] font-semibold text-white/60"
                   >
                     {GAME_CONFIG.difficulties[difficultyLevel].label.slice(0, 1)}{" "}
                     {turns.filter((turn) => turn.difficultyLevel === difficultyLevel).length}
@@ -1047,7 +1047,7 @@ export function FinalScreen({
         })}
       </div>
       <div className="mt-7 text-left">
-        <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-white/58">
+        <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-tertiary">
           Historique des manches
         </h2>
         <div className="grid gap-3">
@@ -1068,7 +1068,7 @@ export function FinalScreen({
                   {turn.themeLabel} · Niveau {turn.difficultyLevel} — {turn.difficultyLabel} ·{" "}
                   {turn.foundAnswerIds.length}/9
                 </p>
-                <p className="mt-1 text-[10px] text-white/55">
+                <p className="mt-1 text-[10px] text-tertiary">
                   {turn.themeSelection.selectionMode === "opponent_imposed"
                     ? "Joker Thème adverse"
                     : turn.themeSelection.selectionMode === "active_team_choice"

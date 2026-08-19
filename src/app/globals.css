@@ -8,11 +8,21 @@
   --surface-dark-secondary: #151e29;
   --text-dark-primary: #f7f8fa;
   --text-dark-secondary: #9199a3;
+  --text-dark-tertiary: rgba(255, 255, 255, 0.55);
+  --text-dark-quaternary: rgba(255, 255, 255, 0.38);
+  --text-dark-muted: rgba(255, 255, 255, 0.45);
+  --surface-dark-subtle: rgba(255, 255, 255, 0.05);
+  --surface-dark-hover: rgba(255, 255, 255, 0.09);
   --border-dark: rgba(255, 255, 255, 0.12);
   --bg-light: #f7f7f4;
   --surface-light: #ffffff;
   --text-light-primary: #11151b;
   --text-light-secondary: #68707a;
+  --text-light-tertiary: #8f959f;
+  --text-light-quaternary: #a8aeb6;
+  --text-light-muted: #7a7e87;
+  --surface-light-subtle: rgba(0, 0, 0, 0.04);
+  --surface-light-hover: rgba(0, 0, 0, 0.08);
   --border-light: rgba(17, 21, 27, 0.12);
   --space-1: 4px;
   --space-2: 8px;
@@ -45,6 +55,19 @@
   --launcher-font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Défaut: mode light */
+:root {
+  --text-primary: var(--text-light-primary);
+  --text-secondary: var(--text-light-secondary);
+  --text-tertiary: var(--text-light-tertiary);
+  --text-quaternary: var(--text-light-quaternary);
+  --text-muted: var(--text-light-muted);
+  --surface-subtle: var(--surface-light-subtle);
+  --surface-hover: var(--surface-light-hover);
+  --bg: var(--bg-light);
+  --border: var(--border-light);
+}
+
 html[data-theme="dark"] {
   --launcher-page: var(--bg-dark);
   --launcher-surface: var(--surface-dark);
@@ -57,6 +80,15 @@ html[data-theme="dark"] {
   --launcher-gradient: linear-gradient(155deg, #0b1118 0%, #0c1119 52%, #110d18 100%);
   --launcher-index: rgba(255, 255, 255, 0.19);
   --launcher-icon-ring: rgba(255, 255, 255, 0.04);
+  --text-primary: var(--text-dark-primary);
+  --text-secondary: var(--text-dark-secondary);
+  --text-tertiary: var(--text-dark-tertiary);
+  --text-quaternary: var(--text-dark-quaternary);
+  --text-muted: var(--text-dark-muted);
+  --surface-subtle: var(--surface-dark-subtle);
+  --surface-hover: var(--surface-dark-hover);
+  --bg: var(--bg-dark);
+  --border: var(--border-dark);
 }
 
 * {
@@ -97,6 +129,40 @@ a {
 :focus-visible {
   outline: 3px solid var(--launcher-accent);
   outline-offset: 3px;
+}
+
+@layer components {
+  .text-primary {
+    @apply text-[color:var(--text-primary)];
+  }
+
+  .text-secondary {
+    @apply text-[color:var(--text-secondary)];
+  }
+
+  .text-tertiary {
+    @apply text-[color:var(--text-tertiary)];
+  }
+
+  .text-quaternary {
+    @apply text-[color:var(--text-quaternary)];
+  }
+
+  .text-muted {
+    @apply text-[color:var(--text-muted)];
+  }
+
+  .surface-subtle {
+    @apply bg-[color:var(--surface-subtle)];
+  }
+
+  .surface-hover {
+    @apply bg-[color:var(--surface-hover)];
+  }
+
+  .border-subtle {
+    @apply border-[color:var(--border)];
+  }
 }
 
 .launcher-shell {

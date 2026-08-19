@@ -14,8 +14,8 @@ export function Button({
 }) {
   const variants = {
     primary: "bg-[var(--lime)] text-[var(--accent-ink)] shadow-[0_12px_32px_var(--accent-glow)]",
-    secondary: "border border-white/15 bg-white/[.07] text-white hover:bg-white/[.1]",
-    ghost: "text-white/70 hover:bg-white/[.06] hover:text-white",
+    secondary: "border border-subtle bg-[color:var(--surface-subtle)] text-primary hover:bg-[color:var(--surface-hover)]",
+    ghost: "text-secondary hover:bg-[color:var(--surface-subtle)] hover:text-primary",
     danger: "border border-[var(--coral)]/40 bg-[var(--coral)]/10 text-[var(--coral)]",
   };
   return <button className={`${baseButton} ${variants[variant]} ${className}`} {...props} />;
@@ -33,8 +33,8 @@ export function ButtonLink({
 }) {
   const variants = {
     primary: "bg-[var(--lime)] text-[var(--accent-ink)] shadow-[0_12px_32px_var(--accent-glow)]",
-    secondary: "border border-white/15 bg-white/[.07] text-white",
-    ghost: "text-white/70 hover:bg-white/[.06] hover:text-white",
+    secondary: "border border-subtle bg-[color:var(--surface-subtle)] text-primary",
+    ghost: "text-secondary hover:bg-[color:var(--surface-subtle)] hover:text-primary",
   };
   return (
     <Link className={`${baseButton} ${variants[variant]} ${className}`} {...props}>
@@ -65,17 +65,17 @@ export function Field({
           {error}
         </span>
       ) : hint ? (
-        <span className="text-xs font-medium text-white/58">{hint}</span>
+        <span className="text-xs font-medium text-tertiary">{hint}</span>
       ) : null}
     </label>
   );
 }
 
 export const inputClassName =
-  "min-h-14 w-full rounded-2xl border border-white/15 bg-white/[.06] px-4 text-base font-semibold text-white placeholder:text-white/40 transition focus:border-[var(--lime)] focus:bg-white/[.09] focus:outline-none";
+  "min-h-14 w-full rounded-2xl border border-subtle bg-[color:var(--surface-subtle)] px-4 text-base font-semibold text-primary placeholder:text-quaternary transition focus:border-[var(--lime)] focus:bg-[color:var(--surface-hover)] focus:outline-none";
 
 export const compactInputClassName =
-  "min-h-11 w-full rounded-xl border border-white/15 bg-white/[.06] px-3 text-base font-semibold text-white placeholder:text-white/40 transition focus:border-[var(--lime)] focus:bg-white/[.09] focus:outline-none";
+  "min-h-11 w-full rounded-xl border border-subtle bg-[color:var(--surface-subtle)] px-3 text-base font-semibold text-primary placeholder:text-quaternary transition focus:border-[var(--lime)] focus:bg-[color:var(--surface-hover)] focus:outline-none";
 
 export function ProgressDots({ current, total }: { current: number; total: number }) {
   return (

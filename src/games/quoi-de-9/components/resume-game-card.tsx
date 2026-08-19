@@ -33,7 +33,7 @@ export function ResumeGameCard() {
           <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--accent-text)]">
             Partie en cours
           </p>
-          <p className="mt-1 truncate text-sm font-bold text-white/72">
+          <p className="mt-1 truncate text-sm font-bold text-primary">
             {game.teams[0]!.name} · {game.teams[1]!.name}
           </p>
         </div>
@@ -51,7 +51,7 @@ export function ResumeGameCard() {
         <button
           type="button"
           onClick={() => void abandon()}
-          className="min-h-12 rounded-xl border border-white/10 px-4 text-xs font-semibold text-white/58"
+          className="min-h-12 rounded-xl border border-white/10 px-4 text-xs font-semibold text-tertiary"
           aria-label={FR.abandonGame}
         >
           Effacer

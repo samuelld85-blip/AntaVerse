@@ -29,7 +29,7 @@ export function ModeSelectionScreen({
             🏆
           </span>
           <span className="block text-base font-black">Compétition</span>
-          <span className="block text-[10px] font-medium text-white/55">
+          <span className="block text-[10px] font-medium text-tertiary">
             Faites deviner un maximum de mots et marquez des points
           </span>
         </button>
@@ -43,7 +43,7 @@ export function ModeSelectionScreen({
             🍺
           </span>
           <span className="block text-base font-black">Fun</span>
-          <span className="block text-[10px] font-medium text-white/55">
+          <span className="block text-[10px] font-medium text-tertiary">
             Faites deviner des mots et distribuez des gorgées
           </span>
         </button>

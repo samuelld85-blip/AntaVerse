@@ -158,7 +158,7 @@ export function SetupForm({ playMode }: { playMode: PlayMode }) {
           <button
             type="button"
             onClick={() => setHasThirdTeam(true)}
-            className="text-center text-sm text-white/55 transition hover:text-white/80"
+            className="text-center text-sm text-tertiary transition hover:text-primary/80"
           >
             + Ajouter une équipe
           </button>

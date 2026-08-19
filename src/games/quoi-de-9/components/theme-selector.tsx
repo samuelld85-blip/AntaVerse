@@ -20,7 +20,7 @@ export function ThemeSelector() {
             type="button"
             onClick={() => selectTheme(value)}
             aria-pressed={selected}
-            className={`flex min-h-11 items-center justify-center gap-2 rounded-xl border px-3 text-xs font-semibold transition ${selected ? "border-[var(--lime)] bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/15 bg-white/[.045] text-white/70"}`}
+            className={`flex min-h-11 items-center justify-center gap-2 rounded-xl border px-3 text-xs font-semibold transition ${selected ? "border-[var(--lime)] bg-[var(--lime)] text-[var(--accent-ink)]" : "border-subtle bg-[color:var(--surface-subtle)] text-secondary"}`}
           >
             <span aria-hidden="true">{icon}</span>
             {label}

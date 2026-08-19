@@ -29,7 +29,7 @@ export function ModeSelectionScreen({
             🏆
           </span>
           <span className="block text-base font-black">Compétition</span>
-          <span className="block text-[10px] font-medium text-white/55">
+          <span className="block text-[10px] font-medium text-tertiary">
             Marquez des points et visez le meilleur score
           </span>
         </button>
@@ -43,7 +43,7 @@ export function ModeSelectionScreen({
             🍺
           </span>
           <span className="block text-base font-black">Fun</span>
-          <span className="block text-[10px] font-medium text-white/55">
+          <span className="block text-[10px] font-medium text-tertiary">
             Trouvez des réponses et distribuez des gorgées
           </span>
         </button>

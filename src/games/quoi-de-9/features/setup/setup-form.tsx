@@ -83,7 +83,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
             return (
               <section
                 key={letter}
-                className="relative overflow-hidden rounded-[1.5rem] border border-white/12 px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
+                className="relative overflow-hidden rounded-[1.5rem] border border-subtle px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
                 style={{
                   background: `linear-gradient(115deg, ${selectedColor}20, rgba(255,255,255,.045) 48%)`,
                 }}
@@ -103,7 +103,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
                   <div className="min-w-0 flex-1">
                     <label
                       htmlFor={`team-${letter}-name`}
-                      className="block text-[9px] font-bold uppercase tracking-[0.16em] text-white/55"
+                      className="block text-[9px] font-bold uppercase tracking-[0.16em] text-tertiary"
                     >
                       Équipe {letter}
                     </label>
@@ -111,7 +111,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
                       {...register(nameField)}
                       id={`team-${letter}-name`}
                       aria-invalid={Boolean(errors[nameField])}
-                      className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-white/40"
+                      className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-quaternary"
                       maxLength={24}
                       autoComplete="off"
                     />
@@ -129,7 +129,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
 
           {hasThirdTeam && (
             <section
-              className="relative overflow-hidden rounded-[1.5rem] border border-white/12 px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
+              className="relative overflow-hidden rounded-[1.5rem] border border-subtle px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
               style={{
                 background: `linear-gradient(115deg, ${values.teamCColor}20, rgba(255,255,255,.045) 48%)`,
               }}
@@ -142,7 +142,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
               <button
                 type="button"
                 onClick={() => setHasThirdTeam(false)}
-                className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/60 transition hover:bg-white/20 hover:text-white"
+                className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/60 transition hover:bg-white/20 hover:text-primary"
                 aria-label="Supprimer équipe C"
               >
                 ×
@@ -157,7 +157,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
                 <div className="min-w-0 flex-1">
                   <label
                     htmlFor="team-c-name"
-                    className="block text-[9px] font-bold uppercase tracking-[0.16em] text-white/55"
+                    className="block text-[9px] font-bold uppercase tracking-[0.16em] text-tertiary"
                   >
                     Équipe C
                   </label>
@@ -165,7 +165,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
                     {...register("teamCName")}
                     id="team-c-name"
                     aria-invalid={Boolean(errors.teamCName)}
-                    className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-white/40"
+                    className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-quaternary"
                     maxLength={24}
                     autoComplete="off"
                   />
@@ -185,7 +185,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
           <button
             type="button"
             onClick={() => setHasThirdTeam(true)}
-            className="px-2 py-1 text-center text-sm text-white/55 transition hover:text-white/80"
+            className="px-2 py-1 text-center text-sm text-tertiary transition hover:text-primary/80"
           >
             + Ajouter équipe 3
           </button>
