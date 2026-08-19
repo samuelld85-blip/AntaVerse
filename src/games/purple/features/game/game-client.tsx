@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { BackButton } from "@/games/shared/components/back-button";
 import { Brand } from "@/games/purple/components/brand";
 import { PlayingCard } from "@/games/purple/components/playing-card";
 import { MiniCard } from "@/games/purple/components/mini-card";
@@ -193,30 +194,8 @@ export function GameClient() {
 
   return (
     <main className="purple-shell safe-shell">
-      <section className="purple-stats" aria-label="État de la partie">
-        <div className="purple-stat">
-          <span className="purple-stat-label">Manche</span>
-          <strong className="purple-stat-value">{game.progress}</strong>
-          <span
-            className={
-              canPass(game) ? "purple-stat-hint purple-stat-hint--ready" : "purple-stat-hint"
-            }
-          >
-            {canPass(game) ? "Peut passer" : "3 pour passer"}
-          </span>
-        </div>
-        <div className="purple-stat purple-stat--pile">
-          <span className="purple-stat-label">Pot commun</span>
-          <strong className="purple-stat-value">{game.pile}</strong>
-        </div>
-        <div className="purple-stat">
-          <span className="purple-stat-label">Paquet</span>
-          <strong className="purple-stat-value">{game.deck.length}</strong>
-          <span className="purple-stat-hint">cartes</span>
-        </div>
-      </section>
-
-      <section className="purple-active-player">
+      <header className="purple-header">
+        <Brand compact />
         <div className="purple-reveal-toggle" role="group" aria-label="Mode de révélation">
           <button
             type="button"
@@ -245,6 +224,33 @@ export function GameClient() {
             Manuel
           </button>
         </div>
+        <BackButton homeHref="/purple" />
+      </header>
+
+      <section className="purple-stats" aria-label="État de la partie">
+        <div className="purple-stat">
+          <span className="purple-stat-label">Manche</span>
+          <strong className="purple-stat-value">{game.progress}</strong>
+          <span
+            className={
+              canPass(game) ? "purple-stat-hint purple-stat-hint--ready" : "purple-stat-hint"
+            }
+          >
+            {canPass(game) ? "Peut passer" : "3 pour passer"}
+          </span>
+        </div>
+        <div className="purple-stat purple-stat--pile">
+          <span className="purple-stat-label">Pot commun</span>
+          <strong className="purple-stat-value">{game.pile}</strong>
+        </div>
+        <div className="purple-stat">
+          <span className="purple-stat-label">Paquet</span>
+          <strong className="purple-stat-value">{game.deck.length}</strong>
+          <span className="purple-stat-hint">cartes</span>
+        </div>
+      </section>
+
+      <section className="purple-active-player">
         <div className="purple-active-copy">
           <span className="purple-active-label">AU TOUR DE</span>
           <span className="purple-active-name">{currentPlayer?.name}</span>
@@ -252,44 +258,52 @@ export function GameClient() {
       </section>
 
       <section
-        className={isManualPending ? "purple-stage purple-stage--tappable" : "purple-stage"}
+        className={[
+          "purple-stage",
+          isManualPending ? "purple-stage--tappable" : "",
+          lastGuess ? "purple-stage--has-result" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
         aria-live="polite"
         onClick={isManualPending ? revealNextCard : undefined}
       >
         {lastGuess ? (
-          <>
+          <div className="purple-stage-content">
             <div className="cards-reveal-row" key={roundKey}>
               {visibleCards.map((card, index) => (
                 <PlayingCard card={card} index={index} key={card.id} />
               ))}
             </div>
-            {!revealing ? (
-              <div
-                className={
-                  lastGuess.outcome === "success"
-                    ? "purple-result purple-result--success"
-                    : "purple-result purple-result--failure"
-                }
-              >
-                <p className="purple-result-outcome">
-                  {lastGuess.outcome === "success" ? "Réussi" : "Échoué"}
-                </p>
-                <h1 className="purple-result-headline">
-                  {lastGuess.outcome === "success"
-                    ? `${GUESS_LABEL[lastGuess.guessType]} !`
-                    : GUESS_LABEL[lastGuess.guessType]}
-                </h1>
-                <p className="purple-result-detail">
-                  {lastGuess.outcome === "success"
-                    ? `+${lastGuess.sipsAdded} ${sipsWord(lastGuess.sipsAdded)} dans le pot`
-                    : `${currentPlayer?.name} boit ${lastGuess.sipsDrunk} ${sipsWord(lastGuess.sipsDrunk)}`}
-                </p>
-              </div>
-            ) : null}
-            {!revealing && lastGuess.reshuffled ? (
-              <p className="purple-reshuffle-pill">Nouveau paquet mélangé</p>
-            ) : null}
-          </>
+            <div className="purple-stage-result">
+              {!revealing ? (
+                <div
+                  className={
+                    lastGuess.outcome === "success"
+                      ? "purple-result purple-result--success"
+                      : "purple-result purple-result--failure"
+                  }
+                >
+                  <p className="purple-result-outcome">
+                    {lastGuess.outcome === "success" ? "Réussi" : "Échoué"}
+                  </p>
+                  <h1 className="purple-result-headline">
+                    {lastGuess.outcome === "success"
+                      ? `${GUESS_LABEL[lastGuess.guessType]} !`
+                      : GUESS_LABEL[lastGuess.guessType]}
+                  </h1>
+                  <p className="purple-result-detail">
+                    {lastGuess.outcome === "success"
+                      ? `+${lastGuess.sipsAdded} ${sipsWord(lastGuess.sipsAdded)} dans le pot`
+                      : `${currentPlayer?.name} boit ${lastGuess.sipsDrunk} ${sipsWord(lastGuess.sipsDrunk)}`}
+                  </p>
+                </div>
+              ) : null}
+              {!revealing && lastGuess.reshuffled ? (
+                <p className="purple-reshuffle-pill">Nouveau paquet mélangé</p>
+              ) : null}
+            </div>
+          </div>
         ) : (
           <div className="purple-idle">
             <p>Choisissez une carte à deviner.</p>
