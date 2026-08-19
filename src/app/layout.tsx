@@ -32,6 +32,38 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
+// Filet de sécurité inscrit dans le document lui-même, donc actif même si les chunks React
+// ne se chargent pas. Il recharge la page quand un nouveau service worker prend la main, et,
+// si le HTML servi provient d'un déploiement supprimé (feuille de style en 404), purge les
+// caches puis se désinscrit une seule fois : la PWA se répare sans réinstallation.
+const CACHE_RECOVERY_SCRIPT = `(function(){
+if(!("serviceWorker" in navigator))return;
+var KEY="antaverse:sw-recovery";
+var reloading=false;
+function reload(){if(reloading)return;reloading=true;location.reload()}
+function recover(reason){
+try{if(sessionStorage.getItem(KEY))return;sessionStorage.setItem(KEY,reason)}catch(e){}
+var jobs=[];
+try{if(window.caches)jobs.push(caches.keys().then(function(k){return Promise.all(k.map(function(n){return caches.delete(n)}))}))}catch(e){}
+jobs.push(navigator.serviceWorker.getRegistrations().then(function(rs){return Promise.all(rs.map(function(r){return r.unregister()}))}));
+Promise.all(jobs).then(reload,reload);
+}
+var hadController=!!navigator.serviceWorker.controller;
+navigator.serviceWorker.addEventListener("controllerchange",function(){if(hadController)reload()});
+navigator.serviceWorker.addEventListener("message",function(e){if(e.data&&e.data.type==="antaverse:stale-asset")recover("asset")});
+if(navigator.serviceWorker.startMessages)navigator.serviceWorker.startMessages();
+function isLoaded(link){
+var sheet=link.sheet;
+if(!sheet)return false;
+try{return sheet.cssRules.length>0}catch(e){return true}
+}
+addEventListener("load",function(){
+var links=document.querySelectorAll('link[rel="stylesheet"]');
+for(var i=0;i<links.length;i++){if(!isLoaded(links[i])){recover("css");return}}
+try{sessionStorage.removeItem(KEY)}catch(e){}
+});
+})();`;
+
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="fr" data-theme="dark" suppressHydrationWarning>
@@ -48,6 +80,13 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             __html: `try{var s=localStorage.getItem("antaverse:theme");document.documentElement.dataset.theme=s==="light"?"light":"dark"}catch(e){}`,
           }}
         />
+        {process.env.NODE_ENV === "production" ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: CACHE_RECOVERY_SCRIPT,
+            }}
+          />
+        ) : null}
       </head>
       <body>
         {children}

@@ -104,6 +104,21 @@ for (const url of sortedAssets) {
 const cacheVersion = `antaverse-${hash.digest("hex").slice(0, 12)}`;
 const manifest = `self.__ANTAVERSE_CACHE_VERSION = ${JSON.stringify(cacheVersion)};\nself.__ANTAVERSE_PRECACHE = ${JSON.stringify(sortedAssets, null, 2)};\n`;
 await writeFile(resolve(outputDirectory, "precache-manifest.js"), manifest, "utf8");
+
+// Le fichier `sw.js` est statique : sans empreinte de build, le navigateur considère le service
+// worker comme inchangé et conserve indéfiniment la génération précédente (et son cache).
+const buildStampMarker = "// build: ";
+const serviceWorkerPath = resolve(outputDirectory, "sw.js");
+const serviceWorkerSource = await readFile(serviceWorkerPath, "utf8");
+const serviceWorkerBody = serviceWorkerSource.split(buildStampMarker)[0].trimEnd();
+await writeFile(
+  serviceWorkerPath,
+  `${serviceWorkerBody}
+
+${buildStampMarker}${cacheVersion}
+`,
+  "utf8",
+);
 console.log(
   `Export statique prêt : ${sortedAssets.length} ressources précachées (${cacheVersion}).`,
 );
