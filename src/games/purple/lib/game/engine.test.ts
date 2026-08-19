@@ -3,6 +3,7 @@ import type { Card, GameState } from "./types";
 import {
   MIN_PROGRESS_TO_PASS,
   canPass,
+  canPlayHigherLower,
   createGame,
   evaluateGuess,
   nextPlayerIndex,
@@ -91,14 +92,43 @@ describe("evaluateGuess", () => {
     );
   });
 
-  it("SKUBRUM succeeds with 2 red + 1 black or 1 red + 2 black", () => {
-    expect(evaluateGuess("skubrum", [RED_1, RED_2, BLACK_1])).toBe("success");
-    expect(evaluateGuess("skubrum", [RED_1, BLACK_1, BLACK_2])).toBe("success");
+  it("SKUBRUM succeeds with 3 red + 1 black or 3 black + 1 red", () => {
+    expect(evaluateGuess("skubrum", [RED_1, RED_2, card("2", "hearts"), BLACK_1])).toBe("success");
+    expect(evaluateGuess("skubrum", [BLACK_1, BLACK_2, card("9", "clubs"), RED_1])).toBe("success");
   });
 
-  it("SKUBRUM fails with 3 red or 3 black", () => {
-    expect(evaluateGuess("skubrum", [RED_1, RED_2, card("2", "hearts")])).toBe("failure");
-    expect(evaluateGuess("skubrum", [BLACK_1, BLACK_2, card("9", "clubs")])).toBe("failure");
+  it("SKUBRUM fails with 2+2, 4+0, or any other distribution", () => {
+    expect(evaluateGuess("skubrum", [RED_1, RED_2, BLACK_1, BLACK_2])).toBe("failure");
+    expect(evaluateGuess("skubrum", [RED_1, RED_2, card("2", "hearts"), card("4", "diamonds")])).toBe(
+      "failure",
+    );
+    expect(evaluateGuess("skubrum", [BLACK_1, BLACK_2, card("9", "clubs"), card("10", "clubs")])).toBe(
+      "failure",
+    );
+  });
+
+  it("HIGHER succeeds when drawn card > reference card", () => {
+    const ref = card("9", "hearts");
+    expect(evaluateGuess("higher", [card("10", "diamonds")], ref)).toBe("success");
+    expect(evaluateGuess("higher", [card("K", "spades")], ref)).toBe("success");
+  });
+
+  it("HIGHER fails when drawn card <= reference card", () => {
+    const ref = card("9", "hearts");
+    expect(evaluateGuess("higher", [card("8", "clubs")], ref)).toBe("failure");
+    expect(evaluateGuess("higher", [card("9", "diamonds")], ref)).toBe("failure");
+  });
+
+  it("LOWER succeeds when drawn card < reference card", () => {
+    const ref = card("9", "hearts");
+    expect(evaluateGuess("lower", [card("8", "diamonds")], ref)).toBe("success");
+    expect(evaluateGuess("lower", [card("A", "spades")], ref)).toBe("success");
+  });
+
+  it("LOWER fails when drawn card >= reference card", () => {
+    const ref = card("9", "hearts");
+    expect(evaluateGuess("lower", [card("10", "clubs")], ref)).toBe("failure");
+    expect(evaluateGuess("lower", [card("9", "diamonds")], ref)).toBe("failure");
   });
 });
 
@@ -133,12 +163,12 @@ describe("submitGuess", () => {
     expect(next.progress).toBe(4);
   });
 
-  it("a successful SKUBRUM adds 3 to pile and progress", () => {
-    const game = makeGame([RED_1, RED_2, BLACK_1]);
+  it("a successful SKUBRUM adds 4 to pile and progress", () => {
+    const game = makeGame([RED_1, RED_2, card("2", "hearts"), BLACK_1]);
     const next = submitGuess(game, "skubrum", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("success");
-    expect(next.pile).toBe(3);
-    expect(next.progress).toBe(3);
+    expect(next.pile).toBe(4);
+    expect(next.progress).toBe(4);
   });
 
   it("consumes drawn cards from the deck even on failure", () => {
@@ -179,11 +209,11 @@ describe("submitGuess", () => {
     expect(next.deck).toHaveLength(51);
   });
 
-  it("crosses a deck boundary mid-guess: SKUBRUM with only 2 cards left", () => {
-    const game = makeGame([RED_1, BLACK_1]);
+  it("crosses a deck boundary mid-guess: SKUBRUM with only 3 cards left", () => {
+    const game = makeGame([RED_1, RED_2, card("2", "hearts")]);
     const next = submitGuess(game, "skubrum", seededRandom(1));
     expect(next.lastGuess?.reshuffled).toBe(true);
-    expect(next.lastGuess?.cards).toHaveLength(3);
+    expect(next.lastGuess?.cards).toHaveLength(4);
     expect(next.deck).toHaveLength(51);
   });
 
@@ -235,5 +265,136 @@ describe("nextPlayerIndex", () => {
     expect(nextPlayerIndex(0, 4)).toBe(1);
     expect(nextPlayerIndex(3, 4)).toBe(0);
     expect(nextPlayerIndex(0, 1)).toBe(0);
+  });
+});
+
+describe("higher/lower mechanics", () => {
+  function makeGame(deck: Card[], overrides: Partial<GameState> = {}): GameState {
+    const base = createGame({ playerNames: ["Samuel", "Emma"] }, seededRandom(1), 1_000);
+    return { ...base, deck, currentPlayerIndex: 0, ...overrides };
+  }
+
+  it("higher/lower is unavailable at the start of a turn", () => {
+    const game = makeGame([RED_1]);
+    expect(canPlayHigherLower(game)).toBe(false);
+  });
+
+  it("higher becomes available after the first card is drawn", () => {
+    const game = makeGame([card("9", "hearts"), card("10", "diamonds")]);
+    const after9 = submitGuess(game, "red", seededRandom(1));
+    expect(canPlayHigherLower(after9)).toBe(true);
+    expect(after9.lastCard?.rank).toBe("9");
+  });
+
+  it("HIGHER succeeds when new card > reference (9 → 10)", () => {
+    const ref9 = card("9", "hearts");
+    const draw10 = card("10", "diamonds");
+    const game = makeGame([draw10], { lastCard: ref9 });
+    const next = submitGuess(game, "higher", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("success");
+    expect(next.pile).toBe(1);
+    expect(next.progress).toBe(1);
+  });
+
+  it("HIGHER fails when new card <= reference (9 → 8)", () => {
+    const ref9 = card("9", "hearts");
+    const draw8 = card("8", "diamonds");
+    const game = makeGame([draw8], { lastCard: ref9, pile: 10, progress: 2 });
+    const next = submitGuess(game, "higher", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.pile).toBe(0);
+    expect(next.progress).toBe(0);
+    expect(next.lastCard).toBeUndefined();
+  });
+
+  it("HIGHER fails on equal cards (9 → 9)", () => {
+    const ref9 = card("9", "hearts");
+    const draw9 = card("9", "diamonds");
+    const game = makeGame([draw9], { lastCard: ref9, pile: 5, progress: 2 });
+    const next = submitGuess(game, "higher", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.pile).toBe(0);
+    expect(next.progress).toBe(0);
+  });
+
+  it("LOWER succeeds when new card < reference (9 → 8)", () => {
+    const ref9 = card("9", "hearts");
+    const draw8 = card("8", "diamonds");
+    const game = makeGame([draw8], { lastCard: ref9 });
+    const next = submitGuess(game, "lower", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("success");
+    expect(next.pile).toBe(1);
+    expect(next.progress).toBe(1);
+  });
+
+  it("LOWER fails when new card >= reference (9 → 10)", () => {
+    const ref9 = card("9", "hearts");
+    const draw10 = card("10", "diamonds");
+    const game = makeGame([draw10], { lastCard: ref9, pile: 8, progress: 2 });
+    const next = submitGuess(game, "lower", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.pile).toBe(0);
+    expect(next.progress).toBe(0);
+    expect(next.lastCard).toBeUndefined();
+  });
+
+  it("LOWER fails on equal cards (9 → 9)", () => {
+    const ref9 = card("9", "hearts");
+    const draw9 = card("9", "diamonds");
+    const game = makeGame([draw9], { lastCard: ref9, pile: 3, progress: 2 });
+    const next = submitGuess(game, "lower", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.pile).toBe(0);
+    expect(next.progress).toBe(0);
+  });
+
+  it("successful higher/lower updates lastCard for chaining", () => {
+    const ref9 = card("9", "hearts");
+    const draw10 = card("10", "diamonds");
+    const draw8 = card("8", "clubs");
+    const game = makeGame([draw10, draw8], { lastCard: ref9 });
+    const after10 = submitGuess(game, "higher", seededRandom(1));
+    expect(after10.lastCard?.rank).toBe("10");
+    expect(after10.lastGuess?.outcome).toBe("success");
+    const after8 = submitGuess(after10, "lower", seededRandom(1));
+    expect(after8.lastCard?.rank).toBe("8");
+    expect(after8.lastGuess?.outcome).toBe("success");
+    expect(after8.pile).toBe(2);
+    expect(after8.progress).toBe(2);
+  });
+
+  it("passing the turn clears lastCard", () => {
+    const game = makeGame([card("9", "hearts")], { progress: 3, lastCard: card("8", "hearts") });
+    const after = passTurn(game);
+    expect(canPlayHigherLower(after)).toBe(false);
+    expect(after.lastCard).toBeUndefined();
+  });
+
+  it("failed higher/lower clears lastCard", () => {
+    const ref9 = card("9", "hearts");
+    const draw7 = card("7", "clubs");
+    const game = makeGame([draw7], { lastCard: ref9, pile: 5, progress: 2 });
+    const next = submitGuess(game, "higher", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("failure");
+    expect(canPlayHigherLower(next)).toBe(false);
+  });
+
+  it("normal guess action sets lastCard", () => {
+    const card9 = card("9", "hearts");
+    const card8 = card("8", "clubs");
+    const game = makeGame([card9, card8]);
+    const after9 = submitGuess(game, "red", seededRandom(1));
+    expect(after9.lastCard?.rank).toBe("9");
+    expect(after9.lastGuess?.outcome).toBe("success");
+    const after8 = submitGuess(after9, "black", seededRandom(1));
+    expect(after8.lastCard?.rank).toBe("8");
+    expect(after8.lastGuess?.outcome).toBe("success");
+  });
+
+  it("multiple cards in a single guess uses the last drawn card", () => {
+    const game = makeGame([RED_1, BLACK_1, RED_2]);
+    const afterPurple = submitGuess(game, "purple", seededRandom(1));
+    expect(afterPurple.lastGuess?.cards).toHaveLength(2);
+    expect(afterPurple.lastCard?.rank).toBe(afterPurple.lastGuess?.cards[1]?.rank);
   });
 });

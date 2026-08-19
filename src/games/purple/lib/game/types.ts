@@ -9,7 +9,7 @@ export interface Card {
   color: CardColor;
 }
 
-export type GuessType = "red" | "black" | "purple" | "doublePurple" | "skubrum";
+export type GuessType = "red" | "black" | "purple" | "doublePurple" | "skubrum" | "higher" | "lower";
 
 export interface Player {
   id: string;
@@ -38,6 +38,7 @@ export interface GameState {
   pile: number;
   progress: number;
   lastGuess: LastGuess | null;
+  lastCard?: Card;
   createdAt: string;
   updatedAt: string;
 }
