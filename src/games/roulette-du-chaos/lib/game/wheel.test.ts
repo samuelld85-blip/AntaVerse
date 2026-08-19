@@ -37,9 +37,9 @@ describe("pickWeightedCategory", () => {
     }
   });
 
-  it("picks JACKPOT only in the last 4% of the roll", () => {
-    expect(pickWeightedCategory(0.965)).toBe("JACKPOT");
-    expect(pickWeightedCategory(0.955)).not.toBe("JACKPOT");
+  it("picks JACKPOT only inside its slice at the end of the roll", () => {
+    expect(pickWeightedCategory(0.96)).toBe("JACKPOT");
+    expect(pickWeightedCategory(0.91)).not.toBe("JACKPOT");
   });
 
   it("never throws for boundary slot values", () => {

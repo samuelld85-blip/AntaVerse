@@ -1,6 +1,5 @@
-// Face-à-face — both players privately guess ROUGE/NOIR, the app draws one
-// result. Exactly one correct guess wins; if both or neither guessed right,
-// the caller redraws with a new result until there's a single winner.
+// Rouge ou noir — le joueur actif devine seul. S'il a juste, l'adversaire
+// désigné boit ; s'il se trompe, c'est lui qui boit.
 
 export type BinaryOption = "rouge" | "noir";
 
@@ -10,12 +9,7 @@ export function drawBinaryResult(slotValue: number): BinaryOption {
 
 export function resolveBinaryPrediction(
   result: BinaryOption,
-  guessA: BinaryOption,
-  guessB: BinaryOption,
-): "a" | "b" | "replay" {
-  const aCorrect = guessA === result;
-  const bCorrect = guessB === result;
-  if (aCorrect && !bCorrect) return "a";
-  if (bCorrect && !aCorrect) return "b";
-  return "replay";
+  guess: BinaryOption,
+): "correct" | "wrong" {
+  return guess === result ? "correct" : "wrong";
 }

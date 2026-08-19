@@ -24,7 +24,10 @@ export function GameCard({ game, index }: { game: GameDefinition; index: number 
           <Image src={game.icon} alt="" width={88} height={88} sizes="72px" />
         </span>
         <span className="game-copy">
-          <strong>{game.name}</strong>
+          <strong>
+            {game.name}
+            {game.drinkingGame ? <span aria-hidden="true"> 🍺</span> : null}
+          </strong>
           <span>{game.description}</span>
         </span>
         <span className="game-arrow" aria-hidden="true">

@@ -21,8 +21,13 @@ export function TargetPicker({
 }) {
   const [selected, setSelected] = useState<string[]>([]);
   const eligible = players.filter((player) => !request.excludeIds.includes(player.id));
+  const isInstantSelect = request.min === 1 && request.max === 1;
 
-  function toggle(id: string) {
+  function handleChipClick(id: string) {
+    if (isInstantSelect) {
+      onConfirm([id]);
+      return;
+    }
     setSelected((current) => {
       if (current.includes(id)) return current.filter((entry) => entry !== id);
       if (current.length >= request.max) return [...current.slice(1), id];
@@ -47,18 +52,22 @@ export function TargetPicker({
               key={player.id}
               type="button"
               className={isSelected ? "target-chip target-chip--selected" : "target-chip"}
-              onClick={() => toggle(player.id)}
-              aria-pressed={isSelected}
+              onClick={() => handleChipClick(player.id)}
+              aria-pressed={isInstantSelect ? undefined : isSelected}
             >
               {player.name}
             </button>
           );
         })}
       </div>
-      <p className="target-picker-hint">{countHint}</p>
-      <Button type="button" disabled={!canConfirm} onClick={() => onConfirm(selected)}>
-        Confirmer
-      </Button>
+      {!isInstantSelect ? (
+        <>
+          <p className="target-picker-hint">{countHint}</p>
+          <Button type="button" disabled={!canConfirm} onClick={() => onConfirm(selected)}>
+            Confirmer
+          </Button>
+        </>
+      ) : null}
     </div>
   );
 }

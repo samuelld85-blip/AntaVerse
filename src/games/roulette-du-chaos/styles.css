@@ -640,35 +640,31 @@ html[data-theme="light"] .brand-mark--rdc {
 /* Rule banner ---------------------------------------------------------------- */
 
 .rule-banner {
-  border: 1px solid color-mix(in srgb, var(--rdc-regle) 45%, var(--line));
+  border: 2px solid color-mix(in srgb, var(--rdc-regle) 70%, var(--line));
   border-radius: 1.15rem;
-  background: color-mix(in srgb, var(--rdc-regle) 12%, transparent);
+  background: color-mix(in srgb, var(--rdc-regle) 18%, transparent);
   overflow: hidden;
 }
-.rule-banner-toggle {
+.rule-banner-header {
   display: flex;
-  width: 100%;
   align-items: center;
   gap: 0.6rem;
-  border: 0;
-  background: transparent;
-  color: var(--text);
-  cursor: pointer;
-  padding: 0.75rem 0.9rem;
-  text-align: left;
+  padding: 0.75rem 0.9rem 0.4rem;
 }
 .rule-banner-icon {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 .rule-banner-title {
   min-width: 0;
   overflow: hidden;
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
+  color: color-mix(in srgb, var(--rdc-regle) 90%, var(--text));
 }
 .rule-banner-detail {
   display: grid;
@@ -678,8 +674,9 @@ html[data-theme="light"] .brand-mark--rdc {
 .rule-banner-detail p {
   margin: 0;
   color: var(--text);
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 .rule-banner-report {
   border: 1px solid var(--line);
@@ -749,6 +746,43 @@ html[data-theme="light"] .brand-mark--rdc {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 900;
+}
+.mini-game-result-detail {
+  margin: 0;
+  color: var(--text-secondary, var(--text));
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0.75;
+  text-align: center;
+}
+
+.binary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: clamp(4.5rem, 20vw, 6rem);
+  height: clamp(6.5rem, 29vw, 8.5rem);
+  border-radius: clamp(0.65rem, 2.5vw, 0.9rem);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+.binary-card--rouge {
+  color: #d42b2b;
+}
+.binary-card--noir {
+  color: #111;
+}
+.binary-card-symbol {
+  font-size: clamp(2.2rem, 10vw, 3rem);
+  line-height: 1;
+}
+.binary-card-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .pass-and-hide {

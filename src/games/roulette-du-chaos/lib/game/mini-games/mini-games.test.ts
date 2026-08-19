@@ -97,13 +97,13 @@ describe("binary prediction", () => {
     expect(drawBinaryResult(0.9)).toBe("noir");
   });
 
-  it("exactly one correct guess wins", () => {
-    expect(resolveBinaryPrediction("rouge", "rouge", "noir")).toBe("a");
-    expect(resolveBinaryPrediction("rouge", "noir", "rouge")).toBe("b");
+  it("returns correct when the guess matches the drawn result", () => {
+    expect(resolveBinaryPrediction("rouge", "rouge")).toBe("correct");
+    expect(resolveBinaryPrediction("noir", "noir")).toBe("correct");
   });
 
-  it("both correct or both wrong asks for a replay", () => {
-    expect(resolveBinaryPrediction("rouge", "rouge", "rouge")).toBe("replay");
-    expect(resolveBinaryPrediction("rouge", "noir", "noir")).toBe("replay");
+  it("returns wrong when the guess does not match", () => {
+    expect(resolveBinaryPrediction("rouge", "noir")).toBe("wrong");
+    expect(resolveBinaryPrediction("noir", "rouge")).toBe("wrong");
   });
 });

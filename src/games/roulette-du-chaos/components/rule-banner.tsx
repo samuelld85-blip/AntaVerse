@@ -1,11 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import type { ActiveRule } from "@/games/roulette-du-chaos/lib/game/types";
 
-/** Compact, persistent banner for the current temporary rule (spec §66) — never obscures the wheel. */
-export function RuleBanner({ rule, onClear }: { rule: ActiveRule; onClear: () => void }) {
-  const [expanded, setExpanded] = useState(false);
+/** Persistent banner for the current temporary rule — always fully expanded. */
+export function RuleBanner({
+  rule,
+  ownerName,
+  onClear,
+}: {
+  rule: ActiveRule;
+  ownerName: string;
+  onClear: () => void;
+}) {
   const canReport = rule.expiry === "firstViolation" || rule.expiry === "timer";
 
   useEffect(() => {
@@ -22,27 +29,22 @@ export function RuleBanner({ rule, onClear }: { rule: ActiveRule; onClear: () =>
 
   return (
     <div className="rule-banner">
-      <button
-        type="button"
-        className="rule-banner-toggle"
-        onClick={() => setExpanded((current) => !current)}
-        aria-expanded={expanded}
-      >
+      <div className="rule-banner-header">
         <span className="rule-banner-icon" aria-hidden="true">
           📜
         </span>
-        <span className="rule-banner-title">RÈGLE ACTIVE — {rule.title}</span>
-      </button>
-      {expanded ? (
-        <div className="rule-banner-detail">
-          <p>{rule.description}</p>
-          {canReport ? (
-            <button type="button" className="rule-banner-report" onClick={onClear}>
-              Infraction constatée
-            </button>
-          ) : null}
-        </div>
-      ) : null}
+        <span className="rule-banner-title">
+          {ownerName} — {rule.title}
+        </span>
+      </div>
+      <div className="rule-banner-detail">
+        <p>{rule.description}</p>
+        {canReport ? (
+          <button type="button" className="rule-banner-report" onClick={onClear}>
+            Infraction constatée
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }

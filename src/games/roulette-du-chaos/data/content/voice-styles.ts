@@ -1,0 +1,23 @@
+// Bank for R9 "Voix imposée" — voice styles the active player must use.
+export const VOICE_STYLES: readonly string[] = [
+  "chuchoter",
+  "parler comme un robot",
+  "parler comme un présentateur TV",
+  "parler en chantant",
+  "parler comme un commentateur sportif",
+  "parler comme un narrateur de documentaire animalier",
+  "parler comme dans une publicité de téléachat",
+  "parler comme si tu étais complètement bourré mais que tu voulais prouver que tu es sobre",
+  "parler comme un rappeur",
+  "parler comme si tu annonçais une catastrophe au JT",
+  "parler comme un coach de motivation",
+  "parler comme un aristocrate très snob",
+  "parler comme si tout était extrêmement sexy",
+  "parler comme un GPS",
+  "parler comme un personnage de dessin animé",
+  "parler comme un professeur très sévère",
+  "parler comme si tu étais au bord des larmes",
+  "parler comme si chaque phrase était un secret énorme",
+  "parler comme un animateur de jeu télévisé",
+  "parler comme si tu étais essoufflé après un sprint",
+] as const;

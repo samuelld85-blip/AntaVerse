@@ -1,5 +1,4 @@
 // Bank for R6 "Mot interdit" — common filler words, easy to say by accident.
-
 export const FORBIDDEN_WORDS: readonly string[] = [
   "genre",
   "mec",
@@ -11,11 +10,19 @@ export const FORBIDDEN_WORDS: readonly string[] = [
   "du coup",
   "en fait",
   "grave",
-  "style",
-  "carrément",
   "voilà",
   "bref",
-  "sérieux",
   "trop",
   "ouais",
+  "putain",
+  "attends",
+  "frère",
+  "mais",
+  "tu vois",
+  "clairement",
+  "exactement",
+  "littéralement",
+  "normal",
+  "en gros",
+  "ok",
 ] as const;

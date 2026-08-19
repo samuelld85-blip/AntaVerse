@@ -1,348 +1,333 @@
-# AntaVerse — Project Operating Guide
-
-## 0. Project context
-
-AntaVerse is a Next.js 16 (App Router) mobile-first web app that bundles several party/group games behind one shared launcher shell.
-
-```text
-AntaVerse
-├── shared launcher & shell
-├── Quoi de 9 ?
-├── La Relance
-└── Sans le dire
-```
-
-**Stack**: Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Zod · react-hook-form · idb (IndexedDB) · Vitest (unit) · Playwright (e2e) · ESLint · Prettier. Node 22.x. Production build is a static export deployed on Vercel, wrapped as a PWA (service worker, installable).
-
-**Structure**:
-- `src/app/` — launcher, global shell, and each game's routes (prefixed by game slug).
-- `src/games/<slug>/` — one folder per game: `components/`, `data/`, `features/`, `generated/`, `lib/`, `styles.css`. Each game is self-contained (own engine, content, i18n, persistence).
-- `src/components/` and `src/lib/` — shared product-level building blocks.
-- `src/lib/games.ts` — the registry the launcher renders cards from.
-- `public/brand/v1/` — launcher-level branding; `public/games/` — per-game assets; `public/icons/` + PWA manifest belong to AntaVerse itself.
-- `scripts/` — content pipeline (schema export, bundling, editorial/playability audits, encoding checks, question import) and static PWA prep.
-- Persisted data (IndexedDB/localStorage) is namespaced per game (e.g. `qui-des-9:`, `la-relance:`, `sans-le-dire:`) — never let one game's storage bleed into another's.
-
-**Adding a new game**:
-1. New module in `src/games/<slug>/`, routes in `src/app/<slug>/`.
-2. Assets in `public/games/<slug>/`.
-3. Register name, description, route, icon, color in `src/lib/games.ts` — the launcher auto-renders a new card.
-
-**Key commands**:
-```bash
-npm run dev              # local dev server
-npm run build             # prebuild (encoding/content checks + bundling) then static export
-npm run preview           # serve the static export locally
-npm run lint               # eslint
-npm run typecheck          # tsc --noEmit
-npm run test                # vitest run
-npm run test:watch          # vitest watch mode
-npm run test:e2e             # build + playwright
-npm run format / format:check # prettier
-npm run verify                # encoding + content:validate + lint + typecheck + test + build (full gate)
-```
-Content-specific scripts (`content:*`, `questions:*`, `encoding:check`) touch the question/content pipeline in `scripts/` — check there before hand-editing generated JSON in any `games/*/generated/` or `games/*/data/` folder.
-
----
-
-## 1. Core mindset
-
-This project is in an early, fast-moving product phase.
-The priority is to:
-
-- build quickly;
-- iterate often;
-- test ideas;
-- improve the product continuously;
-- keep the codebase reasonably clean while moving fast.
-
-Do not behave as if this were a fragile enterprise production system.
-You have broad freedom to modify the codebase when doing so clearly improves the application, implementation quality, maintainability, or user experience.
-Use good judgment.
-Prefer making sensible decisions yourself over constantly asking for confirmation.
-
-## 2. Autonomy
-
-You are encouraged to:
-
-- create new files;
-- delete obsolete files;
-- rename files;
-- move files;
-- reorganize folders;
-- refactor existing code;
-- replace poor implementations;
-- simplify architecture;
-- introduce reusable components;
-- improve naming;
-- improve types;
-- consolidate duplicated logic;
-- install a dependency when it provides clear value;
-- change internal implementation details;
-- improve UI implementation when required by the task.
+# AntaVerse — Claude Guide
 
-You do not need to preserve weak architecture simply because it already exists.
-The current implementation is not sacred.
-However, avoid unnecessary rewrites when a smaller and cleaner change solves the problem just as well.
+## Project
 
-## 3. Understand before editing
+AntaVerse is an early-stage, mobile-first Next.js party-game app.
 
-Before substantial work:
+Stack:
 
-1. Inspect the relevant parts of the codebase.
-2. Understand the current implementation.
-3. Identify existing components, utilities, conventions, and patterns.
-4. Determine whether the requested feature should reuse, extend, refactor, or replace existing code.
-5. Then implement.
+* Next.js 16 / React 19 / TypeScript
+* Tailwind CSS 4
+* Vitest + Playwright
+* IndexedDB / localStorage
+* Static export deployed on Vercel as a PWA
+* Node 22
 
-Do not blindly add new abstractions without checking whether equivalent functionality already exists.
-For larger tasks, briefly establish the implementation approach before changing many files.
+Structure:
 
-## 4. Build, don't just advise
+* `src/app/` — routes and application shell
+* `src/games/<slug>/` — self-contained game modules
+* `src/components/` / `src/lib/` — genuinely shared product code
+* `src/lib/games.ts` — game registry used by the launcher
+* `public/games/` — game assets
+* `public/brand/v1/` — AntaVerse branding
+* `scripts/` — content and build tooling
 
-When given an implementation task, the default behavior is: **implement it completely**.
-Do not stop after:
+Game persistence must remain namespaced per game.
 
-- describing what should be done;
-- producing a plan;
-- identifying files;
-- suggesting code;
-- completing only the easiest part.
+## Product mindset
 
-Continue through the implementation until the requested feature or change is meaningfully complete.
-Make reasonable assumptions when details are unspecified.
-Only ask the user when a decision would materially change the product and cannot reasonably be inferred.
+This is an early, fast-moving product.
 
-## 5. Prefer simplicity
+Prioritize:
 
-Favor:
+* shipping working iterations quickly;
+* simple implementations;
+* good UX;
+* reasonable code quality;
+* easy future iteration.
 
-- simple architecture;
-- clear code;
-- small reusable components;
-- explicit logic;
-- understandable naming;
-- minimal dependencies;
-- predictable data flows.
+Do not treat the project like a fragile enterprise system.
 
-Avoid:
+Make reasonable implementation decisions yourself instead of repeatedly asking for confirmation.
 
-- premature abstraction;
-- unnecessary layers;
-- excessive indirection;
-- giant generic systems for tiny problems;
-- duplicated implementations;
-- speculative architecture for hypothetical future needs.
+Make **technical implementation decisions autonomously**.
 
-A small project should feel like a small project.
+Do not reinterpret, replace, or expand explicit product rules, game mechanics, UX flows, or content requirements unless the user asks for alternatives.
 
-## 6. Reuse before duplication
+When product behavior is explicitly specified, treat it as the source of truth and focus your autonomy on implementation.
 
-Before creating something new, check whether an existing component, hook, utility, type, style, service, game mechanic, data structure, or helper can be reused or reasonably extended.
-If several implementations solve essentially the same problem, prefer consolidating them.
-Do not create near-duplicate files simply to avoid touching existing code.
+You may create, edit, move, rename, refactor or delete code when useful.
 
-Within AntaVerse specifically, check `src/games/<slug>/` for existing per-game engines/components before introducing shared abstractions, and check `src/components/` / `src/lib/` before duplicating something across games — if two games need the same thing, that's a signal to promote it to shared code.
+However:
 
-## 7. Refactoring is allowed
+* stay proportional to the requested task;
+* avoid speculative architecture;
+* avoid unnecessary abstractions;
+* do not turn small changes into large refactors.
 
-Refactoring is part of normal development.
-When implementing a feature, you may clean nearby code if doing so:
+## Scope and context efficiency
 
-- simplifies the implementation;
-- removes duplication;
-- improves readability;
-- makes future iterations easier;
-- fixes an obvious architectural inconsistency.
+Default to **targeted work**, not broad exploration.
 
-Keep refactors proportional to the task.
-Do not turn every small request into a complete architecture rewrite.
+For routine or targeted tasks:
 
-## 8. Delete dead weight
+1. Start from the files directly implied by the request.
+2. Inspect only the directly relevant files, imports, and dependencies.
+3. Use targeted search (`Grep` / `Glob`) when the exact location is unknown.
+4. Follow imports or dependencies only when needed to understand or safely implement the change.
+5. Expand to broader architecture only when genuinely required or when the targeted approach is blocked.
 
-The project should stay compact.
-When clearly safe, remove: unused components, obsolete implementations, abandoned experiments, duplicate utilities, dead code, unused imports, unused assets, outdated temporary files, unnecessary generated artifacts.
+Do **not** scan, map, or read the whole repository by default.
 
-Do not keep old implementations "just in case" when Git already provides history.
+Do **not** perform broad codebase exploration just to confirm that an abstraction, component, or helper does not already exist.
 
-## 9. Dependencies
+Reuse existing patterns when they are obvious or easy to locate.
 
-Dependencies are allowed when justified.
-Before adding one, consider whether:
+Do not spend excessive context searching for theoretical reuse opportunities.
 
-- the project already has an equivalent dependency;
-- the functionality is trivial enough to implement directly;
-- the package is maintained and appropriate;
-- it meaningfully simplifies the implementation.
+When a search result already identifies the relevant file and code location, open that location directly instead of performing additional broad searches.
 
-Do not reinvent substantial, well-solved functionality purely to avoid a dependency.
-Do not install libraries for tiny conveniences.
+For small changes, once enough context is available, edit the relevant implementation directly.
 
-## 10. UI and product work
+Examples of small targeted work:
 
-When implementing interfaces:
+* changing a label or copy;
+* removing a confirmation screen;
+* adjusting a probability;
+* modifying one game rule;
+* changing a small interaction;
+* fixing an obvious local bug;
+* updating a specific component;
+* changing content or game data.
 
-- preserve visual consistency;
-- reuse the existing design language (Tailwind tokens, each game's `styles.css`, shared `components/`);
-- maintain responsive behavior;
-- avoid arbitrary styling values when design tokens or shared styles exist;
-- make interfaces feel intentional rather than merely functional.
+These tasks should normally require only a small number of relevant files.
 
-When a dedicated UX/UI, visual design, or brand skill is available and relevant, use it.
-Functional implementation and visual quality are both part of completion.
+## Subagents and Explore
 
-## 11. Mobile-first behavior
+Do **not** spawn subagents for routine or targeted tasks.
 
-AntaVerse is primarily a mobile experience (games played on phones, installable as a PWA). Treat mobile as the primary target unless the task specifies otherwise. Check:
+Do not use subagents for:
 
-- common phone viewport sizes;
-- touch targets;
-- overflow;
-- scrolling;
-- text wrapping;
-- modal behavior;
-- keyboard interactions when relevant;
-- responsive layout;
-- offline/PWA behavior (service worker, install prompt) where relevant.
+* small UI edits;
+* simple bugs;
+* content changes;
+* game-rule adjustments;
+* straightforward refactors;
+* changes whose relevant files are already known.
 
-Desktop support should remain reasonable but should not compromise the primary mobile experience.
+Use Explore or another subagent only when:
 
-## 12. Code quality
+* the relevant implementation cannot be located efficiently with targeted search;
+* the task genuinely spans several unknown areas of the codebase;
+* broad exploration would materially reduce pollution of the main context;
+* a complex bug has an unclear source;
+* the task is architectural or cross-cutting;
+* an architecture audit, codebase audit, duplicate search, or broad review was explicitly requested.
 
-Write code that another capable developer could understand without needing Claude to explain it.
-Prefer: strong typing where appropriate; descriptive names; short focused functions; clear component responsibilities; useful comments only where behavior is non-obvious.
+When a subagent is justified:
 
-Avoid comments that merely restate the code.
-Do not intentionally introduce technical debt for trivial speed gains.
-At the same time, do not over-engineer early-stage features.
+* keep its mission narrow;
+* prefer targeted searches over repository-wide reading;
+* return concise findings with exact file paths;
+* avoid duplicate exploration between the main agent and subagent.
 
-## 13. Validation loop
+If an Explore agent configured with a lightweight model such as Haiku is available, prefer it for **genuinely necessary** codebase discovery.
 
-After meaningful changes, validate the implementation using the tools available in the project:
+Do **not** invoke Explore merely because it is available.
 
-1. `npm run format` (or `format:check`);
-2. `npm run lint`;
-3. `npm run typecheck`;
-4. `npm run test` (relevant tests, or the full suite for broader changes);
-5. `npm run build` for changes likely to affect the build (routing, content pipeline, PWA).
+## Context discipline
 
-`npm run verify` runs the full gate (encoding + content validation + lint + typecheck + test + build) — use it before considering a larger change done.
+Keep the active context focused on the current task.
 
-Fix issues caused by your changes.
-For larger changes, inspect the final diff for: accidental edits; duplicated code; forgotten debug code; unused files; inconsistent naming; unnecessary complexity.
+Do not repeatedly reopen or reread files whose relevant content is already known unless necessary.
 
-Do not consider code complete merely because it was written.
+Do not collect large amounts of unrelated code “for safety”.
 
-## 14. Bugs
+Prefer exact file reads and targeted searches over broad directory exploration.
 
-When fixing bugs:
+When enough information is available to implement safely, stop exploring and implement.
 
-1. investigate the actual cause;
-2. avoid blindly patching symptoms;
-3. understand why the bug occurs;
-4. implement the smallest robust fix;
-5. verify nearby behavior that could be affected.
+For long-running sessions, preserve only information relevant to:
 
-If several attempted fixes fail, reassess the underlying assumptions instead of stacking additional patches.
+* the current implementation state;
+* decisions already made;
+* changed files;
+* remaining work;
+* relevant validation results.
 
-## 15. Preserve product intent, not accidental implementation
+Avoid carrying extensive debugging history once the underlying issue has been understood.
 
-Distinguish between product behavior that matters and implementation details that happen to exist today.
-Preserve intentional user-facing behavior unless the task asks to change it.
-Feel free to replace internal implementation details when a better approach exists.
+Do not repeat investigations that were already completed earlier in the same task unless new evidence requires it.
 
-## 16. Scope discipline
+## Implementation
 
-Stay focused on the requested outcome.
-You may improve adjacent code when useful, but avoid unrelated changes.
-If you discover a major unrelated issue:
+When asked to implement something, implement it rather than stopping at a plan.
 
-- mention it;
-- fix it only if it is trivial and clearly safe;
-- otherwise leave it for a separate task.
+Preserve intentional product behavior, not accidental implementation details.
 
-## 17. Token and context efficiency
+If the user provides exact:
 
-Use context deliberately.
-Do not repeatedly read the entire repository when only a few files are relevant.
+* game rules;
+* flows;
+* labels;
+* probabilities;
+* mechanics;
+* UX behavior;
+* visual requirements;
+
+implement those requirements rather than replacing them with what you think would be a better product.
+
+Technical freedom does not imply product-design freedom.
+
 Prefer:
 
-1. locate the relevant architecture;
-2. inspect targeted files;
-3. follow imports and dependencies as necessary;
-4. expand scope only when needed.
+* clear and explicit code;
+* existing components and patterns when they are easy to locate;
+* small focused components;
+* minimal dependencies;
+* straightforward data flows.
 
-Use subagents for broad exploration when available, especially for: architecture discovery; duplicate detection; codebase audits; large searches; independent reviews.
+Reuse existing abstractions when obvious, but do not perform a repository-wide search just to prove that no abstraction already exists.
 
-Keep the main context focused on implementation decisions.
+Refactor nearby code only when it directly simplifies the requested change.
 
-## 18. Use the right level of reasoning
+Do not broaden the scope merely because adjacent code could also be improved.
 
-Routine implementation should remain efficient.
-Use deeper architectural reasoning for: major refactors; shared systems; complex bugs; structural changes; migrations; decisions affecting many future features.
+If the requested behavior can be achieved cleanly with a small change, prefer that over introducing a new system.
 
-Do not spend heavyweight reasoning on trivial edits.
+## Games
 
-## 19. Git awareness
+Each game should remain primarily self-contained in `src/games/<slug>/`.
 
-Treat Git as the safety net that enables fast iteration.
-Before large destructive changes, understand the current repository state.
-Avoid accidentally overwriting unrelated uncommitted user work.
-Do not revert user changes simply because they differ from what you would have implemented.
-When reviewing your work, use the diff to understand exactly what changed.
+Promote something to shared code only when multiple games genuinely need the same behavior.
 
-## 20. Security basics
+Do not create global abstractions for a single game merely because they may theoretically be useful later.
 
-Even during rapid prototyping:
+When working on a specific game, begin inside that game's module and routes rather than inspecting unrelated games.
 
-- never hardcode secrets (see `.env.example` for expected env vars — real values stay in `.env`, never committed);
-- never commit API keys;
-- avoid exposing private credentials client-side;
-- validate untrusted input where appropriate (Zod schemas are already used across the content pipeline — follow that pattern);
-- avoid obviously unsafe dependencies or patterns.
+Do not use another game's mechanics as a product template unless the task explicitly asks for shared behavior.
 
-Apply proportional security rather than enterprise bureaucracy.
+Different games should be allowed to have different mechanics when that supports their intended identity.
 
-## 21. Completion standard
+When adding a new game:
+
+1. create `src/games/<slug>/`;
+2. create routes in `src/app/<slug>/`;
+3. add assets in `public/games/<slug>/`;
+4. register it in `src/lib/games.ts`.
+
+## UI
+
+AntaVerse is primarily used on phones.
+
+For relevant UI changes, preserve:
+
+* mobile usability;
+* touch-friendly interactions;
+* responsive layout;
+* visual consistency with the game's existing design;
+* readable text and sensible overflow.
+
+Use existing visual tokens/styles where practical.
+
+Use dedicated UX/UI or visual-design skills only when the task actually concerns those areas.
+
+Do not invoke design-oriented skills for trivial implementation changes that do not require design reasoning.
+
+Avoid unnecessary confirmation screens or data-entry steps when an interaction can naturally happen between players in real life.
+
+The phone should support the game, not force players to record every real-world decision inside the app.
+
+## Validation
+
+Validate proportionally to the change.
+
+### Small targeted change
+
+Run only what is directly useful, for example:
+
+* the relevant targeted test;
+* `typecheck` when TypeScript behavior may be affected;
+* a focused lint/check when appropriate.
+For copy-only, label, content, or other non-behavioral edits:
+* edit the directly relevant file;
+* inspect the targeted diff if useful;
+* do not start the dev server, browser preview, Playwright, or other UI validation unless explicitly requested or genuinely necessary.
+
+Do not automatically run the full test suite, full build, or `npm run verify` for a trivial change.
+
+### Medium change
+
+Run:
+
+* relevant tests;
+* typecheck;
+* lint when appropriate.
+
+### Large or cross-cutting change
+
+Run:
+
+* broader relevant tests;
+* lint;
+* typecheck;
+* build when relevant.
+
+Use `npm run verify` for large changes, releases, significant cross-cutting work, or when specifically useful — **not after every small edit**.
+
+Fix failures caused by your changes.
+
+Do not spend time investigating or fixing unrelated pre-existing failures unless explicitly requested.
+
+If tests represent intentionally replaced product behavior, update those tests to reflect the new intended behavior rather than preserving obsolete behavior.
+
+If a targeted validation is sufficient to establish that a small change works, stop there.
+
+## Content pipeline
+
+Before manually editing generated game content, check whether the relevant source is managed by the scripts/content pipeline.
+
+Do not hand-edit generated artifacts when a source-of-truth/import workflow exists.
+
+Only inspect the broader content pipeline when the requested change actually touches generated or imported content.
+
+## Git
+
+Do not overwrite or revert unrelated user changes.
+
+Use Git as the safety net for fast iteration.
+
+Inspect the diff when useful, especially after multi-file changes.
+
+For a tiny targeted edit, do not perform extensive Git analysis unless there is a reason to suspect unrelated work could be affected.
+
+Do not clean or rewrite unrelated files simply because they appear in the working tree.
+
+## Security
+
+Never commit secrets or API keys.
+
+Keep credentials out of client-side code.
+
+Apply normal proportional security practices without adding unnecessary bureaucracy.
+
+## Completion
 
 A task is complete when:
 
-- the requested behavior exists;
-- the implementation is coherent with the rest of the project;
-- obvious duplication has been avoided;
-- no temporary/debug code remains;
-- relevant validation passes (lint, typecheck, tests, build);
-- the application remains buildable;
-- the result is usable, not merely scaffolded.
+* the requested behavior works;
+* explicit product requirements have been respected;
+* no obvious temporary/debug code remains;
+* relevant checks pass;
+* the change remains coherent with the surrounding product.
 
-For early-stage product work, favor working, polished-enough iterations delivered quickly over theoretical perfection.
+For early-stage work, prefer a good working iteration delivered quickly over theoretical perfection.
 
-## 22. Default decision rule
+Do not continue exploring, refactoring, reviewing, or validating after the requested task is already complete unless there is a concrete reason.
 
-When uncertain between:
-A. asking the user about a minor implementation decision
-and
-B. making a reasonable professional decision and continuing
-→ **prefer B.**
+Do not add unrelated improvements to make the task appear more complete.
 
-When uncertain between:
-A. preserving mediocre existing code
-and
-B. improving it as part of the task without creating unnecessary complexity
-→ **prefer B.**
+## Long tasks
 
-When uncertain between:
-A. designing for hypothetical future requirements
-and
-B. building the cleanest solution for the product that exists today
-→ **prefer B.**
+Only for genuinely large multi-step tasks, establish a short plan first.
 
-Move fast, use judgment, keep the codebase clean, and finish what you start.
+Do not produce artificial progress milestones for normal development work.
 
-## 23. Progress milestones on long tasks
+For long tasks:
 
-For any task substantial enough to involve multiple steps or take a while (a real feature, a multi-file refactor, a migration, a longer debugging session — not a quick edit), break the work into a rough step plan first, then post a short progress ping at roughly 25%, 50%, and 75% of the way through.
-
-Each ping is one line, nothing more — e.g. "25% — schema updated, moving to the API layer." No recap of everything done so far, no re-explanation of the plan, no formatting. Just enough for the user to know it's progressing and roughly where.
-
-Base the percentage on how much of the planned work is done (steps/files/checks completed out of the total), not on a clock — there's no reliable way to track literal elapsed minutes mid-task, so treat "25% in five minutes" as "25% of the plan," not a timer. Skip this entirely for short, single-step tasks; don't invent milestones where there's nothing meaningful to report.
+* keep the plan short;
+* keep progress updates concise;
+* avoid repeating previously established context;
+* avoid reopening completed areas unless necessary;
+* stay focused on the requested outcome.

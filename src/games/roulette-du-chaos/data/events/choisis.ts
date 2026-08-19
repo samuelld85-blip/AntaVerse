@@ -1,11 +1,12 @@
-// CHOISIS — risk vs. reward, decision-making. See spec section 23 (C1-C8).
+// CHOISIS — risk vs. reward, decision-making. See spec section 23 (C1-C12).
 
+import { CONFESSION_QUESTIONS } from "../content/confession-questions";
 import {
   done,
   drinks,
-  eligibleOthers,
   flipCoin,
   hasSlots,
+  makeRule,
   needChoice,
   needMiniGame,
   needMystery,
@@ -15,7 +16,6 @@ import {
   pickIndexFromSlot,
   playerName,
   receives,
-  splitEvenly,
 } from "../../lib/game/resolution-helpers";
 import type { EventDefinition } from "../../lib/game/types";
 
@@ -28,7 +28,6 @@ export const choisisEvents: EventDefinition[] = [
     visualHint: "coin",
     resolve(input) {
       const activeName = playerName(input.players, input.activePlayerId);
-      const others = eligibleOthers(input.players, input.activePlayerId);
       if (!input.choiceKey) {
         return needChoice([
           { key: "safe", label: "SAFE" },
@@ -36,31 +35,13 @@ export const choisisEvents: EventDefinition[] = [
         ]);
       }
       if (input.choiceKey === "safe") {
-        const target = input.targetRounds[0]?.[0];
-        if (!target) {
-          return needTargets(1, 1, {
-            excludeIds: [input.activePlayerId],
-            label: "Distribue 1 gorgée à qui ?",
-          });
-        }
-        return done(outcome("Safe", [receives(playerName(input.players, target), 1)]));
+        return done(outcome("Safe", ["Distribue 1 gorgée — gérez entre vous."]));
       }
       if (!hasSlots(input.randomSlots, "coin")) return needRandom("coin");
       if (flipCoin(input.randomSlots.coin!) !== "heads") {
         return done(outcome("Risk manqué", [drinks(activeName, 3)]));
       }
-      const targets = input.targetRounds[0];
-      if (!targets) {
-        return needTargets(1, Math.min(4, others.length), {
-          excludeIds: [input.activePlayerId],
-          label: "Distribue 4 gorgées",
-        });
-      }
-      const amounts = splitEvenly(4, targets.length);
-      const lines = targets.map((id, index) =>
-        receives(playerName(input.players, id), amounts[index]!),
-      );
-      return done(outcome("Risk réussi !", lines));
+      return done(outcome("Risk réussi !", ["Distribue 4 gorgées — gérez entre vous."]));
     },
   },
   {
@@ -125,23 +106,8 @@ export const choisisEvents: EventDefinition[] = [
       if (!hasSlots(input.randomSlots, "outcome")) return needRandom("outcome");
       if (input.mysteryPickIndex === null) return needMystery(3);
       const outcomeIndex = pickIndexFromSlot(input.randomSlots.outcome!, 3);
-      if (outcomeIndex === 0) {
-        const others = eligibleOthers(input.players, input.activePlayerId);
-        const targets = input.targetRounds[0];
-        if (!targets) {
-          return needTargets(1, Math.min(3, others.length), {
-            excludeIds: [input.activePlayerId],
-            label: "Distribue 3 gorgées",
-          });
-        }
-        const amounts = splitEvenly(3, targets.length);
-        return done(
-          outcome(
-            "Carte A",
-            targets.map((id, index) => receives(playerName(input.players, id), amounts[index]!)),
-          ),
-        );
-      }
+      if (outcomeIndex === 0)
+        return done(outcome("Carte A", ["Distribue 3 gorgées — gérez entre vous."]));
       if (outcomeIndex === 1) return done(outcome("Carte B", [drinks(activeName, 2)]));
       return done(outcome("Carte C", ["Rien du tout, tu t'en sors bien !"]));
     },
@@ -154,7 +120,6 @@ export const choisisEvents: EventDefinition[] = [
     visualHint: "coin",
     resolve(input) {
       const activeName = playerName(input.players, input.activePlayerId);
-      const others = eligibleOthers(input.players, input.activePlayerId);
       if (!input.choiceKey) {
         return needChoice([
           { key: "rouge", label: "ROUGE" },
@@ -164,20 +129,7 @@ export const choisisEvents: EventDefinition[] = [
       if (!hasSlots(input.randomSlots, "card")) return needRandom("card");
       const drawn = input.randomSlots.card! < 0.5 ? "rouge" : "noir";
       if (input.choiceKey !== drawn) return done(outcome("Perdu", [drinks(activeName, 2)]));
-      const targets = input.targetRounds[0];
-      if (!targets) {
-        return needTargets(1, Math.min(3, others.length), {
-          excludeIds: [input.activePlayerId],
-          label: "Distribue 3 gorgées",
-        });
-      }
-      const amounts = splitEvenly(3, targets.length);
-      return done(
-        outcome(
-          "Bonne pioche !",
-          targets.map((id, index) => receives(playerName(input.players, id), amounts[index]!)),
-        ),
-      );
+      return done(outcome("Bonne pioche !", ["Distribue 3 gorgées — gérez entre vous."]));
     },
   },
   {
@@ -199,14 +151,7 @@ export const choisisEvents: EventDefinition[] = [
       const total = input.choiceKey === "petit" ? 2 : 5;
       const failAmount = input.choiceKey === "petit" ? 1 : 4;
       if (!success) return done(outcome("Risque manqué", [drinks(activeName, failAmount)]));
-      const target = input.targetRounds[0]?.[0];
-      if (!target) {
-        return needTargets(1, 1, {
-          excludeIds: [input.activePlayerId],
-          label: `Distribue ${total} gorgées`,
-        });
-      }
-      return done(outcome("Risque payant !", [receives(playerName(input.players, target), total)]));
+      return done(outcome("Risque payant !", [`Distribue ${total} gorgées — gérez entre vous.`]));
     },
   },
   {
@@ -231,33 +176,148 @@ export const choisisEvents: EventDefinition[] = [
   {
     id: "c8",
     category: "CHOISIS",
-    title: "La boîte",
-    prompt: "Trois boîtes mystère : distribue 4, bois 3, ou rien. Choisis-en une.",
+    title: "Marché du chaos",
+    prompt:
+      "Choisis un joueur. Deux effets sont cachés, l'un pour toi et l'autre pour lui. Décide qui reçoit la case A et qui reçoit la case B avant de révéler les effets.",
     visualHint: "mystery",
     resolve(input) {
-      const activeName = playerName(input.players, input.activePlayerId);
-      if (!hasSlots(input.randomSlots, "outcome")) return needRandom("outcome");
-      if (input.mysteryPickIndex === null) return needMystery(3);
-      const outcomeIndex = pickIndexFromSlot(input.randomSlots.outcome!, 3);
-      if (outcomeIndex === 0) {
-        const others = eligibleOthers(input.players, input.activePlayerId);
-        const targets = input.targetRounds[0];
-        if (!targets) {
-          return needTargets(1, Math.min(4, others.length), {
-            excludeIds: [input.activePlayerId],
-            label: "Distribue 4 gorgées",
-          });
-        }
-        const amounts = splitEvenly(4, targets.length);
-        return done(
-          outcome(
-            "Boîte gagnante !",
-            targets.map((id, index) => receives(playerName(input.players, id), amounts[index]!)),
-          ),
+      const partnerId = input.targetRounds[0]?.[0];
+      if (!partnerId) {
+        return needTargets(1, 1, {
+          excludeIds: [input.activePlayerId],
+          label: "Avec qui traites-tu ?",
+        });
+      }
+      if (!input.choiceKey) {
+        return needChoice(
+          [
+            { key: "a", label: "JE PRENDS A" },
+            { key: "b", label: "JE PRENDS B" },
+          ],
+          "Qui prend quelle case ? Les effets ne sont révélés qu'après.",
         );
       }
-      if (outcomeIndex === 1) return done(outcome("Boîte piège", [drinks(activeName, 3)]));
-      return done(outcome("Boîte vide", ["Rien du tout, tu t'en sors bien !"]));
+      if (!hasSlots(input.randomSlots, "deal")) return needRandom("deal");
+      const activeName = playerName(input.players, input.activePlayerId);
+      const partnerName = playerName(input.players, partnerId);
+      // One box is the good side of the deal, the other the bad one — which
+      // letter holds which is only decided once both sides are locked in.
+      const goodBox = input.randomSlots.deal! < 0.5 ? "a" : "b";
+      const activeTakesGood = input.choiceKey === goodBox;
+      const winnerName = activeTakesGood ? activeName : partnerName;
+      const loserName = activeTakesGood ? partnerName : activeName;
+      return done(
+        outcome("Marché du chaos", [
+          `Case ${goodBox.toUpperCase()} : distribue 3 gorgées.`,
+          `Case ${goodBox === "a" ? "B" : "A"} : bois 3 gorgées.`,
+          `${winnerName} distribue 3 gorgées — ${drinks(loserName, 3)}.`,
+        ]),
+      );
+    },
+  },
+  {
+    id: "c9",
+    category: "CHOISIS",
+    title: "Pacte ou trahison",
+    prompt:
+      "Choisis un adversaire. Chacun choisit secrètement PACTE ou TRAHISON. Deux pactes : chacun distribue 2. Un seul trahit : il distribue 4 et l'autre boit 2. Deux trahisons : chacun boit 2.",
+    visualHint: "none",
+    resolve(input) {
+      const opponentId = input.targetRounds[0]?.[0];
+      if (!opponentId) {
+        return needTargets(1, 1, {
+          excludeIds: [input.activePlayerId],
+          label: "Avec qui scelles-tu le pacte ?",
+        });
+      }
+      const activeName = playerName(input.players, input.activePlayerId);
+      const opponentName = playerName(input.players, opponentId);
+      return done(
+        outcome("Pacte ou trahison", [
+          `${activeName} contre ${opponentName}`,
+          "Poing fermé = PACTE, main ouverte = TRAHISON. 3, 2, 1 : révélez en même temps.",
+          "Deux pactes : chacun distribue 2 gorgées.",
+          "Un seul traître : il distribue 4 gorgées, l'autre boit 2 gorgées.",
+          "Deux trahisons : chacun boit 2 gorgées.",
+        ]),
+      );
+    },
+  },
+  {
+    id: "c10",
+    category: "CHOISIS",
+    title: "Vérité ou pénalité",
+    prompt:
+      "Choisis : répondre honnêtement à une question épicée tirée par l'application, ou garder le silence et boire 2 gorgées.",
+    visualHint: "none",
+    resolve(input) {
+      if (!hasSlots(input.randomSlots, "question")) return needRandom("question");
+      const question =
+        CONFESSION_QUESTIONS[
+          pickIndexFromSlot(input.randomSlots.question!, CONFESSION_QUESTIONS.length)
+        ]!;
+      if (!input.choiceKey) {
+        return needChoice(
+          [
+            { key: "verite", label: "VÉRITÉ" },
+            { key: "penalite", label: "PÉNALITÉ" },
+          ],
+          question,
+        );
+      }
+      const activeName = playerName(input.players, input.activePlayerId);
+      return input.choiceKey === "verite"
+        ? done(outcome("Vérité", [question, "Réponds honnêtement : tu ne bois rien."]))
+        : done(outcome("Pénalité", [drinks(activeName, 2)]));
+    },
+  },
+  {
+    id: "c11",
+    category: "CHOISIS",
+    title: "Bouclier ou attaque",
+    prompt:
+      "Choisis : distribuer 2 gorgées maintenant, ou gagner un bouclier qui annule jusqu'à 2 gorgées de ta prochaine pénalité avant ton prochain tour.",
+    visualHint: "none",
+    resolve(input) {
+      if (!input.choiceKey) {
+        return needChoice([
+          { key: "attaque", label: "ATTAQUE" },
+          { key: "bouclier", label: "BOUCLIER" },
+        ]);
+      }
+      if (input.choiceKey === "attaque") {
+        return done(outcome("Attaque", ["Distribue 2 gorgées — gérez entre vous."]));
+      }
+      const activeName = playerName(input.players, input.activePlayerId);
+      const description = `${activeName} a un bouclier : sa prochaine pénalité est réduite de 2 gorgées maximum, jusqu'à son prochain tour.`;
+      return done(
+        outcome("Bouclier", [description], "rule"),
+        makeRule("c11", "Bouclier", description, input.activePlayerId, "ownerNextTurn"),
+      );
+    },
+  },
+  {
+    id: "c12",
+    category: "CHOISIS",
+    title: "Talent ou sécurité",
+    prompt:
+      "SÉCURITÉ : distribue 2 gorgées. DÉFI : réussis un mini-défi pour en distribuer 5 ; en cas d'échec, bois 2.",
+    visualHint: "none",
+    resolve(input) {
+      if (!input.choiceKey) {
+        return needChoice([
+          { key: "securite", label: "SÉCURITÉ" },
+          { key: "defi", label: "DÉFI" },
+        ]);
+      }
+      if (input.choiceKey === "securite") {
+        return done(outcome("Sécurité", ["Distribue 2 gorgées — gérez entre vous."]));
+      }
+      if (!input.miniGameResult) return needMiniGame("stopTimer", "solo", input.activePlayerId);
+      const activeName = playerName(input.players, input.activePlayerId);
+      return input.miniGameResult.success
+        ? done(outcome("Défi réussi !", ["Distribue 5 gorgées — gérez entre vous."]))
+        : done(outcome("Défi manqué", [drinks(activeName, 2)]));
     },
   },
 ];
