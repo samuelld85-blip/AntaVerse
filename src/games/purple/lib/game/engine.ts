@@ -1,9 +1,15 @@
-import { createDeck, drawCards } from "./deck";
-import type { Card, CreateGameInput, GameState, GuessOutcome, GuessType, Player } from "./types";
+import { RANKS, createDeck, drawCards } from "./deck";
+import type { Card, CreateGameInput, GameState, GuessOutcome, GuessType, Player, Rank } from "./types";
 
 export const MIN_PLAYERS = 2;
 export const MAX_PLAYERS = 12;
 export const MIN_PROGRESS_TO_PASS = 3;
+
+/** Numeric value of each rank for higher/lower comparisons. */
+function getRankValue(rank: Rank): number {
+  const index = RANKS.indexOf(rank);
+  return index >= 0 ? index + 1 : 0;
+}
 
 /** How many cards each guess type draws — the single source of truth used by both the engine and the UI. */
 export const GUESS_DRAW_COUNT: Record<GuessType, number> = {
@@ -11,7 +17,9 @@ export const GUESS_DRAW_COUNT: Record<GuessType, number> = {
   black: 1,
   purple: 2,
   doublePurple: 4,
-  skubrum: 3,
+  skubrum: 4,
+  higher: 1,
+  lower: 1,
 };
 
 export function createGame(
@@ -54,7 +62,11 @@ function countColors(cards: readonly Card[]): { red: number; black: number } {
 }
 
 /** Pure rule evaluation for a drawn hand, given the guess that was made. */
-export function evaluateGuess(guessType: GuessType, cards: readonly Card[]): GuessOutcome {
+export function evaluateGuess(
+  guessType: GuessType,
+  cards: readonly Card[],
+  referenceCard?: Card,
+): GuessOutcome {
   const { red, black } = countColors(cards);
   switch (guessType) {
     case "red":
@@ -66,7 +78,13 @@ export function evaluateGuess(guessType: GuessType, cards: readonly Card[]): Gue
     case "doublePurple":
       return red === 2 && black === 2 ? "success" : "failure";
     case "skubrum":
-      return red > 0 && black > 0 ? "success" : "failure";
+      return (red === 3 && black === 1) || (red === 1 && black === 3) ? "success" : "failure";
+    case "higher":
+      if (!referenceCard || cards.length === 0) return "failure";
+      return getRankValue(cards[0]!.rank) > getRankValue(referenceCard.rank) ? "success" : "failure";
+    case "lower":
+      if (!referenceCard || cards.length === 0) return "failure";
+      return getRankValue(cards[0]!.rank) < getRankValue(referenceCard.rank) ? "success" : "failure";
     default:
       return "failure";
   }
@@ -74,6 +92,11 @@ export function evaluateGuess(guessType: GuessType, cards: readonly Card[]): Gue
 
 export function canPass(game: GameState): boolean {
   return game.progress >= MIN_PROGRESS_TO_PASS;
+}
+
+/** Higher/Lower is only available after at least one card has been drawn this turn. */
+export function canPlayHigherLower(game: GameState): boolean {
+  return game.lastCard !== undefined;
 }
 
 /**
@@ -93,7 +116,14 @@ export function submitGuess(
 
   const drawCount = GUESS_DRAW_COUNT[guessType];
   const { drawn, deck, reshuffled } = drawCards(game.deck, drawCount, random);
-  const outcome = evaluateGuess(guessType, drawn);
+  const outcome = evaluateGuess(
+    guessType,
+    drawn,
+    guessType === "higher" || guessType === "lower" ? game.lastCard : undefined,
+  );
+
+  // The last drawn card becomes the reference for future higher/lower plays.
+  const newLastCard = drawn[drawn.length - 1] ?? game.lastCard;
 
   if (outcome === "success") {
     return {
@@ -101,6 +131,7 @@ export function submitGuess(
       deck,
       pile: game.pile + drawCount,
       progress: game.progress + drawCount,
+      lastCard: newLastCard,
       lastGuess: {
         guessType,
         playerId: currentPlayer.id,
@@ -121,6 +152,7 @@ export function submitGuess(
     deck,
     pile: 0,
     progress: 0,
+    lastCard: undefined,
     lastGuess: {
       guessType,
       playerId: currentPlayer.id,
@@ -150,6 +182,7 @@ export function passTurn(game: GameState, now = Date.now()): GameState {
     currentPlayerIndex: nextPlayerIndex(game.currentPlayerIndex, game.players.length),
     progress: 0,
     lastGuess: null,
+    lastCard: undefined,
     updatedAt: new Date(now).toISOString(),
   };
 }

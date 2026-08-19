@@ -6,11 +6,12 @@ import { BackButton } from "@/games/shared/components/back-button";
 import { Brand } from "@/games/purple/components/brand";
 import { PlayingCard } from "@/games/purple/components/playing-card";
 import { MiniCard } from "@/games/purple/components/mini-card";
-import { GUESS_DRAW_COUNT, canPass, passTurn, submitGuess } from "@/games/purple/lib/game/engine";
+import type { Card } from "@/games/purple/lib/game/types";
+import { GUESS_DRAW_COUNT, canPass, canPlayHigherLower, passTurn, submitGuess } from "@/games/purple/lib/game/engine";
 import { loadCurrentGame, saveCurrentGame } from "@/games/purple/lib/game/persistence";
 import type { GameState, GuessType } from "@/games/purple/lib/game/types";
 
-const GUESS_ORDER: readonly GuessType[] = ["red", "black", "purple", "doublePurple", "skubrum"];
+const GUESS_ORDER: readonly GuessType[] = ["lower", "higher", "red", "black", "purple", "doublePurple", "skubrum"];
 
 const GUESS_LABEL: Record<GuessType, string> = {
   red: "Rouge",
@@ -18,9 +19,11 @@ const GUESS_LABEL: Record<GuessType, string> = {
   purple: "Purple",
   doublePurple: "Double Purple",
   skubrum: "Skubrum",
+  higher: "Plus",
+  lower: "Moins",
 };
 
-function GuessExample({ guessType }: { guessType: GuessType }) {
+function GuessExample({ guessType, referenceCard }: { guessType: GuessType; referenceCard?: Card }) {
   switch (guessType) {
     case "red":
       return (
@@ -59,6 +62,10 @@ function GuessExample({ guessType }: { guessType: GuessType }) {
           <MiniCard suit="spades" />
         </div>
       );
+    case "higher":
+      return referenceCard ? <MiniCard suit={referenceCard.suit} /> : null;
+    case "lower":
+      return referenceCard ? <MiniCard suit={referenceCard.suit} /> : null;
   }
 }
 
@@ -278,21 +285,29 @@ export function GameClient() {
 
       <section className="purple-actions">
         <div className="guess-grid" role="group" aria-label="Choix de la carte">
-          {GUESS_ORDER.map((guessType) => (
-            <button
-              key={guessType}
-              type="button"
-              className={`guess-button guess-button--${guessType}`}
-              onClick={() => act(guessType)}
-              disabled={revealing}
-            >
-              <span className="guess-button-label">{GUESS_LABEL[guessType]}</span>
-              <GuessExample guessType={guessType} />
-              <span className="guess-button-draw">
-                {GUESS_DRAW_COUNT[guessType]} carte{GUESS_DRAW_COUNT[guessType] > 1 ? "s" : ""}
-              </span>
-            </button>
-          ))}
+          {GUESS_ORDER.map((guessType) => {
+            const isHigherLower = guessType === "higher" || guessType === "lower";
+            const label = isHigherLower
+              ? `${GUESS_LABEL[guessType]} que`
+              : GUESS_LABEL[guessType];
+            return (
+              <button
+                key={guessType}
+                type="button"
+                className={`guess-button guess-button--${guessType} ${isHigherLower ? "guess-button--higher-lower" : ""}`}
+                onClick={() => act(guessType)}
+                disabled={revealing || (isHigherLower && !canPlayHigherLower(game))}
+              >
+                <span className="guess-button-label">{label}</span>
+                <GuessExample guessType={guessType} referenceCard={game.lastCard} />
+                {!isHigherLower ? (
+                  <span className="guess-button-draw">
+                    {GUESS_DRAW_COUNT[guessType]} carte{GUESS_DRAW_COUNT[guessType] > 1 ? "s" : ""}
+                  </span>
+                ) : null}
+              </button>
+            );
+          })}
         </div>
         {passAllowed ? (
           <button type="button" className="pass-button" onClick={pass}>
