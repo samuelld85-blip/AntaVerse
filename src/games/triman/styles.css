@@ -265,13 +265,13 @@ html[data-theme="light"] .brand-mark--triman {
   transform: rotateX(0deg) rotateY(0deg);
 }
 .die-cube[data-value="2"] {
-  transform: rotateX(0deg) rotateY(90deg);
+  transform: rotateX(0deg) rotateY(-90deg);
 }
 .die-cube[data-value="3"] {
   transform: rotateX(0deg) rotateY(180deg);
 }
 .die-cube[data-value="4"] {
-  transform: rotateX(0deg) rotateY(-90deg);
+  transform: rotateX(0deg) rotateY(90deg);
 }
 .die-cube[data-value="5"] {
   transform: rotateX(-90deg) rotateY(0deg);

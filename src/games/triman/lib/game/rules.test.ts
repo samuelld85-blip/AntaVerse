@@ -231,3 +231,116 @@ describe("evaluateActiveRoll — rule stacking", () => {
     expect(effects).toEqual([]);
   });
 });
+
+describe("evaluateActiveRoll — critical bug-fix cases", () => {
+  it("4+4 double triggers ONLY the double rule, not another rule", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 4, b: 4 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "none",
+    });
+    expect(effects).toHaveLength(1);
+    expect(effects[0]).toMatchObject({
+      kind: "double",
+      headline: "Double 4",
+    });
+    expect(effects[0]!.detail).toContain("Samuel");
+    expect(effects[0]!.detail).toContain("4");
+  });
+
+  it("2+2 double triggers ONLY the double rule", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 2, b: 2 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "none",
+    });
+    expect(effects).toHaveLength(1);
+    expect(effects[0]).toMatchObject({
+      kind: "double",
+      headline: "Double 2",
+    });
+  });
+
+  it("1+2 triggers Triman rule (sum=3)", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 1, b: 2 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "p1",
+    });
+    expect(effects).toHaveLength(1);
+    expect(effects[0]).toMatchObject({
+      kind: "triman",
+      headline: "Triman",
+    });
+    expect(effects[0]!.detail).toContain("Emma");
+  });
+
+  it("2+1 triggers Triman rule (sum=3)", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 2, b: 1 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "p2",
+    });
+    expect(effects).toHaveLength(1);
+    expect(effects[0]).toMatchObject({
+      kind: "triman",
+      headline: "Triman",
+    });
+    expect(effects[0]!.detail).toContain("Lucas");
+  });
+
+  it("1+3 triggers no rule (sum=4)", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 1, b: 3 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "p0",
+    });
+    // The Triman rule is triggered because one die is 3
+    // So this should have 1 effect (Triman)
+    const trimanEffect = effects.find((e) => e.kind === "triman");
+    expect(trimanEffect).toBeDefined();
+    // But there should be no other effects
+    expect(effects).toHaveLength(1);
+  });
+
+  it("3+1 triggers Triman rule (one die is 3)", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 3, b: 1 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "p0",
+    });
+    expect(effects).toHaveLength(1);
+    expect(effects[0]).toMatchObject({
+      kind: "triman",
+      headline: "Triman",
+    });
+  });
+
+  it("6+4 must NOT trigger 2 doigts", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 6, b: 4 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "none",
+    });
+    const twoFingersEffect = effects.find((e) => e.kind === "reflex-finger-2");
+    expect(twoFingersEffect).toBeUndefined();
+  });
+
+  it("4+6 must NOT trigger 2 doigts", () => {
+    const effects = evaluateActiveRoll({
+      dice: { a: 4, b: 6 },
+      players,
+      currentPlayerIndex: 0,
+      trimanPlayerId: "none",
+    });
+    const twoFingersEffect = effects.find((e) => e.kind === "reflex-finger-2");
+    expect(twoFingersEffect).toBeUndefined();
+  });
+});
