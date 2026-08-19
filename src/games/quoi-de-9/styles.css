@@ -14,6 +14,14 @@
   --team-b: #16c7e8;
 }
 
+/* `--game-accent-ink` is shared by NAME with every other game's stylesheet,
+   so it must never be declared on a bare `:root` — see ARCHITECTURE.md. Quoi
+   de 9's brand mark carries `.quoi-brand-mark`, which only exists while this
+   game's pages are mounted. Dark theme: white ink on all color CTAs. */
+:root:has(.quoi-brand-mark) {
+  --game-accent-ink: #ffffff;
+}
+
 html[data-theme="light"] {
   --ink: #f7f8fa;
   --page: #f7f7f4;
@@ -31,6 +39,11 @@ html[data-theme="light"] {
   --color-white: #11151b;
   --color-black: #11151b;
   color-scheme: light;
+}
+
+html[data-theme="light"]:has(.quoi-brand-mark) {
+  /* Light theme: dark gray ink on all color CTAs. */
+  --game-accent-ink: #222222;
 }
 
 * {
@@ -222,4 +235,64 @@ html[data-theme="light"] .answer-choice:disabled {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Resume card — harmonized with shared component structure. */
+.resume-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: 0.75rem 0.8rem 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+.resume-card > div:first-child {
+  min-width: 0;
+}
+.resume-teams {
+  max-width: 100%;
+  margin: 0.2rem 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Mirrors `.button` + `.button--secondary` + `.resume-button` from
+   game-base.css, which this game does not import. */
+.resume-button {
+  display: inline-flex;
+  width: auto;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  padding: 0.5rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--paper);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  transition:
+    transform 120ms ease,
+    filter 120ms ease;
+}
+.resume-button:hover {
+  filter: brightness(1.05);
+}
+.resume-card .eyebrow {
+  margin: 0;
+  color: var(--game-accent);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }

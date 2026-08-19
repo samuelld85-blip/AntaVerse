@@ -75,8 +75,8 @@ function GuessExample({ guessType, referenceCard }: { guessType: GuessType; refe
       return (
         <div className="guess-cards">
           <MiniCard suit="hearts" />
-          <MiniCard suit="diamonds" />
           <MiniCard suit="spades" />
+          <MiniCard suit="hearts" />
         </div>
       );
     case "higher":

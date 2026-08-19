@@ -28,6 +28,11 @@ html[data-theme="light"] {
   --game-accent-dark: var(--la-relance-accent-dark);
   --game-accent-light: var(--la-relance-accent-light);
   --game-accent-glow: var(--la-relance-accent-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--la-relance) {
+  --game-accent-ink: #222222;
 }
 
 .brand {

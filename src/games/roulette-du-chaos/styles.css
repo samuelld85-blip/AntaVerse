@@ -30,6 +30,11 @@
   --game-accent-dark: var(--rdc-accent-dark);
   --game-accent-light: var(--rdc-accent-light);
   --game-accent-glow: var(--rdc-accent-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--rdc) {
+  --game-accent-ink: #222222;
 }
 
 /* Brand ------------------------------------------------------------------ */

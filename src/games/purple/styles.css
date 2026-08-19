@@ -32,6 +32,11 @@ html[data-theme="light"] {
   --game-accent-dark: var(--violet-deep);
   --game-accent-light: var(--violet);
   --game-accent-glow: var(--violet-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--purple) {
+  --game-accent-ink: #222222;
 }
 
 .brand-mark {

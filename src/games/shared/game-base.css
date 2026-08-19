@@ -126,7 +126,11 @@ a {
 }
 .button--primary {
   background: var(--game-accent);
-  color: var(--ink);
+  /* Not `--ink`: the readable label color depends on the accent's luminance,
+     not on the page background. Each game declares `--game-accent-ink`
+     alongside its accent; the value is derived from readableInk() in
+     shared/lib/accent-ink.ts and kept in sync by accent-ink.test.ts. */
+  color: var(--game-accent-ink);
   box-shadow: 0 14px 40px var(--game-accent-glow);
 }
 .button--secondary {
@@ -209,37 +213,10 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
-.theme-selector {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-.theme-selector-button {
-  display: inline-flex;
-  min-height: 2.75rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: 1px solid var(--line);
-  border-radius: 0.75rem;
-  background: color-mix(in srgb, var(--text) 4%, transparent);
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.75rem;
-  font-weight: 750;
-  transition:
-    background 120ms ease,
-    border-color 120ms ease,
-    color 120ms ease;
-}
-.theme-selector-button.is-selected {
-  /* Neutral active state: no game-specific colors. Inverts text and background
-     across themes for consistent high contrast (white-on-black in dark mode,
-     black-on-white in light mode). */
-  border-color: var(--text);
-  background: var(--ink);
-  color: var(--text);
-}
+/* The theme selector's styles live with the shared component itself
+   (shared/components/theme-selector.css) so every game gets the exact same
+   neutral control, including games that do not import this stylesheet. */
+
 .resume-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -250,8 +227,11 @@ a {
   padding: 0.75rem 0.8rem 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.04);
 }
-.resume-card > div {
+.resume-card > div:first-child {
   min-width: 0;
+}
+.resume-card .eyebrow {
+  color: var(--game-accent);
 }
 .resume-teams {
   max-width: 100%;

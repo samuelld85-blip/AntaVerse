@@ -123,6 +123,19 @@ assumptions baked in:
   design-token universe with `game-base.css`'s, which is a larger change
   than this file's existing "don't force Quoi de 9 into the shared shape"
   stance invites.
+- `lib/accent-ink.ts` + `components/theme-selector.css` — the two halves of
+  the home-screen CTA/theme-selector contract. Every game's home page renders
+  the same order (primary `Jouer` CTA, then the theme selector, then
+  secondary info). The CTA is filled with `--game-accent` and labelled with
+  `--game-accent-ink`, which each game declares next to its accent in its
+  `:has()`-scoped block; `readableInk()` is the single rule that decides that
+  value (dark ink above `LIGHT_ACCENT_LUMINANCE`, white below), and
+  `accent-ink.test.ts` fails if a stylesheet drifts from it. The theme
+  selector is the opposite: deliberately palette-free. Its CSS ships with the
+  component and defines its own `--ts-*` tokens rather than reading the host
+  game's, so it looks identical everywhere — including in Quoi de 9, which
+  does not import `game-base.css` — and no game palette change can recolor
+  it. The same test asserts no game stylesheet styles `.theme-selector`.
 - `lib/launcher-accents.ts` — each game's main accent as a plain constant,
   imported by `lib/games.ts` for the launcher card so that color isn't
   hardcoded a second time outside the game's own styles.css.

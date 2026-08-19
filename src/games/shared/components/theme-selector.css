@@ -1,0 +1,61 @@
+/* Dark / light mode selector — deliberately neutral and identical in every
+   game. It defines its own tokens instead of reading the host game's design
+   tokens for two reasons: no game palette change can ever recolor it, and it
+   renders identically in games that do not import game-base.css (Quoi de 9
+   keeps its own token set). Only the two states below decide the look. */
+
+.theme-selector {
+  /* Dark theme (default). */
+  --ts-fg: #f7f8fa;
+  --ts-fg-muted: #9199a3;
+  --ts-line: rgba(255, 255, 255, 0.12);
+  --ts-line-active: #f7f8fa;
+  --ts-surface: rgba(255, 255, 255, 0.04);
+  --ts-surface-active: #0b1118;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+html[data-theme="light"] .theme-selector {
+  /* Same roles, inverted: the active option stays the high-contrast one. */
+  --ts-fg: #11151b;
+  --ts-fg-muted: #68707a;
+  --ts-line: rgba(17, 21, 27, 0.15);
+  --ts-line-active: #11151b;
+  --ts-surface: rgba(17, 21, 27, 0.04);
+  --ts-surface-active: #ffffff;
+}
+
+/* Shape only — the two states below own every color, and are written as
+   mutually exclusive selectors of equal specificity so neither can shadow
+   the other regardless of stylesheet order. */
+.theme-selector-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 750;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.theme-selector-button:not(.is-selected) {
+  border-color: var(--ts-line);
+  background-color: var(--ts-surface);
+  color: var(--ts-fg-muted);
+}
+
+.theme-selector-button.is-selected {
+  border-color: var(--ts-line-active);
+  background-color: var(--ts-surface-active);
+  color: var(--ts-fg);
+}

@@ -5,12 +5,12 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "./ui";
 
-// The "resume your in-progress game" card is identical across games that use
-// this simple localStorage persistence: same markup, same "load after mount,
-// hide once finished" behavior. Only the persistence lookup, the resume
-// link, and how to summarize the in-progress game (two team names, a list of
-// player names, ...) differ, so callers supply that summary. Quoi de 9 has
-// its own IndexedDB-backed resume flow and does not use this.
+// The "resume your in-progress game" card is identical across games: same
+// markup, same wording, same "load after mount, hide once finished" behavior.
+// Only the persistence lookup, the resume link, and how to summarize the
+// in-progress game (team names, player names, ...) differ, so callers supply
+// those. Quoi de 9 mirrors this component locally because its persistence is
+// async.
 //
 // The constraint is intentionally just `object`, not `{ status?: string }`:
 // a game state that has no "status" concept at all (Triman never finishes)

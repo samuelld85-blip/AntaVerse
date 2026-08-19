@@ -31,6 +31,11 @@
   --game-accent-dark: var(--plm-accent-dark);
   --game-accent-light: var(--plm-accent-light);
   --game-accent-glow: var(--plm-accent-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--plm) {
+  --game-accent-ink: #222222;
 }
 
 /* Brand ------------------------------------------------------------------ */

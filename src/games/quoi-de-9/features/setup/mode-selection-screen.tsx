@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/games/quoi-de-9/components/ui";
 import type { GameMode } from "@/games/quoi-de-9/lib/game/types";
 
 export function ModeSelectionScreen({
@@ -23,7 +22,7 @@ export function ModeSelectionScreen({
         <button
           type="button"
           onClick={() => onModeSelected("competition")}
-          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--lime)]/35 bg-[var(--lime)]/[.1] px-4 py-3 text-left transition hover:border-[var(--lime)]/60 hover:bg-[var(--lime)]/[.15] active:scale-[.98]"
+          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--accent-text)]/35 bg-[var(--accent-text)]/[.1] px-4 py-3 text-left transition hover:border-[var(--accent-text)]/60 hover:bg-[var(--accent-text)]/[.15] active:scale-[.98]"
         >
           <span className="text-2xl" aria-hidden="true">
             🏆
@@ -37,7 +36,7 @@ export function ModeSelectionScreen({
         <button
           type="button"
           onClick={() => onModeSelected("fun")}
-          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[#E83DFF]/35 bg-[#E83DFF]/[.1] px-4 py-3 text-left transition hover:border-[#E83DFF]/60 hover:bg-[#E83DFF]/[.15] active:scale-[.98]"
+          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--violet)]/35 bg-[var(--violet)]/[.1] px-4 py-3 text-left transition hover:border-[var(--violet)]/60 hover:bg-[var(--violet)]/[.15] active:scale-[.98]"
         >
           <span className="text-2xl" aria-hidden="true">
             🍺

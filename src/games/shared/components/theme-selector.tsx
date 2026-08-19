@@ -1,6 +1,7 @@
 "use client";
 
 import { useThemeMode } from "@/lib/use-theme-mode";
+import "./theme-selector.css";
 
 export function ThemeSelector() {
   const { theme, selectTheme } = useThemeMode("light");

@@ -26,6 +26,11 @@ html[data-theme="light"] {
   --game-accent-dark: var(--sld-accent-dark);
   --game-accent-light: var(--sld-accent-light);
   --game-accent-glow: var(--sld-accent-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--sans-le-dire) {
+  --game-accent-ink: #222222;
 }
 
 .brand {

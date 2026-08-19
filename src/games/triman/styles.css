@@ -18,6 +18,11 @@
   --game-accent-dark: var(--triman-accent-dark);
   --game-accent-light: var(--triman-accent-light);
   --game-accent-glow: var(--triman-accent-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--triman) {
+  --game-accent-ink: #222222;
 }
 
 .brand {

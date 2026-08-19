@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Brand } from "@/games/quoi-de-9/components/brand";
 import { ButtonLink } from "@/games/quoi-de-9/components/ui";
 import { ResumeGameCard } from "@/games/quoi-de-9/components/resume-game-card";
-import { ThemeSelector } from "@/games/quoi-de-9/components/theme-selector";
+import { ThemeSelector } from "@/games/shared/components/theme-selector";
 import { GameHomeNav } from "@/components/game-home-nav";
 
 export default function HomePage() {
@@ -30,11 +30,11 @@ export default function HomePage() {
       </section>
 
       <section className="grid gap-3 pb-2">
-        <ThemeSelector />
         <ResumeGameCard />
         <ButtonLink href="/quoi-de-9/creer">
-          Nouvelle partie <span aria-hidden="true">↗</span>
+          Jouer <span aria-hidden="true">→</span>
         </ButtonLink>
+        <ThemeSelector />
         <Link
           href="/installer"
           className="min-h-11 py-3 text-center text-xs font-semibold text-white/58 underline decoration-white/25 underline-offset-4"

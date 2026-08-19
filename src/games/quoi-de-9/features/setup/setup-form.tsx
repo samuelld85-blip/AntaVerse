@@ -1,128 +1,133 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Controller, useForm, useWatch } from "react-hook-form";
 import { Button, compactInputClassName, Field } from "@/games/quoi-de-9/components/ui";
 import { GAME_CONFIG } from "@/games/quoi-de-9/lib/game/config";
 import { createGame } from "@/games/quoi-de-9/lib/game/engine";
 import { saveCurrentGame } from "@/games/quoi-de-9/lib/game/persistence";
-import { createGameSchema, type CreateGameForm } from "@/games/quoi-de-9/lib/game/schemas";
+import { createGameSchema } from "@/games/quoi-de-9/lib/game/schemas";
 import type { GameMode } from "@/games/quoi-de-9/lib/game/types";
 import { AddParticipantButton } from "@/games/shared/components/add-participant-button";
 import { ParticipantCard } from "@/games/shared/components/participant-card";
 import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 
-const DEFAULT_COLORS = TEAM_PALETTE;
-
 export function SetupForm({ mode }: { mode: GameMode }) {
   const router = useRouter();
-  const [isReady, setIsReady] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [teamAName, setTeamAName] = useState("Les Antagonistes");
+  const [teamBName, setTeamBName] = useState("Les Sanglieeers");
+  const [teamCName, setTeamCName] = useState("");
   const [hasThirdTeam, setHasThirdTeam] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    control,
-    setError,
-    formState: { errors, isSubmitting },
-  } = useForm<CreateGameForm>({
-    defaultValues: {
-      teamAName: "Les Antagonistes",
-      teamBName: "Les Sanglieeers",
-      teamAColor: DEFAULT_COLORS[0],
-      teamBColor: DEFAULT_COLORS[1],
-      teamCName: "",
-      teamCColor: DEFAULT_COLORS[2],
-      startingTeamIndex: 0,
-      roundsPerTeam: GAME_CONFIG.defaultRoundsPerTeam,
-      turnDurationSeconds: GAME_CONFIG.defaultTurnDurationSeconds,
+  const [startingTeamIndex, setStartingTeamIndex] = useState(0);
+  const [roundsPerTeam, setRoundsPerTeam] = useState<number>(GAME_CONFIG.defaultRoundsPerTeam);
+  const [turnDurationSeconds, setTurnDurationSeconds] = useState<number>(
+    GAME_CONFIG.defaultTurnDurationSeconds,
+  );
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  function removeThirdTeam() {
+    setHasThirdTeam(false);
+    setTeamCName("");
+    // The third team could have been the one starting — fall back to team A.
+    if (startingTeamIndex === 2) setStartingTeamIndex(0);
+  }
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (isSubmitting) return;
+
+    // The optional third team must be entirely absent from the payload when
+    // it is not on screen: sending an empty teamCName (or a color without a
+    // name) fails validation on a field the form doesn't render, which would
+    // make the submit silently do nothing.
+    const parsed = createGameSchema.safeParse({
+      teamAName,
+      teamBName,
+      teamAColor: TEAM_PALETTE[0],
+      teamBColor: TEAM_PALETTE[1],
+      ...(hasThirdTeam
+        ? { teamCName, teamCColor: TEAM_PALETTE[2] }
+        : {}),
+      startingTeamIndex,
+      roundsPerTeam,
+      turnDurationSeconds,
       mode,
-    },
-  });
+    });
 
-  const values = useWatch({ control });
-
-  useEffect(() => {
-    const readinessTimer = window.setTimeout(() => setIsReady(true), 0);
-    return () => window.clearTimeout(readinessTimer);
-  }, []);
-
-  async function submit(rawInput: CreateGameForm) {
-    setSubmitError(null);
-    const parsed = createGameSchema.safeParse(rawInput);
     if (!parsed.success) {
-      for (const issue of parsed.error.issues) {
-        const field = issue.path[0];
-        if (typeof field === "string") {
-          setError(field as keyof CreateGameForm, { message: issue.message });
-        }
-      }
+      setError(parsed.error.issues[0]?.message ?? "Vérifiez les informations saisies.");
       return;
     }
+
+    setError(null);
+    setIsSubmitting(true);
+
     try {
       await saveCurrentGame(createGame(parsed.data));
       router.push("/quoi-de-9/partie");
-    } catch (error) {
-      console.error("Impossible d’enregistrer la partie", error);
-      setSubmitError("Impossible d’enregistrer la partie sur cet appareil.");
+    } catch (err) {
+      console.error("Impossible d’enregistrer la partie", err);
+      setError("Impossible d’enregistrer la partie sur cet appareil.");
+      setIsSubmitting(false);
     }
   }
+
+  const teamNames = [teamAName, teamBName];
+  if (hasThirdTeam) teamNames.push(teamCName || "Équipe 3");
 
   return (
     <form
       className="grid min-h-0 gap-3.5 pb-2"
-      onSubmit={handleSubmit(submit)}
+      onSubmit={submit}
       noValidate
-      aria-busy={!isReady || isSubmitting}
+      aria-busy={isSubmitting}
     >
       <fieldset className="contents" disabled={isSubmitting}>
         <div className="grid gap-3.5">
-          {(["A", "B"] as const).map((letter, index) => {
-            const nameField = letter === "A" ? "teamAName" : "teamBName";
-            const colorField = letter === "A" ? "teamAColor" : "teamBColor";
-            const selectedColor = DEFAULT_COLORS[index]!;
-            return (
-              <div key={letter}>
-                <ParticipantCard
-                  badge={letter}
-                  color={selectedColor}
-                  label={`Équipe ${letter}`}
-                  error={errors[nameField]?.message}
-                  inputProps={{
-                    ...register(nameField),
-                    id: `team-${letter}-name`,
-                    "aria-invalid": Boolean(errors[nameField]),
-                  }}
-                />
-                <input type="hidden" {...register(colorField)} />
-              </div>
-            );
-          })}
+          <ParticipantCard
+            badge="A"
+            color={TEAM_PALETTE[0]}
+            label="Équipe A"
+            inputProps={{
+              id: "team-A-name",
+              value: teamAName,
+              onChange: (event) => setTeamAName(event.target.value),
+              "aria-label": "Équipe A",
+            }}
+          />
+          <ParticipantCard
+            badge="B"
+            color={TEAM_PALETTE[1]}
+            label="Équipe B"
+            inputProps={{
+              id: "team-B-name",
+              value: teamBName,
+              onChange: (event) => setTeamBName(event.target.value),
+              "aria-label": "Équipe B",
+            }}
+          />
 
           {hasThirdTeam && (
-            <div>
-              <ParticipantCard
-                badge="C"
-                color={DEFAULT_COLORS[2]}
-                label="Équipe C"
-                error={errors.teamCName?.message}
-                onRemove={() => setHasThirdTeam(false)}
-                removeLabel="Supprimer équipe C"
-                inputProps={{
-                  ...register("teamCName"),
-                  id: "team-c-name",
-                  "aria-invalid": Boolean(errors.teamCName),
-                }}
-              />
-              <input type="hidden" {...register("teamCColor")} />
-            </div>
+            <ParticipantCard
+              badge="C"
+              color={TEAM_PALETTE[2]}
+              label="Équipe C"
+              onRemove={removeThirdTeam}
+              removeLabel="Supprimer l’équipe 3"
+              inputProps={{
+                id: "team-C-name",
+                value: teamCName,
+                onChange: (event) => setTeamCName(event.target.value),
+                "aria-label": "Équipe C",
+              }}
+            />
           )}
         </div>
 
         {!hasThirdTeam && (
-          <AddParticipantButton onClick={() => setHasThirdTeam(true)} color={DEFAULT_COLORS[2]}>
-            Ajouter équipe 3
+          <AddParticipantButton onClick={() => setHasThirdTeam(true)} color={TEAM_PALETTE[2]}>
+            Ajouter une équipe
           </AddParticipantButton>
         )}
 
@@ -130,39 +135,30 @@ export function SetupForm({ mode }: { mode: GameMode }) {
           <legend className="px-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">
             Qui commence ?
           </legend>
-          <Controller
-            control={control}
-            name="startingTeamIndex"
-            render={({ field }) => {
-              const teamCount = hasThirdTeam ? 3 : 2;
-              const gridColsClass =
-                teamCount === 2 ? "grid-cols-2" : "grid-cols-3";
-              const teamNames = [values.teamAName, values.teamBName];
-              if (hasThirdTeam) teamNames.push(values.teamCName || "Équipe 3");
-              return (
-                <div className={`mt-1.5 grid ${gridColsClass} gap-2.5`}>
-                  {Array.from({ length: teamCount }).map((_, index) => (
-                    <label
-                      key={index}
-                      className={`flex min-h-11 cursor-pointer items-center justify-center rounded-xl border px-3 text-center text-sm font-semibold transition ${field.value === index ? "border-[var(--lime)] bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.04] text-white/60"}`}
-                    >
-                      <input
-                        ref={field.ref}
-                        name={field.name}
-                        type="radio"
-                        value={index}
-                        checked={field.value === index}
-                        onBlur={field.onBlur}
-                        onChange={() => field.onChange(index)}
-                        className="sr-only"
-                      />
-                      {teamNames[index]}
-                    </label>
-                  ))}
-                </div>
-              );
-            }}
-          />
+          <div
+            className={`mt-1.5 grid gap-2.5 ${hasThirdTeam ? "grid-cols-3" : "grid-cols-2"}`}
+          >
+            {teamNames.map((name, index) => (
+              <label
+                key={index}
+                className={`flex min-h-11 cursor-pointer items-center justify-center rounded-xl border px-3 text-center text-sm font-semibold transition ${
+                  startingTeamIndex === index
+                    ? "border-[var(--accent-text)] bg-[var(--accent-text)] text-[var(--accent-ink)]"
+                    : "border-white/10 bg-white/[.04] text-white/60"
+                }`}
+              >
+                <input
+                  name="startingTeamIndex"
+                  type="radio"
+                  value={index}
+                  checked={startingTeamIndex === index}
+                  onChange={() => setStartingTeamIndex(index)}
+                  className="sr-only"
+                />
+                {name}
+              </label>
+            ))}
+          </div>
         </fieldset>
 
         <details className="rounded-2xl border border-white/8 bg-white/[.02] px-4 py-3.5">
@@ -170,47 +166,39 @@ export function SetupForm({ mode }: { mode: GameMode }) {
             Durée et nombre de manches
           </summary>
           <div className="mt-3 grid grid-cols-2 gap-3">
-            <Field label="Manches" error={errors.roundsPerTeam?.message} className="gap-1 text-xs">
+            <Field label="Manches" className="gap-1 text-xs">
               <input
-                {...register("roundsPerTeam", { valueAsNumber: true })}
                 type="number"
                 min={GAME_CONFIG.minRoundsPerTeam}
                 max={GAME_CONFIG.maxRoundsPerTeam}
+                value={roundsPerTeam}
+                onChange={(event) => setRoundsPerTeam(Number(event.target.value))}
                 className={compactInputClassName}
               />
             </Field>
-            <Field
-              label="Secondes"
-              error={errors.turnDurationSeconds?.message}
-              className="gap-1 text-xs"
-            >
+            <Field label="Secondes" className="gap-1 text-xs">
               <input
-                {...register("turnDurationSeconds", { valueAsNumber: true })}
                 type="number"
                 min={GAME_CONFIG.minTurnDurationSeconds}
                 max={GAME_CONFIG.maxTurnDurationSeconds}
                 step={15}
+                value={turnDurationSeconds}
+                onChange={(event) => setTurnDurationSeconds(Number(event.target.value))}
                 className={compactInputClassName}
               />
             </Field>
           </div>
         </details>
 
-        {submitError ? (
-          <p
-            role="alert"
-            className="rounded-2xl bg-[var(--coral)]/10 p-3 text-sm text-[var(--coral)]"
-          >
-            {submitError}
+        {error ? (
+          <p role="alert" className="rounded-2xl bg-[var(--coral)]/10 p-3 text-sm text-[var(--coral)]">
+            {error}
           </p>
         ) : null}
         <div className="-mx-1 bg-[linear-gradient(to_top,var(--page)_70%,transparent)] px-1 pt-1">
-          <Button
-            type="submit"
-            disabled={!isReady || isSubmitting}
-            className="min-h-12 rounded-2xl"
-          >
-            {isSubmitting ? "Préparation…" : "Lancer la partie"}
+          <Button type="submit" disabled={isSubmitting} className="min-h-12 rounded-2xl">
+            {isSubmitting ? "Préparation…" : "Lancer la partie"}{" "}
+            <span aria-hidden="true">→</span>
           </Button>
         </div>
       </fieldset>
