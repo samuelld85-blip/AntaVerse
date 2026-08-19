@@ -71,7 +71,6 @@ export interface Team {
   name: string;
   color: string;
   score: number;
-  turnOrder: 0 | 1;
 }
 
 export type JokerType = "theme_choice" | "opponent_theme";
@@ -124,13 +123,13 @@ export interface TurnResult {
 }
 
 export interface GameState {
-  schemaVersion: 4;
+  schemaVersion: 5;
   id: string;
   mode: "competition" | "fun";
   status: GameStatus;
-  teams: [Team, Team];
-  startingTeamIndex: 0 | 1;
-  currentTeamIndex: 0 | 1;
+  teams: Team[];
+  startingTeamIndex: number;
+  currentTeamIndex: number;
   currentRound: number;
   currentTurn: number;
   roundsPerTeam: number;
@@ -159,7 +158,9 @@ export interface CreateGameInput {
   teamBName: string;
   teamAColor: string;
   teamBColor: string;
-  startingTeamIndex: 0 | 1;
+  teamCName?: string;
+  teamCColor?: string;
+  startingTeamIndex: number;
   roundsPerTeam: number;
   turnDurationSeconds: number;
   mode: "competition" | "fun";

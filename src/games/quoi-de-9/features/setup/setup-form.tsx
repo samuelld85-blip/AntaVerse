@@ -10,10 +10,13 @@ import { saveCurrentGame } from "@/games/quoi-de-9/lib/game/persistence";
 import { createGameSchema, type CreateGameForm } from "@/games/quoi-de-9/lib/game/schemas";
 import type { GameMode } from "@/games/quoi-de-9/lib/game/types";
 
+const DEFAULT_COLORS = ["#E83DFF", "#16C7E8", "#FF5C2B"];
+
 export function SetupForm({ mode }: { mode: GameMode }) {
   const router = useRouter();
   const [isReady, setIsReady] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [hasThirdTeam, setHasThirdTeam] = useState(false);
   const {
     register,
     handleSubmit,
@@ -24,8 +27,10 @@ export function SetupForm({ mode }: { mode: GameMode }) {
     defaultValues: {
       teamAName: "Les Antagonistes",
       teamBName: "Les Sanglieeers",
-      teamAColor: "#E83DFF",
-      teamBColor: "#16C7E8",
+      teamAColor: DEFAULT_COLORS[0],
+      teamBColor: DEFAULT_COLORS[1],
+      teamCName: "",
+      teamCColor: DEFAULT_COLORS[2],
       startingTeamIndex: 0,
       roundsPerTeam: GAME_CONFIG.defaultRoundsPerTeam,
       turnDurationSeconds: GAME_CONFIG.defaultTurnDurationSeconds,
@@ -121,7 +126,70 @@ export function SetupForm({ mode }: { mode: GameMode }) {
               </section>
             );
           })}
+
+          {hasThirdTeam && (
+            <section
+              className="relative overflow-hidden rounded-[1.5rem] border border-white/12 px-4 py-4 shadow-[0_16px_40px_rgba(0,0,0,.2)]"
+              style={{
+                background: `linear-gradient(115deg, ${values.teamCColor}20, rgba(255,255,255,.045) 48%)`,
+              }}
+            >
+              <div
+                className="absolute inset-y-0 left-0 w-1.5"
+                style={{ backgroundColor: values.teamCColor }}
+                aria-hidden="true"
+              />
+              <button
+                type="button"
+                onClick={() => setHasThirdTeam(false)}
+                className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white/60 transition hover:bg-white/20 hover:text-white"
+                aria-label="Supprimer équipe C"
+              >
+                ×
+              </button>
+              <div className="flex items-center gap-4 pl-1">
+                <span
+                  className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-sm font-black text-[var(--accent-ink)] shadow-lg"
+                  style={{ backgroundColor: values.teamCColor }}
+                >
+                  C
+                </span>
+                <div className="min-w-0 flex-1">
+                  <label
+                    htmlFor="team-c-name"
+                    className="block text-[9px] font-bold uppercase tracking-[0.16em] text-white/55"
+                  >
+                    Équipe C
+                  </label>
+                  <input
+                    {...register("teamCName")}
+                    id="team-c-name"
+                    aria-invalid={Boolean(errors.teamCName)}
+                    className="mt-1 h-9 w-full border-0 bg-transparent p-0 text-xl font-semibold text-white outline-none placeholder:text-white/40"
+                    maxLength={24}
+                    autoComplete="off"
+                  />
+                </div>
+              </div>
+              {errors.teamCName?.message ? (
+                <p role="alert" className="mt-1 pl-14 text-[10px] font-bold text-[var(--coral)]">
+                  {errors.teamCName?.message}
+                </p>
+              ) : null}
+              <input type="hidden" {...register("teamCColor")} />
+            </section>
+          )}
         </div>
+
+        {!hasThirdTeam && (
+          <button
+            type="button"
+            onClick={() => setHasThirdTeam(true)}
+            className="px-2 py-1 text-center text-sm text-white/55 transition hover:text-white/80"
+          >
+            + Ajouter équipe 3
+          </button>
+        )}
 
         <fieldset className="rounded-2xl border border-white/10 bg-white/[.035] p-3">
           <legend className="px-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">
@@ -130,28 +198,35 @@ export function SetupForm({ mode }: { mode: GameMode }) {
           <Controller
             control={control}
             name="startingTeamIndex"
-            render={({ field }) => (
-              <div className="mt-1.5 grid grid-cols-2 gap-2.5">
-                {([0, 1] as const).map((index) => (
-                  <label
-                    key={index}
-                    className={`flex min-h-11 cursor-pointer items-center justify-center rounded-xl border px-3 text-center text-sm font-semibold transition ${field.value === index ? "border-[var(--lime)] bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.04] text-white/60"}`}
-                  >
-                    <input
-                      ref={field.ref}
-                      name={field.name}
-                      type="radio"
-                      value={index}
-                      checked={field.value === index}
-                      onBlur={field.onBlur}
-                      onChange={() => field.onChange(index)}
-                      className="sr-only"
-                    />
-                    {index === 0 ? values.teamAName : values.teamBName}
-                  </label>
-                ))}
-              </div>
-            )}
+            render={({ field }) => {
+              const teamCount = hasThirdTeam ? 3 : 2;
+              const gridColsClass =
+                teamCount === 2 ? "grid-cols-2" : "grid-cols-3";
+              const teamNames = [values.teamAName, values.teamBName];
+              if (hasThirdTeam) teamNames.push(values.teamCName || "Équipe 3");
+              return (
+                <div className={`mt-1.5 grid ${gridColsClass} gap-2.5`}>
+                  {Array.from({ length: teamCount }).map((_, index) => (
+                    <label
+                      key={index}
+                      className={`flex min-h-11 cursor-pointer items-center justify-center rounded-xl border px-3 text-center text-sm font-semibold transition ${field.value === index ? "border-[var(--lime)] bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.04] text-white/60"}`}
+                    >
+                      <input
+                        ref={field.ref}
+                        name={field.name}
+                        type="radio"
+                        value={index}
+                        checked={field.value === index}
+                        onBlur={field.onBlur}
+                        onChange={() => field.onChange(index)}
+                        className="sr-only"
+                      />
+                      {teamNames[index]}
+                    </label>
+                  ))}
+                </div>
+              );
+            }}
           />
         </fieldset>
 

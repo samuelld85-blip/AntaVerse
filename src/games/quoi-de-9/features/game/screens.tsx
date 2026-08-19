@@ -25,7 +25,10 @@ import type { GameState, Question, Team, Theme } from "@/games/quoi-de-9/lib/gam
 
 export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: () => void }) {
   const active = game.teams[game.currentTeamIndex];
-  const master = game.teams[game.currentTeamIndex === 0 ? 1 : 0];
+  if (!active) throw new Error("Équipe active introuvable");
+  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
+  const master = game.teams[nextTeamIndex];
+  if (!master) throw new Error("Équipe suivante introuvable");
   const phase = getGamePhase(game, active.name, master.name);
   const showHud = game.status !== "completed";
   const showBack =
@@ -42,6 +45,7 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
     game.status === "answer_correction" ||
     game.status === "turn_results";
   const resultsOnly = game.status === "turn_results";
+  const totalTurns = game.roundsPerTeam * game.teams.length;
 
   return (
     <header
@@ -62,20 +66,25 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
           className={`glass-panel rounded-2xl ${compact ? "p-2" : "p-3"}`}
           aria-label="État de la partie"
         >
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
-            <HudTeam team={game.teams[0]} active={game.currentTeamIndex === 0} />
+          <div
+            className={`grid items-center gap-2 ${game.teams.length === 2 ? "grid-cols-[1fr_auto_1fr]" : "grid-cols-[1fr_auto_1fr_auto_1fr]"}`}
+          >
+            {game.teams[0] && <HudTeam team={game.teams[0]} active={game.currentTeamIndex === 0} />}
+            {game.teams.length === 3 && game.teams[2] && (
+              <HudTeam team={game.teams[2]} active={game.currentTeamIndex === 2} align="center" />
+            )}
             <div className="text-center">
               <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-white/52">
-                Tour {game.currentTurn}/{game.roundsPerTeam * 2}
+                Tour {game.currentTurn}/{totalTurns}
               </p>
               <p className="display-face mt-0.5 text-xl text-white/65">M{game.currentRound}</p>
             </div>
-            <HudTeam team={game.teams[1]} active={game.currentTeamIndex === 1} align="right" />
+            {game.teams[1] && <HudTeam team={game.teams[1]} active={game.currentTeamIndex === 1} align="right" />}
           </div>
           {!resultsOnly ? (
             <>
               <div className={compact ? "my-1.5" : "my-2.5"}>
-                <ProgressDots current={game.history.length} total={game.roundsPerTeam * 2} />
+                <ProgressDots current={game.history.length} total={totalTurns} />
               </div>
               <div
                 className={`flex items-center gap-2 border-t border-white/8 ${compact ? "pt-1.5" : "pt-2"}`}
@@ -103,10 +112,10 @@ function HudTeam({
 }: {
   team: Team;
   active: boolean;
-  align?: "left" | "right";
+  align?: "left" | "right" | "center";
 }) {
   return (
-    <div className={`min-w-0 ${align === "right" ? "text-right" : ""}`}>
+    <div className={`min-w-0 ${align === "right" ? "text-right" : align === "center" ? "text-center" : ""}`}>
       <p className={`truncate text-[10px] font-bold ${active ? "text-white" : "text-white/58"}`}>
         <span
           className="mr-1.5 inline-block h-2 w-2 rounded-full"
@@ -177,7 +186,10 @@ export function RoundSetupScreen({
   onDifficulty: (difficulty: DifficultyLevel) => void;
 }) {
   const active = game.teams[game.currentTeamIndex];
-  const master = game.teams[game.currentTeamIndex === 0 ? 1 : 0];
+  if (!active) throw new Error("Équipe active introuvable");
+  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
+  const master = game.teams[nextTeamIndex];
+  if (!master) throw new Error("Équipe suivante introuvable");
   const waitingForPhone = game.status === "instructions" || game.status === "pass_phone";
   const choosingMethod = game.status === "joker_opportunity";
   const choosingTheme = game.status === "joker_theme_selection";
@@ -564,7 +576,9 @@ export function PreparationScreen({
   game: GameState;
   onContinue: () => void;
 }) {
-  const master = game.teams[game.currentTeamIndex === 0 ? 1 : 0];
+  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
+  const master = game.teams[nextTeamIndex];
+  if (!master) throw new Error("Équipe suivante introuvable");
   return (
     <section className="flex flex-1 flex-col justify-center text-center">
       <div
@@ -611,7 +625,10 @@ export function QuestionScreen({
   onResults: () => void;
 }) {
   const active = game.teams[game.currentTeamIndex];
-  const master = game.teams[game.currentTeamIndex === 0 ? 1 : 0];
+  if (!active) throw new Error("Équipe active introuvable");
+  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
+  const master = game.teams[nextTeamIndex];
+  if (!master) throw new Error("Équipe suivante introuvable");
   const isReady = game.status === "question_ready";
   const isActive = game.status === "question_active";
   const expired = game.status === "turn_expired";
@@ -919,12 +936,15 @@ export function ScoreboardScreen({
   game: GameState;
   onContinue: () => void;
 }) {
+  const teamA = game.teams[0];
+  const teamB = game.teams[1];
+  if (!teamA || !teamB) throw new Error("Équipes introuvables");
   const leader =
-    game.teams[0].score === game.teams[1].score
+    teamA.score === teamB.score
       ? null
-      : game.teams[0].score > game.teams[1].score
-        ? game.teams[0]
-        : game.teams[1];
+      : teamA.score > teamB.score
+        ? teamA
+        : teamB;
   return (
     <section className="flex flex-1 flex-col justify-center">
       <div className="text-center">
@@ -960,7 +980,7 @@ export function ScoreboardScreen({
         })}
       </div>
       <p className="mt-5 text-center text-xs text-white/55">
-        Il reste {game.roundsPerTeam * 2 - game.history.length} tours.
+        Il reste {game.roundsPerTeam * game.teams.length - game.history.length} tours.
       </p>
       <Button className="mt-6" onClick={onContinue}>
         Continuer
@@ -996,7 +1016,7 @@ export function FinalScreen({
           ? "Impossible de vous départager."
           : `${formatScore(result.difference)} points d’écart.`}
       </p>
-      <div className="mt-8 grid grid-cols-2 gap-3">
+      <div className={`mt-8 grid gap-3 ${game.teams.length === 2 ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-3"}`}>
         {game.teams.map((team) => {
           const turns = game.history.filter((turn) => turn.answeringTeamId === team.id);
           const answers = turns.reduce((sum, turn) => sum + turn.foundAnswerIds.length, 0);

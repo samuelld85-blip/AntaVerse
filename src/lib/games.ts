@@ -50,7 +50,7 @@ export const games: readonly GameDefinition[] = [
     icon: "/brand/games/sans-le-dire-dark.png",
     accent: "#16C7E8",
     iconBackground: "#0B1118",
-    modes: ["competition"],
+    modes: ["competition", "fun"],
   },
   {
     id: "purple",

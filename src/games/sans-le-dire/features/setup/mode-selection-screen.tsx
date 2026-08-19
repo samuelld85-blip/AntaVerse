@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@/games/quoi-de-9/components/ui";
-import type { GameMode } from "@/games/quoi-de-9/lib/game/types";
+import { Button } from "@/games/shared/components/ui";
+import type { PlayMode } from "@/games/sans-le-dire/lib/game/types";
 
 export function ModeSelectionScreen({
   onModeSelected,
 }: {
-  onModeSelected: (mode: GameMode) => void;
+  onModeSelected: (mode: PlayMode) => void;
 }) {
   return (
     <section className="flex min-h-0 flex-1 flex-col justify-center pb-1">
@@ -23,14 +23,14 @@ export function ModeSelectionScreen({
         <button
           type="button"
           onClick={() => onModeSelected("competition")}
-          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--lime)]/35 bg-[var(--lime)]/[.1] px-4 py-3 text-left transition hover:border-[var(--lime)]/60 hover:bg-[var(--lime)]/[.15] active:scale-[.98]"
+          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--accent)]/35 bg-[var(--accent)]/[.1] px-4 py-3 text-left transition hover:border-[var(--accent)]/60 hover:bg-[var(--accent)]/[.15] active:scale-[.98]"
         >
           <span className="text-2xl" aria-hidden="true">
             🏆
           </span>
           <span className="block text-base font-black">Compétition</span>
           <span className="block text-[10px] font-medium text-white/55">
-            Marquez des points et visez le meilleur score
+            Faites deviner un maximum de mots et marquez des points
           </span>
         </button>
 
@@ -44,7 +44,7 @@ export function ModeSelectionScreen({
           </span>
           <span className="block text-base font-black">Fun</span>
           <span className="block text-[10px] font-medium text-white/55">
-            Trouvez des réponses et distribuez des gorgées
+            Faites deviner des mots et distribuez des gorgées
           </span>
         </button>
       </div>

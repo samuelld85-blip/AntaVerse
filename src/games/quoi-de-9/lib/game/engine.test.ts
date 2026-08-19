@@ -25,6 +25,7 @@ import {
   isBombTurn,
   recoverTimer,
   reopenTurnForCorrection,
+  replayGame,
   selectJokerTheme,
   skipOpponentThemeJoker,
   startTimer,
@@ -191,12 +192,12 @@ describe("theme and question availability", () => {
     expect(choosing.status).toBe("joker_theme_selection");
     expect(proposals).toHaveLength(3);
     expect(new Set(proposals).size).toBe(3);
-    expect(choosing.teamJokers[choosing.teams[0].id]?.themeChoiceAvailable).toBe(true);
+    expect(choosing.teamJokers[choosing.teams[0]!.id]?.themeChoiceAvailable).toBe(true);
     const pending = selectJokerTheme(choosing, proposals[0]!);
     expect(pending.status).toBe("joker_confirmation");
     const confirmed = confirmJokerTheme(pending, 1_000);
     expect(confirmed.status).toBe("theme_reveal");
-    expect(confirmed.teamJokers[confirmed.teams[0].id]?.themeChoiceAvailable).toBe(false);
+    expect(confirmed.teamJokers[confirmed.teams[0]!.id]?.themeChoiceAvailable).toBe(false);
     expect(confirmed.jokerUsages).toHaveLength(1);
   });
 
@@ -208,7 +209,7 @@ describe("theme and question availability", () => {
     const pending = selectJokerTheme(choosing, choosing.turnThemeSelection!.proposedThemeIds[0]!);
     const cancelled = cancelJokerTheme(pending);
     expect(cancelled.status).toBe("joker_opportunity");
-    expect(cancelled.teamJokers[cancelled.teams[0].id]?.themeChoiceAvailable).toBe(true);
+    expect(cancelled.teamJokers[cancelled.teams[0]!.id]?.themeChoiceAvailable).toBe(true);
   });
 
   it("lets the opposing team impose a distinct proposed theme once", () => {
@@ -217,7 +218,7 @@ describe("theme and question availability", () => {
     const proposals = choosing.turnThemeSelection?.proposedThemeIds ?? [];
     expect(proposals).toHaveLength(3);
     const confirmed = confirmJokerTheme(selectJokerTheme(choosing, proposals[1]!), 1_000);
-    const opponent = confirmed.teams[1];
+    const opponent = confirmed.teams[1]!;
     expect(confirmed.turnThemeSelection?.selectionMode).toBe("opponent_imposed");
     expect(confirmed.teamJokers[opponent.id]?.opponentThemeAvailable).toBe(false);
     expect(() => activateThemeChoiceJoker(confirmed as GameState, themes, questions)).toThrow();
@@ -267,7 +268,7 @@ describe("timer and answer locking", () => {
     const withAnswer = toggleAnswer(bombed, question.answers[0]!.id, question, 3_000);
     expect(withAnswer.turnScore).toBe(-150);
     const result = finalizeTurn(expireTurn(withAnswer, 91_000), question, "Science", 92_000);
-    expect(result.teams[0].score).toBe(-50);
+    expect(result.teams[0]!.score).toBe(-50);
     expect(result.history.at(-1)?.pointsEarned).toBe(-150);
     expect(result.history.at(-1)).toMatchObject({ bombTriggered: true, bombPenalty: 300 });
   });
@@ -339,17 +340,17 @@ describe("timer and answer locking", () => {
     const expired = expireTurn(oneAnswer, 91_000);
     const firstResult = finalizeTurn(expired, question, "Science", 92_000);
 
-    expect(firstResult.teams[0].score).toBe(100);
+    expect(firstResult.teams[0]!.score).toBe(100);
     expect(firstResult.history).toHaveLength(1);
 
     const correction = reopenTurnForCorrection(firstResult, 93_000);
     expect(correction.status).toBe("answer_correction");
-    expect(correction.teams[0].score).toBe(0);
+    expect(correction.teams[0]!.score).toBe(0);
     expect(correction.history).toHaveLength(0);
 
     const twoAnswers = toggleAnswer(correction, question.answers[1]!.id, question, 94_000);
     const correctedResult = finalizeTurn(twoAnswers, question, "Science", 95_000);
-    expect(correctedResult.teams[0].score).toBe(200);
+    expect(correctedResult.teams[0]!.score).toBe(200);
     expect(correctedResult.history).toHaveLength(1);
     expect(correctedResult.history[0]?.foundAnswerIds).toHaveLength(2);
   });
@@ -382,10 +383,10 @@ describe("rounds and teams", () => {
     }
     expect(game.status).toBe("completed");
     expect(game.history).toHaveLength(10);
-    expect(game.history.filter((turn) => turn.answeringTeamId === game.teams[0].id)).toHaveLength(
+    expect(game.history.filter((turn) => turn.answeringTeamId === game.teams[0]!.id)).toHaveLength(
       5,
     );
-    expect(game.history.filter((turn) => turn.answeringTeamId === game.teams[1].id)).toHaveLength(
+    expect(game.history.filter((turn) => turn.answeringTeamId === game.teams[1]!.id)).toHaveLength(
       5,
     );
   });
@@ -400,17 +401,105 @@ describe("rounds and teams", () => {
 describe("winner calculation", () => {
   it("returns a winner and the score difference", () => {
     const game = createGame(input);
-    game.teams[0].score = 1200;
-    game.teams[1].score = 900;
+    game.teams[0]!.score = 1200;
+    game.teams[1]!.score = 900;
     expect(getWinner(game)).toMatchObject({ kind: "winner", difference: 300 });
-    expect(getWinner(game).winner?.id).toBe(game.teams[0].id);
+    expect(getWinner(game).winner?.id).toBe(game.teams[0]!.id);
   });
 
   it("returns an explicit draw", () => {
     const game = createGame(input);
-    game.teams[0].score = 900;
-    game.teams[1].score = 900;
+    game.teams[0]!.score = 900;
+    game.teams[1]!.score = 900;
     expect(getWinner(game)).toEqual({ kind: "draw", winner: null, difference: 0 });
+  });
+});
+
+describe("three teams support", () => {
+  const input3Teams = {
+    teamAName: "Équipe A",
+    teamBName: "Équipe B",
+    teamCName: "Équipe C",
+    teamAColor: "#ff6f5d",
+    teamBColor: "#687dff",
+    teamCColor: "#FF5C2B",
+    startingTeamIndex: 0 as const,
+    roundsPerTeam: 2,
+    turnDurationSeconds: 90,
+    mode: "competition" as const,
+  };
+
+  it("creates a game with 3 teams", () => {
+    const game = createGame(input3Teams);
+    expect(game.teams).toHaveLength(3);
+    expect(game.teams[0]?.name).toBe("Équipe A");
+    expect(game.teams[1]?.name).toBe("Équipe B");
+    expect(game.teams[2]?.name).toBe("Équipe C");
+  });
+
+  it("rotates through 3 teams sequentially (A→B→C→A)", () => {
+    const playableThemes = getThemeAvailability(themes, questions, []).filter(
+      (entry) => entry.available,
+    );
+    let game = reachDifficultySelection(createGame(input3Teams));
+
+    // Team A plays (turn 1)
+    expect(game.currentTeamIndex).toBe(0);
+    const theme1 = playableThemes[0]?.theme;
+    if (!theme1) throw new Error("Thème de test manquant");
+    game = completeTurn(game, theme1.id, 1);
+    expect(game.currentTeamIndex).toBe(1);
+    expect(game.status).toBe("pass_phone");
+
+    // Team B plays (turn 2)
+    game = reachDifficultySelection(game);
+    const theme2 = playableThemes[1]?.theme;
+    if (!theme2) throw new Error("Thème de test manquant");
+    game = completeTurn(game, theme2.id, 1);
+    expect(game.currentTeamIndex).toBe(2);
+    expect(game.status).toBe("pass_phone");
+
+    // Team C plays (turn 3)
+    game = reachDifficultySelection(game);
+    const theme3 = playableThemes[2]?.theme;
+    if (!theme3) throw new Error("Thème de test manquant");
+    game = completeTurn(game, theme3.id, 1);
+    expect(game.currentTeamIndex).toBe(0); // Back to Team A
+    expect(game.status).toBe("scoreboard"); // Completing round 1
+  });
+
+  it("finds winner among 3 teams with highest score", () => {
+    const game = createGame(input3Teams);
+    game.teams[0]!.score = 800;
+    game.teams[1]!.score = 1000;
+    game.teams[2]!.score = 600;
+    const result = getWinner(game);
+    expect(result.kind).toBe("winner");
+    expect(result.winner?.name).toBe("Équipe B");
+    expect(result.difference).toBe(200); // 1000 - 800
+  });
+
+  it("detects draw when 2 or more teams tie for highest score (3 teams)", () => {
+    const game = createGame(input3Teams);
+    game.teams[0]!.score = 1000;
+    game.teams[1]!.score = 1000;
+    game.teams[2]!.score = 500;
+    const result = getWinner(game);
+    expect(result.kind).toBe("draw");
+    expect(result.winner).toBe(null);
+    expect(result.difference).toBe(0);
+  });
+
+  it("supports replaying a 3-team game", () => {
+    const game = createGame(input3Teams);
+    game.teams[0]!.score = 100;
+    game.teams[1]!.score = 200;
+    game.teams[2]!.score = 150;
+    const replayed = replayGame(game);
+    expect(replayed.teams).toHaveLength(3);
+    expect(replayed.teams[0]?.name).toBe("Équipe A");
+    expect(replayed.teams[2]?.name).toBe("Équipe C");
+    expect(replayed.schemaVersion).toBe(5);
   });
 });
 

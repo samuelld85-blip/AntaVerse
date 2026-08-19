@@ -60,16 +60,16 @@ function gameWithHistory(): GameState {
   });
   const previous = completedTurn({
     id: "turn_previous",
-    answeringTeamId: game.teams[1].id,
+    answeringTeamId: game.teams[1]!.id,
     questionId: "previous-question",
     questionText: "Quelle était la question du tour précédent ?",
     themeId: "histoire",
     themeLabel: "Histoire",
     turnNumber: 1,
   });
-  const current = completedTurn({ answeringTeamId: game.teams[0].id });
-  game.teams[0].score = 900;
-  game.teams[1].score = 200;
+  const current = completedTurn({ answeringTeamId: game.teams[0]!.id });
+  game.teams[0]!.score = 900;
+  game.teams[1]!.score = 200;
   return { ...game, status: "turn_results", history: [previous, current] };
 }
 

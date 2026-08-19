@@ -124,7 +124,13 @@ export function resetPersistenceConnectionForTests(): void {
 }
 
 function migrateStoredGame(stored: GameState | LegacyGame): GameState {
-  if (stored.schemaVersion === 4) return stored as GameState;
+  if ("schemaVersion" in stored && stored.schemaVersion === 5) return stored as GameState;
+  if (
+    "schemaVersion" in stored &&
+    (stored.schemaVersion as number | undefined) === 4
+  ) {
+    return { ...(stored as unknown as GameState), schemaVersion: 5 };
+  }
   const legacy = stored as LegacyGame;
   const status =
     (legacy.status as string) === "theme_selection" ? "joker_opportunity" : legacy.status;
@@ -132,7 +138,7 @@ function migrateStoredGame(stored: GameState | LegacyGame): GameState {
     legacy.currentDifficultyLevel ?? difficultyLevelFromLegacy(legacy.currentDifficulty ?? null);
   return {
     ...legacy,
-    schemaVersion: 4,
+    schemaVersion: 5,
     status,
     currentDifficultyLevel,
     bombTriggered: "bombTriggered" in legacy ? Boolean(legacy.bombTriggered) : false,

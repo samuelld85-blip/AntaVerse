@@ -266,3 +266,49 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
   }
 }
+
+.fun-mode-result {
+  display: grid;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 26rem;
+  margin: 1.2rem 0;
+}
+
+.consequence {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  text-align: left;
+}
+
+.consequence-label {
+  margin: 0 0 0.6rem;
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.consequence-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.consequence-text strong {
+  display: inline;
+  font-weight: 950;
+  color: var(--lime);
+}
+
+.team-name {
+  font-weight: 950;
+}
+
+.consequence--penalty {
+  border-color: color-mix(in srgb, var(--pink) 35%, transparent);
+}

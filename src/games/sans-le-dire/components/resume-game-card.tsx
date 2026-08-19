@@ -8,7 +8,7 @@ export function ResumeGameCard() {
     <SharedResumeGameCard
       load={loadCurrentGame}
       resumeHref="/sans-le-dire/partie"
-      summary={(game) => `${game.teams[0].name} · ${game.teams[1].name}`}
+      summary={(game) => game.teams.map((t) => t.name).join(" · ")}
     />
   );
 }

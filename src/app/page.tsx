@@ -28,19 +28,7 @@ export default function HomePage() {
 
       <section className="launcher-intro" aria-labelledby="launcher-title">
         <p className="launcher-eyebrow">Prêts à jouer ?</p>
-        <div className="flex items-end justify-between gap-6">
-          <h1 id="launcher-title">Choisissez votre jeu.</h1>
-          <div className="flex flex-col gap-3 text-sm text-white shrink-0 pb-2">
-            <div className="flex items-center gap-2.5">
-              <span className="text-2xl">🏆</span>
-              <span className="font-medium">Compétition</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <span className="text-2xl">🍺</span>
-              <span className="font-medium">Jeu à boire</span>
-            </div>
-          </div>
-        </div>
+        <h1 id="launcher-title">Choisissez votre jeu.</h1>
       </section>
 
       <section className="launcher-games" aria-label="Jeux disponibles">

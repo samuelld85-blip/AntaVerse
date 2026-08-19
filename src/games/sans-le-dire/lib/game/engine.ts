@@ -1,6 +1,8 @@
 import { shuffle } from "@/lib/random";
-import { createGameId, createTwoTeams } from "@/games/shared/lib/two-team-setup";
-import type { Card, CreateGameInput, GameState, TeamIndex } from "./types";
+import { createGameId } from "@/games/shared/lib/two-team-setup";
+import type { Card, CreateGameInput, GameState, PlayMode, Team } from "./types";
+
+const COLORS = ["#e83dff", "#16c7e8", "#ff5c2b"];
 export const STANDARD_ROUNDS = 4;
 const STANDARD_DURATION_MS = 45_000;
 const TIEBREAK_DURATION_MS = 30_000;
@@ -15,21 +17,32 @@ export function createGame(
 ): GameState {
   validateCards(cards);
   const timestamp = new Date(now).toISOString();
+  const teamCount = input.teamNames.length;
+  const teamIds = ["team-1", "team-2", "team-3"] as const;
+  const teams: Team[] = input.teamNames.map((name, i) => {
+    const id = teamIds[i] as "team-1" | "team-2" | "team-3";
+    return {
+      id,
+      name,
+      color: COLORS[i]!,
+      score: 0,
+    };
+  });
+
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     id: createGameId(now, random),
     status: "preparation",
-    mode: "standard",
-    teams: createTwoTeams({
-      teamOneName: input.teamOneName,
-      teamTwoName: input.teamTwoName,
-    }),
+    roundMode: "standard",
+    playMode: input.playMode,
+    teams,
     roundIndex: 0,
-    activeTeam: 0,
+    activeTeamIndex: 0,
     passesRemaining: STANDARD_PASSES,
     roundScore: 0,
-    tiebreakScores: [0, 0],
+    tiebreakScores: new Array(teamCount).fill(0),
     tiebreakCycle: 1,
+    forbiddenViolations: 0,
     deck: shuffle(cards, random).map((card) => card.id),
     deckPosition: 0,
     roundEndsAt: null,
@@ -44,9 +57,10 @@ export function startRound(game: GameState, now = Date.now()): GameState {
     {
       ...game,
       status: "playing",
-      passesRemaining: game.mode === "standard" ? STANDARD_PASSES : TIEBREAK_PASSES,
+      passesRemaining: game.roundMode === "standard" ? STANDARD_PASSES : TIEBREAK_PASSES,
       roundScore: 0,
-      roundEndsAt: now + (game.mode === "standard" ? STANDARD_DURATION_MS : TIEBREAK_DURATION_MS),
+      forbiddenViolations: 0,
+      roundEndsAt: now + (game.roundMode === "standard" ? STANDARD_DURATION_MS : TIEBREAK_DURATION_MS),
     },
     now,
   );
@@ -54,15 +68,15 @@ export function startRound(game: GameState, now = Date.now()): GameState {
 
 export function foundCard(game: GameState, cardId: string, now = Date.now()): GameState {
   assertPlayableCard(game, cardId, now);
-  const teams: GameState["teams"] = [{ ...game.teams[0] }, { ...game.teams[1] }];
-  const tiebreakScores: GameState["tiebreakScores"] = [...game.tiebreakScores];
-  if (game.mode === "standard") teams[game.activeTeam].score += 1;
-  else tiebreakScores[game.activeTeam] += 1;
+  const teams = game.teams.map((t, i) => (i === game.activeTeamIndex ? { ...t, score: t.score + 1 } : t));
+  const tiebreakScores = game.tiebreakScores.map((s, i) =>
+    i === game.activeTeamIndex ? s + 1 : s,
+  );
   return touch(
     {
       ...game,
       teams,
-      tiebreakScores,
+      tiebreakScores: game.roundMode === "standard" ? game.tiebreakScores : tiebreakScores,
       roundScore: game.roundScore + 1,
       deckPosition: game.deckPosition + 1,
     },
@@ -81,18 +95,26 @@ export function passCard(game: GameState, cardId: string, now = Date.now()): Gam
 
 export function faultCard(game: GameState, cardId: string, now = Date.now()): GameState {
   assertPlayableCard(game, cardId, now);
-  const teams: GameState["teams"] = [{ ...game.teams[0] }, { ...game.teams[1] }];
-  const tiebreakScores: GameState["tiebreakScores"] = [...game.tiebreakScores];
-  if (game.mode === "standard") teams[game.activeTeam].score -= 1;
-  else tiebreakScores[game.activeTeam] -= 1;
+  const teams = game.teams.map((t, i) => (i === game.activeTeamIndex ? { ...t, score: t.score - 1 } : t));
+  const tiebreakScores = game.tiebreakScores.map((s, i) =>
+    i === game.activeTeamIndex ? s - 1 : s,
+  );
   return touch(
     {
       ...game,
       teams,
-      tiebreakScores,
+      tiebreakScores: game.roundMode === "standard" ? game.tiebreakScores : tiebreakScores,
       roundScore: game.roundScore - 1,
       deckPosition: game.deckPosition + 1,
     },
+    now,
+  );
+}
+
+export function recordForbiddenViolation(game: GameState, cardId: string, now = Date.now()): GameState {
+  assertPlayableCard(game, cardId, now);
+  return touch(
+    { ...game, forbiddenViolations: game.forbiddenViolations + 1, deckPosition: game.deckPosition + 1 },
     now,
   );
 }
@@ -104,23 +126,38 @@ export function endRound(game: GameState, now = Date.now()): GameState {
 
 export function continueGame(game: GameState, now = Date.now()): GameState {
   assertStatus(game, "roundResult");
-  if (game.mode === "standard") {
+  if (game.roundMode === "standard") {
     if (game.roundIndex < STANDARD_ROUNDS - 1) {
       const roundIndex = game.roundIndex + 1;
-      return prepare({ ...game, roundIndex, activeTeam: (roundIndex % 2) as TeamIndex }, now);
+      const activeTeamIndex = roundIndex % game.teams.length;
+      return prepare({ ...game, roundIndex, activeTeamIndex }, now);
     }
-    if (game.teams[0].score !== game.teams[1].score)
-      return touch({ ...game, status: "finished" }, now);
+    const maxScore = Math.max(...game.teams.map((t) => t.score));
+    const winnersCount = game.teams.filter((t) => t.score === maxScore).length;
+    if (winnersCount === 1) return touch({ ...game, status: "finished" }, now);
     return prepare(
-      { ...game, mode: "tiebreak", activeTeam: 0, tiebreakScores: [0, 0], tiebreakCycle: 1 },
+      {
+        ...game,
+        roundMode: "tiebreak",
+        activeTeamIndex: 0,
+        tiebreakScores: new Array(game.teams.length).fill(0),
+        tiebreakCycle: 1,
+      },
       now,
     );
   }
-  if (game.activeTeam === 0) return prepare({ ...game, activeTeam: 1 }, now);
-  if (game.tiebreakScores[0] !== game.tiebreakScores[1])
-    return touch({ ...game, status: "finished" }, now);
+  const nextTeamIndex = (game.activeTeamIndex + 1) % game.teams.length;
+  if (nextTeamIndex !== 0) return prepare({ ...game, activeTeamIndex: nextTeamIndex }, now);
+  const maxTiebreakScore = Math.max(...game.tiebreakScores);
+  const winnersCount = game.tiebreakScores.filter((s) => s === maxTiebreakScore).length;
+  if (winnersCount === 1) return touch({ ...game, status: "finished" }, now);
   return prepare(
-    { ...game, activeTeam: 0, tiebreakScores: [0, 0], tiebreakCycle: game.tiebreakCycle + 1 },
+    {
+      ...game,
+      activeTeamIndex: 0,
+      tiebreakScores: new Array(game.teams.length).fill(0),
+      tiebreakCycle: game.tiebreakCycle + 1,
+    },
     now,
   );
 }
@@ -131,8 +168,9 @@ export function replayGame(
   random = Math.random,
   now = Date.now(),
 ): GameState {
+  const teamNames = game.teams.map((t) => t.name) as [string, string] | [string, string, string];
   return createGame(
-    { teamOneName: game.teams[0].name, teamTwoName: game.teams[1].name },
+    { teamNames, playMode: game.playMode },
     cards,
     random,
     now,
@@ -144,19 +182,21 @@ export function getCurrentCard(game: GameState, cards: readonly Card[]): Card {
   if (!card) throw new Error("La carte courante est introuvable.");
   return card;
 }
-export function getWinnerIndex(game: GameState): TeamIndex | null {
+export function getWinnerIndex(game: GameState): number | null {
   const scores =
-    game.mode === "tiebreak" ? game.tiebreakScores : [game.teams[0].score, game.teams[1].score];
-  if (scores[0] === scores[1]) return null;
-  return scores[0]! > scores[1]! ? 0 : 1;
+    game.roundMode === "tiebreak" ? game.tiebreakScores : game.teams.map((t) => t.score);
+  const maxScore = Math.max(...scores);
+  if (scores.filter((s) => s === maxScore).length > 1) return null;
+  return scores.indexOf(maxScore);
 }
 function prepare(game: GameState, now: number): GameState {
   return touch(
     {
       ...game,
       status: "preparation",
-      passesRemaining: game.mode === "standard" ? STANDARD_PASSES : TIEBREAK_PASSES,
+      passesRemaining: game.roundMode === "standard" ? STANDARD_PASSES : TIEBREAK_PASSES,
       roundScore: 0,
+      forbiddenViolations: 0,
       roundEndsAt: null,
     },
     now,

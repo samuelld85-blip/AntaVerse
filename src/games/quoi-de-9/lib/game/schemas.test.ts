@@ -15,7 +15,7 @@ function setupInput(teamAName: string, teamBName = "Les Comètes") {
 }
 
 describe("createGameSchema team names", () => {
-  it.each(["L'équipe d'Anaïs", "L’équipe d’Anaïs", "Lʼéquipe dʼAnaïs"])(
+  it.each(["L’équipe d’Anaïs", "L’équipe d’Anaïs", "Lʼéquipe dʼAnaïs"])(
     "accepts mobile apostrophes in %s",
     (teamName) => {
       expect(createGameSchema.safeParse(setupInput(teamName)).success).toBe(true);

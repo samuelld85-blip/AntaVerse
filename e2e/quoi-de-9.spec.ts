@@ -125,8 +125,47 @@ test("shows a black bomb banner on the second question of an équipe", async ({ 
   await expect(page.getByText("-200", { exact: true })).toBeVisible();
 });
 
+test("third team is ephemeral state until game launch", async ({ page }) => {
+  await page.goto("/quoi-de-9/creer");
+  await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled({
+    timeout: 15_000,
+  });
+  await page.getByRole("button", { name: /compétition/i }).click();
+
+  const addTeamButton = page.getByRole("button", { name: /\+ ajouter équipe 3/i });
+  await expect(addTeamButton).toBeVisible();
+  await addTeamButton.click();
+
+  const teamCInput = page.getByLabel("Équipe C", { exact: true });
+  await expect(teamCInput).toBeVisible();
+
+  const removeTeamButton = page.getByRole("button", { name: /supprimer équipe c/i });
+  await expect(removeTeamButton).toBeVisible();
+  await removeTeamButton.click();
+
+  await expect(teamCInput).not.toBeVisible();
+  await expect(addTeamButton).toBeVisible();
+});
+
+test("third team persists when game is launched", async ({ page }) => {
+  await page.goto("/quoi-de-9/creer");
+  await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled({
+    timeout: 15_000,
+  });
+  await page.getByRole("button", { name: /compétition/i }).click();
+
+  await page.getByRole("button", { name: /\+ ajouter équipe 3/i }).click();
+  await page.getByLabel("Équipe C", { exact: true }).fill("Équipe C");
+  await page.getByRole("button", { name: /lancer la partie/i }).click();
+
+  await expect(page).toHaveURL(/\/partie\/?$/u, { timeout: 15_000 });
+  await page.getByRole("button", { name: /j[‘’]ai le téléphone/i }).click();
+  await page.getByRole("button", { name: /au hasard/i }).click();
+  await expect(page.getByText("Équipe C", { exact: true })).toBeVisible();
+});
+
 async function openQuestion(page: import("@playwright/test").Page) {
-  await page.getByRole("button", { name: /j[’']ai le téléphone/i }).click();
+  await page.getByRole("button", { name: /j[‘’]ai le téléphone/i }).click();
   await page.getByRole("button", { name: /au hasard/i }).click();
   await page.getByRole("button", { name: /facile/i }).click();
   await page.getByRole("button", { name: /afficher la question/i }).click();

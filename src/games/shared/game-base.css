@@ -10,6 +10,7 @@
   --accent-glow: rgba(22, 199, 232, 0.16);
   --pink: #e83dff;
   --blue: #16c7e8;
+  --orange: #ff5c2b;
 }
 
 html[data-theme="light"] {
@@ -24,6 +25,7 @@ html[data-theme="light"] {
   --accent-glow: rgba(8, 127, 153, 0.16);
   --pink: #b313c2;
   --blue: #087f99;
+  --orange: #e55100;
   color-scheme: light;
 }
 
@@ -351,12 +353,16 @@ a {
   border-radius: 1.35rem;
   padding: 0.9rem 1rem;
   background: var(--surface);
+  position: relative;
 }
 .team-field--one {
   background: linear-gradient(110deg, rgba(255, 92, 138, 0.16), var(--surface) 55%);
 }
 .team-field--two {
   background: linear-gradient(110deg, rgba(41, 199, 246, 0.16), var(--surface) 55%);
+}
+.team-field--three {
+  background: linear-gradient(110deg, rgba(255, 92, 43, 0.16), var(--surface) 55%);
 }
 .team-number {
   display: grid;
@@ -372,6 +378,10 @@ a {
 .team-field--two .team-number {
   background: var(--blue);
   color: var(--ink);
+}
+.team-field--three .team-number {
+  background: var(--orange);
+  color: white;
 }
 .team-input-wrap {
   min-width: 0;
@@ -394,6 +404,33 @@ a {
   font-size: 1.25rem;
   font-weight: 800;
   outline: 0;
+}
+.team-remove-button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.team-remove-button:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+.team-remove-button:active {
+  transform: translateY(-50%) scale(0.92);
 }
 .setup-note {
   margin: 0.25rem 0;

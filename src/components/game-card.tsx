@@ -17,19 +17,15 @@ export function GameCard({ game, index }: { game: GameDefinition; index: number 
         style={style}
         aria-label={`Jouer à ${game.name}`}
       >
-        <span className="game-card-index" aria-hidden="true">
-          0{index + 1}
+        <span className="game-card-modes" aria-hidden="true">
+          {game.modes?.includes("competition") && <span>🏆</span>}
+          {(game.drinkingGame || game.modes?.includes("fun")) && <span>🍺</span>}
         </span>
         <span className="game-icon" aria-hidden="true">
           <Image src={game.icon} alt="" width={88} height={88} sizes="72px" />
         </span>
         <span className="game-copy">
-          <strong>
-            {game.name}
-            {game.modes?.includes("competition") && <span aria-hidden="true"> 🏆</span>}
-            {game.drinkingGame && <span aria-hidden="true"> 🍺</span>}
-            {game.modes?.includes("fun") && !game.drinkingGame && <span aria-hidden="true"> 🍺</span>}
-          </strong>
+          <strong>{game.name}</strong>
           <span>{game.description}</span>
         </span>
         <span className="game-arrow" aria-hidden="true">

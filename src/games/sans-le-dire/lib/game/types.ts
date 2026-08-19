@@ -1,6 +1,6 @@
-export type TeamIndex = 0 | 1;
+export type TeamIndex = 0 | 1 | 2;
 export interface Team {
-  id: "team-1" | "team-2";
+  id: "team-1" | "team-2" | "team-3";
   name: string;
   color: string;
   score: number;
@@ -11,19 +11,22 @@ export interface Card {
   forbidden: readonly [string, string, string];
 }
 export type GameStatus = "preparation" | "playing" | "roundResult" | "finished";
-export type GameMode = "standard" | "tiebreak";
+export type GameRoundMode = "standard" | "tiebreak";
+export type PlayMode = "competition" | "fun";
 export interface GameState {
-  schemaVersion: 2;
+  schemaVersion: 3;
   id: string;
   status: GameStatus;
-  mode: GameMode;
-  teams: [Team, Team];
+  roundMode: GameRoundMode;
+  playMode: PlayMode;
+  teams: Team[];
   roundIndex: number;
-  activeTeam: TeamIndex;
+  activeTeamIndex: number;
   passesRemaining: number;
   roundScore: number;
-  tiebreakScores: [number, number];
+  tiebreakScores: number[];
   tiebreakCycle: number;
+  forbiddenViolations: number;
   deck: string[];
   deckPosition: number;
   roundEndsAt: number | null;
@@ -31,6 +34,6 @@ export interface GameState {
   updatedAt: string;
 }
 export interface CreateGameInput {
-  teamOneName: string;
-  teamTwoName: string;
+  teamNames: [string, string] | [string, string, string];
+  playMode: PlayMode;
 }

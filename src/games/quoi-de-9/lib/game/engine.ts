@@ -35,31 +35,43 @@ function touch(game: GameState, timestamp = Date.now()): GameState {
 
 export function createGame(input: CreateGameInput): GameState {
   const createdAt = iso();
-  const teams: [Team, Team] = [
+  const teams: Team[] = [
     {
       id: uid("team"),
       name: normalizeText(input.teamAName.trim()),
       color: input.teamAColor,
       score: 0,
-      turnOrder: 0,
     },
     {
       id: uid("team"),
       name: normalizeText(input.teamBName.trim()),
       color: input.teamBColor,
       score: 0,
-      turnOrder: 1,
     },
   ];
 
+  if (input.teamCName && input.teamCColor) {
+    teams.push({
+      id: uid("team"),
+      name: normalizeText(input.teamCName.trim()),
+      color: input.teamCColor,
+      score: 0,
+    });
+  }
+
+  const startingTeamIndex =
+    input.startingTeamIndex >= 0 && input.startingTeamIndex < teams.length
+      ? input.startingTeamIndex
+      : 0;
+
   return {
-    schemaVersion: 4,
+    schemaVersion: 5,
     id: uid("game"),
     mode: input.mode,
     status: "instructions",
     teams,
-    startingTeamIndex: input.startingTeamIndex,
-    currentTeamIndex: input.startingTeamIndex,
+    startingTeamIndex,
+    currentTeamIndex: startingTeamIndex,
     currentRound: 1,
     currentTurn: 1,
     roundsPerTeam: input.roundsPerTeam,
@@ -145,16 +157,20 @@ export function getThemeAvailability(
   });
 }
 
-function opposingTeamIndex(game: GameState): 0 | 1 {
-  return game.currentTeamIndex === 0 ? 1 : 0;
+function getNextTeamIndex(game: GameState): number {
+  return (game.currentTeamIndex + 1) % game.teams.length;
 }
 
 function activeTeamId(game: GameState): string {
-  return game.teams[game.currentTeamIndex].id;
+  const team = game.teams[game.currentTeamIndex];
+  if (!team) throw new Error("Équipe active introuvable");
+  return team.id;
 }
 
 function opponentTeamId(game: GameState): string {
-  return game.teams[opposingTeamIndex(game)].id;
+  const team = game.teams[getNextTeamIndex(game)];
+  if (!team) throw new Error("Équipe suivante introuvable");
+  return team.id;
 }
 
 export function drawEligibleThemes(
@@ -557,9 +573,11 @@ export function finalizeTurn(
     throw new Error("Données du tour incomplètes");
   }
   const activeTeam = game.teams[game.currentTeamIndex];
+  if (!activeTeam) throw new Error("Équipe actuelle introuvable");
   const updatedTeam = { ...activeTeam, score: activeTeam.score + game.turnScore };
-  const teams: [Team, Team] =
-    game.currentTeamIndex === 0 ? [updatedTeam, game.teams[1]] : [game.teams[0], updatedTeam];
+  const teams = game.teams.map((team, index) =>
+    index === game.currentTeamIndex ? updatedTeam : team,
+  ) as Team[];
   const endedAt = iso(timestamp);
   const foundAnswerIds = [...game.revealedAnswerIds];
   const foundAnswerSet = new Set(foundAnswerIds);
@@ -625,8 +643,9 @@ export function reopenTurnForCorrection(game: GameState, timestamp = Date.now())
     throw new Error("Le score du tour ne peut pas être annulé");
   }
   const correctedTeam = { ...scoredTeam, score: scoredTeam.score - result.pointsEarned };
-  const teams: [Team, Team] =
-    teamIndex === 0 ? [correctedTeam, game.teams[1]] : [game.teams[0], correctedTeam];
+  const teams = game.teams.map((team, index) =>
+    index === teamIndex ? correctedTeam : team,
+  ) as Team[];
 
   return touch(
     {
@@ -644,12 +663,12 @@ export function reopenTurnForCorrection(game: GameState, timestamp = Date.now())
 }
 
 function prepareNextTurn(game: GameState, status: "pass_phone" | "scoreboard"): GameState {
-  const nextTeamIndex: 0 | 1 = game.currentTeamIndex === 0 ? 1 : 0;
+  const nextTeamIndex = getNextTeamIndex(game);
   return touch({
     ...game,
     status,
     currentTeamIndex: nextTeamIndex,
-    currentRound: Math.floor(game.history.length / 2) + 1,
+    currentRound: Math.floor(game.history.length / game.teams.length) + 1,
     currentTurn: game.history.length + 1,
     selectedThemeId: null,
     jokerOpportunityStage: null,
@@ -666,11 +685,12 @@ function prepareNextTurn(game: GameState, status: "pass_phone" | "scoreboard"): 
 
 export function advanceAfterResults(game: GameState): GameState {
   assertStatus(game, "turn_results");
-  if (game.history.length >= game.roundsPerTeam * 2) {
+  const totalTurns = game.roundsPerTeam * game.teams.length;
+  if (game.history.length >= totalTurns) {
     const completedAt = iso();
     return { ...game, status: "completed", completedAt, updatedAt: completedAt };
   }
-  const completedRound = game.history.length % 2 === 0;
+  const completedRound = game.history.length % game.teams.length === 0;
   return prepareNextTurn(game, completedRound ? "scoreboard" : "pass_phone");
 }
 
@@ -680,18 +700,29 @@ export function continueFromScoreboard(game: GameState): GameState {
 }
 
 export function getWinner(game: GameState): WinnerResult {
-  const [teamA, teamB] = game.teams;
-  const difference = Math.abs(teamA.score - teamB.score);
-  if (difference === 0) return { kind: "draw", winner: null, difference: 0 };
-  return { kind: "winner", winner: teamA.score > teamB.score ? teamA : teamB, difference };
+  if (game.teams.length === 0) throw new Error("Aucune équipe");
+  const maxScore = Math.max(...game.teams.map((t) => t.score));
+  const winners = game.teams.filter((t) => t.score === maxScore);
+  if (winners.length > 1) {
+    return { kind: "draw", winner: null, difference: 0 };
+  }
+  const winner = winners[0];
+  if (!winner) throw new Error("Gagnant introuvable");
+  const secondMaxScore = Math.max(
+    ...game.teams.map((t) => (t.id === winner.id ? -Infinity : t.score)),
+  );
+  const difference = winner.score - (secondMaxScore === -Infinity ? 0 : secondMaxScore);
+  return { kind: "winner", winner, difference };
 }
 
 export function replayGame(game: GameState): GameState {
   return createGame({
-    teamAName: game.teams[0].name,
-    teamBName: game.teams[1].name,
-    teamAColor: game.teams[0].color,
-    teamBColor: game.teams[1].color,
+    teamAName: game.teams[0]!.name,
+    teamBName: game.teams[1]!.name,
+    teamAColor: game.teams[0]!.color,
+    teamBColor: game.teams[1]!.color,
+    teamCName: game.teams[2]?.name,
+    teamCColor: game.teams[2]?.color,
     startingTeamIndex: game.startingTeamIndex,
     roundsPerTeam: game.roundsPerTeam,
     turnDurationSeconds: game.turnDurationSeconds,

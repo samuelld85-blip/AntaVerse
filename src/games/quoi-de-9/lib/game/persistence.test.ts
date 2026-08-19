@@ -68,9 +68,9 @@ describe("IndexedDB game recovery", () => {
     resetPersistenceConnectionForTests();
     const recovered = await loadCurrentGame();
 
-    expect(recovered?.schemaVersion).toBe(4);
+    expect(recovered?.schemaVersion).toBe(5);
     expect(recovered?.status).toBe("joker_opportunity");
-    expect(recovered?.teamJokers[recovered.teams[0].id]).toEqual({
+    expect(recovered?.teamJokers[recovered.teams[0]!.id]).toEqual({
       themeChoiceAvailable: true,
       opponentThemeAvailable: true,
     });
@@ -89,7 +89,7 @@ describe("IndexedDB game recovery", () => {
     });
     const turn: TurnResult = {
       id: "turn_utf8",
-      answeringTeamId: game.teams[0].id,
+      answeringTeamId: game.teams[0]!.id,
       questionId: "question-utf8",
       questionText: "Quels sont les neuf pays concernés par l’accord européen ?",
       themeId: "geographie",
@@ -124,5 +124,29 @@ describe("IndexedDB game recovery", () => {
     expect(recovered?.history[0]).toEqual(turn);
     expect(recovered?.history[0]?.questionText).toContain("l’accord européen");
     expect(recovered?.history[0]?.missedAnswers[0]?.display).toBe("Côte d’Ivoire");
+  });
+
+  it("recovers a saved 3-team game without losing the configuration", async () => {
+    const game = createGame({
+      teamAName: "Équipe A",
+      teamBName: "Équipe B",
+      teamCName: "Équipe C",
+      teamAColor: "#ff6f5d",
+      teamBColor: "#687dff",
+      teamCColor: "#FF5C2B",
+      startingTeamIndex: 0,
+      roundsPerTeam: 5,
+      turnDurationSeconds: 90,
+      mode: "competition" as const,
+    });
+    await saveCurrentGame(game);
+    resetPersistenceConnectionForTests();
+    const recovered = await loadCurrentGame();
+
+    expect(recovered?.teams).toHaveLength(3);
+    expect(recovered?.teams[0]?.name).toBe("Équipe A");
+    expect(recovered?.teams[1]?.name).toBe("Équipe B");
+    expect(recovered?.teams[2]?.name).toBe("Équipe C");
+    expect(recovered).toEqual(game);
   });
 });

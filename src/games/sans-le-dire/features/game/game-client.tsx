@@ -13,6 +13,7 @@ import {
   getCurrentCard,
   getWinnerIndex,
   passCard,
+  recordForbiddenViolation,
   replayGame,
   STANDARD_ROUNDS,
   startRound,
@@ -75,14 +76,20 @@ export function GameClient() {
   function act(kind: "found" | "pass" | "fault") {
     if (!game || game.status !== "playing" || locked.current) return;
     locked.current = true;
-    const card = getCurrentCard(game, cards);
     try {
-      const next =
-        kind === "found"
-          ? foundCard(game, card.id)
-          : kind === "pass"
-            ? passCard(game, card.id)
-            : faultCard(game, card.id);
+      const card = getCurrentCard(game, cards);
+      let next = game;
+      if (kind === "found") {
+        next = foundCard(game, card.id);
+      } else if (kind === "pass") {
+        next = passCard(game, card.id);
+      } else if (kind === "fault") {
+        if (game.playMode === "fun") {
+          next = recordForbiddenViolation(game, card.id);
+        } else {
+          next = faultCard(game, card.id);
+        }
+      }
       commit(next);
       feedback(kind);
     } catch {
@@ -121,9 +128,9 @@ export function GameClient() {
     <main className="play-shell safe-shell">
       <header className="play-header">
         <div>
-          <strong>{game.teams[game.activeTeam].name}</strong>
+          <strong>{game.teams[game.activeTeamIndex]?.name}</strong>
           <span>
-            {game.mode === "standard"
+            {game.roundMode === "standard"
               ? `Manche ${game.roundIndex + 1} / ${STANDARD_ROUNDS}`
               : `Départage ${game.tiebreakCycle}`}
           </span>
@@ -159,7 +166,7 @@ export function GameClient() {
             Passer · {game.passesRemaining}
           </button>
           <button className="action-fault" type="button" onClick={() => act("fault")}>
-            Mot interdit · −1
+            {game.playMode === "fun" ? "Mot interdit · +1 gorgée" : "Mot interdit · −1"}
           </button>
         </div>
       </section>
@@ -169,15 +176,15 @@ export function GameClient() {
 
 function Preparation({ game, onReady }: { game: GameState; onReady: () => void }) {
   const card = getCurrentCard(game, cards);
-  const duration = game.mode === "standard" ? 45 : 30;
+  const duration = game.roundMode === "standard" ? 45 : 30;
 
   return (
     <main className="play-shell safe-shell">
       <header className="play-header">
         <div>
-          <strong>{game.teams[game.activeTeam].name}</strong>
+          <strong>{game.teams[game.activeTeamIndex]?.name}</strong>
           <span>
-            {game.mode === "standard"
+            {game.roundMode === "standard"
               ? `Manche ${game.roundIndex + 1} / ${STANDARD_ROUNDS}`
               : `Départage ${game.tiebreakCycle}`}
           </span>
@@ -210,28 +217,82 @@ function Preparation({ game, onReady }: { game: GameState; onReady: () => void }
 }
 
 function RoundResult({ game, onContinue }: { game: GameState; onContinue: () => void }) {
-  const lastStandard = game.mode === "standard" && game.roundIndex === STANDARD_ROUNDS - 1;
-  const tied = game.teams[0].score === game.teams[1].score;
+  const lastStandard = game.roundMode === "standard" && game.roundIndex === STANDARD_ROUNDS - 1;
+  const allScores = game.teams.map((t) => t.score);
+  const maxScore = Math.max(...allScores);
+  const tiedTeams = allScores.filter((s) => s === maxScore).length > 1;
+  const activeTeam = game.teams[game.activeTeamIndex];
+  const opponentTeam = game.teams.find((_, i) => i !== game.activeTeamIndex);
+
   return (
     <main className="result-shell safe-shell">
       <Brand compact />
       <section className="round-result">
         <p className="eyebrow">Fin du tour !</p>
-        <h1>{game.teams[game.activeTeam].name}</h1>
-        <p className="round-found">
-          <strong>{game.roundScore > 0 ? `+${game.roundScore}` : game.roundScore}</strong>score du
-          tour
-        </p>
-        <Scoreboard game={game} />
+        {game.playMode === "fun" ? (
+          <>
+            <div className="fun-mode-result">
+              <div className="consequence consequence--drinks">
+                <p className="consequence-label">Gorgées à donner</p>
+                <p className="consequence-text">
+                  {game.teams.length === 2 ? (
+                    <>
+                      <span className="team-name" style={{ color: activeTeam?.color }}>
+                        {activeTeam?.name}
+                      </span>{" "}
+                      donne <strong>{game.roundScore}</strong>{" "}
+                      {game.roundScore === 1 ? "gorgée" : "gorgées"} à
+                      <br />
+                      <span className="team-name" style={{ color: opponentTeam?.color }}>
+                        {opponentTeam?.name}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="team-name" style={{ color: activeTeam?.color }}>
+                        {activeTeam?.name}
+                      </span>{" "}
+                      distribue <strong>{game.roundScore}</strong>{" "}
+                      {game.roundScore === 1 ? "gorgée" : "gorgées"} à qui ils veulent
+                    </>
+                  )}
+                </p>
+              </div>
+              {game.forbiddenViolations > 0 && (
+                <div className="consequence consequence--penalty">
+                  <p className="consequence-label">Mots interdits</p>
+                  <p className="consequence-text">
+                    <span className="team-name" style={{ color: activeTeam?.color }}>
+                      {activeTeam?.name}
+                    </span>{" "}
+                    a déclenché <strong>{game.forbiddenViolations}</strong>{" "}
+                    {game.forbiddenViolations === 1 ? "mot interdit" : "mots interdits"} et doit
+                    boire <strong>{game.forbiddenViolations}</strong>{" "}
+                    {game.forbiddenViolations === 1 ? "gorgée" : "gorgées"}
+                  </p>
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <h1>{activeTeam?.name}</h1>
+            <p className="round-found">
+              <strong>{game.roundScore > 0 ? `+${game.roundScore}` : game.roundScore}</strong>score du
+              tour
+            </p>
+            <Scoreboard game={game} />
+          </>
+        )}
         <Button onClick={onContinue}>
-          {game.mode === "tiebreak"
-            ? game.activeTeam === 0
-              ? "Équipe suivante"
-              : game.tiebreakScores[0] === game.tiebreakScores[1]
+          {game.roundMode === "tiebreak"
+            ? game.activeTeamIndex === game.teams.length - 1
+              ? tiedTeams
                 ? "Nouveau départage"
                 : "Voir le résultat"
+              : "Équipe suivante"
             : lastStandard
-              ? tied
+              ? tiedTeams
                 ? "Lancer le départage"
                 : "Voir le résultat"
               : "Équipe suivante"}
@@ -249,7 +310,7 @@ function Scoreboard({ game }: { game: GameState }) {
         <div className={`score-team score-team--${index + 1}`} key={team.id}>
           <span className="score-name">{team.name}</span>
           <strong className="score-value">{team.score}</strong>
-          {game.mode === "tiebreak" ? <small>+{game.tiebreakScores[index as 0 | 1]}</small> : null}
+          {game.roundMode === "tiebreak" ? <small>+{game.tiebreakScores[index]}</small> : null}
         </div>
       ))}
     </section>
@@ -287,11 +348,11 @@ function FinishedGame({
         </h1>
         <p className="final-label">Score final</p>
         <p className="final-score">
-          {game.teams[0].score} <span>—</span> {game.teams[1].score}
+          {game.teams.map((t) => t.score).join(" — ")}
         </p>
-        {game.mode === "tiebreak" ? (
+        {game.roundMode === "tiebreak" ? (
           <p className="tiebreak-final">
-            Départage : {game.tiebreakScores[0]} — {game.tiebreakScores[1]}
+            Départage : {game.tiebreakScores.join(" — ")}
           </p>
         ) : null}
         <div className="result-actions">
@@ -307,7 +368,7 @@ function FinishedGame({
   );
 }
 
-function feedback(kind: "found" | "pass" | "fault" | "end") {
+function feedback(kind: "found" | "pass" | "fault" | "violation" | "end") {
   if (typeof navigator !== "undefined" && "vibrate" in navigator)
     navigator.vibrate(kind === "end" ? [80, 50, 120] : kind === "found" ? 35 : 20);
   try {

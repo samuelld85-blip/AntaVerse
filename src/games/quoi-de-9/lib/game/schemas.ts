@@ -7,12 +7,12 @@ const safeName = z
   .trim()
   .min(2, "2 caractères minimum")
   .max(24, "24 caractères maximum")
-  .regex(/^[\p{L}\p{N} ._'’‘ʼ＇-]+$/u, "Certains caractères ne sont pas autorisés");
+  .regex(/^[\p{L}\p{N} ._’’’ʼ＇-]+$/u, "Certains caractères ne sont pas autorisés");
 
 function comparableTeamName(value: string) {
   return value
     .normalize("NFKC")
-    .replace(/[’‘ʼ＇]/gu, "'")
+    .replace(/[‘’ʼ＇]/gu, "’")
     .toLocaleLowerCase("fr");
 }
 
@@ -22,7 +22,9 @@ export const createGameSchema = z
     teamBName: safeName,
     teamAColor: z.string().regex(/^#[0-9a-f]{6}$/i),
     teamBColor: z.string().regex(/^#[0-9a-f]{6}$/i),
-    startingTeamIndex: z.coerce.number().pipe(z.union([z.literal(0), z.literal(1)])),
+    teamCName: safeName.optional(),
+    teamCColor: z.string().regex(/^#[0-9a-f]{6}$/i).optional(),
+    startingTeamIndex: z.coerce.number().int().min(0).max(2),
     roundsPerTeam: z.coerce
       .number()
       .int()
@@ -38,7 +40,32 @@ export const createGameSchema = z
   .refine((input) => comparableTeamName(input.teamAName) !== comparableTeamName(input.teamBName), {
     message: "Choisissez deux noms d’équipe différents",
     path: ["teamBName"],
-  });
+  })
+  .refine(
+    (input) => {
+      if (!input.teamCName) return true;
+      const names = [
+        comparableTeamName(input.teamAName),
+        comparableTeamName(input.teamBName),
+        comparableTeamName(input.teamCName),
+      ];
+      return new Set(names).size === 3;
+    },
+    {
+      message: "Choisissez trois noms d’équipe différents",
+      path: ["teamCName"],
+    },
+  )
+  .refine(
+    (input) => {
+      if (!input.teamCName) return !input.teamCColor;
+      return Boolean(input.teamCName && input.teamCColor);
+    },
+    {
+      message: "L’équipe 3 doit avoir un nom et une couleur",
+      path: ["teamCName"],
+    },
+  );
 
 const answerSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
