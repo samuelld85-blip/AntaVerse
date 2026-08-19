@@ -12,7 +12,7 @@ export default function HomePage() {
         <GameHomeNav rulesHref="/purple/regles" />
       </header>
       <section className="home-hero">
-        <p className="eyebrow">Rouge, noir… ou Skubrum ?</p>
+        <p className="eyebrow">Rouge, noir, Skubrum ou Sandwich ?</p>
         <h1>
           Le pot
           <br />

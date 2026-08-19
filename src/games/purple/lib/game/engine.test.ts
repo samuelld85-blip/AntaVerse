@@ -92,19 +92,24 @@ describe("evaluateGuess", () => {
     );
   });
 
-  it("SKUBRUM succeeds with 3 red + 1 black or 3 black + 1 red", () => {
-    expect(evaluateGuess("skubrum", [RED_1, RED_2, card("2", "hearts"), BLACK_1])).toBe("success");
-    expect(evaluateGuess("skubrum", [BLACK_1, BLACK_2, card("9", "clubs"), RED_1])).toBe("success");
+  it("SKUBRUM succeeds with 3 red or 3 black", () => {
+    expect(evaluateGuess("skubrum", [RED_1, RED_2, card("2", "hearts")])).toBe("success");
+    expect(evaluateGuess("skubrum", [BLACK_1, BLACK_2, card("9", "clubs")])).toBe("success");
   });
 
-  it("SKUBRUM fails with 2+2, 4+0, or any other distribution", () => {
-    expect(evaluateGuess("skubrum", [RED_1, RED_2, BLACK_1, BLACK_2])).toBe("failure");
-    expect(evaluateGuess("skubrum", [RED_1, RED_2, card("2", "hearts"), card("4", "diamonds")])).toBe(
-      "failure",
-    );
-    expect(evaluateGuess("skubrum", [BLACK_1, BLACK_2, card("9", "clubs"), card("10", "clubs")])).toBe(
-      "failure",
-    );
+  it("SKUBRUM fails with mixed colors", () => {
+    expect(evaluateGuess("skubrum", [RED_1, RED_2, BLACK_1])).toBe("failure");
+    expect(evaluateGuess("skubrum", [RED_1, BLACK_1, BLACK_2])).toBe("failure");
+  });
+
+  it("SANDWICH succeeds with 2 red + 1 black or 2 black + 1 red", () => {
+    expect(evaluateGuess("sandwich", [RED_1, RED_2, BLACK_1])).toBe("success");
+    expect(evaluateGuess("sandwich", [BLACK_1, BLACK_2, RED_1])).toBe("success");
+  });
+
+  it("SANDWICH fails with 3 of one color", () => {
+    expect(evaluateGuess("sandwich", [RED_1, RED_2, card("2", "hearts")])).toBe("failure");
+    expect(evaluateGuess("sandwich", [BLACK_1, BLACK_2, card("9", "clubs")])).toBe("failure");
   });
 
   it("HIGHER succeeds when drawn card > reference card", () => {
@@ -163,12 +168,20 @@ describe("submitGuess", () => {
     expect(next.progress).toBe(4);
   });
 
-  it("a successful SKUBRUM adds 4 to pile and progress", () => {
-    const game = makeGame([RED_1, RED_2, card("2", "hearts"), BLACK_1]);
+  it("a successful SKUBRUM adds 3 to pile and progress", () => {
+    const game = makeGame([RED_1, RED_2, card("2", "hearts")]);
     const next = submitGuess(game, "skubrum", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("success");
-    expect(next.pile).toBe(4);
-    expect(next.progress).toBe(4);
+    expect(next.pile).toBe(3);
+    expect(next.progress).toBe(3);
+  });
+
+  it("a successful SANDWICH adds 3 to pile and progress", () => {
+    const game = makeGame([RED_1, RED_2, BLACK_1]);
+    const next = submitGuess(game, "sandwich", seededRandom(1));
+    expect(next.lastGuess?.outcome).toBe("success");
+    expect(next.pile).toBe(3);
+    expect(next.progress).toBe(3);
   });
 
   it("consumes drawn cards from the deck even on failure", () => {
@@ -209,11 +222,11 @@ describe("submitGuess", () => {
     expect(next.deck).toHaveLength(51);
   });
 
-  it("crosses a deck boundary mid-guess: SKUBRUM with only 3 cards left", () => {
-    const game = makeGame([RED_1, RED_2, card("2", "hearts")]);
+  it("crosses a deck boundary mid-guess: SKUBRUM with only 2 cards left", () => {
+    const game = makeGame([RED_1, RED_2]);
     const next = submitGuess(game, "skubrum", seededRandom(1));
     expect(next.lastGuess?.reshuffled).toBe(true);
-    expect(next.lastGuess?.cards).toHaveLength(4);
+    expect(next.lastGuess?.cards).toHaveLength(3);
     expect(next.deck).toHaveLength(51);
   });
 

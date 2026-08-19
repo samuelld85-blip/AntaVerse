@@ -4,7 +4,7 @@ import { ButtonLink } from "@/games/shared/components/ui";
 const rules = [
   [
     "Devinez",
-    "Rouge, Noir, Violet (2 cartes), Double violet (4 cartes) ou Skubrum (3 cartes) : chaque bouton tire directement les cartes du paquet.",
+    "Rouge, Noir, Violet (2 cartes), Double violet (4 cartes), Skubrum (3 cartes de la même couleur) ou Sandwich (2 cartes d’une couleur et 1 de l’autre) : chaque bouton tire directement les cartes du paquet.",
   ],
   [
     "Le pot grimpe",

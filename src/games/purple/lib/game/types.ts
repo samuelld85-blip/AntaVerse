@@ -9,7 +9,15 @@ export interface Card {
   color: CardColor;
 }
 
-export type GuessType = "red" | "black" | "purple" | "doublePurple" | "skubrum" | "higher" | "lower";
+export type GuessType =
+  | "red"
+  | "black"
+  | "purple"
+  | "doublePurple"
+  | "skubrum"
+  | "sandwich"
+  | "higher"
+  | "lower";
 
 export interface Player {
   id: string;
