@@ -643,6 +643,9 @@ html[data-theme="light"] .brand-mark--purple {
 
   .guess-button {
     min-height: 2.75rem;
+    flex-direction: row;
+    gap: 0.55rem;
+    padding: 0.35rem 0.45rem;
   }
 
   .guess-button--higher,
