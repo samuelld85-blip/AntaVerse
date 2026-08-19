@@ -45,6 +45,7 @@ const input = {
   startingTeamIndex: 0 as const,
   roundsPerTeam: 5,
   turnDurationSeconds: 90,
+  mode: "competition" as const,
 };
 
 function reachDifficultySelection(game = createGame(input)): GameState {

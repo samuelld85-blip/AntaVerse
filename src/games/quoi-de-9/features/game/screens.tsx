@@ -20,6 +20,7 @@ import {
   formatScore,
   formatSignedScore,
 } from "@/games/quoi-de-9/lib/game/scoring";
+import { calculateFunSips, formatSignedSips, formatSips } from "@/games/quoi-de-9/lib/game/fun-rewards";
 import type { GameState, Question, Team, Theme } from "@/games/quoi-de-9/lib/game/types";
 
 export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: () => void }) {
@@ -310,14 +311,26 @@ export function RoundSetupScreen({
             <div className="grid grid-cols-3 gap-2">
               {DIFFICULTY_LEVELS.map((difficulty) => {
                 const config = GAME_CONFIG.difficulties[difficulty];
-                const pointsPerAnswer = calculateTurnScore(1, difficulty);
-                const maximumPoints = calculateTurnScore(GAME_CONFIG.answerCount, difficulty);
+                let meta: string;
+                if (game.mode === "fun") {
+                  if (difficulty === 1) {
+                    meta = "3 / 5 / 9 réponses";
+                  } else if (difficulty === 2) {
+                    meta = "1 gorgée / 2 réponses";
+                  } else {
+                    meta = "1 gorgée / réponse";
+                  }
+                } else {
+                  const pointsPerAnswer = calculateTurnScore(1, difficulty);
+                  const maximumPoints = calculateTurnScore(GAME_CONFIG.answerCount, difficulty);
+                  meta = `${formatScore(pointsPerAnswer)} pts/réponse · ${formatScore(maximumPoints)} max`;
+                }
                 return (
                   <SetupChoice
                     key={difficulty}
                     icon=""
                     label={config.label}
-                    meta={`${formatScore(pointsPerAnswer)} pts/réponse · ${formatScore(maximumPoints)} max`}
+                    meta={meta}
                     prominentLabel
                     disabled={availability[difficulty] < 1}
                     onClick={() => onDifficulty(difficulty)}
@@ -812,6 +825,12 @@ export function TurnResultsScreen({
 }) {
   const result = game.history.at(-1);
   if (!result) return null;
+
+  const isFunMode = game.mode === "fun";
+  const reward = isFunMode
+    ? calculateFunSips(result.foundAnswers.length, result.difficultyLevel, result.bombTriggered)
+    : result.pointsEarned;
+
   return (
     <section className="flex min-h-0 flex-1 flex-col pb-1">
       <div className="text-center">
@@ -819,8 +838,19 @@ export function TurnResultsScreen({
           Tour terminé
         </p>
         <p className="score-pop display-face mt-2 text-5xl leading-none text-[var(--accent-text)]">
-          {formatSignedScore(result.pointsEarned)}{" "}
-          <span className="font-sans text-[11px] uppercase tracking-wider">points</span>
+          {isFunMode ? (
+            <>
+              {reward}{" "}
+              <span className="font-sans text-[11px] uppercase tracking-wider">
+                gorgée{reward !== 1 ? "s" : ""}
+              </span>
+            </>
+          ) : (
+            <>
+              {formatSignedScore(reward)}{" "}
+              <span className="font-sans text-[11px] uppercase tracking-wider">points</span>
+            </>
+          )}
         </p>
         <p className="mt-2 text-[11px] text-white/58">
           {result.themeLabel} · Niveau {result.difficultyLevel} — {result.difficultyLabel}

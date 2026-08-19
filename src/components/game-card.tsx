@@ -26,7 +26,9 @@ export function GameCard({ game, index }: { game: GameDefinition; index: number 
         <span className="game-copy">
           <strong>
             {game.name}
-            {game.drinkingGame ? <span aria-hidden="true"> 🍺</span> : null}
+            {game.modes?.includes("competition") && <span aria-hidden="true"> 🏆</span>}
+            {game.drinkingGame && <span aria-hidden="true"> 🍺</span>}
+            {game.modes?.includes("fun") && !game.drinkingGame && <span aria-hidden="true"> 🍺</span>}
           </strong>
           <span>{game.description}</span>
         </span>

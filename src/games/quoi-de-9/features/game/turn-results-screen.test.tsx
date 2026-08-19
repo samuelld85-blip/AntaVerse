@@ -56,6 +56,7 @@ function gameWithHistory(): GameState {
     startingTeamIndex: 0,
     roundsPerTeam: 5,
     turnDurationSeconds: 90,
+    mode: "competition" as const,
   });
   const previous = completedTurn({
     id: "turn_previous",

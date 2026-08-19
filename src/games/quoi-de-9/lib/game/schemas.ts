@@ -33,6 +33,7 @@ export const createGameSchema = z
       .int()
       .min(GAME_CONFIG.minTurnDurationSeconds)
       .max(GAME_CONFIG.maxTurnDurationSeconds),
+    mode: z.enum(["competition", "fun"]),
   })
   .refine((input) => comparableTeamName(input.teamAName) !== comparableTeamName(input.teamBName), {
     message: "Choisissez deux noms d’équipe différents",

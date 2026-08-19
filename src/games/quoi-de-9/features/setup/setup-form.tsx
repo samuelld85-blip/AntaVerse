@@ -8,8 +8,9 @@ import { GAME_CONFIG } from "@/games/quoi-de-9/lib/game/config";
 import { createGame } from "@/games/quoi-de-9/lib/game/engine";
 import { saveCurrentGame } from "@/games/quoi-de-9/lib/game/persistence";
 import { createGameSchema, type CreateGameForm } from "@/games/quoi-de-9/lib/game/schemas";
+import type { GameMode } from "@/games/quoi-de-9/lib/game/types";
 
-export function SetupForm() {
+export function SetupForm({ mode }: { mode: GameMode }) {
   const router = useRouter();
   const [isReady, setIsReady] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -28,6 +29,7 @@ export function SetupForm() {
       startingTeamIndex: 0,
       roundsPerTeam: GAME_CONFIG.defaultRoundsPerTeam,
       turnDurationSeconds: GAME_CONFIG.defaultTurnDurationSeconds,
+      mode,
     },
   });
 

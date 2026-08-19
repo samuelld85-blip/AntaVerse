@@ -24,6 +24,7 @@ describe("IndexedDB game recovery", () => {
       startingTeamIndex: 1,
       roundsPerTeam: 5,
       turnDurationSeconds: 90,
+      mode: "competition" as const,
     });
     await saveCurrentGame(game);
     resetPersistenceConnectionForTests();
@@ -40,6 +41,7 @@ describe("IndexedDB game recovery", () => {
       startingTeamIndex: 0,
       roundsPerTeam: 5,
       turnDurationSeconds: 90,
+      mode: "competition" as const,
     });
     await saveCurrentGame(game);
     await clearCurrentGame();
@@ -55,6 +57,7 @@ describe("IndexedDB game recovery", () => {
       startingTeamIndex: 0,
       roundsPerTeam: 5,
       turnDurationSeconds: 90,
+      mode: "competition" as const,
     });
     const legacy: Record<string, unknown> = { ...game };
     delete legacy.teamJokers;
@@ -82,6 +85,7 @@ describe("IndexedDB game recovery", () => {
       startingTeamIndex: 0,
       roundsPerTeam: 5,
       turnDurationSeconds: 90,
+      mode: "competition" as const,
     });
     const turn: TurnResult = {
       id: "turn_utf8",

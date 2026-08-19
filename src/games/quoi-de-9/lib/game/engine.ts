@@ -55,6 +55,7 @@ export function createGame(input: CreateGameInput): GameState {
   return {
     schemaVersion: 4,
     id: uid("game"),
+    mode: input.mode,
     status: "instructions",
     teams,
     startingTeamIndex: input.startingTeamIndex,
@@ -694,5 +695,6 @@ export function replayGame(game: GameState): GameState {
     startingTeamIndex: game.startingTeamIndex,
     roundsPerTeam: game.roundsPerTeam,
     turnDurationSeconds: game.turnDurationSeconds,
+    mode: game.mode,
   });
 }

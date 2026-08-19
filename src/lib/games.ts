@@ -18,6 +18,7 @@ export interface GameDefinition {
   accent: string;
   iconBackground: string;
   drinkingGame?: boolean;
+  modes?: ("competition" | "fun")[];
 }
 
 export const games: readonly GameDefinition[] = [
@@ -29,6 +30,7 @@ export const games: readonly GameDefinition[] = [
     icon: "/brand/games/quoi-de-9-dark.png",
     accent: "#16C7E8",
     iconBackground: "#0B1118",
+    modes: ["competition", "fun"],
   },
   {
     id: "la-relance",
@@ -38,6 +40,7 @@ export const games: readonly GameDefinition[] = [
     icon: "/brand/games/la-relance-dark.png",
     accent: "#E83DFF",
     iconBackground: "#0B1118",
+    modes: ["competition"],
   },
   {
     id: "sans-le-dire",
@@ -47,6 +50,7 @@ export const games: readonly GameDefinition[] = [
     icon: "/brand/games/sans-le-dire-dark.png",
     accent: "#16C7E8",
     iconBackground: "#0B1118",
+    modes: ["competition"],
   },
   {
     id: "purple",

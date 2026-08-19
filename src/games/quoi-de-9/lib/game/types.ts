@@ -18,6 +18,7 @@ export type GameStatus =
   | "scoreboard"
   | "completed";
 
+export type GameMode = "competition" | "fun";
 export type ContentStatus = "draft" | "published" | "archived";
 
 export interface Theme {
@@ -125,6 +126,7 @@ export interface TurnResult {
 export interface GameState {
   schemaVersion: 4;
   id: string;
+  mode: "competition" | "fun";
   status: GameStatus;
   teams: [Team, Team];
   startingTeamIndex: 0 | 1;
@@ -160,6 +162,7 @@ export interface CreateGameInput {
   startingTeamIndex: 0 | 1;
   roundsPerTeam: number;
   turnDurationSeconds: number;
+  mode: "competition" | "fun";
 }
 
 export interface WinnerResult {

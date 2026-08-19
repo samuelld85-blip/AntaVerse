@@ -10,6 +10,7 @@ function setupInput(teamAName: string, teamBName = "Les Comètes") {
     startingTeamIndex: 0,
     roundsPerTeam: 5,
     turnDurationSeconds: 90,
+    mode: "competition" as const,
   };
 }
 
