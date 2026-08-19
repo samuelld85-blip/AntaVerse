@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BackButton } from "@/games/shared/components/back-button";
 import { Brand } from "@/games/purple/components/brand";
 import { PlayingCard } from "@/games/purple/components/playing-card";
 import { MiniCard } from "@/games/purple/components/mini-card";
@@ -194,8 +193,30 @@ export function GameClient() {
 
   return (
     <main className="purple-shell safe-shell">
-      <header className="purple-header">
-        <BackButton homeHref="/purple" />
+      <section className="purple-stats" aria-label="État de la partie">
+        <div className="purple-stat">
+          <span className="purple-stat-label">Manche</span>
+          <strong className="purple-stat-value">{game.progress}</strong>
+          <span
+            className={
+              canPass(game) ? "purple-stat-hint purple-stat-hint--ready" : "purple-stat-hint"
+            }
+          >
+            {canPass(game) ? "Peut passer" : "3 pour passer"}
+          </span>
+        </div>
+        <div className="purple-stat purple-stat--pile">
+          <span className="purple-stat-label">Pot commun</span>
+          <strong className="purple-stat-value">{game.pile}</strong>
+        </div>
+        <div className="purple-stat">
+          <span className="purple-stat-label">Paquet</span>
+          <strong className="purple-stat-value">{game.deck.length}</strong>
+          <span className="purple-stat-hint">cartes</span>
+        </div>
+      </section>
+
+      <section className="purple-active-player">
         <div className="purple-reveal-toggle" role="group" aria-label="Mode de révélation">
           <button
             type="button"
@@ -224,35 +245,11 @@ export function GameClient() {
             Manuel
           </button>
         </div>
-      </header>
-
-      <section className="purple-stats" aria-label="État de la partie">
-        <div className="purple-stat">
-          <span className="purple-stat-label">Manche</span>
-          <strong className="purple-stat-value">{game.progress}</strong>
-          <span
-            className={
-              canPass(game) ? "purple-stat-hint purple-stat-hint--ready" : "purple-stat-hint"
-            }
-          >
-            {canPass(game) ? "Peut passer" : "3 pour passer"}
-          </span>
-        </div>
-        <div className="purple-stat purple-stat--pile">
-          <span className="purple-stat-label">Pot commun</span>
-          <strong className="purple-stat-value">{game.pile}</strong>
-        </div>
-        <div className="purple-stat">
-          <span className="purple-stat-label">Paquet</span>
-          <strong className="purple-stat-value">{game.deck.length}</strong>
-          <span className="purple-stat-hint">cartes</span>
+        <div className="purple-active-copy">
+          <span className="purple-active-label">AU TOUR DE</span>
+          <span className="purple-active-name">{currentPlayer?.name}</span>
         </div>
       </section>
-
-      <div className="purple-active-player">
-        <span className="purple-active-label">AU TOUR DE</span>
-        <span className="purple-active-name">{currentPlayer?.name}</span>
-      </div>
 
       <section
         className={isManualPending ? "purple-stage purple-stage--tappable" : "purple-stage"}
