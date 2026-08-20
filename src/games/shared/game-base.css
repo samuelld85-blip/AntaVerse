@@ -121,11 +121,26 @@ a {
     transform 120ms ease,
     filter 120ms ease;
 }
+.button--primary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 100px 0 60px -70px color-mix(in srgb, var(--game-accent) 58%, transparent);
+}
+html[data-theme="light"] .button--primary:hover {
+  background: var(--game-accent);
+  filter: brightness(1.05);
+}
 .button:active {
   transform: scale(0.98);
 }
 .button--primary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  color: var(--game-accent);
+  box-shadow: inset 90px 0 55px -75px color-mix(in srgb, var(--game-accent) 50%, transparent);
+}
+html[data-theme="light"] .button--primary {
   background: var(--game-accent);
+  border: 1px solid transparent;
   /* Not `--ink`: the readable label color depends on the accent's luminance,
      not on the page background. Each game declares `--game-accent-ink`
      alongside its accent; the value is derived from readableInk() in
