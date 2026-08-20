@@ -198,12 +198,37 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
 }
 .action-found {
   min-height: clamp(4rem, 10vh, 5rem) !important;
-  background: var(--lime);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  color: var(--sld-accent);
   font-size: 1.2rem;
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--sld-accent) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--sld-accent) 8%, transparent);
 }
 .action-found span {
   margin-left: 0.45rem;
+}
+.action-found:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--sld-accent) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--sld-accent) 12%, transparent);
+}
+html[data-theme="light"] .action-found {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  color: var(--sld-accent);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--sld-accent) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--sld-accent) 8%, transparent);
+}
+html[data-theme="light"] .action-found:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--sld-accent) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--sld-accent) 12%, transparent);
+  filter: none;
 }
 .play-actions > div {
   display: grid;
@@ -213,6 +238,8 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
 .action-pass {
   background: var(--surface-raised);
   color: var(--text);
+  font-weight: 600 !important;
+  font-size: 0.88rem;
 }
 .action-pass:disabled {
   cursor: not-allowed;
@@ -222,6 +249,8 @@ html[data-theme="light"] .brand-mark--sans-le-dire {
   border: 1px solid color-mix(in srgb, var(--sld-accent) 45%, transparent) !important;
   background: transparent;
   color: var(--sld-accent);
+  font-weight: 600 !important;
+  font-size: 0.8rem;
 }
 .preparation-card,
 .round-result {

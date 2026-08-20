@@ -22,7 +22,7 @@ export function ModeSelectionScreen({
         <button
           type="button"
           onClick={() => onModeSelected("competition")}
-          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--accent-text)]/35 bg-[var(--accent-text)]/[.1] px-4 py-3 text-left transition hover:border-[var(--accent-text)]/60 hover:bg-[var(--accent-text)]/[.15] active:scale-[.98]"
+          className="mode-selection-button mode-selection-button--competition flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl px-4 py-3 text-left transition active:scale-[.98]"
         >
           <span className="text-2xl" aria-hidden="true">
             🏆
@@ -36,7 +36,7 @@ export function ModeSelectionScreen({
         <button
           type="button"
           onClick={() => onModeSelected("fun")}
-          className="flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl border border-[var(--violet)]/35 bg-[var(--violet)]/[.1] px-4 py-3 text-left transition hover:border-[var(--violet)]/60 hover:bg-[var(--violet)]/[.15] active:scale-[.98]"
+          className="mode-selection-button mode-selection-button--fun flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl px-4 py-3 text-left transition active:scale-[.98]"
         >
           <span className="text-2xl" aria-hidden="true">
             🍺

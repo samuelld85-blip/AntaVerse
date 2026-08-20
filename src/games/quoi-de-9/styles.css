@@ -299,3 +299,65 @@ html[data-theme="light"] .answer-choice:disabled {
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
+
+.mode-selection-button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+}
+
+.mode-selection-button--competition {
+  color: var(--accent-text);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--accent-text) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--accent-text) 8%, transparent);
+}
+
+.mode-selection-button--competition:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--accent-text) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--accent-text) 12%, transparent);
+}
+
+.mode-selection-button--fun {
+  color: var(--violet);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--violet) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--violet) 8%, transparent);
+}
+
+.mode-selection-button--fun:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--violet) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--violet) 12%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--competition {
+  color: var(--accent-text);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--accent-text) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--accent-text) 8%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--competition:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--accent-text) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--accent-text) 12%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--fun {
+  color: var(--violet);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--violet) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--violet) 8%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--fun:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--violet) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--violet) 12%, transparent);
+}
