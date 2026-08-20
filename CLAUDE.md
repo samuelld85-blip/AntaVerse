@@ -346,3 +346,31 @@ For long tasks:
 ## Global 
 
 For local visual verification, prefer the existing npm run dev server on http://localhost:3000. Only start/restart a server if that endpoint is unavailable or stale.
+
+## Git safety — mandatory
+
+Never commit, push, merge, rebase, reset, force-push, create/delete branches, or modify remote Git state without the user's explicit authorization in the current conversation.
+
+Default behavior:
+- edit files locally only;
+- run tests/checks locally;
+- show the diff/status;
+- stop before any Git write operation.
+
+Even if the change is trivial, obvious, already validated, or intended for `main`, do not commit or push unless the user explicitly says to do so.
+
+Treat `main` as protected:
+- never push directly to `main` without explicit authorization;
+- never amend or rewrite `main` history;
+- never use `--force` / `--force-with-lease` without explicit authorization.
+
+When the user asks for implementation but does not mention Git, interpret that as:
+**modify locally, do not commit, do not push.**
+
+Before any requested push, first verify:
+- current branch;
+- `git status`;
+- staged files;
+- commit contents.
+
+Then push only the exact changes the user authorized.

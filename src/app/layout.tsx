@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     title: "AntaVerse",
   },
   icons: {
-    icon: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    icon: [{ url: "/icons/web/icon-192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/icons/web/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   formatDetection: { telephone: false },
 };

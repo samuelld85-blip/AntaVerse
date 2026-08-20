@@ -38,10 +38,13 @@ const assets = new Set([
   ...routes,
   "/offline.html",
   "/manifest.webmanifest",
-  "/icons/apple-touch-icon.png",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/maskable-icon.png",
+  "/icons/app/icon-192.png",
+  "/icons/app/icon-512.png",
+  "/icons/app/maskable-icon.png",
+  "/icons/app/apple-touch-icon.png",
+  "/icons/web/favicon-32.png",
+  "/icons/web/icon-192.png",
+  "/icons/web/apple-touch-icon.png",
 ]);
 
 for (const route of routes) {
