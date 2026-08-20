@@ -10,8 +10,8 @@ export default function TeamsPage() {
       <section className="setup-heading">
         <p className="eyebrow">Qui s’affronte ?</p>
         <h1>
-          Donnez un nom
-          <br />à vos équipes.
+          Équipes
+          <br />ou joueurs ?
         </h1>
         <p>Vous pourrez rejouer avec les mêmes noms.</p>
       </section>

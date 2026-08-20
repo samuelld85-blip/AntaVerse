@@ -4,8 +4,13 @@
     "slug": "xlsx-party-alcohol-easy-01",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 accessoires de fête.",
     "shortTitle": "accessoires de fête",
     "difficultyLevel": 1,
@@ -146,174 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "93be62eb3a7e29fac7cb7f35d14488e1eb6579798fc2848ed5abf87369e48ff9",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-party-alcohol-easy-02",
     "slug": "xlsx-party-alcohol-easy-02",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 moments où l’on ouvre du champagne.",
-    "shortTitle": "moments où l’on ouvre du champagne",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-1",
-        "display": "Nouvel An",
-        "normalized": "nouvel an",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-2",
-        "display": "mariage",
-        "normalized": "mariage",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-3",
-        "display": "victoire",
-        "normalized": "victoire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-4",
-        "display": "anniversaire",
-        "normalized": "anniversaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-5",
-        "display": "promotion",
-        "normalized": "promotion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-6",
-        "display": "naissance",
-        "normalized": "naissance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-7",
-        "display": "diplôme",
-        "normalized": "diplome",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-8",
-        "display": "signature d’un contrat",
-        "normalized": "signature d un contrat",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-02-answer-9",
-        "display": "départ à la retraite",
-        "normalized": "depart a la retraite",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "party-alcohol:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-party-alcohol-easy-02-bomb",
-      "display": "Faire les courses",
-      "normalized": "faire les courses",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3b7c54fda510a988768f3613a3a33492dc513575a500155acadcd3cc394e473c",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-party-alcohol-easy-03",
-    "slug": "xlsx-party-alcohol-easy-03",
-    "language": "fr",
-    "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 signes qu’une soirée se termine.",
     "shortTitle": "signes qu’une soirée se termine",
     "difficultyLevel": 1,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-1",
+        "id": "xlsx-party-alcohol-easy-02-answer-1",
         "display": "musique coupée",
         "normalized": "musique coupee",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-2",
+        "id": "xlsx-party-alcohol-easy-02-answer-2",
         "display": "lumières allumées",
         "normalized": "lumieres allumees",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-3",
+        "id": "xlsx-party-alcohol-easy-02-answer-3",
         "display": "derniers invités partis",
         "normalized": "derniers invites partis",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-4",
+        "id": "xlsx-party-alcohol-easy-02-answer-4",
         "display": "DJ range son matériel",
         "normalized": "dj range son materiel",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-5",
+        "id": "xlsx-party-alcohol-easy-02-answer-5",
         "display": "bar fermé",
         "normalized": "bar ferme",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-6",
+        "id": "xlsx-party-alcohol-easy-02-answer-6",
         "display": "métro bientôt ouvert",
         "normalized": "metro bientot ouvert",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-7",
+        "id": "xlsx-party-alcohol-easy-02-answer-7",
         "display": "ménage commencé",
         "normalized": "menage commence",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-8",
+        "id": "xlsx-party-alcohol-easy-02-answer-8",
         "display": "hôte en pyjama",
         "normalized": "hote en pyjama",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-03-answer-9",
+        "id": "xlsx-party-alcohol-easy-02-answer-9",
         "display": "taxis commandés",
         "normalized": "taxis commandes",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-03-bomb",
+      "id": "xlsx-party-alcohol-easy-02-bomb",
       "display": "Les invités arrivent",
       "normalized": "les invites arrivent",
       "aliases": [],
@@ -454,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "beb9f10fc6c737b3015aadba90b1bd86bbb9955e5a1cd519fd43811738db974b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-04",
-    "slug": "xlsx-party-alcohol-easy-04",
+    "id": "xlsx-party-alcohol-easy-03",
+    "slug": "xlsx-party-alcohol-easy-03",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses à apporter chez quelqu’un qui reçoit.",
     "shortTitle": "choses à apporter chez quelqu’un qui reçoit",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-1",
+        "id": "xlsx-party-alcohol-easy-03-answer-1",
         "display": "bouteille",
         "normalized": "bouteille",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-2",
+        "id": "xlsx-party-alcohol-easy-03-answer-2",
         "display": "dessert",
         "normalized": "dessert",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-3",
+        "id": "xlsx-party-alcohol-easy-03-answer-3",
         "display": "fleurs",
         "normalized": "fleurs",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-4",
+        "id": "xlsx-party-alcohol-easy-03-answer-4",
         "display": "chocolats",
         "normalized": "chocolats",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-5",
+        "id": "xlsx-party-alcohol-easy-03-answer-5",
         "display": "bougies",
         "normalized": "bougies",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-6",
+        "id": "xlsx-party-alcohol-easy-03-answer-6",
         "display": "plante",
         "normalized": "plante",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-7",
+        "id": "xlsx-party-alcohol-easy-03-answer-7",
         "display": "jeu",
         "normalized": "jeu",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-8",
+        "id": "xlsx-party-alcohol-easy-03-answer-8",
         "display": "glaçons",
         "normalized": "glacons",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-04-answer-9",
+        "id": "xlsx-party-alcohol-easy-03-answer-9",
         "display": "fromage",
         "normalized": "fromage",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-04-bomb",
+      "id": "xlsx-party-alcohol-easy-03-bomb",
       "display": "Repartir avec le cadeau de l’hôte",
       "normalized": "repartir avec le cadeau de l hote",
       "aliases": [],
@@ -608,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d9af8e43308cbdba6f46602bf61a0706b955f76ba199f4ff190ae2b0bfcea0df",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-05",
-    "slug": "xlsx-party-alcohol-easy-05",
+    "id": "xlsx-party-alcohol-easy-04",
+    "slug": "xlsx-party-alcohol-easy-04",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 situations où il vaut mieux ne pas boire.",
     "shortTitle": "situations où il vaut mieux ne pas boire",
     "difficultyLevel": 1,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-1",
+        "id": "xlsx-party-alcohol-easy-04-answer-1",
         "display": "conduite",
         "normalized": "conduite",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-2",
+        "id": "xlsx-party-alcohol-easy-04-answer-2",
         "display": "grossesse",
         "normalized": "grossesse",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-3",
+        "id": "xlsx-party-alcohol-easy-04-answer-3",
         "display": "prise de médicaments",
         "normalized": "prise de medicaments",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-4",
+        "id": "xlsx-party-alcohol-easy-04-answer-4",
         "display": "avant un examen",
         "normalized": "avant un examen",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-5",
+        "id": "xlsx-party-alcohol-easy-04-answer-5",
         "display": "travail dangereux",
         "normalized": "travail dangereux",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-6",
+        "id": "xlsx-party-alcohol-easy-04-answer-6",
         "display": "maladie",
         "normalized": "maladie",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-7",
+        "id": "xlsx-party-alcohol-easy-04-answer-7",
         "display": "déshydratation",
         "normalized": "deshydratation",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-8",
+        "id": "xlsx-party-alcohol-easy-04-answer-8",
         "display": "compétition sportive",
         "normalized": "competition sportive",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-05-answer-9",
+        "id": "xlsx-party-alcohol-easy-04-answer-9",
         "display": "responsabilité d’un enfant",
         "normalized": "responsabilite d un enfant",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-05-bomb",
+      "id": "xlsx-party-alcohol-easy-04-bomb",
       "display": "Quand on est hydraté",
       "normalized": "quand on est hydrate",
       "aliases": [],
@@ -762,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bd45664c2ff3e61729c72858842b174ce58662270b0235e91c5b69b4c9c91c56",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-06",
-    "slug": "xlsx-party-alcohol-easy-06",
+    "id": "xlsx-party-alcohol-easy-05",
+    "slug": "xlsx-party-alcohol-easy-05",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses à prévoir pour organiser une soirée.",
     "shortTitle": "choses à prévoir pour organiser une soirée",
     "difficultyLevel": 1,
@@ -791,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-1",
+        "id": "xlsx-party-alcohol-easy-05-answer-1",
         "display": "boissons",
         "normalized": "boissons",
         "aliases": [],
@@ -803,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-2",
+        "id": "xlsx-party-alcohol-easy-05-answer-2",
         "display": "musique",
         "normalized": "musique",
         "aliases": [],
@@ -815,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-3",
+        "id": "xlsx-party-alcohol-easy-05-answer-3",
         "display": "invités",
         "normalized": "invites",
         "aliases": [],
@@ -827,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-4",
+        "id": "xlsx-party-alcohol-easy-05-answer-4",
         "display": "nourriture",
         "normalized": "nourriture",
         "aliases": [],
@@ -839,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-5",
+        "id": "xlsx-party-alcohol-easy-05-answer-5",
         "display": "lieu",
         "normalized": "lieu",
         "aliases": [],
@@ -851,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-6",
+        "id": "xlsx-party-alcohol-easy-05-answer-6",
         "display": "playlist",
         "normalized": "playlist",
         "aliases": [],
@@ -863,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-7",
+        "id": "xlsx-party-alcohol-easy-05-answer-7",
         "display": "glace",
         "normalized": "glace",
         "aliases": [],
@@ -875,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-8",
+        "id": "xlsx-party-alcohol-easy-05-answer-8",
         "display": "verres",
         "normalized": "verres",
         "aliases": [],
@@ -887,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-06-answer-9",
+        "id": "xlsx-party-alcohol-easy-05-answer-9",
         "display": "heure de fin",
         "normalized": "heure de fin",
         "aliases": [],
@@ -900,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-06-bomb",
+      "id": "xlsx-party-alcohol-easy-05-bomb",
       "display": "Rentrer chez soi la veille",
       "normalized": "rentrer chez soi la veille",
       "aliases": [],
@@ -916,174 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fd101f14208e970208c703a1575aeae2bbc463e52e5502c620d020fa9ba88f7b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-07",
-    "slug": "xlsx-party-alcohol-easy-07",
+    "id": "xlsx-party-alcohol-easy-06",
+    "slug": "xlsx-party-alcohol-easy-06",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 raisons de quitter une soirée tôt.",
-    "shortTitle": "raisons de quitter une soirée tôt",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-1",
-        "display": "fatigue",
-        "normalized": "fatigue",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-2",
-        "display": "travail le lendemain",
-        "normalized": "travail le lendemain",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-3",
-        "display": "mauvaise ambiance",
-        "normalized": "mauvaise ambiance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-4",
-        "display": "transport à prendre",
-        "normalized": "transport a prendre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-5",
-        "display": "mal de tête",
-        "normalized": "mal de tete",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-6",
-        "display": "enfant à garder",
-        "normalized": "enfant a garder",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-7",
-        "display": "long trajet",
-        "normalized": "long trajet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-8",
-        "display": "invité gênant",
-        "normalized": "invite genant",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-07-answer-9",
-        "display": "début trop tardif",
-        "normalized": "debut trop tardif",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "party-alcohol:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-party-alcohol-easy-07-bomb",
-      "display": "La soirée commence",
-      "normalized": "la soiree commence",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6b58065daa0d54b8a025a4c6903199c02b4bd34cb49c2d792992bd689516aeb6",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-party-alcohol-easy-08",
-    "slug": "xlsx-party-alcohol-easy-08",
-    "language": "fr",
-    "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 boissons servies à l’apéritif.",
     "shortTitle": "boissons servies à l’apéritif",
     "difficultyLevel": 1,
@@ -1099,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-1",
+        "id": "xlsx-party-alcohol-easy-06-answer-1",
         "display": "bière",
         "normalized": "biere",
         "aliases": [],
@@ -1111,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-2",
+        "id": "xlsx-party-alcohol-easy-06-answer-2",
         "display": "vin",
         "normalized": "vin",
         "aliases": [],
@@ -1123,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-3",
+        "id": "xlsx-party-alcohol-easy-06-answer-3",
         "display": "spritz",
         "normalized": "spritz",
         "aliases": [],
@@ -1135,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-4",
+        "id": "xlsx-party-alcohol-easy-06-answer-4",
         "display": "pastis",
         "normalized": "pastis",
         "aliases": [],
@@ -1147,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-5",
+        "id": "xlsx-party-alcohol-easy-06-answer-5",
         "display": "cidre",
         "normalized": "cidre",
         "aliases": [],
@@ -1159,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-6",
+        "id": "xlsx-party-alcohol-easy-06-answer-6",
         "display": "champagne",
         "normalized": "champagne",
         "aliases": [],
@@ -1171,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-7",
+        "id": "xlsx-party-alcohol-easy-06-answer-7",
         "display": "gin tonic",
         "normalized": "gin tonic",
         "aliases": [],
@@ -1183,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-8",
+        "id": "xlsx-party-alcohol-easy-06-answer-8",
         "display": "jus de fruits",
         "normalized": "jus de fruits",
         "aliases": [],
@@ -1195,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-08-answer-9",
+        "id": "xlsx-party-alcohol-easy-06-answer-9",
         "display": "eau pétillante",
         "normalized": "eau petillante",
         "aliases": [],
@@ -1208,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-08-bomb",
+      "id": "xlsx-party-alcohol-easy-06-bomb",
       "display": "Café",
       "normalized": "cafe",
       "aliases": [],
@@ -1224,20 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "eaf0046cc0efc71eb505f9c42384150ea16266bc29034a900fbc27f4b2f7e75d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-09",
-    "slug": "xlsx-party-alcohol-easy-09",
+    "id": "xlsx-party-alcohol-easy-07",
+    "slug": "xlsx-party-alcohol-easy-07",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets présents sur une piste de danse.",
     "shortTitle": "objets présents sur une piste de danse",
     "difficultyLevel": 1,
@@ -1253,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-1",
+        "id": "xlsx-party-alcohol-easy-07-answer-1",
         "display": "Enceintes",
         "normalized": "enceintes",
         "aliases": [],
@@ -1265,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-2",
+        "id": "xlsx-party-alcohol-easy-07-answer-2",
         "display": "Projecteurs",
         "normalized": "projecteurs",
         "aliases": [],
@@ -1277,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-3",
+        "id": "xlsx-party-alcohol-easy-07-answer-3",
         "display": "Boule à facettes",
         "normalized": "boule a facettes",
         "aliases": [],
@@ -1289,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-4",
+        "id": "xlsx-party-alcohol-easy-07-answer-4",
         "display": "Platines",
         "normalized": "platines",
         "aliases": [],
@@ -1301,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-5",
+        "id": "xlsx-party-alcohol-easy-07-answer-5",
         "display": "Machine à fumée",
         "normalized": "machine a fumee",
         "aliases": [],
@@ -1313,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-6",
+        "id": "xlsx-party-alcohol-easy-07-answer-6",
         "display": "Écran",
         "normalized": "ecran",
         "aliases": [],
@@ -1325,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-7",
+        "id": "xlsx-party-alcohol-easy-07-answer-7",
         "display": "Laser",
         "normalized": "laser",
         "aliases": [],
@@ -1337,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-8",
+        "id": "xlsx-party-alcohol-easy-07-answer-8",
         "display": "Stroboscope",
         "normalized": "stroboscope",
         "aliases": [],
@@ -1349,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-09-answer-9",
+        "id": "xlsx-party-alcohol-easy-07-answer-9",
         "display": "Confettis",
         "normalized": "confettis",
         "aliases": [],
@@ -1362,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-09-bomb",
+      "id": "xlsx-party-alcohol-easy-07-bomb",
       "display": "Canapé",
       "normalized": "canape",
       "aliases": [],
@@ -1378,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "deb566b837c1edbfe49aff65596e3348bcf2ac3b749cfbfb89b85931d5b626d0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-10",
-    "slug": "xlsx-party-alcohol-easy-10",
+    "id": "xlsx-party-alcohol-easy-08",
+    "slug": "xlsx-party-alcohol-easy-08",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 jeux pratiqués en soirée.",
     "shortTitle": "jeux pratiqués en soirée",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-1",
+        "id": "xlsx-party-alcohol-easy-08-answer-1",
         "display": "beer pong",
         "normalized": "beer pong",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-2",
+        "id": "xlsx-party-alcohol-easy-08-answer-2",
         "display": "blind test",
         "normalized": "blind test",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-3",
+        "id": "xlsx-party-alcohol-easy-08-answer-3",
         "display": "Time’s Up",
         "normalized": "time s up",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-4",
+        "id": "xlsx-party-alcohol-easy-08-answer-4",
         "display": "action ou vérité",
         "normalized": "action ou verite",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-5",
+        "id": "xlsx-party-alcohol-easy-08-answer-5",
         "display": "Pictionary",
         "normalized": "pictionary",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-6",
+        "id": "xlsx-party-alcohol-easy-08-answer-6",
         "display": "Uno",
         "normalized": "uno",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-7",
+        "id": "xlsx-party-alcohol-easy-08-answer-7",
         "display": "karaoké",
         "normalized": "karaoke",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-8",
+        "id": "xlsx-party-alcohol-easy-08-answer-8",
         "display": "Limite Limite",
         "normalized": "limite limite",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-10-answer-9",
+        "id": "xlsx-party-alcohol-easy-08-answer-9",
         "display": "jeu du post-it",
         "normalized": "jeu du post it",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-10-bomb",
+      "id": "xlsx-party-alcohol-easy-08-bomb",
       "display": "Regarder un film",
       "normalized": "regarder un film",
       "aliases": [],
@@ -1532,174 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6d1fb95a96759800d02c69541f035802019061e7816d170199d555943c04a6ba",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-11",
-    "slug": "xlsx-party-alcohol-easy-11",
+    "id": "xlsx-party-alcohol-easy-09",
+    "slug": "xlsx-party-alcohol-easy-09",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 excuses pour refuser un dernier verre.",
-    "shortTitle": "excuses pour refuser un dernier verre",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-1",
-        "display": "je conduis",
-        "normalized": "je conduis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-2",
-        "display": "je suis fatigué",
-        "normalized": "je suis fatigue",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-3",
-        "display": "je travaille demain",
-        "normalized": "je travaille demain",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-4",
-        "display": "je prends des médicaments",
-        "normalized": "je prends des medicaments",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-5",
-        "display": "je ne bois pas",
-        "normalized": "je ne bois pas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-6",
-        "display": "j’ai déjà assez bu",
-        "normalized": "j ai deja assez bu",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-7",
-        "display": "je dois me lever tôt",
-        "normalized": "je dois me lever tot",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-8",
-        "display": "je ne me sens pas bien",
-        "normalized": "je ne me sens pas bien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-11-answer-9",
-        "display": "je préfère de l’eau",
-        "normalized": "je prefere de l eau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "party-alcohol:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-party-alcohol-easy-11-bomb",
-      "display": "J’adore l’alcool",
-      "normalized": "j adore l alcool",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "f849fca8a8d1b0c4fe59bd9cf36065f97420ca4c02deacdb8894f9d562cfb239",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-party-alcohol-easy-12",
-    "slug": "xlsx-party-alcohol-easy-12",
-    "language": "fr",
-    "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qui peuvent gâcher une soirée.",
     "shortTitle": "choses qui peuvent gâcher une soirée",
     "difficultyLevel": 1,
@@ -1715,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-1",
+        "id": "xlsx-party-alcohol-easy-09-answer-1",
         "display": "voisins mécontents",
         "normalized": "voisins mecontents",
         "aliases": [],
@@ -1727,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-2",
+        "id": "xlsx-party-alcohol-easy-09-answer-2",
         "display": "musique mauvaise",
         "normalized": "musique mauvaise",
         "aliases": [],
@@ -1739,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-3",
+        "id": "xlsx-party-alcohol-easy-09-answer-3",
         "display": "manque de boissons",
         "normalized": "manque de boissons",
         "aliases": [],
@@ -1751,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-4",
+        "id": "xlsx-party-alcohol-easy-09-answer-4",
         "display": "dispute",
         "normalized": "dispute",
         "aliases": [],
@@ -1763,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-5",
+        "id": "xlsx-party-alcohol-easy-09-answer-5",
         "display": "verre renversé",
         "normalized": "verre renverse",
         "aliases": [],
@@ -1775,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-6",
+        "id": "xlsx-party-alcohol-easy-09-answer-6",
         "display": "panne de son",
         "normalized": "panne de son",
         "aliases": [],
@@ -1787,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-7",
+        "id": "xlsx-party-alcohol-easy-09-answer-7",
         "display": "invité non prévu",
         "normalized": "invite non prevu",
         "aliases": [],
@@ -1799,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-8",
+        "id": "xlsx-party-alcohol-easy-09-answer-8",
         "display": "lieu trop petit",
         "normalized": "lieu trop petit",
         "aliases": [],
@@ -1811,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-12-answer-9",
+        "id": "xlsx-party-alcohol-easy-09-answer-9",
         "display": "transports arrêtés",
         "normalized": "transports arretes",
         "aliases": [],
@@ -1824,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-12-bomb",
+      "id": "xlsx-party-alcohol-easy-09-bomb",
       "display": "Tout le monde s’amuse",
       "normalized": "tout le monde s amuse",
       "aliases": [],
@@ -1840,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3466f4350718123d289262d6f8c813f5eaeb91d04b8d63d4c9dad7544334fed6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-13",
-    "slug": "xlsx-party-alcohol-easy-13",
+    "id": "xlsx-party-alcohol-easy-10",
+    "slug": "xlsx-party-alcohol-easy-10",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 snacks servis en soirée.",
     "shortTitle": "snacks servis en soirée",
     "difficultyLevel": 1,
@@ -1869,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-1",
+        "id": "xlsx-party-alcohol-easy-10-answer-1",
         "display": "chips",
         "normalized": "chips",
         "aliases": [],
@@ -1881,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-2",
+        "id": "xlsx-party-alcohol-easy-10-answer-2",
         "display": "cacahuètes",
         "normalized": "cacahuetes",
         "aliases": [],
@@ -1893,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-3",
+        "id": "xlsx-party-alcohol-easy-10-answer-3",
         "display": "pizza",
         "normalized": "pizza",
         "aliases": [],
@@ -1905,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-4",
+        "id": "xlsx-party-alcohol-easy-10-answer-4",
         "display": "pop-corn",
         "normalized": "pop corn",
         "aliases": [],
@@ -1917,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-5",
+        "id": "xlsx-party-alcohol-easy-10-answer-5",
         "display": "olives",
         "normalized": "olives",
         "aliases": [],
@@ -1929,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-6",
+        "id": "xlsx-party-alcohol-easy-10-answer-6",
         "display": "saucisson",
         "normalized": "saucisson",
         "aliases": [],
@@ -1941,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-7",
+        "id": "xlsx-party-alcohol-easy-10-answer-7",
         "display": "houmous",
         "normalized": "houmous",
         "aliases": [],
@@ -1953,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-8",
+        "id": "xlsx-party-alcohol-easy-10-answer-8",
         "display": "mini-sandwichs",
         "normalized": "mini sandwichs",
         "aliases": [],
@@ -1965,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-13-answer-9",
+        "id": "xlsx-party-alcohol-easy-10-answer-9",
         "display": "fromage",
         "normalized": "fromage",
         "aliases": [],
@@ -1978,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-13-bomb",
+      "id": "xlsx-party-alcohol-easy-10-bomb",
       "display": "Assiette",
       "normalized": "assiette",
       "aliases": [],
@@ -1994,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8e0201a496f27d5679c2053314a58ea3dbb1a45a16c02c3e6d737654e37e8272",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-14",
-    "slug": "xlsx-party-alcohol-easy-14",
+    "id": "xlsx-party-alcohol-easy-11",
+    "slug": "xlsx-party-alcohol-easy-11",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 types de lieux où faire la fête.",
     "shortTitle": "types de lieux où faire la fête",
     "difficultyLevel": 1,
@@ -2023,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-1",
+        "id": "xlsx-party-alcohol-easy-11-answer-1",
         "display": "bar",
         "normalized": "bar",
         "aliases": [],
@@ -2035,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-2",
+        "id": "xlsx-party-alcohol-easy-11-answer-2",
         "display": "boîte de nuit",
         "normalized": "boite de nuit",
         "aliases": [],
@@ -2047,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-3",
+        "id": "xlsx-party-alcohol-easy-11-answer-3",
         "display": "appartement",
         "normalized": "appartement",
         "aliases": [],
@@ -2059,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-4",
+        "id": "xlsx-party-alcohol-easy-11-answer-4",
         "display": "festival",
         "normalized": "festival",
         "aliases": [],
@@ -2071,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-5",
+        "id": "xlsx-party-alcohol-easy-11-answer-5",
         "display": "rooftop",
         "normalized": "rooftop",
         "aliases": [],
@@ -2083,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-6",
+        "id": "xlsx-party-alcohol-easy-11-answer-6",
         "display": "plage",
         "normalized": "plage",
         "aliases": [],
@@ -2095,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-7",
+        "id": "xlsx-party-alcohol-easy-11-answer-7",
         "display": "salle des fêtes",
         "normalized": "salle des fetes",
         "aliases": [],
@@ -2107,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-8",
+        "id": "xlsx-party-alcohol-easy-11-answer-8",
         "display": "restaurant",
         "normalized": "restaurant",
         "aliases": [],
@@ -2119,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-14-answer-9",
+        "id": "xlsx-party-alcohol-easy-11-answer-9",
         "display": "bateau",
         "normalized": "bateau",
         "aliases": [],
@@ -2132,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-14-bomb",
+      "id": "xlsx-party-alcohol-easy-11-bomb",
       "display": "Salon",
       "normalized": "salon",
       "aliases": [],
@@ -2148,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "447ac3ab778458fda20bcc8d4b9cf1f138cc7b34136f69732e6f5cf15f1a1cc2",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-15",
-    "slug": "xlsx-party-alcohol-easy-15",
+    "id": "xlsx-party-alcohol-easy-12",
+    "slug": "xlsx-party-alcohol-easy-12",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on perd en soirée.",
     "shortTitle": "choses que l’on perd en soirée",
     "difficultyLevel": 1,
@@ -2177,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-1",
+        "id": "xlsx-party-alcohol-easy-12-answer-1",
         "display": "téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -2189,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-2",
+        "id": "xlsx-party-alcohol-easy-12-answer-2",
         "display": "clés",
         "normalized": "cles",
         "aliases": [],
@@ -2201,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-3",
+        "id": "xlsx-party-alcohol-easy-12-answer-3",
         "display": "manteau",
         "normalized": "manteau",
         "aliases": [],
@@ -2213,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-4",
+        "id": "xlsx-party-alcohol-easy-12-answer-4",
         "display": "verre",
         "normalized": "verre",
         "aliases": [],
@@ -2225,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-5",
+        "id": "xlsx-party-alcohol-easy-12-answer-5",
         "display": "écharpe",
         "normalized": "echarpe",
         "aliases": [],
@@ -2237,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-6",
+        "id": "xlsx-party-alcohol-easy-12-answer-6",
         "display": "portefeuille",
         "normalized": "portefeuille",
         "aliases": [],
@@ -2249,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-7",
+        "id": "xlsx-party-alcohol-easy-12-answer-7",
         "display": "ticket de vestiaire",
         "normalized": "ticket de vestiaire",
         "aliases": [],
@@ -2261,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-8",
+        "id": "xlsx-party-alcohol-easy-12-answer-8",
         "display": "groupe d’amis",
         "normalized": "groupe d amis",
         "aliases": [],
@@ -2273,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-15-answer-9",
+        "id": "xlsx-party-alcohol-easy-12-answer-9",
         "display": "dignité",
         "normalized": "dignite",
         "aliases": [],
@@ -2286,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-15-bomb",
+      "id": "xlsx-party-alcohol-easy-12-bomb",
       "display": "Piste de danse",
       "normalized": "piste de danse",
       "aliases": [],
@@ -2302,20 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4845c0b8e9720a56e4dc87c5df278f530c6c7cd3fa757d9078986ddb748d8f98",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-16",
-    "slug": "xlsx-party-alcohol-easy-16",
+    "id": "xlsx-party-alcohol-easy-13",
+    "slug": "xlsx-party-alcohol-easy-13",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 musiques qui font danser.",
     "shortTitle": "musiques qui font danser",
     "difficultyLevel": 1,
@@ -2331,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-1",
+        "id": "xlsx-party-alcohol-easy-13-answer-1",
         "display": "disco",
         "normalized": "disco",
         "aliases": [],
@@ -2343,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-2",
+        "id": "xlsx-party-alcohol-easy-13-answer-2",
         "display": "électro",
         "normalized": "electro",
         "aliases": [],
@@ -2355,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-3",
+        "id": "xlsx-party-alcohol-easy-13-answer-3",
         "display": "reggaeton",
         "normalized": "reggaeton",
         "aliases": [],
@@ -2367,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-4",
+        "id": "xlsx-party-alcohol-easy-13-answer-4",
         "display": "funk",
         "normalized": "funk",
         "aliases": [],
@@ -2379,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-5",
+        "id": "xlsx-party-alcohol-easy-13-answer-5",
         "display": "house",
         "normalized": "house",
         "aliases": [],
@@ -2391,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-6",
+        "id": "xlsx-party-alcohol-easy-13-answer-6",
         "display": "afrobeat",
         "normalized": "afrobeat",
         "aliases": [],
@@ -2403,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-7",
+        "id": "xlsx-party-alcohol-easy-13-answer-7",
         "display": "salsa",
         "normalized": "salsa",
         "aliases": [],
@@ -2415,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-8",
+        "id": "xlsx-party-alcohol-easy-13-answer-8",
         "display": "pop",
         "normalized": "pop",
         "aliases": [],
@@ -2427,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-16-answer-9",
+        "id": "xlsx-party-alcohol-easy-13-answer-9",
         "display": "hip-hop",
         "normalized": "hip hop",
         "aliases": [],
@@ -2440,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-16-bomb",
+      "id": "xlsx-party-alcohol-easy-13-bomb",
       "display": "Silence",
       "normalized": "silence",
       "aliases": [],
@@ -2456,174 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5e5205f16e08355e5a1bb77cd6651e64f79017127fffee125c9af269cb60942e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-17",
-    "slug": "xlsx-party-alcohol-easy-17",
+    "id": "xlsx-party-alcohol-easy-14",
+    "slug": "xlsx-party-alcohol-easy-14",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 raisons de porter un toast.",
-    "shortTitle": "raisons de porter un toast",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-1",
-        "display": "anniversaire",
-        "normalized": "anniversaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-2",
-        "display": "promotion",
-        "normalized": "promotion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-3",
-        "display": "mariage",
-        "normalized": "mariage",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-4",
-        "display": "diplôme",
-        "normalized": "diplome",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-5",
-        "display": "retrouvailles",
-        "normalized": "retrouvailles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-6",
-        "display": "départ",
-        "normalized": "depart",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-7",
-        "display": "naissance",
-        "normalized": "naissance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-8",
-        "display": "nouveau travail",
-        "normalized": "nouveau travail",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-easy-17-answer-9",
-        "display": "amitié",
-        "normalized": "amitie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "party-alcohol:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-party-alcohol-easy-17-bomb",
-      "display": "Une mauvaise nouvelle",
-      "normalized": "une mauvaise nouvelle",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "dd7e31d94c5fa3f423ae6e51153e4a027dfded2c2f17e24c3a418971a05b95c8",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-party-alcohol-easy-18",
-    "slug": "xlsx-party-alcohol-easy-18",
-    "language": "fr",
-    "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qu’on peut trouver dans une soirée.",
     "shortTitle": "choses qu’on peut trouver dans une soirée",
     "difficultyLevel": 1,
@@ -2639,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-1",
+        "id": "xlsx-party-alcohol-easy-14-answer-1",
         "display": "Musique",
         "normalized": "musique",
         "aliases": [],
@@ -2651,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-2",
+        "id": "xlsx-party-alcohol-easy-14-answer-2",
         "display": "Boissons",
         "normalized": "boissons",
         "aliases": [],
@@ -2663,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-3",
+        "id": "xlsx-party-alcohol-easy-14-answer-3",
         "display": "Gobelets",
         "normalized": "gobelets",
         "aliases": [],
@@ -2675,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-4",
+        "id": "xlsx-party-alcohol-easy-14-answer-4",
         "display": "Glaçons",
         "normalized": "glacons",
         "aliases": [],
@@ -2687,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-5",
+        "id": "xlsx-party-alcohol-easy-14-answer-5",
         "display": "Enceintes",
         "normalized": "enceintes",
         "aliases": [],
@@ -2699,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-6",
+        "id": "xlsx-party-alcohol-easy-14-answer-6",
         "display": "Lumières",
         "normalized": "lumieres",
         "aliases": [],
@@ -2711,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-7",
+        "id": "xlsx-party-alcohol-easy-14-answer-7",
         "display": "Danse",
         "normalized": "danse",
         "aliases": [],
@@ -2723,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-8",
+        "id": "xlsx-party-alcohol-easy-14-answer-8",
         "display": "Amis",
         "normalized": "amis",
         "aliases": [],
@@ -2735,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-18-answer-9",
+        "id": "xlsx-party-alcohol-easy-14-answer-9",
         "display": "Snacks",
         "normalized": "snacks",
         "aliases": [],
@@ -2748,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-18-bomb",
+      "id": "xlsx-party-alcohol-easy-14-bomb",
       "display": "Imprimante",
       "normalized": "imprimante",
       "aliases": [],
@@ -2764,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2b4c5ec5b842d5d24d466845cbd51619cb8bf02e17dd3a57b126665223c611f9",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-19",
-    "slug": "xlsx-party-alcohol-easy-19",
+    "id": "xlsx-party-alcohol-easy-15",
+    "slug": "xlsx-party-alcohol-easy-15",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 boissons alcoolisées connues.",
     "shortTitle": "boissons alcoolisées connues",
     "difficultyLevel": 1,
@@ -2793,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-1",
+        "id": "xlsx-party-alcohol-easy-15-answer-1",
         "display": "Bière",
         "normalized": "biere",
         "aliases": [],
@@ -2805,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-2",
+        "id": "xlsx-party-alcohol-easy-15-answer-2",
         "display": "Vin",
         "normalized": "vin",
         "aliases": [],
@@ -2817,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-3",
+        "id": "xlsx-party-alcohol-easy-15-answer-3",
         "display": "Champagne",
         "normalized": "champagne",
         "aliases": [],
@@ -2829,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-4",
+        "id": "xlsx-party-alcohol-easy-15-answer-4",
         "display": "Vodka",
         "normalized": "vodka",
         "aliases": [],
@@ -2841,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-5",
+        "id": "xlsx-party-alcohol-easy-15-answer-5",
         "display": "Rhum",
         "normalized": "rhum",
         "aliases": [],
@@ -2853,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-6",
+        "id": "xlsx-party-alcohol-easy-15-answer-6",
         "display": "Gin",
         "normalized": "gin",
         "aliases": [],
@@ -2865,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-7",
+        "id": "xlsx-party-alcohol-easy-15-answer-7",
         "display": "Whisky",
         "normalized": "whisky",
         "aliases": [],
@@ -2877,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-8",
+        "id": "xlsx-party-alcohol-easy-15-answer-8",
         "display": "Tequila",
         "normalized": "tequila",
         "aliases": [],
@@ -2889,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-19-answer-9",
+        "id": "xlsx-party-alcohol-easy-15-answer-9",
         "display": "Pastis",
         "normalized": "pastis",
         "aliases": [],
@@ -2902,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-19-bomb",
+      "id": "xlsx-party-alcohol-easy-15-bomb",
       "display": "Eau",
       "normalized": "eau",
       "aliases": [],
@@ -2918,20 +2377,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2f577f244d5f7573ffaa0222836297be4e9ad92d7440ce5942af88c6f4e3be9f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-party-alcohol-easy-20",
-    "slug": "xlsx-party-alcohol-easy-20",
+    "id": "xlsx-party-alcohol-easy-16",
+    "slug": "xlsx-party-alcohol-easy-16",
     "language": "fr",
     "themeId": "party-alcohol",
-    "subthemeIds": ["party-alcohol:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "party-alcohol:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qu’on peut faire en festival.",
     "shortTitle": "choses qu’on peut faire en festival",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-1",
+        "id": "xlsx-party-alcohol-easy-16-answer-1",
         "display": "Danser",
         "normalized": "danser",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-2",
+        "id": "xlsx-party-alcohol-easy-16-answer-2",
         "display": "Voir un concert",
         "normalized": "voir un concert",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-3",
+        "id": "xlsx-party-alcohol-easy-16-answer-3",
         "display": "Manger",
         "normalized": "manger",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-4",
+        "id": "xlsx-party-alcohol-easy-16-answer-4",
         "display": "Boire",
         "normalized": "boire",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-5",
+        "id": "xlsx-party-alcohol-easy-16-answer-5",
         "display": "Camper",
         "normalized": "camper",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-6",
+        "id": "xlsx-party-alcohol-easy-16-answer-6",
         "display": "Faire la queue",
         "normalized": "faire la queue",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-7",
+        "id": "xlsx-party-alcohol-easy-16-answer-7",
         "display": "Acheter du merchandising",
         "normalized": "acheter du merchandising",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-8",
+        "id": "xlsx-party-alcohol-easy-16-answer-8",
         "display": "Rencontrer des gens",
         "normalized": "rencontrer des gens",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-easy-20-answer-9",
+        "id": "xlsx-party-alcohol-easy-16-answer-9",
         "display": "Prendre des photos",
         "normalized": "prendre des photos",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-easy-20-bomb",
+      "id": "xlsx-party-alcohol-easy-16-bomb",
       "display": "Passer le permis",
       "normalized": "passer le permis",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "674310b306d824fd6f07394af481f2622e6cd289fa977e04a339df774beebb0d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

@@ -4,316 +4,13 @@
     "slug": "xlsx-science-inventions-hard-01",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": ["science-inventions:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 éléments chimiques nommés en hommage à un scientifique.",
-    "shortTitle": "éléments chimiques nommés en hommage à un sci…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-1",
-        "display": "Einsteinium",
-        "normalized": "einsteinium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-2",
-        "display": "Curium",
-        "normalized": "curium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-3",
-        "display": "Nobelium",
-        "normalized": "nobelium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-4",
-        "display": "Mendelevium",
-        "normalized": "mendelevium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-5",
-        "display": "Fermium",
-        "normalized": "fermium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-6",
-        "display": "Copernicium",
-        "normalized": "copernicium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-7",
-        "display": "Seaborgium",
-        "normalized": "seaborgium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-8",
-        "display": "Bohrium",
-        "normalized": "bohrium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-01-answer-9",
-        "display": "Rutherfordium",
-        "normalized": "rutherfordium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "science-inventions:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-science-inventions-hard-01-bomb",
-      "display": "Uranium",
-      "normalized": "uranium",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "5731cecbc2adfc86236577520a2a826c34a6281379cd2f20069b694d6992ba8e",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-science-inventions-hard-02",
-    "slug": "xlsx-science-inventions-hard-02",
-    "language": "fr",
-    "themeId": "science-inventions",
-    "subthemeIds": ["science-inventions:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 unités dérivées du SI portant un nom propre.",
-    "shortTitle": "unités dérivées du SI portant un nom propre",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-1",
-        "display": "Newton",
-        "normalized": "newton",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-2",
-        "display": "Pascal",
-        "normalized": "pascal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-3",
-        "display": "Joule",
-        "normalized": "joule",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-4",
-        "display": "Watt",
-        "normalized": "watt",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-5",
-        "display": "Coulomb",
-        "normalized": "coulomb",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-6",
-        "display": "Volt",
-        "normalized": "volt",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-7",
-        "display": "Ohm",
-        "normalized": "ohm",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-8",
-        "display": "Siemens",
-        "normalized": "siemens",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-science-inventions-hard-02-answer-9",
-        "display": "Tesla",
-        "normalized": "tesla",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "difficile"
     ],
-    "bomb": {
-      "id": "xlsx-science-inventions-hard-02-bomb",
-      "display": "Kilogramme",
-      "normalized": "kilogramme",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b00a212f9e6ab267cd90e27e8a6070288513d3e01f208571374d1ab2bcb0942e",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-science-inventions-hard-03",
-    "slug": "xlsx-science-inventions-hard-03",
-    "language": "fr",
-    "themeId": "science-inventions",
-    "subthemeIds": ["science-inventions:essentials"],
-    "tags": ["essentials", "difficile"],
     "questionText": "Cite 9 organites ou structures d’une cellule eucaryote.",
     "shortTitle": "organites ou structures d’une cellule eucaryote",
     "difficultyLevel": 3,
@@ -329,7 +26,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-science-inventions-hard-03-answer-1",
+        "id": "xlsx-science-inventions-hard-01-answer-1",
         "display": "Noyau",
         "normalized": "noyau",
         "aliases": [],
@@ -341,7 +38,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-2",
+        "id": "xlsx-science-inventions-hard-01-answer-2",
         "display": "Mitochondrie",
         "normalized": "mitochondrie",
         "aliases": [],
@@ -353,7 +50,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-3",
+        "id": "xlsx-science-inventions-hard-01-answer-3",
         "display": "Ribosome",
         "normalized": "ribosome",
         "aliases": [],
@@ -365,7 +62,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-4",
+        "id": "xlsx-science-inventions-hard-01-answer-4",
         "display": "Appareil de Golgi",
         "normalized": "appareil de golgi",
         "aliases": [],
@@ -377,7 +74,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-5",
+        "id": "xlsx-science-inventions-hard-01-answer-5",
         "display": "Réticulum endoplasmique",
         "normalized": "reticulum endoplasmique",
         "aliases": [],
@@ -389,7 +86,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-6",
+        "id": "xlsx-science-inventions-hard-01-answer-6",
         "display": "Lysosome",
         "normalized": "lysosome",
         "aliases": [],
@@ -401,7 +98,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-7",
+        "id": "xlsx-science-inventions-hard-01-answer-7",
         "display": "Centrosome",
         "normalized": "centrosome",
         "aliases": [],
@@ -413,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-8",
+        "id": "xlsx-science-inventions-hard-01-answer-8",
         "display": "Membrane plasmique",
         "normalized": "membrane plasmique",
         "aliases": [],
@@ -425,7 +122,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-03-answer-9",
+        "id": "xlsx-science-inventions-hard-01-answer-9",
         "display": "Cytosquelette",
         "normalized": "cytosquelette",
         "aliases": [],
@@ -438,7 +135,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-science-inventions-hard-03-bomb",
+      "id": "xlsx-science-inventions-hard-01-bomb",
       "display": "Capsule bactérienne",
       "normalized": "capsule bacterienne",
       "aliases": [],
@@ -454,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "accb2a2afc5c6782ef36ccf9ff3953753e8ea9a143cf8b95bbcacbf300f537a8",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-science-inventions-hard-04",
-    "slug": "xlsx-science-inventions-hard-04",
+    "id": "xlsx-science-inventions-hard-02",
+    "slug": "xlsx-science-inventions-hard-02",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": ["science-inventions:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "science-inventions:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 grandes branches des mathématiques.",
     "shortTitle": "grandes branches des mathématiques",
     "difficultyLevel": 3,
@@ -483,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-science-inventions-hard-04-answer-1",
+        "id": "xlsx-science-inventions-hard-02-answer-1",
         "display": "Algèbre",
         "normalized": "algebre",
         "aliases": [],
@@ -495,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-2",
+        "id": "xlsx-science-inventions-hard-02-answer-2",
         "display": "Géométrie",
         "normalized": "geometrie",
         "aliases": [],
@@ -507,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-3",
+        "id": "xlsx-science-inventions-hard-02-answer-3",
         "display": "Analyse",
         "normalized": "analyse",
         "aliases": [],
@@ -519,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-4",
+        "id": "xlsx-science-inventions-hard-02-answer-4",
         "display": "Topologie",
         "normalized": "topologie",
         "aliases": [],
@@ -531,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-5",
+        "id": "xlsx-science-inventions-hard-02-answer-5",
         "display": "Théorie des nombres",
         "normalized": "theorie des nombres",
         "aliases": [],
@@ -543,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-6",
+        "id": "xlsx-science-inventions-hard-02-answer-6",
         "display": "Probabilités",
         "normalized": "probabilites",
         "aliases": [],
@@ -555,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-7",
+        "id": "xlsx-science-inventions-hard-02-answer-7",
         "display": "Statistiques",
         "normalized": "statistiques",
         "aliases": [],
@@ -567,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-8",
+        "id": "xlsx-science-inventions-hard-02-answer-8",
         "display": "Combinatoire",
         "normalized": "combinatoire",
         "aliases": [],
@@ -579,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-04-answer-9",
+        "id": "xlsx-science-inventions-hard-02-answer-9",
         "display": "Logique mathématique",
         "normalized": "logique mathematique",
         "aliases": [],
@@ -592,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-science-inventions-hard-04-bomb",
+      "id": "xlsx-science-inventions-hard-02-bomb",
       "display": "Astrologie",
       "normalized": "astrologie",
       "aliases": [],
@@ -608,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1ffbc4cfddb3115bd0f1ef5fece07c4e45df91ec3ac7e3304aed6338e50ce9e5",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-science-inventions-hard-05",
-    "slug": "xlsx-science-inventions-hard-05",
+    "id": "xlsx-science-inventions-hard-03",
+    "slug": "xlsx-science-inventions-hard-03",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": ["science-inventions:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "science-inventions:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 hormones importantes du corps humain.",
     "shortTitle": "hormones importantes du corps humain",
     "difficultyLevel": 3,
@@ -637,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-science-inventions-hard-05-answer-1",
+        "id": "xlsx-science-inventions-hard-03-answer-1",
         "display": "Insuline",
         "normalized": "insuline",
         "aliases": [],
@@ -649,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-2",
+        "id": "xlsx-science-inventions-hard-03-answer-2",
         "display": "Glucagon",
         "normalized": "glucagon",
         "aliases": [],
@@ -661,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-3",
+        "id": "xlsx-science-inventions-hard-03-answer-3",
         "display": "Cortisol",
         "normalized": "cortisol",
         "aliases": [],
@@ -673,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-4",
+        "id": "xlsx-science-inventions-hard-03-answer-4",
         "display": "Adrénaline",
         "normalized": "adrenaline",
         "aliases": [],
@@ -685,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-5",
+        "id": "xlsx-science-inventions-hard-03-answer-5",
         "display": "Thyroxine",
         "normalized": "thyroxine",
         "aliases": [],
@@ -697,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-6",
+        "id": "xlsx-science-inventions-hard-03-answer-6",
         "display": "Mélatonine",
         "normalized": "melatonine",
         "aliases": [],
@@ -709,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-7",
+        "id": "xlsx-science-inventions-hard-03-answer-7",
         "display": "Testostérone",
         "normalized": "testosterone",
         "aliases": [],
@@ -721,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-8",
+        "id": "xlsx-science-inventions-hard-03-answer-8",
         "display": "Œstrogènes",
         "normalized": "œstrogenes",
         "aliases": [],
@@ -733,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-05-answer-9",
+        "id": "xlsx-science-inventions-hard-03-answer-9",
         "display": "Hormone de croissance",
         "normalized": "hormone de croissance",
         "aliases": [],
@@ -746,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-science-inventions-hard-05-bomb",
+      "id": "xlsx-science-inventions-hard-03-bomb",
       "display": "Hémoglobine",
       "normalized": "hemoglobine",
       "aliases": [],
@@ -762,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "dae2ddc66aadd7e6d34e6d4b02db798a61f955bb3bdff9e68ebb96c71c742839",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-science-inventions-hard-06",
-    "slug": "xlsx-science-inventions-hard-06",
+    "id": "xlsx-science-inventions-hard-04",
+    "slug": "xlsx-science-inventions-hard-04",
     "language": "fr",
     "themeId": "science-inventions",
-    "subthemeIds": ["science-inventions:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "science-inventions:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 grandes missions ou programmes d’exploration spatiale.",
     "shortTitle": "grandes missions ou programmes d’exploration…",
     "difficultyLevel": 3,
@@ -791,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-science-inventions-hard-06-answer-1",
+        "id": "xlsx-science-inventions-hard-04-answer-1",
         "display": "Apollo",
         "normalized": "apollo",
         "aliases": [],
@@ -803,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-2",
+        "id": "xlsx-science-inventions-hard-04-answer-2",
         "display": "Gemini",
         "normalized": "gemini",
         "aliases": [],
@@ -815,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-3",
+        "id": "xlsx-science-inventions-hard-04-answer-3",
         "display": "Mercury",
         "normalized": "mercury",
         "aliases": [],
@@ -827,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-4",
+        "id": "xlsx-science-inventions-hard-04-answer-4",
         "display": "Voyager",
         "normalized": "voyager",
         "aliases": [],
@@ -839,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-5",
+        "id": "xlsx-science-inventions-hard-04-answer-5",
         "display": "Pioneer",
         "normalized": "pioneer",
         "aliases": [],
@@ -851,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-6",
+        "id": "xlsx-science-inventions-hard-04-answer-6",
         "display": "Cassini-Huygens",
         "normalized": "cassini huygens",
         "aliases": [],
@@ -863,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-7",
+        "id": "xlsx-science-inventions-hard-04-answer-7",
         "display": "New Horizons",
         "normalized": "new horizons",
         "aliases": [],
@@ -875,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-8",
+        "id": "xlsx-science-inventions-hard-04-answer-8",
         "display": "Rosetta",
         "normalized": "rosetta",
         "aliases": [],
@@ -887,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-science-inventions-hard-06-answer-9",
+        "id": "xlsx-science-inventions-hard-04-answer-9",
         "display": "Juno",
         "normalized": "juno",
         "aliases": [],
@@ -900,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-science-inventions-hard-06-bomb",
+      "id": "xlsx-science-inventions-hard-04-bomb",
       "display": "SpaceX",
       "normalized": "spacex",
       "aliases": [],
@@ -916,11 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "477e2e77d4d11c1c5744bd39889a5de274dd32a438281c079ac9ce026b9fb6d0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

@@ -4,8 +4,13 @@
     "slug": "xlsx-everyday-life-easy-01",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 tâches ménagères courantes.",
     "shortTitle": "tâches ménagères courantes",
     "difficultyLevel": 1,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d0c106c472fdcf7e7c8b776e9728b93d1a45f51fba443dcba7264881b5cfd5e7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-everyday-life-easy-02",
     "slug": "xlsx-everyday-life-easy-02",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 documents personnels ou administratifs courants en France.",
     "shortTitle": "documents personnels ou administratifs couran…",
     "difficultyLevel": 1,
@@ -300,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2cb4d43507c4ce657be4478756adf473990d7af401fc46c213304d80d7239a8e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-everyday-life-easy-03",
     "slug": "xlsx-everyday-life-easy-03",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 raisons de prendre rendez-vous.",
-    "shortTitle": "raisons de prendre rendez-vous",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-1",
-        "display": "médecin",
-        "normalized": "medecin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-2",
-        "display": "coiffeur",
-        "normalized": "coiffeur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-3",
-        "display": "banque",
-        "normalized": "banque",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-4",
-        "display": "dentiste",
-        "normalized": "dentiste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-5",
-        "display": "garagiste",
-        "normalized": "garagiste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-6",
-        "display": "administration",
-        "normalized": "administration",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-7",
-        "display": "entretien d’embauche",
-        "normalized": "entretien d embauche",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-8",
-        "display": "visite immobilière",
-        "normalized": "visite immobiliere",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-03-answer-9",
-        "display": "tatoueur",
-        "normalized": "tatoueur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "everyday-life:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-everyday-life-easy-03-bomb",
-      "display": "Ne rien prévoir",
-      "normalized": "ne rien prevoir",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0f38a071fd93ac212dbe3c461ca0acd8bd4fc3c65b6360f12f690c8d4c1ba6d3",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-easy-04",
-    "slug": "xlsx-everyday-life-easy-04",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on oublie en partant.",
     "shortTitle": "choses que l’on oublie en partant",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-04-answer-1",
+        "id": "xlsx-everyday-life-easy-03-answer-1",
         "display": "clés",
         "normalized": "cles",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-2",
+        "id": "xlsx-everyday-life-easy-03-answer-2",
         "display": "parapluie",
         "normalized": "parapluie",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-3",
+        "id": "xlsx-everyday-life-easy-03-answer-3",
         "display": "déjeuner",
         "normalized": "dejeuner",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-4",
+        "id": "xlsx-everyday-life-easy-03-answer-4",
         "display": "portefeuille",
         "normalized": "portefeuille",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-5",
+        "id": "xlsx-everyday-life-easy-03-answer-5",
         "display": "téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-6",
+        "id": "xlsx-everyday-life-easy-03-answer-6",
         "display": "chargeur",
         "normalized": "chargeur",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-7",
+        "id": "xlsx-everyday-life-easy-03-answer-7",
         "display": "lunettes",
         "normalized": "lunettes",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-8",
+        "id": "xlsx-everyday-life-easy-03-answer-8",
         "display": "documents",
         "normalized": "documents",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-04-answer-9",
+        "id": "xlsx-everyday-life-easy-03-answer-9",
         "display": "cadeau",
         "normalized": "cadeau",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-04-bomb",
+      "id": "xlsx-everyday-life-easy-03-bomb",
       "display": "La maison",
       "normalized": "la maison",
       "aliases": [],
@@ -608,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "14b11decb4dfa97055bb5755f9314a8484bdf9864ee794e5aa05aac6d0d7e722",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-05",
-    "slug": "xlsx-everyday-life-easy-05",
+    "id": "xlsx-everyday-life-easy-04",
+    "slug": "xlsx-everyday-life-easy-04",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 habitudes pour économiser de l’argent.",
     "shortTitle": "habitudes pour économiser de l’argent",
     "difficultyLevel": 1,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-05-answer-1",
+        "id": "xlsx-everyday-life-easy-04-answer-1",
         "display": "comparer les prix",
         "normalized": "comparer les prix",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-2",
+        "id": "xlsx-everyday-life-easy-04-answer-2",
         "display": "cuisiner",
         "normalized": "cuisiner",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-3",
+        "id": "xlsx-everyday-life-easy-04-answer-3",
         "display": "annuler un abonnement",
         "normalized": "annuler un abonnement",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-4",
+        "id": "xlsx-everyday-life-easy-04-answer-4",
         "display": "acheter d’occasion",
         "normalized": "acheter d occasion",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-5",
+        "id": "xlsx-everyday-life-easy-04-answer-5",
         "display": "faire une liste de courses",
         "normalized": "faire une liste de courses",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-6",
+        "id": "xlsx-everyday-life-easy-04-answer-6",
         "display": "éteindre les lumières",
         "normalized": "eteindre les lumieres",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-7",
+        "id": "xlsx-everyday-life-easy-04-answer-7",
         "display": "utiliser les transports",
         "normalized": "utiliser les transports",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-8",
+        "id": "xlsx-everyday-life-easy-04-answer-8",
         "display": "éviter les achats impulsifs",
         "normalized": "eviter les achats impulsifs",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-05-answer-9",
+        "id": "xlsx-everyday-life-easy-04-answer-9",
         "display": "mettre de côté automatiquement",
         "normalized": "mettre de cote automatiquement",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-05-bomb",
+      "id": "xlsx-everyday-life-easy-04-bomb",
       "display": "Acheter sans regarder les prix",
       "normalized": "acheter sans regarder les prix",
       "aliases": [],
@@ -762,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5d58897a9799e1fa7f98292e46b994946d4ba49c75c5e816268e730e19f9f9e2",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-06",
-    "slug": "xlsx-everyday-life-easy-06",
+    "id": "xlsx-everyday-life-easy-05",
+    "slug": "xlsx-everyday-life-easy-05",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 situations où l’on fait la queue.",
     "shortTitle": "situations où l’on fait la queue",
     "difficultyLevel": 1,
@@ -791,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-06-answer-1",
+        "id": "xlsx-everyday-life-easy-05-answer-1",
         "display": "caisse",
         "normalized": "caisse",
         "aliases": [],
@@ -803,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-2",
+        "id": "xlsx-everyday-life-easy-05-answer-2",
         "display": "cinéma",
         "normalized": "cinema",
         "aliases": [],
@@ -815,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-3",
+        "id": "xlsx-everyday-life-easy-05-answer-3",
         "display": "aéroport",
         "normalized": "aeroport",
         "aliases": [],
@@ -827,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-4",
+        "id": "xlsx-everyday-life-easy-05-answer-4",
         "display": "concert",
         "normalized": "concert",
         "aliases": [],
@@ -839,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-5",
+        "id": "xlsx-everyday-life-easy-05-answer-5",
         "display": "parc d’attractions",
         "normalized": "parc d attractions",
         "aliases": [],
@@ -851,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-6",
+        "id": "xlsx-everyday-life-easy-05-answer-6",
         "display": "pharmacie",
         "normalized": "pharmacie",
         "aliases": [],
@@ -863,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-7",
+        "id": "xlsx-everyday-life-easy-05-answer-7",
         "display": "administration",
         "normalized": "administration",
         "aliases": [],
@@ -875,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-8",
+        "id": "xlsx-everyday-life-easy-05-answer-8",
         "display": "restaurant",
         "normalized": "restaurant",
         "aliases": [],
@@ -887,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-06-answer-9",
+        "id": "xlsx-everyday-life-easy-05-answer-9",
         "display": "station-service",
         "normalized": "station service",
         "aliases": [],
@@ -900,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-06-bomb",
+      "id": "xlsx-everyday-life-easy-05-bomb",
       "display": "Dans son lit",
       "normalized": "dans son lit",
       "aliases": [],
@@ -916,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d5e449b69755c619cfb83e671e65906cd7b1eb36ede3de6c8d99a3245747037d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-07",
-    "slug": "xlsx-everyday-life-easy-07",
+    "id": "xlsx-everyday-life-easy-06",
+    "slug": "xlsx-everyday-life-easy-06",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on recharge.",
     "shortTitle": "choses que l’on recharge",
     "difficultyLevel": 1,
@@ -945,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-07-answer-1",
+        "id": "xlsx-everyday-life-easy-06-answer-1",
         "display": "téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -957,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-2",
+        "id": "xlsx-everyday-life-easy-06-answer-2",
         "display": "ordinateur",
         "normalized": "ordinateur",
         "aliases": [],
@@ -969,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-3",
+        "id": "xlsx-everyday-life-easy-06-answer-3",
         "display": "carte de transport",
         "normalized": "carte de transport",
         "aliases": [],
@@ -981,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-4",
+        "id": "xlsx-everyday-life-easy-06-answer-4",
         "display": "batterie externe",
         "normalized": "batterie externe",
         "aliases": [],
@@ -993,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-5",
+        "id": "xlsx-everyday-life-easy-06-answer-5",
         "display": "montre connectée",
         "normalized": "montre connectee",
         "aliases": [],
@@ -1005,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-6",
+        "id": "xlsx-everyday-life-easy-06-answer-6",
         "display": "écouteurs",
         "normalized": "ecouteurs",
         "aliases": [],
@@ -1017,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-7",
+        "id": "xlsx-everyday-life-easy-06-answer-7",
         "display": "voiture électrique",
         "normalized": "voiture electrique",
         "aliases": [],
@@ -1029,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-8",
+        "id": "xlsx-everyday-life-easy-06-answer-8",
         "display": "brosse à dents",
         "normalized": "brosse a dents",
         "aliases": [],
@@ -1041,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-07-answer-9",
+        "id": "xlsx-everyday-life-easy-06-answer-9",
         "display": "appareil photo",
         "normalized": "appareil photo",
         "aliases": [],
@@ -1054,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-07-bomb",
+      "id": "xlsx-everyday-life-easy-06-bomb",
       "display": "Oreiller",
       "normalized": "oreiller",
       "aliases": [],
@@ -1070,174 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "65cfe098481f67f8f7d896760bb5daf9002a2bf9f9770e4e5c8a7b377d8a6467",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-08",
-    "slug": "xlsx-everyday-life-easy-08",
+    "id": "xlsx-everyday-life-easy-07",
+    "slug": "xlsx-everyday-life-easy-07",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 petites victoires du quotidien.",
-    "shortTitle": "petites victoires du quotidien",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-1",
-        "display": "trouver une place",
-        "normalized": "trouver une place",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-2",
-        "display": "finir sa liste",
-        "normalized": "finir sa liste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-3",
-        "display": "recevoir un remboursement",
-        "normalized": "recevoir un remboursement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-4",
-        "display": "arriver à l’heure",
-        "normalized": "arriver a l heure",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-5",
-        "display": "finir une tâche",
-        "normalized": "finir une tache",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-6",
-        "display": "réparer un objet",
-        "normalized": "reparer un objet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-7",
-        "display": "faire du sport",
-        "normalized": "faire du sport",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-8",
-        "display": "recevoir un compliment",
-        "normalized": "recevoir un compliment",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-08-answer-9",
-        "display": "tenir son budget",
-        "normalized": "tenir son budget",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "everyday-life:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-everyday-life-easy-08-bomb",
-      "display": "Rater son bus",
-      "normalized": "rater son bus",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3056ed409d40dbad6f7dd2e7032801936141d533dc3dcef5ac65904826b52135",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-easy-09",
-    "slug": "xlsx-everyday-life-easy-09",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on fait juste après le réveil.",
     "shortTitle": "choses que l’on fait juste après le réveil",
     "difficultyLevel": 1,
@@ -1253,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-09-answer-1",
+        "id": "xlsx-everyday-life-easy-07-answer-1",
         "display": "éteindre l’alarme",
         "normalized": "eteindre l alarme",
         "aliases": [],
@@ -1265,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-2",
+        "id": "xlsx-everyday-life-easy-07-answer-2",
         "display": "se lever",
         "normalized": "se lever",
         "aliases": [],
@@ -1277,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-3",
+        "id": "xlsx-everyday-life-easy-07-answer-3",
         "display": "regarder son téléphone",
         "normalized": "regarder son telephone",
         "aliases": [],
@@ -1289,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-4",
+        "id": "xlsx-everyday-life-easy-07-answer-4",
         "display": "ouvrir les volets",
         "normalized": "ouvrir les volets",
         "aliases": [],
@@ -1301,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-5",
+        "id": "xlsx-everyday-life-easy-07-answer-5",
         "display": "boire de l’eau",
         "normalized": "boire de l eau",
         "aliases": [],
@@ -1313,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-6",
+        "id": "xlsx-everyday-life-easy-07-answer-6",
         "display": "prendre une douche",
         "normalized": "prendre une douche",
         "aliases": [],
@@ -1325,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-7",
+        "id": "xlsx-everyday-life-easy-07-answer-7",
         "display": "s’habiller",
         "normalized": "s habiller",
         "aliases": [],
@@ -1337,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-8",
+        "id": "xlsx-everyday-life-easy-07-answer-8",
         "display": "prendre le petit-déjeuner",
         "normalized": "prendre le petit dejeuner",
         "aliases": [],
@@ -1349,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-09-answer-9",
+        "id": "xlsx-everyday-life-easy-07-answer-9",
         "display": "se laver le visage",
         "normalized": "se laver le visage",
         "aliases": [],
@@ -1362,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-09-bomb",
+      "id": "xlsx-everyday-life-easy-07-bomb",
       "display": "S’endormir",
       "normalized": "s endormir",
       "aliases": [],
@@ -1378,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3199c0c333da1c866e3ef99bbce4deb5d47f87e8ac695cb096fe003b2450fc6e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-10",
-    "slug": "xlsx-everyday-life-easy-10",
+    "id": "xlsx-everyday-life-easy-08",
+    "slug": "xlsx-everyday-life-easy-08",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets que l’on garde dans ses poches.",
     "shortTitle": "objets que l’on garde dans ses poches",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-10-answer-1",
+        "id": "xlsx-everyday-life-easy-08-answer-1",
         "display": "clés",
         "normalized": "cles",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-2",
+        "id": "xlsx-everyday-life-easy-08-answer-2",
         "display": "téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-3",
+        "id": "xlsx-everyday-life-easy-08-answer-3",
         "display": "portefeuille",
         "normalized": "portefeuille",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-4",
+        "id": "xlsx-everyday-life-easy-08-answer-4",
         "display": "mouchoir",
         "normalized": "mouchoir",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-5",
+        "id": "xlsx-everyday-life-easy-08-answer-5",
         "display": "écouteurs",
         "normalized": "ecouteurs",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-6",
+        "id": "xlsx-everyday-life-easy-08-answer-6",
         "display": "monnaie",
         "normalized": "monnaie",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-7",
+        "id": "xlsx-everyday-life-easy-08-answer-7",
         "display": "badge",
         "normalized": "badge",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-8",
+        "id": "xlsx-everyday-life-easy-08-answer-8",
         "display": "chewing-gum",
         "normalized": "chewing gum",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-10-answer-9",
+        "id": "xlsx-everyday-life-easy-08-answer-9",
         "display": "ticket",
         "normalized": "ticket",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-10-bomb",
+      "id": "xlsx-everyday-life-easy-08-bomb",
       "display": "Oreiller",
       "normalized": "oreiller",
       "aliases": [],
@@ -1532,174 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ac6c4cb6a989b7b73516e697a486e7dca3d0a2a182632dec4d4efe08aef83d3a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-11",
-    "slug": "xlsx-everyday-life-easy-11",
+    "id": "xlsx-everyday-life-easy-09",
+    "slug": "xlsx-everyday-life-easy-09",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 raisons de sortir de chez soi.",
-    "shortTitle": "raisons de sortir de chez soi",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-1",
-        "display": "travailler",
-        "normalized": "travailler",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-2",
-        "display": "faire des courses",
-        "normalized": "faire des courses",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-3",
-        "display": "voir des amis",
-        "normalized": "voir des amis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-4",
-        "display": "faire du sport",
-        "normalized": "faire du sport",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-5",
-        "display": "promener le chien",
-        "normalized": "promener le chien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-6",
-        "display": "aller à un rendez-vous",
-        "normalized": "aller a un rendez vous",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-7",
-        "display": "prendre l’air",
-        "normalized": "prendre l air",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-8",
-        "display": "déposer un colis",
-        "normalized": "deposer un colis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-11-answer-9",
-        "display": "aller au restaurant",
-        "normalized": "aller au restaurant",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "everyday-life:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-everyday-life-easy-11-bomb",
-      "display": "Rester chez soi",
-      "normalized": "rester chez soi",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6168b867784bef07b27de30f1bc19bada32ed2da365208378e0a277dc48d92a2",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-easy-12",
-    "slug": "xlsx-everyday-life-easy-12",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on fait avant de dormir.",
     "shortTitle": "choses que l’on fait avant de dormir",
     "difficultyLevel": 1,
@@ -1715,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-12-answer-1",
+        "id": "xlsx-everyday-life-easy-09-answer-1",
         "display": "se brosser les dents",
         "normalized": "se brosser les dents",
         "aliases": [],
@@ -1727,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-2",
+        "id": "xlsx-everyday-life-easy-09-answer-2",
         "display": "mettre son réveil",
         "normalized": "mettre son reveil",
         "aliases": [],
@@ -1739,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-3",
+        "id": "xlsx-everyday-life-easy-09-answer-3",
         "display": "lire",
         "normalized": "lire",
         "aliases": [],
@@ -1751,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-4",
+        "id": "xlsx-everyday-life-easy-09-answer-4",
         "display": "se démaquiller",
         "normalized": "se demaquiller",
         "aliases": [],
@@ -1763,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-5",
+        "id": "xlsx-everyday-life-easy-09-answer-5",
         "display": "brancher son téléphone",
         "normalized": "brancher son telephone",
         "aliases": [],
@@ -1775,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-6",
+        "id": "xlsx-everyday-life-easy-09-answer-6",
         "display": "fermer la porte",
         "normalized": "fermer la porte",
         "aliases": [],
@@ -1787,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-7",
+        "id": "xlsx-everyday-life-easy-09-answer-7",
         "display": "préparer ses vêtements",
         "normalized": "preparer ses vetements",
         "aliases": [],
@@ -1799,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-8",
+        "id": "xlsx-everyday-life-easy-09-answer-8",
         "display": "boire de l’eau",
         "normalized": "boire de l eau",
         "aliases": [],
@@ -1811,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-12-answer-9",
+        "id": "xlsx-everyday-life-easy-09-answer-9",
         "display": "éteindre la lumière",
         "normalized": "eteindre la lumiere",
         "aliases": [],
@@ -1824,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-12-bomb",
+      "id": "xlsx-everyday-life-easy-09-bomb",
       "display": "Déjeuner",
       "normalized": "dejeuner",
       "aliases": [],
@@ -1840,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "db3cf8ee7f92b938dc4036614b85c1b1628fdcd379a08fb5132fe70dbefe4577",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-13",
-    "slug": "xlsx-everyday-life-easy-13",
+    "id": "xlsx-everyday-life-easy-10",
+    "slug": "xlsx-everyday-life-easy-10",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 applications utilisées presque tous les jours.",
     "shortTitle": "applications utilisées presque tous les jours",
     "difficultyLevel": 1,
@@ -1869,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-13-answer-1",
+        "id": "xlsx-everyday-life-easy-10-answer-1",
         "display": "WhatsApp",
         "normalized": "whatsapp",
         "aliases": [],
@@ -1881,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-2",
+        "id": "xlsx-everyday-life-easy-10-answer-2",
         "display": "Google Maps",
         "normalized": "google maps",
         "aliases": [],
@@ -1893,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-3",
+        "id": "xlsx-everyday-life-easy-10-answer-3",
         "display": "Instagram",
         "normalized": "instagram",
         "aliases": [],
@@ -1905,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-4",
+        "id": "xlsx-everyday-life-easy-10-answer-4",
         "display": "Gmail",
         "normalized": "gmail",
         "aliases": [],
@@ -1917,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-5",
+        "id": "xlsx-everyday-life-easy-10-answer-5",
         "display": "YouTube",
         "normalized": "youtube",
         "aliases": [],
@@ -1929,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-6",
+        "id": "xlsx-everyday-life-easy-10-answer-6",
         "display": "Spotify",
         "normalized": "spotify",
         "aliases": [],
@@ -1941,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-7",
+        "id": "xlsx-everyday-life-easy-10-answer-7",
         "display": "Météo",
         "normalized": "meteo",
         "aliases": [],
@@ -1953,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-8",
+        "id": "xlsx-everyday-life-easy-10-answer-8",
         "display": "TikTok",
         "normalized": "tiktok",
         "aliases": [],
@@ -1965,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-13-answer-9",
+        "id": "xlsx-everyday-life-easy-10-answer-9",
         "display": "Google Agenda",
         "normalized": "google agenda",
         "aliases": [],
@@ -1978,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-13-bomb",
+      "id": "xlsx-everyday-life-easy-10-bomb",
       "display": "Télévision",
       "normalized": "television",
       "aliases": [],
@@ -1994,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bb563e6a9c2397b9200bbe8032b3b453f883573b0af29830fa4ffaa0c34e972b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-14",
-    "slug": "xlsx-everyday-life-easy-14",
+    "id": "xlsx-everyday-life-easy-11",
+    "slug": "xlsx-everyday-life-easy-11",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 petits problèmes qui énervent au quotidien.",
     "shortTitle": "petits problèmes qui énervent au quotidien",
     "difficultyLevel": 1,
@@ -2023,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-14-answer-1",
+        "id": "xlsx-everyday-life-easy-11-answer-1",
         "display": "batterie vide",
         "normalized": "batterie vide",
         "aliases": [],
@@ -2035,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-2",
+        "id": "xlsx-everyday-life-easy-11-answer-2",
         "display": "métro en retard",
         "normalized": "metro en retard",
         "aliases": [],
@@ -2047,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-3",
+        "id": "xlsx-everyday-life-easy-11-answer-3",
         "display": "mot de passe oublié",
         "normalized": "mot de passe oublie",
         "aliases": [],
@@ -2059,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-4",
+        "id": "xlsx-everyday-life-easy-11-answer-4",
         "display": "connexion lente",
         "normalized": "connexion lente",
         "aliases": [],
@@ -2071,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-5",
+        "id": "xlsx-everyday-life-easy-11-answer-5",
         "display": "file d’attente",
         "normalized": "file d attente",
         "aliases": [],
@@ -2083,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-6",
+        "id": "xlsx-everyday-life-easy-11-answer-6",
         "display": "clé introuvable",
         "normalized": "cle introuvable",
         "aliases": [],
@@ -2095,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-7",
+        "id": "xlsx-everyday-life-easy-11-answer-7",
         "display": "voisin bruyant",
         "normalized": "voisin bruyant",
         "aliases": [],
@@ -2107,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-8",
+        "id": "xlsx-everyday-life-easy-11-answer-8",
         "display": "café renversé",
         "normalized": "cafe renverse",
         "aliases": [],
@@ -2119,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-14-answer-9",
+        "id": "xlsx-everyday-life-easy-11-answer-9",
         "display": "ascenseur en panne",
         "normalized": "ascenseur en panne",
         "aliases": [],
@@ -2132,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-14-bomb",
+      "id": "xlsx-everyday-life-easy-11-bomb",
       "display": "Gagner à la loterie",
       "normalized": "gagner a la loterie",
       "aliases": [],
@@ -2148,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6426eaab9feb51564bcc740885d33f883aeec4c8087146fcd63d6e26a31e7704",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-15",
-    "slug": "xlsx-everyday-life-easy-15",
+    "id": "xlsx-everyday-life-easy-12",
+    "slug": "xlsx-everyday-life-easy-12",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets que l’on cherche souvent.",
     "shortTitle": "objets que l’on cherche souvent",
     "difficultyLevel": 1,
@@ -2177,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-15-answer-1",
+        "id": "xlsx-everyday-life-easy-12-answer-1",
         "display": "clés",
         "normalized": "cles",
         "aliases": [],
@@ -2189,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-2",
+        "id": "xlsx-everyday-life-easy-12-answer-2",
         "display": "lunettes",
         "normalized": "lunettes",
         "aliases": [],
@@ -2201,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-3",
+        "id": "xlsx-everyday-life-easy-12-answer-3",
         "display": "télécommande",
         "normalized": "telecommande",
         "aliases": [],
@@ -2213,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-4",
+        "id": "xlsx-everyday-life-easy-12-answer-4",
         "display": "téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -2225,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-5",
+        "id": "xlsx-everyday-life-easy-12-answer-5",
         "display": "portefeuille",
         "normalized": "portefeuille",
         "aliases": [],
@@ -2237,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-6",
+        "id": "xlsx-everyday-life-easy-12-answer-6",
         "display": "chargeur",
         "normalized": "chargeur",
         "aliases": [],
@@ -2249,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-7",
+        "id": "xlsx-everyday-life-easy-12-answer-7",
         "display": "badge",
         "normalized": "badge",
         "aliases": [],
@@ -2261,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-8",
+        "id": "xlsx-everyday-life-easy-12-answer-8",
         "display": "écouteurs",
         "normalized": "ecouteurs",
         "aliases": [],
@@ -2273,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-15-answer-9",
+        "id": "xlsx-everyday-life-easy-12-answer-9",
         "display": "stylo",
         "normalized": "stylo",
         "aliases": [],
@@ -2286,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-15-bomb",
+      "id": "xlsx-everyday-life-easy-12-bomb",
       "display": "Objet retrouvé",
       "normalized": "objet retrouve",
       "aliases": [],
@@ -2302,20 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c5ad026a29951923d2a72cf72e03e7627f116aad69d4bffe50add3e63d4c71f5",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-16",
-    "slug": "xlsx-everyday-life-easy-16",
+    "id": "xlsx-everyday-life-easy-13",
+    "slug": "xlsx-everyday-life-easy-13",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de regarder son téléphone.",
     "shortTitle": "raisons de regarder son téléphone",
     "difficultyLevel": 1,
@@ -2331,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-16-answer-1",
+        "id": "xlsx-everyday-life-easy-13-answer-1",
         "display": "message",
         "normalized": "message",
         "aliases": [],
@@ -2343,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-2",
+        "id": "xlsx-everyday-life-easy-13-answer-2",
         "display": "heure",
         "normalized": "heure",
         "aliases": [],
@@ -2355,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-3",
+        "id": "xlsx-everyday-life-easy-13-answer-3",
         "display": "météo",
         "normalized": "meteo",
         "aliases": [],
@@ -2367,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-4",
+        "id": "xlsx-everyday-life-easy-13-answer-4",
         "display": "appel",
         "normalized": "appel",
         "aliases": [],
@@ -2379,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-5",
+        "id": "xlsx-everyday-life-easy-13-answer-5",
         "display": "notification",
         "normalized": "notification",
         "aliases": [],
@@ -2391,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-6",
+        "id": "xlsx-everyday-life-easy-13-answer-6",
         "display": "itinéraire",
         "normalized": "itineraire",
         "aliases": [],
@@ -2403,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-7",
+        "id": "xlsx-everyday-life-easy-13-answer-7",
         "display": "agenda",
         "normalized": "agenda",
         "aliases": [],
@@ -2415,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-8",
+        "id": "xlsx-everyday-life-easy-13-answer-8",
         "display": "musique",
         "normalized": "musique",
         "aliases": [],
@@ -2427,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-16-answer-9",
+        "id": "xlsx-everyday-life-easy-13-answer-9",
         "display": "réseaux sociaux",
         "normalized": "reseaux sociaux",
         "aliases": [],
@@ -2440,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-16-bomb",
+      "id": "xlsx-everyday-life-easy-13-bomb",
       "display": "Fermer les yeux",
       "normalized": "fermer les yeux",
       "aliases": [],
@@ -2456,174 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cec365c50877623e417aa05b4db9100e6360ed79f1932546fc01d65044e72714",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-17",
-    "slug": "xlsx-everyday-life-easy-17",
+    "id": "xlsx-everyday-life-easy-14",
+    "slug": "xlsx-everyday-life-easy-14",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 choses à faire un dimanche.",
-    "shortTitle": "choses à faire un dimanche",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-1",
-        "display": "dormir",
-        "normalized": "dormir",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-2",
-        "display": "bruncher",
-        "normalized": "bruncher",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-3",
-        "display": "faire du sport",
-        "normalized": "faire du sport",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-4",
-        "display": "voir sa famille",
-        "normalized": "voir sa famille",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-5",
-        "display": "se promener",
-        "normalized": "se promener",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-6",
-        "display": "cuisiner",
-        "normalized": "cuisiner",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-7",
-        "display": "regarder une série",
-        "normalized": "regarder une serie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-8",
-        "display": "faire le ménage",
-        "normalized": "faire le menage",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-easy-17-answer-9",
-        "display": "lire",
-        "normalized": "lire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "everyday-life:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-everyday-life-easy-17-bomb",
-      "display": "Réunion obligatoire",
-      "normalized": "reunion obligatoire",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a75c50d7f9ddfb958f394db8f3f6f9da1218cfbc89b2e6140a3da041188a093b",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-easy-18",
-    "slug": "xlsx-everyday-life-easy-18",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 services utilisés en ville.",
     "shortTitle": "services utilisés en ville",
     "difficultyLevel": 1,
@@ -2639,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-18-answer-1",
+        "id": "xlsx-everyday-life-easy-14-answer-1",
         "display": "poste",
         "normalized": "poste",
         "aliases": [],
@@ -2651,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-2",
+        "id": "xlsx-everyday-life-easy-14-answer-2",
         "display": "pharmacie",
         "normalized": "pharmacie",
         "aliases": [],
@@ -2663,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-3",
+        "id": "xlsx-everyday-life-easy-14-answer-3",
         "display": "banque",
         "normalized": "banque",
         "aliases": [],
@@ -2675,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-4",
+        "id": "xlsx-everyday-life-easy-14-answer-4",
         "display": "bibliothèque",
         "normalized": "bibliotheque",
         "aliases": [],
@@ -2687,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-5",
+        "id": "xlsx-everyday-life-easy-14-answer-5",
         "display": "transports publics",
         "normalized": "transports publics",
         "aliases": [],
@@ -2699,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-6",
+        "id": "xlsx-everyday-life-easy-14-answer-6",
         "display": "mairie",
         "normalized": "mairie",
         "aliases": [],
@@ -2711,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-7",
+        "id": "xlsx-everyday-life-easy-14-answer-7",
         "display": "restaurant",
         "normalized": "restaurant",
         "aliases": [],
@@ -2723,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-8",
+        "id": "xlsx-everyday-life-easy-14-answer-8",
         "display": "pressing",
         "normalized": "pressing",
         "aliases": [],
@@ -2735,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-18-answer-9",
+        "id": "xlsx-everyday-life-easy-14-answer-9",
         "display": "coiffeur",
         "normalized": "coiffeur",
         "aliases": [],
@@ -2748,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-18-bomb",
+      "id": "xlsx-everyday-life-easy-14-bomb",
       "display": "Volcan",
       "normalized": "volcan",
       "aliases": [],
@@ -2764,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3340e699a3f58c56e6cca4d671fb0a83429f9641381a547284d4f31928634a9b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-19",
-    "slug": "xlsx-everyday-life-easy-19",
+    "id": "xlsx-everyday-life-easy-15",
+    "slug": "xlsx-everyday-life-easy-15",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qui peuvent arriver dans les transports.",
     "shortTitle": "choses qui peuvent arriver dans les transports",
     "difficultyLevel": 1,
@@ -2793,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-19-answer-1",
+        "id": "xlsx-everyday-life-easy-15-answer-1",
         "display": "retard",
         "normalized": "retard",
         "aliases": [],
@@ -2805,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-2",
+        "id": "xlsx-everyday-life-easy-15-answer-2",
         "display": "panne",
         "normalized": "panne",
         "aliases": [],
@@ -2817,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-3",
+        "id": "xlsx-everyday-life-easy-15-answer-3",
         "display": "place introuvable",
         "normalized": "place introuvable",
         "aliases": [],
@@ -2829,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-4",
+        "id": "xlsx-everyday-life-easy-15-answer-4",
         "display": "grève",
         "normalized": "greve",
         "aliases": [],
@@ -2841,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-5",
+        "id": "xlsx-everyday-life-easy-15-answer-5",
         "display": "contrôle",
         "normalized": "controle",
         "aliases": [],
@@ -2853,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-6",
+        "id": "xlsx-everyday-life-easy-15-answer-6",
         "display": "rame bondée",
         "normalized": "rame bondee",
         "aliases": [],
@@ -2865,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-7",
+        "id": "xlsx-everyday-life-easy-15-answer-7",
         "display": "correspondance ratée",
         "normalized": "correspondance ratee",
         "aliases": [],
@@ -2877,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-8",
+        "id": "xlsx-everyday-life-easy-15-answer-8",
         "display": "siège libre",
         "normalized": "siege libre",
         "aliases": [],
@@ -2889,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-19-answer-9",
+        "id": "xlsx-everyday-life-easy-15-answer-9",
         "display": "objet oublié",
         "normalized": "objet oublie",
         "aliases": [],
@@ -2902,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-19-bomb",
+      "id": "xlsx-everyday-life-easy-15-bomb",
       "display": "Recevoir un colis",
       "normalized": "recevoir un colis",
       "aliases": [],
@@ -2918,20 +2377,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "11f3456d68f09da45761e8a47fc68aa1da9ee9a3d0b3b361f6837d875ebd52a8",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-easy-20",
-    "slug": "xlsx-everyday-life-easy-20",
+    "id": "xlsx-everyday-life-easy-16",
+    "slug": "xlsx-everyday-life-easy-16",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets présents dans un sac à main ou sac à dos.",
     "shortTitle": "objets présents dans un sac à main ou sac à dos",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-easy-20-answer-1",
+        "id": "xlsx-everyday-life-easy-16-answer-1",
         "display": "chargeur",
         "normalized": "chargeur",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-2",
+        "id": "xlsx-everyday-life-easy-16-answer-2",
         "display": "mouchoirs",
         "normalized": "mouchoirs",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-3",
+        "id": "xlsx-everyday-life-easy-16-answer-3",
         "display": "bouteille d’eau",
         "normalized": "bouteille d eau",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-4",
+        "id": "xlsx-everyday-life-easy-16-answer-4",
         "display": "portefeuille",
         "normalized": "portefeuille",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-5",
+        "id": "xlsx-everyday-life-easy-16-answer-5",
         "display": "clés",
         "normalized": "cles",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-6",
+        "id": "xlsx-everyday-life-easy-16-answer-6",
         "display": "ordinateur",
         "normalized": "ordinateur",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-7",
+        "id": "xlsx-everyday-life-easy-16-answer-7",
         "display": "carnet",
         "normalized": "carnet",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-8",
+        "id": "xlsx-everyday-life-easy-16-answer-8",
         "display": "stylo",
         "normalized": "stylo",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-easy-20-answer-9",
+        "id": "xlsx-everyday-life-easy-16-answer-9",
         "display": "gel hydroalcoolique",
         "normalized": "gel hydroalcoolique",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-easy-20-bomb",
+      "id": "xlsx-everyday-life-easy-16-bomb",
       "display": "Réveil",
       "normalized": "reveil",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d03c2dfcc452dff942b8ce476b53c1fbe14788d8fa2e08902fb264f9a30dfac6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

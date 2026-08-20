@@ -4,8 +4,13 @@
     "slug": "xlsx-relationships-substances-hard-01",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 infections sexuellement transmissibles connues.",
     "shortTitle": "infections sexuellement transmissibles connues",
     "difficultyLevel": 3,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ba4f99780c13d878a3604a5d25843f50330248cf531b3070d2d9816a38239358",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-hard-02",
     "slug": "xlsx-relationships-substances-hard-02",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 termes modernes décrivant des comportements ou dynamiques de rencontre.",
     "shortTitle": "termes modernes décrivant des comportements o…",
     "difficultyLevel": 3,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cda02f961fed46d34a2349293c8bb7ae7a89a946bd2037907e805dfa8a9c3509",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-hard-03",
     "slug": "xlsx-relationships-substances-hard-03",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 hormones ou neurotransmetteurs souvent associés au désir, au plaisir, au stress ou à l’attachement.",
     "shortTitle": "hormones ou neurotransmetteurs souvent associ…",
     "difficultyLevel": 3,
@@ -454,174 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2879044d0b7f59156761e17f667a86079455fe1d7a49982fe68f887c7b55e53d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-hard-04",
     "slug": "xlsx-relationships-substances-hard-04",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 catégories de médicaments ou substances dont l’association avec l’alcool peut augmenter les risques.",
-    "shortTitle": "catégories de médicaments ou substances dont…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-1",
-        "display": "Benzodiazépines",
-        "normalized": "benzodiazepines",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-2",
-        "display": "Opioïdes",
-        "normalized": "opioides",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-3",
-        "display": "Somnifères",
-        "normalized": "somniferes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-4",
-        "display": "Antihistaminiques sédatifs",
-        "normalized": "antihistaminiques sedatifs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-5",
-        "display": "Antidépresseurs",
-        "normalized": "antidepresseurs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-6",
-        "display": "Antipsychotiques",
-        "normalized": "antipsychotiques",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-7",
-        "display": "Antiépileptiques",
-        "normalized": "antiepileptiques",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-8",
-        "display": "Myorelaxants",
-        "normalized": "myorelaxants",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-04-answer-9",
-        "display": "Cannabis",
-        "normalized": "cannabis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-hard-04-bomb",
-      "display": "Vitamine C",
-      "normalized": "vitamine c",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "891863d0d96cbc583f7472bbd81cfe81770be8447aacd765653e4c8615abdb96",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-hard-05",
-    "slug": "xlsx-relationships-substances-hard-05",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 moyens ou outils utilisés pour réduire le risque d’IST.",
     "shortTitle": "moyens ou outils utilisés pour réduire le ris…",
     "difficultyLevel": 3,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-1",
+        "id": "xlsx-relationships-substances-hard-04-answer-1",
         "display": "Préservatif externe",
         "normalized": "preservatif externe",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-2",
+        "id": "xlsx-relationships-substances-hard-04-answer-2",
         "display": "Préservatif interne",
         "normalized": "preservatif interne",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-3",
+        "id": "xlsx-relationships-substances-hard-04-answer-3",
         "display": "Digue dentaire",
         "normalized": "digue dentaire",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-4",
+        "id": "xlsx-relationships-substances-hard-04-answer-4",
         "display": "Gants en nitrile",
         "normalized": "gants en nitrile",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-5",
+        "id": "xlsx-relationships-substances-hard-04-answer-5",
         "display": "PrEP",
         "normalized": "prep",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-6",
+        "id": "xlsx-relationships-substances-hard-04-answer-6",
         "display": "PEP",
         "normalized": "pep",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-7",
+        "id": "xlsx-relationships-substances-hard-04-answer-7",
         "display": "Vaccination HPV",
         "normalized": "vaccination hpv",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-8",
+        "id": "xlsx-relationships-substances-hard-04-answer-8",
         "display": "Vaccination hépatite B",
         "normalized": "vaccination hepatite b",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-hard-05-answer-9",
+        "id": "xlsx-relationships-substances-hard-04-answer-9",
         "display": "Dépistage régulier",
         "normalized": "depistage regulier",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-hard-05-bomb",
+      "id": "xlsx-relationships-substances-hard-04-bomb",
       "display": "Pilule contraceptive",
       "normalized": "pilule contraceptive",
       "aliases": [],
@@ -762,165 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "facd73d44fc23c9277404203f6b0aa2ef7a16dd93b66d5cab8f16d55162b19ca",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-hard-06",
-    "slug": "xlsx-relationships-substances-hard-06",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 voies courantes d’administration de médicaments ou substances.",
-    "shortTitle": "voies courantes d’administration de médicamen…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-1",
-        "display": "Orale",
-        "normalized": "orale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-2",
-        "display": "Sublinguale",
-        "normalized": "sublinguale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-3",
-        "display": "Buccale",
-        "normalized": "buccale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-4",
-        "display": "Nasale",
-        "normalized": "nasale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-5",
-        "display": "Inhalée",
-        "normalized": "inhalee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-6",
-        "display": "Transdermique",
-        "normalized": "transdermique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-7",
-        "display": "Rectale",
-        "normalized": "rectale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-8",
-        "display": "Intramusculaire",
-        "normalized": "intramusculaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-hard-06-answer-9",
-        "display": "Intraveineuse",
-        "normalized": "intraveineuse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-hard-06-bomb",
-      "display": "Capillaire",
-      "normalized": "capillaire",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "f3d9f6d4b70148d6c871468eb3d9797fe7168cf3e0bbcfdf43217429f9d2bccb",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

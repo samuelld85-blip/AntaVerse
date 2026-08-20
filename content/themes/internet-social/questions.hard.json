@@ -4,10 +4,15 @@
     "slug": "xlsx-internet-social-hard-01",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": ["internet-social:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 noms publics sucrés d’Android.",
-    "shortTitle": "noms publics sucrés d’Android",
+    "subthemeIds": [
+      "internet-social:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
+    "questionText": "Cite 9 anciens services ou réseaux sociaux qui ont marqué Internet.",
+    "shortTitle": "anciens services ou réseaux sociaux qui ont m…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -22,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-internet-social-hard-01-answer-1",
-        "display": "Cupcake",
-        "normalized": "cupcake",
+        "display": "MSN Messenger",
+        "normalized": "msn messenger",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -34,8 +39,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-2",
-        "display": "Donut",
-        "normalized": "donut",
+        "display": "MySpace",
+        "normalized": "myspace",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -46,8 +51,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-3",
-        "display": "Eclair",
-        "normalized": "eclair",
+        "display": "Skyblog",
+        "normalized": "skyblog",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -58,8 +63,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-4",
-        "display": "Froyo",
-        "normalized": "froyo",
+        "display": "Vine",
+        "normalized": "vine",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -70,8 +75,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-5",
-        "display": "Gingerbread",
-        "normalized": "gingerbread",
+        "display": "Google+",
+        "normalized": "google",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -82,8 +87,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-6",
-        "display": "Honeycomb",
-        "normalized": "honeycomb",
+        "display": "ICQ",
+        "normalized": "icq",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -94,8 +99,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-7",
-        "display": "Ice Cream Sandwich",
-        "normalized": "ice cream sandwich",
+        "display": "Caramail",
+        "normalized": "caramail",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -106,8 +111,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-8",
-        "display": "Jelly Bean",
-        "normalized": "jelly bean",
+        "display": "Yahoo! Messenger",
+        "normalized": "yahoo messenger",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -118,8 +123,8 @@
       },
       {
         "id": "xlsx-internet-social-hard-01-answer-9",
-        "display": "KitKat",
-        "normalized": "kitkat",
+        "display": "Periscope",
+        "normalized": "periscope",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -131,8 +136,8 @@
     ],
     "bomb": {
       "id": "xlsx-internet-social-hard-01-bomb",
-      "display": "Tiramisu",
-      "normalized": "tiramisu",
+      "display": "TikTok",
+      "normalized": "tiktok",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -146,174 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "7ae42f3d1a62ce70dd6abcebee5ff1df3a2eeb466e6a6e5f21cfc343f25b7c1b",
+    "answerSetFingerprint": "6650d3ab47fa234415b5f642fd994af74f165e629ee6ac886505d5b8330e5cd6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-internet-social-hard-02",
     "slug": "xlsx-internet-social-hard-02",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": ["internet-social:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 microprocesseurs historiques d’Intel.",
-    "shortTitle": "microprocesseurs historiques d’Intel",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-internet-social-hard-02-answer-1",
-        "display": "Intel 4004",
-        "normalized": "intel 4004",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-2",
-        "display": "Intel 8008",
-        "normalized": "intel 8008",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-3",
-        "display": "Intel 8080",
-        "normalized": "intel 8080",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-4",
-        "display": "Intel 8086",
-        "normalized": "intel 8086",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-5",
-        "display": "Intel 8088",
-        "normalized": "intel 8088",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-6",
-        "display": "Intel 80286",
-        "normalized": "intel 80286",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-7",
-        "display": "Intel 80386",
-        "normalized": "intel 80386",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-8",
-        "display": "Intel 80486",
-        "normalized": "intel 80486",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-02-answer-9",
-        "display": "Intel Pentium",
-        "normalized": "intel pentium",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "internet-social:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-internet-social-hard-02-bomb",
-      "display": "AMD Athlon",
-      "normalized": "amd athlon",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ecb77169f65e28f222c6dd6b9bceaf18a9bb4ed5891fa734ede83f33321383b2",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-internet-social-hard-03",
-    "slug": "xlsx-internet-social-hard-03",
-    "language": "fr",
-    "themeId": "internet-social",
-    "subthemeIds": ["internet-social:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 personnalités ayant marqué l’histoire du web.",
     "shortTitle": "personnalités ayant marqué l’histoire du web",
     "difficultyLevel": 3,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-hard-03-answer-1",
+        "id": "xlsx-internet-social-hard-02-answer-1",
         "display": "Tim Berners-Lee",
         "normalized": "tim berners lee",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-2",
+        "id": "xlsx-internet-social-hard-02-answer-2",
         "display": "Jimmy Wales",
         "normalized": "jimmy wales",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-3",
+        "id": "xlsx-internet-social-hard-02-answer-3",
         "display": "Mark Zuckerberg",
         "normalized": "mark zuckerberg",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-4",
+        "id": "xlsx-internet-social-hard-02-answer-4",
         "display": "Vint Cerf",
         "normalized": "vint cerf",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-5",
+        "id": "xlsx-internet-social-hard-02-answer-5",
         "display": "Marc Andreessen",
         "normalized": "marc andreessen",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-6",
+        "id": "xlsx-internet-social-hard-02-answer-6",
         "display": "Larry Page",
         "normalized": "larry page",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-7",
+        "id": "xlsx-internet-social-hard-02-answer-7",
         "display": "Sergey Brin",
         "normalized": "sergey brin",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-8",
+        "id": "xlsx-internet-social-hard-02-answer-8",
         "display": "Jack Dorsey",
         "normalized": "jack dorsey",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-03-answer-9",
+        "id": "xlsx-internet-social-hard-02-answer-9",
         "display": "Jeff Bezos",
         "normalized": "jeff bezos",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-hard-03-bomb",
+      "id": "xlsx-internet-social-hard-02-bomb",
       "display": "Steve Jobs",
       "normalized": "steve jobs",
       "aliases": [],
@@ -454,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "21ea3603d07f4d3840af507978e0fb0b8de3b1c20bd42d6eabc583ee2620470f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-internet-social-hard-04",
-    "slug": "xlsx-internet-social-hard-04",
+    "id": "xlsx-internet-social-hard-03",
+    "slug": "xlsx-internet-social-hard-03",
     "language": "fr",
     "themeId": "internet-social",
-    "subthemeIds": ["internet-social:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 extensions Internet nationales européennes.",
-    "shortTitle": "extensions Internet nationales européennes",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-internet-social-hard-04-answer-1",
-        "display": ".fr",
-        "normalized": "fr",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-2",
-        "display": ".de",
-        "normalized": "de",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-3",
-        "display": ".es",
-        "normalized": "es",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-4",
-        "display": ".it",
-        "normalized": "it",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-5",
-        "display": ".be",
-        "normalized": "be",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-6",
-        "display": ".ch",
-        "normalized": "ch",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-7",
-        "display": ".uk",
-        "normalized": "uk",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-8",
-        "display": ".pt",
-        "normalized": "pt",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-04-answer-9",
-        "display": ".nl",
-        "normalized": "nl",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "internet-social:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-internet-social-hard-04-bomb",
-      "display": ".eu",
-      "normalized": "eu",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "35a363d9941b9737e84a378b73c191219ac234dd5777b0ce2ae951e6169d1596",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-internet-social-hard-05",
-    "slug": "xlsx-internet-social-hard-05",
-    "language": "fr",
-    "themeId": "internet-social",
-    "subthemeIds": ["internet-social:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 plateformes ou services Internet lancés avant 2010.",
     "shortTitle": "plateformes ou services Internet lancés avant…",
     "difficultyLevel": 3,
@@ -637,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-hard-05-answer-1",
+        "id": "xlsx-internet-social-hard-03-answer-1",
         "display": "Wikipedia",
         "normalized": "wikipedia",
         "aliases": [],
@@ -649,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-2",
+        "id": "xlsx-internet-social-hard-03-answer-2",
         "display": "LinkedIn",
         "normalized": "linkedin",
         "aliases": [],
@@ -661,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-3",
+        "id": "xlsx-internet-social-hard-03-answer-3",
         "display": "Facebook",
         "normalized": "facebook",
         "aliases": [],
@@ -673,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-4",
+        "id": "xlsx-internet-social-hard-03-answer-4",
         "display": "Flickr",
         "normalized": "flickr",
         "aliases": [],
@@ -685,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-5",
+        "id": "xlsx-internet-social-hard-03-answer-5",
         "display": "YouTube",
         "normalized": "youtube",
         "aliases": [],
@@ -697,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-6",
+        "id": "xlsx-internet-social-hard-03-answer-6",
         "display": "Reddit",
         "normalized": "reddit",
         "aliases": [],
@@ -709,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-7",
+        "id": "xlsx-internet-social-hard-03-answer-7",
         "display": "Twitter",
         "normalized": "twitter",
         "aliases": [],
@@ -721,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-8",
+        "id": "xlsx-internet-social-hard-03-answer-8",
         "display": "Tumblr",
         "normalized": "tumblr",
         "aliases": [],
@@ -733,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-hard-05-answer-9",
+        "id": "xlsx-internet-social-hard-03-answer-9",
         "display": "Spotify",
         "normalized": "spotify",
         "aliases": [],
@@ -746,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-hard-05-bomb",
+      "id": "xlsx-internet-social-hard-03-bomb",
       "display": "Instagram",
       "normalized": "instagram",
       "aliases": [],
@@ -762,165 +469,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5aaadfbe5080a99ba16dc7909cb23b01854d1ee507042ad724b6d8bcca876987",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-internet-social-hard-06",
-    "slug": "xlsx-internet-social-hard-06",
-    "language": "fr",
-    "themeId": "internet-social",
-    "subthemeIds": ["internet-social:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 sigles ou acronymes fondamentaux du Web et d’Internet.",
-    "shortTitle": "sigles ou acronymes fondamentaux du Web et d’…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-internet-social-hard-06-answer-1",
-        "display": "URL",
-        "normalized": "url",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-2",
-        "display": "DNS",
-        "normalized": "dns",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-3",
-        "display": "IP",
-        "normalized": "ip",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-4",
-        "display": "HTTP",
-        "normalized": "http",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-5",
-        "display": "HTTPS",
-        "normalized": "https",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-6",
-        "display": "HTML",
-        "normalized": "html",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-7",
-        "display": "CSS",
-        "normalized": "css",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-8",
-        "display": "VPN",
-        "normalized": "vpn",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-hard-06-answer-9",
-        "display": "CAPTCHA",
-        "normalized": "captcha",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-internet-social-hard-06-bomb",
-      "display": "HDMI",
-      "normalized": "hdmi",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "01ceeacc178a1e4c86fdbe9cfa93c5e6e27f6d3cbc58bc2377bf71df1d09ca77",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

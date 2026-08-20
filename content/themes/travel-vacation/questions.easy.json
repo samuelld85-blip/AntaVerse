@@ -4,8 +4,13 @@
     "slug": "xlsx-travel-vacation-easy-01",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 moyens de transport utilisés en ville.",
     "shortTitle": "moyens de transport utilisés en ville",
     "difficultyLevel": 1,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "13d19b5fe9ccec2ca74951d3a40334e7879f77ec0c10ebe665a41803257bd7fc",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-travel-vacation-easy-02",
     "slug": "xlsx-travel-vacation-easy-02",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 éléments ou équipements courants d’un vélo.",
     "shortTitle": "éléments ou équipements courants d’un vélo",
     "difficultyLevel": 1,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a38370189a819b1dcc6aed16288b50f2662686583b95a51d5baa95638656a747",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-travel-vacation-easy-03",
     "slug": "xlsx-travel-vacation-easy-03",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets utiles à la plage.",
     "shortTitle": "objets utiles à la plage",
     "difficultyLevel": 1,
@@ -454,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b097a43197130a9c8affe0ca589d82b4fd8fa9ebba7d72c69d1d6477a2826a16",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-travel-vacation-easy-04",
     "slug": "xlsx-travel-vacation-easy-04",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de choisir une destination.",
     "shortTitle": "raisons de choisir une destination",
     "difficultyLevel": 1,
@@ -608,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cfc5b3a4f0ffb8f815e17ca622a316f1af8569ffe81f4ada3809e04a665ab12f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-travel-vacation-easy-05",
     "slug": "xlsx-travel-vacation-easy-05",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on photographie en voyage.",
     "shortTitle": "choses que l’on photographie en voyage",
     "difficultyLevel": 1,
@@ -762,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3a094ad49dbb488427b8d111c7384cd56d6e6491fe283aef96454635414727ec",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-travel-vacation-easy-06",
     "slug": "xlsx-travel-vacation-easy-06",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 façons d’économiser en voyage.",
     "shortTitle": "façons d’économiser en voyage",
     "difficultyLevel": 1,
@@ -916,328 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "74f81a367254fb4f235fcaeaa58fe5f30270fc0ed6e830ced6e8d8fe199ae5e0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-travel-vacation-easy-07",
     "slug": "xlsx-travel-vacation-easy-07",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 situations où l’on peut se perdre.",
-    "shortTitle": "situations où l’on peut se perdre",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-1",
-        "display": "métro",
-        "normalized": "metro",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-2",
-        "display": "vieille ville",
-        "normalized": "vieille ville",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-3",
-        "display": "sentier",
-        "normalized": "sentier",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-4",
-        "display": "aéroport",
-        "normalized": "aeroport",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-5",
-        "display": "centre commercial",
-        "normalized": "centre commercial",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-6",
-        "display": "forêt",
-        "normalized": "foret",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-7",
-        "display": "festival",
-        "normalized": "festival",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-8",
-        "display": "parking",
-        "normalized": "parking",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-07-answer-9",
-        "display": "gare",
-        "normalized": "gare",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "travel-vacation:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-travel-vacation-easy-07-bomb",
-      "display": "Dans son salon",
-      "normalized": "dans son salon",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0e14154b2a8f83812eae645e0c64ebac941d4ed7df7a189a515b9d764b52c0e1",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-travel-vacation-easy-08",
-    "slug": "xlsx-travel-vacation-easy-08",
-    "language": "fr",
-    "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 choses à faire au retour de vacances.",
-    "shortTitle": "choses à faire au retour de vacances",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-1",
-        "display": "défaire la valise",
-        "normalized": "defaire la valise",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-2",
-        "display": "trier les photos",
-        "normalized": "trier les photos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-3",
-        "display": "faire une lessive",
-        "normalized": "faire une lessive",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-4",
-        "display": "ranger les souvenirs",
-        "normalized": "ranger les souvenirs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-5",
-        "display": "vider ses e-mails",
-        "normalized": "vider ses e mails",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-6",
-        "display": "faire les courses",
-        "normalized": "faire les courses",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-7",
-        "display": "reprendre le travail",
-        "normalized": "reprendre le travail",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-8",
-        "display": "sauvegarder les photos",
-        "normalized": "sauvegarder les photos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-08-answer-9",
-        "display": "rembourser les dépenses communes",
-        "normalized": "rembourser les depenses communes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-travel-vacation-easy-08-bomb",
-      "display": "Refaire sa valise",
-      "normalized": "refaire sa valise",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "369c1d7c4d2187228c36ae52fefef5019d296a66c21c054777646284f78434d3",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-travel-vacation-easy-09",
-    "slug": "xlsx-travel-vacation-easy-09",
-    "language": "fr",
-    "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 choses à mettre dans une valise.",
     "shortTitle": "choses à mettre dans une valise",
     "difficultyLevel": 1,
@@ -1253,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-1",
+        "id": "xlsx-travel-vacation-easy-07-answer-1",
         "display": "vêtements",
         "normalized": "vetements",
         "aliases": [],
@@ -1265,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-2",
+        "id": "xlsx-travel-vacation-easy-07-answer-2",
         "display": "chargeur",
         "normalized": "chargeur",
         "aliases": [],
@@ -1277,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-3",
+        "id": "xlsx-travel-vacation-easy-07-answer-3",
         "display": "brosse à dents",
         "normalized": "brosse a dents",
         "aliases": [],
@@ -1289,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-4",
+        "id": "xlsx-travel-vacation-easy-07-answer-4",
         "display": "sous-vêtements",
         "normalized": "sous vetements",
         "aliases": [],
@@ -1301,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-5",
+        "id": "xlsx-travel-vacation-easy-07-answer-5",
         "display": "chaussures",
         "normalized": "chaussures",
         "aliases": [],
@@ -1313,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-6",
+        "id": "xlsx-travel-vacation-easy-07-answer-6",
         "display": "trousse de toilette",
         "normalized": "trousse de toilette",
         "aliases": [],
@@ -1325,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-7",
+        "id": "xlsx-travel-vacation-easy-07-answer-7",
         "display": "adaptateur",
         "normalized": "adaptateur",
         "aliases": [],
@@ -1337,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-8",
+        "id": "xlsx-travel-vacation-easy-07-answer-8",
         "display": "médicaments",
         "normalized": "medicaments",
         "aliases": [],
@@ -1349,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-09-answer-9",
+        "id": "xlsx-travel-vacation-easy-07-answer-9",
         "display": "maillot de bain",
         "normalized": "maillot de bain",
         "aliases": [],
@@ -1362,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-09-bomb",
+      "id": "xlsx-travel-vacation-easy-07-bomb",
       "display": "Chambre d’hôtel",
       "normalized": "chambre d hotel",
       "aliases": [],
@@ -1378,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c2ba90a3989a63d57225bd61c5630d0b1ebd442f745874dd87aa7ced8c82b1e2",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-10",
-    "slug": "xlsx-travel-vacation-easy-10",
+    "id": "xlsx-travel-vacation-easy-08",
+    "slug": "xlsx-travel-vacation-easy-08",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 documents utiles pour voyager.",
     "shortTitle": "documents utiles pour voyager",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-1",
+        "id": "xlsx-travel-vacation-easy-08-answer-1",
         "display": "Passeport",
         "normalized": "passeport",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-2",
+        "id": "xlsx-travel-vacation-easy-08-answer-2",
         "display": "Billet",
         "normalized": "billet",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-3",
+        "id": "xlsx-travel-vacation-easy-08-answer-3",
         "display": "Assurance voyage",
         "normalized": "assurance voyage",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-4",
+        "id": "xlsx-travel-vacation-easy-08-answer-4",
         "display": "Visa",
         "normalized": "visa",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-5",
+        "id": "xlsx-travel-vacation-easy-08-answer-5",
         "display": "Carte d’identité",
         "normalized": "carte d identite",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-6",
+        "id": "xlsx-travel-vacation-easy-08-answer-6",
         "display": "Permis de conduire",
         "normalized": "permis de conduire",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-7",
+        "id": "xlsx-travel-vacation-easy-08-answer-7",
         "display": "Réservation d’hôtel",
         "normalized": "reservation d hotel",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-8",
+        "id": "xlsx-travel-vacation-easy-08-answer-8",
         "display": "Carnet de vaccination",
         "normalized": "carnet de vaccination",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-10-answer-9",
+        "id": "xlsx-travel-vacation-easy-08-answer-9",
         "display": "Carte européenne d’assurance maladie",
         "normalized": "carte europeenne d assurance maladie",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-10-bomb",
+      "id": "xlsx-travel-vacation-easy-08-bomb",
       "display": "Valise",
       "normalized": "valise",
       "aliases": [],
@@ -1532,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ebadd94a269feee894dd4b7caf913f2d3080116a7e5ad524e51fcdc74c6810f7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-11",
-    "slug": "xlsx-travel-vacation-easy-11",
+    "id": "xlsx-travel-vacation-easy-09",
+    "slug": "xlsx-travel-vacation-easy-09",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de rater un avion.",
     "shortTitle": "raisons de rater un avion",
     "difficultyLevel": 1,
@@ -1561,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-1",
+        "id": "xlsx-travel-vacation-easy-09-answer-1",
         "display": "retard",
         "normalized": "retard",
         "aliases": [],
@@ -1573,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-2",
+        "id": "xlsx-travel-vacation-easy-09-answer-2",
         "display": "mauvais terminal",
         "normalized": "mauvais terminal",
         "aliases": [],
@@ -1585,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-3",
+        "id": "xlsx-travel-vacation-easy-09-answer-3",
         "display": "file de sécurité",
         "normalized": "file de securite",
         "aliases": [],
@@ -1597,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-4",
+        "id": "xlsx-travel-vacation-easy-09-answer-4",
         "display": "passeport oublié",
         "normalized": "passeport oublie",
         "aliases": [],
@@ -1609,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-5",
+        "id": "xlsx-travel-vacation-easy-09-answer-5",
         "display": "bagage trop lourd",
         "normalized": "bagage trop lourd",
         "aliases": [],
@@ -1621,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-6",
+        "id": "xlsx-travel-vacation-easy-09-answer-6",
         "display": "embouteillage",
         "normalized": "embouteillage",
         "aliases": [],
@@ -1633,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-7",
+        "id": "xlsx-travel-vacation-easy-09-answer-7",
         "display": "porte fermée",
         "normalized": "porte fermee",
         "aliases": [],
@@ -1645,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-8",
+        "id": "xlsx-travel-vacation-easy-09-answer-8",
         "display": "contrôle prolongé",
         "normalized": "controle prolonge",
         "aliases": [],
@@ -1657,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-11-answer-9",
+        "id": "xlsx-travel-vacation-easy-09-answer-9",
         "display": "vol précédent retardé",
         "normalized": "vol precedent retarde",
         "aliases": [],
@@ -1670,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-11-bomb",
+      "id": "xlsx-travel-vacation-easy-09-bomb",
       "display": "Arriver trop tôt",
       "normalized": "arriver trop tot",
       "aliases": [],
@@ -1686,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d1722ab1d334ab311bde1e4cda04019b99dd70b0edcadd68883e5dcf7cea50c6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-12",
-    "slug": "xlsx-travel-vacation-easy-12",
+    "id": "xlsx-travel-vacation-easy-10",
+    "slug": "xlsx-travel-vacation-easy-10",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 activités de vacances à la mer.",
     "shortTitle": "activités de vacances à la mer",
     "difficultyLevel": 1,
@@ -1715,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-1",
+        "id": "xlsx-travel-vacation-easy-10-answer-1",
         "display": "se baigner",
         "normalized": "se baigner",
         "aliases": [],
@@ -1727,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-2",
+        "id": "xlsx-travel-vacation-easy-10-answer-2",
         "display": "bronzer",
         "normalized": "bronzer",
         "aliases": [],
@@ -1739,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-3",
+        "id": "xlsx-travel-vacation-easy-10-answer-3",
         "display": "faire du bateau",
         "normalized": "faire du bateau",
         "aliases": [],
@@ -1751,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-4",
+        "id": "xlsx-travel-vacation-easy-10-answer-4",
         "display": "snorkeling",
         "normalized": "snorkeling",
         "aliases": [],
@@ -1763,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-5",
+        "id": "xlsx-travel-vacation-easy-10-answer-5",
         "display": "paddle",
         "normalized": "paddle",
         "aliases": [],
@@ -1775,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-6",
+        "id": "xlsx-travel-vacation-easy-10-answer-6",
         "display": "pêche",
         "normalized": "peche",
         "aliases": [],
@@ -1787,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-7",
+        "id": "xlsx-travel-vacation-easy-10-answer-7",
         "display": "beach-volley",
         "normalized": "beach volley",
         "aliases": [],
@@ -1799,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-8",
+        "id": "xlsx-travel-vacation-easy-10-answer-8",
         "display": "visiter le port",
         "normalized": "visiter le port",
         "aliases": [],
@@ -1811,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-12-answer-9",
+        "id": "xlsx-travel-vacation-easy-10-answer-9",
         "display": "manger une glace",
         "normalized": "manger une glace",
         "aliases": [],
@@ -1824,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-12-bomb",
+      "id": "xlsx-travel-vacation-easy-10-bomb",
       "display": "Ski",
       "normalized": "ski",
       "aliases": [],
@@ -1840,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4173541b0e63283505313e87a846bdf92e6396fec25924db14128aa410e46d6a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-13",
-    "slug": "xlsx-travel-vacation-easy-13",
+    "id": "xlsx-travel-vacation-easy-11",
+    "slug": "xlsx-travel-vacation-easy-11",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 types d’hébergement.",
     "shortTitle": "types d’hébergement",
     "difficultyLevel": 1,
@@ -1869,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-1",
+        "id": "xlsx-travel-vacation-easy-11-answer-1",
         "display": "hôtel",
         "normalized": "hotel",
         "aliases": [],
@@ -1881,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-2",
+        "id": "xlsx-travel-vacation-easy-11-answer-2",
         "display": "auberge",
         "normalized": "auberge",
         "aliases": [],
@@ -1893,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-3",
+        "id": "xlsx-travel-vacation-easy-11-answer-3",
         "display": "camping",
         "normalized": "camping",
         "aliases": [],
@@ -1905,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-4",
+        "id": "xlsx-travel-vacation-easy-11-answer-4",
         "display": "location de vacances",
         "normalized": "location de vacances",
         "aliases": [],
@@ -1917,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-5",
+        "id": "xlsx-travel-vacation-easy-11-answer-5",
         "display": "chambre d’hôtes",
         "normalized": "chambre d hotes",
         "aliases": [],
@@ -1929,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-6",
+        "id": "xlsx-travel-vacation-easy-11-answer-6",
         "display": "résidence",
         "normalized": "residence",
         "aliases": [],
@@ -1941,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-7",
+        "id": "xlsx-travel-vacation-easy-11-answer-7",
         "display": "refuge",
         "normalized": "refuge",
         "aliases": [],
@@ -1953,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-8",
+        "id": "xlsx-travel-vacation-easy-11-answer-8",
         "display": "chez l’habitant",
         "normalized": "chez l habitant",
         "aliases": [],
@@ -1965,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-13-answer-9",
+        "id": "xlsx-travel-vacation-easy-11-answer-9",
         "display": "van aménagé",
         "normalized": "van amenage",
         "aliases": [],
@@ -1978,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-13-bomb",
+      "id": "xlsx-travel-vacation-easy-11-bomb",
       "display": "Passeport",
       "normalized": "passeport",
       "aliases": [],
@@ -1994,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cd1d25ca2c7a1da866c8e1bc04ab55b985abb2d62ed07e08593eda16e6313095",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-14",
-    "slug": "xlsx-travel-vacation-easy-14",
+    "id": "xlsx-travel-vacation-easy-12",
+    "slug": "xlsx-travel-vacation-easy-12",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets achetés comme souvenirs.",
     "shortTitle": "objets achetés comme souvenirs",
     "difficultyLevel": 1,
@@ -2023,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-1",
+        "id": "xlsx-travel-vacation-easy-12-answer-1",
         "display": "carte postale",
         "normalized": "carte postale",
         "aliases": [],
@@ -2035,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-2",
+        "id": "xlsx-travel-vacation-easy-12-answer-2",
         "display": "magnet",
         "normalized": "magnet",
         "aliases": [],
@@ -2047,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-3",
+        "id": "xlsx-travel-vacation-easy-12-answer-3",
         "display": "t-shirt",
         "normalized": "t shirt",
         "aliases": [],
@@ -2059,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-4",
+        "id": "xlsx-travel-vacation-easy-12-answer-4",
         "display": "artisanat local",
         "normalized": "artisanat local",
         "aliases": [],
@@ -2071,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-5",
+        "id": "xlsx-travel-vacation-easy-12-answer-5",
         "display": "porte-clés",
         "normalized": "porte cles",
         "aliases": [],
@@ -2083,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-6",
+        "id": "xlsx-travel-vacation-easy-12-answer-6",
         "display": "photo",
         "normalized": "photo",
         "aliases": [],
@@ -2095,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-7",
+        "id": "xlsx-travel-vacation-easy-12-answer-7",
         "display": "épices",
         "normalized": "epices",
         "aliases": [],
@@ -2107,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-8",
+        "id": "xlsx-travel-vacation-easy-12-answer-8",
         "display": "bijou",
         "normalized": "bijou",
         "aliases": [],
@@ -2119,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-14-answer-9",
+        "id": "xlsx-travel-vacation-easy-12-answer-9",
         "display": "livre",
         "normalized": "livre",
         "aliases": [],
@@ -2132,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-14-bomb",
+      "id": "xlsx-travel-vacation-easy-12-bomb",
       "display": "Reçu d’hôtel",
       "normalized": "recu d hotel",
       "aliases": [],
@@ -2148,20 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3bf1ea64bce3b322c0fd9ff1b81746047a8482e9d5888488429ee257ec43fac7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-15",
-    "slug": "xlsx-travel-vacation-easy-15",
+    "id": "xlsx-travel-vacation-easy-13",
+    "slug": "xlsx-travel-vacation-easy-13",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 destinations européennes populaires.",
     "shortTitle": "destinations européennes populaires",
     "difficultyLevel": 1,
@@ -2177,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-1",
+        "id": "xlsx-travel-vacation-easy-13-answer-1",
         "display": "Espagne",
         "normalized": "espagne",
         "aliases": [],
@@ -2189,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-2",
+        "id": "xlsx-travel-vacation-easy-13-answer-2",
         "display": "Italie",
         "normalized": "italie",
         "aliases": [],
@@ -2201,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-3",
+        "id": "xlsx-travel-vacation-easy-13-answer-3",
         "display": "Portugal",
         "normalized": "portugal",
         "aliases": [],
@@ -2213,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-4",
+        "id": "xlsx-travel-vacation-easy-13-answer-4",
         "display": "Grèce",
         "normalized": "grece",
         "aliases": [],
@@ -2225,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-5",
+        "id": "xlsx-travel-vacation-easy-13-answer-5",
         "display": "Croatie",
         "normalized": "croatie",
         "aliases": [],
@@ -2237,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-6",
+        "id": "xlsx-travel-vacation-easy-13-answer-6",
         "display": "Royaume-Uni",
         "normalized": "royaume uni",
         "aliases": [],
@@ -2249,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-7",
+        "id": "xlsx-travel-vacation-easy-13-answer-7",
         "display": "Allemagne",
         "normalized": "allemagne",
         "aliases": [],
@@ -2261,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-8",
+        "id": "xlsx-travel-vacation-easy-13-answer-8",
         "display": "Pays-Bas",
         "normalized": "pays bas",
         "aliases": [],
@@ -2273,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-15-answer-9",
+        "id": "xlsx-travel-vacation-easy-13-answer-9",
         "display": "Autriche",
         "normalized": "autriche",
         "aliases": [],
@@ -2286,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-15-bomb",
+      "id": "xlsx-travel-vacation-easy-13-bomb",
       "display": "Valise",
       "normalized": "valise",
       "aliases": [],
@@ -2302,20 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f29f0203432a7556bb41bf3e98751feafb9e685a251a752f4355adf1fa50e5e4",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-16",
-    "slug": "xlsx-travel-vacation-easy-16",
+    "id": "xlsx-travel-vacation-easy-14",
+    "slug": "xlsx-travel-vacation-easy-14",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 moyens de transport pour partir en vacances.",
     "shortTitle": "moyens de transport pour partir en vacances",
     "difficultyLevel": 1,
@@ -2331,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-1",
+        "id": "xlsx-travel-vacation-easy-14-answer-1",
         "display": "train",
         "normalized": "train",
         "aliases": [],
@@ -2343,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-2",
+        "id": "xlsx-travel-vacation-easy-14-answer-2",
         "display": "avion",
         "normalized": "avion",
         "aliases": [],
@@ -2355,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-3",
+        "id": "xlsx-travel-vacation-easy-14-answer-3",
         "display": "voiture",
         "normalized": "voiture",
         "aliases": [],
@@ -2367,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-4",
+        "id": "xlsx-travel-vacation-easy-14-answer-4",
         "display": "bus",
         "normalized": "bus",
         "aliases": [],
@@ -2379,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-5",
+        "id": "xlsx-travel-vacation-easy-14-answer-5",
         "display": "bateau",
         "normalized": "bateau",
         "aliases": [],
@@ -2391,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-6",
+        "id": "xlsx-travel-vacation-easy-14-answer-6",
         "display": "camping-car",
         "normalized": "camping car",
         "aliases": [],
@@ -2403,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-7",
+        "id": "xlsx-travel-vacation-easy-14-answer-7",
         "display": "vélo",
         "normalized": "velo",
         "aliases": [],
@@ -2415,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-8",
+        "id": "xlsx-travel-vacation-easy-14-answer-8",
         "display": "moto",
         "normalized": "moto",
         "aliases": [],
@@ -2427,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-16-answer-9",
+        "id": "xlsx-travel-vacation-easy-14-answer-9",
         "display": "covoiturage",
         "normalized": "covoiturage",
         "aliases": [],
@@ -2440,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-16-bomb",
+      "id": "xlsx-travel-vacation-easy-14-bomb",
       "display": "Hôtel",
       "normalized": "hotel",
       "aliases": [],
@@ -2456,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "aa29781c22d4363ef351aea8732b2eaecdca5562ff22a1f14c8ea7f6f40b06d0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-17",
-    "slug": "xlsx-travel-vacation-easy-17",
+    "id": "xlsx-travel-vacation-easy-15",
+    "slug": "xlsx-travel-vacation-easy-15",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 problèmes possibles dans un hôtel.",
     "shortTitle": "problèmes possibles dans un hôtel",
     "difficultyLevel": 1,
@@ -2485,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-1",
+        "id": "xlsx-travel-vacation-easy-15-answer-1",
         "display": "bruit",
         "normalized": "bruit",
         "aliases": [],
@@ -2497,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-2",
+        "id": "xlsx-travel-vacation-easy-15-answer-2",
         "display": "chambre sale",
         "normalized": "chambre sale",
         "aliases": [],
@@ -2509,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-3",
+        "id": "xlsx-travel-vacation-easy-15-answer-3",
         "display": "climatisation en panne",
         "normalized": "climatisation en panne",
         "aliases": [],
@@ -2521,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-4",
+        "id": "xlsx-travel-vacation-easy-15-answer-4",
         "display": "réservation introuvable",
         "normalized": "reservation introuvable",
         "aliases": [],
@@ -2533,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-5",
+        "id": "xlsx-travel-vacation-easy-15-answer-5",
         "display": "lit inconfortable",
         "normalized": "lit inconfortable",
         "aliases": [],
@@ -2545,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-6",
+        "id": "xlsx-travel-vacation-easy-15-answer-6",
         "display": "Wi-Fi absent",
         "normalized": "wi fi absent",
         "aliases": [],
@@ -2557,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-7",
+        "id": "xlsx-travel-vacation-easy-15-answer-7",
         "display": "douche froide",
         "normalized": "douche froide",
         "aliases": [],
@@ -2569,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-8",
+        "id": "xlsx-travel-vacation-easy-15-answer-8",
         "display": "vue décevante",
         "normalized": "vue decevante",
         "aliases": [],
@@ -2581,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-17-answer-9",
+        "id": "xlsx-travel-vacation-easy-15-answer-9",
         "display": "personnel indisponible",
         "normalized": "personnel indisponible",
         "aliases": [],
@@ -2594,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-17-bomb",
+      "id": "xlsx-travel-vacation-easy-15-bomb",
       "display": "Vue magnifique",
       "normalized": "vue magnifique",
       "aliases": [],
@@ -2610,22 +2377,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "41fe150d4e535a38ca484ecf970385b32bd0f3fb0f38d2117e48b89acecc7900",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-travel-vacation-easy-18",
-    "slug": "xlsx-travel-vacation-easy-18",
+    "id": "xlsx-travel-vacation-easy-16",
+    "slug": "xlsx-travel-vacation-easy-16",
     "language": "fr",
     "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 choses à mettre dans une valise pour partir en vacances.",
-    "shortTitle": "choses à mettre dans une valise pour partir e…",
+    "subthemeIds": [
+      "travel-vacation:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 activités typiques de vacances à la montagne en été.",
+    "shortTitle": "activités typiques de vacances à la montagne…",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -2639,9 +2411,9 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-1",
-        "display": "Vêtements",
-        "normalized": "vetements",
+        "id": "xlsx-travel-vacation-easy-16-answer-1",
+        "display": "Randonnée",
+        "normalized": "randonnee",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2651,9 +2423,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-2",
-        "display": "Sous-vêtements",
-        "normalized": "sous vetements",
+        "id": "xlsx-travel-vacation-easy-16-answer-2",
+        "display": "VTT",
+        "normalized": "vtt",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2663,9 +2435,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-3",
-        "display": "Brosse à dents",
-        "normalized": "brosse a dents",
+        "id": "xlsx-travel-vacation-easy-16-answer-3",
+        "display": "Baignade en lac",
+        "normalized": "baignade en lac",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2675,9 +2447,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-4",
-        "display": "Chargeur",
-        "normalized": "chargeur",
+        "id": "xlsx-travel-vacation-easy-16-answer-4",
+        "display": "Via ferrata",
+        "normalized": "via ferrata",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2687,9 +2459,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-5",
-        "display": "Maillot de bain",
-        "normalized": "maillot de bain",
+        "id": "xlsx-travel-vacation-easy-16-answer-5",
+        "display": "Parapente",
+        "normalized": "parapente",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2699,9 +2471,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-6",
-        "display": "Chaussures",
-        "normalized": "chaussures",
+        "id": "xlsx-travel-vacation-easy-16-answer-6",
+        "display": "Escalade",
+        "normalized": "escalade",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2711,9 +2483,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-7",
-        "display": "Médicaments",
-        "normalized": "medicaments",
+        "id": "xlsx-travel-vacation-easy-16-answer-7",
+        "display": "Pique-nique",
+        "normalized": "pique nique",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2723,9 +2495,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-8",
-        "display": "Lunettes de soleil",
-        "normalized": "lunettes de soleil",
+        "id": "xlsx-travel-vacation-easy-16-answer-8",
+        "display": "Visite de village",
+        "normalized": "visite de village",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2735,9 +2507,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-easy-18-answer-9",
-        "display": "Passeport",
-        "normalized": "passeport",
+        "id": "xlsx-travel-vacation-easy-16-answer-9",
+        "display": "Balade en télésiège",
+        "normalized": "balade en telesiege",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2748,9 +2520,9 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-easy-18-bomb",
-      "display": "Aspirateur",
-      "normalized": "aspirateur",
+      "id": "xlsx-travel-vacation-easy-16-bomb",
+      "display": "Ski alpin",
+      "normalized": "ski alpin",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -2764,319 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "92e3af78814e45f6ab23db419ba61ed29ff9c19788d6bdb861b4d2aa2e67d9f0",
+    "answerSetFingerprint": "4392fdd2f9614602792fa3281afd32ca7bb74948f8d785e0403508faf36e2161",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-travel-vacation-easy-19",
-    "slug": "xlsx-travel-vacation-easy-19",
-    "language": "fr",
-    "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 moyens de transport pour voyager.",
-    "shortTitle": "moyens de transport pour voyager",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-1",
-        "display": "Avion",
-        "normalized": "avion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-2",
-        "display": "Train",
-        "normalized": "train",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-3",
-        "display": "Voiture",
-        "normalized": "voiture",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-4",
-        "display": "Bus",
-        "normalized": "bus",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-5",
-        "display": "Bateau",
-        "normalized": "bateau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-6",
-        "display": "Vélo",
-        "normalized": "velo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-7",
-        "display": "Moto",
-        "normalized": "moto",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-8",
-        "display": "Camping-car",
-        "normalized": "camping car",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-19-answer-9",
-        "display": "Ferry",
-        "normalized": "ferry",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-travel-vacation-easy-19-bomb",
-      "display": "Ascenseur",
-      "normalized": "ascenseur",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "74608038e48e2a587c264f2f5951b8b94f37a963dc170cceb8687d113b9d7100",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-travel-vacation-easy-20",
-    "slug": "xlsx-travel-vacation-easy-20",
-    "language": "fr",
-    "themeId": "travel-vacation",
-    "subthemeIds": ["travel-vacation:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 activités typiques de vacances à la mer.",
-    "shortTitle": "activités typiques de vacances à la mer",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-1",
-        "display": "Se baigner",
-        "normalized": "se baigner",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-2",
-        "display": "Bronzer",
-        "normalized": "bronzer",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-3",
-        "display": "Faire du surf",
-        "normalized": "faire du surf",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-4",
-        "display": "Plonger",
-        "normalized": "plonger",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-5",
-        "display": "Faire du paddle",
-        "normalized": "faire du paddle",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-6",
-        "display": "Jouer au beach-volley",
-        "normalized": "jouer au beach volley",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-7",
-        "display": "Faire une balade",
-        "normalized": "faire une balade",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-8",
-        "display": "Manger une glace",
-        "normalized": "manger une glace",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-easy-20-answer-9",
-        "display": "Faire du bateau",
-        "normalized": "faire du bateau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-travel-vacation-easy-20-bomb",
-      "display": "Skier sur piste",
-      "normalized": "skier sur piste",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6015c3c5bc03ee1dcd99d89c9b6d7cfeee1afeba40d242b43ce6680bbb9f8933",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

@@ -4,8 +4,13 @@
     "slug": "xlsx-work-office-hard-01",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": ["work-office:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "work-office:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 fonctions Excel courantes mais déjà un peu avancées.",
     "shortTitle": "fonctions Excel courantes mais déjà un peu av…",
     "difficultyLevel": 3,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "aa37680694eb3a5f5ed73f288389439752e0a26b42a1908ecb5135a85c502896",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-work-office-hard-02",
     "slug": "xlsx-work-office-hard-02",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": ["work-office:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "work-office:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 termes ou outils courants de gestion de projet.",
     "shortTitle": "termes ou outils courants de gestion de projet",
     "difficultyLevel": 3,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cc32a60aae54a6ff13a2396536fb359a216738e794b1cd10c14ae0cbd49ea322",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-work-office-hard-03",
     "slug": "xlsx-work-office-hard-03",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": ["work-office:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "work-office:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 éléments que l’on peut trouver dans un contrat de travail.",
     "shortTitle": "éléments que l’on peut trouver dans un contra…",
     "difficultyLevel": 3,
@@ -454,174 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f491ae9c500fd9c871606a97fe00775ed3b14986a40f6e3703f3aaa0bf00e29c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-work-office-hard-04",
     "slug": "xlsx-work-office-hard-04",
     "language": "fr",
     "themeId": "work-office",
-    "subthemeIds": ["work-office:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 indicateurs couramment suivis par les ressources humaines.",
-    "shortTitle": "indicateurs couramment suivis par les ressour…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-work-office-hard-04-answer-1",
-        "display": "Turnover",
-        "normalized": "turnover",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-2",
-        "display": "Taux d’absentéisme",
-        "normalized": "taux d absenteisme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-3",
-        "display": "Headcount",
-        "normalized": "headcount",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-4",
-        "display": "Taux de rétention",
-        "normalized": "taux de retention",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-5",
-        "display": "Time-to-hire",
-        "normalized": "time to hire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-6",
-        "display": "Cost-per-hire",
-        "normalized": "cost per hire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-7",
-        "display": "eNPS",
-        "normalized": "enps",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-8",
-        "display": "Ancienneté moyenne",
-        "normalized": "anciennete moyenne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-04-answer-9",
-        "display": "Taux de promotion",
-        "normalized": "taux de promotion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "work-office:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-work-office-hard-04-bomb",
-      "display": "CTR",
-      "normalized": "ctr",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d7a780c701cfa2bffc55cf1b4e0face4b9bce70ee442d9073b1512704f11444f",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-work-office-hard-05",
-    "slug": "xlsx-work-office-hard-05",
-    "language": "fr",
-    "themeId": "work-office",
-    "subthemeIds": ["work-office:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 types de réunions ou rituels que l’on retrouve en entreprise.",
     "shortTitle": "types de réunions ou rituels que l’on retrouv…",
     "difficultyLevel": 3,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-work-office-hard-05-answer-1",
+        "id": "xlsx-work-office-hard-04-answer-1",
         "display": "Daily",
         "normalized": "daily",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-2",
+        "id": "xlsx-work-office-hard-04-answer-2",
         "display": "Stand-up",
         "normalized": "stand up",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-3",
+        "id": "xlsx-work-office-hard-04-answer-3",
         "display": "One-to-one",
         "normalized": "one to one",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-4",
+        "id": "xlsx-work-office-hard-04-answer-4",
         "display": "Sprint planning",
         "normalized": "sprint planning",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-5",
+        "id": "xlsx-work-office-hard-04-answer-5",
         "display": "Rétrospective",
         "normalized": "retrospective",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-6",
+        "id": "xlsx-work-office-hard-04-answer-6",
         "display": "Kick-off",
         "normalized": "kick off",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-7",
+        "id": "xlsx-work-office-hard-04-answer-7",
         "display": "Comité de pilotage",
         "normalized": "comite de pilotage",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-8",
+        "id": "xlsx-work-office-hard-04-answer-8",
         "display": "All-hands",
         "normalized": "all hands",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-hard-05-answer-9",
+        "id": "xlsx-work-office-hard-04-answer-9",
         "display": "Post-mortem",
         "normalized": "post mortem",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-work-office-hard-05-bomb",
+      "id": "xlsx-work-office-hard-04-bomb",
       "display": "Happy hour",
       "normalized": "happy hour",
       "aliases": [],
@@ -762,165 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "55f0921400ed5d307142761e56ba1c0cc17f4a44970bc64fa59eb00300dc0563",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-work-office-hard-06",
-    "slug": "xlsx-work-office-hard-06",
-    "language": "fr",
-    "themeId": "work-office",
-    "subthemeIds": ["work-office:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 documents financiers ou administratifs courants dans une entreprise.",
-    "shortTitle": "documents financiers ou administratifs couran…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-work-office-hard-06-answer-1",
-        "display": "Facture",
-        "normalized": "facture",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-2",
-        "display": "Devis",
-        "normalized": "devis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-3",
-        "display": "Bon de commande",
-        "normalized": "bon de commande",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-4",
-        "display": "Bon de livraison",
-        "normalized": "bon de livraison",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-5",
-        "display": "Note de frais",
-        "normalized": "note de frais",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-6",
-        "display": "Bulletin de paie",
-        "normalized": "bulletin de paie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-7",
-        "display": "Bilan",
-        "normalized": "bilan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-8",
-        "display": "Compte de résultat",
-        "normalized": "compte de resultat",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-hard-06-answer-9",
-        "display": "Tableau de flux de trésorerie",
-        "normalized": "tableau de flux de tresorerie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-work-office-hard-06-bomb",
-      "display": "Carte de visite",
-      "normalized": "carte de visite",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0fd84dbb9065f553bce283d9509822509d6924a9c66327cee43eef0b72397b2c",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

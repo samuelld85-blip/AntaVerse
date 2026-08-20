@@ -4,8 +4,13 @@
     "slug": "xlsx-economy-business-easy-01",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 métiers liés à la vente.",
     "shortTitle": "métiers liés à la vente",
     "difficultyLevel": 1,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "688bc6ba9eef445418c58375e70eca578c8d9ad2a354cd7715165faac2f2d0ee",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-economy-business-easy-02",
     "slug": "xlsx-economy-business-easy-02",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 éléments d’un budget personnel.",
     "shortTitle": "éléments d’un budget personnel",
     "difficultyLevel": 1,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "96e1395aaada94970a9a41333ab6817183e4c7ed95b643a0f2f2a22c4432218a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-economy-business-easy-03",
     "slug": "xlsx-economy-business-easy-03",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 formes de publicité.",
     "shortTitle": "formes de publicité",
     "difficultyLevel": 1,
@@ -454,328 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fd821516be3e6dd87fb5adae0d5e31c4479f1d7d537fbf4f041551e08ed94c39",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-economy-business-easy-04",
     "slug": "xlsx-economy-business-easy-04",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 choses qu’une entreprise peut exporter.",
-    "shortTitle": "choses qu’une entreprise peut exporter",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-economy-business-easy-04-answer-1",
-        "display": "voitures",
-        "normalized": "voitures",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-2",
-        "display": "logiciels",
-        "normalized": "logiciels",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-3",
-        "display": "vin",
-        "normalized": "vin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-4",
-        "display": "médicaments",
-        "normalized": "medicaments",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-5",
-        "display": "machines",
-        "normalized": "machines",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-6",
-        "display": "cosmétiques",
-        "normalized": "cosmetiques",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-7",
-        "display": "films",
-        "normalized": "films",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-8",
-        "display": "services de conseil",
-        "normalized": "services de conseil",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-04-answer-9",
-        "display": "produits agricoles",
-        "normalized": "produits agricoles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "economy-business:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-economy-business-easy-04-bomb",
-      "display": "Importations",
-      "normalized": "importations",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "238a399a7633c4f3d811446364f535394cc6395cb6f876460d448c50e7a8493c",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-economy-business-easy-05",
-    "slug": "xlsx-economy-business-easy-05",
-    "language": "fr",
-    "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 raisons de créer son entreprise.",
-    "shortTitle": "raisons de créer son entreprise",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-economy-business-easy-05-answer-1",
-        "display": "indépendance",
-        "normalized": "independance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-2",
-        "display": "revenus",
-        "normalized": "revenus",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-3",
-        "display": "projet personnel",
-        "normalized": "projet personnel",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-4",
-        "display": "flexibilité",
-        "normalized": "flexibilite",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-5",
-        "display": "innovation",
-        "normalized": "innovation",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-6",
-        "display": "impact social",
-        "normalized": "impact social",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-7",
-        "display": "besoin du marché",
-        "normalized": "besoin du marche",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-8",
-        "display": "transmettre un savoir-faire",
-        "normalized": "transmettre un savoir faire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-05-answer-9",
-        "display": "créer des emplois",
-        "normalized": "creer des emplois",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-economy-business-easy-05-bomb",
-      "display": "Ne vouloir aucun client",
-      "normalized": "ne vouloir aucun client",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "fb2b3a13a9a8bd477ab9fa6734c32c086df7c388e158795861e76ee1638b6fe3",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-economy-business-easy-06",
-    "slug": "xlsx-economy-business-easy-06",
-    "language": "fr",
-    "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 secteurs dans lesquels on peut lancer une entreprise.",
     "shortTitle": "secteurs dans lesquels on peut lancer une ent…",
     "difficultyLevel": 1,
@@ -791,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-06-answer-1",
+        "id": "xlsx-economy-business-easy-04-answer-1",
         "display": "restauration",
         "normalized": "restauration",
         "aliases": [],
@@ -803,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-2",
+        "id": "xlsx-economy-business-easy-04-answer-2",
         "display": "technologie",
         "normalized": "technologie",
         "aliases": [],
@@ -815,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-3",
+        "id": "xlsx-economy-business-easy-04-answer-3",
         "display": "transport",
         "normalized": "transport",
         "aliases": [],
@@ -827,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-4",
+        "id": "xlsx-economy-business-easy-04-answer-4",
         "display": "santé",
         "normalized": "sante",
         "aliases": [],
@@ -839,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-5",
+        "id": "xlsx-economy-business-easy-04-answer-5",
         "display": "éducation",
         "normalized": "education",
         "aliases": [],
@@ -851,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-6",
+        "id": "xlsx-economy-business-easy-04-answer-6",
         "display": "immobilier",
         "normalized": "immobilier",
         "aliases": [],
@@ -863,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-7",
+        "id": "xlsx-economy-business-easy-04-answer-7",
         "display": "mode",
         "normalized": "mode",
         "aliases": [],
@@ -875,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-8",
+        "id": "xlsx-economy-business-easy-04-answer-8",
         "display": "énergie",
         "normalized": "energie",
         "aliases": [],
@@ -887,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-06-answer-9",
+        "id": "xlsx-economy-business-easy-04-answer-9",
         "display": "tourisme",
         "normalized": "tourisme",
         "aliases": [],
@@ -900,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-06-bomb",
+      "id": "xlsx-economy-business-easy-04-bomb",
       "display": "Carte bancaire",
       "normalized": "carte bancaire",
       "aliases": [],
@@ -916,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fbc42caebf57595e80249de53e20c131cc7aba2e31a89041a766b892e70565ff",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-07",
-    "slug": "xlsx-economy-business-easy-07",
+    "id": "xlsx-economy-business-easy-05",
+    "slug": "xlsx-economy-business-easy-05",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 dépenses fixes d’une entreprise.",
     "shortTitle": "dépenses fixes d’une entreprise",
     "difficultyLevel": 1,
@@ -945,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-07-answer-1",
+        "id": "xlsx-economy-business-easy-05-answer-1",
         "display": "Loyer",
         "normalized": "loyer",
         "aliases": [],
@@ -957,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-2",
+        "id": "xlsx-economy-business-easy-05-answer-2",
         "display": "Salaires fixes",
         "normalized": "salaires fixes",
         "aliases": [],
@@ -969,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-3",
+        "id": "xlsx-economy-business-easy-05-answer-3",
         "display": "Assurances",
         "normalized": "assurances",
         "aliases": [],
@@ -981,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-4",
+        "id": "xlsx-economy-business-easy-05-answer-4",
         "display": "Abonnements logiciels",
         "normalized": "abonnements logiciels",
         "aliases": [],
@@ -993,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-5",
+        "id": "xlsx-economy-business-easy-05-answer-5",
         "display": "Comptabilité",
         "normalized": "comptabilite",
         "aliases": [],
@@ -1005,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-6",
+        "id": "xlsx-economy-business-easy-05-answer-6",
         "display": "Crédit-bail",
         "normalized": "credit bail",
         "aliases": [],
@@ -1017,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-7",
+        "id": "xlsx-economy-business-easy-05-answer-7",
         "display": "Loyers de véhicules",
         "normalized": "loyers de vehicules",
         "aliases": [],
@@ -1029,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-8",
+        "id": "xlsx-economy-business-easy-05-answer-8",
         "display": "Frais bancaires forfaitaires",
         "normalized": "frais bancaires forfaitaires",
         "aliases": [],
@@ -1041,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-07-answer-9",
+        "id": "xlsx-economy-business-easy-05-answer-9",
         "display": "Contrats de maintenance",
         "normalized": "contrats de maintenance",
         "aliases": [],
@@ -1054,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-07-bomb",
+      "id": "xlsx-economy-business-easy-05-bomb",
       "display": "Achats de marchandises",
       "normalized": "achats de marchandises",
       "aliases": [],
@@ -1070,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "84d44651b777f8dbb058006738d0eab37f6fcadc43ea36b4ab2aae6b3245ea84",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-08",
-    "slug": "xlsx-economy-business-easy-08",
+    "id": "xlsx-economy-business-easy-06",
+    "slug": "xlsx-economy-business-easy-06",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 moyens de paiement.",
     "shortTitle": "moyens de paiement",
     "difficultyLevel": 1,
@@ -1099,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-08-answer-1",
+        "id": "xlsx-economy-business-easy-06-answer-1",
         "display": "carte bancaire",
         "normalized": "carte bancaire",
         "aliases": [],
@@ -1111,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-2",
+        "id": "xlsx-economy-business-easy-06-answer-2",
         "display": "espèces",
         "normalized": "especes",
         "aliases": [],
@@ -1123,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-3",
+        "id": "xlsx-economy-business-easy-06-answer-3",
         "display": "virement",
         "normalized": "virement",
         "aliases": [],
@@ -1135,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-4",
+        "id": "xlsx-economy-business-easy-06-answer-4",
         "display": "chèque",
         "normalized": "cheque",
         "aliases": [],
@@ -1147,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-5",
+        "id": "xlsx-economy-business-easy-06-answer-5",
         "display": "prélèvement",
         "normalized": "prelevement",
         "aliases": [],
@@ -1159,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-6",
+        "id": "xlsx-economy-business-easy-06-answer-6",
         "display": "PayPal",
         "normalized": "paypal",
         "aliases": [],
@@ -1171,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-7",
+        "id": "xlsx-economy-business-easy-06-answer-7",
         "display": "paiement mobile",
         "normalized": "paiement mobile",
         "aliases": [],
@@ -1183,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-8",
+        "id": "xlsx-economy-business-easy-06-answer-8",
         "display": "carte cadeau",
         "normalized": "carte cadeau",
         "aliases": [],
@@ -1195,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-08-answer-9",
+        "id": "xlsx-economy-business-easy-06-answer-9",
         "display": "cryptomonnaie",
         "normalized": "cryptomonnaie",
         "aliases": [],
@@ -1208,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-08-bomb",
+      "id": "xlsx-economy-business-easy-06-bomb",
       "display": "Facture à payer",
       "normalized": "facture a payer",
       "aliases": [],
@@ -1224,20 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "59b9798d4aa92dad0f0c4422a10dc8b92b6f358bd432b800369fe9436cfd8cbf",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-09",
-    "slug": "xlsx-economy-business-easy-09",
+    "id": "xlsx-economy-business-easy-07",
+    "slug": "xlsx-economy-business-easy-07",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de changer de banque.",
     "shortTitle": "raisons de changer de banque",
     "difficultyLevel": 1,
@@ -1253,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-09-answer-1",
+        "id": "xlsx-economy-business-easy-07-answer-1",
         "display": "frais élevés",
         "normalized": "frais eleves",
         "aliases": [],
@@ -1265,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-2",
+        "id": "xlsx-economy-business-easy-07-answer-2",
         "display": "mauvais service",
         "normalized": "mauvais service",
         "aliases": [],
@@ -1277,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-3",
+        "id": "xlsx-economy-business-easy-07-answer-3",
         "display": "crédit refusé",
         "normalized": "credit refuse",
         "aliases": [],
@@ -1289,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-4",
+        "id": "xlsx-economy-business-easy-07-answer-4",
         "display": "application médiocre",
         "normalized": "application mediocre",
         "aliases": [],
@@ -1301,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-5",
+        "id": "xlsx-economy-business-easy-07-answer-5",
         "display": "agence trop éloignée",
         "normalized": "agence trop eloignee",
         "aliases": [],
@@ -1313,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-6",
+        "id": "xlsx-economy-business-easy-07-answer-6",
         "display": "meilleur taux ailleurs",
         "normalized": "meilleur taux ailleurs",
         "aliases": [],
@@ -1325,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-7",
+        "id": "xlsx-economy-business-easy-07-answer-7",
         "display": "déménagement",
         "normalized": "demenagement",
         "aliases": [],
@@ -1337,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-8",
+        "id": "xlsx-economy-business-easy-07-answer-8",
         "display": "offre de bienvenue",
         "normalized": "offre de bienvenue",
         "aliases": [],
@@ -1349,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-09-answer-9",
+        "id": "xlsx-economy-business-easy-07-answer-9",
         "display": "manque de conseils",
         "normalized": "manque de conseils",
         "aliases": [],
@@ -1362,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-09-bomb",
+      "id": "xlsx-economy-business-easy-07-bomb",
       "display": "Être satisfait",
       "normalized": "etre satisfait",
       "aliases": [],
@@ -1378,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0aa2567ed9713092822fa5b6e9e07b7f0f90b4d3699fe7b81088e2f00b6d8d91",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-10",
-    "slug": "xlsx-economy-business-easy-10",
+    "id": "xlsx-economy-business-easy-08",
+    "slug": "xlsx-economy-business-easy-08",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qui font varier le prix d’un produit.",
     "shortTitle": "choses qui font varier le prix d’un produit",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-10-answer-1",
+        "id": "xlsx-economy-business-easy-08-answer-1",
         "display": "demande",
         "normalized": "demande",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-2",
+        "id": "xlsx-economy-business-easy-08-answer-2",
         "display": "coût des matières",
         "normalized": "cout des matieres",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-3",
+        "id": "xlsx-economy-business-easy-08-answer-3",
         "display": "concurrence",
         "normalized": "concurrence",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-4",
+        "id": "xlsx-economy-business-easy-08-answer-4",
         "display": "transport",
         "normalized": "transport",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-5",
+        "id": "xlsx-economy-business-easy-08-answer-5",
         "display": "taxes",
         "normalized": "taxes",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-6",
+        "id": "xlsx-economy-business-easy-08-answer-6",
         "display": "taux de change",
         "normalized": "taux de change",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-7",
+        "id": "xlsx-economy-business-easy-08-answer-7",
         "display": "saison",
         "normalized": "saison",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-8",
+        "id": "xlsx-economy-business-easy-08-answer-8",
         "display": "qualité",
         "normalized": "qualite",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-10-answer-9",
+        "id": "xlsx-economy-business-easy-08-answer-9",
         "display": "distribution",
         "normalized": "distribution",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-10-bomb",
+      "id": "xlsx-economy-business-easy-08-bomb",
       "display": "Couleur préférée",
       "normalized": "couleur preferee",
       "aliases": [],
@@ -1532,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5bc9f6af3a1512236d74bc33bd8d64f201670d05fa3f274b79786e6a12e43aff",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-11",
-    "slug": "xlsx-economy-business-easy-11",
+    "id": "xlsx-economy-business-easy-09",
+    "slug": "xlsx-economy-business-easy-09",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 postes présents dans une entreprise.",
     "shortTitle": "postes présents dans une entreprise",
     "difficultyLevel": 1,
@@ -1561,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-11-answer-1",
+        "id": "xlsx-economy-business-easy-09-answer-1",
         "display": "Commercial",
         "normalized": "commercial",
         "aliases": [],
@@ -1573,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-2",
+        "id": "xlsx-economy-business-easy-09-answer-2",
         "display": "Comptable",
         "normalized": "comptable",
         "aliases": [],
@@ -1585,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-3",
+        "id": "xlsx-economy-business-easy-09-answer-3",
         "display": "Production",
         "normalized": "production",
         "aliases": [],
@@ -1597,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-4",
+        "id": "xlsx-economy-business-easy-09-answer-4",
         "display": "Marketing",
         "normalized": "marketing",
         "aliases": [],
@@ -1609,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-5",
+        "id": "xlsx-economy-business-easy-09-answer-5",
         "display": "Ressources humaines",
         "normalized": "ressources humaines",
         "aliases": [],
@@ -1621,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-6",
+        "id": "xlsx-economy-business-easy-09-answer-6",
         "display": "Direction",
         "normalized": "direction",
         "aliases": [],
@@ -1633,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-7",
+        "id": "xlsx-economy-business-easy-09-answer-7",
         "display": "Informatique",
         "normalized": "informatique",
         "aliases": [],
@@ -1645,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-8",
+        "id": "xlsx-economy-business-easy-09-answer-8",
         "display": "Juridique",
         "normalized": "juridique",
         "aliases": [],
@@ -1657,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-11-answer-9",
+        "id": "xlsx-economy-business-easy-09-answer-9",
         "display": "Logistique",
         "normalized": "logistique",
         "aliases": [],
@@ -1670,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-11-bomb",
+      "id": "xlsx-economy-business-easy-09-bomb",
       "display": "Client",
       "normalized": "client",
       "aliases": [],
@@ -1686,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "60e123d18141698a8171788011f540455cc603efcad21906240785ddf4c20dde",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-12",
-    "slug": "xlsx-economy-business-easy-12",
+    "id": "xlsx-economy-business-easy-10",
+    "slug": "xlsx-economy-business-easy-10",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 marques françaises connues à l’étranger.",
     "shortTitle": "marques françaises connues à l’étranger",
     "difficultyLevel": 1,
@@ -1715,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-12-answer-1",
+        "id": "xlsx-economy-business-easy-10-answer-1",
         "display": "L’Oréal",
         "normalized": "l oreal",
         "aliases": [],
@@ -1727,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-2",
+        "id": "xlsx-economy-business-easy-10-answer-2",
         "display": "Renault",
         "normalized": "renault",
         "aliases": [],
@@ -1739,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-3",
+        "id": "xlsx-economy-business-easy-10-answer-3",
         "display": "Lacoste",
         "normalized": "lacoste",
         "aliases": [],
@@ -1751,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-4",
+        "id": "xlsx-economy-business-easy-10-answer-4",
         "display": "Danone",
         "normalized": "danone",
         "aliases": [],
@@ -1763,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-5",
+        "id": "xlsx-economy-business-easy-10-answer-5",
         "display": "Michelin",
         "normalized": "michelin",
         "aliases": [],
@@ -1775,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-6",
+        "id": "xlsx-economy-business-easy-10-answer-6",
         "display": "Louis Vuitton",
         "normalized": "louis vuitton",
         "aliases": [],
@@ -1787,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-7",
+        "id": "xlsx-economy-business-easy-10-answer-7",
         "display": "Peugeot",
         "normalized": "peugeot",
         "aliases": [],
@@ -1799,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-8",
+        "id": "xlsx-economy-business-easy-10-answer-8",
         "display": "Hermès",
         "normalized": "hermes",
         "aliases": [],
@@ -1811,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-12-answer-9",
+        "id": "xlsx-economy-business-easy-10-answer-9",
         "display": "Chanel",
         "normalized": "chanel",
         "aliases": [],
@@ -1824,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-12-bomb",
+      "id": "xlsx-economy-business-easy-10-bomb",
       "display": "Zara",
       "normalized": "zara",
       "aliases": [],
@@ -1840,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a671237336c1db819e63de8357b2ef8e5c2f66ef3592cda9d87a17bdd79d7aa4",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-13",
-    "slug": "xlsx-economy-business-easy-13",
+    "id": "xlsx-economy-business-easy-11",
+    "slug": "xlsx-economy-business-easy-11",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 services proposés par une banque.",
     "shortTitle": "services proposés par une banque",
     "difficultyLevel": 1,
@@ -1869,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-13-answer-1",
+        "id": "xlsx-economy-business-easy-11-answer-1",
         "display": "compte courant",
         "normalized": "compte courant",
         "aliases": [],
@@ -1881,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-2",
+        "id": "xlsx-economy-business-easy-11-answer-2",
         "display": "prêt",
         "normalized": "pret",
         "aliases": [],
@@ -1893,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-3",
+        "id": "xlsx-economy-business-easy-11-answer-3",
         "display": "épargne",
         "normalized": "epargne",
         "aliases": [],
@@ -1905,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-4",
+        "id": "xlsx-economy-business-easy-11-answer-4",
         "display": "carte bancaire",
         "normalized": "carte bancaire",
         "aliases": [],
@@ -1917,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-5",
+        "id": "xlsx-economy-business-easy-11-answer-5",
         "display": "assurance",
         "normalized": "assurance",
         "aliases": [],
@@ -1929,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-6",
+        "id": "xlsx-economy-business-easy-11-answer-6",
         "display": "coffre-fort",
         "normalized": "coffre fort",
         "aliases": [],
@@ -1941,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-7",
+        "id": "xlsx-economy-business-easy-11-answer-7",
         "display": "change de devises",
         "normalized": "change de devises",
         "aliases": [],
@@ -1953,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-8",
+        "id": "xlsx-economy-business-easy-11-answer-8",
         "display": "conseil financier",
         "normalized": "conseil financier",
         "aliases": [],
@@ -1965,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-13-answer-9",
+        "id": "xlsx-economy-business-easy-11-answer-9",
         "display": "découvert autorisé",
         "normalized": "decouvert autorise",
         "aliases": [],
@@ -1978,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-13-bomb",
+      "id": "xlsx-economy-business-easy-11-bomb",
       "display": "Billet de banque",
       "normalized": "billet de banque",
       "aliases": [],
@@ -1994,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "504de1bcd79c4cc98f45006bc1440021c0e44c146a73988a8f823fe63bf44700",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-14",
-    "slug": "xlsx-economy-business-easy-14",
+    "id": "xlsx-economy-business-easy-12",
+    "slug": "xlsx-economy-business-easy-12",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 grandes entreprises connues.",
     "shortTitle": "grandes entreprises connues",
     "difficultyLevel": 1,
@@ -2023,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-14-answer-1",
+        "id": "xlsx-economy-business-easy-12-answer-1",
         "display": "Apple",
         "normalized": "apple",
         "aliases": [],
@@ -2035,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-2",
+        "id": "xlsx-economy-business-easy-12-answer-2",
         "display": "Microsoft",
         "normalized": "microsoft",
         "aliases": [],
@@ -2047,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-3",
+        "id": "xlsx-economy-business-easy-12-answer-3",
         "display": "Amazon",
         "normalized": "amazon",
         "aliases": [],
@@ -2059,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-4",
+        "id": "xlsx-economy-business-easy-12-answer-4",
         "display": "Google",
         "normalized": "google",
         "aliases": [],
@@ -2071,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-5",
+        "id": "xlsx-economy-business-easy-12-answer-5",
         "display": "Samsung",
         "normalized": "samsung",
         "aliases": [],
@@ -2083,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-6",
+        "id": "xlsx-economy-business-easy-12-answer-6",
         "display": "Toyota",
         "normalized": "toyota",
         "aliases": [],
@@ -2095,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-7",
+        "id": "xlsx-economy-business-easy-12-answer-7",
         "display": "Coca-Cola",
         "normalized": "coca cola",
         "aliases": [],
@@ -2107,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-8",
+        "id": "xlsx-economy-business-easy-12-answer-8",
         "display": "Nike",
         "normalized": "nike",
         "aliases": [],
@@ -2119,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-14-answer-9",
+        "id": "xlsx-economy-business-easy-12-answer-9",
         "display": "McDonald's",
         "normalized": "mcdonald s",
         "aliases": [],
@@ -2132,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-14-bomb",
+      "id": "xlsx-economy-business-easy-12-bomb",
       "display": "iPhone",
       "normalized": "iphone",
       "aliases": [],
@@ -2148,174 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f84230d770f20badaa0831f22e2d91a02b20284db8e4f37c91877edc50266446",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-15",
-    "slug": "xlsx-economy-business-easy-15",
+    "id": "xlsx-economy-business-easy-13",
+    "slug": "xlsx-economy-business-easy-13",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 façons de régler un achat en magasin ou en ligne.",
-    "shortTitle": "façons de régler un achat en magasin ou en ligne",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-economy-business-easy-15-answer-1",
-        "display": "Carte bancaire",
-        "normalized": "carte bancaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-2",
-        "display": "Espèces",
-        "normalized": "especes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-3",
-        "display": "Chèque",
-        "normalized": "cheque",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-4",
-        "display": "Virement",
-        "normalized": "virement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-5",
-        "display": "Prélèvement",
-        "normalized": "prelevement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-6",
-        "display": "PayPal",
-        "normalized": "paypal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-7",
-        "display": "Apple Pay",
-        "normalized": "apple pay",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-8",
-        "display": "Google Pay",
-        "normalized": "google pay",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-15-answer-9",
-        "display": "Carte cadeau",
-        "normalized": "carte cadeau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "economy-business:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-economy-business-easy-15-bomb",
-      "display": "Passeport",
-      "normalized": "passeport",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b90278ad11cb901e0e37b2779c753d016004b645614b70be7840ec70e73cb610",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-economy-business-easy-16",
-    "slug": "xlsx-economy-business-easy-16",
-    "language": "fr",
-    "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qu’un consommateur peut comparer avant un achat.",
     "shortTitle": "choses qu’un consommateur peut comparer avant…",
     "difficultyLevel": 1,
@@ -2331,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-16-answer-1",
+        "id": "xlsx-economy-business-easy-13-answer-1",
         "display": "Prix",
         "normalized": "prix",
         "aliases": [],
@@ -2343,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-2",
+        "id": "xlsx-economy-business-easy-13-answer-2",
         "display": "Qualité",
         "normalized": "qualite",
         "aliases": [],
@@ -2355,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-3",
+        "id": "xlsx-economy-business-easy-13-answer-3",
         "display": "Marque",
         "normalized": "marque",
         "aliases": [],
@@ -2367,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-4",
+        "id": "xlsx-economy-business-easy-13-answer-4",
         "display": "Avis",
         "normalized": "avis",
         "aliases": [],
@@ -2379,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-5",
+        "id": "xlsx-economy-business-easy-13-answer-5",
         "display": "Garantie",
         "normalized": "garantie",
         "aliases": [],
@@ -2391,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-6",
+        "id": "xlsx-economy-business-easy-13-answer-6",
         "display": "Livraison",
         "normalized": "livraison",
         "aliases": [],
@@ -2403,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-7",
+        "id": "xlsx-economy-business-easy-13-answer-7",
         "display": "Taille",
         "normalized": "taille",
         "aliases": [],
@@ -2415,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-8",
+        "id": "xlsx-economy-business-easy-13-answer-8",
         "display": "Caractéristiques",
         "normalized": "caracteristiques",
         "aliases": [],
@@ -2427,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-16-answer-9",
+        "id": "xlsx-economy-business-easy-13-answer-9",
         "display": "Disponibilité",
         "normalized": "disponibilite",
         "aliases": [],
@@ -2440,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-16-bomb",
+      "id": "xlsx-economy-business-easy-13-bomb",
       "display": "Météo d'hier",
       "normalized": "meteo d hier",
       "aliases": [],
@@ -2456,20 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7b07080616c71f6fcba4a861cae7609787c1e623007279f7d1d4830450cdf682",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-17",
-    "slug": "xlsx-economy-business-easy-17",
+    "id": "xlsx-economy-business-easy-14",
+    "slug": "xlsx-economy-business-easy-14",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 types de magasins.",
     "shortTitle": "types de magasins",
     "difficultyLevel": 1,
@@ -2485,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-17-answer-1",
+        "id": "xlsx-economy-business-easy-14-answer-1",
         "display": "Supermarché",
         "normalized": "supermarche",
         "aliases": [],
@@ -2497,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-2",
+        "id": "xlsx-economy-business-easy-14-answer-2",
         "display": "Boulangerie",
         "normalized": "boulangerie",
         "aliases": [],
@@ -2509,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-3",
+        "id": "xlsx-economy-business-easy-14-answer-3",
         "display": "Pharmacie",
         "normalized": "pharmacie",
         "aliases": [],
@@ -2521,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-4",
+        "id": "xlsx-economy-business-easy-14-answer-4",
         "display": "Librairie",
         "normalized": "librairie",
         "aliases": [],
@@ -2533,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-5",
+        "id": "xlsx-economy-business-easy-14-answer-5",
         "display": "Magasin de vêtements",
         "normalized": "magasin de vetements",
         "aliases": [],
@@ -2545,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-6",
+        "id": "xlsx-economy-business-easy-14-answer-6",
         "display": "Bricolage",
         "normalized": "bricolage",
         "aliases": [],
@@ -2557,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-7",
+        "id": "xlsx-economy-business-easy-14-answer-7",
         "display": "Électronique",
         "normalized": "electronique",
         "aliases": [],
@@ -2569,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-8",
+        "id": "xlsx-economy-business-easy-14-answer-8",
         "display": "Meubles",
         "normalized": "meubles",
         "aliases": [],
@@ -2581,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-17-answer-9",
+        "id": "xlsx-economy-business-easy-14-answer-9",
         "display": "Sport",
         "normalized": "sport",
         "aliases": [],
@@ -2594,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-17-bomb",
+      "id": "xlsx-economy-business-easy-14-bomb",
       "display": "Mairie",
       "normalized": "mairie",
       "aliases": [],
@@ -2610,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "940bd583ee455f27c1dfa1c3801a89fc70c124824ecf703c3ecd4b646890bab1",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-18",
-    "slug": "xlsx-economy-business-easy-18",
+    "id": "xlsx-economy-business-easy-15",
+    "slug": "xlsx-economy-business-easy-15",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "economy-business:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 dépenses courantes d’un ménage.",
     "shortTitle": "dépenses courantes d’un ménage",
     "difficultyLevel": 1,
@@ -2639,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-18-answer-1",
+        "id": "xlsx-economy-business-easy-15-answer-1",
         "display": "Loyer",
         "normalized": "loyer",
         "aliases": [],
@@ -2651,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-2",
+        "id": "xlsx-economy-business-easy-15-answer-2",
         "display": "Courses",
         "normalized": "courses",
         "aliases": [],
@@ -2663,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-3",
+        "id": "xlsx-economy-business-easy-15-answer-3",
         "display": "Transport",
         "normalized": "transport",
         "aliases": [],
@@ -2675,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-4",
+        "id": "xlsx-economy-business-easy-15-answer-4",
         "display": "Électricité",
         "normalized": "electricite",
         "aliases": [],
@@ -2687,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-5",
+        "id": "xlsx-economy-business-easy-15-answer-5",
         "display": "Internet",
         "normalized": "internet",
         "aliases": [],
@@ -2699,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-6",
+        "id": "xlsx-economy-business-easy-15-answer-6",
         "display": "Assurance",
         "normalized": "assurance",
         "aliases": [],
@@ -2711,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-7",
+        "id": "xlsx-economy-business-easy-15-answer-7",
         "display": "Téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -2723,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-8",
+        "id": "xlsx-economy-business-easy-15-answer-8",
         "display": "Loisirs",
         "normalized": "loisirs",
         "aliases": [],
@@ -2735,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-18-answer-9",
+        "id": "xlsx-economy-business-easy-15-answer-9",
         "display": "Vêtements",
         "normalized": "vetements",
         "aliases": [],
@@ -2748,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-18-bomb",
+      "id": "xlsx-economy-business-easy-15-bomb",
       "display": "Action en Bourse",
       "normalized": "action en bourse",
       "aliases": [],
@@ -2764,174 +2377,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c0bac8b53b89bc96a1dc11f78c613565c31a6f6479f40386967a4e28e0534116",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-economy-business-easy-19",
-    "slug": "xlsx-economy-business-easy-19",
+    "id": "xlsx-economy-business-easy-16",
+    "slug": "xlsx-economy-business-easy-16",
     "language": "fr",
     "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 façons pour une entreprise de faire de la publicité.",
-    "shortTitle": "façons pour une entreprise de faire de la pub…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-economy-business-easy-19-answer-1",
-        "display": "Télévision",
-        "normalized": "television",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-2",
-        "display": "Radio",
-        "normalized": "radio",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-3",
-        "display": "Affichage",
-        "normalized": "affichage",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-4",
-        "display": "Réseaux sociaux",
-        "normalized": "reseaux sociaux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-5",
-        "display": "Google Ads",
-        "normalized": "google ads",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-6",
-        "display": "Influenceurs",
-        "normalized": "influenceurs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-7",
-        "display": "E-mail",
-        "normalized": "e mail",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-8",
-        "display": "Presse",
-        "normalized": "presse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-economy-business-easy-19-answer-9",
-        "display": "Sponsoring",
-        "normalized": "sponsoring",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "economy-business:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-economy-business-easy-19-bomb",
-      "display": "Feu rouge",
-      "normalized": "feu rouge",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6eaa1a100a4546ab5438fc57824367d34ccdd4b5f988594345c3a111edfbf7f8",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-economy-business-easy-20",
-    "slug": "xlsx-economy-business-easy-20",
-    "language": "fr",
-    "themeId": "economy-business",
-    "subthemeIds": ["economy-business:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 éléments que l’on voit souvent sur un ticket de caisse.",
     "shortTitle": "éléments que l’on voit souvent sur un ticket…",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-economy-business-easy-20-answer-1",
+        "id": "xlsx-economy-business-easy-16-answer-1",
         "display": "Nom du magasin",
         "normalized": "nom du magasin",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-2",
+        "id": "xlsx-economy-business-easy-16-answer-2",
         "display": "Date",
         "normalized": "date",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-3",
+        "id": "xlsx-economy-business-easy-16-answer-3",
         "display": "Heure",
         "normalized": "heure",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-4",
+        "id": "xlsx-economy-business-easy-16-answer-4",
         "display": "Articles",
         "normalized": "articles",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-5",
+        "id": "xlsx-economy-business-easy-16-answer-5",
         "display": "Prix",
         "normalized": "prix",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-6",
+        "id": "xlsx-economy-business-easy-16-answer-6",
         "display": "TVA",
         "normalized": "tva",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-7",
+        "id": "xlsx-economy-business-easy-16-answer-7",
         "display": "Total",
         "normalized": "total",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-8",
+        "id": "xlsx-economy-business-easy-16-answer-8",
         "display": "Moyen de paiement",
         "normalized": "moyen de paiement",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-economy-business-easy-20-answer-9",
+        "id": "xlsx-economy-business-easy-16-answer-9",
         "display": "Numéro de ticket",
         "normalized": "numero de ticket",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-economy-business-easy-20-bomb",
+      "id": "xlsx-economy-business-easy-16-bomb",
       "display": "Mot de passe",
       "normalized": "mot de passe",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "92698568dfe45cf20b0b347976e39772e1a6e78047bca92e758db528cdf285e4",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

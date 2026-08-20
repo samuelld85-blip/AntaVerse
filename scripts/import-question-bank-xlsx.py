@@ -200,9 +200,13 @@ def main() -> None:
     args = parser.parse_args()
     source = args.source.resolve()
     rows = read_rows(source)
-    if len(rows) < 3 or rows[1] != HEADERS:
+    # L'en-tête peut se trouver en première ligne ou sous une ligne de titre.
+    header_index = next((index for index, row in enumerate(rows[:5]) if row == HEADERS), None)
+    if header_index is None:
         raise ValueError("La feuille Questions ne respecte pas les colonnes attendues.")
-    records = rows[2:]
+    records = [row for row in rows[header_index + 1 :] if any(cell.strip() for cell in row)]
+    if not records:
+        raise ValueError("Aucune ligne de question trouvée.")
     if any(not record[3] for record in records):
         raise ValueError("Chaque ligne de question doit renseigner la colonne Question.")
 
@@ -231,13 +235,6 @@ def main() -> None:
             record, theme, counters[(theme["id"], difficulty_label)], reviewed_at
         )
         grouped[(theme["id"], filename_key)].append(question)
-
-    expected = {"Facile": 20, "Moyen": 14, "Difficile": 6}
-    for label, (_, theme) in by_label.items():
-        for difficulty_label, expected_count in expected.items():
-            actual = counters[(theme["id"], difficulty_label)]
-            if actual != expected_count:
-                raise ValueError(f"{label} · {difficulty_label}: {actual} lignes, {expected_count} attendues")
 
     if not args.write:
         print(f"Import vérifié : {len(records)} questions, {len(by_label)} thèmes. Ajoutez --write pour écrire.")

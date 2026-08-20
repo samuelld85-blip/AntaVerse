@@ -4,8 +4,13 @@
     "slug": "xlsx-sport-easy-01",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 métiers liés au sport professionnel.",
     "shortTitle": "métiers liés au sport professionnel",
     "difficultyLevel": 1,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c7e2b4e40571e358f2cefcc522fe169498c6466a8c0d019e54f5e8d055dca9dc",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-sport-easy-02",
     "slug": "xlsx-sport-easy-02",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 sports collectifs.",
     "shortTitle": "sports collectifs",
     "difficultyLevel": 1,
@@ -300,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "628f7964818a2b23e908749ea4e05c0bf15959fb44b746c69c34301006d568d4",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-sport-easy-03",
     "slug": "xlsx-sport-easy-03",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 sports présents aux Jeux olympiques.",
-    "shortTitle": "sports présents aux Jeux olympiques",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-sport-easy-03-answer-1",
-        "display": "athlétisme",
-        "normalized": "athletisme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-2",
-        "display": "natation",
-        "normalized": "natation",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-3",
-        "display": "judo",
-        "normalized": "judo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-4",
-        "display": "gymnastique",
-        "normalized": "gymnastique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-5",
-        "display": "escrime",
-        "normalized": "escrime",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-6",
-        "display": "aviron",
-        "normalized": "aviron",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-7",
-        "display": "cyclisme",
-        "normalized": "cyclisme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-8",
-        "display": "volleyball",
-        "normalized": "volleyball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-03-answer-9",
-        "display": "tir à l’arc",
-        "normalized": "tir a l arc",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "sport:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-sport-easy-03-bomb",
-      "display": "Formule 1",
-      "normalized": "formule 1",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "80534fbad008362b9fc07229eb0dd94367741abfbbb49c28732b92eb2a7c9dcd",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-sport-easy-04",
-    "slug": "xlsx-sport-easy-04",
-    "language": "fr",
-    "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets utilisés pour faire du sport.",
     "shortTitle": "objets utilisés pour faire du sport",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-04-answer-1",
+        "id": "xlsx-sport-easy-03-answer-1",
         "display": "ballon",
         "normalized": "ballon",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-2",
+        "id": "xlsx-sport-easy-03-answer-2",
         "display": "raquette",
         "normalized": "raquette",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-3",
+        "id": "xlsx-sport-easy-03-answer-3",
         "display": "chronomètre",
         "normalized": "chronometre",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-4",
+        "id": "xlsx-sport-easy-03-answer-4",
         "display": "chaussures",
         "normalized": "chaussures",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-5",
+        "id": "xlsx-sport-easy-03-answer-5",
         "display": "maillot",
         "normalized": "maillot",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-6",
+        "id": "xlsx-sport-easy-03-answer-6",
         "display": "casque",
         "normalized": "casque",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-7",
+        "id": "xlsx-sport-easy-03-answer-7",
         "display": "gants",
         "normalized": "gants",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-8",
+        "id": "xlsx-sport-easy-03-answer-8",
         "display": "haltère",
         "normalized": "haltere",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-04-answer-9",
+        "id": "xlsx-sport-easy-03-answer-9",
         "display": "tapis",
         "normalized": "tapis",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-04-bomb",
+      "id": "xlsx-sport-easy-03-bomb",
       "display": "Casque audio",
       "normalized": "casque audio",
       "aliases": [],
@@ -608,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f83f7ea4f42233d2bcd55739c869501b305bf4d91287b44795dc167e8c4e85f0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-05",
-    "slug": "xlsx-sport-easy-05",
+    "id": "xlsx-sport-easy-04",
+    "slug": "xlsx-sport-easy-04",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 sports que l’on peut pratiquer à la plage.",
     "shortTitle": "sports que l’on peut pratiquer à la plage",
     "difficultyLevel": 1,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-05-answer-1",
+        "id": "xlsx-sport-easy-04-answer-1",
         "display": "volley",
         "normalized": "volley",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-2",
+        "id": "xlsx-sport-easy-04-answer-2",
         "display": "surf",
         "normalized": "surf",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-3",
+        "id": "xlsx-sport-easy-04-answer-3",
         "display": "natation",
         "normalized": "natation",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-4",
+        "id": "xlsx-sport-easy-04-answer-4",
         "display": "beach soccer",
         "normalized": "beach soccer",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-5",
+        "id": "xlsx-sport-easy-04-answer-5",
         "display": "kitesurf",
         "normalized": "kitesurf",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-6",
+        "id": "xlsx-sport-easy-04-answer-6",
         "display": "planche à voile",
         "normalized": "planche a voile",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-7",
+        "id": "xlsx-sport-easy-04-answer-7",
         "display": "paddle",
         "normalized": "paddle",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-8",
+        "id": "xlsx-sport-easy-04-answer-8",
         "display": "beach tennis",
         "normalized": "beach tennis",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-05-answer-9",
+        "id": "xlsx-sport-easy-04-answer-9",
         "display": "plongée",
         "normalized": "plongee",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-05-bomb",
+      "id": "xlsx-sport-easy-04-bomb",
       "display": "Ski",
       "normalized": "ski",
       "aliases": [],
@@ -762,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "88f51f585b009029d140fc213e1e96a5e1c87477d3a6389067416adb824f704d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-06",
-    "slug": "xlsx-sport-easy-06",
+    "id": "xlsx-sport-easy-05",
+    "slug": "xlsx-sport-easy-05",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de faire du sport.",
     "shortTitle": "raisons de faire du sport",
     "difficultyLevel": 1,
@@ -791,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-06-answer-1",
+        "id": "xlsx-sport-easy-05-answer-1",
         "display": "santé",
         "normalized": "sante",
         "aliases": [],
@@ -803,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-2",
+        "id": "xlsx-sport-easy-05-answer-2",
         "display": "plaisir",
         "normalized": "plaisir",
         "aliases": [],
@@ -815,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-3",
+        "id": "xlsx-sport-easy-05-answer-3",
         "display": "compétition",
         "normalized": "competition",
         "aliases": [],
@@ -827,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-4",
+        "id": "xlsx-sport-easy-05-answer-4",
         "display": "se détendre",
         "normalized": "se detendre",
         "aliases": [],
@@ -839,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-5",
+        "id": "xlsx-sport-easy-05-answer-5",
         "display": "perdre du poids",
         "normalized": "perdre du poids",
         "aliases": [],
@@ -851,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-6",
+        "id": "xlsx-sport-easy-05-answer-6",
         "display": "voir des amis",
         "normalized": "voir des amis",
         "aliases": [],
@@ -863,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-7",
+        "id": "xlsx-sport-easy-05-answer-7",
         "display": "progresser",
         "normalized": "progresser",
         "aliases": [],
@@ -875,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-8",
+        "id": "xlsx-sport-easy-05-answer-8",
         "display": "prendre l’air",
         "normalized": "prendre l air",
         "aliases": [],
@@ -887,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-06-answer-9",
+        "id": "xlsx-sport-easy-05-answer-9",
         "display": "dormir mieux",
         "normalized": "dormir mieux",
         "aliases": [],
@@ -900,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-06-bomb",
+      "id": "xlsx-sport-easy-05-bomb",
       "display": "Regarder la télévision",
       "normalized": "regarder la television",
       "aliases": [],
@@ -916,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7f308d9a34968685e79b7775337755ad509cdec8da8ced1d84afeec02c4ff2e0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-07",
-    "slug": "xlsx-sport-easy-07",
+    "id": "xlsx-sport-easy-06",
+    "slug": "xlsx-sport-easy-06",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 sportives et sportifs mondialement connus.",
     "shortTitle": "sportives et sportifs mondialement connus",
     "difficultyLevel": 1,
@@ -945,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-07-answer-1",
+        "id": "xlsx-sport-easy-06-answer-1",
         "display": "Serena Williams",
         "normalized": "serena williams",
         "aliases": [],
@@ -957,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-2",
+        "id": "xlsx-sport-easy-06-answer-2",
         "display": "Usain Bolt",
         "normalized": "usain bolt",
         "aliases": [],
@@ -969,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-3",
+        "id": "xlsx-sport-easy-06-answer-3",
         "display": "Lionel Messi",
         "normalized": "lionel messi",
         "aliases": [],
@@ -981,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-4",
+        "id": "xlsx-sport-easy-06-answer-4",
         "display": "Kylian Mbappé",
         "normalized": "kylian mbappe",
         "aliases": [],
@@ -993,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-5",
+        "id": "xlsx-sport-easy-06-answer-5",
         "display": "Cristiano Ronaldo",
         "normalized": "cristiano ronaldo",
         "aliases": [],
@@ -1005,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-6",
+        "id": "xlsx-sport-easy-06-answer-6",
         "display": "LeBron James",
         "normalized": "lebron james",
         "aliases": [],
@@ -1017,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-7",
+        "id": "xlsx-sport-easy-06-answer-7",
         "display": "Simone Biles",
         "normalized": "simone biles",
         "aliases": [],
@@ -1029,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-8",
+        "id": "xlsx-sport-easy-06-answer-8",
         "display": "Roger Federer",
         "normalized": "roger federer",
         "aliases": [],
@@ -1041,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-07-answer-9",
+        "id": "xlsx-sport-easy-06-answer-9",
         "display": "Teddy Riner",
         "normalized": "teddy riner",
         "aliases": [],
@@ -1054,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-07-bomb",
+      "id": "xlsx-sport-easy-06-bomb",
       "display": "Entraîneur",
       "normalized": "entraineur",
       "aliases": [],
@@ -1070,328 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0511616925dbb9152db8fc11df659fe5ea314694c63c82c6a3079c99e4e4db68",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-08",
-    "slug": "xlsx-sport-easy-08",
+    "id": "xlsx-sport-easy-07",
+    "slug": "xlsx-sport-easy-07",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 sports collectifs qui se jouent avec un ballon ou une balle.",
-    "shortTitle": "sports collectifs qui se jouent avec un ballo…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-sport-easy-08-answer-1",
-        "display": "Football",
-        "normalized": "football",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-2",
-        "display": "Basketball",
-        "normalized": "basketball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-3",
-        "display": "Handball",
-        "normalized": "handball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-4",
-        "display": "Volleyball",
-        "normalized": "volleyball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-5",
-        "display": "Rugby",
-        "normalized": "rugby",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-6",
-        "display": "Baseball",
-        "normalized": "baseball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-7",
-        "display": "Hockey sur gazon",
-        "normalized": "hockey sur gazon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-8",
-        "display": "Water-polo",
-        "normalized": "water polo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-08-answer-9",
-        "display": "Cricket",
-        "normalized": "cricket",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "sport:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-sport-easy-08-bomb",
-      "display": "Tennis",
-      "normalized": "tennis",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "e12c215cce5a8e1b69e4d8057c23f4f9a0454cebe84c64dd4a177193b3dacb83",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-sport-easy-09",
-    "slug": "xlsx-sport-easy-09",
-    "language": "fr",
-    "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 sports dans lesquels deux équipes s’affrontent directement.",
-    "shortTitle": "sports dans lesquels deux équipes s’affronten…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-sport-easy-09-answer-1",
-        "display": "Football",
-        "normalized": "football",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-2",
-        "display": "Basket-ball",
-        "normalized": "basket ball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-3",
-        "display": "Rugby",
-        "normalized": "rugby",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-4",
-        "display": "Handball",
-        "normalized": "handball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-5",
-        "display": "Volley-ball",
-        "normalized": "volley ball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-6",
-        "display": "Hockey sur glace",
-        "normalized": "hockey sur glace",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-7",
-        "display": "Baseball",
-        "normalized": "baseball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-8",
-        "display": "Water-polo",
-        "normalized": "water polo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-09-answer-9",
-        "display": "Cricket",
-        "normalized": "cricket",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-sport-easy-09-bomb",
-      "display": "Natation",
-      "normalized": "natation",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "156734d2c0406bc735dabeae83e3c03148806be0eb5904d9f6e0aea0e4c8be8a",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-sport-easy-10",
-    "slug": "xlsx-sport-easy-10",
-    "language": "fr",
-    "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 sports individuels.",
     "shortTitle": "sports individuels",
     "difficultyLevel": 1,
@@ -1407,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-10-answer-1",
+        "id": "xlsx-sport-easy-07-answer-1",
         "display": "Tennis",
         "normalized": "tennis",
         "aliases": [],
@@ -1419,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-2",
+        "id": "xlsx-sport-easy-07-answer-2",
         "display": "Judo",
         "normalized": "judo",
         "aliases": [],
@@ -1431,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-3",
+        "id": "xlsx-sport-easy-07-answer-3",
         "display": "Natation",
         "normalized": "natation",
         "aliases": [],
@@ -1443,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-4",
+        "id": "xlsx-sport-easy-07-answer-4",
         "display": "Athlétisme",
         "normalized": "athletisme",
         "aliases": [],
@@ -1455,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-5",
+        "id": "xlsx-sport-easy-07-answer-5",
         "display": "Gymnastique",
         "normalized": "gymnastique",
         "aliases": [],
@@ -1467,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-6",
+        "id": "xlsx-sport-easy-07-answer-6",
         "display": "Boxe",
         "normalized": "boxe",
         "aliases": [],
@@ -1479,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-7",
+        "id": "xlsx-sport-easy-07-answer-7",
         "display": "Golf",
         "normalized": "golf",
         "aliases": [],
@@ -1491,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-8",
+        "id": "xlsx-sport-easy-07-answer-8",
         "display": "Escrime",
         "normalized": "escrime",
         "aliases": [],
@@ -1503,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-10-answer-9",
+        "id": "xlsx-sport-easy-07-answer-9",
         "display": "Ski",
         "normalized": "ski",
         "aliases": [],
@@ -1516,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-10-bomb",
+      "id": "xlsx-sport-easy-07-bomb",
       "display": "Football",
       "normalized": "football",
       "aliases": [],
@@ -1532,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "146e4b5820fa23898b6fa5cad1d0080b6cd7b4cb5910ea64578c3cd544bb3094",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-11",
-    "slug": "xlsx-sport-easy-11",
+    "id": "xlsx-sport-easy-08",
+    "slug": "xlsx-sport-easy-08",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 sportifs français connus.",
     "shortTitle": "sportifs français connus",
     "difficultyLevel": 1,
@@ -1561,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-11-answer-1",
+        "id": "xlsx-sport-easy-08-answer-1",
         "display": "Kylian Mbappé",
         "normalized": "kylian mbappe",
         "aliases": [],
@@ -1573,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-2",
+        "id": "xlsx-sport-easy-08-answer-2",
         "display": "Zinédine Zidane",
         "normalized": "zinedine zidane",
         "aliases": [],
@@ -1585,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-3",
+        "id": "xlsx-sport-easy-08-answer-3",
         "display": "Teddy Riner",
         "normalized": "teddy riner",
         "aliases": [],
@@ -1597,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-4",
+        "id": "xlsx-sport-easy-08-answer-4",
         "display": "Léon Marchand",
         "normalized": "leon marchand",
         "aliases": [],
@@ -1609,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-5",
+        "id": "xlsx-sport-easy-08-answer-5",
         "display": "Antoine Dupont",
         "normalized": "antoine dupont",
         "aliases": [],
@@ -1621,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-6",
+        "id": "xlsx-sport-easy-08-answer-6",
         "display": "Tony Parker",
         "normalized": "tony parker",
         "aliases": [],
@@ -1633,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-7",
+        "id": "xlsx-sport-easy-08-answer-7",
         "display": "Clarisse Agbégnénou",
         "normalized": "clarisse agbegnenou",
         "aliases": [],
@@ -1645,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-8",
+        "id": "xlsx-sport-easy-08-answer-8",
         "display": "Renaud Lavillenie",
         "normalized": "renaud lavillenie",
         "aliases": [],
@@ -1657,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-11-answer-9",
+        "id": "xlsx-sport-easy-08-answer-9",
         "display": "Martin Fourcade",
         "normalized": "martin fourcade",
         "aliases": [],
@@ -1670,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-11-bomb",
+      "id": "xlsx-sport-easy-08-bomb",
       "display": "Omar Sy",
       "normalized": "omar sy",
       "aliases": [],
@@ -1686,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "9d5e92b184df73e8124cb3ea45f3f0b78b7f42d897e44b8957361a8bbfbad5f2",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-12",
-    "slug": "xlsx-sport-easy-12",
+    "id": "xlsx-sport-easy-09",
+    "slug": "xlsx-sport-easy-09",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 pays très connus pour leur football.",
     "shortTitle": "pays très connus pour leur football",
     "difficultyLevel": 1,
@@ -1715,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-12-answer-1",
+        "id": "xlsx-sport-easy-09-answer-1",
         "display": "Brésil",
         "normalized": "bresil",
         "aliases": [],
@@ -1727,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-2",
+        "id": "xlsx-sport-easy-09-answer-2",
         "display": "Argentine",
         "normalized": "argentine",
         "aliases": [],
@@ -1739,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-3",
+        "id": "xlsx-sport-easy-09-answer-3",
         "display": "France",
         "normalized": "france",
         "aliases": [],
@@ -1751,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-4",
+        "id": "xlsx-sport-easy-09-answer-4",
         "display": "Allemagne",
         "normalized": "allemagne",
         "aliases": [],
@@ -1763,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-5",
+        "id": "xlsx-sport-easy-09-answer-5",
         "display": "Italie",
         "normalized": "italie",
         "aliases": [],
@@ -1775,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-6",
+        "id": "xlsx-sport-easy-09-answer-6",
         "display": "Espagne",
         "normalized": "espagne",
         "aliases": [],
@@ -1787,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-7",
+        "id": "xlsx-sport-easy-09-answer-7",
         "display": "Angleterre",
         "normalized": "angleterre",
         "aliases": [],
@@ -1799,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-8",
+        "id": "xlsx-sport-easy-09-answer-8",
         "display": "Portugal",
         "normalized": "portugal",
         "aliases": [],
@@ -1811,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-12-answer-9",
+        "id": "xlsx-sport-easy-09-answer-9",
         "display": "Pays-Bas",
         "normalized": "pays bas",
         "aliases": [],
@@ -1824,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-12-bomb",
+      "id": "xlsx-sport-easy-09-bomb",
       "display": "Népal",
       "normalized": "nepal",
       "aliases": [],
@@ -1840,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a60ee45b9707478235f0e251c8053d2f0355445732604dc4417d96f78533ef44",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-13",
-    "slug": "xlsx-sport-easy-13",
+    "id": "xlsx-sport-easy-10",
+    "slug": "xlsx-sport-easy-10",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 disciplines des Jeux olympiques d’été.",
     "shortTitle": "disciplines des Jeux olympiques d’été",
     "difficultyLevel": 1,
@@ -1869,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-13-answer-1",
+        "id": "xlsx-sport-easy-10-answer-1",
         "display": "Athlétisme",
         "normalized": "athletisme",
         "aliases": [],
@@ -1881,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-2",
+        "id": "xlsx-sport-easy-10-answer-2",
         "display": "Natation",
         "normalized": "natation",
         "aliases": [],
@@ -1893,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-3",
+        "id": "xlsx-sport-easy-10-answer-3",
         "display": "Gymnastique",
         "normalized": "gymnastique",
         "aliases": [],
@@ -1905,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-4",
+        "id": "xlsx-sport-easy-10-answer-4",
         "display": "Judo",
         "normalized": "judo",
         "aliases": [],
@@ -1917,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-5",
+        "id": "xlsx-sport-easy-10-answer-5",
         "display": "Escrime",
         "normalized": "escrime",
         "aliases": [],
@@ -1929,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-6",
+        "id": "xlsx-sport-easy-10-answer-6",
         "display": "Basket-ball",
         "normalized": "basket ball",
         "aliases": [],
@@ -1941,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-7",
+        "id": "xlsx-sport-easy-10-answer-7",
         "display": "Handball",
         "normalized": "handball",
         "aliases": [],
@@ -1953,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-8",
+        "id": "xlsx-sport-easy-10-answer-8",
         "display": "Volley-ball",
         "normalized": "volley ball",
         "aliases": [],
@@ -1965,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-13-answer-9",
+        "id": "xlsx-sport-easy-10-answer-9",
         "display": "Cyclisme",
         "normalized": "cyclisme",
         "aliases": [],
@@ -1978,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-13-bomb",
+      "id": "xlsx-sport-easy-10-bomb",
       "display": "Ski alpin",
       "normalized": "ski alpin",
       "aliases": [],
@@ -1994,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4cf1e3e8dca6fb4bf52eefad5d53807236121d28e19867aae4b6034ac985eea8",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-14",
-    "slug": "xlsx-sport-easy-14",
+    "id": "xlsx-sport-easy-11",
+    "slug": "xlsx-sport-easy-11",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 disciplines des Jeux olympiques d’hiver.",
     "shortTitle": "disciplines des Jeux olympiques d’hiver",
     "difficultyLevel": 1,
@@ -2023,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-14-answer-1",
+        "id": "xlsx-sport-easy-11-answer-1",
         "display": "Ski alpin",
         "normalized": "ski alpin",
         "aliases": [],
@@ -2035,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-2",
+        "id": "xlsx-sport-easy-11-answer-2",
         "display": "Biathlon",
         "normalized": "biathlon",
         "aliases": [],
@@ -2047,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-3",
+        "id": "xlsx-sport-easy-11-answer-3",
         "display": "Patinage artistique",
         "normalized": "patinage artistique",
         "aliases": [],
@@ -2059,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-4",
+        "id": "xlsx-sport-easy-11-answer-4",
         "display": "Hockey sur glace",
         "normalized": "hockey sur glace",
         "aliases": [],
@@ -2071,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-5",
+        "id": "xlsx-sport-easy-11-answer-5",
         "display": "Bobsleigh",
         "normalized": "bobsleigh",
         "aliases": [],
@@ -2083,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-6",
+        "id": "xlsx-sport-easy-11-answer-6",
         "display": "Saut à ski",
         "normalized": "saut a ski",
         "aliases": [],
@@ -2095,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-7",
+        "id": "xlsx-sport-easy-11-answer-7",
         "display": "Curling",
         "normalized": "curling",
         "aliases": [],
@@ -2107,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-8",
+        "id": "xlsx-sport-easy-11-answer-8",
         "display": "Snowboard",
         "normalized": "snowboard",
         "aliases": [],
@@ -2119,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-14-answer-9",
+        "id": "xlsx-sport-easy-11-answer-9",
         "display": "Ski de fond",
         "normalized": "ski de fond",
         "aliases": [],
@@ -2132,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-14-bomb",
+      "id": "xlsx-sport-easy-11-bomb",
       "display": "Beach-volley",
       "normalized": "beach volley",
       "aliases": [],
@@ -2148,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f5b1a8d43a01103a7b6db905bf11baebe65b9c5aa2ff1252aa78df1adfc53cec",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-15",
-    "slug": "xlsx-sport-easy-15",
+    "id": "xlsx-sport-easy-12",
+    "slug": "xlsx-sport-easy-12",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 postes ou rôles au football.",
     "shortTitle": "postes ou rôles au football",
     "difficultyLevel": 1,
@@ -2177,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-15-answer-1",
+        "id": "xlsx-sport-easy-12-answer-1",
         "display": "Gardien",
         "normalized": "gardien",
         "aliases": [],
@@ -2189,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-2",
+        "id": "xlsx-sport-easy-12-answer-2",
         "display": "Défenseur central",
         "normalized": "defenseur central",
         "aliases": [],
@@ -2201,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-3",
+        "id": "xlsx-sport-easy-12-answer-3",
         "display": "Latéral",
         "normalized": "lateral",
         "aliases": [],
@@ -2213,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-4",
+        "id": "xlsx-sport-easy-12-answer-4",
         "display": "Milieu défensif",
         "normalized": "milieu defensif",
         "aliases": [],
@@ -2225,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-5",
+        "id": "xlsx-sport-easy-12-answer-5",
         "display": "Milieu offensif",
         "normalized": "milieu offensif",
         "aliases": [],
@@ -2237,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-6",
+        "id": "xlsx-sport-easy-12-answer-6",
         "display": "Ailier",
         "normalized": "ailier",
         "aliases": [],
@@ -2249,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-7",
+        "id": "xlsx-sport-easy-12-answer-7",
         "display": "Avant-centre",
         "normalized": "avant centre",
         "aliases": [],
@@ -2261,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-8",
+        "id": "xlsx-sport-easy-12-answer-8",
         "display": "Capitaine",
         "normalized": "capitaine",
         "aliases": [],
@@ -2273,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-15-answer-9",
+        "id": "xlsx-sport-easy-12-answer-9",
         "display": "Entraîneur",
         "normalized": "entraineur",
         "aliases": [],
@@ -2286,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-15-bomb",
+      "id": "xlsx-sport-easy-12-bomb",
       "display": "Pivot de basket",
       "normalized": "pivot de basket",
       "aliases": [],
@@ -2302,174 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8d11af5ce2f7c41f8135af91268aab0486aac261065bead6af3e7b7040a3cef1",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-16",
-    "slug": "xlsx-sport-easy-16",
+    "id": "xlsx-sport-easy-13",
+    "slug": "xlsx-sport-easy-13",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 équipements utilisés dans différents sports.",
-    "shortTitle": "équipements utilisés dans différents sports",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-sport-easy-16-answer-1",
-        "display": "Ballon",
-        "normalized": "ballon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-2",
-        "display": "Raquette",
-        "normalized": "raquette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-3",
-        "display": "Casque",
-        "normalized": "casque",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-4",
-        "display": "Gants",
-        "normalized": "gants",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-5",
-        "display": "Crosse",
-        "normalized": "crosse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-6",
-        "display": "Filet",
-        "normalized": "filet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-7",
-        "display": "Skis",
-        "normalized": "skis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-8",
-        "display": "Vélo",
-        "normalized": "velo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-easy-16-answer-9",
-        "display": "Kimono",
-        "normalized": "kimono",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "sport:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-sport-easy-16-bomb",
-      "display": "Fourchette",
-      "normalized": "fourchette",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3fc0f6e0283c4fced3e9c7f47d2d599b12b4938f2e5211056c95aa18506cd409",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-sport-easy-17",
-    "slug": "xlsx-sport-easy-17",
-    "language": "fr",
-    "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 grands tournois ou compétitions sportives.",
     "shortTitle": "grands tournois ou compétitions sportives",
     "difficultyLevel": 1,
@@ -2485,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-17-answer-1",
+        "id": "xlsx-sport-easy-13-answer-1",
         "display": "Coupe du monde de football",
         "normalized": "coupe du monde de football",
         "aliases": [],
@@ -2497,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-2",
+        "id": "xlsx-sport-easy-13-answer-2",
         "display": "Jeux olympiques",
         "normalized": "jeux olympiques",
         "aliases": [],
@@ -2509,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-3",
+        "id": "xlsx-sport-easy-13-answer-3",
         "display": "Tour de France",
         "normalized": "tour de france",
         "aliases": [],
@@ -2521,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-4",
+        "id": "xlsx-sport-easy-13-answer-4",
         "display": "Roland-Garros",
         "normalized": "roland garros",
         "aliases": [],
@@ -2533,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-5",
+        "id": "xlsx-sport-easy-13-answer-5",
         "display": "Wimbledon",
         "normalized": "wimbledon",
         "aliases": [],
@@ -2545,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-6",
+        "id": "xlsx-sport-easy-13-answer-6",
         "display": "Super Bowl",
         "normalized": "super bowl",
         "aliases": [],
@@ -2557,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-7",
+        "id": "xlsx-sport-easy-13-answer-7",
         "display": "Ligue des champions",
         "normalized": "ligue des champions",
         "aliases": [],
@@ -2569,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-8",
+        "id": "xlsx-sport-easy-13-answer-8",
         "display": "Six Nations",
         "normalized": "six nations",
         "aliases": [],
@@ -2581,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-17-answer-9",
+        "id": "xlsx-sport-easy-13-answer-9",
         "display": "Coupe du monde de rugby",
         "normalized": "coupe du monde de rugby",
         "aliases": [],
@@ -2594,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-17-bomb",
+      "id": "xlsx-sport-easy-13-bomb",
       "display": "Festival de Cannes",
       "normalized": "festival de cannes",
       "aliases": [],
@@ -2610,20 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7aec949ed2360301f9aa31cf1676a3a2f203dbcade2d714a2aa2669a0b99c25d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-18",
-    "slug": "xlsx-sport-easy-18",
+    "id": "xlsx-sport-easy-14",
+    "slug": "xlsx-sport-easy-14",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 disciplines où deux adversaires combattent directement.",
     "shortTitle": "disciplines où deux adversaires combattent di…",
     "difficultyLevel": 1,
@@ -2639,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-18-answer-1",
+        "id": "xlsx-sport-easy-14-answer-1",
         "display": "Boxe",
         "normalized": "boxe",
         "aliases": [],
@@ -2651,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-2",
+        "id": "xlsx-sport-easy-14-answer-2",
         "display": "Judo",
         "normalized": "judo",
         "aliases": [],
@@ -2663,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-3",
+        "id": "xlsx-sport-easy-14-answer-3",
         "display": "Karaté",
         "normalized": "karate",
         "aliases": [],
@@ -2675,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-4",
+        "id": "xlsx-sport-easy-14-answer-4",
         "display": "Taekwondo",
         "normalized": "taekwondo",
         "aliases": [],
@@ -2687,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-5",
+        "id": "xlsx-sport-easy-14-answer-5",
         "display": "MMA",
         "normalized": "mma",
         "aliases": [],
@@ -2699,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-6",
+        "id": "xlsx-sport-easy-14-answer-6",
         "display": "Lutte",
         "normalized": "lutte",
         "aliases": [],
@@ -2711,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-7",
+        "id": "xlsx-sport-easy-14-answer-7",
         "display": "Muay-thaï",
         "normalized": "muay thai",
         "aliases": [],
@@ -2723,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-8",
+        "id": "xlsx-sport-easy-14-answer-8",
         "display": "Kick-boxing",
         "normalized": "kick boxing",
         "aliases": [],
@@ -2735,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-18-answer-9",
+        "id": "xlsx-sport-easy-14-answer-9",
         "display": "Escrime",
         "normalized": "escrime",
         "aliases": [],
@@ -2748,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-18-bomb",
+      "id": "xlsx-sport-easy-14-bomb",
       "display": "Marathon",
       "normalized": "marathon",
       "aliases": [],
@@ -2764,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "75c18bb85d556c11d36d2f989e98855ee0906064a0741e1289d6a82cda110ccd",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-19",
-    "slug": "xlsx-sport-easy-19",
+    "id": "xlsx-sport-easy-15",
+    "slug": "xlsx-sport-easy-15",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 sports pratiqués avec une raquette ou une palette.",
     "shortTitle": "sports pratiqués avec une raquette ou une pal…",
     "difficultyLevel": 1,
@@ -2793,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-19-answer-1",
+        "id": "xlsx-sport-easy-15-answer-1",
         "display": "Tennis",
         "normalized": "tennis",
         "aliases": [],
@@ -2805,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-2",
+        "id": "xlsx-sport-easy-15-answer-2",
         "display": "Badminton",
         "normalized": "badminton",
         "aliases": [],
@@ -2817,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-3",
+        "id": "xlsx-sport-easy-15-answer-3",
         "display": "Tennis de table",
         "normalized": "tennis de table",
         "aliases": [],
@@ -2829,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-4",
+        "id": "xlsx-sport-easy-15-answer-4",
         "display": "Squash",
         "normalized": "squash",
         "aliases": [],
@@ -2841,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-5",
+        "id": "xlsx-sport-easy-15-answer-5",
         "display": "Padel",
         "normalized": "padel",
         "aliases": [],
@@ -2853,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-6",
+        "id": "xlsx-sport-easy-15-answer-6",
         "display": "Pickleball",
         "normalized": "pickleball",
         "aliases": [],
@@ -2865,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-7",
+        "id": "xlsx-sport-easy-15-answer-7",
         "display": "Beach tennis",
         "normalized": "beach tennis",
         "aliases": [],
@@ -2877,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-8",
+        "id": "xlsx-sport-easy-15-answer-8",
         "display": "Racquetball",
         "normalized": "racquetball",
         "aliases": [],
@@ -2889,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-19-answer-9",
+        "id": "xlsx-sport-easy-15-answer-9",
         "display": "Pelote basque",
         "normalized": "pelote basque",
         "aliases": [],
@@ -2902,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-19-bomb",
+      "id": "xlsx-sport-easy-15-bomb",
       "display": "Football",
       "normalized": "football",
       "aliases": [],
@@ -2918,20 +2377,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "08bae8d8f231a6a8dbd79bc364d13e07c481deb24f202028d225ef84772d5ca0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-easy-20",
-    "slug": "xlsx-sport-easy-20",
+    "id": "xlsx-sport-easy-16",
+    "slug": "xlsx-sport-easy-16",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 actions ou gestes qu’on peut voir au football.",
     "shortTitle": "actions ou gestes qu’on peut voir au football",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-easy-20-answer-1",
+        "id": "xlsx-sport-easy-16-answer-1",
         "display": "Passe",
         "normalized": "passe",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-2",
+        "id": "xlsx-sport-easy-16-answer-2",
         "display": "Tir",
         "normalized": "tir",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-3",
+        "id": "xlsx-sport-easy-16-answer-3",
         "display": "Dribble",
         "normalized": "dribble",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-4",
+        "id": "xlsx-sport-easy-16-answer-4",
         "display": "Tacle",
         "normalized": "tacle",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-5",
+        "id": "xlsx-sport-easy-16-answer-5",
         "display": "Centre",
         "normalized": "centre",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-6",
+        "id": "xlsx-sport-easy-16-answer-6",
         "display": "Corner",
         "normalized": "corner",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-7",
+        "id": "xlsx-sport-easy-16-answer-7",
         "display": "Penalty",
         "normalized": "penalty",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-8",
+        "id": "xlsx-sport-easy-16-answer-8",
         "display": "Coup franc",
         "normalized": "coup franc",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-easy-20-answer-9",
+        "id": "xlsx-sport-easy-16-answer-9",
         "display": "Tête",
         "normalized": "tete",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-easy-20-bomb",
+      "id": "xlsx-sport-easy-16-bomb",
       "display": "Service",
       "normalized": "service",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3dae21beaafb016aa2765c286d1800dcb83ad0f450f733055b5a043b15eee07f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

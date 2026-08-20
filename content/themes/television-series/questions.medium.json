@@ -4,8 +4,13 @@
     "slug": "xlsx-television-series-medium-01",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 séries adaptées d’un jeu vidéo.",
     "shortTitle": "séries adaptées d’un jeu vidéo",
     "difficultyLevel": 2,
@@ -146,328 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8e8ef9b3592a2714be2ef614aaeb34bd4d130b192f7c88ef52262fc42bc92a86",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-television-series-medium-02",
     "slug": "xlsx-television-series-medium-02",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 séries centrées sur le travail.",
-    "shortTitle": "séries centrées sur le travail",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-02-answer-1",
-        "display": "The Office",
-        "normalized": "the office",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-2",
-        "display": "Suits",
-        "normalized": "suits",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-3",
-        "display": "Mad Men",
-        "normalized": "mad men",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-4",
-        "display": "Severance",
-        "normalized": "severance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-5",
-        "display": "Superstore",
-        "normalized": "superstore",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-6",
-        "display": "Parks and Recreation",
-        "normalized": "parks and recreation",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-7",
-        "display": "Silicon Valley",
-        "normalized": "silicon valley",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-8",
-        "display": "Industry",
-        "normalized": "industry",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-02-answer-9",
-        "display": "The Bear",
-        "normalized": "the bear",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "television-series:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-02-bomb",
-      "display": "Lost",
-      "normalized": "lost",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "7b82b094f530adf34c3f26375807bf481f23be36c215593dad5dc34f0302c2eb",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-03",
-    "slug": "xlsx-television-series-medium-03",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 programmes où des candidats cuisinent.",
-    "shortTitle": "programmes où des candidats cuisinent",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-03-answer-1",
-        "display": "Top Chef",
-        "normalized": "top chef",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-2",
-        "display": "MasterChef",
-        "normalized": "masterchef",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-3",
-        "display": "Le Meilleur Pâtissier",
-        "normalized": "le meilleur patissier",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-4",
-        "display": "Hell’s Kitchen",
-        "normalized": "hell s kitchen",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-5",
-        "display": "Iron Chef",
-        "normalized": "iron chef",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-6",
-        "display": "Nailed It!",
-        "normalized": "nailed it",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-7",
-        "display": "Objectif Top Chef",
-        "normalized": "objectif top chef",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-8",
-        "display": "Chopped",
-        "normalized": "chopped",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-03-answer-9",
-        "display": "The Great British Bake Off",
-        "normalized": "the great british bake off",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "moyen"
     ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-03-bomb",
-      "display": "Koh-Lanta",
-      "normalized": "koh lanta",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0fff581b5d8cc8adf5bfe757e4f1b9beee371134ef4e724139c406b07eb962d2",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-04",
-    "slug": "xlsx-television-series-medium-04",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 séries françaises connues.",
     "shortTitle": "séries françaises connues",
     "difficultyLevel": 2,
@@ -483,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-television-series-medium-04-answer-1",
+        "id": "xlsx-television-series-medium-02-answer-1",
         "display": "Dix pour cent",
         "normalized": "dix pour cent",
         "aliases": [],
@@ -495,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-2",
+        "id": "xlsx-television-series-medium-02-answer-2",
         "display": "HPI",
         "normalized": "hpi",
         "aliases": [],
@@ -507,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-3",
+        "id": "xlsx-television-series-medium-02-answer-3",
         "display": "Kaamelott",
         "normalized": "kaamelott",
         "aliases": [],
@@ -519,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-4",
+        "id": "xlsx-television-series-medium-02-answer-4",
         "display": "Engrenages",
         "normalized": "engrenages",
         "aliases": [],
@@ -531,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-5",
+        "id": "xlsx-television-series-medium-02-answer-5",
         "display": "Le Bureau des légendes",
         "normalized": "le bureau des legendes",
         "aliases": [],
@@ -543,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-6",
+        "id": "xlsx-television-series-medium-02-answer-6",
         "display": "Family Business",
         "normalized": "family business",
         "aliases": [],
@@ -555,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-7",
+        "id": "xlsx-television-series-medium-02-answer-7",
         "display": "Les Revenants",
         "normalized": "les revenants",
         "aliases": [],
@@ -567,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-8",
+        "id": "xlsx-television-series-medium-02-answer-8",
         "display": "Validé",
         "normalized": "valide",
         "aliases": [],
@@ -579,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-04-answer-9",
+        "id": "xlsx-television-series-medium-02-answer-9",
         "display": "Baron noir",
         "normalized": "baron noir",
         "aliases": [],
@@ -592,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-television-series-medium-04-bomb",
+      "id": "xlsx-television-series-medium-02-bomb",
       "display": "Breaking Bad",
       "normalized": "breaking bad",
       "aliases": [],
@@ -608,328 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3b1f3907a865c85dd5bed85af9c25232e10462a3c10413d0ef520caca2e61688",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-television-series-medium-05",
-    "slug": "xlsx-television-series-medium-05",
+    "id": "xlsx-television-series-medium-03",
+    "slug": "xlsx-television-series-medium-03",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 séries situées dans un hôpital.",
-    "shortTitle": "séries situées dans un hôpital",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-05-answer-1",
-        "display": "Grey’s Anatomy",
-        "normalized": "grey s anatomy",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-2",
-        "display": "Dr House",
-        "normalized": "dr house",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-3",
-        "display": "Urgences",
-        "normalized": "urgences",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-4",
-        "display": "The Good Doctor",
-        "normalized": "the good doctor",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-5",
-        "display": "Scrubs",
-        "normalized": "scrubs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-6",
-        "display": "Chicago Med",
-        "normalized": "chicago med",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-7",
-        "display": "Nip/Tuck",
-        "normalized": "nip tuck",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-8",
-        "display": "New Amsterdam",
-        "normalized": "new amsterdam",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-05-answer-9",
-        "display": "The Knick",
-        "normalized": "the knick",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "television-series:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-05-bomb",
-      "display": "House of the Dragon",
-      "normalized": "house of the dragon",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d96acd5b6b6f83f2510d6008c288880cd65e11e8acfe94fad1b25445ed090d0d",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-06",
-    "slug": "xlsx-television-series-medium-06",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 séries policières connues.",
-    "shortTitle": "séries policières connues",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-06-answer-1",
-        "display": "Sherlock",
-        "normalized": "sherlock",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-2",
-        "display": "Mentalist",
-        "normalized": "mentalist",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-3",
-        "display": "NCIS",
-        "normalized": "ncis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-4",
-        "display": "True Detective",
-        "normalized": "true detective",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-5",
-        "display": "Broadchurch",
-        "normalized": "broadchurch",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-6",
-        "display": "Luther",
-        "normalized": "luther",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-7",
-        "display": "Engrenages",
-        "normalized": "engrenages",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-8",
-        "display": "The Wire",
-        "normalized": "the wire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-06-answer-9",
-        "display": "Esprits criminels",
-        "normalized": "esprits criminels",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "moyen"
     ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-06-bomb",
-      "display": "Grey’s Anatomy",
-      "normalized": "grey s anatomy",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "4137c5de565f611cae89ab0f01178cb048e4b6d51ec1d30335f88034d1408833",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-07",
-    "slug": "xlsx-television-series-medium-07",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Brooklyn Nine-Nine.",
     "shortTitle": "personnages de Brooklyn Nine-Nine",
     "difficultyLevel": 2,
@@ -945,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-television-series-medium-07-answer-1",
+        "id": "xlsx-television-series-medium-03-answer-1",
         "display": "Jake Peralta",
         "normalized": "jake peralta",
         "aliases": [],
@@ -957,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-2",
+        "id": "xlsx-television-series-medium-03-answer-2",
         "display": "Amy Santiago",
         "normalized": "amy santiago",
         "aliases": [],
@@ -969,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-3",
+        "id": "xlsx-television-series-medium-03-answer-3",
         "display": "Raymond Holt",
         "normalized": "raymond holt",
         "aliases": [],
@@ -981,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-4",
+        "id": "xlsx-television-series-medium-03-answer-4",
         "display": "Rosa Diaz",
         "normalized": "rosa diaz",
         "aliases": [],
@@ -993,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-5",
+        "id": "xlsx-television-series-medium-03-answer-5",
         "display": "Terry Jeffords",
         "normalized": "terry jeffords",
         "aliases": [],
@@ -1005,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-6",
+        "id": "xlsx-television-series-medium-03-answer-6",
         "display": "Charles Boyle",
         "normalized": "charles boyle",
         "aliases": [],
@@ -1017,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-7",
+        "id": "xlsx-television-series-medium-03-answer-7",
         "display": "Gina Linetti",
         "normalized": "gina linetti",
         "aliases": [],
@@ -1029,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-8",
+        "id": "xlsx-television-series-medium-03-answer-8",
         "display": "Hitchcock",
         "normalized": "hitchcock",
         "aliases": [],
@@ -1041,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-07-answer-9",
+        "id": "xlsx-television-series-medium-03-answer-9",
         "display": "Scully",
         "normalized": "scully",
         "aliases": [],
@@ -1054,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-television-series-medium-07-bomb",
+      "id": "xlsx-television-series-medium-03-bomb",
       "display": "Joey Tribbiani",
       "normalized": "joey tribbiani",
       "aliases": [],
@@ -1070,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b3d9256ebfe23cea2c30cc106f9d5ec509fe65abe62cfa41ee71db0b67f73a2a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-television-series-medium-08",
-    "slug": "xlsx-television-series-medium-08",
+    "id": "xlsx-television-series-medium-04",
+    "slug": "xlsx-television-series-medium-04",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 braqueurs de La Casa de Papel.",
     "shortTitle": "braqueurs de La Casa de Papel",
     "difficultyLevel": 2,
@@ -1099,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-television-series-medium-08-answer-1",
+        "id": "xlsx-television-series-medium-04-answer-1",
         "display": "Tokyo",
         "normalized": "tokyo",
         "aliases": [],
@@ -1111,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-2",
+        "id": "xlsx-television-series-medium-04-answer-2",
         "display": "Berlin",
         "normalized": "berlin",
         "aliases": [],
@@ -1123,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-3",
+        "id": "xlsx-television-series-medium-04-answer-3",
         "display": "Nairobi",
         "normalized": "nairobi",
         "aliases": [],
@@ -1135,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-4",
+        "id": "xlsx-television-series-medium-04-answer-4",
         "display": "Rio",
         "normalized": "rio",
         "aliases": [],
@@ -1147,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-5",
+        "id": "xlsx-television-series-medium-04-answer-5",
         "display": "Denver",
         "normalized": "denver",
         "aliases": [],
@@ -1159,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-6",
+        "id": "xlsx-television-series-medium-04-answer-6",
         "display": "Moscou",
         "normalized": "moscou",
         "aliases": [],
@@ -1171,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-7",
+        "id": "xlsx-television-series-medium-04-answer-7",
         "display": "Helsinki",
         "normalized": "helsinki",
         "aliases": [],
@@ -1183,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-8",
+        "id": "xlsx-television-series-medium-04-answer-8",
         "display": "Oslo",
         "normalized": "oslo",
         "aliases": [],
@@ -1195,9 +599,645 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-08-answer-9",
+        "id": "xlsx-television-series-medium-04-answer-9",
         "display": "Lisbonne",
         "normalized": "lisbonne",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-television-series-medium-04-bomb",
+      "display": "Walter White",
+      "normalized": "walter white",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "fd8ba33f04b473e834c5e46be73a7f906583c1d1d147b09b5f97eb816664ecb5",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-television-series-medium-05",
+    "slug": "xlsx-television-series-medium-05",
+    "language": "fr",
+    "themeId": "television-series",
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 personnages de Friends.",
+    "shortTitle": "personnages de Friends",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-television-series-medium-05-answer-1",
+        "display": "Rachel Green",
+        "normalized": "rachel green",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-2",
+        "display": "Ross Geller",
+        "normalized": "ross geller",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-3",
+        "display": "Monica Geller",
+        "normalized": "monica geller",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-4",
+        "display": "Chandler Bing",
+        "normalized": "chandler bing",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-5",
+        "display": "Joey Tribbiani",
+        "normalized": "joey tribbiani",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-6",
+        "display": "Phoebe Buffay",
+        "normalized": "phoebe buffay",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-7",
+        "display": "Gunther",
+        "normalized": "gunther",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-8",
+        "display": "Janice",
+        "normalized": "janice",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-05-answer-9",
+        "display": "Mike Hannigan",
+        "normalized": "mike hannigan",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-television-series-medium-05-bomb",
+      "display": "Sheldon Cooper",
+      "normalized": "sheldon cooper",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "29e727386bc8da339e8104dc87c12a3db1b483a7e3fe167ca35bc579e9fb5757",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-television-series-medium-06",
+    "slug": "xlsx-television-series-medium-06",
+    "language": "fr",
+    "themeId": "television-series",
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 personnages de Game of Thrones.",
+    "shortTitle": "personnages de Game of Thrones",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-television-series-medium-06-answer-1",
+        "display": "Jon Snow",
+        "normalized": "jon snow",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-2",
+        "display": "Daenerys Targaryen",
+        "normalized": "daenerys targaryen",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-3",
+        "display": "Tyrion Lannister",
+        "normalized": "tyrion lannister",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-4",
+        "display": "Arya Stark",
+        "normalized": "arya stark",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-5",
+        "display": "Sansa Stark",
+        "normalized": "sansa stark",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-6",
+        "display": "Cersei Lannister",
+        "normalized": "cersei lannister",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-7",
+        "display": "Jaime Lannister",
+        "normalized": "jaime lannister",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-8",
+        "display": "Bran Stark",
+        "normalized": "bran stark",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-06-answer-9",
+        "display": "Theon Greyjoy",
+        "normalized": "theon greyjoy",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-television-series-medium-06-bomb",
+      "display": "Darth Vader",
+      "normalized": "darth vader",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "ff378751fa0c36cfdfd1bc97ffd0794b80e4a56b900701a4e7dedfdcac49aae4",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-television-series-medium-07",
+    "slug": "xlsx-television-series-medium-07",
+    "language": "fr",
+    "themeId": "television-series",
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 personnages de Kaamelott.",
+    "shortTitle": "personnages de Kaamelott",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-television-series-medium-07-answer-1",
+        "display": "Arthur",
+        "normalized": "arthur",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-2",
+        "display": "Perceval",
+        "normalized": "perceval",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-3",
+        "display": "Karadoc",
+        "normalized": "karadoc",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-4",
+        "display": "Léodagan",
+        "normalized": "leodagan",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-5",
+        "display": "Guenièvre",
+        "normalized": "guenievre",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-6",
+        "display": "Lancelot",
+        "normalized": "lancelot",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-7",
+        "display": "Bohort",
+        "normalized": "bohort",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-8",
+        "display": "Merlin",
+        "normalized": "merlin",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-07-answer-9",
+        "display": "Dame Séli",
+        "normalized": "dame seli",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-television-series-medium-07-bomb",
+      "display": "Obélix",
+      "normalized": "obelix",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "889d03dbf3205c3dd654363c3839b9132b5a020c6938b693324ae331a35e2411",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-television-series-medium-08",
+    "slug": "xlsx-television-series-medium-08",
+    "language": "fr",
+    "themeId": "television-series",
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 personnages de The Walking Dead.",
+    "shortTitle": "personnages de The Walking Dead",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-television-series-medium-08-answer-1",
+        "display": "Rick Grimes",
+        "normalized": "rick grimes",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-2",
+        "display": "Daryl Dixon",
+        "normalized": "daryl dixon",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-3",
+        "display": "Michonne",
+        "normalized": "michonne",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-4",
+        "display": "Carol Peletier",
+        "normalized": "carol peletier",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-5",
+        "display": "Glenn Rhee",
+        "normalized": "glenn rhee",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-6",
+        "display": "Maggie Greene",
+        "normalized": "maggie greene",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-7",
+        "display": "Negan",
+        "normalized": "negan",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-8",
+        "display": "Carl Grimes",
+        "normalized": "carl grimes",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-television-series-medium-08-answer-9",
+        "display": "Hershel Greene",
+        "normalized": "hershel greene",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1224,636 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "fd8ba33f04b473e834c5e46be73a7f906583c1d1d147b09b5f97eb816664ecb5",
+    "answerSetFingerprint": "59fbf2f244eff091f3ac0062076a00c0a8406f26d7cdaef6fd2e1da941a5b2da",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-television-series-medium-09",
     "slug": "xlsx-television-series-medium-09",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnages de Friends.",
-    "shortTitle": "personnages de Friends",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-09-answer-1",
-        "display": "Rachel Green",
-        "normalized": "rachel green",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-2",
-        "display": "Ross Geller",
-        "normalized": "ross geller",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-3",
-        "display": "Monica Geller",
-        "normalized": "monica geller",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-4",
-        "display": "Chandler Bing",
-        "normalized": "chandler bing",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-5",
-        "display": "Joey Tribbiani",
-        "normalized": "joey tribbiani",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-6",
-        "display": "Phoebe Buffay",
-        "normalized": "phoebe buffay",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-7",
-        "display": "Gunther",
-        "normalized": "gunther",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-8",
-        "display": "Janice",
-        "normalized": "janice",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-09-answer-9",
-        "display": "Mike Hannigan",
-        "normalized": "mike hannigan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "television-series:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-09-bomb",
-      "display": "Sheldon Cooper",
-      "normalized": "sheldon cooper",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "29e727386bc8da339e8104dc87c12a3db1b483a7e3fe167ca35bc579e9fb5757",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-10",
-    "slug": "xlsx-television-series-medium-10",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnages de Game of Thrones.",
-    "shortTitle": "personnages de Game of Thrones",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-10-answer-1",
-        "display": "Jon Snow",
-        "normalized": "jon snow",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-2",
-        "display": "Daenerys Targaryen",
-        "normalized": "daenerys targaryen",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-3",
-        "display": "Tyrion Lannister",
-        "normalized": "tyrion lannister",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-4",
-        "display": "Arya Stark",
-        "normalized": "arya stark",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-5",
-        "display": "Sansa Stark",
-        "normalized": "sansa stark",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-6",
-        "display": "Cersei Lannister",
-        "normalized": "cersei lannister",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-7",
-        "display": "Jaime Lannister",
-        "normalized": "jaime lannister",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-8",
-        "display": "Bran Stark",
-        "normalized": "bran stark",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-10-answer-9",
-        "display": "Theon Greyjoy",
-        "normalized": "theon greyjoy",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "moyen"
     ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-10-bomb",
-      "display": "Darth Vader",
-      "normalized": "darth vader",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ff378751fa0c36cfdfd1bc97ffd0794b80e4a56b900701a4e7dedfdcac49aae4",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-11",
-    "slug": "xlsx-television-series-medium-11",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnages de Kaamelott.",
-    "shortTitle": "personnages de Kaamelott",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-11-answer-1",
-        "display": "Arthur",
-        "normalized": "arthur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-2",
-        "display": "Perceval",
-        "normalized": "perceval",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-3",
-        "display": "Karadoc",
-        "normalized": "karadoc",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-4",
-        "display": "Léodagan",
-        "normalized": "leodagan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-5",
-        "display": "Guenièvre",
-        "normalized": "guenievre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-6",
-        "display": "Lancelot",
-        "normalized": "lancelot",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-7",
-        "display": "Bohort",
-        "normalized": "bohort",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-8",
-        "display": "Merlin",
-        "normalized": "merlin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-11-answer-9",
-        "display": "Dame Séli",
-        "normalized": "dame seli",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-11-bomb",
-      "display": "Obélix",
-      "normalized": "obelix",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "889d03dbf3205c3dd654363c3839b9132b5a020c6938b693324ae331a35e2411",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-12",
-    "slug": "xlsx-television-series-medium-12",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnages de The Office US.",
-    "shortTitle": "personnages de The Office US",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-television-series-medium-12-answer-1",
-        "display": "Michael Scott",
-        "normalized": "michael scott",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-2",
-        "display": "Dwight Schrute",
-        "normalized": "dwight schrute",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-3",
-        "display": "Jim Halpert",
-        "normalized": "jim halpert",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-4",
-        "display": "Pam Beesly",
-        "normalized": "pam beesly",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-5",
-        "display": "Ryan Howard",
-        "normalized": "ryan howard",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-6",
-        "display": "Kelly Kapoor",
-        "normalized": "kelly kapoor",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-7",
-        "display": "Angela Martin",
-        "normalized": "angela martin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-8",
-        "display": "Kevin Malone",
-        "normalized": "kevin malone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-television-series-medium-12-answer-9",
-        "display": "Andy Bernard",
-        "normalized": "andy bernard",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-television-series-medium-12-bomb",
-      "display": "Barney Stinson",
-      "normalized": "barney stinson",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "2626c0957499857787186a92cddc18df8ed069e054a8f41d081e053d3782130b",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-television-series-medium-13",
-    "slug": "xlsx-television-series-medium-13",
-    "language": "fr",
-    "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 personnages de Sex Education.",
     "shortTitle": "personnages de Sex Education",
     "difficultyLevel": 2,
@@ -1869,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-television-series-medium-13-answer-1",
+        "id": "xlsx-television-series-medium-09-answer-1",
         "display": "Otis Milburn",
         "normalized": "otis milburn",
         "aliases": [],
@@ -1881,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-2",
+        "id": "xlsx-television-series-medium-09-answer-2",
         "display": "Maeve Wiley",
         "normalized": "maeve wiley",
         "aliases": [],
@@ -1893,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-3",
+        "id": "xlsx-television-series-medium-09-answer-3",
         "display": "Eric Effiong",
         "normalized": "eric effiong",
         "aliases": [],
@@ -1905,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-4",
+        "id": "xlsx-television-series-medium-09-answer-4",
         "display": "Jean Milburn",
         "normalized": "jean milburn",
         "aliases": [],
@@ -1917,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-5",
+        "id": "xlsx-television-series-medium-09-answer-5",
         "display": "Adam Groff",
         "normalized": "adam groff",
         "aliases": [],
@@ -1929,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-6",
+        "id": "xlsx-television-series-medium-09-answer-6",
         "display": "Aimee Gibbs",
         "normalized": "aimee gibbs",
         "aliases": [],
@@ -1941,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-7",
+        "id": "xlsx-television-series-medium-09-answer-7",
         "display": "Jackson Marchetti",
         "normalized": "jackson marchetti",
         "aliases": [],
@@ -1953,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-8",
+        "id": "xlsx-television-series-medium-09-answer-8",
         "display": "Ruby Matthews",
         "normalized": "ruby matthews",
         "aliases": [],
@@ -1965,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-13-answer-9",
+        "id": "xlsx-television-series-medium-09-answer-9",
         "display": "Isaac Goodwin",
         "normalized": "isaac goodwin",
         "aliases": [],
@@ -1978,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-television-series-medium-13-bomb",
+      "id": "xlsx-television-series-medium-09-bomb",
       "display": "Rue Bennett",
       "normalized": "rue bennett",
       "aliases": [],
@@ -1994,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "54ec8de0ea8641cb1185b7bc8d133a42f17c7b889416fdef7b62bbf768d8975b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-television-series-medium-14",
-    "slug": "xlsx-television-series-medium-14",
+    "id": "xlsx-television-series-medium-10",
+    "slug": "xlsx-television-series-medium-10",
     "language": "fr",
     "themeId": "television-series",
-    "subthemeIds": ["television-series:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "television-series:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 personnages de The Boys.",
     "shortTitle": "personnages de The Boys",
     "difficultyLevel": 2,
@@ -2023,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-television-series-medium-14-answer-1",
+        "id": "xlsx-television-series-medium-10-answer-1",
         "display": "Homelander",
         "normalized": "homelander",
         "aliases": [],
@@ -2035,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-2",
+        "id": "xlsx-television-series-medium-10-answer-2",
         "display": "Billy Butcher",
         "normalized": "billy butcher",
         "aliases": [],
@@ -2047,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-3",
+        "id": "xlsx-television-series-medium-10-answer-3",
         "display": "Hughie Campbell",
         "normalized": "hughie campbell",
         "aliases": [],
@@ -2059,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-4",
+        "id": "xlsx-television-series-medium-10-answer-4",
         "display": "Starlight",
         "normalized": "starlight",
         "aliases": [],
@@ -2071,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-5",
+        "id": "xlsx-television-series-medium-10-answer-5",
         "display": "Mother's Milk",
         "normalized": "mother s milk",
         "aliases": [],
@@ -2083,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-6",
+        "id": "xlsx-television-series-medium-10-answer-6",
         "display": "Frenchie",
         "normalized": "frenchie",
         "aliases": [],
@@ -2095,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-7",
+        "id": "xlsx-television-series-medium-10-answer-7",
         "display": "Kimiko",
         "normalized": "kimiko",
         "aliases": [],
@@ -2107,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-8",
+        "id": "xlsx-television-series-medium-10-answer-8",
         "display": "A-Train",
         "normalized": "a train",
         "aliases": [],
@@ -2119,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-television-series-medium-14-answer-9",
+        "id": "xlsx-television-series-medium-10-answer-9",
         "display": "The Deep",
         "normalized": "the deep",
         "aliases": [],
@@ -2132,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-television-series-medium-14-bomb",
+      "id": "xlsx-television-series-medium-10-bomb",
       "display": "Spider-Man",
       "normalized": "spider man",
       "aliases": [],
@@ -2148,11 +1582,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "72cebded1e1f974cc3757317af302eb96a0cca07871524bfad188f4762e5ead7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

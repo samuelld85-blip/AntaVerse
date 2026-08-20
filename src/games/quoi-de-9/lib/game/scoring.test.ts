@@ -27,15 +27,15 @@ describe("calculateTurnScore (Competition mode)", () => {
     });
   });
 
-  describe("Difficile (coefficient 2.0)", () => {
-    it("should calculate 200 points per correct answer", () => {
-      expect(calculateTurnScore(1, 3)).toBe(200);
-      expect(calculateTurnScore(5, 3)).toBe(1000);
-      expect(calculateTurnScore(9, 3)).toBe(1800);
+  describe("Difficile (coefficient 3.0)", () => {
+    it("should calculate 300 points per correct answer", () => {
+      expect(calculateTurnScore(1, 3)).toBe(300);
+      expect(calculateTurnScore(5, 3)).toBe(1500);
+      expect(calculateTurnScore(9, 3)).toBe(2700);
     });
 
-    it("should apply bomb penalty of 400", () => {
-      expect(calculateTurnScore(5, 3, true)).toBe(1000 - 400); // 600
+    it("should apply bomb penalty of 600", () => {
+      expect(calculateTurnScore(5, 3, true)).toBe(1500 - 600); // 900
     });
   });
 
@@ -43,7 +43,7 @@ describe("calculateTurnScore (Competition mode)", () => {
     it("should return correct penalties per difficulty", () => {
       expect(calculateBombPenalty(1)).toBe(200); // 2 * 100 * 1.0
       expect(calculateBombPenalty(2)).toBe(300); // 2 * 100 * 1.5
-      expect(calculateBombPenalty(3)).toBe(400); // 2 * 100 * 2.0
+      expect(calculateBombPenalty(3)).toBe(600); // 2 * 100 * 3.0
     });
   });
 

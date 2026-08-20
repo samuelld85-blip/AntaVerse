@@ -13,7 +13,6 @@ import {
   confirmChoice,
   confirmJokerTheme,
   confirmPhonePass,
-  confirmQuestionPreparation,
   continueFromScoreboard,
   continueFromThemeReveal,
   expireTurn,
@@ -22,13 +21,13 @@ import {
   getRemainingSeconds,
   imposeRandomTheme,
   recoverTimer,
-  reopenTurnForCorrection,
   replayGame,
   selectJokerTheme,
   skipOpponentThemeJoker,
   startTimer,
   toggleAnswer,
   toggleBomb,
+  toggleTurnResultAnswer,
   undoLastAnswer,
   activateOpponentThemeJoker,
   activateThemeChoiceJoker,
@@ -44,7 +43,6 @@ import {
   FinalScreen,
   GameHeader,
   JokerConfirmationScreen,
-  PreparationScreen,
   QuestionScreen,
   RoundSetupScreen,
   ScoreboardScreen,
@@ -265,16 +263,9 @@ export function GameClient() {
             onConfirm={() => transition((current) => confirmChoice(current, questions))}
           />
         ) : null}
-        {game.status === "question_preparation" ? (
-          <PreparationScreen
-            game={game}
-            onContinue={() => transition(confirmQuestionPreparation)}
-          />
-        ) : null}
         {(game.status === "question_ready" ||
           game.status === "question_active" ||
-          game.status === "turn_expired" ||
-          game.status === "answer_correction") &&
+          game.status === "turn_expired") &&
         currentQuestion &&
         currentTheme ? (
           <QuestionScreen
@@ -310,7 +301,9 @@ export function GameClient() {
         {game.status === "turn_results" ? (
           <TurnResultsScreen
             game={game}
-            onCorrect={() => transition(reopenTurnForCorrection)}
+            onToggleAnswer={(answerId) =>
+              transition((current) => toggleTurnResultAnswer(current, answerId))
+            }
             onContinue={() =>
               transition((current) => {
                 const next = advanceAfterResults(current);

@@ -1,4 +1,4 @@
-import { quizQuestionSchema, themeSchema, DIFFICULTY_LEVELS } from "./content-model.mjs";
+import { quizQuestionSchema, themeSchema } from "./content-model.mjs";
 import { findContentDuplicates } from "./content-duplicates.mjs";
 
 export function validateContentLibrary(library, { strictQuotas = true } = {}) {
@@ -63,17 +63,8 @@ export function validateContentLibrary(library, { strictQuotas = true } = {}) {
           `${theme.id}: 15 questions publiées requises, ${themeQuestions.length} trouvées`,
         );
       }
-      const required = { 1: 5, 2: 5, 3: 5 };
-      for (const level of DIFFICULTY_LEVELS) {
-        const count = themeQuestions.filter(
-          (question) => question.difficultyLevel === level,
-        ).length;
-        if (count < required[level]) {
-          errors.push(
-            `${theme.id}: niveau ${level}, minimum ${required[level]}, ${count} trouvé(s)`,
-          );
-        }
-      }
+      // La répartition par niveau suit la banque Excel source : seuls les
+      // volumes globaux sont contraints, pas le nombre de questions par niveau.
     }
   }
 

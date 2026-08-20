@@ -4,162 +4,13 @@
     "slug": "xlsx-sport-hard-01",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 joueurs ayant marqué en finale du Mondial depuis 1986.",
-    "shortTitle": "joueurs ayant marqué en finale du Mondial dep…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-sport-hard-01-answer-1",
-        "display": "José Luis Brown",
-        "normalized": "jose luis brown",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-2",
-        "display": "Jorge Valdano",
-        "normalized": "jorge valdano",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-3",
-        "display": "Karl-Heinz Rummenigge",
-        "normalized": "karl heinz rummenigge",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-4",
-        "display": "Rudi Völler",
-        "normalized": "rudi voller",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-5",
-        "display": "Jorge Burruchaga",
-        "normalized": "jorge burruchaga",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-6",
-        "display": "Andreas Brehme",
-        "normalized": "andreas brehme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-7",
-        "display": "Zinédine Zidane",
-        "normalized": "zinedine zidane",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-8",
-        "display": "Emmanuel Petit",
-        "normalized": "emmanuel petit",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-01-answer-9",
-        "display": "Ronaldo",
-        "normalized": "ronaldo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "sport:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-sport-hard-01-bomb",
-      "display": "Neymar",
-      "normalized": "neymar",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "8b23ec276d136f94719303c96306a0f342dd2cba2b4e367921832ee493912522",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-sport-hard-02",
-    "slug": "xlsx-sport-hard-02",
-    "language": "fr",
-    "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 sélections différentes à avoir atteint une finale de l’Euro masculin.",
     "shortTitle": "sélections différentes à avoir atteint une fi…",
     "difficultyLevel": 3,
@@ -175,7 +26,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-hard-02-answer-1",
+        "id": "xlsx-sport-hard-01-answer-1",
         "display": "Union soviétique",
         "normalized": "union sovietique",
         "aliases": [],
@@ -187,7 +38,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-2",
+        "id": "xlsx-sport-hard-01-answer-2",
         "display": "Yougoslavie",
         "normalized": "yougoslavie",
         "aliases": [],
@@ -199,7 +50,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-3",
+        "id": "xlsx-sport-hard-01-answer-3",
         "display": "Espagne",
         "normalized": "espagne",
         "aliases": [],
@@ -211,7 +62,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-4",
+        "id": "xlsx-sport-hard-01-answer-4",
         "display": "Italie",
         "normalized": "italie",
         "aliases": [],
@@ -223,7 +74,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-5",
+        "id": "xlsx-sport-hard-01-answer-5",
         "display": "Allemagne de l’Ouest",
         "normalized": "allemagne de l ouest",
         "aliases": [],
@@ -235,7 +86,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-6",
+        "id": "xlsx-sport-hard-01-answer-6",
         "display": "Tchécoslovaquie",
         "normalized": "tchecoslovaquie",
         "aliases": [],
@@ -247,7 +98,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-7",
+        "id": "xlsx-sport-hard-01-answer-7",
         "display": "Belgique",
         "normalized": "belgique",
         "aliases": [],
@@ -259,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-8",
+        "id": "xlsx-sport-hard-01-answer-8",
         "display": "France",
         "normalized": "france",
         "aliases": [],
@@ -271,7 +122,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-02-answer-9",
+        "id": "xlsx-sport-hard-01-answer-9",
         "display": "Pays-Bas",
         "normalized": "pays bas",
         "aliases": [],
@@ -284,7 +135,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-hard-02-bomb",
+      "id": "xlsx-sport-hard-01-bomb",
       "display": "Brésil",
       "normalized": "bresil",
       "aliases": [],
@@ -300,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "19511b5f57d424aeef8126e987ebf33ecb97258ca46a65deb08e571fdba01bb6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-hard-03",
-    "slug": "xlsx-sport-hard-03",
+    "id": "xlsx-sport-hard-02",
+    "slug": "xlsx-sport-hard-02",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 grands derbies ou classiques du football.",
     "shortTitle": "grands derbies ou classiques du football",
     "difficultyLevel": 3,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-hard-03-answer-1",
+        "id": "xlsx-sport-hard-02-answer-1",
         "display": "Real-Barça",
         "normalized": "real barca",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-2",
+        "id": "xlsx-sport-hard-02-answer-2",
         "display": "Milan-Inter",
         "normalized": "milan inter",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-3",
+        "id": "xlsx-sport-hard-02-answer-3",
         "display": "Liverpool-Manchester United",
         "normalized": "liverpool manchester united",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-4",
+        "id": "xlsx-sport-hard-02-answer-4",
         "display": "Celtic-Rangers",
         "normalized": "celtic rangers",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-5",
+        "id": "xlsx-sport-hard-02-answer-5",
         "display": "Boca Juniors-River Plate",
         "normalized": "boca juniors river plate",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-6",
+        "id": "xlsx-sport-hard-02-answer-6",
         "display": "Arsenal-Tottenham",
         "normalized": "arsenal tottenham",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-7",
+        "id": "xlsx-sport-hard-02-answer-7",
         "display": "PSG-Marseille",
         "normalized": "psg marseille",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-8",
+        "id": "xlsx-sport-hard-02-answer-8",
         "display": "Bayern-Dortmund",
         "normalized": "bayern dortmund",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-03-answer-9",
+        "id": "xlsx-sport-hard-02-answer-9",
         "display": "Fenerbahçe-Galatasaray",
         "normalized": "fenerbahce galatasaray",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-hard-03-bomb",
+      "id": "xlsx-sport-hard-02-bomb",
       "display": "France — Allemagne",
       "normalized": "france allemagne",
       "aliases": [],
@@ -454,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5d1720e1d5b2cc946bcab0b9657e1ec45c5ebb927a580097f679a169685cc80b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-hard-04",
-    "slug": "xlsx-sport-hard-04",
+    "id": "xlsx-sport-hard-03",
+    "slug": "xlsx-sport-hard-03",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 sports qui se jouent avec une raquette ou une palette.",
-    "shortTitle": "sports qui se jouent avec une raquette ou une…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-sport-hard-04-answer-1",
-        "display": "Tennis",
-        "normalized": "tennis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-2",
-        "display": "Badminton",
-        "normalized": "badminton",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-3",
-        "display": "Squash",
-        "normalized": "squash",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-4",
-        "display": "Padel",
-        "normalized": "padel",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-5",
-        "display": "Tennis de table",
-        "normalized": "tennis de table",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-6",
-        "display": "Racquetball",
-        "normalized": "racquetball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-7",
-        "display": "Pickleball",
-        "normalized": "pickleball",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-8",
-        "display": "Beach tennis",
-        "normalized": "beach tennis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-sport-hard-04-answer-9",
-        "display": "Jeu de paume",
-        "normalized": "jeu de paume",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "sport:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-sport-hard-04-bomb",
-      "display": "Golf",
-      "normalized": "golf",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0e87a3b12e3aaeabf54082d51d5ef79e2503264ce3b1cab0dfda68e13ebc9a57",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-sport-hard-05",
-    "slug": "xlsx-sport-hard-05",
-    "language": "fr",
-    "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 types de coups ou gestes techniques au tennis.",
     "shortTitle": "types de coups ou gestes techniques au tennis",
     "difficultyLevel": 3,
@@ -637,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-hard-05-answer-1",
+        "id": "xlsx-sport-hard-03-answer-1",
         "display": "Service",
         "normalized": "service",
         "aliases": [],
@@ -649,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-2",
+        "id": "xlsx-sport-hard-03-answer-2",
         "display": "Coup droit",
         "normalized": "coup droit",
         "aliases": [],
@@ -661,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-3",
+        "id": "xlsx-sport-hard-03-answer-3",
         "display": "Revers",
         "normalized": "revers",
         "aliases": [],
@@ -673,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-4",
+        "id": "xlsx-sport-hard-03-answer-4",
         "display": "Volée",
         "normalized": "volee",
         "aliases": [],
@@ -685,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-5",
+        "id": "xlsx-sport-hard-03-answer-5",
         "display": "Smash",
         "normalized": "smash",
         "aliases": [],
@@ -697,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-6",
+        "id": "xlsx-sport-hard-03-answer-6",
         "display": "Lob",
         "normalized": "lob",
         "aliases": [],
@@ -709,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-7",
+        "id": "xlsx-sport-hard-03-answer-7",
         "display": "Amortie",
         "normalized": "amortie",
         "aliases": [],
@@ -721,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-8",
+        "id": "xlsx-sport-hard-03-answer-8",
         "display": "Passing-shot",
         "normalized": "passing shot",
         "aliases": [],
@@ -733,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-05-answer-9",
+        "id": "xlsx-sport-hard-03-answer-9",
         "display": "Demi-volée",
         "normalized": "demi volee",
         "aliases": [],
@@ -746,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-hard-05-bomb",
+      "id": "xlsx-sport-hard-03-bomb",
       "display": "Dribble",
       "normalized": "dribble",
       "aliases": [],
@@ -762,22 +469,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "570820f3bfa78b7d352116a03283b639c92d06e5415141fd425a2154a37ecadc",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-sport-hard-06",
-    "slug": "xlsx-sport-hard-06",
+    "id": "xlsx-sport-hard-04",
+    "slug": "xlsx-sport-hard-04",
     "language": "fr",
     "themeId": "sport",
-    "subthemeIds": ["sport:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 postes ou positions du football américain.",
-    "shortTitle": "postes ou positions du football américain",
+    "subthemeIds": [
+      "sport:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
+    "questionText": "Cite les 9 clubs ayant été champions de France de Ligue 1 entre 1998 et 2024.",
+    "shortTitle": "Cite les 9 clubs ayant été champions de Franc…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -791,9 +503,9 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-sport-hard-06-answer-1",
-        "display": "Quarterback",
-        "normalized": "quarterback",
+        "id": "xlsx-sport-hard-04-answer-1",
+        "display": "RC Lens",
+        "normalized": "rc lens",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -803,9 +515,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-2",
-        "display": "Running back",
-        "normalized": "running back",
+        "id": "xlsx-sport-hard-04-answer-2",
+        "display": "Girondins de Bordeaux",
+        "normalized": "girondins de bordeaux",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -815,9 +527,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-3",
-        "display": "Wide receiver",
-        "normalized": "wide receiver",
+        "id": "xlsx-sport-hard-04-answer-3",
+        "display": "AS Monaco",
+        "normalized": "as monaco",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -827,9 +539,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-4",
-        "display": "Tight end",
-        "normalized": "tight end",
+        "id": "xlsx-sport-hard-04-answer-4",
+        "display": "FC Nantes",
+        "normalized": "fc nantes",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -839,9 +551,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-5",
-        "display": "Center",
-        "normalized": "center",
+        "id": "xlsx-sport-hard-04-answer-5",
+        "display": "Olympique lyonnais",
+        "normalized": "olympique lyonnais",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -851,9 +563,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-6",
-        "display": "Guard",
-        "normalized": "guard",
+        "id": "xlsx-sport-hard-04-answer-6",
+        "display": "Olympique de Marseille",
+        "normalized": "olympique de marseille",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -863,9 +575,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-7",
-        "display": "Offensive tackle",
-        "normalized": "offensive tackle",
+        "id": "xlsx-sport-hard-04-answer-7",
+        "display": "LOSC Lille",
+        "normalized": "losc lille",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -875,9 +587,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-8",
-        "display": "Linebacker",
-        "normalized": "linebacker",
+        "id": "xlsx-sport-hard-04-answer-8",
+        "display": "Montpellier HSC",
+        "normalized": "montpellier hsc",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -887,9 +599,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-sport-hard-06-answer-9",
-        "display": "Cornerback",
-        "normalized": "cornerback",
+        "id": "xlsx-sport-hard-04-answer-9",
+        "display": "Paris Saint-Germain",
+        "normalized": "paris saint germain",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -900,9 +612,9 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-sport-hard-06-bomb",
-      "display": "Libéro",
-      "normalized": "libero",
+      "id": "xlsx-sport-hard-04-bomb",
+      "display": "AS Saint-Étienne",
+      "normalized": "as saint etienne",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -916,11 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "62ef0ace4ff08dc68a167b5f1d1eb3f9bbb120e02de32398aa95c5fbf6d3ba71",
+    "answerSetFingerprint": "19335031037fdb1b3b6965dccdf3f64b13290ea1ac7e40ccb6611f0fce3e59e1",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

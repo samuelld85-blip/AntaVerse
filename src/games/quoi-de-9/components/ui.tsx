@@ -32,8 +32,7 @@ export function ButtonLink({
   variant?: "primary" | "secondary" | "ghost";
 }) {
   const variants = {
-    primary:
-      "bg-[var(--accent-text)] text-[var(--game-accent-ink)] shadow-[0_12px_32px_var(--accent-glow)]",
+    primary: "bg-[var(--accent-text)] text-[var(--game-accent-ink)] shadow-[0_12px_32px_var(--accent-glow)]",
     secondary: "border border-subtle bg-[color:var(--surface-subtle)] text-primary",
     ghost: "text-secondary hover:bg-[color:var(--surface-subtle)] hover:text-primary",
   };

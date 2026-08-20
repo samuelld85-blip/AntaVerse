@@ -3,10 +3,19 @@ import { cleanTeamName, createGameId } from "@/games/shared/lib/two-team-setup";
 import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import type { CreateGameInput, GameState, Team, TeamIndex, Theme } from "./types";
 
-export const STANDARD_ROUNDS = 5;
+export const STANDARD_ROUNDS = 7;
 const REQUIRED_THEME_COUNT = STANDARD_ROUNDS + 1;
 const DEFAULT_TEAM_NAMES = ["Les Antagonistes", "Les Sanglieeers", "Les Ouragans"] as const;
-const TEAM_IDS = ["team-1", "team-2", "team-3"] as const;
+
+export const MIN_TEAMS = 2;
+export const MAX_TEAMS = 3;
+export const MIN_SOLO_PLAYERS = 2;
+export const MAX_SOLO_PLAYERS = 7;
+
+/** Every solo player shares the game's own accent instead of a per-index
+ * team color — resolved via the `--game-accent` custom property so it
+ * always matches this game's identity. */
+const SOLO_COLOR = "var(--game-accent)";
 
 export function createGame(
   input: CreateGameInput,
@@ -14,6 +23,16 @@ export function createGame(
   random: () => number = Math.random,
   now = Date.now(),
 ): GameState {
+  const participantCount = input.teamNames.length;
+  const [min, max] = input.mode === "solo" ? [MIN_SOLO_PLAYERS, MAX_SOLO_PLAYERS] : [MIN_TEAMS, MAX_TEAMS];
+  if (participantCount < min || participantCount > max) {
+    throw new Error(
+      input.mode === "solo"
+        ? `Il faut entre ${MIN_SOLO_PLAYERS} et ${MAX_SOLO_PLAYERS} joueurs.`
+        : `Il faut entre ${MIN_TEAMS} et ${MAX_TEAMS} équipes.`,
+    );
+  }
+
   const selectedThemeIds = shuffle(themes, random)
     .slice(0, REQUIRED_THEME_COUNT)
     .map((theme) => theme.id);
@@ -24,16 +43,20 @@ export function createGame(
 
   const timestamp = new Date(now).toISOString();
   const teams: Team[] = input.teamNames.map((name, index) => ({
-    id: TEAM_IDS[index]!,
-    name: cleanTeamName(name, DEFAULT_TEAM_NAMES[index]!),
-    color: TEAM_PALETTE[index]!,
+    id: `team-${index + 1}`,
+    name: cleanTeamName(
+      name,
+      input.mode === "solo" ? `Joueur ${index + 1}` : (DEFAULT_TEAM_NAMES[index] ?? `Équipe ${index + 1}`),
+    ),
+    color: input.mode === "solo" ? SOLO_COLOR : TEAM_PALETTE[index]!,
     score: 0,
   }));
 
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     id: createGameId(now, random),
     status: "playing",
+    mode: input.mode,
     teams,
     roundIndex: 0,
     selectedThemeIds,
@@ -98,10 +121,8 @@ export function replayGame(
   random: () => number = Math.random,
   now = Date.now(),
 ): GameState {
-  const teamNames = game.teams.map((team) => team.name) as
-    | [string, string]
-    | [string, string, string];
-  return createGame({ teamNames }, themes, random, now);
+  const teamNames = game.teams.map((team) => team.name);
+  return createGame({ teamNames, mode: game.mode }, themes, random, now);
 }
 
 export function getCurrentTheme(game: GameState, themes: readonly Theme[]): Theme {

@@ -9,11 +9,9 @@ export type GameStatus =
   | "theme_reveal"
   | "difficulty_selection"
   | "choice_confirmation"
-  | "question_preparation"
   | "question_ready"
   | "question_active"
   | "turn_expired"
-  | "answer_correction"
   | "turn_results"
   | "scoreboard"
   | "completed";

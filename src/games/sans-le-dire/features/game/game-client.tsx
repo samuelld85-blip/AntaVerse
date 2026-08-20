@@ -6,6 +6,7 @@ import { Brand, LogoMark } from "@/games/sans-le-dire/components/brand";
 import { Button, ButtonLink } from "@/games/shared/components/ui";
 import { cards } from "@/games/sans-le-dire/data/cards";
 import {
+  claimLastCard,
   continueGame,
   endRound,
   faultCard,
@@ -103,6 +104,9 @@ export function GameClient() {
   function nextStep() {
     if (game) commit(continueGame(game));
   }
+  function claimLast() {
+    if (game) commit(claimLastCard(game));
+  }
   function replay() {
     if (game) commit(replayGame(game, cards));
   }
@@ -120,7 +124,7 @@ export function GameClient() {
   if (game.status === "finished")
     return <FinishedGame game={game} onReplay={replay} onHome={goHome} />;
   if (game.status === "preparation") return <Preparation game={game} onReady={begin} />;
-  if (game.status === "roundResult") return <RoundResult game={game} onContinue={nextStep} />;
+  if (game.status === "roundResult") return <RoundResult game={game} onContinue={nextStep} onClaimLast={claimLast} />;
 
   const card = getCurrentCard(game, cards);
   const seconds = Math.ceil(remainingMs / 1000);
@@ -148,7 +152,9 @@ export function GameClient() {
         <p>Mots interdits</p>
         <ul>
           {card.forbidden.map((word) => (
-            <li key={word}>{word}</li>
+            <li key={word}>
+              <span aria-hidden="true">💣</span> {word}
+            </li>
           ))}
         </ul>
       </section>
@@ -202,7 +208,9 @@ function Preparation({ game, onReady }: { game: GameState; onReady: () => void }
         <p>Mots interdits</p>
         <ul>
           {card.forbidden.map((word) => (
-            <li key={word}>{word}</li>
+            <li key={word}>
+              <span aria-hidden="true">💣</span> {word}
+            </li>
           ))}
         </ul>
       </section>
@@ -216,13 +224,22 @@ function Preparation({ game, onReady }: { game: GameState; onReady: () => void }
   );
 }
 
-function RoundResult({ game, onContinue }: { game: GameState; onContinue: () => void }) {
+function RoundResult({
+  game,
+  onContinue,
+  onClaimLast,
+}: {
+  game: GameState;
+  onContinue: () => void;
+  onClaimLast: () => void;
+}) {
   const lastStandard = game.roundMode === "standard" && game.roundIndex === STANDARD_ROUNDS - 1;
   const allScores = game.teams.map((t) => t.score);
   const maxScore = Math.max(...allScores);
   const tiedTeams = allScores.filter((s) => s === maxScore).length > 1;
   const activeTeam = game.teams[game.activeTeamIndex];
   const opponentTeam = game.teams.find((_, i) => i !== game.activeTeamIndex);
+  const lastCard = game.lastCardId ? cards.find((c) => c.id === game.lastCardId) : null;
 
   return (
     <main className="result-shell safe-shell">
@@ -283,6 +300,17 @@ function RoundResult({ game, onContinue }: { game: GameState; onContinue: () => 
             </p>
             <Scoreboard game={game} />
           </>
+        )}
+        {lastCard && (
+          <div className="last-card-claim">
+            <p className="last-card-label">
+              Dernier mot : <strong>{lastCard.word}</strong>
+            </p>
+            <p className="last-card-hint">L'avez-vous trouvé à temps ?</p>
+            <button className="action-found last-card-yes" type="button" onClick={onClaimLast}>
+              Oui, +1 point
+            </button>
+          </div>
         )}
         <Button onClick={onContinue}>
           {game.roundMode === "tiebreak"

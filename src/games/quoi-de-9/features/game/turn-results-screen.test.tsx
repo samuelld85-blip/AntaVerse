@@ -83,18 +83,16 @@ describe("écran de résultats", () => {
     const game = gameWithHistory();
     const text = textFromMarkup(
       renderToStaticMarkup(
-        <TurnResultsScreen game={game} onCorrect={vi.fn()} onContinue={vi.fn()} />,
+        <TurnResultsScreen game={game} onToggleAnswer={vi.fn()} onContinue={vi.fn()} />,
       ),
     );
 
     const expectedInOrder = [
       "Tour terminé",
       "+900 points",
-      "Cinéma · Niveau 2 — Moyen",
       "Quels sont les neuf films de cette saga sortis entre 2001 et 2011 ?",
       "Réponses",
       "6/9 trouvées",
-      "Corriger",
       "Tour suivant",
     ];
     let previousIndex = -1;

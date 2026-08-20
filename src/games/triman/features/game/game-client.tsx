@@ -13,6 +13,7 @@ import { loadCurrentGame, saveCurrentGame } from "@/games/triman/lib/game/persis
 import type { GameState } from "@/games/triman/lib/game/types";
 
 const ROLL_ANIMATION_MS = 360;
+const TRIMAN_ROLL_ANIMATION_MS = Math.round(ROLL_ANIMATION_MS * 1.5); // 540ms
 
 // Pip layout for a d6 face on a 3x3 grid (cell indices 0-8, left-to-right,
 // top-to-bottom).
@@ -31,6 +32,7 @@ export function GameClient() {
   const [ready, setReady] = useState(false);
   const [rolling, setRolling] = useState(false);
   const [announcement, setAnnouncement] = useState<string | null>(null);
+  const [handoff, setHandoff] = useState(false);
   const locked = useRef(false);
 
   useEffect(() => {
@@ -58,7 +60,9 @@ export function GameClient() {
   }
 
   function roll() {
-    if (!game || rolling || announcement) return;
+    if (!game || rolling || announcement || handoff) return;
+    const isTrimanTurn = game.trimanPlayerId === game.players[game.currentPlayerIndex]?.id;
+    const animDuration = isTrimanTurn ? TRIMAN_ROLL_ANIMATION_MS : ROLL_ANIMATION_MS;
     locked.current = true;
     setRolling(true);
     window.setTimeout(() => {
@@ -75,8 +79,9 @@ export function GameClient() {
         feedback("effect");
       } else {
         feedback("pass");
+        setHandoff(true);
       }
-    }, ROLL_ANIMATION_MS);
+    }, animDuration);
   }
 
   function dismissAnnouncement() {
@@ -110,14 +115,13 @@ export function GameClient() {
       </header>
 
       <div className="game-status">
-        <p className={isSearching ? "round-pill round-pill--search" : "round-pill"}>
-          {isSearching ? "Recherche du Triman" : "Triman actif"}
-        </p>
-        {triman ? (
+        {isSearching ? (
+          <p className="round-pill round-pill--search">Recherche du Triman</p>
+        ) : (
           <p className="triman-badge">
-            <span aria-hidden="true">👑</span> Triman : <strong>{triman.name}</strong>
+            <span aria-hidden="true">👑</span> Triman : <strong>{triman?.name}</strong>
           </p>
-        ) : null}
+        )}
       </div>
 
       <button
@@ -162,6 +166,24 @@ export function GameClient() {
           <p className="eyebrow">Triman trouvé !</p>
           <h1>{announcement}</h1>
           <p>Touchez pour continuer</p>
+        </div>
+      ) : null}
+
+      {handoff ? (
+        <div className="player-handoff" role="status" aria-label="Passe le téléphone au joueur suivant">
+          <p className="eyebrow">Aucune règle</p>
+          <p className="handoff-headline">Passe le<br />téléphone !</p>
+          <div className="dice-row">
+            <Die value={diceA} rolling={false} />
+            <Die value={diceB} rolling={false} />
+          </div>
+          <button
+            type="button"
+            className="handoff-btn"
+            onClick={() => setHandoff(false)}
+          >
+            C'est à moi&nbsp;!
+          </button>
         </div>
       ) : null}
     </main>

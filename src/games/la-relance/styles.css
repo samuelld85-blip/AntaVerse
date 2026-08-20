@@ -117,3 +117,74 @@ html[data-theme="light"] .brand-mark--la-relance {
   }
 }
 
+/* Solo setup: same shared player-list building blocks as Palmier/Purple/
+   Roulette du Chaos (.team-form already covers layout; only the scrollable
+   list itself needs its own rule here since this game normally ships
+   .team-fields, not .player-fields). */
+.player-fields {
+  display: grid;
+  gap: 0.65rem;
+  max-height: 52vh;
+  overflow-y: auto;
+  padding-right: 0.15rem;
+}
+
+/* Team vs. solo switch on the setup screen. */
+.mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  background: var(--surface);
+}
+.mode-switch-option {
+  border: 0;
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.5rem;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+.mode-switch-option--active {
+  background: var(--game-accent);
+  color: white;
+}
+
+/* Solo mode uses one accent for every player instead of the 3-color team
+   palette, and its roster can grow past 3 (up to MAX_SOLO_PLAYERS) — these
+   replace the index-based (1/2/3) team-palette classes when game.mode is
+   "solo", and let the winner list and scoreboard adapt to more entries. */
+.winner-button--solo {
+  background: linear-gradient(135deg, var(--la-relance-accent-dark), var(--la-relance-accent));
+}
+/* .winner-actions sits in an `auto` grid row, so a 7-player roster would take
+   its full content height and starve the theme stage above it. Capping it
+   keeps the theme readable and scrolls the roster instead. */
+.winner-actions--solo {
+  max-height: 34dvh;
+  overflow-y: auto;
+  min-height: 0;
+}
+.winner-actions--solo .winner-button {
+  min-height: 3.4rem;
+}
+.score-team--solo {
+  border-bottom: 3px solid var(--la-relance-accent);
+}
+.scoreboard--solo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.scoreboard--solo .score-team {
+  flex: 1 1 4.5rem;
+}
+

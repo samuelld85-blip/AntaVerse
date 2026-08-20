@@ -4,8 +4,13 @@
     "slug": "xlsx-arts-literature-easy-01",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 créatures célèbres de la mythologie grecque.",
     "shortTitle": "créatures célèbres de la mythologie grecque",
     "difficultyLevel": 1,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "98210ea8cd093f1e3c3a29e49fc1f72dd2b5d4266222f8ebe142da4a577c0486",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-arts-literature-easy-02",
     "slug": "xlsx-arts-literature-easy-02",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 écrivains français très connus.",
     "shortTitle": "écrivains français très connus",
     "difficultyLevel": 1,
@@ -300,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "07675f23dd263578f995c2cc24734fc8394a7b60737bfbd6d69d384e2bf36977",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-arts-literature-easy-03",
     "slug": "xlsx-arts-literature-easy-03",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 monuments classés ou protégés.",
-    "shortTitle": "monuments classés ou protégés",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-1",
-        "display": "cathédrale",
-        "normalized": "cathedrale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-2",
-        "display": "château",
-        "normalized": "chateau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-3",
-        "display": "temple",
-        "normalized": "temple",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-4",
-        "display": "palais",
-        "normalized": "palais",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-5",
-        "display": "abbaye",
-        "normalized": "abbaye",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-6",
-        "display": "phare",
-        "normalized": "phare",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-7",
-        "display": "pont historique",
-        "normalized": "pont historique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-8",
-        "display": "site archéologique",
-        "normalized": "site archeologique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-03-answer-9",
-        "display": "forteresse",
-        "normalized": "forteresse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "arts-literature:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-03-bomb",
-      "display": "Stade de France",
-      "normalized": "stade de france",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "19c51191c51fc0d345d40ac095eec1dd458c2a2fa5b7e42929ec0fac24ec2aee",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-04",
-    "slug": "xlsx-arts-literature-easy-04",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 peintres célèbres.",
     "shortTitle": "peintres célèbres",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-04-answer-1",
+        "id": "xlsx-arts-literature-easy-03-answer-1",
         "display": "Léonard de Vinci",
         "normalized": "leonard de vinci",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-2",
+        "id": "xlsx-arts-literature-easy-03-answer-2",
         "display": "Pablo Picasso",
         "normalized": "pablo picasso",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-3",
+        "id": "xlsx-arts-literature-easy-03-answer-3",
         "display": "Vincent van Gogh",
         "normalized": "vincent van gogh",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-4",
+        "id": "xlsx-arts-literature-easy-03-answer-4",
         "display": "Claude Monet",
         "normalized": "claude monet",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-5",
+        "id": "xlsx-arts-literature-easy-03-answer-5",
         "display": "Salvador Dalí",
         "normalized": "salvador dali",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-6",
+        "id": "xlsx-arts-literature-easy-03-answer-6",
         "display": "Rembrandt",
         "normalized": "rembrandt",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-7",
+        "id": "xlsx-arts-literature-easy-03-answer-7",
         "display": "Michel-Ange",
         "normalized": "michel ange",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-8",
+        "id": "xlsx-arts-literature-easy-03-answer-8",
         "display": "Frida Kahlo",
         "normalized": "frida kahlo",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-04-answer-9",
+        "id": "xlsx-arts-literature-easy-03-answer-9",
         "display": "Auguste Renoir",
         "normalized": "auguste renoir",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-04-bomb",
+      "id": "xlsx-arts-literature-easy-03-bomb",
       "display": "Victor Hugo",
       "normalized": "victor hugo",
       "aliases": [],
@@ -608,174 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "834f6e7c6ac45ecc70d9669748d34ed5de5bb48a91414959282d602f8fbd2b2e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-05",
-    "slug": "xlsx-arts-literature-easy-05",
+    "id": "xlsx-arts-literature-easy-04",
+    "slug": "xlsx-arts-literature-easy-04",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 auteurs français dont une œuvre est souvent étudiée à l’école.",
-    "shortTitle": "auteurs français dont une œuvre est souvent é…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-1",
-        "display": "Victor Hugo",
-        "normalized": "victor hugo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-2",
-        "display": "Molière",
-        "normalized": "moliere",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-3",
-        "display": "Émile Zola",
-        "normalized": "emile zola",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-4",
-        "display": "Guy de Maupassant",
-        "normalized": "guy de maupassant",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-5",
-        "display": "Jean de La Fontaine",
-        "normalized": "jean de la fontaine",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-6",
-        "display": "Albert Camus",
-        "normalized": "albert camus",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-7",
-        "display": "Voltaire",
-        "normalized": "voltaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-8",
-        "display": "Honoré de Balzac",
-        "normalized": "honore de balzac",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-05-answer-9",
-        "display": "Antoine de Saint-Exupéry",
-        "normalized": "antoine de saint exupery",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "arts-literature:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-05-bomb",
-      "display": "Claude Monet",
-      "normalized": "claude monet",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "30ef775aea53fae6f10eaf0cb25363fbf63d2a83caf880e9da95ae399c73f9b3",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-06",
-    "slug": "xlsx-arts-literature-easy-06",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 monuments célèbres de Paris.",
     "shortTitle": "monuments célèbres de Paris",
     "difficultyLevel": 1,
@@ -791,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-06-answer-1",
+        "id": "xlsx-arts-literature-easy-04-answer-1",
         "display": "Tour Eiffel",
         "normalized": "tour eiffel",
         "aliases": [],
@@ -803,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-2",
+        "id": "xlsx-arts-literature-easy-04-answer-2",
         "display": "Arc de Triomphe",
         "normalized": "arc de triomphe",
         "aliases": [],
@@ -815,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-3",
+        "id": "xlsx-arts-literature-easy-04-answer-3",
         "display": "Notre-Dame de Paris",
         "normalized": "notre dame de paris",
         "aliases": [],
@@ -827,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-4",
+        "id": "xlsx-arts-literature-easy-04-answer-4",
         "display": "Sacré-Cœur",
         "normalized": "sacre cœur",
         "aliases": [],
@@ -839,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-5",
+        "id": "xlsx-arts-literature-easy-04-answer-5",
         "display": "Panthéon",
         "normalized": "pantheon",
         "aliases": [],
@@ -851,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-6",
+        "id": "xlsx-arts-literature-easy-04-answer-6",
         "display": "Opéra Garnier",
         "normalized": "opera garnier",
         "aliases": [],
@@ -863,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-7",
+        "id": "xlsx-arts-literature-easy-04-answer-7",
         "display": "Louvre",
         "normalized": "louvre",
         "aliases": [],
@@ -875,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-8",
+        "id": "xlsx-arts-literature-easy-04-answer-8",
         "display": "Les Invalides",
         "normalized": "les invalides",
         "aliases": [],
@@ -887,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-06-answer-9",
+        "id": "xlsx-arts-literature-easy-04-answer-9",
         "display": "Conciergerie",
         "normalized": "conciergerie",
         "aliases": [],
@@ -900,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-06-bomb",
+      "id": "xlsx-arts-literature-easy-04-bomb",
       "display": "Big Ben",
       "normalized": "big ben",
       "aliases": [],
@@ -916,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "9ef45c549ffc2042d1e99dc152fabf0c518cfc01114864761ef652b504704228",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-07",
-    "slug": "xlsx-arts-literature-easy-07",
+    "id": "xlsx-arts-literature-easy-05",
+    "slug": "xlsx-arts-literature-easy-05",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 formes d’art.",
     "shortTitle": "formes d’art",
     "difficultyLevel": 1,
@@ -945,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-07-answer-1",
+        "id": "xlsx-arts-literature-easy-05-answer-1",
         "display": "Peinture",
         "normalized": "peinture",
         "aliases": [],
@@ -957,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-2",
+        "id": "xlsx-arts-literature-easy-05-answer-2",
         "display": "Sculpture",
         "normalized": "sculpture",
         "aliases": [],
@@ -969,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-3",
+        "id": "xlsx-arts-literature-easy-05-answer-3",
         "display": "Dessin",
         "normalized": "dessin",
         "aliases": [],
@@ -981,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-4",
+        "id": "xlsx-arts-literature-easy-05-answer-4",
         "display": "Photographie",
         "normalized": "photographie",
         "aliases": [],
@@ -993,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-5",
+        "id": "xlsx-arts-literature-easy-05-answer-5",
         "display": "Cinéma",
         "normalized": "cinema",
         "aliases": [],
@@ -1005,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-6",
+        "id": "xlsx-arts-literature-easy-05-answer-6",
         "display": "Danse",
         "normalized": "danse",
         "aliases": [],
@@ -1017,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-7",
+        "id": "xlsx-arts-literature-easy-05-answer-7",
         "display": "Théâtre",
         "normalized": "theatre",
         "aliases": [],
@@ -1029,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-8",
+        "id": "xlsx-arts-literature-easy-05-answer-8",
         "display": "Architecture",
         "normalized": "architecture",
         "aliases": [],
@@ -1041,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-07-answer-9",
+        "id": "xlsx-arts-literature-easy-05-answer-9",
         "display": "Musique",
         "normalized": "musique",
         "aliases": [],
@@ -1054,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-07-bomb",
+      "id": "xlsx-arts-literature-easy-05-bomb",
       "display": "Football",
       "normalized": "football",
       "aliases": [],
@@ -1070,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b3a021d19042bb31b6c7e9474b778745a3fd02dda12fe65c97bcbfae986e3205",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-08",
-    "slug": "xlsx-arts-literature-easy-08",
+    "id": "xlsx-arts-literature-easy-06",
+    "slug": "xlsx-arts-literature-easy-06",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 personnages de contes célèbres.",
     "shortTitle": "personnages de contes célèbres",
     "difficultyLevel": 1,
@@ -1099,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-08-answer-1",
+        "id": "xlsx-arts-literature-easy-06-answer-1",
         "display": "Cendrillon",
         "normalized": "cendrillon",
         "aliases": [],
@@ -1111,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-2",
+        "id": "xlsx-arts-literature-easy-06-answer-2",
         "display": "Blanche-Neige",
         "normalized": "blanche neige",
         "aliases": [],
@@ -1123,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-3",
+        "id": "xlsx-arts-literature-easy-06-answer-3",
         "display": "Le Petit Chaperon rouge",
         "normalized": "le petit chaperon rouge",
         "aliases": [],
@@ -1135,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-4",
+        "id": "xlsx-arts-literature-easy-06-answer-4",
         "display": "Pinocchio",
         "normalized": "pinocchio",
         "aliases": [],
@@ -1147,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-5",
+        "id": "xlsx-arts-literature-easy-06-answer-5",
         "display": "Peter Pan",
         "normalized": "peter pan",
         "aliases": [],
@@ -1159,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-6",
+        "id": "xlsx-arts-literature-easy-06-answer-6",
         "display": "La Belle au bois dormant",
         "normalized": "la belle au bois dormant",
         "aliases": [],
@@ -1171,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-7",
+        "id": "xlsx-arts-literature-easy-06-answer-7",
         "display": "Le Chat botté",
         "normalized": "le chat botte",
         "aliases": [],
@@ -1183,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-8",
+        "id": "xlsx-arts-literature-easy-06-answer-8",
         "display": "Hansel",
         "normalized": "hansel",
         "aliases": [],
@@ -1195,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-08-answer-9",
+        "id": "xlsx-arts-literature-easy-06-answer-9",
         "display": "Gretel",
         "normalized": "gretel",
         "aliases": [],
@@ -1208,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-08-bomb",
+      "id": "xlsx-arts-literature-easy-06-bomb",
       "display": "Harry Potter",
       "normalized": "harry potter",
       "aliases": [],
@@ -1224,22 +946,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "220bff1b6b866371f06e959021d1eaff5a607e2b21d3a7ba547d947cb2f403f7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-09",
-    "slug": "xlsx-arts-literature-easy-09",
+    "id": "xlsx-arts-literature-easy-07",
+    "slug": "xlsx-arts-literature-easy-07",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 œuvres ou personnages liés à Shakespeare.",
-    "shortTitle": "œuvres ou personnages liés à Shakespeare",
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 œuvres littéraires ou sagas très connues adaptées au cinéma.",
+    "shortTitle": "œuvres littéraires ou sagas très connues adap…",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -1253,9 +980,9 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-09-answer-1",
-        "display": "Hamlet",
-        "normalized": "hamlet",
+        "id": "xlsx-arts-literature-easy-07-answer-1",
+        "display": "Harry Potter",
+        "normalized": "harry potter",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1265,9 +992,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-2",
-        "display": "Roméo",
-        "normalized": "romeo",
+        "id": "xlsx-arts-literature-easy-07-answer-2",
+        "display": "Le Seigneur des anneaux",
+        "normalized": "le seigneur des anneaux",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1277,9 +1004,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-3",
-        "display": "Juliette",
-        "normalized": "juliette",
+        "id": "xlsx-arts-literature-easy-07-answer-3",
+        "display": "Hunger Games",
+        "normalized": "hunger games",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1289,9 +1016,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-4",
-        "display": "Macbeth",
-        "normalized": "macbeth",
+        "id": "xlsx-arts-literature-easy-07-answer-4",
+        "display": "Twilight",
+        "normalized": "twilight",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1301,9 +1028,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-5",
-        "display": "Othello",
-        "normalized": "othello",
+        "id": "xlsx-arts-literature-easy-07-answer-5",
+        "display": "Le Hobbit",
+        "normalized": "le hobbit",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1313,9 +1040,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-6",
-        "display": "Le Roi Lear",
-        "normalized": "le roi lear",
+        "id": "xlsx-arts-literature-easy-07-answer-6",
+        "display": "Dune",
+        "normalized": "dune",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1325,9 +1052,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-7",
-        "display": "Falstaff",
-        "normalized": "falstaff",
+        "id": "xlsx-arts-literature-easy-07-answer-7",
+        "display": "Jurassic Park",
+        "normalized": "jurassic park",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1337,9 +1064,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-8",
-        "display": "Prospero",
-        "normalized": "prospero",
+        "id": "xlsx-arts-literature-easy-07-answer-8",
+        "display": "Les Misérables",
+        "normalized": "les miserables",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1349,9 +1076,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-09-answer-9",
-        "display": "Shylock",
-        "normalized": "shylock",
+        "id": "xlsx-arts-literature-easy-07-answer-9",
+        "display": "Le Parrain",
+        "normalized": "le parrain",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1362,9 +1089,9 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-09-bomb",
-      "display": "Jean Valjean",
-      "normalized": "jean valjean",
+      "id": "xlsx-arts-literature-easy-07-bomb",
+      "display": "Avatar",
+      "normalized": "avatar",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -1378,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "11164d503fcb32f7a04a179c218ce3ab00ef2f4e021c174f657d97a7c36fbec7",
+    "answerSetFingerprint": "ab84191a51bdceb3ad159b41c214a1e2e95afda8d2b41e8868607dc7e1d12459",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-10",
-    "slug": "xlsx-arts-literature-easy-10",
+    "id": "xlsx-arts-literature-easy-08",
+    "slug": "xlsx-arts-literature-easy-08",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 musées célèbres dans le monde.",
     "shortTitle": "musées célèbres dans le monde",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-10-answer-1",
+        "id": "xlsx-arts-literature-easy-08-answer-1",
         "display": "Louvre",
         "normalized": "louvre",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-2",
+        "id": "xlsx-arts-literature-easy-08-answer-2",
         "display": "Prado",
         "normalized": "prado",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-3",
+        "id": "xlsx-arts-literature-easy-08-answer-3",
         "display": "British Museum",
         "normalized": "british museum",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-4",
+        "id": "xlsx-arts-literature-easy-08-answer-4",
         "display": "Metropolitan Museum of Art",
         "normalized": "metropolitan museum of art",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-5",
+        "id": "xlsx-arts-literature-easy-08-answer-5",
         "display": "Musée d'Orsay",
         "normalized": "musee d orsay",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-6",
+        "id": "xlsx-arts-literature-easy-08-answer-6",
         "display": "Rijksmuseum",
         "normalized": "rijksmuseum",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-7",
+        "id": "xlsx-arts-literature-easy-08-answer-7",
         "display": "Musées du Vatican",
         "normalized": "musees du vatican",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-8",
+        "id": "xlsx-arts-literature-easy-08-answer-8",
         "display": "Ermitage",
         "normalized": "ermitage",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-10-answer-9",
+        "id": "xlsx-arts-literature-easy-08-answer-9",
         "display": "MoMA",
         "normalized": "moma",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-10-bomb",
+      "id": "xlsx-arts-literature-easy-08-bomb",
       "display": "Disneyland",
       "normalized": "disneyland",
       "aliases": [],
@@ -1532,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4b024575554d50aa8c96332e4936585292f4bfe5c4d4c516b137e171d7f31442",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-11",
-    "slug": "xlsx-arts-literature-easy-11",
+    "id": "xlsx-arts-literature-easy-09",
+    "slug": "xlsx-arts-literature-easy-09",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 genres littéraires.",
     "shortTitle": "genres littéraires",
     "difficultyLevel": 1,
@@ -1561,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-11-answer-1",
+        "id": "xlsx-arts-literature-easy-09-answer-1",
         "display": "Roman",
         "normalized": "roman",
         "aliases": [],
@@ -1573,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-2",
+        "id": "xlsx-arts-literature-easy-09-answer-2",
         "display": "Nouvelle",
         "normalized": "nouvelle",
         "aliases": [],
@@ -1585,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-3",
+        "id": "xlsx-arts-literature-easy-09-answer-3",
         "display": "Poésie",
         "normalized": "poesie",
         "aliases": [],
@@ -1597,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-4",
+        "id": "xlsx-arts-literature-easy-09-answer-4",
         "display": "Théâtre",
         "normalized": "theatre",
         "aliases": [],
@@ -1609,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-5",
+        "id": "xlsx-arts-literature-easy-09-answer-5",
         "display": "Biographie",
         "normalized": "biographie",
         "aliases": [],
@@ -1621,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-6",
+        "id": "xlsx-arts-literature-easy-09-answer-6",
         "display": "Autobiographie",
         "normalized": "autobiographie",
         "aliases": [],
@@ -1633,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-7",
+        "id": "xlsx-arts-literature-easy-09-answer-7",
         "display": "Essai",
         "normalized": "essai",
         "aliases": [],
@@ -1645,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-8",
+        "id": "xlsx-arts-literature-easy-09-answer-8",
         "display": "Conte",
         "normalized": "conte",
         "aliases": [],
@@ -1657,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-11-answer-9",
+        "id": "xlsx-arts-literature-easy-09-answer-9",
         "display": "Bande dessinée",
         "normalized": "bande dessinee",
         "aliases": [],
@@ -1670,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-11-bomb",
+      "id": "xlsx-arts-literature-easy-09-bomb",
       "display": "Sculpture",
       "normalized": "sculpture",
       "aliases": [],
@@ -1686,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0ecbe6041dfc9f87ed99a73ca695938b2a37153961323950f5162c77b84fe459",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-12",
-    "slug": "xlsx-arts-literature-easy-12",
+    "id": "xlsx-arts-literature-easy-10",
+    "slug": "xlsx-arts-literature-easy-10",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 héros ou héroïnes de la mythologie grecque.",
     "shortTitle": "héros ou héroïnes de la mythologie grecque",
     "difficultyLevel": 1,
@@ -1715,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-12-answer-1",
+        "id": "xlsx-arts-literature-easy-10-answer-1",
         "display": "Héraclès",
         "normalized": "heracles",
         "aliases": [],
@@ -1727,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-2",
+        "id": "xlsx-arts-literature-easy-10-answer-2",
         "display": "Achille",
         "normalized": "achille",
         "aliases": [],
@@ -1739,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-3",
+        "id": "xlsx-arts-literature-easy-10-answer-3",
         "display": "Ulysse",
         "normalized": "ulysse",
         "aliases": [],
@@ -1751,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-4",
+        "id": "xlsx-arts-literature-easy-10-answer-4",
         "display": "Persée",
         "normalized": "persee",
         "aliases": [],
@@ -1763,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-5",
+        "id": "xlsx-arts-literature-easy-10-answer-5",
         "display": "Thésée",
         "normalized": "thesee",
         "aliases": [],
@@ -1775,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-6",
+        "id": "xlsx-arts-literature-easy-10-answer-6",
         "display": "Jason",
         "normalized": "jason",
         "aliases": [],
@@ -1787,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-7",
+        "id": "xlsx-arts-literature-easy-10-answer-7",
         "display": "Orphée",
         "normalized": "orphee",
         "aliases": [],
@@ -1799,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-8",
+        "id": "xlsx-arts-literature-easy-10-answer-8",
         "display": "Atalante",
         "normalized": "atalante",
         "aliases": [],
@@ -1811,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-12-answer-9",
+        "id": "xlsx-arts-literature-easy-10-answer-9",
         "display": "Œdipe",
         "normalized": "œdipe",
         "aliases": [],
@@ -1824,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-12-bomb",
+      "id": "xlsx-arts-literature-easy-10-bomb",
       "display": "Jules César",
       "normalized": "jules cesar",
       "aliases": [],
@@ -1840,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c572aa7ccbfff16d3c9923673644ce236069a8c6b6f2ee67596ab8e51819c93c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-13",
-    "slug": "xlsx-arts-literature-easy-13",
+    "id": "xlsx-arts-literature-easy-11",
+    "slug": "xlsx-arts-literature-easy-11",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 grands monuments antiques ou médiévaux célèbres.",
     "shortTitle": "grands monuments antiques ou médiévaux célèbres",
     "difficultyLevel": 1,
@@ -1869,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-13-answer-1",
+        "id": "xlsx-arts-literature-easy-11-answer-1",
         "display": "Colisée",
         "normalized": "colisee",
         "aliases": [],
@@ -1881,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-2",
+        "id": "xlsx-arts-literature-easy-11-answer-2",
         "display": "Parthénon",
         "normalized": "parthenon",
         "aliases": [],
@@ -1893,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-3",
+        "id": "xlsx-arts-literature-easy-11-answer-3",
         "display": "Pyramides de Gizeh",
         "normalized": "pyramides de gizeh",
         "aliases": [],
@@ -1905,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-4",
+        "id": "xlsx-arts-literature-easy-11-answer-4",
         "display": "Stonehenge",
         "normalized": "stonehenge",
         "aliases": [],
@@ -1917,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-5",
+        "id": "xlsx-arts-literature-easy-11-answer-5",
         "display": "Pont du Gard",
         "normalized": "pont du gard",
         "aliases": [],
@@ -1929,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-6",
+        "id": "xlsx-arts-literature-easy-11-answer-6",
         "display": "Sainte-Sophie",
         "normalized": "sainte sophie",
         "aliases": [],
@@ -1941,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-7",
+        "id": "xlsx-arts-literature-easy-11-answer-7",
         "display": "Alhambra",
         "normalized": "alhambra",
         "aliases": [],
@@ -1953,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-8",
+        "id": "xlsx-arts-literature-easy-11-answer-8",
         "display": "Mont-Saint-Michel",
         "normalized": "mont saint michel",
         "aliases": [],
@@ -1965,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-13-answer-9",
+        "id": "xlsx-arts-literature-easy-11-answer-9",
         "display": "Tour de Pise",
         "normalized": "tour de pise",
         "aliases": [],
@@ -1978,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-13-bomb",
+      "id": "xlsx-arts-literature-easy-11-bomb",
       "display": "Empire State Building",
       "normalized": "empire state building",
       "aliases": [],
@@ -1994,176 +1741,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2df072e22d36afe18511d746840bb189f67fcee1987cdb4878ac0ff5080241a0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-14",
-    "slug": "xlsx-arts-literature-easy-14",
+    "id": "xlsx-arts-literature-easy-12",
+    "slug": "xlsx-arts-literature-easy-12",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 personnages célèbres des romans de Victor Hugo.",
-    "shortTitle": "personnages célèbres des romans de Victor Hugo",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-1",
-        "display": "Jean Valjean",
-        "normalized": "jean valjean",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-2",
-        "display": "Cosette",
-        "normalized": "cosette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-3",
-        "display": "Gavroche",
-        "normalized": "gavroche",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-4",
-        "display": "Javert",
-        "normalized": "javert",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-5",
-        "display": "Esmeralda",
-        "normalized": "esmeralda",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-6",
-        "display": "Quasimodo",
-        "normalized": "quasimodo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-7",
-        "display": "Fantine",
-        "normalized": "fantine",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-8",
-        "display": "Marius",
-        "normalized": "marius",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-14-answer-9",
-        "display": "Claude Frollo",
-        "normalized": "claude frollo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "arts-literature:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-14-bomb",
-      "display": "D'Artagnan",
-      "normalized": "d artagnan",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "07c7a7755138332e69c73d97d640f46bd95b4d134707c959825c0a7180bd6907",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-15",
-    "slug": "xlsx-arts-literature-easy-15",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 auteurs de littérature jeunesse connus.",
-    "shortTitle": "auteurs de littérature jeunesse connus",
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 auteurs de littérature jeunesse très connus en France.",
+    "shortTitle": "auteurs de littérature jeunesse très connus e…",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -2177,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-15-answer-1",
+        "id": "xlsx-arts-literature-easy-12-answer-1",
         "display": "J. K. Rowling",
         "normalized": "j k rowling",
         "aliases": [],
@@ -2189,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-15-answer-2",
+        "id": "xlsx-arts-literature-easy-12-answer-2",
         "display": "Roald Dahl",
         "normalized": "roald dahl",
         "aliases": [],
@@ -2201,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-15-answer-3",
+        "id": "xlsx-arts-literature-easy-12-answer-3",
         "display": "Jules Verne",
         "normalized": "jules verne",
         "aliases": [],
@@ -2213,43 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-15-answer-4",
-        "display": "Lewis Carroll",
-        "normalized": "lewis carroll",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-15-answer-5",
-        "display": "Astrid Lindgren",
-        "normalized": "astrid lindgren",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-15-answer-6",
-        "display": "Michael Ende",
-        "normalized": "michael ende",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-15-answer-7",
+        "id": "xlsx-arts-literature-easy-12-answer-4",
         "display": "Antoine de Saint-Exupéry",
         "normalized": "antoine de saint exupery",
         "aliases": [],
@@ -2257,131 +1819,13 @@
         "alternativeSpellings": [],
         "accentInsensitiveVariants": [],
         "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-15-answer-8",
-        "display": "Enid Blyton",
-        "normalized": "enid blyton",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-15-answer-9",
-        "display": "Beatrix Potter",
-        "normalized": "beatrix potter",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-15-bomb",
-      "display": "Pablo Picasso",
-      "normalized": "pablo picasso",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0ea59849da81cd8e2579dfef347d65c53f5d7aa220ac8ca918c9d0a03e24c8a2",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-16",
-    "slug": "xlsx-arts-literature-easy-16",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 styles ou mouvements artistiques connus.",
-    "shortTitle": "styles ou mouvements artistiques connus",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-16-answer-1",
-        "display": "Impressionnisme",
-        "normalized": "impressionnisme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-16-answer-2",
-        "display": "Cubisme",
-        "normalized": "cubisme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-16-answer-3",
-        "display": "Surréalisme",
-        "normalized": "surrealisme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-16-answer-4",
-        "display": "Baroque",
-        "normalized": "baroque",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
         "displayOrder": 4,
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-16-answer-5",
-        "display": "Renaissance",
-        "normalized": "renaissance",
+        "id": "xlsx-arts-literature-easy-12-answer-5",
+        "display": "René Goscinny",
+        "normalized": "rene goscinny",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2391,9 +1835,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-16-answer-6",
-        "display": "Romantisme",
-        "normalized": "romantisme",
+        "id": "xlsx-arts-literature-easy-12-answer-6",
+        "display": "Charles Perrault",
+        "normalized": "charles perrault",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2403,9 +1847,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-16-answer-7",
-        "display": "Art nouveau",
-        "normalized": "art nouveau",
+        "id": "xlsx-arts-literature-easy-12-answer-7",
+        "display": "Lewis Carroll",
+        "normalized": "lewis carroll",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2415,9 +1859,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-16-answer-8",
-        "display": "Pop art",
-        "normalized": "pop art",
+        "id": "xlsx-arts-literature-easy-12-answer-8",
+        "display": "Astrid Lindgren",
+        "normalized": "astrid lindgren",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2427,9 +1871,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-16-answer-9",
-        "display": "Réalisme",
-        "normalized": "realisme",
+        "id": "xlsx-arts-literature-easy-12-answer-9",
+        "display": "Comtesse de Ségur",
+        "normalized": "comtesse de segur",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -2440,469 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-16-bomb",
-      "display": "Heavy metal",
-      "normalized": "heavy metal",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "be2ddbae99c8dc53386f9a835e57c8e247d42aeec618c57d5eccec4e098f2622",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-17",
-    "slug": "xlsx-arts-literature-easy-17",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 lieux ou bâtiments pouvant être classés au patrimoine.",
-    "shortTitle": "lieux ou bâtiments pouvant être classés au pa…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-1",
-        "display": "Château",
-        "normalized": "chateau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-2",
-        "display": "Cathédrale",
-        "normalized": "cathedrale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-3",
-        "display": "Abbaye",
-        "normalized": "abbaye",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-4",
-        "display": "Palais",
-        "normalized": "palais",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-5",
-        "display": "Temple",
-        "normalized": "temple",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-6",
-        "display": "Forteresse",
-        "normalized": "forteresse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-7",
-        "display": "Pont historique",
-        "normalized": "pont historique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-8",
-        "display": "Site archéologique",
-        "normalized": "site archeologique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-17-answer-9",
-        "display": "Centre historique",
-        "normalized": "centre historique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-17-bomb",
-      "display": "Centre commercial",
-      "normalized": "centre commercial",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "41d3ffa0818a9ff9dd0f226335f96c90aa9f187aa1c4433d65f3c9f0de72de31",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-18",
-    "slug": "xlsx-arts-literature-easy-18",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 personnages célèbres de la littérature française.",
-    "shortTitle": "personnages célèbres de la littérature française",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-1",
-        "display": "Cyrano de Bergerac",
-        "normalized": "cyrano de bergerac",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-2",
-        "display": "Jean Valjean",
-        "normalized": "jean valjean",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-3",
-        "display": "Arsène Lupin",
-        "normalized": "arsene lupin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-4",
-        "display": "Gavroche",
-        "normalized": "gavroche",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-5",
-        "display": "Madame Bovary",
-        "normalized": "madame bovary",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-6",
-        "display": "Le Petit Prince",
-        "normalized": "le petit prince",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-7",
-        "display": "D'Artagnan",
-        "normalized": "d artagnan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-8",
-        "display": "Quasimodo",
-        "normalized": "quasimodo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-18-answer-9",
-        "display": "Candide",
-        "normalized": "candide",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-18-bomb",
-      "display": "Sherlock Holmes",
-      "normalized": "sherlock holmes",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "334d06e1b1589c06e0426b7f2c96b94579b6e27b6c0b788159df5e6c7ebe15ea",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-arts-literature-easy-19",
-    "slug": "xlsx-arts-literature-easy-19",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 auteurs anglophones très connus.",
-    "shortTitle": "auteurs anglophones très connus",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-1",
-        "display": "William Shakespeare",
-        "normalized": "william shakespeare",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-2",
-        "display": "Charles Dickens",
-        "normalized": "charles dickens",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-3",
-        "display": "Jane Austen",
-        "normalized": "jane austen",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-4",
-        "display": "George Orwell",
-        "normalized": "george orwell",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-5",
-        "display": "Agatha Christie",
-        "normalized": "agatha christie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-6",
-        "display": "Ernest Hemingway",
-        "normalized": "ernest hemingway",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-7",
-        "display": "Mark Twain",
-        "normalized": "mark twain",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-8",
-        "display": "J. R. R. Tolkien",
-        "normalized": "j r r tolkien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-easy-19-answer-9",
-        "display": "Virginia Woolf",
-        "normalized": "virginia woolf",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-arts-literature-easy-19-bomb",
+      "id": "xlsx-arts-literature-easy-12-bomb",
       "display": "Émile Zola",
       "normalized": "emile zola",
       "aliases": [],
@@ -2918,20 +1900,502 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "3192cedb9c98c47eb569d8bcf1b9556cf2f7d6bf8506be5b4ceba4a5e35a3806",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-arts-literature-easy-13",
+    "slug": "xlsx-arts-literature-easy-13",
+    "language": "fr",
+    "themeId": "arts-literature",
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 styles ou mouvements artistiques connus.",
+    "shortTitle": "styles ou mouvements artistiques connus",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-1",
+        "display": "Impressionnisme",
+        "normalized": "impressionnisme",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-2",
+        "display": "Cubisme",
+        "normalized": "cubisme",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-3",
+        "display": "Surréalisme",
+        "normalized": "surrealisme",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-4",
+        "display": "Baroque",
+        "normalized": "baroque",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-5",
+        "display": "Renaissance",
+        "normalized": "renaissance",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-6",
+        "display": "Romantisme",
+        "normalized": "romantisme",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-7",
+        "display": "Art nouveau",
+        "normalized": "art nouveau",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-8",
+        "display": "Pop art",
+        "normalized": "pop art",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-13-answer-9",
+        "display": "Réalisme",
+        "normalized": "realisme",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-arts-literature-easy-13-bomb",
+      "display": "Heavy metal",
+      "normalized": "heavy metal",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "be2ddbae99c8dc53386f9a835e57c8e247d42aeec618c57d5eccec4e098f2622",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-arts-literature-easy-14",
+    "slug": "xlsx-arts-literature-easy-14",
+    "language": "fr",
+    "themeId": "arts-literature",
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 personnages célèbres de la littérature française.",
+    "shortTitle": "personnages célèbres de la littérature française",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-1",
+        "display": "Cyrano de Bergerac",
+        "normalized": "cyrano de bergerac",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-2",
+        "display": "Jean Valjean",
+        "normalized": "jean valjean",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-3",
+        "display": "Arsène Lupin",
+        "normalized": "arsene lupin",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-4",
+        "display": "Gavroche",
+        "normalized": "gavroche",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-5",
+        "display": "Madame Bovary",
+        "normalized": "madame bovary",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-6",
+        "display": "Le Petit Prince",
+        "normalized": "le petit prince",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-7",
+        "display": "D'Artagnan",
+        "normalized": "d artagnan",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-8",
+        "display": "Quasimodo",
+        "normalized": "quasimodo",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-14-answer-9",
+        "display": "Candide",
+        "normalized": "candide",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-arts-literature-easy-14-bomb",
+      "display": "Sherlock Holmes",
+      "normalized": "sherlock holmes",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "334d06e1b1589c06e0426b7f2c96b94579b6e27b6c0b788159df5e6c7ebe15ea",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-arts-literature-easy-15",
+    "slug": "xlsx-arts-literature-easy-15",
+    "language": "fr",
+    "themeId": "arts-literature",
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 auteurs anglophones très connus.",
+    "shortTitle": "auteurs anglophones très connus",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-1",
+        "display": "William Shakespeare",
+        "normalized": "william shakespeare",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-2",
+        "display": "Charles Dickens",
+        "normalized": "charles dickens",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-3",
+        "display": "Jane Austen",
+        "normalized": "jane austen",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-4",
+        "display": "George Orwell",
+        "normalized": "george orwell",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-5",
+        "display": "Agatha Christie",
+        "normalized": "agatha christie",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-6",
+        "display": "Ernest Hemingway",
+        "normalized": "ernest hemingway",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-7",
+        "display": "Mark Twain",
+        "normalized": "mark twain",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-8",
+        "display": "J. R. R. Tolkien",
+        "normalized": "j r r tolkien",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-easy-15-answer-9",
+        "display": "Virginia Woolf",
+        "normalized": "virginia woolf",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-arts-literature-easy-15-bomb",
+      "display": "Émile Zola",
+      "normalized": "emile zola",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0e73bf8e1e18a5d5172c80baf9e0d8302e2c27e580bd8c2aefafdacfc76459dc",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-arts-literature-easy-20",
-    "slug": "xlsx-arts-literature-easy-20",
+    "id": "xlsx-arts-literature-easy-16",
+    "slug": "xlsx-arts-literature-easy-16",
     "language": "fr",
     "themeId": "arts-literature",
-    "subthemeIds": ["arts-literature:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 éléments qu’on peut trouver dans un théâtre.",
     "shortTitle": "éléments qu’on peut trouver dans un théâtre",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-easy-20-answer-1",
+        "id": "xlsx-arts-literature-easy-16-answer-1",
         "display": "Scène",
         "normalized": "scene",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-2",
+        "id": "xlsx-arts-literature-easy-16-answer-2",
         "display": "Rideau",
         "normalized": "rideau",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-3",
+        "id": "xlsx-arts-literature-easy-16-answer-3",
         "display": "Coulisses",
         "normalized": "coulisses",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-4",
+        "id": "xlsx-arts-literature-easy-16-answer-4",
         "display": "Loge",
         "normalized": "loge",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-5",
+        "id": "xlsx-arts-literature-easy-16-answer-5",
         "display": "Balcon",
         "normalized": "balcon",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-6",
+        "id": "xlsx-arts-literature-easy-16-answer-6",
         "display": "Orchestre",
         "normalized": "orchestre",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-7",
+        "id": "xlsx-arts-literature-easy-16-answer-7",
         "display": "Projecteurs",
         "normalized": "projecteurs",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-8",
+        "id": "xlsx-arts-literature-easy-16-answer-8",
         "display": "Décor",
         "normalized": "decor",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-easy-20-answer-9",
+        "id": "xlsx-arts-literature-easy-16-answer-9",
         "display": "Costumes",
         "normalized": "costumes",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-easy-20-bomb",
+      "id": "xlsx-arts-literature-easy-16-bomb",
       "display": "Terrain de tennis",
       "normalized": "terrain de tennis",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1419157638ab017c0b0bbc5a891ba0c586e52f87542688a14d025835d38dc692",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

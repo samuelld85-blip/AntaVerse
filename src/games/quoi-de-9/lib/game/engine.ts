@@ -413,16 +413,10 @@ export function confirmChoice(
 
   return touch({
     ...game,
-    status: "question_preparation",
+    status: "question_ready",
     currentQuestionId: question.id,
     usedQuestionIds: [...game.usedQuestionIds, question.id],
   });
-}
-
-export function confirmQuestionPreparation(game: GameState): GameState {
-  assertStatus(game, "question_preparation");
-  if (!game.currentQuestionId) throw new Error("Aucune question sélectionnée");
-  return touch({ ...game, status: "question_ready" });
 }
 
 export function startTimer(game: GameState, timestamp = Date.now()): GameState {
@@ -457,8 +451,7 @@ export function toggleAnswer(
   timestamp = Date.now(),
 ): GameState {
   const isTimedAnswering = game.status === "question_active";
-  const isCorrection = game.status === "answer_correction";
-  if (!isTimedAnswering && !isCorrection) {
+  if (!isTimedAnswering) {
     throw new Error(`Transition impossible depuis l’état ${game.status}`);
   }
   if (question.id !== game.currentQuestionId) throw new Error("La question ne correspond pas");
@@ -488,8 +481,7 @@ export function toggleAnswer(
 
 export function toggleBomb(game: GameState, question: Question, timestamp = Date.now()): GameState {
   const isTimedAnswering = game.status === "question_active";
-  const isCorrection = game.status === "answer_correction";
-  if (!isTimedAnswering && !isCorrection) {
+  if (!isTimedAnswering) {
     throw new Error(`Transition impossible depuis l’état ${game.status}`);
   }
   if (!isBombTurn(game)) throw new Error("La bombe n’est pas active pour ce tour");
@@ -517,7 +509,7 @@ export function undoLastAnswer(
   question: Question,
   timestamp = Date.now(),
 ): GameState {
-  if (game.status !== "question_active" && game.status !== "answer_correction") {
+  if (game.status !== "question_active") {
     throw new Error(`Transition impossible depuis l’état ${game.status}`);
   }
   const answerId = game.revealedAnswerIds.at(-1);
@@ -561,7 +553,7 @@ export function finalizeTurn(
   themeLabel: string,
   timestamp = Date.now(),
 ): GameState {
-  if (game.status !== "turn_expired" && game.status !== "answer_correction") {
+  if (game.status !== "turn_expired") {
     throw new Error(`Transition impossible depuis l’état ${game.status}`);
   }
   if (
@@ -630,33 +622,61 @@ export function finalizeTurn(
   );
 }
 
-export function reopenTurnForCorrection(game: GameState, timestamp = Date.now()): GameState {
+export function toggleTurnResultAnswer(
+  game: GameState,
+  answerId: string,
+  timestamp = Date.now(),
+): GameState {
   assertStatus(game, "turn_results");
   const result = game.history.at(-1);
   if (!result || result.turnNumber !== game.currentTurn) {
     throw new Error("Aucun bilan courant à corriger");
   }
+  const allAnswers = [...result.foundAnswers, ...result.missedAnswers];
+  if (!allAnswers.some((answer) => answer.id === answerId)) throw new Error("Réponse inconnue");
+
+  const wasFound = result.foundAnswerIds.includes(answerId);
+  const foundAnswerIds = wasFound
+    ? result.foundAnswerIds.filter((id) => id !== answerId)
+    : [...result.foundAnswerIds, answerId];
+  const foundAnswerSet = new Set(foundAnswerIds);
+  const missedAnswerIds = allAnswers
+    .map((answer) => answer.id)
+    .filter((id) => !foundAnswerSet.has(id));
+
+  const pointsEarned = calculateTurnScore(
+    foundAnswerIds.length,
+    result.difficultyLevel,
+    result.bombTriggered,
+  );
+
   const teamIndex = game.teams.findIndex((team) => team.id === result.answeringTeamId);
   if (teamIndex < 0) throw new Error("Équipe du tour introuvable");
   const scoredTeam = game.teams[teamIndex];
-  if (!scoredTeam) {
-    throw new Error("Le score du tour ne peut pas être annulé");
-  }
-  const correctedTeam = { ...scoredTeam, score: scoredTeam.score - result.pointsEarned };
+  if (!scoredTeam) throw new Error("Équipe du tour introuvable");
+  const updatedTeam = {
+    ...scoredTeam,
+    score: scoredTeam.score - result.pointsEarned + pointsEarned,
+  };
   const teams = game.teams.map((team, index) =>
-    index === teamIndex ? correctedTeam : team,
+    index === teamIndex ? updatedTeam : team,
   ) as Team[];
+
+  const updatedResult = {
+    ...result,
+    foundAnswerIds,
+    missedAnswerIds,
+    foundAnswers: allAnswers.filter((answer) => foundAnswerSet.has(answer.id)),
+    missedAnswers: allAnswers.filter((answer) => !foundAnswerSet.has(answer.id)),
+    baseScore: foundAnswerIds.length * GAME_CONFIG.basePointsPerAnswer,
+    pointsEarned,
+  };
 
   return touch(
     {
       ...game,
-      status: "answer_correction",
       teams,
-      history: game.history.slice(0, -1),
-      revealedAnswerIds: [...result.foundAnswerIds],
-      bombTriggered: result.bombTriggered,
-      turnScore: result.pointsEarned,
-      timerEndsAt: null,
+      history: [...game.history.slice(0, -1), updatedResult],
     },
     timestamp,
   );

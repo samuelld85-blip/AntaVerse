@@ -4,8 +4,13 @@
     "slug": "xlsx-brands-shopping-easy-01",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 animaux présents dans des logos de marques célèbres.",
     "shortTitle": "animaux présents dans des logos de marques cé…",
     "difficultyLevel": 1,
@@ -146,174 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "36370131f08fe8341149d0de1539d962cfde100b287bfaff37d6337546e2951f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-brands-shopping-easy-02",
     "slug": "xlsx-brands-shopping-easy-02",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 produits immédiatement associés à une grande marque alimentaire.",
-    "shortTitle": "produits immédiatement associés à une grande…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-1",
-        "display": "Pâte à tartiner",
-        "normalized": "pate a tartiner",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-2",
-        "display": "Soda au cola",
-        "normalized": "soda au cola",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-3",
-        "display": "Café en capsules",
-        "normalized": "cafe en capsules",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-4",
-        "display": "Crème glacée",
-        "normalized": "creme glacee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-5",
-        "display": "Chips empilables",
-        "normalized": "chips empilables",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-6",
-        "display": "Sauce pimentée",
-        "normalized": "sauce pimentee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-7",
-        "display": "Eau minérale",
-        "normalized": "eau minerale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-8",
-        "display": "Pâtes alimentaires",
-        "normalized": "pates alimentaires",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-02-answer-9",
-        "display": "Confiseries gélifiées",
-        "normalized": "confiseries gelifiees",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "brands-shopping:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-02-bomb",
-      "display": "Dior — parfum",
-      "normalized": "dior parfum",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6520ce7a8db6b1bab08c58042902c62e9e7c692b4e4237621df68924f0053304",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-03",
-    "slug": "xlsx-brands-shopping-easy-03",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 types de promotions commerciales.",
     "shortTitle": "types de promotions commerciales",
     "difficultyLevel": 1,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-1",
+        "id": "xlsx-brands-shopping-easy-02-answer-1",
         "display": "réduction",
         "normalized": "reduction",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-2",
+        "id": "xlsx-brands-shopping-easy-02-answer-2",
         "display": "deux pour un",
         "normalized": "deux pour un",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-3",
+        "id": "xlsx-brands-shopping-easy-02-answer-3",
         "display": "livraison gratuite",
         "normalized": "livraison gratuite",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-4",
+        "id": "xlsx-brands-shopping-easy-02-answer-4",
         "display": "remise immédiate",
         "normalized": "remise immediate",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-5",
+        "id": "xlsx-brands-shopping-easy-02-answer-5",
         "display": "coupon",
         "normalized": "coupon",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-6",
+        "id": "xlsx-brands-shopping-easy-02-answer-6",
         "display": "cashback",
         "normalized": "cashback",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-7",
+        "id": "xlsx-brands-shopping-easy-02-answer-7",
         "display": "lot",
         "normalized": "lot",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-8",
+        "id": "xlsx-brands-shopping-easy-02-answer-8",
         "display": "vente flash",
         "normalized": "vente flash",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-03-answer-9",
+        "id": "xlsx-brands-shopping-easy-02-answer-9",
         "display": "programme de fidélité",
         "normalized": "programme de fidelite",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-03-bomb",
+      "id": "xlsx-brands-shopping-easy-02-bomb",
       "display": "Frais de dossier",
       "normalized": "frais de dossier",
       "aliases": [],
@@ -454,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "92073e7a02236d034eae4272ceae43b95384507036f0a33c1191a1cab3816bb7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-04",
-    "slug": "xlsx-brands-shopping-easy-04",
+    "id": "xlsx-brands-shopping-easy-03",
+    "slug": "xlsx-brands-shopping-easy-03",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 produits portant souvent une marque visible.",
-    "shortTitle": "produits portant souvent une marque visible",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-1",
-        "display": "chaussures",
-        "normalized": "chaussures",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-2",
-        "display": "sac",
-        "normalized": "sac",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-3",
-        "display": "voiture",
-        "normalized": "voiture",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-4",
-        "display": "téléphone",
-        "normalized": "telephone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-5",
-        "display": "casquette",
-        "normalized": "casquette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-6",
-        "display": "ordinateur",
-        "normalized": "ordinateur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-7",
-        "display": "montre",
-        "normalized": "montre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-8",
-        "display": "lunettes",
-        "normalized": "lunettes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-04-answer-9",
-        "display": "valise",
-        "normalized": "valise",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "brands-shopping:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-04-bomb",
-      "display": "T-shirt sans logo",
-      "normalized": "t shirt sans logo",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a2589dd99aa3657b98f5fb2717d9ce3b8b092199e7034f430ae269e101004bf2",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-05",
-    "slug": "xlsx-brands-shopping-easy-05",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 marques alimentaires très connues.",
     "shortTitle": "marques alimentaires très connues",
     "difficultyLevel": 1,
@@ -637,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-1",
+        "id": "xlsx-brands-shopping-easy-03-answer-1",
         "display": "Coca-Cola",
         "normalized": "coca cola",
         "aliases": [],
@@ -649,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-2",
+        "id": "xlsx-brands-shopping-easy-03-answer-2",
         "display": "Nutella",
         "normalized": "nutella",
         "aliases": [],
@@ -661,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-3",
+        "id": "xlsx-brands-shopping-easy-03-answer-3",
         "display": "Oreo",
         "normalized": "oreo",
         "aliases": [],
@@ -673,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-4",
+        "id": "xlsx-brands-shopping-easy-03-answer-4",
         "display": "Danone",
         "normalized": "danone",
         "aliases": [],
@@ -685,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-5",
+        "id": "xlsx-brands-shopping-easy-03-answer-5",
         "display": "Heinz",
         "normalized": "heinz",
         "aliases": [],
@@ -697,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-6",
+        "id": "xlsx-brands-shopping-easy-03-answer-6",
         "display": "Kellogg’s",
         "normalized": "kellogg s",
         "aliases": [],
@@ -709,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-7",
+        "id": "xlsx-brands-shopping-easy-03-answer-7",
         "display": "Lay’s",
         "normalized": "lay s",
         "aliases": [],
@@ -721,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-8",
+        "id": "xlsx-brands-shopping-easy-03-answer-8",
         "display": "Nescafé",
         "normalized": "nescafe",
         "aliases": [],
@@ -733,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-05-answer-9",
+        "id": "xlsx-brands-shopping-easy-03-answer-9",
         "display": "McDonald’s",
         "normalized": "mcdonald s",
         "aliases": [],
@@ -746,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-05-bomb",
+      "id": "xlsx-brands-shopping-easy-03-bomb",
       "display": "Lacoste",
       "normalized": "lacoste",
       "aliases": [],
@@ -762,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f5d140e4361286e5ef8061ad49e6fd04fe413905d6e4c9ae97b46a39a1cc8621",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-06",
-    "slug": "xlsx-brands-shopping-easy-06",
+    "id": "xlsx-brands-shopping-easy-04",
+    "slug": "xlsx-brands-shopping-easy-04",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses que l’on trouve dans un centre commercial.",
     "shortTitle": "choses que l’on trouve dans un centre commercial",
     "difficultyLevel": 1,
@@ -791,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-1",
+        "id": "xlsx-brands-shopping-easy-04-answer-1",
         "display": "boutiques",
         "normalized": "boutiques",
         "aliases": [],
@@ -803,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-2",
+        "id": "xlsx-brands-shopping-easy-04-answer-2",
         "display": "restaurants",
         "normalized": "restaurants",
         "aliases": [],
@@ -815,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-3",
+        "id": "xlsx-brands-shopping-easy-04-answer-3",
         "display": "parking",
         "normalized": "parking",
         "aliases": [],
@@ -827,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-4",
+        "id": "xlsx-brands-shopping-easy-04-answer-4",
         "display": "cinéma",
         "normalized": "cinema",
         "aliases": [],
@@ -839,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-5",
+        "id": "xlsx-brands-shopping-easy-04-answer-5",
         "display": "toilettes",
         "normalized": "toilettes",
         "aliases": [],
@@ -851,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-6",
+        "id": "xlsx-brands-shopping-easy-04-answer-6",
         "display": "escalator",
         "normalized": "escalator",
         "aliases": [],
@@ -863,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-7",
+        "id": "xlsx-brands-shopping-easy-04-answer-7",
         "display": "accueil",
         "normalized": "accueil",
         "aliases": [],
@@ -875,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-8",
+        "id": "xlsx-brands-shopping-easy-04-answer-8",
         "display": "aire de jeux",
         "normalized": "aire de jeux",
         "aliases": [],
@@ -887,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-06-answer-9",
+        "id": "xlsx-brands-shopping-easy-04-answer-9",
         "display": "distributeur automatique",
         "normalized": "distributeur automatique",
         "aliases": [],
@@ -900,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-06-bomb",
+      "id": "xlsx-brands-shopping-easy-04-bomb",
       "display": "Entrepôt",
       "normalized": "entrepot",
       "aliases": [],
@@ -916,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4b521f373b882e429f7176590464da3f3dff5a5a8a68aaf98b90402560a9e6c3",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-07",
-    "slug": "xlsx-brands-shopping-easy-07",
+    "id": "xlsx-brands-shopping-easy-05",
+    "slug": "xlsx-brands-shopping-easy-05",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 moyens de recevoir un achat en ligne.",
     "shortTitle": "moyens de recevoir un achat en ligne",
     "difficultyLevel": 1,
@@ -945,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-1",
+        "id": "xlsx-brands-shopping-easy-05-answer-1",
         "display": "livraison à domicile",
         "normalized": "livraison a domicile",
         "aliases": [],
@@ -957,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-2",
+        "id": "xlsx-brands-shopping-easy-05-answer-2",
         "display": "point relais",
         "normalized": "point relais",
         "aliases": [],
@@ -969,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-3",
+        "id": "xlsx-brands-shopping-easy-05-answer-3",
         "display": "retrait en magasin",
         "normalized": "retrait en magasin",
         "aliases": [],
@@ -981,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-4",
+        "id": "xlsx-brands-shopping-easy-05-answer-4",
         "display": "casier automatique",
         "normalized": "casier automatique",
         "aliases": [],
@@ -993,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-5",
+        "id": "xlsx-brands-shopping-easy-05-answer-5",
         "display": "retrait chez le vendeur",
         "normalized": "retrait chez le vendeur",
         "aliases": [],
@@ -1005,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-6",
+        "id": "xlsx-brands-shopping-easy-05-answer-6",
         "display": "livraison express",
         "normalized": "livraison express",
         "aliases": [],
@@ -1017,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-7",
+        "id": "xlsx-brands-shopping-easy-05-answer-7",
         "display": "livraison planifiée",
         "normalized": "livraison planifiee",
         "aliases": [],
@@ -1029,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-8",
+        "id": "xlsx-brands-shopping-easy-05-answer-8",
         "display": "bureau de poste",
         "normalized": "bureau de poste",
         "aliases": [],
@@ -1041,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-07-answer-9",
+        "id": "xlsx-brands-shopping-easy-05-answer-9",
         "display": "livraison chez un voisin",
         "normalized": "livraison chez un voisin",
         "aliases": [],
@@ -1054,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-07-bomb",
+      "id": "xlsx-brands-shopping-easy-05-bomb",
       "display": "Remboursement",
       "normalized": "remboursement",
       "aliases": [],
@@ -1070,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1e6ae720cbc6f5060497ce603dfcfeff4e4a3de67f9c76a054613c2bc4c51127",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-08",
-    "slug": "xlsx-brands-shopping-easy-08",
+    "id": "xlsx-brands-shopping-easy-06",
+    "slug": "xlsx-brands-shopping-easy-06",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 problèmes possibles avec une commande.",
     "shortTitle": "problèmes possibles avec une commande",
     "difficultyLevel": 1,
@@ -1099,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-1",
+        "id": "xlsx-brands-shopping-easy-06-answer-1",
         "display": "retard",
         "normalized": "retard",
         "aliases": [],
@@ -1111,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-2",
+        "id": "xlsx-brands-shopping-easy-06-answer-2",
         "display": "mauvais produit",
         "normalized": "mauvais produit",
         "aliases": [],
@@ -1123,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-3",
+        "id": "xlsx-brands-shopping-easy-06-answer-3",
         "display": "colis endommagé",
         "normalized": "colis endommage",
         "aliases": [],
@@ -1135,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-4",
+        "id": "xlsx-brands-shopping-easy-06-answer-4",
         "display": "article manquant",
         "normalized": "article manquant",
         "aliases": [],
@@ -1147,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-5",
+        "id": "xlsx-brands-shopping-easy-06-answer-5",
         "display": "taille incorrecte",
         "normalized": "taille incorrecte",
         "aliases": [],
@@ -1159,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-6",
+        "id": "xlsx-brands-shopping-easy-06-answer-6",
         "display": "adresse erronée",
         "normalized": "adresse erronee",
         "aliases": [],
@@ -1171,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-7",
+        "id": "xlsx-brands-shopping-easy-06-answer-7",
         "display": "paiement refusé",
         "normalized": "paiement refuse",
         "aliases": [],
@@ -1183,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-8",
+        "id": "xlsx-brands-shopping-easy-06-answer-8",
         "display": "retour compliqué",
         "normalized": "retour complique",
         "aliases": [],
@@ -1195,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-08-answer-9",
+        "id": "xlsx-brands-shopping-easy-06-answer-9",
         "display": "frais imprévus",
         "normalized": "frais imprevus",
         "aliases": [],
@@ -1208,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-08-bomb",
+      "id": "xlsx-brands-shopping-easy-06-bomb",
       "display": "Panier vide",
       "normalized": "panier vide",
       "aliases": [],
@@ -1224,22 +946,345 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4f8be155602ce53dda3ae107fdda03410eaa7511f3503ffec7bf35c1f28da537",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-brands-shopping-easy-07",
+    "slug": "xlsx-brands-shopping-easy-07",
+    "language": "fr",
+    "themeId": "brands-shopping",
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 produits que l’on achète en pharmacie.",
+    "shortTitle": "produits que l’on achète en pharmacie",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-1",
+        "display": "paracétamol",
+        "normalized": "paracetamol",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-2",
+        "display": "pansements",
+        "normalized": "pansements",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-3",
+        "display": "crème solaire",
+        "normalized": "creme solaire",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-4",
+        "display": "sirop pour la toux",
+        "normalized": "sirop pour la toux",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-5",
+        "display": "vitamines",
+        "normalized": "vitamines",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-6",
+        "display": "thermomètre",
+        "normalized": "thermometre",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-7",
+        "display": "gel hydroalcoolique",
+        "normalized": "gel hydroalcoolique",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-8",
+        "display": "pastilles",
+        "normalized": "pastilles",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-07-answer-9",
+        "display": "préservatifs",
+        "normalized": "preservatifs",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-brands-shopping-easy-07-bomb",
+      "display": "Carte Vitale",
+      "normalized": "carte vitale",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "a4548814745db3f914a32b47a8a3213d68691f22ab86510e75c682f914f46c70",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-brands-shopping-easy-08",
+    "slug": "xlsx-brands-shopping-easy-08",
+    "language": "fr",
+    "themeId": "brands-shopping",
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 raisons de retourner un achat.",
+    "shortTitle": "raisons de retourner un achat",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-1",
+        "display": "mauvaise taille",
+        "normalized": "mauvaise taille",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-2",
+        "display": "produit cassé",
+        "normalized": "produit casse",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-3",
+        "display": "changement d’avis",
+        "normalized": "changement d avis",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-4",
+        "display": "couleur différente",
+        "normalized": "couleur differente",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-5",
+        "display": "article incomplet",
+        "normalized": "article incomplet",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-6",
+        "display": "cadeau en double",
+        "normalized": "cadeau en double",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-7",
+        "display": "retard de livraison",
+        "normalized": "retard de livraison",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-8",
+        "display": "description trompeuse",
+        "normalized": "description trompeuse",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-brands-shopping-easy-08-answer-9",
+        "display": "produit incompatible",
+        "normalized": "produit incompatible",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-brands-shopping-easy-08-bomb",
+      "display": "Produit parfait",
+      "normalized": "produit parfait",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "845f776df084db2d5779209a363402c3fffeb846b37ed096ab971cb1ae80affc",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-brands-shopping-easy-09",
     "slug": "xlsx-brands-shopping-easy-09",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 marques de vêtements connues.",
-    "shortTitle": "marques de vêtements connues",
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 marques connues pour vendre principalement des vêtements ou chaussures.",
+    "shortTitle": "marques connues pour vendre principalement de…",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -1266,8 +1311,8 @@
       },
       {
         "id": "xlsx-brands-shopping-easy-09-answer-2",
-        "display": "Nike",
-        "normalized": "nike",
+        "display": "H&M",
+        "normalized": "h m",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1278,8 +1323,8 @@
       },
       {
         "id": "xlsx-brands-shopping-easy-09-answer-3",
-        "display": "Levi’s",
-        "normalized": "levi s",
+        "display": "Uniqlo",
+        "normalized": "uniqlo",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1290,776 +1335,6 @@
       },
       {
         "id": "xlsx-brands-shopping-easy-09-answer-4",
-        "display": "H&M",
-        "normalized": "h m",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-09-answer-5",
-        "display": "Uniqlo",
-        "normalized": "uniqlo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-09-answer-6",
-        "display": "Adidas",
-        "normalized": "adidas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-09-answer-7",
-        "display": "Lacoste",
-        "normalized": "lacoste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-09-answer-8",
-        "display": "Ralph Lauren",
-        "normalized": "ralph lauren",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-09-answer-9",
-        "display": "The North Face",
-        "normalized": "the north face",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-09-bomb",
-      "display": "Lego",
-      "normalized": "lego",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a827343a898de8d351f3e3d8c4847c7176c4e146f141bad050d5fae2d96bae31",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-10",
-    "slug": "xlsx-brands-shopping-easy-10",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 marques automobiles.",
-    "shortTitle": "marques automobiles",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-1",
-        "display": "Renault",
-        "normalized": "renault",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-2",
-        "display": "Toyota",
-        "normalized": "toyota",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-3",
-        "display": "BMW",
-        "normalized": "bmw",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-4",
-        "display": "Peugeot",
-        "normalized": "peugeot",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-5",
-        "display": "Ford",
-        "normalized": "ford",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-6",
-        "display": "Mercedes-Benz",
-        "normalized": "mercedes benz",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-7",
-        "display": "Volkswagen",
-        "normalized": "volkswagen",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-8",
-        "display": "Honda",
-        "normalized": "honda",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-10-answer-9",
-        "display": "Tesla",
-        "normalized": "tesla",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-10-bomb",
-      "display": "Michelin",
-      "normalized": "michelin",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "23f07b0024f873e2008829797a492daf46b2b509493ee5a6418e4344bcc0be04",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-11",
-    "slug": "xlsx-brands-shopping-easy-11",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 produits que l’on achète en pharmacie.",
-    "shortTitle": "produits que l’on achète en pharmacie",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-1",
-        "display": "paracétamol",
-        "normalized": "paracetamol",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-2",
-        "display": "pansements",
-        "normalized": "pansements",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-3",
-        "display": "crème solaire",
-        "normalized": "creme solaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-4",
-        "display": "sirop pour la toux",
-        "normalized": "sirop pour la toux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-5",
-        "display": "vitamines",
-        "normalized": "vitamines",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-6",
-        "display": "thermomètre",
-        "normalized": "thermometre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-7",
-        "display": "gel hydroalcoolique",
-        "normalized": "gel hydroalcoolique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-8",
-        "display": "pastilles",
-        "normalized": "pastilles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-11-answer-9",
-        "display": "préservatifs",
-        "normalized": "preservatifs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-11-bomb",
-      "display": "Carte Vitale",
-      "normalized": "carte vitale",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a4548814745db3f914a32b47a8a3213d68691f22ab86510e75c682f914f46c70",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-12",
-    "slug": "xlsx-brands-shopping-easy-12",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 raisons de retourner un achat.",
-    "shortTitle": "raisons de retourner un achat",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-1",
-        "display": "mauvaise taille",
-        "normalized": "mauvaise taille",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-2",
-        "display": "produit cassé",
-        "normalized": "produit casse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-3",
-        "display": "changement d’avis",
-        "normalized": "changement d avis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-4",
-        "display": "couleur différente",
-        "normalized": "couleur differente",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-5",
-        "display": "article incomplet",
-        "normalized": "article incomplet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-6",
-        "display": "cadeau en double",
-        "normalized": "cadeau en double",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-7",
-        "display": "retard de livraison",
-        "normalized": "retard de livraison",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-8",
-        "display": "description trompeuse",
-        "normalized": "description trompeuse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-12-answer-9",
-        "display": "produit incompatible",
-        "normalized": "produit incompatible",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-12-bomb",
-      "display": "Produit parfait",
-      "normalized": "produit parfait",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "845f776df084db2d5779209a363402c3fffeb846b37ed096ab971cb1ae80affc",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-13",
-    "slug": "xlsx-brands-shopping-easy-13",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 enseignes de supermarché.",
-    "shortTitle": "enseignes de supermarché",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-1",
-        "display": "Carrefour",
-        "normalized": "carrefour",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-2",
-        "display": "Lidl",
-        "normalized": "lidl",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-3",
-        "display": "Monoprix",
-        "normalized": "monoprix",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-4",
-        "display": "Auchan",
-        "normalized": "auchan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-5",
-        "display": "Intermarché",
-        "normalized": "intermarche",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-6",
-        "display": "Leclerc",
-        "normalized": "leclerc",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-7",
-        "display": "Aldi",
-        "normalized": "aldi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-8",
-        "display": "Casino",
-        "normalized": "casino",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-13-answer-9",
-        "display": "Super U",
-        "normalized": "super u",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-easy-13-bomb",
-      "display": "Sephora",
-      "normalized": "sephora",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ab0e457bc6a042e743aa14140c83aaa174fa2ef7929103e6adcd7a3bb016fdc6",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-easy-14",
-    "slug": "xlsx-brands-shopping-easy-14",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 marques connues pour vendre principalement des vêtements ou chaussures.",
-    "shortTitle": "marques connues pour vendre principalement de…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-easy-14-answer-1",
-        "display": "Zara",
-        "normalized": "zara",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-14-answer-2",
-        "display": "H&M",
-        "normalized": "h m",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-14-answer-3",
-        "display": "Uniqlo",
-        "normalized": "uniqlo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-easy-14-answer-4",
         "display": "Levi's",
         "normalized": "levi s",
         "aliases": [],
@@ -2071,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-14-answer-5",
+        "id": "xlsx-brands-shopping-easy-09-answer-5",
         "display": "Lacoste",
         "normalized": "lacoste",
         "aliases": [],
@@ -2083,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-14-answer-6",
+        "id": "xlsx-brands-shopping-easy-09-answer-6",
         "display": "Nike",
         "normalized": "nike",
         "aliases": [],
@@ -2095,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-14-answer-7",
+        "id": "xlsx-brands-shopping-easy-09-answer-7",
         "display": "Adidas",
         "normalized": "adidas",
         "aliases": [],
@@ -2107,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-14-answer-8",
+        "id": "xlsx-brands-shopping-easy-09-answer-8",
         "display": "Puma",
         "normalized": "puma",
         "aliases": [],
@@ -2119,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-14-answer-9",
+        "id": "xlsx-brands-shopping-easy-09-answer-9",
         "display": "Ralph Lauren",
         "normalized": "ralph lauren",
         "aliases": [],
@@ -2132,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-14-bomb",
+      "id": "xlsx-brands-shopping-easy-09-bomb",
       "display": "Samsung",
       "normalized": "samsung",
       "aliases": [],
@@ -2148,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a4946511d62d62cd7b55950f5c0a2a51e73ea5238b73132c2f29547bf417d3b4",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-15",
-    "slug": "xlsx-brands-shopping-easy-15",
+    "id": "xlsx-brands-shopping-easy-10",
+    "slug": "xlsx-brands-shopping-easy-10",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 marques de smartphones.",
     "shortTitle": "marques de smartphones",
     "difficultyLevel": 1,
@@ -2177,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-1",
+        "id": "xlsx-brands-shopping-easy-10-answer-1",
         "display": "Apple",
         "normalized": "apple",
         "aliases": [],
@@ -2189,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-2",
+        "id": "xlsx-brands-shopping-easy-10-answer-2",
         "display": "Samsung",
         "normalized": "samsung",
         "aliases": [],
@@ -2201,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-3",
+        "id": "xlsx-brands-shopping-easy-10-answer-3",
         "display": "Google",
         "normalized": "google",
         "aliases": [],
@@ -2213,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-4",
+        "id": "xlsx-brands-shopping-easy-10-answer-4",
         "display": "Xiaomi",
         "normalized": "xiaomi",
         "aliases": [],
@@ -2225,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-5",
+        "id": "xlsx-brands-shopping-easy-10-answer-5",
         "display": "OnePlus",
         "normalized": "oneplus",
         "aliases": [],
@@ -2237,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-6",
+        "id": "xlsx-brands-shopping-easy-10-answer-6",
         "display": "Huawei",
         "normalized": "huawei",
         "aliases": [],
@@ -2249,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-7",
+        "id": "xlsx-brands-shopping-easy-10-answer-7",
         "display": "Motorola",
         "normalized": "motorola",
         "aliases": [],
@@ -2261,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-8",
+        "id": "xlsx-brands-shopping-easy-10-answer-8",
         "display": "Sony",
         "normalized": "sony",
         "aliases": [],
@@ -2273,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-15-answer-9",
+        "id": "xlsx-brands-shopping-easy-10-answer-9",
         "display": "Honor",
         "normalized": "honor",
         "aliases": [],
@@ -2286,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-15-bomb",
+      "id": "xlsx-brands-shopping-easy-10-bomb",
       "display": "IKEA",
       "normalized": "ikea",
       "aliases": [],
@@ -2302,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7547126409937e3cb316420098488bf5072f963a96a173718d994cd6ffae4cc1",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-16",
-    "slug": "xlsx-brands-shopping-easy-16",
+    "id": "xlsx-brands-shopping-easy-11",
+    "slug": "xlsx-brands-shopping-easy-11",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 enseignes de supermarchés ou hypermarchés en France.",
     "shortTitle": "enseignes de supermarchés ou hypermarchés en…",
     "difficultyLevel": 1,
@@ -2331,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-1",
+        "id": "xlsx-brands-shopping-easy-11-answer-1",
         "display": "Carrefour",
         "normalized": "carrefour",
         "aliases": [],
@@ -2343,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-2",
+        "id": "xlsx-brands-shopping-easy-11-answer-2",
         "display": "Auchan",
         "normalized": "auchan",
         "aliases": [],
@@ -2355,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-3",
+        "id": "xlsx-brands-shopping-easy-11-answer-3",
         "display": "E.Leclerc",
         "normalized": "e leclerc",
         "aliases": [],
@@ -2367,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-4",
+        "id": "xlsx-brands-shopping-easy-11-answer-4",
         "display": "Intermarché",
         "normalized": "intermarche",
         "aliases": [],
@@ -2379,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-5",
+        "id": "xlsx-brands-shopping-easy-11-answer-5",
         "display": "Super U",
         "normalized": "super u",
         "aliases": [],
@@ -2391,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-6",
+        "id": "xlsx-brands-shopping-easy-11-answer-6",
         "display": "Monoprix",
         "normalized": "monoprix",
         "aliases": [],
@@ -2403,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-7",
+        "id": "xlsx-brands-shopping-easy-11-answer-7",
         "display": "Lidl",
         "normalized": "lidl",
         "aliases": [],
@@ -2415,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-8",
+        "id": "xlsx-brands-shopping-easy-11-answer-8",
         "display": "Aldi",
         "normalized": "aldi",
         "aliases": [],
@@ -2427,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-16-answer-9",
+        "id": "xlsx-brands-shopping-easy-11-answer-9",
         "display": "Casino",
         "normalized": "casino",
         "aliases": [],
@@ -2440,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-16-bomb",
+      "id": "xlsx-brands-shopping-easy-11-bomb",
       "display": "Fnac",
       "normalized": "fnac",
       "aliases": [],
@@ -2456,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8c1e1fd93219b7eb16b6890cfc1ddf6748fa98267ccdd3b14cd2f9c55c96eed1",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-17",
-    "slug": "xlsx-brands-shopping-easy-17",
+    "id": "xlsx-brands-shopping-easy-12",
+    "slug": "xlsx-brands-shopping-easy-12",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 marques automobiles connues.",
     "shortTitle": "marques automobiles connues",
     "difficultyLevel": 1,
@@ -2485,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-1",
+        "id": "xlsx-brands-shopping-easy-12-answer-1",
         "display": "Renault",
         "normalized": "renault",
         "aliases": [],
@@ -2497,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-2",
+        "id": "xlsx-brands-shopping-easy-12-answer-2",
         "display": "Peugeot",
         "normalized": "peugeot",
         "aliases": [],
@@ -2509,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-3",
+        "id": "xlsx-brands-shopping-easy-12-answer-3",
         "display": "Citroën",
         "normalized": "citroen",
         "aliases": [],
@@ -2521,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-4",
+        "id": "xlsx-brands-shopping-easy-12-answer-4",
         "display": "BMW",
         "normalized": "bmw",
         "aliases": [],
@@ -2533,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-5",
+        "id": "xlsx-brands-shopping-easy-12-answer-5",
         "display": "Mercedes-Benz",
         "normalized": "mercedes benz",
         "aliases": [],
@@ -2545,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-6",
+        "id": "xlsx-brands-shopping-easy-12-answer-6",
         "display": "Audi",
         "normalized": "audi",
         "aliases": [],
@@ -2557,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-7",
+        "id": "xlsx-brands-shopping-easy-12-answer-7",
         "display": "Toyota",
         "normalized": "toyota",
         "aliases": [],
@@ -2569,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-8",
+        "id": "xlsx-brands-shopping-easy-12-answer-8",
         "display": "Volkswagen",
         "normalized": "volkswagen",
         "aliases": [],
@@ -2581,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-17-answer-9",
+        "id": "xlsx-brands-shopping-easy-12-answer-9",
         "display": "Ford",
         "normalized": "ford",
         "aliases": [],
@@ -2594,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-17-bomb",
+      "id": "xlsx-brands-shopping-easy-12-bomb",
       "display": "Nike",
       "normalized": "nike",
       "aliases": [],
@@ -2610,20 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "e49a8f0b87fa622aa408013316590e2cc979ff4c7dbd5894e789e42c1f52dcf3",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-18",
-    "slug": "xlsx-brands-shopping-easy-18",
+    "id": "xlsx-brands-shopping-easy-13",
+    "slug": "xlsx-brands-shopping-easy-13",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 marques de sport connues.",
     "shortTitle": "marques de sport connues",
     "difficultyLevel": 1,
@@ -2639,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-1",
+        "id": "xlsx-brands-shopping-easy-13-answer-1",
         "display": "Nike",
         "normalized": "nike",
         "aliases": [],
@@ -2651,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-2",
+        "id": "xlsx-brands-shopping-easy-13-answer-2",
         "display": "Adidas",
         "normalized": "adidas",
         "aliases": [],
@@ -2663,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-3",
+        "id": "xlsx-brands-shopping-easy-13-answer-3",
         "display": "Puma",
         "normalized": "puma",
         "aliases": [],
@@ -2675,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-4",
+        "id": "xlsx-brands-shopping-easy-13-answer-4",
         "display": "Reebok",
         "normalized": "reebok",
         "aliases": [],
@@ -2687,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-5",
+        "id": "xlsx-brands-shopping-easy-13-answer-5",
         "display": "Asics",
         "normalized": "asics",
         "aliases": [],
@@ -2699,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-6",
+        "id": "xlsx-brands-shopping-easy-13-answer-6",
         "display": "New Balance",
         "normalized": "new balance",
         "aliases": [],
@@ -2711,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-7",
+        "id": "xlsx-brands-shopping-easy-13-answer-7",
         "display": "Under Armour",
         "normalized": "under armour",
         "aliases": [],
@@ -2723,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-8",
+        "id": "xlsx-brands-shopping-easy-13-answer-8",
         "display": "Salomon",
         "normalized": "salomon",
         "aliases": [],
@@ -2735,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-18-answer-9",
+        "id": "xlsx-brands-shopping-easy-13-answer-9",
         "display": "Fila",
         "normalized": "fila",
         "aliases": [],
@@ -2748,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-18-bomb",
+      "id": "xlsx-brands-shopping-easy-13-bomb",
       "display": "Nespresso",
       "normalized": "nespresso",
       "aliases": [],
@@ -2764,20 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c73006b10167b109e48c7e9dd6ed88a800c1b2c7df883a7709847b9cec826625",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-19",
-    "slug": "xlsx-brands-shopping-easy-19",
+    "id": "xlsx-brands-shopping-easy-14",
+    "slug": "xlsx-brands-shopping-easy-14",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 marques de luxe connues.",
     "shortTitle": "marques de luxe connues",
     "difficultyLevel": 1,
@@ -2793,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-1",
+        "id": "xlsx-brands-shopping-easy-14-answer-1",
         "display": "Louis Vuitton",
         "normalized": "louis vuitton",
         "aliases": [],
@@ -2805,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-2",
+        "id": "xlsx-brands-shopping-easy-14-answer-2",
         "display": "Chanel",
         "normalized": "chanel",
         "aliases": [],
@@ -2817,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-3",
+        "id": "xlsx-brands-shopping-easy-14-answer-3",
         "display": "Dior",
         "normalized": "dior",
         "aliases": [],
@@ -2829,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-4",
+        "id": "xlsx-brands-shopping-easy-14-answer-4",
         "display": "Hermès",
         "normalized": "hermes",
         "aliases": [],
@@ -2841,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-5",
+        "id": "xlsx-brands-shopping-easy-14-answer-5",
         "display": "Gucci",
         "normalized": "gucci",
         "aliases": [],
@@ -2853,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-6",
+        "id": "xlsx-brands-shopping-easy-14-answer-6",
         "display": "Prada",
         "normalized": "prada",
         "aliases": [],
@@ -2865,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-7",
+        "id": "xlsx-brands-shopping-easy-14-answer-7",
         "display": "Cartier",
         "normalized": "cartier",
         "aliases": [],
@@ -2877,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-8",
+        "id": "xlsx-brands-shopping-easy-14-answer-8",
         "display": "Rolex",
         "normalized": "rolex",
         "aliases": [],
@@ -2889,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-19-answer-9",
+        "id": "xlsx-brands-shopping-easy-14-answer-9",
         "display": "Saint Laurent",
         "normalized": "saint laurent",
         "aliases": [],
@@ -2902,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-19-bomb",
+      "id": "xlsx-brands-shopping-easy-14-bomb",
       "display": "Decathlon",
       "normalized": "decathlon",
       "aliases": [],
@@ -2918,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "e64fcf7ca61e4c3fb9852b9ec9371588dfc04ed5c943a0ac94f56661c3c7fcd7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-brands-shopping-easy-20",
-    "slug": "xlsx-brands-shopping-easy-20",
+    "id": "xlsx-brands-shopping-easy-15",
+    "slug": "xlsx-brands-shopping-easy-15",
     "language": "fr",
     "themeId": "brands-shopping",
-    "subthemeIds": ["brands-shopping:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "brands-shopping:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 enseignes où l’on peut acheter des meubles ou de la décoration.",
     "shortTitle": "enseignes où l’on peut acheter des meubles ou…",
     "difficultyLevel": 1,
@@ -2947,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-1",
+        "id": "xlsx-brands-shopping-easy-15-answer-1",
         "display": "IKEA",
         "normalized": "ikea",
         "aliases": [],
@@ -2959,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-2",
+        "id": "xlsx-brands-shopping-easy-15-answer-2",
         "display": "Maisons du Monde",
         "normalized": "maisons du monde",
         "aliases": [],
@@ -2971,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-3",
+        "id": "xlsx-brands-shopping-easy-15-answer-3",
         "display": "Conforama",
         "normalized": "conforama",
         "aliases": [],
@@ -2983,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-4",
+        "id": "xlsx-brands-shopping-easy-15-answer-4",
         "display": "BUT",
         "normalized": "but",
         "aliases": [],
@@ -2995,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-5",
+        "id": "xlsx-brands-shopping-easy-15-answer-5",
         "display": "Habitat",
         "normalized": "habitat",
         "aliases": [],
@@ -3007,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-6",
+        "id": "xlsx-brands-shopping-easy-15-answer-6",
         "display": "La Redoute Intérieurs",
         "normalized": "la redoute interieurs",
         "aliases": [],
@@ -3019,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-7",
+        "id": "xlsx-brands-shopping-easy-15-answer-7",
         "display": "Leroy Merlin",
         "normalized": "leroy merlin",
         "aliases": [],
@@ -3031,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-8",
+        "id": "xlsx-brands-shopping-easy-15-answer-8",
         "display": "Castorama",
         "normalized": "castorama",
         "aliases": [],
@@ -3043,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-easy-20-answer-9",
+        "id": "xlsx-brands-shopping-easy-15-answer-9",
         "display": "Jysk",
         "normalized": "jysk",
         "aliases": [],
@@ -3056,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-easy-20-bomb",
+      "id": "xlsx-brands-shopping-easy-15-bomb",
       "display": "McDonald's",
       "normalized": "mcdonald s",
       "aliases": [],
@@ -3072,11 +2377,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "92383f3ca3bbb5b42a8ff01c9039171994c11f799163b5a56226e2fa81ed211d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

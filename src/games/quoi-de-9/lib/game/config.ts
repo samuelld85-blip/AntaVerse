@@ -27,7 +27,7 @@ export const GAME_CONFIG = {
     3: {
       label: "Difficile",
       key: "hard",
-      coefficient: 2,
+      coefficient: 3,
       eyebrow: "Tout peut basculer",
       accent: "coral",
     },

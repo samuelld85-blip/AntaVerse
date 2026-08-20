@@ -4,8 +4,13 @@
     "slug": "xlsx-nature-body-medium-01",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 grands biomes terrestres couramment distingués.",
     "shortTitle": "grands biomes terrestres couramment distingués",
     "difficultyLevel": 2,
@@ -146,22 +151,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "30597b43f83aed21dc5070951cf68b5b8afba0c62ad93bc0d9334d92680cd66e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-nature-body-medium-02",
     "slug": "xlsx-nature-body-medium-02",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 grands félins sauvages.",
-    "shortTitle": "grands félins sauvages",
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 félins sauvages connus.",
+    "shortTitle": "félins sauvages connus",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -300,22 +310,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cbc471cba0f0c8fafdcef16c43ec00a4ebdc5a8c312ab66aa5ce1eb298d95d2a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-nature-body-medium-03",
     "slug": "xlsx-nature-body-medium-03",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 oiseaux actuels incapables de voler.",
-    "shortTitle": "oiseaux actuels incapables de voler",
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 oiseaux migrateurs connus.",
+    "shortTitle": "oiseaux migrateurs connus",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -330,8 +345,8 @@
     "answers": [
       {
         "id": "xlsx-nature-body-medium-03-answer-1",
-        "display": "Autruche",
-        "normalized": "autruche",
+        "display": "Hirondelle",
+        "normalized": "hirondelle",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -342,8 +357,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-2",
-        "display": "Émeu",
-        "normalized": "emeu",
+        "display": "Cigogne",
+        "normalized": "cigogne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -354,8 +369,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-3",
-        "display": "Casoar à casque",
-        "normalized": "casoar a casque",
+        "display": "Grue",
+        "normalized": "grue",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -366,8 +381,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-4",
-        "display": "Nandou d’Amérique",
-        "normalized": "nandou d amerique",
+        "display": "Oie sauvage",
+        "normalized": "oie sauvage",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -378,8 +393,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-5",
-        "display": "Kiwi austral",
-        "normalized": "kiwi austral",
+        "display": "Canard colvert",
+        "normalized": "canard colvert",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -390,8 +405,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-6",
-        "display": "Manchot empereur",
-        "normalized": "manchot empereur",
+        "display": "Coucou",
+        "normalized": "coucou",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -402,8 +417,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-7",
-        "display": "Kakapo",
-        "normalized": "kakapo",
+        "display": "Martinet",
+        "normalized": "martinet",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -414,8 +429,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-8",
-        "display": "Takahé",
-        "normalized": "takahe",
+        "display": "Sterne",
+        "normalized": "sterne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -426,8 +441,8 @@
       },
       {
         "id": "xlsx-nature-body-medium-03-answer-9",
-        "display": "Cormoran aptère",
-        "normalized": "cormoran aptere",
+        "display": "Bécasse",
+        "normalized": "becasse",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -439,8 +454,8 @@
     ],
     "bomb": {
       "id": "xlsx-nature-body-medium-03-bomb",
-      "display": "Aigle",
-      "normalized": "aigle",
+      "display": "Autruche",
+      "normalized": "autruche",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -454,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "89aede5b8a830ed581c0208b235240a8cae58e79e421fd4430623aa7426be019",
+    "answerSetFingerprint": "0a6de8f39bb914f9e248f7ac7a6c84e32c13a03684e677c0685802adfc9ca739",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-nature-body-medium-04",
     "slug": "xlsx-nature-body-medium-04",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 parties courantes d’une plante à fleurs.",
     "shortTitle": "parties courantes d’une plante à fleurs",
     "difficultyLevel": 2,
@@ -608,22 +628,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6cab7147bf2aff93c970706ba6505d56301f4b4edd05576a2b18155588fdb147",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-nature-body-medium-05",
     "slug": "xlsx-nature-body-medium-05",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 races de chats domestiques reconnues par la TICA.",
-    "shortTitle": "races de chats domestiques reconnues par la TICA",
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 races de chats domestiques connues.",
+    "shortTitle": "races de chats domestiques connues",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -762,22 +787,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "dbb4a11058d2d96fd2af71bd6b04d24812fe5a859cf8b6163412e596930c3564",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-nature-body-medium-06",
     "slug": "xlsx-nature-body-medium-06",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 types de précipitations ou dépôts atmosphériques couramment nommés.",
-    "shortTitle": "types de précipitations ou dépôts atmosphériq…",
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 insectes couramment observés dans un jardin.",
+    "shortTitle": "insectes couramment observés dans un jardin",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -792,160 +822,6 @@
     "answers": [
       {
         "id": "xlsx-nature-body-medium-06-answer-1",
-        "display": "Pluie",
-        "normalized": "pluie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-2",
-        "display": "Bruine",
-        "normalized": "bruine",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-3",
-        "display": "Neige",
-        "normalized": "neige",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-4",
-        "display": "Grêle",
-        "normalized": "grele",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-5",
-        "display": "Grésil",
-        "normalized": "gresil",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-6",
-        "display": "Pluie verglaçante",
-        "normalized": "pluie verglacante",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-7",
-        "display": "Neige roulée",
-        "normalized": "neige roulee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-8",
-        "display": "Rosée",
-        "normalized": "rosee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-06-answer-9",
-        "display": "Givre",
-        "normalized": "givre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-nature-body-medium-06-bomb",
-      "display": "Brouillard",
-      "normalized": "brouillard",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "5809a6c204192092dec12b1543de5285fd694b22b051f194f5fa1cbac25aee05",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-nature-body-medium-07",
-    "slug": "xlsx-nature-body-medium-07",
-    "language": "fr",
-    "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 insectes dont certaines espèces vivent en sociétés organisées ou en colonies.",
-    "shortTitle": "insectes dont certaines espèces vivent en soc…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-nature-body-medium-07-answer-1",
         "display": "Abeille",
         "normalized": "abeille",
         "aliases": [],
@@ -957,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-07-answer-2",
+        "id": "xlsx-nature-body-medium-06-answer-2",
         "display": "Bourdon",
         "normalized": "bourdon",
         "aliases": [],
@@ -969,7 +845,31 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-07-answer-3",
+        "id": "xlsx-nature-body-medium-06-answer-3",
+        "display": "Coccinelle",
+        "normalized": "coccinelle",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-nature-body-medium-06-answer-4",
+        "display": "Papillon",
+        "normalized": "papillon",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-nature-body-medium-06-answer-5",
         "display": "Fourmi",
         "normalized": "fourmi",
         "aliases": [],
@@ -977,37 +877,13 @@
         "alternativeSpellings": [],
         "accentInsensitiveVariants": [],
         "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-07-answer-4",
-        "display": "Termite",
-        "normalized": "termite",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-07-answer-5",
-        "display": "Guêpe poliste",
-        "normalized": "guepe poliste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
         "displayOrder": 5,
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-07-answer-6",
-        "display": "Frelon",
-        "normalized": "frelon",
+        "id": "xlsx-nature-body-medium-06-answer-6",
+        "display": "Guêpe",
+        "normalized": "guepe",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1017,9 +893,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-07-answer-7",
-        "display": "Puceron",
-        "normalized": "puceron",
+        "id": "xlsx-nature-body-medium-06-answer-7",
+        "display": "Moustique",
+        "normalized": "moustique",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1029,9 +905,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-07-answer-8",
-        "display": "Thrips",
-        "normalized": "thrips",
+        "id": "xlsx-nature-body-medium-06-answer-8",
+        "display": "Mouche",
+        "normalized": "mouche",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1041,9 +917,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-07-answer-9",
-        "display": "Coléoptère ambroisie",
-        "normalized": "coleoptere ambroisie",
+        "id": "xlsx-nature-body-medium-06-answer-9",
+        "display": "Sauterelle",
+        "normalized": "sauterelle",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1054,9 +930,9 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-nature-body-medium-07-bomb",
-      "display": "Coccinelle",
-      "normalized": "coccinelle",
+      "id": "xlsx-nature-body-medium-06-bomb",
+      "display": "Araignée",
+      "normalized": "araignee",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -1070,328 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "eaf3ee4643b9b710e62083a9913b44ee95d76c7803e4fb238bf975152d531715",
+    "answerSetFingerprint": "8bb005a5d27498c8e8b5fecb68daca8f8c50bf5bcde86a6127772934a3f4c294",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-nature-body-medium-08",
-    "slug": "xlsx-nature-body-medium-08",
+    "id": "xlsx-nature-body-medium-07",
+    "slug": "xlsx-nature-body-medium-07",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 races de chiens de berger reconnues par l’American Kennel Club.",
-    "shortTitle": "races de chiens de berger reconnues par l’Ame…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-nature-body-medium-08-answer-1",
-        "display": "Border collie",
-        "normalized": "border collie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-2",
-        "display": "Berger australien",
-        "normalized": "berger australien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-3",
-        "display": "Berger allemand",
-        "normalized": "berger allemand",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-4",
-        "display": "Berger belge malinois",
-        "normalized": "berger belge malinois",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-5",
-        "display": "Colley à poil long",
-        "normalized": "colley a poil long",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-6",
-        "display": "Shetland",
-        "normalized": "shetland",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-7",
-        "display": "Corgi gallois Pembroke",
-        "normalized": "corgi gallois pembroke",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-8",
-        "display": "Bouvier australien",
-        "normalized": "bouvier australien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-08-answer-9",
-        "display": "Berger des Pyrénées",
-        "normalized": "berger des pyrenees",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "nature-body:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-nature-body-medium-08-bomb",
-      "display": "Labrador",
-      "normalized": "labrador",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "330488165ff4f7fb1e4a7018daf319a67de3b91cf6d7f8d204f560510413cedb",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-nature-body-medium-09",
-    "slug": "xlsx-nature-body-medium-09",
-    "language": "fr",
-    "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 rapaces diurnes présents en Europe.",
-    "shortTitle": "rapaces diurnes présents en Europe",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-nature-body-medium-09-answer-1",
-        "display": "Aigle royal",
-        "normalized": "aigle royal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-2",
-        "display": "Pygargue à queue blanche",
-        "normalized": "pygargue a queue blanche",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-3",
-        "display": "Balbuzard pêcheur",
-        "normalized": "balbuzard pecheur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-4",
-        "display": "Faucon pèlerin",
-        "normalized": "faucon pelerin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-5",
-        "display": "Faucon crécerelle",
-        "normalized": "faucon crecerelle",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-6",
-        "display": "Buse variable",
-        "normalized": "buse variable",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-7",
-        "display": "Milan royal",
-        "normalized": "milan royal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-8",
-        "display": "Épervier d’Europe",
-        "normalized": "epervier d europe",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-09-answer-9",
-        "display": "Autour des palombes",
-        "normalized": "autour des palombes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "moyen"
     ],
-    "bomb": {
-      "id": "xlsx-nature-body-medium-09-bomb",
-      "display": "Hibou",
-      "normalized": "hibou",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d4fcb10186f23903d8a10857d86a200c7f20dec73df8d7f0a52b4197dcca3763",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-nature-body-medium-10",
-    "slug": "xlsx-nature-body-medium-10",
-    "language": "fr",
-    "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
     "questionText": "Cite 9 mammifères marins.",
     "shortTitle": "mammifères marins",
     "difficultyLevel": 2,
@@ -1407,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-nature-body-medium-10-answer-1",
+        "id": "xlsx-nature-body-medium-07-answer-1",
         "display": "Dauphin",
         "normalized": "dauphin",
         "aliases": [],
@@ -1419,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-2",
+        "id": "xlsx-nature-body-medium-07-answer-2",
         "display": "Baleine bleue",
         "normalized": "baleine bleue",
         "aliases": [],
@@ -1431,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-3",
+        "id": "xlsx-nature-body-medium-07-answer-3",
         "display": "Orque",
         "normalized": "orque",
         "aliases": [],
@@ -1443,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-4",
+        "id": "xlsx-nature-body-medium-07-answer-4",
         "display": "Phoque",
         "normalized": "phoque",
         "aliases": [],
@@ -1455,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-5",
+        "id": "xlsx-nature-body-medium-07-answer-5",
         "display": "Morse",
         "normalized": "morse",
         "aliases": [],
@@ -1467,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-6",
+        "id": "xlsx-nature-body-medium-07-answer-6",
         "display": "Lamantin",
         "normalized": "lamantin",
         "aliases": [],
@@ -1479,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-7",
+        "id": "xlsx-nature-body-medium-07-answer-7",
         "display": "Dugong",
         "normalized": "dugong",
         "aliases": [],
@@ -1491,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-8",
+        "id": "xlsx-nature-body-medium-07-answer-8",
         "display": "Marsouin",
         "normalized": "marsouin",
         "aliases": [],
@@ -1503,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-10-answer-9",
+        "id": "xlsx-nature-body-medium-07-answer-9",
         "display": "Narval",
         "normalized": "narval",
         "aliases": [],
@@ -1516,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-nature-body-medium-10-bomb",
+      "id": "xlsx-nature-body-medium-07-bomb",
       "display": "Requin",
       "normalized": "requin",
       "aliases": [],
@@ -1532,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "67435b60e8ec19d1f7c31a909089e2e82cbc50abec479a333ee35f46d5a1ce51",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-nature-body-medium-11",
-    "slug": "xlsx-nature-body-medium-11",
+    "id": "xlsx-nature-body-medium-08",
+    "slug": "xlsx-nature-body-medium-08",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 animaux marsupiaux.",
     "shortTitle": "animaux marsupiaux",
     "difficultyLevel": 2,
@@ -1561,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-nature-body-medium-11-answer-1",
+        "id": "xlsx-nature-body-medium-08-answer-1",
         "display": "Kangourou",
         "normalized": "kangourou",
         "aliases": [],
@@ -1573,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-2",
+        "id": "xlsx-nature-body-medium-08-answer-2",
         "display": "Koala",
         "normalized": "koala",
         "aliases": [],
@@ -1585,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-3",
+        "id": "xlsx-nature-body-medium-08-answer-3",
         "display": "Wombat",
         "normalized": "wombat",
         "aliases": [],
@@ -1597,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-4",
+        "id": "xlsx-nature-body-medium-08-answer-4",
         "display": "Wallaby",
         "normalized": "wallaby",
         "aliases": [],
@@ -1609,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-5",
+        "id": "xlsx-nature-body-medium-08-answer-5",
         "display": "Diable de Tasmanie",
         "normalized": "diable de tasmanie",
         "aliases": [],
@@ -1621,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-6",
+        "id": "xlsx-nature-body-medium-08-answer-6",
         "display": "Opossum",
         "normalized": "opossum",
         "aliases": [],
@@ -1633,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-7",
+        "id": "xlsx-nature-body-medium-08-answer-7",
         "display": "Quokka",
         "normalized": "quokka",
         "aliases": [],
@@ -1645,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-8",
+        "id": "xlsx-nature-body-medium-08-answer-8",
         "display": "Numbat",
         "normalized": "numbat",
         "aliases": [],
@@ -1657,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-11-answer-9",
+        "id": "xlsx-nature-body-medium-08-answer-9",
         "display": "Phalanger",
         "normalized": "phalanger",
         "aliases": [],
@@ -1670,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-nature-body-medium-11-bomb",
+      "id": "xlsx-nature-body-medium-08-bomb",
       "display": "Panda",
       "normalized": "panda",
       "aliases": [],
@@ -1686,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c144e72e46f244b7b8fdaf2e3ec71e6a4f5a90014c4dcac0f2494bb1406c193a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-nature-body-medium-12",
-    "slug": "xlsx-nature-body-medium-12",
+    "id": "xlsx-nature-body-medium-09",
+    "slug": "xlsx-nature-body-medium-09",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "nature-body:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 muscles du corps humain connus.",
     "shortTitle": "muscles du corps humain connus",
     "difficultyLevel": 2,
@@ -1715,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-nature-body-medium-12-answer-1",
+        "id": "xlsx-nature-body-medium-09-answer-1",
         "display": "Biceps",
         "normalized": "biceps",
         "aliases": [],
@@ -1727,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-2",
+        "id": "xlsx-nature-body-medium-09-answer-2",
         "display": "Triceps",
         "normalized": "triceps",
         "aliases": [],
@@ -1739,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-3",
+        "id": "xlsx-nature-body-medium-09-answer-3",
         "display": "Deltoïde",
         "normalized": "deltoide",
         "aliases": [],
@@ -1751,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-4",
+        "id": "xlsx-nature-body-medium-09-answer-4",
         "display": "Pectoraux",
         "normalized": "pectoraux",
         "aliases": [],
@@ -1763,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-5",
+        "id": "xlsx-nature-body-medium-09-answer-5",
         "display": "Trapèze",
         "normalized": "trapeze",
         "aliases": [],
@@ -1775,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-6",
+        "id": "xlsx-nature-body-medium-09-answer-6",
         "display": "Grand dorsal",
         "normalized": "grand dorsal",
         "aliases": [],
@@ -1787,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-7",
+        "id": "xlsx-nature-body-medium-09-answer-7",
         "display": "Quadriceps",
         "normalized": "quadriceps",
         "aliases": [],
@@ -1799,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-8",
+        "id": "xlsx-nature-body-medium-09-answer-8",
         "display": "Ischio-jambiers",
         "normalized": "ischio jambiers",
         "aliases": [],
@@ -1811,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-12-answer-9",
+        "id": "xlsx-nature-body-medium-09-answer-9",
         "display": "Mollet",
         "normalized": "mollet",
         "aliases": [],
@@ -1824,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-nature-body-medium-12-bomb",
+      "id": "xlsx-nature-body-medium-09-bomb",
       "display": "Fémur",
       "normalized": "femur",
       "aliases": [],
@@ -1840,174 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "9e27ffcf1701598dfbdbebac62080db20359d65ffe2287846709d32f81b8d2df",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-nature-body-medium-13",
-    "slug": "xlsx-nature-body-medium-13",
+    "id": "xlsx-nature-body-medium-10",
+    "slug": "xlsx-nature-body-medium-10",
     "language": "fr",
     "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 grands groupes d’animaux vertébrés ou invertébrés.",
-    "shortTitle": "grands groupes d’animaux vertébrés ou inverté…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-nature-body-medium-13-answer-1",
-        "display": "Mammifères",
-        "normalized": "mammiferes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-2",
-        "display": "Oiseaux",
-        "normalized": "oiseaux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-3",
-        "display": "Reptiles",
-        "normalized": "reptiles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-4",
-        "display": "Amphibiens",
-        "normalized": "amphibiens",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-5",
-        "display": "Poissons",
-        "normalized": "poissons",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-6",
-        "display": "Insectes",
-        "normalized": "insectes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-7",
-        "display": "Arachnides",
-        "normalized": "arachnides",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-8",
-        "display": "Crustacés",
-        "normalized": "crustaces",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-nature-body-medium-13-answer-9",
-        "display": "Mollusques",
-        "normalized": "mollusques",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "nature-body:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-nature-body-medium-13-bomb",
-      "display": "Champignons",
-      "normalized": "champignons",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "f9a30e4b63eb107a9811096bed4e0e7529e3a954788b9c156106617227f1933c",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-nature-body-medium-14",
-    "slug": "xlsx-nature-body-medium-14",
-    "language": "fr",
-    "themeId": "nature-body",
-    "subthemeIds": ["nature-body:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 animaux connus pour hiberner ou entrer en torpeur saisonnière.",
     "shortTitle": "animaux connus pour hiberner ou entrer en tor…",
     "difficultyLevel": 2,
@@ -2023,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-nature-body-medium-14-answer-1",
+        "id": "xlsx-nature-body-medium-10-answer-1",
         "display": "Marmotte",
         "normalized": "marmotte",
         "aliases": [],
@@ -2035,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-2",
+        "id": "xlsx-nature-body-medium-10-answer-2",
         "display": "Hérisson",
         "normalized": "herisson",
         "aliases": [],
@@ -2047,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-3",
+        "id": "xlsx-nature-body-medium-10-answer-3",
         "display": "Chauve-souris",
         "normalized": "chauve souris",
         "aliases": [],
@@ -2059,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-4",
+        "id": "xlsx-nature-body-medium-10-answer-4",
         "display": "Loir",
         "normalized": "loir",
         "aliases": [],
@@ -2071,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-5",
+        "id": "xlsx-nature-body-medium-10-answer-5",
         "display": "Hamster d'Europe",
         "normalized": "hamster d europe",
         "aliases": [],
@@ -2083,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-6",
+        "id": "xlsx-nature-body-medium-10-answer-6",
         "display": "Ours brun",
         "normalized": "ours brun",
         "aliases": [],
@@ -2095,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-7",
+        "id": "xlsx-nature-body-medium-10-answer-7",
         "display": "Grenouille rousse",
         "normalized": "grenouille rousse",
         "aliases": [],
@@ -2107,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-8",
+        "id": "xlsx-nature-body-medium-10-answer-8",
         "display": "Tortue terrestre",
         "normalized": "tortue terrestre",
         "aliases": [],
@@ -2119,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-nature-body-medium-14-answer-9",
+        "id": "xlsx-nature-body-medium-10-answer-9",
         "display": "Écureuil terrestre",
         "normalized": "ecureuil terrestre",
         "aliases": [],
@@ -2132,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-nature-body-medium-14-bomb",
+      "id": "xlsx-nature-body-medium-10-bomb",
       "display": "Girafe",
       "normalized": "girafe",
       "aliases": [],
@@ -2148,11 +1582,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7d77629d4fad021b91ef18d8e448f4f98b67fd84c378ade9449479913531cf59",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

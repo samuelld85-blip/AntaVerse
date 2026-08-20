@@ -4,162 +4,13 @@
     "slug": "xlsx-history-easy-01",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 présidents des États-Unis.",
-    "shortTitle": "présidents des États-Unis",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-01-answer-1",
-        "display": "George Washington",
-        "normalized": "george washington",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-2",
-        "display": "Abraham Lincoln",
-        "normalized": "abraham lincoln",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-3",
-        "display": "Theodore Roosevelt",
-        "normalized": "theodore roosevelt",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-4",
-        "display": "Franklin D. Roosevelt",
-        "normalized": "franklin d roosevelt",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-5",
-        "display": "John F. Kennedy",
-        "normalized": "john f kennedy",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-6",
-        "display": "Ronald Reagan",
-        "normalized": "ronald reagan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-7",
-        "display": "Bill Clinton",
-        "normalized": "bill clinton",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-8",
-        "display": "George W. Bush",
-        "normalized": "george w bush",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-01-answer-9",
-        "display": "Barack Obama",
-        "normalized": "barack obama",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "history:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-history-easy-01-bomb",
-      "display": "Hillary Clinton",
-      "normalized": "hillary clinton",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b80879499eb33e53130dac9543ec30a50ff4336a45002a2212439bcd6655624c",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-02",
-    "slug": "xlsx-history-easy-02",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 personnages historiques très connus.",
     "shortTitle": "personnages historiques très connus",
     "difficultyLevel": 1,
@@ -175,7 +26,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-02-answer-1",
+        "id": "xlsx-history-easy-01-answer-1",
         "display": "Napoléon",
         "normalized": "napoleon",
         "aliases": [],
@@ -187,7 +38,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-2",
+        "id": "xlsx-history-easy-01-answer-2",
         "display": "Cléopâtre",
         "normalized": "cleopatre",
         "aliases": [],
@@ -199,7 +50,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-3",
+        "id": "xlsx-history-easy-01-answer-3",
         "display": "Jules César",
         "normalized": "jules cesar",
         "aliases": [],
@@ -211,7 +62,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-4",
+        "id": "xlsx-history-easy-01-answer-4",
         "display": "Alexandre le Grand",
         "normalized": "alexandre le grand",
         "aliases": [],
@@ -223,7 +74,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-5",
+        "id": "xlsx-history-easy-01-answer-5",
         "display": "Charlemagne",
         "normalized": "charlemagne",
         "aliases": [],
@@ -235,7 +86,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-6",
+        "id": "xlsx-history-easy-01-answer-6",
         "display": "Jeanne d’Arc",
         "normalized": "jeanne d arc",
         "aliases": [],
@@ -247,7 +98,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-7",
+        "id": "xlsx-history-easy-01-answer-7",
         "display": "Louis XIV",
         "normalized": "louis xiv",
         "aliases": [],
@@ -259,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-8",
+        "id": "xlsx-history-easy-01-answer-8",
         "display": "George Washington",
         "normalized": "george washington",
         "aliases": [],
@@ -271,7 +122,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-02-answer-9",
+        "id": "xlsx-history-easy-01-answer-9",
         "display": "Gandhi",
         "normalized": "gandhi",
         "aliases": [],
@@ -284,7 +135,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-02-bomb",
+      "id": "xlsx-history-easy-01-bomb",
       "display": "Manuel d’histoire",
       "normalized": "manuel d histoire",
       "aliases": [],
@@ -300,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8db5204935b320a3846697a2a78e9cb6bb2166028aa35dcba63ff3bd006ddc9d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-03",
-    "slug": "xlsx-history-easy-03",
+    "id": "xlsx-history-easy-02",
+    "slug": "xlsx-history-easy-02",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 inventions apparues avant le XXe siècle.",
     "shortTitle": "inventions apparues avant le XXe siècle",
     "difficultyLevel": 1,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-03-answer-1",
+        "id": "xlsx-history-easy-02-answer-1",
         "display": "imprimerie",
         "normalized": "imprimerie",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-2",
+        "id": "xlsx-history-easy-02-answer-2",
         "display": "boussole",
         "normalized": "boussole",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-3",
+        "id": "xlsx-history-easy-02-answer-3",
         "display": "machine à vapeur",
         "normalized": "machine a vapeur",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-4",
+        "id": "xlsx-history-easy-02-answer-4",
         "display": "roue",
         "normalized": "roue",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-5",
+        "id": "xlsx-history-easy-02-answer-5",
         "display": "papier",
         "normalized": "papier",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-6",
+        "id": "xlsx-history-easy-02-answer-6",
         "display": "lunettes",
         "normalized": "lunettes",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-7",
+        "id": "xlsx-history-easy-02-answer-7",
         "display": "télégraphe",
         "normalized": "telegraphe",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-8",
+        "id": "xlsx-history-easy-02-answer-8",
         "display": "téléphone",
         "normalized": "telephone",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-03-answer-9",
+        "id": "xlsx-history-easy-02-answer-9",
         "display": "locomotive",
         "normalized": "locomotive",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-03-bomb",
+      "id": "xlsx-history-easy-02-bomb",
       "display": "Inventeur",
       "normalized": "inventeur",
       "aliases": [],
@@ -454,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "42598ac8ada53dfce51b7f23d9f4de797352c5a4b464a4e521fb60a070b3fbf2",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-04",
-    "slug": "xlsx-history-easy-04",
+    "id": "xlsx-history-easy-03",
+    "slug": "xlsx-history-easy-03",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 monuments hérités de civilisations anciennes.",
     "shortTitle": "monuments hérités de civilisations anciennes",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-04-answer-1",
+        "id": "xlsx-history-easy-03-answer-1",
         "display": "Colisée",
         "normalized": "colisee",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-2",
+        "id": "xlsx-history-easy-03-answer-2",
         "display": "Pyramides de Gizeh",
         "normalized": "pyramides de gizeh",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-3",
+        "id": "xlsx-history-easy-03-answer-3",
         "display": "Parthénon",
         "normalized": "parthenon",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-4",
+        "id": "xlsx-history-easy-03-answer-4",
         "display": "Acropole d’Athènes",
         "normalized": "acropole d athenes",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-5",
+        "id": "xlsx-history-easy-03-answer-5",
         "display": "Grande Muraille de Chine",
         "normalized": "grande muraille de chine",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-6",
+        "id": "xlsx-history-easy-03-answer-6",
         "display": "Pétra",
         "normalized": "petra",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-7",
+        "id": "xlsx-history-easy-03-answer-7",
         "display": "Machu Picchu",
         "normalized": "machu picchu",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-8",
+        "id": "xlsx-history-easy-03-answer-8",
         "display": "Stonehenge",
         "normalized": "stonehenge",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-04-answer-9",
+        "id": "xlsx-history-easy-03-answer-9",
         "display": "Forum romain",
         "normalized": "forum romain",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-04-bomb",
+      "id": "xlsx-history-easy-03-bomb",
       "display": "Château de Versailles",
       "normalized": "chateau de versailles",
       "aliases": [],
@@ -608,174 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "187b13bccd78697b0674b404ca4e6024dd6828c3f77f0fe76e9d00e55eb41836",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-05",
-    "slug": "xlsx-history-easy-05",
+    "id": "xlsx-history-easy-04",
+    "slug": "xlsx-history-easy-04",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 personnages historiques français très connus.",
-    "shortTitle": "personnages historiques français très connus",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-05-answer-1",
-        "display": "Napoléon Ier",
-        "normalized": "napoleon ier",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-2",
-        "display": "Jeanne d'Arc",
-        "normalized": "jeanne d arc",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-3",
-        "display": "Louis XIV",
-        "normalized": "louis xiv",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-4",
-        "display": "Charlemagne",
-        "normalized": "charlemagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-5",
-        "display": "Charles de Gaulle",
-        "normalized": "charles de gaulle",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-6",
-        "display": "Marie-Antoinette",
-        "normalized": "marie antoinette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-7",
-        "display": "Louis XVI",
-        "normalized": "louis xvi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-8",
-        "display": "Clovis",
-        "normalized": "clovis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-05-answer-9",
-        "display": "Richelieu",
-        "normalized": "richelieu",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "history:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-history-easy-05-bomb",
-      "display": "Victor Hugo",
-      "normalized": "victor hugo",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ba4485a05d4e1e776138616356416cd528f2e79d2445c1a7467676ff14d34ee9",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-06",
-    "slug": "xlsx-history-easy-06",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 pays impliqués dans la Seconde Guerre mondiale.",
     "shortTitle": "pays impliqués dans la Seconde Guerre mondiale",
     "difficultyLevel": 1,
@@ -791,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-06-answer-1",
+        "id": "xlsx-history-easy-04-answer-1",
         "display": "France",
         "normalized": "france",
         "aliases": [],
@@ -803,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-2",
+        "id": "xlsx-history-easy-04-answer-2",
         "display": "Allemagne",
         "normalized": "allemagne",
         "aliases": [],
@@ -815,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-3",
+        "id": "xlsx-history-easy-04-answer-3",
         "display": "Royaume-Uni",
         "normalized": "royaume uni",
         "aliases": [],
@@ -827,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-4",
+        "id": "xlsx-history-easy-04-answer-4",
         "display": "États-Unis",
         "normalized": "etats unis",
         "aliases": [],
@@ -839,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-5",
+        "id": "xlsx-history-easy-04-answer-5",
         "display": "URSS",
         "normalized": "urss",
         "aliases": [],
@@ -851,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-6",
+        "id": "xlsx-history-easy-04-answer-6",
         "display": "Italie",
         "normalized": "italie",
         "aliases": [],
@@ -863,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-7",
+        "id": "xlsx-history-easy-04-answer-7",
         "display": "Japon",
         "normalized": "japon",
         "aliases": [],
@@ -875,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-8",
+        "id": "xlsx-history-easy-04-answer-8",
         "display": "Pologne",
         "normalized": "pologne",
         "aliases": [],
@@ -887,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-06-answer-9",
+        "id": "xlsx-history-easy-04-answer-9",
         "display": "Chine",
         "normalized": "chine",
         "aliases": [],
@@ -900,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-06-bomb",
+      "id": "xlsx-history-easy-04-bomb",
       "display": "Suisse",
       "normalized": "suisse",
       "aliases": [],
@@ -916,22 +628,345 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fddbffd6542ffe5dfac51ee159d562bc442b1aad39782360f3f6cc78ef0ccced",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-history-easy-05",
+    "slug": "xlsx-history-easy-05",
+    "language": "fr",
+    "themeId": "history",
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 grandes figures de l’Antiquité.",
+    "shortTitle": "grandes figures de l’Antiquité",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-history-easy-05-answer-1",
+        "display": "Jules César",
+        "normalized": "jules cesar",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-2",
+        "display": "Cléopâtre",
+        "normalized": "cleopatre",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-3",
+        "display": "Alexandre le Grand",
+        "normalized": "alexandre le grand",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-4",
+        "display": "Socrate",
+        "normalized": "socrate",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-5",
+        "display": "Platon",
+        "normalized": "platon",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-6",
+        "display": "Aristote",
+        "normalized": "aristote",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-7",
+        "display": "Spartacus",
+        "normalized": "spartacus",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-8",
+        "display": "Ramsès II",
+        "normalized": "ramses ii",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-05-answer-9",
+        "display": "Hannibal",
+        "normalized": "hannibal",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-history-easy-05-bomb",
+      "display": "Napoléon",
+      "normalized": "napoleon",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "6ac1bda83e69dc21b6532ca0e46e6396ff7b15cc5a5288e4ebcc7e9cdd4439d4",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
+  },
+  {
+    "id": "xlsx-history-easy-06",
+    "slug": "xlsx-history-easy-06",
+    "language": "fr",
+    "themeId": "history",
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 inventions ou découvertes qui ont changé l’histoire.",
+    "shortTitle": "inventions ou découvertes qui ont changé l’hi…",
+    "difficultyLevel": 1,
+    "difficultyLabel": "Facile",
+    "editorialDifficultyScore": 25,
+    "specificityScore": 25,
+    "popularityScore": 88,
+    "recallDifficultyScore": 25,
+    "answerSetHomogeneityScore": 88,
+    "expectedAverageAnswers": 8,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-history-easy-06-answer-1",
+        "display": "Imprimerie",
+        "normalized": "imprimerie",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-2",
+        "display": "Machine à vapeur",
+        "normalized": "machine a vapeur",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-3",
+        "display": "Électricité",
+        "normalized": "electricite",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-4",
+        "display": "Téléphone",
+        "normalized": "telephone",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-5",
+        "display": "Automobile",
+        "normalized": "automobile",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-6",
+        "display": "Avion",
+        "normalized": "avion",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-7",
+        "display": "Internet",
+        "normalized": "internet",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-8",
+        "display": "Pénicilline",
+        "normalized": "penicilline",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-history-easy-06-answer-9",
+        "display": "Vaccination",
+        "normalized": "vaccination",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-history-easy-06-bomb",
+      "display": "Fourchette",
+      "normalized": "fourchette",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "5a949f59ed62570a14db6c64ab72b65c4e5110e1e22302792c2abbaadc22541f",
+    "version": 4,
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-history-easy-07",
     "slug": "xlsx-history-easy-07",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 grandes civilisations antiques.",
-    "shortTitle": "grandes civilisations antiques",
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 empires historiques célèbres.",
+    "shortTitle": "empires historiques célèbres",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -946,8 +981,8 @@
     "answers": [
       {
         "id": "xlsx-history-easy-07-answer-1",
-        "display": "Égypte antique",
-        "normalized": "egypte antique",
+        "display": "Empire romain",
+        "normalized": "empire romain",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -958,8 +993,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-2",
-        "display": "Grèce antique",
-        "normalized": "grece antique",
+        "display": "Empire ottoman",
+        "normalized": "empire ottoman",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -970,8 +1005,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-3",
-        "display": "Rome antique",
-        "normalized": "rome antique",
+        "display": "Empire mongol",
+        "normalized": "empire mongol",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -982,8 +1017,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-4",
-        "display": "Mésopotamie",
-        "normalized": "mesopotamie",
+        "display": "Empire britannique",
+        "normalized": "empire britannique",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -994,8 +1029,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-5",
-        "display": "Phéniciens",
-        "normalized": "pheniciens",
+        "display": "Empire espagnol",
+        "normalized": "empire espagnol",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1006,8 +1041,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-6",
-        "display": "Perses",
-        "normalized": "perses",
+        "display": "Empire perse",
+        "normalized": "empire perse",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1018,8 +1053,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-7",
-        "display": "Mayas",
-        "normalized": "mayas",
+        "display": "Empire byzantin",
+        "normalized": "empire byzantin",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1030,8 +1065,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-8",
-        "display": "Aztèques",
-        "normalized": "azteques",
+        "display": "Empire napoléonien",
+        "normalized": "empire napoleonien",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1042,8 +1077,8 @@
       },
       {
         "id": "xlsx-history-easy-07-answer-9",
-        "display": "Incas",
-        "normalized": "incas",
+        "display": "Empire austro-hongrois",
+        "normalized": "empire austro hongrois",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1070,636 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "36c2989c486bf04e6e1514ed118e3a0b3d2167d27335a82ab721dedb45238a7b",
+    "answerSetFingerprint": "92482c090c10aad957095879bef2e1edca8499a050199dfa0c1ffee71f380dbc",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-history-easy-08",
     "slug": "xlsx-history-easy-08",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 rois de France connus.",
-    "shortTitle": "rois de France connus",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-08-answer-1",
-        "display": "Louis XIV",
-        "normalized": "louis xiv",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-2",
-        "display": "Louis XVI",
-        "normalized": "louis xvi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-3",
-        "display": "François Ier",
-        "normalized": "francois ier",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-4",
-        "display": "Henri IV",
-        "normalized": "henri iv",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-5",
-        "display": "Louis IX",
-        "normalized": "louis ix",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-6",
-        "display": "Philippe Auguste",
-        "normalized": "philippe auguste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-7",
-        "display": "Charles VII",
-        "normalized": "charles vii",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-8",
-        "display": "Louis XI",
-        "normalized": "louis xi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-08-answer-9",
-        "display": "Charles X",
-        "normalized": "charles x",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "history:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-history-easy-08-bomb",
-      "display": "Napoléon III",
-      "normalized": "napoleon iii",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ecead9bfe6ad113a823997542f42318d4d6ffc619c8f06a2dc37e626cd1d916a",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-09",
-    "slug": "xlsx-history-easy-09",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 inventions ou découvertes qui ont changé l’histoire.",
-    "shortTitle": "inventions ou découvertes qui ont changé l’hi…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-09-answer-1",
-        "display": "Imprimerie",
-        "normalized": "imprimerie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-2",
-        "display": "Machine à vapeur",
-        "normalized": "machine a vapeur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-3",
-        "display": "Électricité",
-        "normalized": "electricite",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-4",
-        "display": "Téléphone",
-        "normalized": "telephone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-5",
-        "display": "Automobile",
-        "normalized": "automobile",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-6",
-        "display": "Avion",
-        "normalized": "avion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-7",
-        "display": "Internet",
-        "normalized": "internet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-8",
-        "display": "Pénicilline",
-        "normalized": "penicilline",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-09-answer-9",
-        "display": "Vaccination",
-        "normalized": "vaccination",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-history-easy-09-bomb",
-      "display": "Fourchette",
-      "normalized": "fourchette",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "5a949f59ed62570a14db6c64ab72b65c4e5110e1e22302792c2abbaadc22541f",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-10",
-    "slug": "xlsx-history-easy-10",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 événements célèbres de la Révolution française.",
-    "shortTitle": "événements célèbres de la Révolution française",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-10-answer-1",
-        "display": "Prise de la Bastille",
-        "normalized": "prise de la bastille",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-2",
-        "display": "Déclaration des droits de l'homme et du citoyen",
-        "normalized": "declaration des droits de l homme et du citoyen",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-3",
-        "display": "Abolition des privilèges",
-        "normalized": "abolition des privileges",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-4",
-        "display": "Fuite à Varennes",
-        "normalized": "fuite a varennes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-5",
-        "display": "Proclamation de la République",
-        "normalized": "proclamation de la republique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-6",
-        "display": "Exécution de Louis XVI",
-        "normalized": "execution de louis xvi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-7",
-        "display": "Terreur",
-        "normalized": "terreur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-8",
-        "display": "Chute de Robespierre",
-        "normalized": "chute de robespierre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-10-answer-9",
-        "display": "Coup d'État du 18 Brumaire",
-        "normalized": "coup d etat du 18 brumaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-history-easy-10-bomb",
-      "display": "Débarquement de Normandie",
-      "normalized": "debarquement de normandie",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b106606e0b6f26e95fccc86ca50e8c8e9217995ccbbaed43350495cdd610e3e6",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-11",
-    "slug": "xlsx-history-easy-11",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 empires historiques célèbres.",
-    "shortTitle": "empires historiques célèbres",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-11-answer-1",
-        "display": "Empire romain",
-        "normalized": "empire romain",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-2",
-        "display": "Empire ottoman",
-        "normalized": "empire ottoman",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-3",
-        "display": "Empire mongol",
-        "normalized": "empire mongol",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-4",
-        "display": "Empire britannique",
-        "normalized": "empire britannique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-5",
-        "display": "Empire espagnol",
-        "normalized": "empire espagnol",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-6",
-        "display": "Empire perse",
-        "normalized": "empire perse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-7",
-        "display": "Empire byzantin",
-        "normalized": "empire byzantin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-8",
-        "display": "Empire napoléonien",
-        "normalized": "empire napoleonien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-11-answer-9",
-        "display": "Empire austro-hongrois",
-        "normalized": "empire austro hongrois",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-history-easy-11-bomb",
-      "display": "Union européenne",
-      "normalized": "union europeenne",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "92482c090c10aad957095879bef2e1edca8499a050199dfa0c1ffee71f380dbc",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-12",
-    "slug": "xlsx-history-easy-12",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 personnages de la Rome antique.",
     "shortTitle": "personnages de la Rome antique",
     "difficultyLevel": 1,
@@ -1715,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-12-answer-1",
+        "id": "xlsx-history-easy-08-answer-1",
         "display": "Jules César",
         "normalized": "jules cesar",
         "aliases": [],
@@ -1727,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-2",
+        "id": "xlsx-history-easy-08-answer-2",
         "display": "Auguste",
         "normalized": "auguste",
         "aliases": [],
@@ -1739,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-3",
+        "id": "xlsx-history-easy-08-answer-3",
         "display": "Néron",
         "normalized": "neron",
         "aliases": [],
@@ -1751,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-4",
+        "id": "xlsx-history-easy-08-answer-4",
         "display": "Caligula",
         "normalized": "caligula",
         "aliases": [],
@@ -1763,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-5",
+        "id": "xlsx-history-easy-08-answer-5",
         "display": "Cicéron",
         "normalized": "ciceron",
         "aliases": [],
@@ -1775,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-6",
+        "id": "xlsx-history-easy-08-answer-6",
         "display": "Marc Antoine",
         "normalized": "marc antoine",
         "aliases": [],
@@ -1787,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-7",
+        "id": "xlsx-history-easy-08-answer-7",
         "display": "Cléopâtre",
         "normalized": "cleopatre",
         "aliases": [],
@@ -1799,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-8",
+        "id": "xlsx-history-easy-08-answer-8",
         "display": "Spartacus",
         "normalized": "spartacus",
         "aliases": [],
@@ -1811,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-12-answer-9",
+        "id": "xlsx-history-easy-08-answer-9",
         "display": "Trajan",
         "normalized": "trajan",
         "aliases": [],
@@ -1824,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-12-bomb",
+      "id": "xlsx-history-easy-08-bomb",
       "display": "Charlemagne",
       "normalized": "charlemagne",
       "aliases": [],
@@ -1840,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b8d19a6b87152131a2b3b630f6283b18612e112f4faa7457bc88fd5df258cecb",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-13",
-    "slug": "xlsx-history-easy-13",
+    "id": "xlsx-history-easy-09",
+    "slug": "xlsx-history-easy-09",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 grandes guerres ou conflits historiques.",
     "shortTitle": "grandes guerres ou conflits historiques",
     "difficultyLevel": 1,
@@ -1869,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-13-answer-1",
+        "id": "xlsx-history-easy-09-answer-1",
         "display": "Guerre de Cent Ans",
         "normalized": "guerre de cent ans",
         "aliases": [],
@@ -1881,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-2",
+        "id": "xlsx-history-easy-09-answer-2",
         "display": "Première Guerre mondiale",
         "normalized": "premiere guerre mondiale",
         "aliases": [],
@@ -1893,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-3",
+        "id": "xlsx-history-easy-09-answer-3",
         "display": "Seconde Guerre mondiale",
         "normalized": "seconde guerre mondiale",
         "aliases": [],
@@ -1905,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-4",
+        "id": "xlsx-history-easy-09-answer-4",
         "display": "Guerre de Sécession",
         "normalized": "guerre de secession",
         "aliases": [],
@@ -1917,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-5",
+        "id": "xlsx-history-easy-09-answer-5",
         "display": "Guerres napoléoniennes",
         "normalized": "guerres napoleoniennes",
         "aliases": [],
@@ -1929,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-6",
+        "id": "xlsx-history-easy-09-answer-6",
         "display": "Guerre de Trente Ans",
         "normalized": "guerre de trente ans",
         "aliases": [],
@@ -1941,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-7",
+        "id": "xlsx-history-easy-09-answer-7",
         "display": "Guerre de Crimée",
         "normalized": "guerre de crimee",
         "aliases": [],
@@ -1953,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-8",
+        "id": "xlsx-history-easy-09-answer-8",
         "display": "Guerre du Vietnam",
         "normalized": "guerre du vietnam",
         "aliases": [],
@@ -1965,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-13-answer-9",
+        "id": "xlsx-history-easy-09-answer-9",
         "display": "Guerre de Corée",
         "normalized": "guerre de coree",
         "aliases": [],
@@ -1978,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-13-bomb",
+      "id": "xlsx-history-easy-09-bomb",
       "display": "Révolution industrielle",
       "normalized": "revolution industrielle",
       "aliases": [],
@@ -1994,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3843c47dcda7eb9a3a2663cb76503cbbfe41ccd5c3c147a2a3d3e3e44b71ba57",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-14",
-    "slug": "xlsx-history-easy-14",
+    "id": "xlsx-history-easy-10",
+    "slug": "xlsx-history-easy-10",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 explorateurs ou navigateurs célèbres.",
     "shortTitle": "explorateurs ou navigateurs célèbres",
     "difficultyLevel": 1,
@@ -2023,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-14-answer-1",
+        "id": "xlsx-history-easy-10-answer-1",
         "display": "Christophe Colomb",
         "normalized": "christophe colomb",
         "aliases": [],
@@ -2035,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-2",
+        "id": "xlsx-history-easy-10-answer-2",
         "display": "Vasco de Gama",
         "normalized": "vasco de gama",
         "aliases": [],
@@ -2047,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-3",
+        "id": "xlsx-history-easy-10-answer-3",
         "display": "Magellan",
         "normalized": "magellan",
         "aliases": [],
@@ -2059,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-4",
+        "id": "xlsx-history-easy-10-answer-4",
         "display": "James Cook",
         "normalized": "james cook",
         "aliases": [],
@@ -2071,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-5",
+        "id": "xlsx-history-easy-10-answer-5",
         "display": "Marco Polo",
         "normalized": "marco polo",
         "aliases": [],
@@ -2083,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-6",
+        "id": "xlsx-history-easy-10-answer-6",
         "display": "Jacques Cartier",
         "normalized": "jacques cartier",
         "aliases": [],
@@ -2095,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-7",
+        "id": "xlsx-history-easy-10-answer-7",
         "display": "Amerigo Vespucci",
         "normalized": "amerigo vespucci",
         "aliases": [],
@@ -2107,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-8",
+        "id": "xlsx-history-easy-10-answer-8",
         "display": "Roald Amundsen",
         "normalized": "roald amundsen",
         "aliases": [],
@@ -2119,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-14-answer-9",
+        "id": "xlsx-history-easy-10-answer-9",
         "display": "Ernest Shackleton",
         "normalized": "ernest shackleton",
         "aliases": [],
@@ -2132,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-14-bomb",
+      "id": "xlsx-history-easy-10-bomb",
       "display": "Isaac Newton",
       "normalized": "isaac newton",
       "aliases": [],
@@ -2148,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1bd0c7d5677df29c658f767cf699fbf40f3a7858867286fc74e2a5b45b61c4ba",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-15",
-    "slug": "xlsx-history-easy-15",
+    "id": "xlsx-history-easy-11",
+    "slug": "xlsx-history-easy-11",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 monuments ou sites liés à l’Antiquité.",
     "shortTitle": "monuments ou sites liés à l’Antiquité",
     "difficultyLevel": 1,
@@ -2177,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-15-answer-1",
+        "id": "xlsx-history-easy-11-answer-1",
         "display": "Colisée",
         "normalized": "colisee",
         "aliases": [],
@@ -2189,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-2",
+        "id": "xlsx-history-easy-11-answer-2",
         "display": "Parthénon",
         "normalized": "parthenon",
         "aliases": [],
@@ -2201,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-3",
+        "id": "xlsx-history-easy-11-answer-3",
         "display": "Pompéi",
         "normalized": "pompei",
         "aliases": [],
@@ -2213,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-4",
+        "id": "xlsx-history-easy-11-answer-4",
         "display": "Pyramides de Gizeh",
         "normalized": "pyramides de gizeh",
         "aliases": [],
@@ -2225,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-5",
+        "id": "xlsx-history-easy-11-answer-5",
         "display": "Temple d'Abou Simbel",
         "normalized": "temple d abou simbel",
         "aliases": [],
@@ -2237,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-6",
+        "id": "xlsx-history-easy-11-answer-6",
         "display": "Delphes",
         "normalized": "delphes",
         "aliases": [],
@@ -2249,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-7",
+        "id": "xlsx-history-easy-11-answer-7",
         "display": "Éphèse",
         "normalized": "ephese",
         "aliases": [],
@@ -2261,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-8",
+        "id": "xlsx-history-easy-11-answer-8",
         "display": "Petra",
         "normalized": "petra",
         "aliases": [],
@@ -2273,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-15-answer-9",
+        "id": "xlsx-history-easy-11-answer-9",
         "display": "Pont du Gard",
         "normalized": "pont du gard",
         "aliases": [],
@@ -2286,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-15-bomb",
+      "id": "xlsx-history-easy-11-bomb",
       "display": "Château de Versailles",
       "normalized": "chateau de versailles",
       "aliases": [],
@@ -2302,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "da10a5c28203ebb2c9e91421a7b5d70421ea55477c3d7e1c267e5ab5b6691a5d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-16",
-    "slug": "xlsx-history-easy-16",
+    "id": "xlsx-history-easy-12",
+    "slug": "xlsx-history-easy-12",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "history:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 personnalités de la Seconde Guerre mondiale.",
     "shortTitle": "personnalités de la Seconde Guerre mondiale",
     "difficultyLevel": 1,
@@ -2331,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-16-answer-1",
+        "id": "xlsx-history-easy-12-answer-1",
         "display": "Winston Churchill",
         "normalized": "winston churchill",
         "aliases": [],
@@ -2343,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-2",
+        "id": "xlsx-history-easy-12-answer-2",
         "display": "Franklin D. Roosevelt",
         "normalized": "franklin d roosevelt",
         "aliases": [],
@@ -2355,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-3",
+        "id": "xlsx-history-easy-12-answer-3",
         "display": "Charles de Gaulle",
         "normalized": "charles de gaulle",
         "aliases": [],
@@ -2367,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-4",
+        "id": "xlsx-history-easy-12-answer-4",
         "display": "Adolf Hitler",
         "normalized": "adolf hitler",
         "aliases": [],
@@ -2379,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-5",
+        "id": "xlsx-history-easy-12-answer-5",
         "display": "Joseph Staline",
         "normalized": "joseph staline",
         "aliases": [],
@@ -2391,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-6",
+        "id": "xlsx-history-easy-12-answer-6",
         "display": "Benito Mussolini",
         "normalized": "benito mussolini",
         "aliases": [],
@@ -2403,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-7",
+        "id": "xlsx-history-easy-12-answer-7",
         "display": "Dwight Eisenhower",
         "normalized": "dwight eisenhower",
         "aliases": [],
@@ -2415,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-8",
+        "id": "xlsx-history-easy-12-answer-8",
         "display": "Erwin Rommel",
         "normalized": "erwin rommel",
         "aliases": [],
@@ -2427,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-16-answer-9",
+        "id": "xlsx-history-easy-12-answer-9",
         "display": "Hirohito",
         "normalized": "hirohito",
         "aliases": [],
@@ -2440,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-16-bomb",
+      "id": "xlsx-history-easy-12-bomb",
       "display": "Napoléon Ier",
       "normalized": "napoleon ier",
       "aliases": [],
@@ -2456,328 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "906a149d22da0bf41b5df1d14a64f21a61e7cbadb7335f436d4b122e0041b2d0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-history-easy-17",
-    "slug": "xlsx-history-easy-17",
+    "id": "xlsx-history-easy-13",
+    "slug": "xlsx-history-easy-13",
     "language": "fr",
     "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 peuples ou royaumes du Moyen Âge européen.",
-    "shortTitle": "peuples ou royaumes du Moyen Âge européen",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-17-answer-1",
-        "display": "Francs",
-        "normalized": "francs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-2",
-        "display": "Vikings",
-        "normalized": "vikings",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-3",
-        "display": "Normands",
-        "normalized": "normands",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-4",
-        "display": "Anglo-Saxons",
-        "normalized": "anglo saxons",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-5",
-        "display": "Wisigoths",
-        "normalized": "wisigoths",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-6",
-        "display": "Lombards",
-        "normalized": "lombards",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-7",
-        "display": "Burgondes",
-        "normalized": "burgondes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-8",
-        "display": "Bretons",
-        "normalized": "bretons",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-17-answer-9",
-        "display": "Byzantins",
-        "normalized": "byzantins",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "history:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-history-easy-17-bomb",
-      "display": "Aztèques",
-      "normalized": "azteques",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "c4a5c912e084d643daa6b95fab5c2432eb8ff7c0ff00823954ffee92a52f6dcd",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-18",
-    "slug": "xlsx-history-easy-18",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 grandes dates ou événements associés à Napoléon.",
-    "shortTitle": "grandes dates ou événements associés à Napoléon",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-18-answer-1",
-        "display": "Coup d'État du 18 Brumaire",
-        "normalized": "coup d etat du 18 brumaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-2",
-        "display": "Sacre de Napoléon",
-        "normalized": "sacre de napoleon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-3",
-        "display": "Austerlitz",
-        "normalized": "austerlitz",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-4",
-        "display": "Iéna",
-        "normalized": "iena",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-5",
-        "display": "Campagne de Russie",
-        "normalized": "campagne de russie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-6",
-        "display": "Leipzig",
-        "normalized": "leipzig",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-7",
-        "display": "Première abdication",
-        "normalized": "premiere abdication",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-8",
-        "display": "Cent-Jours",
-        "normalized": "cent jours",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-18-answer-9",
-        "display": "Waterloo",
-        "normalized": "waterloo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-history-easy-18-bomb",
-      "display": "Prise de la Bastille",
-      "normalized": "prise de la bastille",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "2018a23b5464b0ac78955cc4cebb320aa5cc949154b630bf370fd3feeaa78921",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-19",
-    "slug": "xlsx-history-easy-19",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 figures historiques féminines célèbres.",
     "shortTitle": "figures historiques féminines célèbres",
     "difficultyLevel": 1,
@@ -2793,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-history-easy-19-answer-1",
+        "id": "xlsx-history-easy-13-answer-1",
         "display": "Jeanne d'Arc",
         "normalized": "jeanne d arc",
         "aliases": [],
@@ -2805,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-2",
+        "id": "xlsx-history-easy-13-answer-2",
         "display": "Cléopâtre",
         "normalized": "cleopatre",
         "aliases": [],
@@ -2817,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-3",
+        "id": "xlsx-history-easy-13-answer-3",
         "display": "Marie Curie",
         "normalized": "marie curie",
         "aliases": [],
@@ -2829,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-4",
+        "id": "xlsx-history-easy-13-answer-4",
         "display": "Marie-Antoinette",
         "normalized": "marie antoinette",
         "aliases": [],
@@ -2841,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-5",
+        "id": "xlsx-history-easy-13-answer-5",
         "display": "Élisabeth Ire",
         "normalized": "elisabeth ire",
         "aliases": [],
@@ -2853,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-6",
+        "id": "xlsx-history-easy-13-answer-6",
         "display": "Catherine II",
         "normalized": "catherine ii",
         "aliases": [],
@@ -2865,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-7",
+        "id": "xlsx-history-easy-13-answer-7",
         "display": "Rosa Parks",
         "normalized": "rosa parks",
         "aliases": [],
@@ -2877,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-8",
+        "id": "xlsx-history-easy-13-answer-8",
         "display": "Simone Veil",
         "normalized": "simone veil",
         "aliases": [],
@@ -2889,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-history-easy-19-answer-9",
+        "id": "xlsx-history-easy-13-answer-9",
         "display": "Indira Gandhi",
         "normalized": "indira gandhi",
         "aliases": [],
@@ -2902,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-history-easy-19-bomb",
+      "id": "xlsx-history-easy-13-bomb",
       "display": "Napoléon Ier",
       "normalized": "napoleon ier",
       "aliases": [],
@@ -2918,165 +2059,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f3384cca76c42e419b845af04f019fc7308b7bfe83de55a6a88109da7eb2f363",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-history-easy-20",
-    "slug": "xlsx-history-easy-20",
-    "language": "fr",
-    "themeId": "history",
-    "subthemeIds": ["history:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 pays ayant possédé un empire colonial important.",
-    "shortTitle": "pays ayant possédé un empire colonial important",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-history-easy-20-answer-1",
-        "display": "Royaume-Uni",
-        "normalized": "royaume uni",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-2",
-        "display": "France",
-        "normalized": "france",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-3",
-        "display": "Espagne",
-        "normalized": "espagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-4",
-        "display": "Portugal",
-        "normalized": "portugal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-5",
-        "display": "Pays-Bas",
-        "normalized": "pays bas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-6",
-        "display": "Belgique",
-        "normalized": "belgique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-7",
-        "display": "Allemagne",
-        "normalized": "allemagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-8",
-        "display": "Italie",
-        "normalized": "italie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-history-easy-20-answer-9",
-        "display": "Japon",
-        "normalized": "japon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-history-easy-20-bomb",
-      "display": "Suisse",
-      "normalized": "suisse",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "91fbe70cb80f3e69393ae7859757a23b448be23adbfee138620b14fa7c8ccf7b",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

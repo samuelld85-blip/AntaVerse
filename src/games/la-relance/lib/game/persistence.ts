@@ -1,6 +1,6 @@
 import { readJson, removeJson, writeJson } from "@/lib/local-storage-json";
 import type { GameState } from "./types";
-import { STANDARD_ROUNDS } from "./engine";
+import { MAX_SOLO_PLAYERS, MIN_TEAMS, STANDARD_ROUNDS } from "./engine";
 
 const STORAGE_KEY = "la-relance:current-game";
 const MAX_ROUND_INDEX = STANDARD_ROUNDS;
@@ -21,10 +21,12 @@ function isGameState(value: unknown): value is GameState {
   if (!value || typeof value !== "object") return false;
   const game = value as Partial<GameState>;
   return (
-    game.schemaVersion === 1 &&
+    game.schemaVersion === 2 &&
     (game.status === "playing" || game.status === "pointAwarded" || game.status === "finished") &&
+    (game.mode === "teams" || game.mode === "solo") &&
     Array.isArray(game.teams) &&
-    (game.teams.length === 2 || game.teams.length === 3) &&
+    game.teams.length >= MIN_TEAMS &&
+    game.teams.length <= MAX_SOLO_PLAYERS &&
     game.teams.every(
       (team) =>
         team &&

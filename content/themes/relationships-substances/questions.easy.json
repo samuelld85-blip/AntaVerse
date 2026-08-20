@@ -4,162 +4,13 @@
     "slug": "xlsx-relationships-substances-easy-01",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 façons de réduire les risques en soirée.",
-    "shortTitle": "façons de réduire les risques en soirée",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-1",
-        "display": "ne pas conduire",
-        "normalized": "ne pas conduire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-2",
-        "display": "rester avec ses amis",
-        "normalized": "rester avec ses amis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-3",
-        "display": "surveiller son verre",
-        "normalized": "surveiller son verre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-4",
-        "display": "prévoir son retour",
-        "normalized": "prevoir son retour",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-5",
-        "display": "boire de l’eau",
-        "normalized": "boire de l eau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-6",
-        "display": "manger",
-        "normalized": "manger",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-7",
-        "display": "ne pas mélanger les produits",
-        "normalized": "ne pas melanger les produits",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-8",
-        "display": "demander de l’aide",
-        "normalized": "demander de l aide",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-01-answer-9",
-        "display": "respecter ses limites",
-        "normalized": "respecter ses limites",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-easy-01-bomb",
-      "display": "Boire du café",
-      "normalized": "boire du cafe",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "c433911cc6012954824823697fa38b68adba40c6a75b695f643b862214b4dbba",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-easy-02",
-    "slug": "xlsx-relationships-substances-easy-02",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 situations nécessitant un consentement explicite.",
     "shortTitle": "situations nécessitant un consentement explicite",
     "difficultyLevel": 1,
@@ -175,7 +26,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-1",
+        "id": "xlsx-relationships-substances-easy-01-answer-1",
         "display": "rapport sexuel",
         "normalized": "rapport sexuel",
         "aliases": [],
@@ -187,7 +38,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-2",
+        "id": "xlsx-relationships-substances-easy-01-answer-2",
         "display": "partage de photos intimes",
         "normalized": "partage de photos intimes",
         "aliases": [],
@@ -199,7 +50,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-3",
+        "id": "xlsx-relationships-substances-easy-01-answer-3",
         "display": "contact physique",
         "normalized": "contact physique",
         "aliases": [],
@@ -211,7 +62,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-4",
+        "id": "xlsx-relationships-substances-easy-01-answer-4",
         "display": "baiser",
         "normalized": "baiser",
         "aliases": [],
@@ -223,7 +74,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-5",
+        "id": "xlsx-relationships-substances-easy-01-answer-5",
         "display": "retrait du préservatif",
         "normalized": "retrait du preservatif",
         "aliases": [],
@@ -235,7 +86,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-6",
+        "id": "xlsx-relationships-substances-easy-01-answer-6",
         "display": "pratique nouvelle",
         "normalized": "pratique nouvelle",
         "aliases": [],
@@ -247,7 +98,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-7",
+        "id": "xlsx-relationships-substances-easy-01-answer-7",
         "display": "enregistrement vidéo",
         "normalized": "enregistrement video",
         "aliases": [],
@@ -259,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-8",
+        "id": "xlsx-relationships-substances-easy-01-answer-8",
         "display": "lecture de messages",
         "normalized": "lecture de messages",
         "aliases": [],
@@ -271,7 +122,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-02-answer-9",
+        "id": "xlsx-relationships-substances-easy-01-answer-9",
         "display": "partage d’informations privées",
         "normalized": "partage d informations privees",
         "aliases": [],
@@ -284,7 +135,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-02-bomb",
+      "id": "xlsx-relationships-substances-easy-01-bomb",
       "display": "Choisir son dessert",
       "normalized": "choisir son dessert",
       "aliases": [],
@@ -300,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bf99b7748452f1e67b8f1e3419af746f1dab01639d6358b9a9271d68d7647f25",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-03",
-    "slug": "xlsx-relationships-substances-easy-03",
+    "id": "xlsx-relationships-substances-easy-02",
+    "slug": "xlsx-relationships-substances-easy-02",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 signes possibles d’une relation toxique.",
     "shortTitle": "signes possibles d’une relation toxique",
     "difficultyLevel": 1,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-1",
+        "id": "xlsx-relationships-substances-easy-02-answer-1",
         "display": "contrôle",
         "normalized": "controle",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-2",
+        "id": "xlsx-relationships-substances-easy-02-answer-2",
         "display": "jalousie excessive",
         "normalized": "jalousie excessive",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-3",
+        "id": "xlsx-relationships-substances-easy-02-answer-3",
         "display": "isolement",
         "normalized": "isolement",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-4",
+        "id": "xlsx-relationships-substances-easy-02-answer-4",
         "display": "humiliation",
         "normalized": "humiliation",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-5",
+        "id": "xlsx-relationships-substances-easy-02-answer-5",
         "display": "menaces",
         "normalized": "menaces",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-6",
+        "id": "xlsx-relationships-substances-easy-02-answer-6",
         "display": "surveillance",
         "normalized": "surveillance",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-7",
+        "id": "xlsx-relationships-substances-easy-02-answer-7",
         "display": "chantage",
         "normalized": "chantage",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-8",
+        "id": "xlsx-relationships-substances-easy-02-answer-8",
         "display": "violence",
         "normalized": "violence",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-03-answer-9",
+        "id": "xlsx-relationships-substances-easy-02-answer-9",
         "display": "dévalorisation",
         "normalized": "devalorisation",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-03-bomb",
+      "id": "xlsx-relationships-substances-easy-02-bomb",
       "display": "Respect mutuel",
       "normalized": "respect mutuel",
       "aliases": [],
@@ -454,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fe1812f0805bd96fe90345464c7c577057424f18439b0857243ec4f846b2e798",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-04",
-    "slug": "xlsx-relationships-substances-easy-04",
+    "id": "xlsx-relationships-substances-easy-03",
+    "slug": "xlsx-relationships-substances-easy-03",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses à ne pas partager sans autorisation.",
     "shortTitle": "choses à ne pas partager sans autorisation",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-1",
+        "id": "xlsx-relationships-substances-easy-03-answer-1",
         "display": "photos intimes",
         "normalized": "photos intimes",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-2",
+        "id": "xlsx-relationships-substances-easy-03-answer-2",
         "display": "messages privés",
         "normalized": "messages prives",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-3",
+        "id": "xlsx-relationships-substances-easy-03-answer-3",
         "display": "informations médicales",
         "normalized": "informations medicales",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-4",
+        "id": "xlsx-relationships-substances-easy-03-answer-4",
         "display": "adresse",
         "normalized": "adresse",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-5",
+        "id": "xlsx-relationships-substances-easy-03-answer-5",
         "display": "localisation",
         "normalized": "localisation",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-6",
+        "id": "xlsx-relationships-substances-easy-03-answer-6",
         "display": "résultats de dépistage",
         "normalized": "resultats de depistage",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-7",
+        "id": "xlsx-relationships-substances-easy-03-answer-7",
         "display": "secret confié",
         "normalized": "secret confie",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-8",
+        "id": "xlsx-relationships-substances-easy-03-answer-8",
         "display": "coordonnées bancaires",
         "normalized": "coordonnees bancaires",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-04-answer-9",
+        "id": "xlsx-relationships-substances-easy-03-answer-9",
         "display": "contenu d’une conversation",
         "normalized": "contenu d une conversation",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-04-bomb",
+      "id": "xlsx-relationships-substances-easy-03-bomb",
       "display": "Prévisions météo",
       "normalized": "previsions meteo",
       "aliases": [],
@@ -608,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8b4cc886d75038b2e43462599ac407db351e1e96f36f2101336397c3b2820e75",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-05",
-    "slug": "xlsx-relationships-substances-easy-05",
+    "id": "xlsx-relationships-substances-easy-04",
+    "slug": "xlsx-relationships-substances-easy-04",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 signes qu’un premier rendez-vous se passe bien.",
     "shortTitle": "signes qu’un premier rendez-vous se passe bien",
     "difficultyLevel": 1,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-1",
+        "id": "xlsx-relationships-substances-easy-04-answer-1",
         "display": "conversation fluide",
         "normalized": "conversation fluide",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-2",
+        "id": "xlsx-relationships-substances-easy-04-answer-2",
         "display": "rires",
         "normalized": "rires",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-3",
+        "id": "xlsx-relationships-substances-easy-04-answer-3",
         "display": "envie de se revoir",
         "normalized": "envie de se revoir",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-4",
+        "id": "xlsx-relationships-substances-easy-04-answer-4",
         "display": "contact visuel",
         "normalized": "contact visuel",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-5",
+        "id": "xlsx-relationships-substances-easy-04-answer-5",
         "display": "questions mutuelles",
         "normalized": "questions mutuelles",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-6",
+        "id": "xlsx-relationships-substances-easy-04-answer-6",
         "display": "temps qui passe vite",
         "normalized": "temps qui passe vite",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-7",
+        "id": "xlsx-relationships-substances-easy-04-answer-7",
         "display": "téléphones rangés",
         "normalized": "telephones ranges",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-8",
+        "id": "xlsx-relationships-substances-easy-04-answer-8",
         "display": "proposition de prolonger",
         "normalized": "proposition de prolonger",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-05-answer-9",
+        "id": "xlsx-relationships-substances-easy-04-answer-9",
         "display": "message après le rendez-vous",
         "normalized": "message apres le rendez vous",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-05-bomb",
+      "id": "xlsx-relationships-substances-easy-04-bomb",
       "display": "Regarder son téléphone sans arrêt",
       "normalized": "regarder son telephone sans arret",
       "aliases": [],
@@ -762,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d1363e19455fdbc70c7d5434eac6b12cb3613f5071c439ff5b83f1ca09246c66",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-06",
-    "slug": "xlsx-relationships-substances-easy-06",
+    "id": "xlsx-relationships-substances-easy-05",
+    "slug": "xlsx-relationships-substances-easy-05",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de télécharger une application de rencontre.",
     "shortTitle": "raisons de télécharger une application de ren…",
     "difficultyLevel": 1,
@@ -791,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-1",
+        "id": "xlsx-relationships-substances-easy-05-answer-1",
         "display": "rencontrer quelqu’un",
         "normalized": "rencontrer quelqu un",
         "aliases": [],
@@ -803,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-2",
+        "id": "xlsx-relationships-substances-easy-05-answer-2",
         "display": "curiosité",
         "normalized": "curiosite",
         "aliases": [],
@@ -815,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-3",
+        "id": "xlsx-relationships-substances-easy-05-answer-3",
         "display": "relation sérieuse",
         "normalized": "relation serieuse",
         "aliases": [],
@@ -827,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-4",
+        "id": "xlsx-relationships-substances-easy-05-answer-4",
         "display": "élargir son cercle",
         "normalized": "elargir son cercle",
         "aliases": [],
@@ -839,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-5",
+        "id": "xlsx-relationships-substances-easy-05-answer-5",
         "display": "déménagement",
         "normalized": "demenagement",
         "aliases": [],
@@ -851,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-6",
+        "id": "xlsx-relationships-substances-easy-05-answer-6",
         "display": "manque de temps",
         "normalized": "manque de temps",
         "aliases": [],
@@ -863,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-7",
+        "id": "xlsx-relationships-substances-easy-05-answer-7",
         "display": "rencontres amicales",
         "normalized": "rencontres amicales",
         "aliases": [],
@@ -875,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-8",
+        "id": "xlsx-relationships-substances-easy-05-answer-8",
         "display": "discussion",
         "normalized": "discussion",
         "aliases": [],
@@ -887,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-06-answer-9",
+        "id": "xlsx-relationships-substances-easy-05-answer-9",
         "display": "reprendre confiance",
         "normalized": "reprendre confiance",
         "aliases": [],
@@ -900,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-06-bomb",
+      "id": "xlsx-relationships-substances-easy-05-bomb",
       "display": "Ne vouloir rencontrer personne",
       "normalized": "ne vouloir rencontrer personne",
       "aliases": [],
@@ -916,174 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ead49d9f0e2b1aab965c410be53a3966e996805ccc64a8c70410de3fb4b1d65c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-07",
-    "slug": "xlsx-relationships-substances-easy-07",
+    "id": "xlsx-relationships-substances-easy-06",
+    "slug": "xlsx-relationships-substances-easy-06",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 sujets abordés au début d’une relation.",
-    "shortTitle": "sujets abordés au début d’une relation",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-1",
-        "display": "loisirs",
-        "normalized": "loisirs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-2",
-        "display": "travail",
-        "normalized": "travail",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-3",
-        "display": "voyages",
-        "normalized": "voyages",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-4",
-        "display": "famille",
-        "normalized": "famille",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-5",
-        "display": "valeurs",
-        "normalized": "valeurs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-6",
-        "display": "projets",
-        "normalized": "projets",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-7",
-        "display": "amis",
-        "normalized": "amis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-8",
-        "display": "habitudes",
-        "normalized": "habitudes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-07-answer-9",
-        "display": "goûts culturels",
-        "normalized": "gouts culturels",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-easy-07-bomb",
-      "display": "Code de carte bancaire",
-      "normalized": "code de carte bancaire",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d04e889f6900daa3cca62ab350a71667abfdeaeeb9971a8d154d24741217f3b7",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-easy-08",
-    "slug": "xlsx-relationships-substances-easy-08",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 façons de montrer son affection.",
     "shortTitle": "façons de montrer son affection",
     "difficultyLevel": 1,
@@ -1099,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-1",
+        "id": "xlsx-relationships-substances-easy-06-answer-1",
         "display": "faire un compliment",
         "normalized": "faire un compliment",
         "aliases": [],
@@ -1111,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-2",
+        "id": "xlsx-relationships-substances-easy-06-answer-2",
         "display": "prendre dans ses bras",
         "normalized": "prendre dans ses bras",
         "aliases": [],
@@ -1123,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-3",
+        "id": "xlsx-relationships-substances-easy-06-answer-3",
         "display": "rendre service",
         "normalized": "rendre service",
         "aliases": [],
@@ -1135,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-4",
+        "id": "xlsx-relationships-substances-easy-06-answer-4",
         "display": "écouter",
         "normalized": "ecouter",
         "aliases": [],
@@ -1147,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-5",
+        "id": "xlsx-relationships-substances-easy-06-answer-5",
         "display": "préparer un repas",
         "normalized": "preparer un repas",
         "aliases": [],
@@ -1159,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-6",
+        "id": "xlsx-relationships-substances-easy-06-answer-6",
         "display": "écrire un message",
         "normalized": "ecrire un message",
         "aliases": [],
@@ -1171,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-7",
+        "id": "xlsx-relationships-substances-easy-06-answer-7",
         "display": "offrir un cadeau",
         "normalized": "offrir un cadeau",
         "aliases": [],
@@ -1183,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-8",
+        "id": "xlsx-relationships-substances-easy-06-answer-8",
         "display": "passer du temps ensemble",
         "normalized": "passer du temps ensemble",
         "aliases": [],
@@ -1195,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-08-answer-9",
+        "id": "xlsx-relationships-substances-easy-06-answer-9",
         "display": "soutenir un projet",
         "normalized": "soutenir un projet",
         "aliases": [],
@@ -1208,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-08-bomb",
+      "id": "xlsx-relationships-substances-easy-06-bomb",
       "display": "Ignorer tous les messages",
       "normalized": "ignorer tous les messages",
       "aliases": [],
@@ -1224,20 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8eba0366141a6500048f81ea13db7ff9e4061a4138dba80681732a9966e846d6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-09",
-    "slug": "xlsx-relationships-substances-easy-09",
+    "id": "xlsx-relationships-substances-easy-07",
+    "slug": "xlsx-relationships-substances-easy-07",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de rompre.",
     "shortTitle": "raisons de rompre",
     "difficultyLevel": 1,
@@ -1253,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-1",
+        "id": "xlsx-relationships-substances-easy-07-answer-1",
         "display": "mensonge",
         "normalized": "mensonge",
         "aliases": [],
@@ -1265,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-2",
+        "id": "xlsx-relationships-substances-easy-07-answer-2",
         "display": "incompatibilité",
         "normalized": "incompatibilite",
         "aliases": [],
@@ -1277,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-3",
+        "id": "xlsx-relationships-substances-easy-07-answer-3",
         "display": "infidélité",
         "normalized": "infidelite",
         "aliases": [],
@@ -1289,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-4",
+        "id": "xlsx-relationships-substances-easy-07-answer-4",
         "display": "manque de communication",
         "normalized": "manque de communication",
         "aliases": [],
@@ -1301,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-5",
+        "id": "xlsx-relationships-substances-easy-07-answer-5",
         "display": "projets différents",
         "normalized": "projets differents",
         "aliases": [],
@@ -1313,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-6",
+        "id": "xlsx-relationships-substances-easy-07-answer-6",
         "display": "distance",
         "normalized": "distance",
         "aliases": [],
@@ -1325,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-7",
+        "id": "xlsx-relationships-substances-easy-07-answer-7",
         "display": "jalousie",
         "normalized": "jalousie",
         "aliases": [],
@@ -1337,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-8",
+        "id": "xlsx-relationships-substances-easy-07-answer-8",
         "display": "violence",
         "normalized": "violence",
         "aliases": [],
@@ -1349,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-09-answer-9",
+        "id": "xlsx-relationships-substances-easy-07-answer-9",
         "display": "perte de confiance",
         "normalized": "perte de confiance",
         "aliases": [],
@@ -1362,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-09-bomb",
+      "id": "xlsx-relationships-substances-easy-07-bomb",
       "display": "Respect mutuel",
       "normalized": "respect mutuel",
       "aliases": [],
@@ -1378,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f08481f5eca213a7d6569925d42353095e4308000644f35fd91cb36fc0b5e75d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-10",
-    "slug": "xlsx-relationships-substances-easy-10",
+    "id": "xlsx-relationships-substances-easy-08",
+    "slug": "xlsx-relationships-substances-easy-08",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 éléments importants dans une relation saine.",
     "shortTitle": "éléments importants dans une relation saine",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-1",
+        "id": "xlsx-relationships-substances-easy-08-answer-1",
         "display": "confiance",
         "normalized": "confiance",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-2",
+        "id": "xlsx-relationships-substances-easy-08-answer-2",
         "display": "communication",
         "normalized": "communication",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-3",
+        "id": "xlsx-relationships-substances-easy-08-answer-3",
         "display": "respect",
         "normalized": "respect",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-4",
+        "id": "xlsx-relationships-substances-easy-08-answer-4",
         "display": "consentement",
         "normalized": "consentement",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-5",
+        "id": "xlsx-relationships-substances-easy-08-answer-5",
         "display": "autonomie",
         "normalized": "autonomie",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-6",
+        "id": "xlsx-relationships-substances-easy-08-answer-6",
         "display": "honnêteté",
         "normalized": "honnetete",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-7",
+        "id": "xlsx-relationships-substances-easy-08-answer-7",
         "display": "soutien",
         "normalized": "soutien",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-8",
+        "id": "xlsx-relationships-substances-easy-08-answer-8",
         "display": "limites",
         "normalized": "limites",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-10-answer-9",
+        "id": "xlsx-relationships-substances-easy-08-answer-9",
         "display": "égalité",
         "normalized": "egalite",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-10-bomb",
+      "id": "xlsx-relationships-substances-easy-08-bomb",
       "display": "Manipulation",
       "normalized": "manipulation",
       "aliases": [],
@@ -1532,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "16452b76172ae22d555e389798faac6973468c75ed300614c013aa5a32a2d332",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-11",
-    "slug": "xlsx-relationships-substances-easy-11",
+    "id": "xlsx-relationships-substances-easy-09",
+    "slug": "xlsx-relationships-substances-easy-09",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 lieux classiques pour un premier rendez-vous.",
     "shortTitle": "lieux classiques pour un premier rendez-vous",
     "difficultyLevel": 1,
@@ -1561,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-1",
+        "id": "xlsx-relationships-substances-easy-09-answer-1",
         "display": "bar",
         "normalized": "bar",
         "aliases": [],
@@ -1573,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-2",
+        "id": "xlsx-relationships-substances-easy-09-answer-2",
         "display": "restaurant",
         "normalized": "restaurant",
         "aliases": [],
@@ -1585,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-3",
+        "id": "xlsx-relationships-substances-easy-09-answer-3",
         "display": "parc",
         "normalized": "parc",
         "aliases": [],
@@ -1597,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-4",
+        "id": "xlsx-relationships-substances-easy-09-answer-4",
         "display": "café",
         "normalized": "cafe",
         "aliases": [],
@@ -1609,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-5",
+        "id": "xlsx-relationships-substances-easy-09-answer-5",
         "display": "musée",
         "normalized": "musee",
         "aliases": [],
@@ -1621,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-6",
+        "id": "xlsx-relationships-substances-easy-09-answer-6",
         "display": "cinéma",
         "normalized": "cinema",
         "aliases": [],
@@ -1633,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-7",
+        "id": "xlsx-relationships-substances-easy-09-answer-7",
         "display": "promenade",
         "normalized": "promenade",
         "aliases": [],
@@ -1645,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-8",
+        "id": "xlsx-relationships-substances-easy-09-answer-8",
         "display": "marché",
         "normalized": "marche",
         "aliases": [],
@@ -1657,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-11-answer-9",
+        "id": "xlsx-relationships-substances-easy-09-answer-9",
         "display": "bowling",
         "normalized": "bowling",
         "aliases": [],
@@ -1670,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-11-bomb",
+      "id": "xlsx-relationships-substances-easy-09-bomb",
       "display": "Salle d’attente",
       "normalized": "salle d attente",
       "aliases": [],
@@ -1686,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "74a19a0c3cb4c6408b969dc8214c6e58e94447c4f7f9463c9a66be22f24f0525",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-12",
-    "slug": "xlsx-relationships-substances-easy-12",
+    "id": "xlsx-relationships-substances-easy-10",
+    "slug": "xlsx-relationships-substances-easy-10",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 signes qu’une personne a trop bu.",
     "shortTitle": "signes qu’une personne a trop bu",
     "difficultyLevel": 1,
@@ -1715,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-1",
+        "id": "xlsx-relationships-substances-easy-10-answer-1",
         "display": "parole pâteuse",
         "normalized": "parole pateuse",
         "aliases": [],
@@ -1727,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-2",
+        "id": "xlsx-relationships-substances-easy-10-answer-2",
         "display": "perte d’équilibre",
         "normalized": "perte d equilibre",
         "aliases": [],
@@ -1739,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-3",
+        "id": "xlsx-relationships-substances-easy-10-answer-3",
         "display": "nausée",
         "normalized": "nausee",
         "aliases": [],
@@ -1751,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-4",
+        "id": "xlsx-relationships-substances-easy-10-answer-4",
         "display": "confusion",
         "normalized": "confusion",
         "aliases": [],
@@ -1763,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-5",
+        "id": "xlsx-relationships-substances-easy-10-answer-5",
         "display": "somnolence",
         "normalized": "somnolence",
         "aliases": [],
@@ -1775,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-6",
+        "id": "xlsx-relationships-substances-easy-10-answer-6",
         "display": "vomissements",
         "normalized": "vomissements",
         "aliases": [],
@@ -1787,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-7",
+        "id": "xlsx-relationships-substances-easy-10-answer-7",
         "display": "comportement inhabituel",
         "normalized": "comportement inhabituel",
         "aliases": [],
@@ -1799,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-8",
+        "id": "xlsx-relationships-substances-easy-10-answer-8",
         "display": "difficulté à parler",
         "normalized": "difficulte a parler",
         "aliases": [],
@@ -1811,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-12-answer-9",
+        "id": "xlsx-relationships-substances-easy-10-answer-9",
         "display": "perte de mémoire",
         "normalized": "perte de memoire",
         "aliases": [],
@@ -1824,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-12-bomb",
+      "id": "xlsx-relationships-substances-easy-10-bomb",
       "display": "Conduire prudemment",
       "normalized": "conduire prudemment",
       "aliases": [],
@@ -1840,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bd3bf0331daff70362e52c4958af5da0f62eb69cbb48243aaef6779fb03d49b6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-13",
-    "slug": "xlsx-relationships-substances-easy-13",
+    "id": "xlsx-relationships-substances-easy-11",
+    "slug": "xlsx-relationships-substances-easy-11",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 risques associés aux drogues.",
     "shortTitle": "risques associés aux drogues",
     "difficultyLevel": 1,
@@ -1869,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-1",
+        "id": "xlsx-relationships-substances-easy-11-answer-1",
         "display": "dépendance",
         "normalized": "dependance",
         "aliases": [],
@@ -1881,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-2",
+        "id": "xlsx-relationships-substances-easy-11-answer-2",
         "display": "surdose",
         "normalized": "surdose",
         "aliases": [],
@@ -1893,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-3",
+        "id": "xlsx-relationships-substances-easy-11-answer-3",
         "display": "accident",
         "normalized": "accident",
         "aliases": [],
@@ -1905,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-4",
+        "id": "xlsx-relationships-substances-easy-11-answer-4",
         "display": "intoxication",
         "normalized": "intoxication",
         "aliases": [],
@@ -1917,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-5",
+        "id": "xlsx-relationships-substances-easy-11-answer-5",
         "display": "troubles psychiques",
         "normalized": "troubles psychiques",
         "aliases": [],
@@ -1929,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-6",
+        "id": "xlsx-relationships-substances-easy-11-answer-6",
         "display": "problèmes cardiaques",
         "normalized": "problemes cardiaques",
         "aliases": [],
@@ -1941,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-7",
+        "id": "xlsx-relationships-substances-easy-11-answer-7",
         "display": "conduite dangereuse",
         "normalized": "conduite dangereuse",
         "aliases": [],
@@ -1953,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-8",
+        "id": "xlsx-relationships-substances-easy-11-answer-8",
         "display": "violence",
         "normalized": "violence",
         "aliases": [],
@@ -1965,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-13-answer-9",
+        "id": "xlsx-relationships-substances-easy-11-answer-9",
         "display": "problèmes juridiques",
         "normalized": "problemes juridiques",
         "aliases": [],
@@ -1978,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-13-bomb",
+      "id": "xlsx-relationships-substances-easy-11-bomb",
       "display": "Hydratation",
       "normalized": "hydratation",
       "aliases": [],
@@ -1994,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4df6ae4f604d80cfc5e53d61fea44f315ca8dfa684a7403801fc6dfebca8f5dd",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-14",
-    "slug": "xlsx-relationships-substances-easy-14",
+    "id": "xlsx-relationships-substances-easy-12",
+    "slug": "xlsx-relationships-substances-easy-12",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons d’éviter de mélanger alcool et médicaments.",
     "shortTitle": "raisons d’éviter de mélanger alcool et médica…",
     "difficultyLevel": 1,
@@ -2023,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-1",
+        "id": "xlsx-relationships-substances-easy-12-answer-1",
         "display": "somnolence",
         "normalized": "somnolence",
         "aliases": [],
@@ -2035,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-2",
+        "id": "xlsx-relationships-substances-easy-12-answer-2",
         "display": "malaise",
         "normalized": "malaise",
         "aliases": [],
@@ -2047,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-3",
+        "id": "xlsx-relationships-substances-easy-12-answer-3",
         "display": "surdose",
         "normalized": "surdose",
         "aliases": [],
@@ -2059,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-4",
+        "id": "xlsx-relationships-substances-easy-12-answer-4",
         "display": "perte de connaissance",
         "normalized": "perte de connaissance",
         "aliases": [],
@@ -2071,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-5",
+        "id": "xlsx-relationships-substances-easy-12-answer-5",
         "display": "difficultés respiratoires",
         "normalized": "difficultes respiratoires",
         "aliases": [],
@@ -2083,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-6",
+        "id": "xlsx-relationships-substances-easy-12-answer-6",
         "display": "atteinte du foie",
         "normalized": "atteinte du foie",
         "aliases": [],
@@ -2095,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-7",
+        "id": "xlsx-relationships-substances-easy-12-answer-7",
         "display": "interaction imprévisible",
         "normalized": "interaction imprevisible",
         "aliases": [],
@@ -2107,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-8",
+        "id": "xlsx-relationships-substances-easy-12-answer-8",
         "display": "baisse de vigilance",
         "normalized": "baisse de vigilance",
         "aliases": [],
@@ -2119,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-14-answer-9",
+        "id": "xlsx-relationships-substances-easy-12-answer-9",
         "display": "chute",
         "normalized": "chute",
         "aliases": [],
@@ -2132,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-14-bomb",
+      "id": "xlsx-relationships-substances-easy-12-bomb",
       "display": "Boire de l’eau",
       "normalized": "boire de l eau",
       "aliases": [],
@@ -2148,20 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "60a855d8b938dbc7fa877b75eb554ebe069b5a7ba8e2b7953c9ca3ecdec70124",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-15",
-    "slug": "xlsx-relationships-substances-easy-15",
+    "id": "xlsx-relationships-substances-easy-13",
+    "slug": "xlsx-relationships-substances-easy-13",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 qualités souvent appréciées dans une relation.",
     "shortTitle": "qualités souvent appréciées dans une relation",
     "difficultyLevel": 1,
@@ -2177,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-1",
+        "id": "xlsx-relationships-substances-easy-13-answer-1",
         "display": "Confiance",
         "normalized": "confiance",
         "aliases": [],
@@ -2189,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-2",
+        "id": "xlsx-relationships-substances-easy-13-answer-2",
         "display": "Communication",
         "normalized": "communication",
         "aliases": [],
@@ -2201,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-3",
+        "id": "xlsx-relationships-substances-easy-13-answer-3",
         "display": "Respect",
         "normalized": "respect",
         "aliases": [],
@@ -2213,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-4",
+        "id": "xlsx-relationships-substances-easy-13-answer-4",
         "display": "Humour",
         "normalized": "humour",
         "aliases": [],
@@ -2225,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-5",
+        "id": "xlsx-relationships-substances-easy-13-answer-5",
         "display": "Écoute",
         "normalized": "ecoute",
         "aliases": [],
@@ -2237,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-6",
+        "id": "xlsx-relationships-substances-easy-13-answer-6",
         "display": "Honnêteté",
         "normalized": "honnetete",
         "aliases": [],
@@ -2249,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-7",
+        "id": "xlsx-relationships-substances-easy-13-answer-7",
         "display": "Affection",
         "normalized": "affection",
         "aliases": [],
@@ -2261,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-8",
+        "id": "xlsx-relationships-substances-easy-13-answer-8",
         "display": "Soutien",
         "normalized": "soutien",
         "aliases": [],
@@ -2273,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-15-answer-9",
+        "id": "xlsx-relationships-substances-easy-13-answer-9",
         "display": "Complicité",
         "normalized": "complicite",
         "aliases": [],
@@ -2286,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-15-bomb",
+      "id": "xlsx-relationships-substances-easy-13-bomb",
       "display": "Mépris",
       "normalized": "mepris",
       "aliases": [],
@@ -2302,174 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2e9edc51756e3d7a48bce2740e4cae1f5bcdbb8fd1b955b743fd7441eec53c4d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-16",
-    "slug": "xlsx-relationships-substances-easy-16",
+    "id": "xlsx-relationships-substances-easy-14",
+    "slug": "xlsx-relationships-substances-easy-14",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 signes ou gestes d’affection courants.",
-    "shortTitle": "signes ou gestes d’affection courants",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-1",
-        "display": "Câlin",
-        "normalized": "calin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-2",
-        "display": "Bisou",
-        "normalized": "bisou",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-3",
-        "display": "Compliment",
-        "normalized": "compliment",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-4",
-        "display": "Message attentionné",
-        "normalized": "message attentionne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-5",
-        "display": "Tenir la main",
-        "normalized": "tenir la main",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-6",
-        "display": "Offrir un cadeau",
-        "normalized": "offrir un cadeau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-7",
-        "display": "Préparer un repas",
-        "normalized": "preparer un repas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-8",
-        "display": "Écouter",
-        "normalized": "ecouter",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-16-answer-9",
-        "display": "Passer du temps ensemble",
-        "normalized": "passer du temps ensemble",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-easy-16-bomb",
-      "display": "Insulte",
-      "normalized": "insulte",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "4f2335d156f03a32368ceabf18b46a0bd66e76e7c8b0be5d26d9566f17021325",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-easy-17",
-    "slug": "xlsx-relationships-substances-easy-17",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 moyens permettant d’éviter ou de réduire fortement le risque de grossesse.",
     "shortTitle": "moyens permettant d’éviter ou de réduire fort…",
     "difficultyLevel": 1,
@@ -2485,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-1",
+        "id": "xlsx-relationships-substances-easy-14-answer-1",
         "display": "Préservatif externe",
         "normalized": "preservatif externe",
         "aliases": [],
@@ -2497,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-2",
+        "id": "xlsx-relationships-substances-easy-14-answer-2",
         "display": "Préservatif interne",
         "normalized": "preservatif interne",
         "aliases": [],
@@ -2509,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-3",
+        "id": "xlsx-relationships-substances-easy-14-answer-3",
         "display": "Pilule",
         "normalized": "pilule",
         "aliases": [],
@@ -2521,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-4",
+        "id": "xlsx-relationships-substances-easy-14-answer-4",
         "display": "Stérilet au cuivre",
         "normalized": "sterilet au cuivre",
         "aliases": [],
@@ -2533,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-5",
+        "id": "xlsx-relationships-substances-easy-14-answer-5",
         "display": "Stérilet hormonal",
         "normalized": "sterilet hormonal",
         "aliases": [],
@@ -2545,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-6",
+        "id": "xlsx-relationships-substances-easy-14-answer-6",
         "display": "Implant",
         "normalized": "implant",
         "aliases": [],
@@ -2557,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-7",
+        "id": "xlsx-relationships-substances-easy-14-answer-7",
         "display": "Patch contraceptif",
         "normalized": "patch contraceptif",
         "aliases": [],
@@ -2569,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-8",
+        "id": "xlsx-relationships-substances-easy-14-answer-8",
         "display": "Anneau vaginal",
         "normalized": "anneau vaginal",
         "aliases": [],
@@ -2581,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-17-answer-9",
+        "id": "xlsx-relationships-substances-easy-14-answer-9",
         "display": "Diaphragme",
         "normalized": "diaphragme",
         "aliases": [],
@@ -2594,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-17-bomb",
+      "id": "xlsx-relationships-substances-easy-14-bomb",
       "display": "Antibiotique",
       "normalized": "antibiotique",
       "aliases": [],
@@ -2610,20 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4f59444d6f11f23ce09fab1a58a578b518b4f191cc247880b8a068096985a61d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-18",
-    "slug": "xlsx-relationships-substances-easy-18",
+    "id": "xlsx-relationships-substances-easy-15",
+    "slug": "xlsx-relationships-substances-easy-15",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 lieux ou situations où des gens peuvent faire une rencontre amoureuse.",
     "shortTitle": "lieux ou situations où des gens peuvent faire…",
     "difficultyLevel": 1,
@@ -2639,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-1",
+        "id": "xlsx-relationships-substances-easy-15-answer-1",
         "display": "Soirée",
         "normalized": "soiree",
         "aliases": [],
@@ -2651,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-2",
+        "id": "xlsx-relationships-substances-easy-15-answer-2",
         "display": "Bar",
         "normalized": "bar",
         "aliases": [],
@@ -2663,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-3",
+        "id": "xlsx-relationships-substances-easy-15-answer-3",
         "display": "Travail",
         "normalized": "travail",
         "aliases": [],
@@ -2675,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-4",
+        "id": "xlsx-relationships-substances-easy-15-answer-4",
         "display": "Université",
         "normalized": "universite",
         "aliases": [],
@@ -2687,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-5",
+        "id": "xlsx-relationships-substances-easy-15-answer-5",
         "display": "Application de rencontre",
         "normalized": "application de rencontre",
         "aliases": [],
@@ -2699,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-6",
+        "id": "xlsx-relationships-substances-easy-15-answer-6",
         "display": "Salle de sport",
         "normalized": "salle de sport",
         "aliases": [],
@@ -2711,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-7",
+        "id": "xlsx-relationships-substances-easy-15-answer-7",
         "display": "Festival",
         "normalized": "festival",
         "aliases": [],
@@ -2723,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-8",
+        "id": "xlsx-relationships-substances-easy-15-answer-8",
         "display": "Voyage",
         "normalized": "voyage",
         "aliases": [],
@@ -2735,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-18-answer-9",
+        "id": "xlsx-relationships-substances-easy-15-answer-9",
         "display": "Amis communs",
         "normalized": "amis communs",
         "aliases": [],
@@ -2748,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-18-bomb",
+      "id": "xlsx-relationships-substances-easy-15-bomb",
       "display": "Contrôle technique",
       "normalized": "controle technique",
       "aliases": [],
@@ -2764,174 +2377,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "45df6b00d9dd08e3e29498cd0c31190fccb1cfbebd50254b69046d754033632b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-easy-19",
-    "slug": "xlsx-relationships-substances-easy-19",
+    "id": "xlsx-relationships-substances-easy-16",
+    "slug": "xlsx-relationships-substances-easy-16",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 comportements qui peuvent abîmer une relation.",
-    "shortTitle": "comportements qui peuvent abîmer une relation",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-1",
-        "display": "Mensonge",
-        "normalized": "mensonge",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-2",
-        "display": "Jalousie excessive",
-        "normalized": "jalousie excessive",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-3",
-        "display": "Mépris",
-        "normalized": "mepris",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-4",
-        "display": "Infidélité",
-        "normalized": "infidelite",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-5",
-        "display": "Manipulation",
-        "normalized": "manipulation",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-6",
-        "display": "Manque de communication",
-        "normalized": "manque de communication",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-7",
-        "display": "Violence",
-        "normalized": "violence",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-8",
-        "display": "Contrôle excessif",
-        "normalized": "controle excessif",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-easy-19-answer-9",
-        "display": "Humiliation",
-        "normalized": "humiliation",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-easy-19-bomb",
-      "display": "Écoute",
-      "normalized": "ecoute",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d827eaf5aef80153b289f92d12f3a40e795e6c3b62e3ba47bdfee0e20bdfbc62",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-easy-20",
-    "slug": "xlsx-relationships-substances-easy-20",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 substances psychoactives ou catégories très connues.",
     "shortTitle": "substances psychoactives ou catégories très c…",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-1",
+        "id": "xlsx-relationships-substances-easy-16-answer-1",
         "display": "Alcool",
         "normalized": "alcool",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-2",
+        "id": "xlsx-relationships-substances-easy-16-answer-2",
         "display": "Nicotine",
         "normalized": "nicotine",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-3",
+        "id": "xlsx-relationships-substances-easy-16-answer-3",
         "display": "Caféine",
         "normalized": "cafeine",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-4",
+        "id": "xlsx-relationships-substances-easy-16-answer-4",
         "display": "Cannabis",
         "normalized": "cannabis",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-5",
+        "id": "xlsx-relationships-substances-easy-16-answer-5",
         "display": "Cocaïne",
         "normalized": "cocaine",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-6",
+        "id": "xlsx-relationships-substances-easy-16-answer-6",
         "display": "MDMA",
         "normalized": "mdma",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-7",
+        "id": "xlsx-relationships-substances-easy-16-answer-7",
         "display": "LSD",
         "normalized": "lsd",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-8",
+        "id": "xlsx-relationships-substances-easy-16-answer-8",
         "display": "Amphétamines",
         "normalized": "amphetamines",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-easy-20-answer-9",
+        "id": "xlsx-relationships-substances-easy-16-answer-9",
         "display": "Opioïdes",
         "normalized": "opioides",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-easy-20-bomb",
+      "id": "xlsx-relationships-substances-easy-16-bomb",
       "display": "Vitamine C",
       "normalized": "vitamine c",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "457d647af47b87d49dfeed3035965f024cd26fd832d3e62c0dee6c4b534deb73",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

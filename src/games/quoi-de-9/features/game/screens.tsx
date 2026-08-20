@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Brand } from "@/games/quoi-de-9/components/brand";
 import { Button, ProgressDots } from "@/games/quoi-de-9/components/ui";
 import { getTheme, questions } from "@/games/quoi-de-9/data/questions";
@@ -34,7 +34,6 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
     game.status === "question_ready" ||
     game.status === "question_active" ||
     game.status === "turn_expired" ||
-    game.status === "answer_correction" ||
     game.status === "turn_results";
   const resultsOnly = game.status === "turn_results";
   const totalTurns = game.roundsPerTeam * game.teams.length;
@@ -138,16 +137,12 @@ function getGamePhase(game: GameState, activeName: string, masterName: string) {
     case "difficulty_selection":
     case "choice_confirmation":
       return { label: "Niveau", action: `${activeName} choisit la difficulté` };
-    case "question_preparation":
-      return { label: "Secret", action: `${activeName} ne regarde plus l’écran` };
     case "question_ready":
       return { label: "Prêts ?", action: `${masterName} lit, puis lance le chrono` };
     case "question_active":
       return { label: "En jeu", action: `${masterName} valide les réponses` };
     case "turn_expired":
       return { label: "Terminé", action: "Affichez le bilan du tour" };
-    case "answer_correction":
-      return { label: "Correction", action: "Modifiez puis actualisez le bilan" };
     case "turn_results":
       return { label: "Bilan", action: "Consultez le score, puis continuez" };
     case "scoreboard":
@@ -560,38 +555,6 @@ export function ChoiceConfirmationScreen({
   );
 }
 
-export function PreparationScreen({
-  game,
-  onContinue,
-}: {
-  game: GameState;
-  onContinue: () => void;
-}) {
-  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
-  const master = game.teams[nextTeamIndex];
-  if (!master) throw new Error("Équipe suivante introuvable");
-  return (
-    <section className="flex flex-1 flex-col justify-center text-center">
-      <div
-        className="mx-auto grid h-24 w-24 place-items-center rounded-full border border-subtle bg-[color:var(--surface-subtle)] text-4xl"
-        aria-hidden="true"
-      >
-        ◉
-      </div>
-      <p className="mt-7 text-xs font-black uppercase tracking-[0.18em] text-[var(--coral)]">
-        Écran secret
-      </p>
-      <h1 className="display-face balance mt-3 text-6xl leading-[.86]">{master.name} seulement.</h1>
-      <p className="balance mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/65">
-        Les neuf réponses vont apparaître. L’équipe qui répond ne doit plus regarder l’écran.
-      </p>
-      <Button className="mt-8" onClick={onContinue}>
-        Je suis prêt · afficher la question
-      </Button>
-    </section>
-  );
-}
-
 export function QuestionScreen({
   game,
   question,
@@ -623,9 +586,8 @@ export function QuestionScreen({
   const isReady = game.status === "question_ready";
   const isActive = game.status === "question_active";
   const expired = game.status === "turn_expired";
-  const isCorrection = game.status === "answer_correction";
-  const urgent = !isCorrection && remainingSeconds <= GAME_CONFIG.warningSeconds;
-  const critical = !isCorrection && remainingSeconds <= GAME_CONFIG.criticalSeconds;
+  const urgent = remainingSeconds <= GAME_CONFIG.warningSeconds;
+  const critical = remainingSeconds <= GAME_CONFIG.criticalSeconds;
   const progress = (remainingSeconds / game.turnDurationSeconds) * 100;
   const bombActive = isBombTurn(game);
   const [isBombExplanationOpen, setIsBombExplanationOpen] = useState(false);
@@ -649,10 +611,10 @@ export function QuestionScreen({
               className={`text-right ${critical ? "text-[var(--coral)]" : urgent ? "text-amber-300" : "text-white"}`}
             >
               <span className="display-face block text-4xl leading-none tabular-nums">
-                {isCorrection ? "—" : formatTime(remainingSeconds)}
+                {formatTime(remainingSeconds)}
               </span>
               <span className="text-[9px] font-bold uppercase tracking-wider text-tertiary">
-                {isReady ? "prêt" : isCorrection ? "correction" : expired ? "terminé" : "restantes"}
+                {isReady ? "prêt" : expired ? "terminé" : "restantes"}
               </span>
             </div>
           </div>
@@ -676,7 +638,7 @@ export function QuestionScreen({
                 <button
                   key={answer.id}
                   type="button"
-                  disabled={!isActive && !isCorrection}
+                  disabled={!isActive}
                   onClick={() => onAnswer(answer.id)}
                   className={`answer-choice min-h-0 rounded-xl border px-1.5 py-1.5 text-[clamp(.62rem,2.8vw,.8rem)] font-black leading-[1.05] transition active:scale-[.96] ${found ? "border-[var(--lime)]/50 bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.055] text-white disabled:opacity-72"}`}
                   aria-pressed={found}
@@ -699,7 +661,7 @@ export function QuestionScreen({
               >
                 <button
                   type="button"
-                  disabled={!isActive && !isCorrection}
+                  disabled={!isActive}
                   onClick={onBomb}
                   aria-pressed={game.bombTriggered}
                   aria-label={`Bombe : ${question.bomb.display}${game.bombTriggered ? " — déclenchée" : ""}`}
@@ -788,26 +750,6 @@ export function QuestionScreen({
           </Button>
         </div>
       ) : null}
-      {isCorrection ? (
-        <div className="mt-2 rounded-2xl border border-[var(--lime)]/25 bg-[var(--lime)]/[.07] p-2">
-          <p className="mb-2 text-center text-[11px] font-bold text-white/65">
-            Touchez les réponses à ajouter ou retirer. Le score sera recalculé.
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            <Button
-              variant="secondary"
-              className="min-h-11 py-2"
-              onClick={onUndo}
-              disabled={game.revealedAnswerIds.length === 0}
-            >
-              Annuler la dernière
-            </Button>
-            <Button className="min-h-11 py-2" onClick={onResults}>
-              Mettre à jour
-            </Button>
-          </div>
-        </div>
-      ) : null}
       {expired ? (
         <div className="mt-2 rounded-2xl border border-[var(--coral)]/25 bg-[var(--coral)]/[.07] p-2 text-center">
           <p className="mb-2 text-xs font-black text-[var(--coral)]">
@@ -824,28 +766,34 @@ export function QuestionScreen({
 
 export function TurnResultsScreen({
   game,
-  onCorrect,
+  onToggleAnswer,
   onContinue,
 }: {
   game: GameState;
-  onCorrect: () => void;
+  onToggleAnswer: (answerId: string) => void;
   onContinue: () => void;
 }) {
   const result = game.history.at(-1);
+  const orderedAnswers = useMemo(
+    () => (result ? [...result.foundAnswers, ...result.missedAnswers] : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [result?.id],
+  );
   if (!result) return null;
 
   const isFunMode = game.mode === "fun";
   const reward = isFunMode
     ? calculateFunSips(result.foundAnswers.length, result.difficultyLevel, result.bombTriggered)
     : result.pointsEarned;
+  const foundSet = new Set(result.foundAnswerIds);
 
   return (
-    <section className="flex min-h-0 flex-1 flex-col pb-1">
+    <section className="flex min-h-0 flex-1 flex-col justify-center pb-1">
       <div className="text-center">
         <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--accent-text)]">
           Tour terminé
         </p>
-        <p className="score-pop display-face mt-2 text-5xl leading-none text-[var(--accent-text)]">
+        <p className="score-pop display-face mt-3 text-6xl leading-none text-[var(--accent-text)]">
           {isFunMode ? (
             <>
               {reward}{" "}
@@ -860,19 +808,18 @@ export function TurnResultsScreen({
             </>
           )}
         </p>
-        <p className="mt-2 text-[11px] text-tertiary">
-          {result.themeLabel} · Niveau {result.difficultyLevel} — {result.difficultyLabel}
-        </p>
-        <h1 className="balance mx-auto mt-1.5 max-w-xl text-[clamp(1rem,3.8vw,1.3rem)] font-black leading-tight">
+        <h1 className="balance mx-auto mt-3 max-w-xl text-[clamp(1rem,3.8vw,1.3rem)] font-black leading-tight">
           {result.questionText}
         </h1>
       </div>
-      <ResultAnswerGrid found={result.foundAnswers} missed={result.missedAnswers} />
-      <div className="mt-3 grid grid-cols-[.7fr_1.3fr] gap-2">
-        <Button variant="secondary" className="min-h-11 px-2 py-2" onClick={onCorrect}>
-          Corriger
-        </Button>
-        <Button className="min-h-11 px-2 py-2" onClick={onContinue}>
+      <ResultAnswerGrid
+        answers={orderedAnswers}
+        foundSet={foundSet}
+        foundCount={result.foundAnswerIds.length}
+        onToggle={onToggleAnswer}
+      />
+      <div className="mt-5">
+        <Button className="min-h-11 py-2" onClick={onContinue}>
           {game.history.length >= game.roundsPerTeam * 2 ? "Résultat final" : "Tour suivant"}
         </Button>
       </div>
@@ -881,40 +828,46 @@ export function TurnResultsScreen({
 }
 
 function ResultAnswerGrid({
-  found,
-  missed,
+  answers,
+  foundSet,
+  foundCount,
+  onToggle,
 }: {
-  found: Array<{ id: string; display: string }>;
-  missed: Array<{ id: string; display: string }>;
+  answers: Array<{ id: string; display: string }>;
+  foundSet: Set<string>;
+  foundCount: number;
+  onToggle: (answerId: string) => void;
 }) {
-  const answers = [
-    ...found.map((answer) => ({ ...answer, found: true })),
-    ...missed.map((answer) => ({ ...answer, found: false })),
-  ];
   return (
-    <section className="mt-3">
-      <div className="mb-2 flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-[0.1em]">
+    <section className="mt-5">
+      <div className="mb-2.5 flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-[0.1em]">
         <h2 className="text-white/62">Réponses</h2>
-        <p className="text-[var(--accent-text)]">{found.length}/9 trouvées</p>
+        <p className="text-[var(--accent-text)]">{foundCount}/9 trouvées</p>
       </div>
-      <div className="grid grid-cols-3 gap-1.5">
-        {answers.map((answer) => (
-          <div
-            key={answer.id}
-            className={`flex min-h-12 items-center justify-center rounded-xl border px-2 py-1.5 text-center text-[clamp(.76rem,2.8vw,.92rem)] font-semibold leading-[1.15] ${answer.found ? "border-[var(--lime)]/30 bg-[var(--lime)]/[.1] text-white" : "border-white/10 bg-white/[.03] text-white/62"}`}
-          >
-            <span>
-              {answer.display}
-              {answer.found ? (
-                <span className="ml-1 text-[var(--accent-text)]" aria-label="obtenue">
-                  ✓
-                </span>
-              ) : (
-                <span className="sr-only"> — manquée</span>
-              )}
-            </span>
-          </div>
-        ))}
+      <div className="grid grid-cols-3 gap-2">
+        {answers.map((answer) => {
+          const found = foundSet.has(answer.id);
+          return (
+            <button
+              key={answer.id}
+              type="button"
+              onClick={() => onToggle(answer.id)}
+              aria-pressed={found}
+              className={`flex min-h-14 items-center justify-center rounded-xl border px-2 py-2 text-center text-[clamp(.76rem,2.8vw,.92rem)] font-semibold leading-[1.15] transition active:scale-[.96] ${found ? "border-[var(--lime)]/40 bg-[var(--lime)]/[.12] text-white" : "border-white/10 bg-white/[.03] text-white/62"}`}
+            >
+              <span>
+                {answer.display}
+                {found ? (
+                  <span className="ml-1 text-[var(--accent-text)]" aria-label="obtenue">
+                    ✓
+                  </span>
+                ) : (
+                  <span className="sr-only"> — manquée</span>
+                )}
+              </span>
+            </button>
+          );
+        })}
       </div>
     </section>
   );

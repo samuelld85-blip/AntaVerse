@@ -3,7 +3,7 @@ import { createGameId } from "@/games/shared/lib/two-team-setup";
 import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import type { Card, CreateGameInput, GameState, PlayMode, Team } from "./types";
 
-export const STANDARD_ROUNDS = 4;
+export const STANDARD_ROUNDS = 7;
 const STANDARD_DURATION_MS = 45_000;
 const TIEBREAK_DURATION_MS = 30_000;
 const STANDARD_PASSES = 2;
@@ -121,7 +121,27 @@ export function recordForbiddenViolation(game: GameState, cardId: string, now = 
 
 export function endRound(game: GameState, now = Date.now()): GameState {
   if (game.status !== "playing") return game;
-  return touch({ ...game, status: "roundResult", roundEndsAt: null }, now);
+  const lastCardId = game.deck[game.deckPosition];
+  const deckPosition = Math.min(game.deckPosition + 1, game.deck.length - 1);
+  return touch({ ...game, status: "roundResult", roundEndsAt: null, lastCardId, deckPosition }, now);
+}
+
+export function claimLastCard(game: GameState, now = Date.now()): GameState {
+  if (game.status !== "roundResult" || !game.lastCardId) return game;
+  const teams = game.teams.map((t, i) => (i === game.activeTeamIndex ? { ...t, score: t.score + 1 } : t));
+  const tiebreakScores = game.tiebreakScores.map((s, i) =>
+    i === game.activeTeamIndex ? s + 1 : s,
+  );
+  return touch(
+    {
+      ...game,
+      teams,
+      tiebreakScores: game.roundMode === "standard" ? game.tiebreakScores : tiebreakScores,
+      roundScore: game.roundScore + 1,
+      lastCardId: undefined,
+    },
+    now,
+  );
 }
 
 export function continueGame(game: GameState, now = Date.now()): GameState {
@@ -198,6 +218,7 @@ function prepare(game: GameState, now: number): GameState {
       roundScore: 0,
       forbiddenViolations: 0,
       roundEndsAt: null,
+      lastCardId: undefined,
     },
     now,
   );

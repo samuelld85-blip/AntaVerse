@@ -4,10 +4,15 @@
     "slug": "xlsx-world-food-hard-01",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": ["world-food:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 plats contenant traditionnellement du poisson cru.",
-    "shortTitle": "plats contenant traditionnellement du poisson…",
+    "subthemeIds": [
+      "world-food:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
+    "questionText": "Cite 9 préparations contenant du poisson cru ou non cuit à la chaleur.",
+    "shortTitle": "préparations contenant du poisson cru ou non…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f518a39cdf79d31c8677c20cf2b4368238de72a1e8c79a5554e533e98c56c388",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-world-food-hard-02",
     "slug": "xlsx-world-food-hard-02",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": ["world-food:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "world-food:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 préparations du monde faites avec une pâte farcie.",
     "shortTitle": "préparations du monde faites avec une pâte fa…",
     "difficultyLevel": 3,
@@ -300,174 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "909df5ce952ade6c37eba7cbd9a5f7bea494a3a11a6c5639eab07e17f04f337d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-world-food-hard-03",
     "slug": "xlsx-world-food-hard-03",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": ["world-food:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 sauces, pâtes ou condiments traditionnellement fermentés.",
-    "shortTitle": "sauces, pâtes ou condiments traditionnellemen…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-world-food-hard-03-answer-1",
-        "display": "Sauce soja",
-        "normalized": "sauce soja",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-2",
-        "display": "Miso",
-        "normalized": "miso",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-3",
-        "display": "Nuoc-mâm",
-        "normalized": "nuoc mam",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-4",
-        "display": "Gochujang",
-        "normalized": "gochujang",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-5",
-        "display": "Doenjang",
-        "normalized": "doenjang",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-6",
-        "display": "Pâte de crevettes",
-        "normalized": "pate de crevettes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-7",
-        "display": "Sauce Worcestershire",
-        "normalized": "sauce worcestershire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-8",
-        "display": "Doubanjiang",
-        "normalized": "doubanjiang",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-03-answer-9",
-        "display": "Pâte de haricots noirs fermentés",
-        "normalized": "pate de haricots noirs fermentes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "world-food:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-world-food-hard-03-bomb",
-      "display": "Ketchup",
-      "normalized": "ketchup",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3797a454ff61bdb46da0090bf098fec4c8324d70c9a845bff3ef87700879758b",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-world-food-hard-04",
-    "slug": "xlsx-world-food-hard-04",
-    "language": "fr",
-    "themeId": "world-food",
-    "subthemeIds": ["world-food:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 boissons alcoolisées traditionnellement produites à partir de céréales.",
     "shortTitle": "boissons alcoolisées traditionnellement produ…",
     "difficultyLevel": 3,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-world-food-hard-04-answer-1",
+        "id": "xlsx-world-food-hard-03-answer-1",
         "display": "Whisky",
         "normalized": "whisky",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-2",
+        "id": "xlsx-world-food-hard-03-answer-2",
         "display": "Bourbon",
         "normalized": "bourbon",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-3",
+        "id": "xlsx-world-food-hard-03-answer-3",
         "display": "Vodka de grain",
         "normalized": "vodka de grain",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-4",
+        "id": "xlsx-world-food-hard-03-answer-4",
         "display": "Saké",
         "normalized": "sake",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-5",
+        "id": "xlsx-world-food-hard-03-answer-5",
         "display": "Bière",
         "normalized": "biere",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-6",
+        "id": "xlsx-world-food-hard-03-answer-6",
         "display": "Soju",
         "normalized": "soju",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-7",
+        "id": "xlsx-world-food-hard-03-answer-7",
         "display": "Baijiu",
         "normalized": "baijiu",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-8",
+        "id": "xlsx-world-food-hard-03-answer-8",
         "display": "Shochu",
         "normalized": "shochu",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-04-answer-9",
+        "id": "xlsx-world-food-hard-03-answer-9",
         "display": "Genever",
         "normalized": "genever",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-world-food-hard-04-bomb",
+      "id": "xlsx-world-food-hard-03-bomb",
       "display": "Tequila",
       "normalized": "tequila",
       "aliases": [],
@@ -608,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b401413a3816a005807e6c0869106a5cfeb072057af6df6df2e7a8f494038e9d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-world-food-hard-05",
-    "slug": "xlsx-world-food-hard-05",
+    "id": "xlsx-world-food-hard-04",
+    "slug": "xlsx-world-food-hard-04",
     "language": "fr",
     "themeId": "world-food",
-    "subthemeIds": ["world-food:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "world-food:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 spécialités françaises dont le nom renvoie directement à une ville ou une région.",
     "shortTitle": "spécialités françaises dont le nom renvoie di…",
     "difficultyLevel": 3,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-world-food-hard-05-answer-1",
+        "id": "xlsx-world-food-hard-04-answer-1",
         "display": "Bœuf bourguignon",
         "normalized": "bœuf bourguignon",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-2",
+        "id": "xlsx-world-food-hard-04-answer-2",
         "display": "Quiche lorraine",
         "normalized": "quiche lorraine",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-3",
+        "id": "xlsx-world-food-hard-04-answer-3",
         "display": "Salade niçoise",
         "normalized": "salade nicoise",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-4",
+        "id": "xlsx-world-food-hard-04-answer-4",
         "display": "Gratin dauphinois",
         "normalized": "gratin dauphinois",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-5",
+        "id": "xlsx-world-food-hard-04-answer-5",
         "display": "Poulet basquaise",
         "normalized": "poulet basquaise",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-6",
+        "id": "xlsx-world-food-hard-04-answer-6",
         "display": "Tarte normande",
         "normalized": "tarte normande",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-7",
+        "id": "xlsx-world-food-hard-04-answer-7",
         "display": "Cassoulet toulousain",
         "normalized": "cassoulet toulousain",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-8",
+        "id": "xlsx-world-food-hard-04-answer-8",
         "display": "Bouillabaisse marseillaise",
         "normalized": "bouillabaisse marseillaise",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-hard-05-answer-9",
+        "id": "xlsx-world-food-hard-04-answer-9",
         "display": "Brandade de Nîmes",
         "normalized": "brandade de nimes",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-world-food-hard-05-bomb",
+      "id": "xlsx-world-food-hard-04-bomb",
       "display": "Tiramisu",
       "normalized": "tiramisu",
       "aliases": [],
@@ -762,165 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "81651d88c6a40955742677358ef9e407f5c14853cce5a8b1cde424100f13287b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-world-food-hard-06",
-    "slug": "xlsx-world-food-hard-06",
-    "language": "fr",
-    "themeId": "world-food",
-    "subthemeIds": ["world-food:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 herbes aromatiques courantes de la cuisine méditerranéenne.",
-    "shortTitle": "herbes aromatiques courantes de la cuisine mé…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-world-food-hard-06-answer-1",
-        "display": "Basilic",
-        "normalized": "basilic",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-2",
-        "display": "Thym",
-        "normalized": "thym",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-3",
-        "display": "Romarin",
-        "normalized": "romarin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-4",
-        "display": "Origan",
-        "normalized": "origan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-5",
-        "display": "Sauge",
-        "normalized": "sauge",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-6",
-        "display": "Persil",
-        "normalized": "persil",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-7",
-        "display": "Menthe",
-        "normalized": "menthe",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-8",
-        "display": "Marjolaine",
-        "normalized": "marjolaine",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-hard-06-answer-9",
-        "display": "Sarriette",
-        "normalized": "sarriette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-world-food-hard-06-bomb",
-      "display": "Cannelle",
-      "normalized": "cannelle",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b363467b3e92dbdaa4eae60602526f52ced2ff0c3dcc0d7a7c98ab7b09f713b9",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

@@ -4,10 +4,15 @@
     "slug": "xlsx-celebrities-medium-01",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnalités françaises connues à l’étranger.",
-    "shortTitle": "personnalités françaises connues à l’étranger",
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 célébrités connues pour avoir joué dans Friends.",
+    "shortTitle": "célébrités connues pour avoir joué dans Friends",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -22,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-celebrities-medium-01-answer-1",
-        "display": "Omar Sy",
-        "normalized": "omar sy",
+        "display": "Jennifer Aniston",
+        "normalized": "jennifer aniston",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -34,8 +39,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-2",
-        "display": "David Guetta",
-        "normalized": "david guetta",
+        "display": "Courteney Cox",
+        "normalized": "courteney cox",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -46,8 +51,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-3",
-        "display": "Kylian Mbappé",
-        "normalized": "kylian mbappe",
+        "display": "Lisa Kudrow",
+        "normalized": "lisa kudrow",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -58,8 +63,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-4",
-        "display": "Marion Cotillard",
-        "normalized": "marion cotillard",
+        "display": "Matt LeBlanc",
+        "normalized": "matt leblanc",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -70,8 +75,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-5",
-        "display": "Jean Reno",
-        "normalized": "jean reno",
+        "display": "Matthew Perry",
+        "normalized": "matthew perry",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -82,8 +87,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-6",
-        "display": "Daft Punk",
-        "normalized": "daft punk",
+        "display": "David Schwimmer",
+        "normalized": "david schwimmer",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -94,8 +99,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-7",
-        "display": "Teddy Riner",
-        "normalized": "teddy riner",
+        "display": "Paul Rudd",
+        "normalized": "paul rudd",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -106,8 +111,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-8",
-        "display": "JR",
-        "normalized": "jr",
+        "display": "Tom Selleck",
+        "normalized": "tom selleck",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -118,8 +123,8 @@
       },
       {
         "id": "xlsx-celebrities-medium-01-answer-9",
-        "display": "Christine and the Queens",
-        "normalized": "christine and the queens",
+        "display": "Reese Witherspoon",
+        "normalized": "reese witherspoon",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -131,8 +136,8 @@
     ],
     "bomb": {
       "id": "xlsx-celebrities-medium-01-bomb",
-      "display": "Taylor Swift",
-      "normalized": "taylor swift",
+      "display": "Bryan Cranston",
+      "normalized": "bryan cranston",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "63cf0fe3a86ac2a299df35386b8730213f09caf77f43fe06e0a4c4c0a9aa2520",
+    "answerSetFingerprint": "0fde596e99807286bbd3353bc16ac69d7a3d12a4e00494c17051e5b8261f1334",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-02",
     "slug": "xlsx-celebrities-medium-02",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Denzel Washington.",
     "shortTitle": "films connus avec Denzel Washington",
     "difficultyLevel": 2,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7adbbe254e4f35a635c13c4337b8db4e342ca9a7ba61a10e7b06bca7c0e35620",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-03",
     "slug": "xlsx-celebrities-medium-03",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Leonardo DiCaprio.",
     "shortTitle": "films connus avec Leonardo DiCaprio",
     "difficultyLevel": 2,
@@ -454,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5ae21500bc2744a2f882e454e9b7cc4ae9dc11ed857e4dbf5ef25745011d8b4a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-04",
     "slug": "xlsx-celebrities-medium-04",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Jean Dujardin.",
     "shortTitle": "films connus avec Jean Dujardin",
     "difficultyLevel": 2,
@@ -608,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8238c0243055169e6306d476588f7509de1c8878d57907817267965652806b09",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-05",
     "slug": "xlsx-celebrities-medium-05",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Jennifer Lawrence.",
     "shortTitle": "films connus avec Jennifer Lawrence",
     "difficultyLevel": 2,
@@ -762,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a7d7b06a0b3b0a3abe65d7d954d3a5684c266e33f1b410bdaa535b5679d5c894",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-06",
     "slug": "xlsx-celebrities-medium-06",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Meryl Streep.",
     "shortTitle": "films connus avec Meryl Streep",
     "difficultyLevel": 2,
@@ -916,20 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c72dedb91caef217f683a8b9c355e814861ceaa9f03e1092b9de990c9390a1cd",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-07",
     "slug": "xlsx-celebrities-medium-07",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Tom Cruise.",
     "shortTitle": "films connus avec Tom Cruise",
     "difficultyLevel": 2,
@@ -1070,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "16dea6772b6e9e4baee0d2246c747d62cedd4181a3b4c913f767df9d38154e27",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-08",
     "slug": "xlsx-celebrities-medium-08",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 films connus avec Will Smith.",
     "shortTitle": "films connus avec Will Smith",
     "difficultyLevel": 2,
@@ -1224,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "db9d48ccabd7039a98226575c236e34bd8168121f34ecd6d2315c2539d8bf57e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-09",
     "slug": "xlsx-celebrities-medium-09",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 personnalités ayant remporté un Oscar d’interprétation.",
     "shortTitle": "personnalités ayant remporté un Oscar d’inter…",
     "difficultyLevel": 2,
@@ -1378,174 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "69782c207c62ff4103dd335fb4c07360933241709721e19f7b9eecaa52db748e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-celebrities-medium-10",
     "slug": "xlsx-celebrities-medium-10",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnalités célèbres nées hors de leur pays d’adoption principal.",
-    "shortTitle": "personnalités célèbres nées hors de leur pays…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-celebrities-medium-10-answer-1",
-        "display": "Freddie Mercury",
-        "normalized": "freddie mercury",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-2",
-        "display": "Rihanna",
-        "normalized": "rihanna",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-3",
-        "display": "Arnold Schwarzenegger",
-        "normalized": "arnold schwarzenegger",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-4",
-        "display": "Natalie Portman",
-        "normalized": "natalie portman",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-5",
-        "display": "Charlize Theron",
-        "normalized": "charlize theron",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-6",
-        "display": "Mila Kunis",
-        "normalized": "mila kunis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-7",
-        "display": "Keanu Reeves",
-        "normalized": "keanu reeves",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-8",
-        "display": "Salma Hayek",
-        "normalized": "salma hayek",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-10-answer-9",
-        "display": "Sofia Vergara",
-        "normalized": "sofia vergara",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "celebrities:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-celebrities-medium-10-bomb",
-      "display": "Taylor Swift",
-      "normalized": "taylor swift",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3e9b40437873bd45d27d42fa91bb1c8bc9cb32de5804e45867984c446b3924ac",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-celebrities-medium-11",
-    "slug": "xlsx-celebrities-medium-11",
-    "language": "fr",
-    "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 célébrités ayant aussi réalisé au moins un long-métrage.",
     "shortTitle": "célébrités ayant aussi réalisé au moins un lo…",
     "difficultyLevel": 2,
@@ -1561,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-medium-11-answer-1",
+        "id": "xlsx-celebrities-medium-10-answer-1",
         "display": "Clint Eastwood",
         "normalized": "clint eastwood",
         "aliases": [],
@@ -1573,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-2",
+        "id": "xlsx-celebrities-medium-10-answer-2",
         "display": "Ben Affleck",
         "normalized": "ben affleck",
         "aliases": [],
@@ -1585,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-3",
+        "id": "xlsx-celebrities-medium-10-answer-3",
         "display": "George Clooney",
         "normalized": "george clooney",
         "aliases": [],
@@ -1597,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-4",
+        "id": "xlsx-celebrities-medium-10-answer-4",
         "display": "Greta Gerwig",
         "normalized": "greta gerwig",
         "aliases": [],
@@ -1609,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-5",
+        "id": "xlsx-celebrities-medium-10-answer-5",
         "display": "Bradley Cooper",
         "normalized": "bradley cooper",
         "aliases": [],
@@ -1621,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-6",
+        "id": "xlsx-celebrities-medium-10-answer-6",
         "display": "Angelina Jolie",
         "normalized": "angelina jolie",
         "aliases": [],
@@ -1633,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-7",
+        "id": "xlsx-celebrities-medium-10-answer-7",
         "display": "Mel Gibson",
         "normalized": "mel gibson",
         "aliases": [],
@@ -1645,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-8",
+        "id": "xlsx-celebrities-medium-10-answer-8",
         "display": "Sofia Coppola",
         "normalized": "sofia coppola",
         "aliases": [],
@@ -1657,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-11-answer-9",
+        "id": "xlsx-celebrities-medium-10-answer-9",
         "display": "Kenneth Branagh",
         "normalized": "kenneth branagh",
         "aliases": [],
@@ -1670,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-medium-11-bomb",
+      "id": "xlsx-celebrities-medium-10-bomb",
       "display": "Tom Holland",
       "normalized": "tom holland",
       "aliases": [],
@@ -1686,174 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "72f24d12afe0a78bb9e2413a78be9cfe37f1587caef5b109f7ee74d1de73cf1b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-celebrities-medium-12",
-    "slug": "xlsx-celebrities-medium-12",
+    "id": "xlsx-celebrities-medium-11",
+    "slug": "xlsx-celebrities-medium-11",
     "language": "fr",
     "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 personnalités célèbres ayant publié une autobiographie ou des mémoires.",
-    "shortTitle": "personnalités célèbres ayant publié une autob…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-celebrities-medium-12-answer-1",
-        "display": "Barack Obama",
-        "normalized": "barack obama",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-2",
-        "display": "Michelle Obama",
-        "normalized": "michelle obama",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-3",
-        "display": "Britney Spears",
-        "normalized": "britney spears",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-4",
-        "display": "Elton John",
-        "normalized": "elton john",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-5",
-        "display": "Matthew Perry",
-        "normalized": "matthew perry",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-6",
-        "display": "Prince Harry",
-        "normalized": "prince harry",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-7",
-        "display": "Tina Turner",
-        "normalized": "tina turner",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-8",
-        "display": "Agassi",
-        "normalized": "agassi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-12-answer-9",
-        "display": "Trevor Noah",
-        "normalized": "trevor noah",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "celebrities:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-celebrities-medium-12-bomb",
-      "display": "Mickey Mouse",
-      "normalized": "mickey mouse",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3c2624b0ed6ac3d7f4dad7f2f6be7622f3eff8e515ca3703e76613fa84681ff2",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-celebrities-medium-13",
-    "slug": "xlsx-celebrities-medium-13",
-    "language": "fr",
-    "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 personnalités françaises ayant présenté une grande émission de télévision.",
     "shortTitle": "personnalités françaises ayant présenté une g…",
     "difficultyLevel": 2,
@@ -1869,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-medium-13-answer-1",
+        "id": "xlsx-celebrities-medium-11-answer-1",
         "display": "Michel Drucker",
         "normalized": "michel drucker",
         "aliases": [],
@@ -1881,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-2",
+        "id": "xlsx-celebrities-medium-11-answer-2",
         "display": "Nagui",
         "normalized": "nagui",
         "aliases": [],
@@ -1893,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-3",
+        "id": "xlsx-celebrities-medium-11-answer-3",
         "display": "Jean-Pierre Foucault",
         "normalized": "jean pierre foucault",
         "aliases": [],
@@ -1905,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-4",
+        "id": "xlsx-celebrities-medium-11-answer-4",
         "display": "Nikos Aliagas",
         "normalized": "nikos aliagas",
         "aliases": [],
@@ -1917,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-5",
+        "id": "xlsx-celebrities-medium-11-answer-5",
         "display": "Laurent Ruquier",
         "normalized": "laurent ruquier",
         "aliases": [],
@@ -1929,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-6",
+        "id": "xlsx-celebrities-medium-11-answer-6",
         "display": "Arthur",
         "normalized": "arthur",
         "aliases": [],
@@ -1941,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-7",
+        "id": "xlsx-celebrities-medium-11-answer-7",
         "display": "Karine Le Marchand",
         "normalized": "karine le marchand",
         "aliases": [],
@@ -1953,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-8",
+        "id": "xlsx-celebrities-medium-11-answer-8",
         "display": "Denis Brogniart",
         "normalized": "denis brogniart",
         "aliases": [],
@@ -1965,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-medium-13-answer-9",
+        "id": "xlsx-celebrities-medium-11-answer-9",
         "display": "Alessandra Sublet",
         "normalized": "alessandra sublet",
         "aliases": [],
@@ -1978,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-medium-13-bomb",
+      "id": "xlsx-celebrities-medium-11-bomb",
       "display": "Omar Sy",
       "normalized": "omar sy",
       "aliases": [],
@@ -1994,165 +1741,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ab31002837e3f0d2bf5c9af614094d0dba544d105ad064957e06c5930763961d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-celebrities-medium-14",
-    "slug": "xlsx-celebrities-medium-14",
-    "language": "fr",
-    "themeId": "celebrities",
-    "subthemeIds": ["celebrities:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 célébrités connues ayant été nommées ambassadrices ou ambassadeurs de grandes marques de luxe.",
-    "shortTitle": "célébrités connues ayant été nommées ambassad…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-celebrities-medium-14-answer-1",
-        "display": "Natalie Portman",
-        "normalized": "natalie portman",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-2",
-        "display": "Charlize Theron",
-        "normalized": "charlize theron",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-3",
-        "display": "Brad Pitt",
-        "normalized": "brad pitt",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-4",
-        "display": "Zendaya",
-        "normalized": "zendaya",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-5",
-        "display": "Timothée Chalamet",
-        "normalized": "timothee chalamet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-6",
-        "display": "Johnny Depp",
-        "normalized": "johnny depp",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-7",
-        "display": "Robert Pattinson",
-        "normalized": "robert pattinson",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-8",
-        "display": "Emma Stone",
-        "normalized": "emma stone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-medium-14-answer-9",
-        "display": "Anne Hathaway",
-        "normalized": "anne hathaway",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-celebrities-medium-14-bomb",
-      "display": "Lionel Messi",
-      "normalized": "lionel messi",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b41a6200a8879fffc8abecf9a332d40beabb5add325a8468d41757fe339b8ab6",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

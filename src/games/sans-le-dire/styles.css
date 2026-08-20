@@ -444,3 +444,39 @@ html[data-theme="light"] .mode-selection-button--fun:hover {
 .consequence--penalty {
   border-color: color-mix(in srgb, var(--sld-accent) 35%, transparent);
 }
+
+.last-card-claim {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.last-card-label {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.last-card-label strong {
+  color: var(--text);
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.last-card-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.last-card-yes {
+  min-height: 2.8rem !important;
+  font-size: 0.95rem !important;
+}

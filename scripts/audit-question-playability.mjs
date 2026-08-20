@@ -45,10 +45,8 @@ for (const themeId of [...new Set(questions.map((question) => question.themeId))
   const themeQuestions = questions.filter((question) => question.themeId === themeId);
   if (themeQuestions.length < 15)
     distributionErrors.push(`${themeId}: ${themeQuestions.length}/15`);
-  for (const level of [1, 2, 3]) {
-    const count = themeQuestions.filter((question) => question.difficultyLevel === level).length;
-    if (count < 5) distributionErrors.push(`${themeId} niveau ${level}: ${count}/5`);
-  }
+  // La répartition par niveau suit la banque Excel source : seul le volume
+  // global par thème est contraint.
 }
 
 console.log(

@@ -4,10 +4,15 @@
     "slug": "xlsx-geography-world-medium-01",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 pays reconnaissables à un symbole national célèbre.",
-    "shortTitle": "pays reconnaissables à un symbole national cé…",
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 pays ayant une frontière avec l’Allemagne.",
+    "shortTitle": "pays ayant une frontière avec l’Allemagne",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -22,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-geography-world-medium-01-answer-1",
-        "display": "Canada",
-        "normalized": "canada",
+        "display": "France",
+        "normalized": "france",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -34,8 +39,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-2",
-        "display": "France",
-        "normalized": "france",
+        "display": "Belgique",
+        "normalized": "belgique",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -46,8 +51,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-3",
-        "display": "Nouvelle-Zélande",
-        "normalized": "nouvelle zelande",
+        "display": "Pays-Bas",
+        "normalized": "pays bas",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -58,8 +63,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-4",
-        "display": "Irlande",
-        "normalized": "irlande",
+        "display": "Danemark",
+        "normalized": "danemark",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -70,8 +75,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-5",
-        "display": "Liban",
-        "normalized": "liban",
+        "display": "Pologne",
+        "normalized": "pologne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -82,8 +87,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-6",
-        "display": "Japon",
-        "normalized": "japon",
+        "display": "Tchéquie",
+        "normalized": "tchequie",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -94,8 +99,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-7",
-        "display": "États-Unis",
-        "normalized": "etats unis",
+        "display": "Autriche",
+        "normalized": "autriche",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -106,8 +111,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-8",
-        "display": "Australie",
-        "normalized": "australie",
+        "display": "Suisse",
+        "normalized": "suisse",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -118,8 +123,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-01-answer-9",
-        "display": "Guatemala",
-        "normalized": "guatemala",
+        "display": "Luxembourg",
+        "normalized": "luxembourg",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -131,8 +136,8 @@
     ],
     "bomb": {
       "id": "xlsx-geography-world-medium-01-bomb",
-      "display": "Tour Eiffel",
-      "normalized": "tour eiffel",
+      "display": "Italie",
+      "normalized": "italie",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -146,22 +151,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "14b7f8c7ca269c55bb758441c2ce6579a1c4d43bc9ab236e83c567fc46f7b12e",
+    "answerSetFingerprint": "abe1a3c284bb6bd778deb1908720aff69347f08d737f5b3ea4e9e062be68b69e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-geography-world-medium-02",
     "slug": "xlsx-geography-world-medium-02",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 régions ou cultures associées à un instrument traditionnel.",
-    "shortTitle": "régions ou cultures associées à un instrument…",
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 pays dont le drapeau comporte une croix.",
+    "shortTitle": "pays dont le drapeau comporte une croix",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -176,8 +186,8 @@
     "answers": [
       {
         "id": "xlsx-geography-world-medium-02-answer-1",
-        "display": "Inde",
-        "normalized": "inde",
+        "display": "Danemark",
+        "normalized": "danemark",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -188,8 +198,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-2",
-        "display": "Japon",
-        "normalized": "japon",
+        "display": "Suède",
+        "normalized": "suede",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -200,8 +210,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-3",
-        "display": "Afrique de l’Ouest",
-        "normalized": "afrique de l ouest",
+        "display": "Norvège",
+        "normalized": "norvege",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -212,8 +222,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-4",
-        "display": "Australie aborigène",
-        "normalized": "australie aborigene",
+        "display": "Finlande",
+        "normalized": "finlande",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -224,8 +234,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-5",
-        "display": "Écosse",
-        "normalized": "ecosse",
+        "display": "Islande",
+        "normalized": "islande",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -236,8 +246,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-6",
-        "display": "Indonésie",
-        "normalized": "indonesie",
+        "display": "Suisse",
+        "normalized": "suisse",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -248,8 +258,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-7",
-        "display": "Andes",
-        "normalized": "andes",
+        "display": "Royaume-Uni",
+        "normalized": "royaume uni",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -260,8 +270,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-8",
-        "display": "Monde arabe",
-        "normalized": "monde arabe",
+        "display": "Grèce",
+        "normalized": "grece",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -272,8 +282,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-02-answer-9",
-        "display": "Afrique de l’Ouest mandingue",
-        "normalized": "afrique de l ouest mandingue",
+        "display": "Géorgie",
+        "normalized": "georgie",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -285,8 +295,8 @@
     ],
     "bomb": {
       "id": "xlsx-geography-world-medium-02-bomb",
-      "display": "Guitare",
-      "normalized": "guitare",
+      "display": "France",
+      "normalized": "france",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -300,22 +310,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "7281630a5a77ded44e2f5546c84542f0f4c6d51646bdc3df31132fe5f334f6a8",
+    "answerSetFingerprint": "f0e1d5e5159475a99f44f1e49a772b58a11a5ba067343e67bd79db0f06adebb5",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-geography-world-medium-03",
     "slug": "xlsx-geography-world-medium-03",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 pays connus pour un carnaval emblématique.",
-    "shortTitle": "pays connus pour un carnaval emblématique",
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 instruments traditionnels associés à un pays ou une région.",
+    "shortTitle": "instruments traditionnels associés à un pays…",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -330,8 +345,8 @@
     "answers": [
       {
         "id": "xlsx-geography-world-medium-03-answer-1",
-        "display": "Brésil",
-        "normalized": "bresil",
+        "display": "Cornemuse",
+        "normalized": "cornemuse",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -342,8 +357,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-2",
-        "display": "Italie",
-        "normalized": "italie",
+        "display": "Sitar",
+        "normalized": "sitar",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -354,8 +369,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-3",
-        "display": "Royaume-Uni",
-        "normalized": "royaume uni",
+        "display": "Shamisen",
+        "normalized": "shamisen",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -366,8 +381,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-4",
-        "display": "Belgique",
-        "normalized": "belgique",
+        "display": "Didgeridoo",
+        "normalized": "didgeridoo",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -378,8 +393,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-5",
-        "display": "Bolivie",
-        "normalized": "bolivie",
+        "display": "Djembé",
+        "normalized": "djembe",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -390,8 +405,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-6",
-        "display": "Colombie",
-        "normalized": "colombie",
+        "display": "Balalaïka",
+        "normalized": "balalaika",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -402,8 +417,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-7",
-        "display": "Canada",
-        "normalized": "canada",
+        "display": "Bandonéon",
+        "normalized": "bandoneon",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -414,8 +429,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-8",
-        "display": "Inde",
-        "normalized": "inde",
+        "display": "Koto",
+        "normalized": "koto",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -426,8 +441,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-03-answer-9",
-        "display": "Suisse",
-        "normalized": "suisse",
+        "display": "Steel drum",
+        "normalized": "steel drum",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -439,8 +454,8 @@
     ],
     "bomb": {
       "id": "xlsx-geography-world-medium-03-bomb",
-      "display": "Rio de Janeiro",
-      "normalized": "rio de janeiro",
+      "display": "Guitare électrique",
+      "normalized": "guitare electrique",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -454,22 +469,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "620843755758594dc7f22300b28f4217e8e3da66594888141be5af736bb9e02a",
+    "answerSetFingerprint": "041340e6520bff5dbac3b0d12aab73d0e4309b9b2b26e7283e60708d9772cdbf",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-geography-world-medium-04",
     "slug": "xlsx-geography-world-medium-04",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 pays qui abritent un site historique mondialement connu.",
-    "shortTitle": "pays qui abritent un site historique mondiale…",
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 villes célèbres pour leur carnaval.",
+    "shortTitle": "villes célèbres pour leur carnaval",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -484,8 +504,8 @@
     "answers": [
       {
         "id": "xlsx-geography-world-medium-04-answer-1",
-        "display": "Cambodge",
-        "normalized": "cambodge",
+        "display": "Rio de Janeiro",
+        "normalized": "rio de janeiro",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -496,8 +516,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-2",
-        "display": "Jordanie",
-        "normalized": "jordanie",
+        "display": "Venise",
+        "normalized": "venise",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -508,8 +528,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-3",
-        "display": "Pérou",
-        "normalized": "perou",
+        "display": "Nice",
+        "normalized": "nice",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -520,8 +540,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-4",
-        "display": "Inde",
-        "normalized": "inde",
+        "display": "Dunkerque",
+        "normalized": "dunkerque",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -532,8 +552,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-5",
-        "display": "Mexique",
-        "normalized": "mexique",
+        "display": "Binche",
+        "normalized": "binche",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -544,8 +564,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-6",
-        "display": "Indonésie",
-        "normalized": "indonesie",
+        "display": "Cologne",
+        "normalized": "cologne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -556,8 +576,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-7",
-        "display": "Éthiopie",
-        "normalized": "ethiopie",
+        "display": "La Nouvelle-Orléans",
+        "normalized": "la nouvelle orleans",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -568,8 +588,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-8",
-        "display": "Espagne",
-        "normalized": "espagne",
+        "display": "Québec",
+        "normalized": "quebec",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -580,8 +600,8 @@
       },
       {
         "id": "xlsx-geography-world-medium-04-answer-9",
-        "display": "Chine",
-        "normalized": "chine",
+        "display": "Bâle",
+        "normalized": "bale",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -593,8 +613,8 @@
     ],
     "bomb": {
       "id": "xlsx-geography-world-medium-04-bomb",
-      "display": "Pyramide de Gizeh",
-      "normalized": "pyramide de gizeh",
+      "display": "Stockholm",
+      "normalized": "stockholm",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -608,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0c03efc3a26037eee732a0cb1d83aa602f295da62d2121bff336188884cae283",
+    "answerSetFingerprint": "30c904282259a2691f81841fd00d56da40b6431b4cfbfea38b0fb173b412418b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-geography-world-medium-05",
     "slug": "xlsx-geography-world-medium-05",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 capitales traversées par un fleuve.",
     "shortTitle": "capitales traversées par un fleuve",
     "difficultyLevel": 2,
@@ -762,174 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ce55f76257f4b8d2a5b2bca379b02aa5563aee8fb3b7f5e2e7b189cf4e7c6caf",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-geography-world-medium-06",
     "slug": "xlsx-geography-world-medium-06",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 pays partageant une frontière avec la France.",
-    "shortTitle": "pays partageant une frontière avec la France",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-geography-world-medium-06-answer-1",
-        "display": "Espagne",
-        "normalized": "espagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-2",
-        "display": "Italie",
-        "normalized": "italie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-3",
-        "display": "Belgique",
-        "normalized": "belgique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-4",
-        "display": "Allemagne",
-        "normalized": "allemagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-5",
-        "display": "Suisse",
-        "normalized": "suisse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-6",
-        "display": "Luxembourg",
-        "normalized": "luxembourg",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-7",
-        "display": "Andorre",
-        "normalized": "andorre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-8",
-        "display": "Monaco",
-        "normalized": "monaco",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-06-answer-9",
-        "display": "Brésil",
-        "normalized": "bresil",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "geography-world:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-geography-world-medium-06-bomb",
-      "display": "Portugal",
-      "normalized": "portugal",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a639887311eda1e01764f9292e7e1a254c7ecea8386867cf743d5332e11affb5",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-geography-world-medium-07",
-    "slug": "xlsx-geography-world-medium-07",
-    "language": "fr",
-    "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 villes ayant accueilli les Jeux olympiques.",
     "shortTitle": "villes ayant accueilli les Jeux olympiques",
     "difficultyLevel": 2,
@@ -945,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-geography-world-medium-07-answer-1",
+        "id": "xlsx-geography-world-medium-06-answer-1",
         "display": "Paris",
         "normalized": "paris",
         "aliases": [],
@@ -957,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-2",
+        "id": "xlsx-geography-world-medium-06-answer-2",
         "display": "Tokyo",
         "normalized": "tokyo",
         "aliases": [],
@@ -969,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-3",
+        "id": "xlsx-geography-world-medium-06-answer-3",
         "display": "Rio de Janeiro",
         "normalized": "rio de janeiro",
         "aliases": [],
@@ -981,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-4",
+        "id": "xlsx-geography-world-medium-06-answer-4",
         "display": "Londres",
         "normalized": "londres",
         "aliases": [],
@@ -993,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-5",
+        "id": "xlsx-geography-world-medium-06-answer-5",
         "display": "Athènes",
         "normalized": "athenes",
         "aliases": [],
@@ -1005,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-6",
+        "id": "xlsx-geography-world-medium-06-answer-6",
         "display": "Los Angeles",
         "normalized": "los angeles",
         "aliases": [],
@@ -1017,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-7",
+        "id": "xlsx-geography-world-medium-06-answer-7",
         "display": "Sydney",
         "normalized": "sydney",
         "aliases": [],
@@ -1029,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-8",
+        "id": "xlsx-geography-world-medium-06-answer-8",
         "display": "Pékin",
         "normalized": "pekin",
         "aliases": [],
@@ -1041,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-07-answer-9",
+        "id": "xlsx-geography-world-medium-06-answer-9",
         "display": "Barcelone",
         "normalized": "barcelone",
         "aliases": [],
@@ -1054,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-geography-world-medium-07-bomb",
+      "id": "xlsx-geography-world-medium-06-bomb",
       "display": "Saint-Pétersbourg",
       "normalized": "saint petersbourg",
       "aliases": [],
@@ -1070,20 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "e3d0bbee01a47b1d588ea99134c8de48011732c3f0a4197049ae37cf20e00c65",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-geography-world-medium-08",
-    "slug": "xlsx-geography-world-medium-08",
+    "id": "xlsx-geography-world-medium-07",
+    "slug": "xlsx-geography-world-medium-07",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 pays dont le drapeau contient une étoile.",
     "shortTitle": "pays dont le drapeau contient une étoile",
     "difficultyLevel": 2,
@@ -1099,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-geography-world-medium-08-answer-1",
+        "id": "xlsx-geography-world-medium-07-answer-1",
         "display": "États-Unis",
         "normalized": "etats unis",
         "aliases": [],
@@ -1111,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-2",
+        "id": "xlsx-geography-world-medium-07-answer-2",
         "display": "Chine",
         "normalized": "chine",
         "aliases": [],
@@ -1123,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-3",
+        "id": "xlsx-geography-world-medium-07-answer-3",
         "display": "Maroc",
         "normalized": "maroc",
         "aliases": [],
@@ -1135,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-4",
+        "id": "xlsx-geography-world-medium-07-answer-4",
         "display": "Australie",
         "normalized": "australie",
         "aliases": [],
@@ -1147,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-5",
+        "id": "xlsx-geography-world-medium-07-answer-5",
         "display": "Nouvelle-Zélande",
         "normalized": "nouvelle zelande",
         "aliases": [],
@@ -1159,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-6",
+        "id": "xlsx-geography-world-medium-07-answer-6",
         "display": "Vietnam",
         "normalized": "vietnam",
         "aliases": [],
@@ -1171,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-7",
+        "id": "xlsx-geography-world-medium-07-answer-7",
         "display": "Sénégal",
         "normalized": "senegal",
         "aliases": [],
@@ -1183,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-8",
+        "id": "xlsx-geography-world-medium-07-answer-8",
         "display": "Turquie",
         "normalized": "turquie",
         "aliases": [],
@@ -1195,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-08-answer-9",
+        "id": "xlsx-geography-world-medium-07-answer-9",
         "display": "Pakistan",
         "normalized": "pakistan",
         "aliases": [],
@@ -1208,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-geography-world-medium-08-bomb",
+      "id": "xlsx-geography-world-medium-07-bomb",
       "display": "France",
       "normalized": "france",
       "aliases": [],
@@ -1224,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "68dcc5258364dca56ddb1d72487f80e2e22f9075cd94495aaa664d0dc95fab84",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-geography-world-medium-09",
-    "slug": "xlsx-geography-world-medium-09",
+    "id": "xlsx-geography-world-medium-08",
+    "slug": "xlsx-geography-world-medium-08",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 pays d’Afrique.",
     "shortTitle": "pays d’Afrique",
     "difficultyLevel": 2,
@@ -1253,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-geography-world-medium-09-answer-1",
+        "id": "xlsx-geography-world-medium-08-answer-1",
         "display": "Maroc",
         "normalized": "maroc",
         "aliases": [],
@@ -1265,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-2",
+        "id": "xlsx-geography-world-medium-08-answer-2",
         "display": "Kenya",
         "normalized": "kenya",
         "aliases": [],
@@ -1277,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-3",
+        "id": "xlsx-geography-world-medium-08-answer-3",
         "display": "Sénégal",
         "normalized": "senegal",
         "aliases": [],
@@ -1289,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-4",
+        "id": "xlsx-geography-world-medium-08-answer-4",
         "display": "Algérie",
         "normalized": "algerie",
         "aliases": [],
@@ -1301,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-5",
+        "id": "xlsx-geography-world-medium-08-answer-5",
         "display": "Égypte",
         "normalized": "egypte",
         "aliases": [],
@@ -1313,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-6",
+        "id": "xlsx-geography-world-medium-08-answer-6",
         "display": "Ghana",
         "normalized": "ghana",
         "aliases": [],
@@ -1325,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-7",
+        "id": "xlsx-geography-world-medium-08-answer-7",
         "display": "Nigeria",
         "normalized": "nigeria",
         "aliases": [],
@@ -1337,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-8",
+        "id": "xlsx-geography-world-medium-08-answer-8",
         "display": "Afrique du Sud",
         "normalized": "afrique du sud",
         "aliases": [],
@@ -1349,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-09-answer-9",
+        "id": "xlsx-geography-world-medium-08-answer-9",
         "display": "Tanzanie",
         "normalized": "tanzanie",
         "aliases": [],
@@ -1362,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-geography-world-medium-09-bomb",
+      "id": "xlsx-geography-world-medium-08-bomb",
       "display": "Haïti",
       "normalized": "haiti",
       "aliases": [],
@@ -1378,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d65c6f825295e9e270694fe339a81c464c61dcb729201e5eb573769f72c63329",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-geography-world-medium-10",
-    "slug": "xlsx-geography-world-medium-10",
+    "id": "xlsx-geography-world-medium-09",
+    "slug": "xlsx-geography-world-medium-09",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 capitales situées en Asie.",
     "shortTitle": "capitales situées en Asie",
     "difficultyLevel": 2,
@@ -1407,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-geography-world-medium-10-answer-1",
+        "id": "xlsx-geography-world-medium-09-answer-1",
         "display": "Tokyo",
         "normalized": "tokyo",
         "aliases": [],
@@ -1419,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-2",
+        "id": "xlsx-geography-world-medium-09-answer-2",
         "display": "Bangkok",
         "normalized": "bangkok",
         "aliases": [],
@@ -1431,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-3",
+        "id": "xlsx-geography-world-medium-09-answer-3",
         "display": "Séoul",
         "normalized": "seoul",
         "aliases": [],
@@ -1443,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-4",
+        "id": "xlsx-geography-world-medium-09-answer-4",
         "display": "Pékin",
         "normalized": "pekin",
         "aliases": [],
@@ -1455,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-5",
+        "id": "xlsx-geography-world-medium-09-answer-5",
         "display": "New Delhi",
         "normalized": "new delhi",
         "aliases": [],
@@ -1467,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-6",
+        "id": "xlsx-geography-world-medium-09-answer-6",
         "display": "Hanoï",
         "normalized": "hanoi",
         "aliases": [],
@@ -1479,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-7",
+        "id": "xlsx-geography-world-medium-09-answer-7",
         "display": "Jakarta",
         "normalized": "jakarta",
         "aliases": [],
@@ -1491,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-8",
+        "id": "xlsx-geography-world-medium-09-answer-8",
         "display": "Manille",
         "normalized": "manille",
         "aliases": [],
@@ -1503,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-10-answer-9",
+        "id": "xlsx-geography-world-medium-09-answer-9",
         "display": "Riyad",
         "normalized": "riyad",
         "aliases": [],
@@ -1516,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-geography-world-medium-10-bomb",
+      "id": "xlsx-geography-world-medium-09-bomb",
       "display": "Le Caire",
       "normalized": "le caire",
       "aliases": [],
@@ -1532,174 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "615159c6b64c3afe4256d2a36a7babaf7709e5032590b94e9ff87760479c405f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-geography-world-medium-11",
-    "slug": "xlsx-geography-world-medium-11",
+    "id": "xlsx-geography-world-medium-10",
+    "slug": "xlsx-geography-world-medium-10",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 pays ayant une façade sur la Méditerranée.",
-    "shortTitle": "pays ayant une façade sur la Méditerranée",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-geography-world-medium-11-answer-1",
-        "display": "France",
-        "normalized": "france",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-2",
-        "display": "Italie",
-        "normalized": "italie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-3",
-        "display": "Égypte",
-        "normalized": "egypte",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-4",
-        "display": "Espagne",
-        "normalized": "espagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-5",
-        "display": "Grèce",
-        "normalized": "grece",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-6",
-        "display": "Turquie",
-        "normalized": "turquie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-7",
-        "display": "Tunisie",
-        "normalized": "tunisie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-8",
-        "display": "Algérie",
-        "normalized": "algerie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-11-answer-9",
-        "display": "Liban",
-        "normalized": "liban",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "geography-world:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-geography-world-medium-11-bomb",
-      "display": "Portugal",
-      "normalized": "portugal",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "29966f7ba45da0121f834b093c144031b3337d2ce94c2a6b77df2f7856144ffb",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-geography-world-medium-12",
-    "slug": "xlsx-geography-world-medium-12",
-    "language": "fr",
-    "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 pays traversés par le Danube.",
     "shortTitle": "pays traversés par le Danube",
     "difficultyLevel": 2,
@@ -1715,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-geography-world-medium-12-answer-1",
+        "id": "xlsx-geography-world-medium-10-answer-1",
         "display": "Allemagne",
         "normalized": "allemagne",
         "aliases": [],
@@ -1727,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-2",
+        "id": "xlsx-geography-world-medium-10-answer-2",
         "display": "Autriche",
         "normalized": "autriche",
         "aliases": [],
@@ -1739,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-3",
+        "id": "xlsx-geography-world-medium-10-answer-3",
         "display": "Slovaquie",
         "normalized": "slovaquie",
         "aliases": [],
@@ -1751,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-4",
+        "id": "xlsx-geography-world-medium-10-answer-4",
         "display": "Hongrie",
         "normalized": "hongrie",
         "aliases": [],
@@ -1763,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-5",
+        "id": "xlsx-geography-world-medium-10-answer-5",
         "display": "Croatie",
         "normalized": "croatie",
         "aliases": [],
@@ -1775,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-6",
+        "id": "xlsx-geography-world-medium-10-answer-6",
         "display": "Serbie",
         "normalized": "serbie",
         "aliases": [],
@@ -1787,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-7",
+        "id": "xlsx-geography-world-medium-10-answer-7",
         "display": "Roumanie",
         "normalized": "roumanie",
         "aliases": [],
@@ -1799,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-8",
+        "id": "xlsx-geography-world-medium-10-answer-8",
         "display": "Bulgarie",
         "normalized": "bulgarie",
         "aliases": [],
@@ -1811,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-12-answer-9",
+        "id": "xlsx-geography-world-medium-10-answer-9",
         "display": "Ukraine",
         "normalized": "ukraine",
         "aliases": [],
@@ -1824,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-geography-world-medium-12-bomb",
+      "id": "xlsx-geography-world-medium-10-bomb",
       "display": "France",
       "normalized": "france",
       "aliases": [],
@@ -1840,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "24101fe9db38bc3b7c5a27a00a5827c7f0755abc38388e7df6311f2d4319ceb7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-geography-world-medium-13",
-    "slug": "xlsx-geography-world-medium-13",
+    "id": "xlsx-geography-world-medium-11",
+    "slug": "xlsx-geography-world-medium-11",
     "language": "fr",
     "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "geography-world:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 capitales nationales commençant par la lettre B.",
     "shortTitle": "capitales nationales commençant par la lettre B",
     "difficultyLevel": 2,
@@ -1869,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-geography-world-medium-13-answer-1",
+        "id": "xlsx-geography-world-medium-11-answer-1",
         "display": "Bagdad",
         "normalized": "bagdad",
         "aliases": [],
@@ -1881,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-2",
+        "id": "xlsx-geography-world-medium-11-answer-2",
         "display": "Bakou",
         "normalized": "bakou",
         "aliases": [],
@@ -1893,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-3",
+        "id": "xlsx-geography-world-medium-11-answer-3",
         "display": "Bamako",
         "normalized": "bamako",
         "aliases": [],
@@ -1905,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-4",
+        "id": "xlsx-geography-world-medium-11-answer-4",
         "display": "Bandar Seri Begawan",
         "normalized": "bandar seri begawan",
         "aliases": [],
@@ -1917,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-5",
+        "id": "xlsx-geography-world-medium-11-answer-5",
         "display": "Bangkok",
         "normalized": "bangkok",
         "aliases": [],
@@ -1929,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-6",
+        "id": "xlsx-geography-world-medium-11-answer-6",
         "display": "Bangui",
         "normalized": "bangui",
         "aliases": [],
@@ -1941,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-7",
+        "id": "xlsx-geography-world-medium-11-answer-7",
         "display": "Banjul",
         "normalized": "banjul",
         "aliases": [],
@@ -1953,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-8",
+        "id": "xlsx-geography-world-medium-11-answer-8",
         "display": "Belgrade",
         "normalized": "belgrade",
         "aliases": [],
@@ -1965,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-geography-world-medium-13-answer-9",
+        "id": "xlsx-geography-world-medium-11-answer-9",
         "display": "Berne",
         "normalized": "berne",
         "aliases": [],
@@ -1978,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-geography-world-medium-13-bomb",
+      "id": "xlsx-geography-world-medium-11-bomb",
       "display": "Barcelone",
       "normalized": "barcelone",
       "aliases": [],
@@ -1994,165 +1741,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "297b6aec644112420d24a8d0622682ba7c3486b48a73c4b0b1466101e634ce06",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-geography-world-medium-14",
-    "slug": "xlsx-geography-world-medium-14",
-    "language": "fr",
-    "themeId": "geography-world",
-    "subthemeIds": ["geography-world:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 pays dont le drapeau contient au moins une étoile blanche, jaune ou rouge.",
-    "shortTitle": "pays dont le drapeau contient au moins une ét…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-geography-world-medium-14-answer-1",
-        "display": "États-Unis",
-        "normalized": "etats unis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-2",
-        "display": "Chine",
-        "normalized": "chine",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-3",
-        "display": "Turquie",
-        "normalized": "turquie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-4",
-        "display": "Vietnam",
-        "normalized": "vietnam",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-5",
-        "display": "Australie",
-        "normalized": "australie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-6",
-        "display": "Nouvelle-Zélande",
-        "normalized": "nouvelle zelande",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-7",
-        "display": "Corée du Nord",
-        "normalized": "coree du nord",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-8",
-        "display": "Chili",
-        "normalized": "chili",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-geography-world-medium-14-answer-9",
-        "display": "Philippines",
-        "normalized": "philippines",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-geography-world-medium-14-bomb",
-      "display": "France",
-      "normalized": "france",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d783db272c4c5874a5a2850858e28f64dab8e2c7c843cebfa9c78086f1ac78a6",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

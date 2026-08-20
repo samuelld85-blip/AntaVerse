@@ -129,6 +129,9 @@ html[data-theme="light"] .brand-mark--triman {
 .roll-surface:disabled {
   cursor: default;
 }
+.triman-shell .roll-surface {
+  box-shadow: 0 0 28px 4px var(--triman-accent-glow);
+}
 .roll-surface--search {
   position: relative;
 }
@@ -363,6 +366,53 @@ html[data-theme="light"] .brand-mark--triman {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 750;
+}
+
+.player-handoff {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: color-mix(in srgb, var(--page) 92%, transparent);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  animation: theme-enter 180ms ease-out;
+}
+.player-handoff .eyebrow {
+  color: var(--muted);
+}
+.handoff-headline {
+  margin: 0.4rem 0 1.2rem;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(2.6rem, 13vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  animation: trophy-enter 280ms ease-out;
+}
+.handoff-btn {
+  margin-top: 0.8rem;
+  border: 2px solid var(--triman-accent);
+  border-radius: 999px;
+  padding: 0.8rem 2rem;
+  background: var(--triman-accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.handoff-btn:active {
+  background: var(--triman-accent-dark);
+  border-color: var(--triman-accent-dark);
 }
 
 @keyframes die-roll-3d {

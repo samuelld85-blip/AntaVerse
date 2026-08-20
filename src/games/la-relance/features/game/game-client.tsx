@@ -102,7 +102,12 @@ export function GameClient() {
 
       {game.status === "playing" ? (
         <>
-          <section className="theme-stage" key={currentTheme.id} aria-live="polite">
+          <section
+            className="theme-stage"
+            key={currentTheme.id}
+            aria-live="polite"
+            style={{ "--theme-scale": themeScale(currentTheme.label) } as CSSProperties}
+          >
             <p className="eyebrow">À vous de relancer</p>
             <h1>{currentTheme.label}</h1>
             <p className="round-instruction">
@@ -111,15 +116,15 @@ export function GameClient() {
           </section>
 
           <section
-            className="winner-actions"
-            aria-label="Équipe gagnante de la manche"
+            className={`winner-actions${game.mode === "solo" ? " winner-actions--solo" : ""}`}
+            aria-label={game.mode === "solo" ? "Joueur gagnant de la manche" : "Équipe gagnante de la manche"}
             style={{ "--team-count": game.teams.length } as CSSProperties}
           >
             {game.teams.map((team, index) => (
               <button
                 key={team.id}
                 type="button"
-                className={`winner-button winner-button--${index + 1}`}
+                className={`winner-button ${game.mode === "solo" ? "winner-button--solo" : `winner-button--${index + 1}`}`}
                 onClick={() => selectWinner(index)}
               >
                 <span>{team.name}</span>
@@ -160,15 +165,41 @@ export function GameClient() {
   );
 }
 
+/** A theme label of this length or shorter renders at the stage's full type
+ * size; anything longer is scaled down. Calibrated over all of `themes` so the
+ * tallest title still leaves headroom in the stage row at 320×568 with a
+ * 3-team scoreboard — the tightest combination the game can produce. */
+const THEME_BASELINE_CHARS = 18;
+/** Floor so a very long theme stays readable rather than shrinking away — the
+ * stage's `overflow: hidden` catches the (unreached in practice) remainder. */
+const MIN_THEME_SCALE = 0.45;
+
+/**
+ * Themes run from one word ("Fruits") to a full sentence ("Choses qu'on fait
+ * pendant une réunion ennuyeuse"), but the stage is a fixed grid row between
+ * the scoreboard and the winner buttons. Glyphs fill a roughly fixed box, so
+ * area ∝ count × size² — meaning the type size that keeps a label inside that
+ * box scales with 1/√(character count). Derived from the label alone (no DOM
+ * measurement), so it is stable across SSR and the static export.
+ */
+function themeScale(label: string): number {
+  const chars = label.trim().length;
+  if (chars <= THEME_BASELINE_CHARS) return 1;
+  return Math.max(MIN_THEME_SCALE, Math.sqrt(THEME_BASELINE_CHARS / chars));
+}
+
 function Scoreboard({ game }: { game: GameState }) {
   return (
     <section
-      className="scoreboard"
+      className={`scoreboard${game.mode === "solo" ? " scoreboard--solo" : ""}`}
       aria-label="Scores"
       style={{ "--team-count": game.teams.length } as CSSProperties}
     >
       {game.teams.map((team, index) => (
-        <div className={`score-team score-team--${index + 1}`} key={team.id}>
+        <div
+          className={`score-team ${game.mode === "solo" ? "score-team--solo" : `score-team--${index + 1}`}`}
+          key={team.id}
+        >
           <span className="score-name">{team.name}</span>
           <strong className="score-value" key={`${team.id}-${team.score}`}>
             {team.score}

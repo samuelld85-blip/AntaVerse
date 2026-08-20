@@ -481,17 +481,32 @@ html[data-theme="light"] .button--primary:hover {
 .theme-stage {
   display: flex;
   min-height: 0;
+  max-height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0.5rem 0.25rem;
+  /* Last-resort guard only: --theme-scale (set inline by the caller from the
+     label's length) is what actually keeps the title inside this row, so
+     nothing should ever reach this clip. */
+  overflow: hidden;
   text-align: center;
   animation: theme-enter 220ms ease-out;
 }
+/* Themes range from one short word to a full sentence, and the stage is a
+   fixed grid row between the scoreboard and the winner buttons. Two things
+   keep the title inside that row instead of overflowing onto the buttons:
+   --theme-scale (set inline by the caller from the label's length, 1 = short
+   label), and a `dvh` term — the binding constraint here is vertical, so on a
+   short viewport the type tracks the available height rather than the width. */
 .theme-stage h1 {
   max-width: 31rem;
   margin-top: 0.8rem;
-  font-size: clamp(2.7rem, 12.5vw, 4.9rem);
+  font-size: clamp(
+    1.15rem,
+    calc(min(12.5vw, 7.5dvh) * var(--theme-scale, 1)),
+    calc(4.9rem * var(--theme-scale, 1))
+  );
 }
 .round-instruction {
   max-width: 25rem;
@@ -807,7 +822,11 @@ html[data-theme="light"] .button--primary:hover {
     gap: 0.5rem;
   }
   .theme-stage h1 {
-    font-size: clamp(2.2rem, 10.5vw, 3.4rem);
+    font-size: clamp(
+      0.95rem,
+      calc(min(10.5vw, 7.5dvh) * var(--theme-scale, 1)),
+      calc(3.4rem * var(--theme-scale, 1))
+    );
   }
   .round-instruction {
     margin-top: 0.55rem;

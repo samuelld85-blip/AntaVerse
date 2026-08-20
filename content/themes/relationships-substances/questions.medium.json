@@ -4,8 +4,13 @@
     "slug": "xlsx-relationships-substances-medium-01",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 formes de relations amoureuses.",
     "shortTitle": "formes de relations amoureuses",
     "difficultyLevel": 2,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "5c98eea96e323df0a0dc2ed136372e86f3136f0c3edf050e9de5ee2926f7b74d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-medium-02",
     "slug": "xlsx-relationships-substances-medium-02",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 raisons de consulter pour sa santé sexuelle.",
     "shortTitle": "raisons de consulter pour sa santé sexuelle",
     "difficultyLevel": 2,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "db05bcb0b89a6d8850f26d5ba11e2cb8fbcac14c3cc6acc6f5cfd1dd23d6bedf",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-medium-03",
     "slug": "xlsx-relationships-substances-medium-03",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 moyens de contraception connus.",
     "shortTitle": "moyens de contraception connus",
     "difficultyLevel": 2,
@@ -454,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "70b63dc003ee69bf09b8dc0aab1636f21d5c185ead3fd7a97bf5255de67cdda7",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-medium-04",
     "slug": "xlsx-relationships-substances-medium-04",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 raisons de poser clairement ses limites.",
     "shortTitle": "raisons de poser clairement ses limites",
     "difficultyLevel": 2,
@@ -608,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "43d8f2bc79fd2adf93732d8ee126514912bfd3faffafbe173e1cd9d9468b2ee9",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-medium-05",
     "slug": "xlsx-relationships-substances-medium-05",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 personnes ou services à contacter en cas de problème lié aux substances.",
     "shortTitle": "personnes ou services à contacter en cas de p…",
     "difficultyLevel": 2,
@@ -762,174 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0d9ac77c66beb2fe8800ef9333adb911524a54d1b96616f3450a63850cd8185e",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-relationships-substances-medium-06",
     "slug": "xlsx-relationships-substances-medium-06",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 IST connues.",
-    "shortTitle": "IST connues",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-1",
-        "display": "VIH",
-        "normalized": "vih",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-2",
-        "display": "Chlamydia",
-        "normalized": "chlamydia",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-3",
-        "display": "Gonorrhée",
-        "normalized": "gonorrhee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-4",
-        "display": "Syphilis",
-        "normalized": "syphilis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-5",
-        "display": "Herpès génital",
-        "normalized": "herpes genital",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-6",
-        "display": "HPV",
-        "normalized": "hpv",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-7",
-        "display": "Hépatite B",
-        "normalized": "hepatite b",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-8",
-        "display": "Trichomonase",
-        "normalized": "trichomonase",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-06-answer-9",
-        "display": "Hépatite C",
-        "normalized": "hepatite c",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-medium-06-bomb",
-      "display": "Grippe",
-      "normalized": "grippe",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d04175b0d22740cdd6bda36772a169a6e51b8767ff71bd5efb9753b48a53e624",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-medium-07",
-    "slug": "xlsx-relationships-substances-medium-07",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 méthodes ou ressources favorisant une sexualité plus sûre.",
     "shortTitle": "méthodes ou ressources favorisant une sexuali…",
     "difficultyLevel": 2,
@@ -945,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-1",
+        "id": "xlsx-relationships-substances-medium-06-answer-1",
         "display": "Préservatif",
         "normalized": "preservatif",
         "aliases": [],
@@ -957,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-2",
+        "id": "xlsx-relationships-substances-medium-06-answer-2",
         "display": "Digue dentaire",
         "normalized": "digue dentaire",
         "aliases": [],
@@ -969,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-3",
+        "id": "xlsx-relationships-substances-medium-06-answer-3",
         "display": "PrEP",
         "normalized": "prep",
         "aliases": [],
@@ -981,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-4",
+        "id": "xlsx-relationships-substances-medium-06-answer-4",
         "display": "PEP",
         "normalized": "pep",
         "aliases": [],
@@ -993,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-5",
+        "id": "xlsx-relationships-substances-medium-06-answer-5",
         "display": "Dépistage",
         "normalized": "depistage",
         "aliases": [],
@@ -1005,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-6",
+        "id": "xlsx-relationships-substances-medium-06-answer-6",
         "display": "Vaccination HPV",
         "normalized": "vaccination hpv",
         "aliases": [],
@@ -1017,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-7",
+        "id": "xlsx-relationships-substances-medium-06-answer-7",
         "display": "Vaccination hépatite B",
         "normalized": "vaccination hepatite b",
         "aliases": [],
@@ -1029,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-8",
+        "id": "xlsx-relationships-substances-medium-06-answer-8",
         "display": "Lubrifiant compatible",
         "normalized": "lubrifiant compatible",
         "aliases": [],
@@ -1041,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-07-answer-9",
+        "id": "xlsx-relationships-substances-medium-06-answer-9",
         "display": "Communication du consentement",
         "normalized": "communication du consentement",
         "aliases": [],
@@ -1054,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-medium-07-bomb",
+      "id": "xlsx-relationships-substances-medium-06-bomb",
       "display": "Pilule du lendemain comme protection IST",
       "normalized": "pilule du lendemain comme protection ist",
       "aliases": [],
@@ -1070,174 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "e98528564008b6b3ccf21beb431cc29427a6f644424c76b353a141e0dee05f4c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-medium-08",
-    "slug": "xlsx-relationships-substances-medium-08",
+    "id": "xlsx-relationships-substances-medium-07",
+    "slug": "xlsx-relationships-substances-medium-07",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 catégories de substances psychoactives selon leurs effets généraux.",
-    "shortTitle": "catégories de substances psychoactives selon…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-1",
-        "display": "Stimulants",
-        "normalized": "stimulants",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-2",
-        "display": "Dépresseurs",
-        "normalized": "depresseurs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-3",
-        "display": "Hallucinogènes",
-        "normalized": "hallucinogenes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-4",
-        "display": "Dissociatifs",
-        "normalized": "dissociatifs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-5",
-        "display": "Opioïdes",
-        "normalized": "opioides",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-6",
-        "display": "Cannabinoïdes",
-        "normalized": "cannabinoides",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-7",
-        "display": "Entactogènes",
-        "normalized": "entactogenes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-8",
-        "display": "Sédatifs",
-        "normalized": "sedatifs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-08-answer-9",
-        "display": "Délirants",
-        "normalized": "delirants",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-medium-08-bomb",
-      "display": "Antibiotiques",
-      "normalized": "antibiotiques",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "424447a0de205f131787e43a4e2b49b8e8bce12b7b77ea16905b0582efb4ced0",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-medium-09",
-    "slug": "xlsx-relationships-substances-medium-09",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 termes utilisés dans les relations non exclusives ou alternatives.",
     "shortTitle": "termes utilisés dans les relations non exclus…",
     "difficultyLevel": 2,
@@ -1253,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-1",
+        "id": "xlsx-relationships-substances-medium-07-answer-1",
         "display": "Relation ouverte",
         "normalized": "relation ouverte",
         "aliases": [],
@@ -1265,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-2",
+        "id": "xlsx-relationships-substances-medium-07-answer-2",
         "display": "Polyamour",
         "normalized": "polyamour",
         "aliases": [],
@@ -1277,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-3",
+        "id": "xlsx-relationships-substances-medium-07-answer-3",
         "display": "Couple libre",
         "normalized": "couple libre",
         "aliases": [],
@@ -1289,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-4",
+        "id": "xlsx-relationships-substances-medium-07-answer-4",
         "display": "Swinging",
         "normalized": "swinging",
         "aliases": [],
@@ -1301,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-5",
+        "id": "xlsx-relationships-substances-medium-07-answer-5",
         "display": "Anarchie relationnelle",
         "normalized": "anarchie relationnelle",
         "aliases": [],
@@ -1313,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-6",
+        "id": "xlsx-relationships-substances-medium-07-answer-6",
         "display": "Relation non monogame",
         "normalized": "relation non monogame",
         "aliases": [],
@@ -1325,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-7",
+        "id": "xlsx-relationships-substances-medium-07-answer-7",
         "display": "Partenaire principal",
         "normalized": "partenaire principal",
         "aliases": [],
@@ -1337,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-8",
+        "id": "xlsx-relationships-substances-medium-07-answer-8",
         "display": "Métamour",
         "normalized": "metamour",
         "aliases": [],
@@ -1349,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-09-answer-9",
+        "id": "xlsx-relationships-substances-medium-07-answer-9",
         "display": "Compersion",
         "normalized": "compersion",
         "aliases": [],
@@ -1362,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-medium-09-bomb",
+      "id": "xlsx-relationships-substances-medium-07-bomb",
       "display": "Ghosting",
       "normalized": "ghosting",
       "aliases": [],
@@ -1378,174 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d9c8b186ef21a926032137ac32d8ac06460ba04bac535c98c65cba132fca8688",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-medium-10",
-    "slug": "xlsx-relationships-substances-medium-10",
+    "id": "xlsx-relationships-substances-medium-08",
+    "slug": "xlsx-relationships-substances-medium-08",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 signes possibles d’une relation toxique ou abusive.",
-    "shortTitle": "signes possibles d’une relation toxique ou ab…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-1",
-        "display": "Isolement",
-        "normalized": "isolement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-2",
-        "display": "Contrôle",
-        "normalized": "controle",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-3",
-        "display": "Menaces",
-        "normalized": "menaces",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-4",
-        "display": "Humiliation",
-        "normalized": "humiliation",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-5",
-        "display": "Gaslighting",
-        "normalized": "gaslighting",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-6",
-        "display": "Jalousie extrême",
-        "normalized": "jalousie extreme",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-7",
-        "display": "Surveillance",
-        "normalized": "surveillance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-8",
-        "display": "Violence physique",
-        "normalized": "violence physique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-10-answer-9",
-        "display": "Pression sexuelle",
-        "normalized": "pression sexuelle",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "relationships-substances:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-medium-10-bomb",
-      "display": "Respect des limites",
-      "normalized": "respect des limites",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0ad5e5a2da3f70c95671a3ae8341782f45fb4afd9bc2ebb208bbef6193235cfe",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-medium-11",
-    "slug": "xlsx-relationships-substances-medium-11",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 substances ou médicaments connus pour être sédatifs ou dépresseurs du système nerveux central.",
     "shortTitle": "substances ou médicaments connus pour être sé…",
     "difficultyLevel": 2,
@@ -1561,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-1",
+        "id": "xlsx-relationships-substances-medium-08-answer-1",
         "display": "Alcool",
         "normalized": "alcool",
         "aliases": [],
@@ -1573,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-2",
+        "id": "xlsx-relationships-substances-medium-08-answer-2",
         "display": "Benzodiazépines",
         "normalized": "benzodiazepines",
         "aliases": [],
@@ -1585,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-3",
+        "id": "xlsx-relationships-substances-medium-08-answer-3",
         "display": "Barbituriques",
         "normalized": "barbituriques",
         "aliases": [],
@@ -1597,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-4",
+        "id": "xlsx-relationships-substances-medium-08-answer-4",
         "display": "Opioïdes",
         "normalized": "opioides",
         "aliases": [],
@@ -1609,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-5",
+        "id": "xlsx-relationships-substances-medium-08-answer-5",
         "display": "GHB",
         "normalized": "ghb",
         "aliases": [],
@@ -1621,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-6",
+        "id": "xlsx-relationships-substances-medium-08-answer-6",
         "display": "Z-drugs",
         "normalized": "z drugs",
         "aliases": [],
@@ -1633,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-7",
+        "id": "xlsx-relationships-substances-medium-08-answer-7",
         "display": "Kétamine",
         "normalized": "ketamine",
         "aliases": [],
@@ -1645,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-8",
+        "id": "xlsx-relationships-substances-medium-08-answer-8",
         "display": "Antihistaminiques sédatifs",
         "normalized": "antihistaminiques sedatifs",
         "aliases": [],
@@ -1657,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-11-answer-9",
+        "id": "xlsx-relationships-substances-medium-08-answer-9",
         "display": "Gabapentinoïdes",
         "normalized": "gabapentinoides",
         "aliases": [],
@@ -1670,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-medium-11-bomb",
+      "id": "xlsx-relationships-substances-medium-08-bomb",
       "display": "Caféine",
       "normalized": "cafeine",
       "aliases": [],
@@ -1686,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0492be06433c7e6c4ffeb2f13a77e37c52e5f1b6cb723cd98f3cde815dff771c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-relationships-substances-medium-12",
-    "slug": "xlsx-relationships-substances-medium-12",
+    "id": "xlsx-relationships-substances-medium-09",
+    "slug": "xlsx-relationships-substances-medium-09",
     "language": "fr",
     "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
+    "subthemeIds": [
+      "relationships-substances:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 facteurs qui peuvent modifier les effets d’une substance psychoactive.",
     "shortTitle": "facteurs qui peuvent modifier les effets d’un…",
     "difficultyLevel": 2,
@@ -1715,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-1",
+        "id": "xlsx-relationships-substances-medium-09-answer-1",
         "display": "Dose",
         "normalized": "dose",
         "aliases": [],
@@ -1727,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-2",
+        "id": "xlsx-relationships-substances-medium-09-answer-2",
         "display": "Poids",
         "normalized": "poids",
         "aliases": [],
@@ -1739,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-3",
+        "id": "xlsx-relationships-substances-medium-09-answer-3",
         "display": "Tolérance",
         "normalized": "tolerance",
         "aliases": [],
@@ -1751,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-4",
+        "id": "xlsx-relationships-substances-medium-09-answer-4",
         "display": "Pureté",
         "normalized": "purete",
         "aliases": [],
@@ -1763,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-5",
+        "id": "xlsx-relationships-substances-medium-09-answer-5",
         "display": "Mode de consommation",
         "normalized": "mode de consommation",
         "aliases": [],
@@ -1775,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-6",
+        "id": "xlsx-relationships-substances-medium-09-answer-6",
         "display": "Mélange avec d'autres substances",
         "normalized": "melange avec d autres substances",
         "aliases": [],
@@ -1787,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-7",
+        "id": "xlsx-relationships-substances-medium-09-answer-7",
         "display": "Hydratation",
         "normalized": "hydratation",
         "aliases": [],
@@ -1799,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-8",
+        "id": "xlsx-relationships-substances-medium-09-answer-8",
         "display": "Fatigue",
         "normalized": "fatigue",
         "aliases": [],
@@ -1811,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-relationships-substances-medium-12-answer-9",
+        "id": "xlsx-relationships-substances-medium-09-answer-9",
         "display": "État de santé",
         "normalized": "etat de sante",
         "aliases": [],
@@ -1824,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-relationships-substances-medium-12-bomb",
+      "id": "xlsx-relationships-substances-medium-09-bomb",
       "display": "Couleur des chaussures",
       "normalized": "couleur des chaussures",
       "aliases": [],
@@ -1840,319 +1423,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "30b3597c79499c0a18cf10f8b7171ed9ba2998af01a6eae98a71eeca93de30bd",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-medium-13",
-    "slug": "xlsx-relationships-substances-medium-13",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 formes de consentement ou éléments nécessaires à un consentement valable.",
-    "shortTitle": "formes de consentement ou éléments nécessaire…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-1",
-        "display": "Libre",
-        "normalized": "libre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-2",
-        "display": "Éclairé",
-        "normalized": "eclaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-3",
-        "display": "Spécifique",
-        "normalized": "specifique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-4",
-        "display": "Réversible",
-        "normalized": "reversible",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-5",
-        "display": "Enthousiaste",
-        "normalized": "enthousiaste",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-6",
-        "display": "Communiqué clairement",
-        "normalized": "communique clairement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-7",
-        "display": "Sans pression",
-        "normalized": "sans pression",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-8",
-        "display": "Capacité à consentir",
-        "normalized": "capacite a consentir",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-13-answer-9",
-        "display": "Continu",
-        "normalized": "continu",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-medium-13-bomb",
-      "display": "Silence automatique",
-      "normalized": "silence automatique",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "54baa601baaa9bf4c43cd651a63a95beabe28bf0a1c53831cb8dd9aa64e86b34",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-relationships-substances-medium-14",
-    "slug": "xlsx-relationships-substances-medium-14",
-    "language": "fr",
-    "themeId": "relationships-substances",
-    "subthemeIds": ["relationships-substances:essentials"],
-    "tags": ["essentials", "moyen"],
-    "questionText": "Cite 9 raisons possibles de faire un dépistage d’IST.",
-    "shortTitle": "raisons possibles de faire un dépistage d’IST",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-1",
-        "display": "Nouveau partenaire",
-        "normalized": "nouveau partenaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-2",
-        "display": "Rapport non protégé",
-        "normalized": "rapport non protege",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-3",
-        "display": "Rupture de préservatif",
-        "normalized": "rupture de preservatif",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-4",
-        "display": "Symptômes",
-        "normalized": "symptomes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-5",
-        "display": "Partenaire diagnostiqué",
-        "normalized": "partenaire diagnostique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-6",
-        "display": "Avant d'arrêter le préservatif",
-        "normalized": "avant d arreter le preservatif",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-7",
-        "display": "Grossesse",
-        "normalized": "grossesse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-8",
-        "display": "Suivi médical",
-        "normalized": "suivi medical",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-relationships-substances-medium-14-answer-9",
-        "display": "Dépistage régulier",
-        "normalized": "depistage regulier",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-relationships-substances-medium-14-bomb",
-      "display": "Changer de coiffure",
-      "normalized": "changer de coiffure",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ea388506afcd2ba4a46a4f3418b2402b81c407096ae5bb3ddc8b21420a7cf9d1",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

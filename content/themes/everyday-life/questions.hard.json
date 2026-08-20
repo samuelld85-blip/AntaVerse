@@ -4,8 +4,13 @@
     "slug": "xlsx-everyday-life-hard-01",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 symboles ou indications d’entretien que l’on peut rencontrer sur une étiquette textile.",
     "shortTitle": "symboles ou indications d’entretien que l’on…",
     "difficultyLevel": 3,
@@ -146,174 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7dae5fbfda9e9bbeb172efbfe9f11e952591f0d3fe6d7c607e72edc045f67120",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-everyday-life-hard-02",
     "slug": "xlsx-everyday-life-hard-02",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 documents souvent demandés dans des démarches administratives en France.",
-    "shortTitle": "documents souvent demandés dans des démarches…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-1",
-        "display": "Pièce d’identité",
-        "normalized": "piece d identite",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-2",
-        "display": "Justificatif de domicile",
-        "normalized": "justificatif de domicile",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-3",
-        "display": "RIB",
-        "normalized": "rib",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-4",
-        "display": "Avis d’imposition",
-        "normalized": "avis d imposition",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-5",
-        "display": "Acte de naissance",
-        "normalized": "acte de naissance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-6",
-        "display": "Bulletin de salaire",
-        "normalized": "bulletin de salaire",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-7",
-        "display": "Attestation employeur",
-        "normalized": "attestation employeur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-8",
-        "display": "Diplôme",
-        "normalized": "diplome",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-02-answer-9",
-        "display": "Attestation de droits à l’Assurance maladie",
-        "normalized": "attestation de droits a l assurance maladie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "everyday-life:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-everyday-life-hard-02-bomb",
-      "display": "Ticket de restaurant",
-      "normalized": "ticket de restaurant",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "8fb9c5ecbbdc1e66d19e3d10f8944ba7a01aaa2e5ddb2b03d303d9d3519b8b90",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-hard-03",
-    "slug": "xlsx-everyday-life-hard-03",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "difficile"],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 voyants ou alertes courants du tableau de bord d’une voiture.",
     "shortTitle": "voyants ou alertes courants du tableau de bor…",
     "difficultyLevel": 3,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-hard-03-answer-1",
+        "id": "xlsx-everyday-life-hard-02-answer-1",
         "display": "Pression d’huile",
         "normalized": "pression d huile",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-2",
+        "id": "xlsx-everyday-life-hard-02-answer-2",
         "display": "Batterie",
         "normalized": "batterie",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-3",
+        "id": "xlsx-everyday-life-hard-02-answer-3",
         "display": "Moteur",
         "normalized": "moteur",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-4",
+        "id": "xlsx-everyday-life-hard-02-answer-4",
         "display": "ABS",
         "normalized": "abs",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-5",
+        "id": "xlsx-everyday-life-hard-02-answer-5",
         "display": "Airbag",
         "normalized": "airbag",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-6",
+        "id": "xlsx-everyday-life-hard-02-answer-6",
         "display": "Pression des pneus",
         "normalized": "pression des pneus",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-7",
+        "id": "xlsx-everyday-life-hard-02-answer-7",
         "display": "Température du liquide de refroidissement",
         "normalized": "temperature du liquide de refroidissement",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-8",
+        "id": "xlsx-everyday-life-hard-02-answer-8",
         "display": "Freinage",
         "normalized": "freinage",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-03-answer-9",
+        "id": "xlsx-everyday-life-hard-02-answer-9",
         "display": "Réserve de carburant",
         "normalized": "reserve de carburant",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-hard-03-bomb",
+      "id": "xlsx-everyday-life-hard-02-bomb",
       "display": "Wi-Fi",
       "normalized": "wi fi",
       "aliases": [],
@@ -454,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4f0edfc40ec858183558e421583a5b819724c041a5b3ee7a5e88b158e52bac27",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-everyday-life-hard-04",
-    "slug": "xlsx-everyday-life-hard-04",
+    "id": "xlsx-everyday-life-hard-03",
+    "slug": "xlsx-everyday-life-hard-03",
     "language": "fr",
     "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "difficile"],
+    "subthemeIds": [
+      "everyday-life:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
     "questionText": "Cite 9 types d’assurances qu’un particulier peut souscrire.",
     "shortTitle": "types d’assurances qu’un particulier peut sou…",
     "difficultyLevel": 3,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-everyday-life-hard-04-answer-1",
+        "id": "xlsx-everyday-life-hard-03-answer-1",
         "display": "Assurance habitation",
         "normalized": "assurance habitation",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-2",
+        "id": "xlsx-everyday-life-hard-03-answer-2",
         "display": "Assurance auto",
         "normalized": "assurance auto",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-3",
+        "id": "xlsx-everyday-life-hard-03-answer-3",
         "display": "Complémentaire santé",
         "normalized": "complementaire sante",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-4",
+        "id": "xlsx-everyday-life-hard-03-answer-4",
         "display": "Assurance vie",
         "normalized": "assurance vie",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-5",
+        "id": "xlsx-everyday-life-hard-03-answer-5",
         "display": "Assurance voyage",
         "normalized": "assurance voyage",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-6",
+        "id": "xlsx-everyday-life-hard-03-answer-6",
         "display": "Responsabilité civile",
         "normalized": "responsabilite civile",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-7",
+        "id": "xlsx-everyday-life-hard-03-answer-7",
         "display": "Assurance animaux",
         "normalized": "assurance animaux",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-8",
+        "id": "xlsx-everyday-life-hard-03-answer-8",
         "display": "Assurance téléphone",
         "normalized": "assurance telephone",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-everyday-life-hard-04-answer-9",
+        "id": "xlsx-everyday-life-hard-03-answer-9",
         "display": "Assurance emprunteur",
         "normalized": "assurance emprunteur",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-everyday-life-hard-04-bomb",
+      "id": "xlsx-everyday-life-hard-03-bomb",
       "display": "Carte de bibliothèque",
       "normalized": "carte de bibliotheque",
       "aliases": [],
@@ -608,319 +469,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "472de8a2e8102ca5b20334f63eabe29bb8d647897bcca808e84871761148f21a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-hard-05",
-    "slug": "xlsx-everyday-life-hard-05",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 raisons techniques ou bancaires pouvant faire refuser un paiement par carte.",
-    "shortTitle": "raisons techniques ou bancaires pouvant faire…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-1",
-        "display": "Solde insuffisant",
-        "normalized": "solde insuffisant",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-2",
-        "display": "Carte expirée",
-        "normalized": "carte expiree",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-3",
-        "display": "Plafond dépassé",
-        "normalized": "plafond depasse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-4",
-        "display": "Carte bloquée",
-        "normalized": "carte bloquee",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-5",
-        "display": "Code PIN erroné",
-        "normalized": "code pin errone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-6",
-        "display": "Paiement en ligne désactivé",
-        "normalized": "paiement en ligne desactive",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-7",
-        "display": "Paiement à l’étranger désactivé",
-        "normalized": "paiement a l etranger desactive",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-8",
-        "display": "Problème du terminal",
-        "normalized": "probleme du terminal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-05-answer-9",
-        "display": "Détection antifraude",
-        "normalized": "detection antifraude",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-everyday-life-hard-05-bomb",
-      "display": "Carte de fidélité oubliée",
-      "normalized": "carte de fidelite oubliee",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "87d8f08258b12e662e78cddede5bd3dc0a8b392fe425c956f4301e971dc98232",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-everyday-life-hard-06",
-    "slug": "xlsx-everyday-life-hard-06",
-    "language": "fr",
-    "themeId": "everyday-life",
-    "subthemeIds": ["everyday-life:essentials"],
-    "tags": ["essentials", "difficile"],
-    "questionText": "Cite 9 extensions de fichiers très courantes sur ordinateur ou smartphone.",
-    "shortTitle": "extensions de fichiers très courantes sur ord…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-1",
-        "display": ".pdf",
-        "normalized": "pdf",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-2",
-        "display": ".docx",
-        "normalized": "docx",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-3",
-        "display": ".xlsx",
-        "normalized": "xlsx",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-4",
-        "display": ".pptx",
-        "normalized": "pptx",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-5",
-        "display": ".jpg",
-        "normalized": "jpg",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-6",
-        "display": ".png",
-        "normalized": "png",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-7",
-        "display": ".zip",
-        "normalized": "zip",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-8",
-        "display": ".mp3",
-        "normalized": "mp3",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-everyday-life-hard-06-answer-9",
-        "display": ".mp4",
-        "normalized": "mp4",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-everyday-life-hard-06-bomb",
-      "display": "USB",
-      "normalized": "usb",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "3eb06754f76d6e19685fff4e71990725c0018a614da9225e28479a73e8275eaf",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

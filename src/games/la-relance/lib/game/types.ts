@@ -1,7 +1,12 @@
 export type TeamIndex = number;
 
+/** "teams" plays 2-3 teams against each other; "solo" plays 2-7 individual
+ * players, each modeled as a one-person team so the rest of the engine
+ * (scoring, rounds, sudden death) stays unchanged. */
+export type ParticipantMode = "teams" | "solo";
+
 export interface Team {
-  id: "team-1" | "team-2" | "team-3";
+  id: string;
   name: string;
   color: string;
   score: number;
@@ -10,9 +15,10 @@ export interface Team {
 export type GameStatus = "playing" | "pointAwarded" | "finished";
 
 export interface GameState {
-  schemaVersion: 1;
+  schemaVersion: 2;
   id: string;
   status: GameStatus;
+  mode: ParticipantMode;
   teams: Team[];
   roundIndex: number;
   selectedThemeIds: string[];
@@ -23,7 +29,8 @@ export interface GameState {
 }
 
 export interface CreateGameInput {
-  teamNames: [string, string] | [string, string, string];
+  mode: ParticipantMode;
+  teamNames: string[];
 }
 
 export interface Theme {

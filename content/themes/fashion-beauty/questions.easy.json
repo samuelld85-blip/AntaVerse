@@ -4,162 +4,13 @@
     "slug": "xlsx-fashion-beauty-easy-01",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 grandes marques d’équipements ou vêtements de sport.",
-    "shortTitle": "grandes marques d’équipements ou vêtements de…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-1",
-        "display": "Nike",
-        "normalized": "nike",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-2",
-        "display": "Adidas",
-        "normalized": "adidas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-3",
-        "display": "Puma",
-        "normalized": "puma",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-4",
-        "display": "Reebok",
-        "normalized": "reebok",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-5",
-        "display": "Under Armour",
-        "normalized": "under armour",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-6",
-        "display": "Asics",
-        "normalized": "asics",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-7",
-        "display": "New Balance",
-        "normalized": "new balance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-8",
-        "display": "Fila",
-        "normalized": "fila",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-01-answer-9",
-        "display": "Salomon",
-        "normalized": "salomon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "fashion-beauty:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-fashion-beauty-easy-01-bomb",
-      "display": "Coca-Cola",
-      "normalized": "coca cola",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "c73006b10167b109e48c7e9dd6ed88a800c1b2c7df883a7709847b9cec826625",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-fashion-beauty-easy-02",
-    "slug": "xlsx-fashion-beauty-easy-02",
-    "language": "fr",
-    "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 occasions où l’on s’habille élégamment.",
     "shortTitle": "occasions où l’on s’habille élégamment",
     "difficultyLevel": 1,
@@ -175,7 +26,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-1",
+        "id": "xlsx-fashion-beauty-easy-01-answer-1",
         "display": "mariage",
         "normalized": "mariage",
         "aliases": [],
@@ -187,7 +38,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-2",
+        "id": "xlsx-fashion-beauty-easy-01-answer-2",
         "display": "entretien",
         "normalized": "entretien",
         "aliases": [],
@@ -199,7 +50,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-3",
+        "id": "xlsx-fashion-beauty-easy-01-answer-3",
         "display": "gala",
         "normalized": "gala",
         "aliases": [],
@@ -211,7 +62,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-4",
+        "id": "xlsx-fashion-beauty-easy-01-answer-4",
         "display": "remise de prix",
         "normalized": "remise de prix",
         "aliases": [],
@@ -223,7 +74,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-5",
+        "id": "xlsx-fashion-beauty-easy-01-answer-5",
         "display": "soirée d’entreprise",
         "normalized": "soiree d entreprise",
         "aliases": [],
@@ -235,7 +86,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-6",
+        "id": "xlsx-fashion-beauty-easy-01-answer-6",
         "display": "opéra",
         "normalized": "opera",
         "aliases": [],
@@ -247,7 +98,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-7",
+        "id": "xlsx-fashion-beauty-easy-01-answer-7",
         "display": "baptême",
         "normalized": "bapteme",
         "aliases": [],
@@ -259,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-8",
+        "id": "xlsx-fashion-beauty-easy-01-answer-8",
         "display": "réveillon",
         "normalized": "reveillon",
         "aliases": [],
@@ -271,7 +122,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-02-answer-9",
+        "id": "xlsx-fashion-beauty-easy-01-answer-9",
         "display": "cocktail",
         "normalized": "cocktail",
         "aliases": [],
@@ -284,7 +135,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-02-bomb",
+      "id": "xlsx-fashion-beauty-easy-01-bomb",
       "display": "Faire du sport",
       "normalized": "faire du sport",
       "aliases": [],
@@ -300,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ca6ece6d95a52a9c503d5cd87b05e03cde28c0c79c074cff150d4c719d503535",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-03",
-    "slug": "xlsx-fashion-beauty-easy-03",
+    "id": "xlsx-fashion-beauty-easy-02",
+    "slug": "xlsx-fashion-beauty-easy-02",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 vêtements que l’on peut trouver dans un dressing.",
     "shortTitle": "vêtements que l’on peut trouver dans un dressing",
     "difficultyLevel": 1,
@@ -329,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-1",
+        "id": "xlsx-fashion-beauty-easy-02-answer-1",
         "display": "jean",
         "normalized": "jean",
         "aliases": [],
@@ -341,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-2",
+        "id": "xlsx-fashion-beauty-easy-02-answer-2",
         "display": "robe",
         "normalized": "robe",
         "aliases": [],
@@ -353,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-3",
+        "id": "xlsx-fashion-beauty-easy-02-answer-3",
         "display": "t-shirt",
         "normalized": "t shirt",
         "aliases": [],
@@ -365,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-4",
+        "id": "xlsx-fashion-beauty-easy-02-answer-4",
         "display": "chemise",
         "normalized": "chemise",
         "aliases": [],
@@ -377,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-5",
+        "id": "xlsx-fashion-beauty-easy-02-answer-5",
         "display": "jupe",
         "normalized": "jupe",
         "aliases": [],
@@ -389,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-6",
+        "id": "xlsx-fashion-beauty-easy-02-answer-6",
         "display": "veste",
         "normalized": "veste",
         "aliases": [],
@@ -401,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-7",
+        "id": "xlsx-fashion-beauty-easy-02-answer-7",
         "display": "short",
         "normalized": "short",
         "aliases": [],
@@ -413,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-8",
+        "id": "xlsx-fashion-beauty-easy-02-answer-8",
         "display": "costume",
         "normalized": "costume",
         "aliases": [],
@@ -425,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-03-answer-9",
+        "id": "xlsx-fashion-beauty-easy-02-answer-9",
         "display": "sweat",
         "normalized": "sweat",
         "aliases": [],
@@ -438,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-03-bomb",
+      "id": "xlsx-fashion-beauty-easy-02-bomb",
       "display": "Porte-manteau",
       "normalized": "porte manteau",
       "aliases": [],
@@ -454,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "572fda985fb1ceaffbd49801b3d97a250358e9b21dd9d42925a18cfda1dc22df",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-04",
-    "slug": "xlsx-fashion-beauty-easy-04",
+    "id": "xlsx-fashion-beauty-easy-03",
+    "slug": "xlsx-fashion-beauty-easy-03",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 façons de personnaliser une tenue.",
     "shortTitle": "façons de personnaliser une tenue",
     "difficultyLevel": 1,
@@ -483,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-1",
+        "id": "xlsx-fashion-beauty-easy-03-answer-1",
         "display": "bijoux",
         "normalized": "bijoux",
         "aliases": [],
@@ -495,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-2",
+        "id": "xlsx-fashion-beauty-easy-03-answer-2",
         "display": "chaussures",
         "normalized": "chaussures",
         "aliases": [],
@@ -507,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-3",
+        "id": "xlsx-fashion-beauty-easy-03-answer-3",
         "display": "sac",
         "normalized": "sac",
         "aliases": [],
@@ -519,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-4",
+        "id": "xlsx-fashion-beauty-easy-03-answer-4",
         "display": "chapeau",
         "normalized": "chapeau",
         "aliases": [],
@@ -531,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-5",
+        "id": "xlsx-fashion-beauty-easy-03-answer-5",
         "display": "broche",
         "normalized": "broche",
         "aliases": [],
@@ -543,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-6",
+        "id": "xlsx-fashion-beauty-easy-03-answer-6",
         "display": "ceinture",
         "normalized": "ceinture",
         "aliases": [],
@@ -555,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-7",
+        "id": "xlsx-fashion-beauty-easy-03-answer-7",
         "display": "foulard",
         "normalized": "foulard",
         "aliases": [],
@@ -567,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-8",
+        "id": "xlsx-fashion-beauty-easy-03-answer-8",
         "display": "chaussettes colorées",
         "normalized": "chaussettes colorees",
         "aliases": [],
@@ -579,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-04-answer-9",
+        "id": "xlsx-fashion-beauty-easy-03-answer-9",
         "display": "superposition",
         "normalized": "superposition",
         "aliases": [],
@@ -592,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-04-bomb",
+      "id": "xlsx-fashion-beauty-easy-03-bomb",
       "display": "Porter un uniforme imposé",
       "normalized": "porter un uniforme impose",
       "aliases": [],
@@ -608,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c945e27045e7863c13c726e4dfb0b4d826b12d5928cf3283019dba8d0bcdd450",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-05",
-    "slug": "xlsx-fashion-beauty-easy-05",
+    "id": "xlsx-fashion-beauty-easy-04",
+    "slug": "xlsx-fashion-beauty-easy-04",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets utilisés pour se coiffer.",
     "shortTitle": "objets utilisés pour se coiffer",
     "difficultyLevel": 1,
@@ -637,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-1",
+        "id": "xlsx-fashion-beauty-easy-04-answer-1",
         "display": "brosse",
         "normalized": "brosse",
         "aliases": [],
@@ -649,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-2",
+        "id": "xlsx-fashion-beauty-easy-04-answer-2",
         "display": "élastique",
         "normalized": "elastique",
         "aliases": [],
@@ -661,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-3",
+        "id": "xlsx-fashion-beauty-easy-04-answer-3",
         "display": "lisseur",
         "normalized": "lisseur",
         "aliases": [],
@@ -673,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-4",
+        "id": "xlsx-fashion-beauty-easy-04-answer-4",
         "display": "peigne",
         "normalized": "peigne",
         "aliases": [],
@@ -685,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-5",
+        "id": "xlsx-fashion-beauty-easy-04-answer-5",
         "display": "sèche-cheveux",
         "normalized": "seche cheveux",
         "aliases": [],
@@ -697,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-6",
+        "id": "xlsx-fashion-beauty-easy-04-answer-6",
         "display": "boucleur",
         "normalized": "boucleur",
         "aliases": [],
@@ -709,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-7",
+        "id": "xlsx-fashion-beauty-easy-04-answer-7",
         "display": "pinces",
         "normalized": "pinces",
         "aliases": [],
@@ -721,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-8",
+        "id": "xlsx-fashion-beauty-easy-04-answer-8",
         "display": "barrettes",
         "normalized": "barrettes",
         "aliases": [],
@@ -733,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-05-answer-9",
+        "id": "xlsx-fashion-beauty-easy-04-answer-9",
         "display": "bonnet de nuit",
         "normalized": "bonnet de nuit",
         "aliases": [],
@@ -746,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-05-bomb",
+      "id": "xlsx-fashion-beauty-easy-04-bomb",
       "display": "Miroir",
       "normalized": "miroir",
       "aliases": [],
@@ -762,20 +628,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ef515742075d8e510080c244bd07313be5dbed39565df32ed53afd00457b9b09",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-06",
-    "slug": "xlsx-fashion-beauty-easy-06",
+    "id": "xlsx-fashion-beauty-easy-05",
+    "slug": "xlsx-fashion-beauty-easy-05",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 choses qui peuvent ruiner une tenue.",
     "shortTitle": "choses qui peuvent ruiner une tenue",
     "difficultyLevel": 1,
@@ -791,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-1",
+        "id": "xlsx-fashion-beauty-easy-05-answer-1",
         "display": "tache",
         "normalized": "tache",
         "aliases": [],
@@ -803,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-2",
+        "id": "xlsx-fashion-beauty-easy-05-answer-2",
         "display": "mauvaise taille",
         "normalized": "mauvaise taille",
         "aliases": [],
@@ -815,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-3",
+        "id": "xlsx-fashion-beauty-easy-05-answer-3",
         "display": "chaussures inconfortables",
         "normalized": "chaussures inconfortables",
         "aliases": [],
@@ -827,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-4",
+        "id": "xlsx-fashion-beauty-easy-05-answer-4",
         "display": "pluie",
         "normalized": "pluie",
         "aliases": [],
@@ -839,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-5",
+        "id": "xlsx-fashion-beauty-easy-05-answer-5",
         "display": "bouton manquant",
         "normalized": "bouton manquant",
         "aliases": [],
@@ -851,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-6",
+        "id": "xlsx-fashion-beauty-easy-05-answer-6",
         "display": "accroc",
         "normalized": "accroc",
         "aliases": [],
@@ -863,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-7",
+        "id": "xlsx-fashion-beauty-easy-05-answer-7",
         "display": "mauvaise météo",
         "normalized": "mauvaise meteo",
         "aliases": [],
@@ -875,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-8",
+        "id": "xlsx-fashion-beauty-easy-05-answer-8",
         "display": "sac mal assorti",
         "normalized": "sac mal assorti",
         "aliases": [],
@@ -887,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-06-answer-9",
+        "id": "xlsx-fashion-beauty-easy-05-answer-9",
         "display": "vêtement froissé",
         "normalized": "vetement froisse",
         "aliases": [],
@@ -900,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-06-bomb",
+      "id": "xlsx-fashion-beauty-easy-05-bomb",
       "display": "Retouche réussie",
       "normalized": "retouche reussie",
       "aliases": [],
@@ -916,20 +787,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c8526465865e69abc2480591bf4b14ac87376a6b84af3870397cbd0f0ccc5292",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-07",
-    "slug": "xlsx-fashion-beauty-easy-07",
+    "id": "xlsx-fashion-beauty-easy-06",
+    "slug": "xlsx-fashion-beauty-easy-06",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 vêtements portés en hiver.",
     "shortTitle": "vêtements portés en hiver",
     "difficultyLevel": 1,
@@ -945,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-1",
+        "id": "xlsx-fashion-beauty-easy-06-answer-1",
         "display": "manteau",
         "normalized": "manteau",
         "aliases": [],
@@ -957,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-2",
+        "id": "xlsx-fashion-beauty-easy-06-answer-2",
         "display": "pull",
         "normalized": "pull",
         "aliases": [],
@@ -969,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-3",
+        "id": "xlsx-fashion-beauty-easy-06-answer-3",
         "display": "écharpe",
         "normalized": "echarpe",
         "aliases": [],
@@ -981,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-4",
+        "id": "xlsx-fashion-beauty-easy-06-answer-4",
         "display": "bonnet",
         "normalized": "bonnet",
         "aliases": [],
@@ -993,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-5",
+        "id": "xlsx-fashion-beauty-easy-06-answer-5",
         "display": "gants",
         "normalized": "gants",
         "aliases": [],
@@ -1005,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-6",
+        "id": "xlsx-fashion-beauty-easy-06-answer-6",
         "display": "doudoune",
         "normalized": "doudoune",
         "aliases": [],
@@ -1017,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-7",
+        "id": "xlsx-fashion-beauty-easy-06-answer-7",
         "display": "pantalon",
         "normalized": "pantalon",
         "aliases": [],
@@ -1029,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-8",
+        "id": "xlsx-fashion-beauty-easy-06-answer-8",
         "display": "chaussettes",
         "normalized": "chaussettes",
         "aliases": [],
@@ -1041,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-07-answer-9",
+        "id": "xlsx-fashion-beauty-easy-06-answer-9",
         "display": "pull polaire",
         "normalized": "pull polaire",
         "aliases": [],
@@ -1054,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-07-bomb",
+      "id": "xlsx-fashion-beauty-easy-06-bomb",
       "display": "Maillot de bain",
       "normalized": "maillot de bain",
       "aliases": [],
@@ -1070,20 +946,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4201b8b4e357c464238d8e42fbfc406dbf48437017305d23950429aff2c2753f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-08",
-    "slug": "xlsx-fashion-beauty-easy-08",
+    "id": "xlsx-fashion-beauty-easy-07",
+    "slug": "xlsx-fashion-beauty-easy-07",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 accessoires de mode.",
     "shortTitle": "accessoires de mode",
     "difficultyLevel": 1,
@@ -1099,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-1",
+        "id": "xlsx-fashion-beauty-easy-07-answer-1",
         "display": "sac",
         "normalized": "sac",
         "aliases": [],
@@ -1111,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-2",
+        "id": "xlsx-fashion-beauty-easy-07-answer-2",
         "display": "ceinture",
         "normalized": "ceinture",
         "aliases": [],
@@ -1123,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-3",
+        "id": "xlsx-fashion-beauty-easy-07-answer-3",
         "display": "lunettes",
         "normalized": "lunettes",
         "aliases": [],
@@ -1135,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-4",
+        "id": "xlsx-fashion-beauty-easy-07-answer-4",
         "display": "montre",
         "normalized": "montre",
         "aliases": [],
@@ -1147,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-5",
+        "id": "xlsx-fashion-beauty-easy-07-answer-5",
         "display": "chapeau",
         "normalized": "chapeau",
         "aliases": [],
@@ -1159,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-6",
+        "id": "xlsx-fashion-beauty-easy-07-answer-6",
         "display": "foulard",
         "normalized": "foulard",
         "aliases": [],
@@ -1171,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-7",
+        "id": "xlsx-fashion-beauty-easy-07-answer-7",
         "display": "bijou",
         "normalized": "bijou",
         "aliases": [],
@@ -1183,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-8",
+        "id": "xlsx-fashion-beauty-easy-07-answer-8",
         "display": "portefeuille",
         "normalized": "portefeuille",
         "aliases": [],
@@ -1195,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-08-answer-9",
+        "id": "xlsx-fashion-beauty-easy-07-answer-9",
         "display": "nœud papillon",
         "normalized": "nœud papillon",
         "aliases": [],
@@ -1208,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-08-bomb",
+      "id": "xlsx-fashion-beauty-easy-07-bomb",
       "display": "Pull",
       "normalized": "pull",
       "aliases": [],
@@ -1224,20 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f02d73fb024d7d1c923546a650ccb05c791852da87d3fb891e7a28c8ead1ba23",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-09",
-    "slug": "xlsx-fashion-beauty-easy-09",
+    "id": "xlsx-fashion-beauty-easy-08",
+    "slug": "xlsx-fashion-beauty-easy-08",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 produits présents dans une trousse de maquillage.",
     "shortTitle": "produits présents dans une trousse de maquillage",
     "difficultyLevel": 1,
@@ -1253,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-1",
+        "id": "xlsx-fashion-beauty-easy-08-answer-1",
         "display": "mascara",
         "normalized": "mascara",
         "aliases": [],
@@ -1265,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-2",
+        "id": "xlsx-fashion-beauty-easy-08-answer-2",
         "display": "rouge à lèvres",
         "normalized": "rouge a levres",
         "aliases": [],
@@ -1277,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-3",
+        "id": "xlsx-fashion-beauty-easy-08-answer-3",
         "display": "fond de teint",
         "normalized": "fond de teint",
         "aliases": [],
@@ -1289,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-4",
+        "id": "xlsx-fashion-beauty-easy-08-answer-4",
         "display": "anticernes",
         "normalized": "anticernes",
         "aliases": [],
@@ -1301,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-5",
+        "id": "xlsx-fashion-beauty-easy-08-answer-5",
         "display": "poudre",
         "normalized": "poudre",
         "aliases": [],
@@ -1313,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-6",
+        "id": "xlsx-fashion-beauty-easy-08-answer-6",
         "display": "eyeliner",
         "normalized": "eyeliner",
         "aliases": [],
@@ -1325,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-7",
+        "id": "xlsx-fashion-beauty-easy-08-answer-7",
         "display": "fard à paupières",
         "normalized": "fard a paupieres",
         "aliases": [],
@@ -1337,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-8",
+        "id": "xlsx-fashion-beauty-easy-08-answer-8",
         "display": "blush",
         "normalized": "blush",
         "aliases": [],
@@ -1349,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-09-answer-9",
+        "id": "xlsx-fashion-beauty-easy-08-answer-9",
         "display": "crayon à sourcils",
         "normalized": "crayon a sourcils",
         "aliases": [],
@@ -1362,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-09-bomb",
+      "id": "xlsx-fashion-beauty-easy-08-bomb",
       "display": "Brosse à cheveux",
       "normalized": "brosse a cheveux",
       "aliases": [],
@@ -1378,20 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c769588ed99a2f242d11a0f861f836cd32877beb1058aa4a477d301d3812c858",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-10",
-    "slug": "xlsx-fashion-beauty-easy-10",
+    "id": "xlsx-fashion-beauty-easy-09",
+    "slug": "xlsx-fashion-beauty-easy-09",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 types de chaussures.",
     "shortTitle": "types de chaussures",
     "difficultyLevel": 1,
@@ -1407,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-1",
+        "id": "xlsx-fashion-beauty-easy-09-answer-1",
         "display": "baskets",
         "normalized": "baskets",
         "aliases": [],
@@ -1419,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-2",
+        "id": "xlsx-fashion-beauty-easy-09-answer-2",
         "display": "bottes",
         "normalized": "bottes",
         "aliases": [],
@@ -1431,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-3",
+        "id": "xlsx-fashion-beauty-easy-09-answer-3",
         "display": "mocassins",
         "normalized": "mocassins",
         "aliases": [],
@@ -1443,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-4",
+        "id": "xlsx-fashion-beauty-easy-09-answer-4",
         "display": "sandales",
         "normalized": "sandales",
         "aliases": [],
@@ -1455,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-5",
+        "id": "xlsx-fashion-beauty-easy-09-answer-5",
         "display": "escarpins",
         "normalized": "escarpins",
         "aliases": [],
@@ -1467,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-6",
+        "id": "xlsx-fashion-beauty-easy-09-answer-6",
         "display": "derbies",
         "normalized": "derbies",
         "aliases": [],
@@ -1479,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-7",
+        "id": "xlsx-fashion-beauty-easy-09-answer-7",
         "display": "ballerines",
         "normalized": "ballerines",
         "aliases": [],
@@ -1491,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-8",
+        "id": "xlsx-fashion-beauty-easy-09-answer-8",
         "display": "chaussons",
         "normalized": "chaussons",
         "aliases": [],
@@ -1503,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-10-answer-9",
+        "id": "xlsx-fashion-beauty-easy-09-answer-9",
         "display": "chaussures de randonnée",
         "normalized": "chaussures de randonnee",
         "aliases": [],
@@ -1516,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-10-bomb",
+      "id": "xlsx-fashion-beauty-easy-09-bomb",
       "display": "Chapeau",
       "normalized": "chapeau",
       "aliases": [],
@@ -1532,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7c8761cdd262d3ede146f49a66ce2e79c2bffca056e086b5ac46b16b0af70d8f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-11",
-    "slug": "xlsx-fashion-beauty-easy-11",
+    "id": "xlsx-fashion-beauty-easy-10",
+    "slug": "xlsx-fashion-beauty-easy-10",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 raisons de changer de coiffure.",
     "shortTitle": "raisons de changer de coiffure",
     "difficultyLevel": 1,
@@ -1561,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-1",
+        "id": "xlsx-fashion-beauty-easy-10-answer-1",
         "display": "nouvelle saison",
         "normalized": "nouvelle saison",
         "aliases": [],
@@ -1573,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-2",
+        "id": "xlsx-fashion-beauty-easy-10-answer-2",
         "display": "événement",
         "normalized": "evenement",
         "aliases": [],
@@ -1585,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-3",
+        "id": "xlsx-fashion-beauty-easy-10-answer-3",
         "display": "envie de changement",
         "normalized": "envie de changement",
         "aliases": [],
@@ -1597,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-4",
+        "id": "xlsx-fashion-beauty-easy-10-answer-4",
         "display": "cheveux abîmés",
         "normalized": "cheveux abimes",
         "aliases": [],
@@ -1609,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-5",
+        "id": "xlsx-fashion-beauty-easy-10-answer-5",
         "display": "entretien plus simple",
         "normalized": "entretien plus simple",
         "aliases": [],
@@ -1621,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-6",
+        "id": "xlsx-fashion-beauty-easy-10-answer-6",
         "display": "mariage",
         "normalized": "mariage",
         "aliases": [],
@@ -1633,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-7",
+        "id": "xlsx-fashion-beauty-easy-10-answer-7",
         "display": "nouveau travail",
         "normalized": "nouveau travail",
         "aliases": [],
@@ -1645,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-8",
+        "id": "xlsx-fashion-beauty-easy-10-answer-8",
         "display": "tendance",
         "normalized": "tendance",
         "aliases": [],
@@ -1657,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-11-answer-9",
+        "id": "xlsx-fashion-beauty-easy-10-answer-9",
         "display": "don de cheveux",
         "normalized": "don de cheveux",
         "aliases": [],
@@ -1670,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-11-bomb",
+      "id": "xlsx-fashion-beauty-easy-10-bomb",
       "display": "Avoir la même coiffure",
       "normalized": "avoir la meme coiffure",
       "aliases": [],
@@ -1686,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "657e2fad35f4242e28c71deac13b1a6c4a7fdcd21bf086731699a0c26caf4f8d",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-12",
-    "slug": "xlsx-fashion-beauty-easy-12",
+    "id": "xlsx-fashion-beauty-easy-11",
+    "slug": "xlsx-fashion-beauty-easy-11",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 matières utilisées pour les vêtements.",
     "shortTitle": "matières utilisées pour les vêtements",
     "difficultyLevel": 1,
@@ -1715,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-1",
+        "id": "xlsx-fashion-beauty-easy-11-answer-1",
         "display": "coton",
         "normalized": "coton",
         "aliases": [],
@@ -1727,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-2",
+        "id": "xlsx-fashion-beauty-easy-11-answer-2",
         "display": "laine",
         "normalized": "laine",
         "aliases": [],
@@ -1739,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-3",
+        "id": "xlsx-fashion-beauty-easy-11-answer-3",
         "display": "lin",
         "normalized": "lin",
         "aliases": [],
@@ -1751,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-4",
+        "id": "xlsx-fashion-beauty-easy-11-answer-4",
         "display": "soie",
         "normalized": "soie",
         "aliases": [],
@@ -1763,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-5",
+        "id": "xlsx-fashion-beauty-easy-11-answer-5",
         "display": "polyester",
         "normalized": "polyester",
         "aliases": [],
@@ -1775,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-6",
+        "id": "xlsx-fashion-beauty-easy-11-answer-6",
         "display": "viscose",
         "normalized": "viscose",
         "aliases": [],
@@ -1787,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-7",
+        "id": "xlsx-fashion-beauty-easy-11-answer-7",
         "display": "denim",
         "normalized": "denim",
         "aliases": [],
@@ -1799,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-8",
+        "id": "xlsx-fashion-beauty-easy-11-answer-8",
         "display": "cachemire",
         "normalized": "cachemire",
         "aliases": [],
@@ -1811,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-12-answer-9",
+        "id": "xlsx-fashion-beauty-easy-11-answer-9",
         "display": "élasthanne",
         "normalized": "elasthanne",
         "aliases": [],
@@ -1824,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-12-bomb",
+      "id": "xlsx-fashion-beauty-easy-11-bomb",
       "display": "Verre",
       "normalized": "verre",
       "aliases": [],
@@ -1840,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bbe4e27608058168808f4ee3a23a4c78804b4a76269feaf1b1740eff6ac02daa",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-13",
-    "slug": "xlsx-fashion-beauty-easy-13",
+    "id": "xlsx-fashion-beauty-easy-12",
+    "slug": "xlsx-fashion-beauty-easy-12",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 objets que l’on trouve chez un coiffeur.",
     "shortTitle": "objets que l’on trouve chez un coiffeur",
     "difficultyLevel": 1,
@@ -1869,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-1",
+        "id": "xlsx-fashion-beauty-easy-12-answer-1",
         "display": "ciseaux",
         "normalized": "ciseaux",
         "aliases": [],
@@ -1881,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-2",
+        "id": "xlsx-fashion-beauty-easy-12-answer-2",
         "display": "sèche-cheveux",
         "normalized": "seche cheveux",
         "aliases": [],
@@ -1893,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-3",
+        "id": "xlsx-fashion-beauty-easy-12-answer-3",
         "display": "peigne",
         "normalized": "peigne",
         "aliases": [],
@@ -1905,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-4",
+        "id": "xlsx-fashion-beauty-easy-12-answer-4",
         "display": "shampoing",
         "normalized": "shampoing",
         "aliases": [],
@@ -1917,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-5",
+        "id": "xlsx-fashion-beauty-easy-12-answer-5",
         "display": "fauteuil",
         "normalized": "fauteuil",
         "aliases": [],
@@ -1929,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-6",
+        "id": "xlsx-fashion-beauty-easy-12-answer-6",
         "display": "miroir",
         "normalized": "miroir",
         "aliases": [],
@@ -1941,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-7",
+        "id": "xlsx-fashion-beauty-easy-12-answer-7",
         "display": "tondeuse",
         "normalized": "tondeuse",
         "aliases": [],
@@ -1953,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-8",
+        "id": "xlsx-fashion-beauty-easy-12-answer-8",
         "display": "cape",
         "normalized": "cape",
         "aliases": [],
@@ -1965,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-13-answer-9",
+        "id": "xlsx-fashion-beauty-easy-12-answer-9",
         "display": "rouleaux",
         "normalized": "rouleaux",
         "aliases": [],
@@ -1978,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-13-bomb",
+      "id": "xlsx-fashion-beauty-easy-12-bomb",
       "display": "Client",
       "normalized": "client",
       "aliases": [],
@@ -1994,174 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "e5e0a08c8fedaf0b4f5708a8d462a6213af863af72bdb7921360ecded890a22a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-14",
-    "slug": "xlsx-fashion-beauty-easy-14",
+    "id": "xlsx-fashion-beauty-easy-13",
+    "slug": "xlsx-fashion-beauty-easy-13",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 marques de sport portées au quotidien.",
-    "shortTitle": "marques de sport portées au quotidien",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-1",
-        "display": "Nike",
-        "normalized": "nike",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-2",
-        "display": "Adidas",
-        "normalized": "adidas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-3",
-        "display": "Puma",
-        "normalized": "puma",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-4",
-        "display": "New Balance",
-        "normalized": "new balance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-5",
-        "display": "Reebok",
-        "normalized": "reebok",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-6",
-        "display": "Asics",
-        "normalized": "asics",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-7",
-        "display": "Converse",
-        "normalized": "converse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-8",
-        "display": "Vans",
-        "normalized": "vans",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-14-answer-9",
-        "display": "Under Armour",
-        "normalized": "under armour",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "fashion-beauty:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-fashion-beauty-easy-14-bomb",
-      "display": "Coca-Cola",
-      "normalized": "coca cola",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ba69f230e0f5f7425dff6489cbd141b1b5fd73fcc96a23ce79d16e2dee83e07b",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-fashion-beauty-easy-15",
-    "slug": "xlsx-fashion-beauty-easy-15",
-    "language": "fr",
-    "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 bijoux courants.",
     "shortTitle": "bijoux courants",
     "difficultyLevel": 1,
@@ -2177,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-1",
+        "id": "xlsx-fashion-beauty-easy-13-answer-1",
         "display": "bague",
         "normalized": "bague",
         "aliases": [],
@@ -2189,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-2",
+        "id": "xlsx-fashion-beauty-easy-13-answer-2",
         "display": "collier",
         "normalized": "collier",
         "aliases": [],
@@ -2201,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-3",
+        "id": "xlsx-fashion-beauty-easy-13-answer-3",
         "display": "bracelet",
         "normalized": "bracelet",
         "aliases": [],
@@ -2213,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-4",
+        "id": "xlsx-fashion-beauty-easy-13-answer-4",
         "display": "boucles d’oreilles",
         "normalized": "boucles d oreilles",
         "aliases": [],
@@ -2225,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-5",
+        "id": "xlsx-fashion-beauty-easy-13-answer-5",
         "display": "chaîne",
         "normalized": "chaine",
         "aliases": [],
@@ -2237,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-6",
+        "id": "xlsx-fashion-beauty-easy-13-answer-6",
         "display": "broche",
         "normalized": "broche",
         "aliases": [],
@@ -2249,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-7",
+        "id": "xlsx-fashion-beauty-easy-13-answer-7",
         "display": "chevalière",
         "normalized": "chevaliere",
         "aliases": [],
@@ -2261,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-8",
+        "id": "xlsx-fashion-beauty-easy-13-answer-8",
         "display": "pendentif",
         "normalized": "pendentif",
         "aliases": [],
@@ -2273,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-15-answer-9",
+        "id": "xlsx-fashion-beauty-easy-13-answer-9",
         "display": "montre",
         "normalized": "montre",
         "aliases": [],
@@ -2286,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-15-bomb",
+      "id": "xlsx-fashion-beauty-easy-13-bomb",
       "display": "Porte-clés",
       "normalized": "porte cles",
       "aliases": [],
@@ -2302,174 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3f62bba9e5637dbdc9289c8d409f1e14a58e30bc1c52f3d88b1c6951d146cefb",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-16",
-    "slug": "xlsx-fashion-beauty-easy-16",
+    "id": "xlsx-fashion-beauty-easy-14",
+    "slug": "xlsx-fashion-beauty-easy-14",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 chaussures que l’on peut porter en ville ou en vacances.",
-    "shortTitle": "chaussures que l’on peut porter en ville ou e…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-1",
-        "display": "Baskets",
-        "normalized": "baskets",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-2",
-        "display": "Mocassins",
-        "normalized": "mocassins",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-3",
-        "display": "Sandales",
-        "normalized": "sandales",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-4",
-        "display": "Tongs",
-        "normalized": "tongs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-5",
-        "display": "Espadrilles",
-        "normalized": "espadrilles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-6",
-        "display": "Bottines",
-        "normalized": "bottines",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-7",
-        "display": "Derbies",
-        "normalized": "derbies",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-8",
-        "display": "Escarpins",
-        "normalized": "escarpins",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-16-answer-9",
-        "display": "Bottes",
-        "normalized": "bottes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "fashion-beauty:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-fashion-beauty-easy-16-bomb",
-      "display": "Bonnet",
-      "normalized": "bonnet",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a5caa7545783ce725e9093880677803933cd3ed22f924ff9059e0fd71cd3b480",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-fashion-beauty-easy-17",
-    "slug": "xlsx-fashion-beauty-easy-17",
-    "language": "fr",
-    "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 vêtements du haut du corps.",
     "shortTitle": "vêtements du haut du corps",
     "difficultyLevel": 1,
@@ -2485,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-1",
+        "id": "xlsx-fashion-beauty-easy-14-answer-1",
         "display": "T-shirt",
         "normalized": "t shirt",
         "aliases": [],
@@ -2497,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-2",
+        "id": "xlsx-fashion-beauty-easy-14-answer-2",
         "display": "Chemise",
         "normalized": "chemise",
         "aliases": [],
@@ -2509,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-3",
+        "id": "xlsx-fashion-beauty-easy-14-answer-3",
         "display": "Pull",
         "normalized": "pull",
         "aliases": [],
@@ -2521,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-4",
+        "id": "xlsx-fashion-beauty-easy-14-answer-4",
         "display": "Sweat",
         "normalized": "sweat",
         "aliases": [],
@@ -2533,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-5",
+        "id": "xlsx-fashion-beauty-easy-14-answer-5",
         "display": "Débardeur",
         "normalized": "debardeur",
         "aliases": [],
@@ -2545,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-6",
+        "id": "xlsx-fashion-beauty-easy-14-answer-6",
         "display": "Blouse",
         "normalized": "blouse",
         "aliases": [],
@@ -2557,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-7",
+        "id": "xlsx-fashion-beauty-easy-14-answer-7",
         "display": "Veste",
         "normalized": "veste",
         "aliases": [],
@@ -2569,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-8",
+        "id": "xlsx-fashion-beauty-easy-14-answer-8",
         "display": "Polo",
         "normalized": "polo",
         "aliases": [],
@@ -2581,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-17-answer-9",
+        "id": "xlsx-fashion-beauty-easy-14-answer-9",
         "display": "Cardigan",
         "normalized": "cardigan",
         "aliases": [],
@@ -2594,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-17-bomb",
+      "id": "xlsx-fashion-beauty-easy-14-bomb",
       "display": "Jean",
       "normalized": "jean",
       "aliases": [],
@@ -2610,174 +2218,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d5f950a9fee50bc76422c65e2d5e46dd2071ea70637e25ddd1f85fdb87325d1f",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-18",
-    "slug": "xlsx-fashion-beauty-easy-18",
+    "id": "xlsx-fashion-beauty-easy-15",
+    "slug": "xlsx-fashion-beauty-easy-15",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 accessoires qu’on peut porter sans qu’ils soient des vêtements.",
-    "shortTitle": "accessoires qu’on peut porter sans qu’ils soi…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-1",
-        "display": "Montre",
-        "normalized": "montre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-2",
-        "display": "Ceinture",
-        "normalized": "ceinture",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-3",
-        "display": "Sac",
-        "normalized": "sac",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-4",
-        "display": "Écharpe",
-        "normalized": "echarpe",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-5",
-        "display": "Chapeau",
-        "normalized": "chapeau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-6",
-        "display": "Lunettes de soleil",
-        "normalized": "lunettes de soleil",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-7",
-        "display": "Bracelet",
-        "normalized": "bracelet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-8",
-        "display": "Collier",
-        "normalized": "collier",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-fashion-beauty-easy-18-answer-9",
-        "display": "Gants",
-        "normalized": "gants",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "fashion-beauty:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-fashion-beauty-easy-18-bomb",
-      "display": "Pantalon",
-      "normalized": "pantalon",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "339da75e7b8dc757fd708f4a466544b47b39251c4dff86f446331344e3cf5f60",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-fashion-beauty-easy-19",
-    "slug": "xlsx-fashion-beauty-easy-19",
-    "language": "fr",
-    "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 produits de maquillage.",
     "shortTitle": "produits de maquillage",
     "difficultyLevel": 1,
@@ -2793,7 +2252,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-1",
+        "id": "xlsx-fashion-beauty-easy-15-answer-1",
         "display": "Mascara",
         "normalized": "mascara",
         "aliases": [],
@@ -2805,7 +2264,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-2",
+        "id": "xlsx-fashion-beauty-easy-15-answer-2",
         "display": "Rouge à lèvres",
         "normalized": "rouge a levres",
         "aliases": [],
@@ -2817,7 +2276,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-3",
+        "id": "xlsx-fashion-beauty-easy-15-answer-3",
         "display": "Fond de teint",
         "normalized": "fond de teint",
         "aliases": [],
@@ -2829,7 +2288,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-4",
+        "id": "xlsx-fashion-beauty-easy-15-answer-4",
         "display": "Blush",
         "normalized": "blush",
         "aliases": [],
@@ -2841,7 +2300,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-5",
+        "id": "xlsx-fashion-beauty-easy-15-answer-5",
         "display": "Eyeliner",
         "normalized": "eyeliner",
         "aliases": [],
@@ -2853,7 +2312,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-6",
+        "id": "xlsx-fashion-beauty-easy-15-answer-6",
         "display": "Fard à paupières",
         "normalized": "fard a paupieres",
         "aliases": [],
@@ -2865,7 +2324,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-7",
+        "id": "xlsx-fashion-beauty-easy-15-answer-7",
         "display": "Anti-cernes",
         "normalized": "anti cernes",
         "aliases": [],
@@ -2877,7 +2336,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-8",
+        "id": "xlsx-fashion-beauty-easy-15-answer-8",
         "display": "Poudre",
         "normalized": "poudre",
         "aliases": [],
@@ -2889,7 +2348,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-19-answer-9",
+        "id": "xlsx-fashion-beauty-easy-15-answer-9",
         "display": "Crayon à sourcils",
         "normalized": "crayon a sourcils",
         "aliases": [],
@@ -2902,7 +2361,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-19-bomb",
+      "id": "xlsx-fashion-beauty-easy-15-bomb",
       "display": "Shampoing",
       "normalized": "shampoing",
       "aliases": [],
@@ -2918,20 +2377,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "9d331ebb35a6c77fa336857af9cb82008e4a367266803428a5bf85c28887b1cf",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-fashion-beauty-easy-20",
-    "slug": "xlsx-fashion-beauty-easy-20",
+    "id": "xlsx-fashion-beauty-easy-16",
+    "slug": "xlsx-fashion-beauty-easy-16",
     "language": "fr",
     "themeId": "fashion-beauty",
-    "subthemeIds": ["fashion-beauty:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "fashion-beauty:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 couleurs classiques de vêtements.",
     "shortTitle": "couleurs classiques de vêtements",
     "difficultyLevel": 1,
@@ -2947,7 +2411,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-1",
+        "id": "xlsx-fashion-beauty-easy-16-answer-1",
         "display": "Noir",
         "normalized": "noir",
         "aliases": [],
@@ -2959,7 +2423,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-2",
+        "id": "xlsx-fashion-beauty-easy-16-answer-2",
         "display": "Blanc",
         "normalized": "blanc",
         "aliases": [],
@@ -2971,7 +2435,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-3",
+        "id": "xlsx-fashion-beauty-easy-16-answer-3",
         "display": "Bleu",
         "normalized": "bleu",
         "aliases": [],
@@ -2983,7 +2447,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-4",
+        "id": "xlsx-fashion-beauty-easy-16-answer-4",
         "display": "Rouge",
         "normalized": "rouge",
         "aliases": [],
@@ -2995,7 +2459,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-5",
+        "id": "xlsx-fashion-beauty-easy-16-answer-5",
         "display": "Vert",
         "normalized": "vert",
         "aliases": [],
@@ -3007,7 +2471,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-6",
+        "id": "xlsx-fashion-beauty-easy-16-answer-6",
         "display": "Gris",
         "normalized": "gris",
         "aliases": [],
@@ -3019,7 +2483,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-7",
+        "id": "xlsx-fashion-beauty-easy-16-answer-7",
         "display": "Beige",
         "normalized": "beige",
         "aliases": [],
@@ -3031,7 +2495,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-8",
+        "id": "xlsx-fashion-beauty-easy-16-answer-8",
         "display": "Rose",
         "normalized": "rose",
         "aliases": [],
@@ -3043,7 +2507,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-fashion-beauty-easy-20-answer-9",
+        "id": "xlsx-fashion-beauty-easy-16-answer-9",
         "display": "Marron",
         "normalized": "marron",
         "aliases": [],
@@ -3056,7 +2520,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-fashion-beauty-easy-20-bomb",
+      "id": "xlsx-fashion-beauty-easy-16-bomb",
       "display": "Transparent",
       "normalized": "transparent",
       "aliases": [],
@@ -3072,11 +2536,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b2caae5c49f2d0f5d1f25bec4966b7f90f355d6f3b8e4a2c30990a7049beb55c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

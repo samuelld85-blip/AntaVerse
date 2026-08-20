@@ -30,6 +30,7 @@ export interface GameState {
   deck: string[];
   deckPosition: number;
   roundEndsAt: number | null;
+  lastCardId?: string;
   createdAt: string;
   updatedAt: string;
 }

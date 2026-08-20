@@ -4,8 +4,13 @@
     "slug": "xlsx-cinema-easy-01",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 sagas de cinéma connues.",
     "shortTitle": "sagas de cinéma connues",
     "difficultyLevel": 1,
@@ -146,20 +151,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "070c318f8c03568996eef9287bc7a6c758ed382462f544711dfad8ecb4cca2a3",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-02",
     "slug": "xlsx-cinema-easy-02",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 personnages de Star Wars.",
     "shortTitle": "personnages de Star Wars",
     "difficultyLevel": 1,
@@ -300,20 +310,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "20fc83a84ddcdca0accf30f33eca5c515fd369ccfb035e8371bf96eca1c849e3",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-03",
     "slug": "xlsx-cinema-easy-03",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 films d’animation Pixar.",
     "shortTitle": "films d’animation Pixar",
     "difficultyLevel": 1,
@@ -454,20 +469,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "373ebdf296be769d55d7a60086dbaafcff441f858d492a3a1b406a5527234ee0",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-04",
     "slug": "xlsx-cinema-easy-04",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 acteurs français connus.",
     "shortTitle": "acteurs français connus",
     "difficultyLevel": 1,
@@ -608,22 +628,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4427fd54cab3154f7b04474384cc2a0b61d4d78d53cc530270e845b6ca3f2fb9",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-05",
     "slug": "xlsx-cinema-easy-05",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 films d’animation des studios Pixar.",
-    "shortTitle": "films d’animation des studios Pixar",
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 personnages de films Pixar.",
+    "shortTitle": "personnages de films Pixar",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -638,8 +663,8 @@
     "answers": [
       {
         "id": "xlsx-cinema-easy-05-answer-1",
-        "display": "Toy Story",
-        "normalized": "toy story",
+        "display": "Woody",
+        "normalized": "woody",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -650,8 +675,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-2",
-        "display": "Coco",
-        "normalized": "coco",
+        "display": "Buzz l'Éclair",
+        "normalized": "buzz l eclair",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -662,8 +687,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-3",
-        "display": "Ratatouille",
-        "normalized": "ratatouille",
+        "display": "Nemo",
+        "normalized": "nemo",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -674,8 +699,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-4",
-        "display": "Là-haut",
-        "normalized": "la haut",
+        "display": "Dory",
+        "normalized": "dory",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -686,8 +711,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-5",
-        "display": "Vice-Versa",
-        "normalized": "vice versa",
+        "display": "Sully",
+        "normalized": "sully",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -698,8 +723,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-6",
-        "display": "Le Monde de Nemo",
-        "normalized": "le monde de nemo",
+        "display": "Bob Parr",
+        "normalized": "bob parr",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -710,8 +735,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-7",
-        "display": "Les Indestructibles",
-        "normalized": "les indestructibles",
+        "display": "Wall-E",
+        "normalized": "wall e",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -722,8 +747,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-8",
-        "display": "WALL-E",
-        "normalized": "wall e",
+        "display": "Rémy",
+        "normalized": "remy",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -734,8 +759,8 @@
       },
       {
         "id": "xlsx-cinema-easy-05-answer-9",
-        "display": "Cars",
-        "normalized": "cars",
+        "display": "Joie",
+        "normalized": "joie",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -762,22 +787,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "47335902f721f019a1a9a23a6ae77af65155fa2b28110bab8efdf77be9519d55",
+    "answerSetFingerprint": "7b5ba19d4d7841a6f5953a36718f0aa61dd27d7a33a140d31d1ca9f10d6346e1",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-06",
     "slug": "xlsx-cinema-easy-06",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 objets que l’on achète au cinéma.",
-    "shortTitle": "objets que l’on achète au cinéma",
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 personnages très connus de l’univers Harry Potter.",
+    "shortTitle": "personnages très connus de l’univers Harry Po…",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -792,8 +822,8 @@
     "answers": [
       {
         "id": "xlsx-cinema-easy-06-answer-1",
-        "display": "ticket",
-        "normalized": "ticket",
+        "display": "Harry Potter",
+        "normalized": "harry potter",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -804,8 +834,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-2",
-        "display": "pop-corn",
-        "normalized": "pop corn",
+        "display": "Hermione Granger",
+        "normalized": "hermione granger",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -816,8 +846,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-3",
-        "display": "boisson",
-        "normalized": "boisson",
+        "display": "Ron Weasley",
+        "normalized": "ron weasley",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -828,8 +858,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-4",
-        "display": "glace",
-        "normalized": "glace",
+        "display": "Albus Dumbledore",
+        "normalized": "albus dumbledore",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -840,8 +870,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-5",
-        "display": "bonbons",
-        "normalized": "bonbons",
+        "display": "Rubeus Hagrid",
+        "normalized": "rubeus hagrid",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -852,8 +882,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-6",
-        "display": "nachos",
-        "normalized": "nachos",
+        "display": "Voldemort",
+        "normalized": "voldemort",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -864,8 +894,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-7",
-        "display": "lunettes 3D",
-        "normalized": "lunettes 3d",
+        "display": "Severus Rogue",
+        "normalized": "severus rogue",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -876,8 +906,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-8",
-        "display": "menu enfant",
-        "normalized": "menu enfant",
+        "display": "Drago Malefoy",
+        "normalized": "drago malefoy",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -888,8 +918,8 @@
       },
       {
         "id": "xlsx-cinema-easy-06-answer-9",
-        "display": "affiche",
-        "normalized": "affiche",
+        "display": "Sirius Black",
+        "normalized": "sirius black",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -901,8 +931,8 @@
     ],
     "bomb": {
       "id": "xlsx-cinema-easy-06-bomb",
-      "display": "Télécommande",
-      "normalized": "telecommande",
+      "display": "Gandalf",
+      "normalized": "gandalf",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -916,22 +946,27 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b775940bdad7055d05e83bc8d110e97cffb1068c043e600c27257994636c5bd4",
+    "answerSetFingerprint": "dce75fb2fc73c58c3e8b1e6d344e36578d4cd26ac376ce6711bc9cdc3ce09e9c",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-07",
     "slug": "xlsx-cinema-easy-07",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 personnages de films Pixar.",
-    "shortTitle": "personnages de films Pixar",
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
+    "questionText": "Cite 9 films Disney ou Pixar très connus.",
+    "shortTitle": "films Disney ou Pixar très connus",
     "difficultyLevel": 1,
     "difficultyLabel": "Facile",
     "editorialDifficultyScore": 25,
@@ -946,8 +981,8 @@
     "answers": [
       {
         "id": "xlsx-cinema-easy-07-answer-1",
-        "display": "Woody",
-        "normalized": "woody",
+        "display": "Le Roi Lion",
+        "normalized": "le roi lion",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -958,8 +993,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-2",
-        "display": "Buzz l'Éclair",
-        "normalized": "buzz l eclair",
+        "display": "Toy Story",
+        "normalized": "toy story",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -970,8 +1005,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-3",
-        "display": "Nemo",
-        "normalized": "nemo",
+        "display": "La Reine des neiges",
+        "normalized": "la reine des neiges",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -982,8 +1017,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-4",
-        "display": "Dory",
-        "normalized": "dory",
+        "display": "Le Monde de Nemo",
+        "normalized": "le monde de nemo",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -994,8 +1029,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-5",
-        "display": "Sully",
-        "normalized": "sully",
+        "display": "Aladdin",
+        "normalized": "aladdin",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1006,8 +1041,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-6",
-        "display": "Bob Parr",
-        "normalized": "bob parr",
+        "display": "Ratatouille",
+        "normalized": "ratatouille",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1018,8 +1053,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-7",
-        "display": "Wall-E",
-        "normalized": "wall e",
+        "display": "Cars",
+        "normalized": "cars",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1030,8 +1065,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-8",
-        "display": "Rémy",
-        "normalized": "remy",
+        "display": "Vaiana",
+        "normalized": "vaiana",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1042,8 +1077,8 @@
       },
       {
         "id": "xlsx-cinema-easy-07-answer-9",
-        "display": "Joie",
-        "normalized": "joie",
+        "display": "Les Indestructibles",
+        "normalized": "les indestructibles",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -1070,328 +1105,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "7b5ba19d4d7841a6f5953a36718f0aa61dd27d7a33a140d31d1ca9f10d6346e1",
+    "answerSetFingerprint": "a4731d25315e54a6570e68c34498c199f1d2cd7953de912b47d8ab7d21cffb51",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
     "id": "xlsx-cinema-easy-08",
     "slug": "xlsx-cinema-easy-08",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 personnages très connus de Star Wars.",
-    "shortTitle": "personnages très connus de Star Wars",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-cinema-easy-08-answer-1",
-        "display": "Luke Skywalker",
-        "normalized": "luke skywalker",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-2",
-        "display": "Leia Organa",
-        "normalized": "leia organa",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-3",
-        "display": "Han Solo",
-        "normalized": "han solo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-4",
-        "display": "Dark Vador",
-        "normalized": "dark vador",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-5",
-        "display": "Yoda",
-        "normalized": "yoda",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-6",
-        "display": "Obi-Wan Kenobi",
-        "normalized": "obi wan kenobi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-7",
-        "display": "Chewbacca",
-        "normalized": "chewbacca",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-8",
-        "display": "R2-D2",
-        "normalized": "r2 d2",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-08-answer-9",
-        "display": "C-3PO",
-        "normalized": "c 3po",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "cinema:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-cinema-easy-08-bomb",
-      "display": "Gandalf",
-      "normalized": "gandalf",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "2654f2e929661f2abb854c8c3a2fe226c2ccfbacd3b52ddc5685ce546fe629a5",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-cinema-easy-09",
-    "slug": "xlsx-cinema-easy-09",
-    "language": "fr",
-    "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 films Disney ou Pixar très connus.",
-    "shortTitle": "films Disney ou Pixar très connus",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-cinema-easy-09-answer-1",
-        "display": "Le Roi Lion",
-        "normalized": "le roi lion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-2",
-        "display": "Toy Story",
-        "normalized": "toy story",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-3",
-        "display": "La Reine des neiges",
-        "normalized": "la reine des neiges",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-4",
-        "display": "Le Monde de Nemo",
-        "normalized": "le monde de nemo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-5",
-        "display": "Aladdin",
-        "normalized": "aladdin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-6",
-        "display": "Ratatouille",
-        "normalized": "ratatouille",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-7",
-        "display": "Cars",
-        "normalized": "cars",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-8",
-        "display": "Vaiana",
-        "normalized": "vaiana",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-09-answer-9",
-        "display": "Les Indestructibles",
-        "normalized": "les indestructibles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-cinema-easy-09-bomb",
-      "display": "Shrek",
-      "normalized": "shrek",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a4731d25315e54a6570e68c34498c199f1d2cd7953de912b47d8ab7d21cffb51",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-cinema-easy-10",
-    "slug": "xlsx-cinema-easy-10",
-    "language": "fr",
-    "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 films ou séries appartenant à l’univers Star Wars.",
     "shortTitle": "films ou séries appartenant à l’univers Star…",
     "difficultyLevel": 1,
@@ -1407,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-10-answer-1",
+        "id": "xlsx-cinema-easy-08-answer-1",
         "display": "Un nouvel espoir",
         "normalized": "un nouvel espoir",
         "aliases": [],
@@ -1419,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-2",
+        "id": "xlsx-cinema-easy-08-answer-2",
         "display": "L'Empire contre-attaque",
         "normalized": "l empire contre attaque",
         "aliases": [],
@@ -1431,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-3",
+        "id": "xlsx-cinema-easy-08-answer-3",
         "display": "Le Retour du Jedi",
         "normalized": "le retour du jedi",
         "aliases": [],
@@ -1443,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-4",
+        "id": "xlsx-cinema-easy-08-answer-4",
         "display": "La Menace fantôme",
         "normalized": "la menace fantome",
         "aliases": [],
@@ -1455,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-5",
+        "id": "xlsx-cinema-easy-08-answer-5",
         "display": "Le Réveil de la Force",
         "normalized": "le reveil de la force",
         "aliases": [],
@@ -1467,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-6",
+        "id": "xlsx-cinema-easy-08-answer-6",
         "display": "Rogue One",
         "normalized": "rogue one",
         "aliases": [],
@@ -1479,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-7",
+        "id": "xlsx-cinema-easy-08-answer-7",
         "display": "The Mandalorian",
         "normalized": "the mandalorian",
         "aliases": [],
@@ -1491,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-8",
+        "id": "xlsx-cinema-easy-08-answer-8",
         "display": "Andor",
         "normalized": "andor",
         "aliases": [],
@@ -1503,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-10-answer-9",
+        "id": "xlsx-cinema-easy-08-answer-9",
         "display": "Ahsoka",
         "normalized": "ahsoka",
         "aliases": [],
@@ -1516,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-10-bomb",
+      "id": "xlsx-cinema-easy-08-bomb",
       "display": "Star Trek",
       "normalized": "star trek",
       "aliases": [],
@@ -1532,174 +1264,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bad069f8ddf9436d977a91f4d06154d2f46671baf55881db5bfc40c96ff60112",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-cinema-easy-11",
-    "slug": "xlsx-cinema-easy-11",
+    "id": "xlsx-cinema-easy-09",
+    "slug": "xlsx-cinema-easy-09",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 films avec Leonardo DiCaprio.",
-    "shortTitle": "films avec Leonardo DiCaprio",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-cinema-easy-11-answer-1",
-        "display": "Titanic",
-        "normalized": "titanic",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-2",
-        "display": "Inception",
-        "normalized": "inception",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-3",
-        "display": "Le Loup de Wall Street",
-        "normalized": "le loup de wall street",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-4",
-        "display": "Shutter Island",
-        "normalized": "shutter island",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-5",
-        "display": "The Revenant",
-        "normalized": "the revenant",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-6",
-        "display": "Gatsby le Magnifique",
-        "normalized": "gatsby le magnifique",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-7",
-        "display": "Arrête-moi si tu peux",
-        "normalized": "arrete moi si tu peux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-8",
-        "display": "Les Infiltrés",
-        "normalized": "les infiltres",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-11-answer-9",
-        "display": "Django Unchained",
-        "normalized": "django unchained",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "cinema:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-cinema-easy-11-bomb",
-      "display": "Gladiator",
-      "normalized": "gladiator",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "8b136196df1fc2714c79d12e715c423335b65def33ca7919ea161efa81233c02",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-cinema-easy-12",
-    "slug": "xlsx-cinema-easy-12",
-    "language": "fr",
-    "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 super-héros apparus au cinéma.",
     "shortTitle": "super-héros apparus au cinéma",
     "difficultyLevel": 1,
@@ -1715,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-12-answer-1",
+        "id": "xlsx-cinema-easy-09-answer-1",
         "display": "Batman",
         "normalized": "batman",
         "aliases": [],
@@ -1727,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-2",
+        "id": "xlsx-cinema-easy-09-answer-2",
         "display": "Superman",
         "normalized": "superman",
         "aliases": [],
@@ -1739,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-3",
+        "id": "xlsx-cinema-easy-09-answer-3",
         "display": "Spider-Man",
         "normalized": "spider man",
         "aliases": [],
@@ -1751,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-4",
+        "id": "xlsx-cinema-easy-09-answer-4",
         "display": "Iron Man",
         "normalized": "iron man",
         "aliases": [],
@@ -1763,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-5",
+        "id": "xlsx-cinema-easy-09-answer-5",
         "display": "Captain America",
         "normalized": "captain america",
         "aliases": [],
@@ -1775,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-6",
+        "id": "xlsx-cinema-easy-09-answer-6",
         "display": "Thor",
         "normalized": "thor",
         "aliases": [],
@@ -1787,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-7",
+        "id": "xlsx-cinema-easy-09-answer-7",
         "display": "Wonder Woman",
         "normalized": "wonder woman",
         "aliases": [],
@@ -1799,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-8",
+        "id": "xlsx-cinema-easy-09-answer-8",
         "display": "Black Panther",
         "normalized": "black panther",
         "aliases": [],
@@ -1811,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-12-answer-9",
+        "id": "xlsx-cinema-easy-09-answer-9",
         "display": "Deadpool",
         "normalized": "deadpool",
         "aliases": [],
@@ -1824,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-12-bomb",
+      "id": "xlsx-cinema-easy-09-bomb",
       "display": "Sherlock Holmes",
       "normalized": "sherlock holmes",
       "aliases": [],
@@ -1840,20 +1423,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "183d066af442a02ebbe4352d4cd227f7022be2f0f94dd377f9c518a548ecfd6b",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-cinema-easy-13",
-    "slug": "xlsx-cinema-easy-13",
+    "id": "xlsx-cinema-easy-10",
+    "slug": "xlsx-cinema-easy-10",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 films appartenant à l’univers Harry Potter / Wizarding World.",
     "shortTitle": "films appartenant à l’univers Harry Potter /…",
     "difficultyLevel": 1,
@@ -1869,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-13-answer-1",
+        "id": "xlsx-cinema-easy-10-answer-1",
         "display": "Harry Potter à l'école des sorciers",
         "normalized": "harry potter a l ecole des sorciers",
         "aliases": [],
@@ -1881,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-2",
+        "id": "xlsx-cinema-easy-10-answer-2",
         "display": "Harry Potter et la Chambre des secrets",
         "normalized": "harry potter et la chambre des secrets",
         "aliases": [],
@@ -1893,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-3",
+        "id": "xlsx-cinema-easy-10-answer-3",
         "display": "Harry Potter et le Prisonnier d'Azkaban",
         "normalized": "harry potter et le prisonnier d azkaban",
         "aliases": [],
@@ -1905,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-4",
+        "id": "xlsx-cinema-easy-10-answer-4",
         "display": "Harry Potter et la Coupe de feu",
         "normalized": "harry potter et la coupe de feu",
         "aliases": [],
@@ -1917,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-5",
+        "id": "xlsx-cinema-easy-10-answer-5",
         "display": "Harry Potter et l'Ordre du Phénix",
         "normalized": "harry potter et l ordre du phenix",
         "aliases": [],
@@ -1929,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-6",
+        "id": "xlsx-cinema-easy-10-answer-6",
         "display": "Harry Potter et le Prince de sang-mêlé",
         "normalized": "harry potter et le prince de sang mele",
         "aliases": [],
@@ -1941,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-7",
+        "id": "xlsx-cinema-easy-10-answer-7",
         "display": "Harry Potter et les Reliques de la Mort – partie 1",
         "normalized": "harry potter et les reliques de la mort partie 1",
         "aliases": [],
@@ -1953,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-8",
+        "id": "xlsx-cinema-easy-10-answer-8",
         "display": "Harry Potter et les Reliques de la Mort – partie 2",
         "normalized": "harry potter et les reliques de la mort partie 2",
         "aliases": [],
@@ -1965,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-13-answer-9",
+        "id": "xlsx-cinema-easy-10-answer-9",
         "display": "Les Animaux fantastiques",
         "normalized": "les animaux fantastiques",
         "aliases": [],
@@ -1978,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-13-bomb",
+      "id": "xlsx-cinema-easy-10-bomb",
       "display": "Le Seigneur des anneaux",
       "normalized": "le seigneur des anneaux",
       "aliases": [],
@@ -1994,20 +1582,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7a5a9fb29ce1bc0d987451315bbda9fd9e81152bdeb418aeda770eec488a08d4",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-cinema-easy-14",
-    "slug": "xlsx-cinema-easy-14",
+    "id": "xlsx-cinema-easy-11",
+    "slug": "xlsx-cinema-easy-11",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 acteurs ou actrices ayant joué un super-héros célèbre.",
     "shortTitle": "acteurs ou actrices ayant joué un super-héros…",
     "difficultyLevel": 1,
@@ -2023,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-14-answer-1",
+        "id": "xlsx-cinema-easy-11-answer-1",
         "display": "Robert Downey Jr.",
         "normalized": "robert downey jr",
         "aliases": [],
@@ -2035,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-2",
+        "id": "xlsx-cinema-easy-11-answer-2",
         "display": "Chris Evans",
         "normalized": "chris evans",
         "aliases": [],
@@ -2047,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-3",
+        "id": "xlsx-cinema-easy-11-answer-3",
         "display": "Chris Hemsworth",
         "normalized": "chris hemsworth",
         "aliases": [],
@@ -2059,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-4",
+        "id": "xlsx-cinema-easy-11-answer-4",
         "display": "Scarlett Johansson",
         "normalized": "scarlett johansson",
         "aliases": [],
@@ -2071,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-5",
+        "id": "xlsx-cinema-easy-11-answer-5",
         "display": "Tom Holland",
         "normalized": "tom holland",
         "aliases": [],
@@ -2083,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-6",
+        "id": "xlsx-cinema-easy-11-answer-6",
         "display": "Gal Gadot",
         "normalized": "gal gadot",
         "aliases": [],
@@ -2095,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-7",
+        "id": "xlsx-cinema-easy-11-answer-7",
         "display": "Henry Cavill",
         "normalized": "henry cavill",
         "aliases": [],
@@ -2107,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-8",
+        "id": "xlsx-cinema-easy-11-answer-8",
         "display": "Christian Bale",
         "normalized": "christian bale",
         "aliases": [],
@@ -2119,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-14-answer-9",
+        "id": "xlsx-cinema-easy-11-answer-9",
         "display": "Hugh Jackman",
         "normalized": "hugh jackman",
         "aliases": [],
@@ -2132,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-14-bomb",
+      "id": "xlsx-cinema-easy-11-bomb",
       "display": "Leonardo DiCaprio",
       "normalized": "leonardo dicaprio",
       "aliases": [],
@@ -2148,20 +1741,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "aca888b97eb6e31f4969e58d63834d87c0e362ce4ac1081ce38c0a7cdeee68d6",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-cinema-easy-15",
-    "slug": "xlsx-cinema-easy-15",
+    "id": "xlsx-cinema-easy-12",
+    "slug": "xlsx-cinema-easy-12",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 films d’animation DreamWorks connus.",
     "shortTitle": "films d’animation DreamWorks connus",
     "difficultyLevel": 1,
@@ -2177,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-15-answer-1",
+        "id": "xlsx-cinema-easy-12-answer-1",
         "display": "Shrek",
         "normalized": "shrek",
         "aliases": [],
@@ -2189,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-2",
+        "id": "xlsx-cinema-easy-12-answer-2",
         "display": "Madagascar",
         "normalized": "madagascar",
         "aliases": [],
@@ -2201,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-3",
+        "id": "xlsx-cinema-easy-12-answer-3",
         "display": "Kung Fu Panda",
         "normalized": "kung fu panda",
         "aliases": [],
@@ -2213,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-4",
+        "id": "xlsx-cinema-easy-12-answer-4",
         "display": "Dragons",
         "normalized": "dragons",
         "aliases": [],
@@ -2225,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-5",
+        "id": "xlsx-cinema-easy-12-answer-5",
         "display": "Le Prince d'Égypte",
         "normalized": "le prince d egypte",
         "aliases": [],
@@ -2237,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-6",
+        "id": "xlsx-cinema-easy-12-answer-6",
         "display": "Megamind",
         "normalized": "megamind",
         "aliases": [],
@@ -2249,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-7",
+        "id": "xlsx-cinema-easy-12-answer-7",
         "display": "Baby Boss",
         "normalized": "baby boss",
         "aliases": [],
@@ -2261,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-8",
+        "id": "xlsx-cinema-easy-12-answer-8",
         "display": "Les Croods",
         "normalized": "les croods",
         "aliases": [],
@@ -2273,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-15-answer-9",
+        "id": "xlsx-cinema-easy-12-answer-9",
         "display": "Gang de requins",
         "normalized": "gang de requins",
         "aliases": [],
@@ -2286,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-15-bomb",
+      "id": "xlsx-cinema-easy-12-bomb",
       "display": "Toy Story",
       "normalized": "toy story",
       "aliases": [],
@@ -2302,20 +1900,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "894c17a5ac9ff46c0303f489deb0952540aa83428b81ce5fe8589e187c13c84a",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-cinema-easy-16",
-    "slug": "xlsx-cinema-easy-16",
+    "id": "xlsx-cinema-easy-13",
+    "slug": "xlsx-cinema-easy-13",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
+    "subthemeIds": [
+      "cinema:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "facile"
+    ],
     "questionText": "Cite 9 méchants célèbres du cinéma.",
     "shortTitle": "méchants célèbres du cinéma",
     "difficultyLevel": 1,
@@ -2331,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-16-answer-1",
+        "id": "xlsx-cinema-easy-13-answer-1",
         "display": "Dark Vador",
         "normalized": "dark vador",
         "aliases": [],
@@ -2343,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-2",
+        "id": "xlsx-cinema-easy-13-answer-2",
         "display": "Joker",
         "normalized": "joker",
         "aliases": [],
@@ -2355,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-3",
+        "id": "xlsx-cinema-easy-13-answer-3",
         "display": "Hannibal Lecter",
         "normalized": "hannibal lecter",
         "aliases": [],
@@ -2367,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-4",
+        "id": "xlsx-cinema-easy-13-answer-4",
         "display": "Voldemort",
         "normalized": "voldemort",
         "aliases": [],
@@ -2379,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-5",
+        "id": "xlsx-cinema-easy-13-answer-5",
         "display": "Thanos",
         "normalized": "thanos",
         "aliases": [],
@@ -2391,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-6",
+        "id": "xlsx-cinema-easy-13-answer-6",
         "display": "Scar",
         "normalized": "scar",
         "aliases": [],
@@ -2403,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-7",
+        "id": "xlsx-cinema-easy-13-answer-7",
         "display": "Sauron",
         "normalized": "sauron",
         "aliases": [],
@@ -2415,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-8",
+        "id": "xlsx-cinema-easy-13-answer-8",
         "display": "Cruella",
         "normalized": "cruella",
         "aliases": [],
@@ -2427,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-16-answer-9",
+        "id": "xlsx-cinema-easy-13-answer-9",
         "display": "Terminator T-1000",
         "normalized": "terminator t 1000",
         "aliases": [],
@@ -2440,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-16-bomb",
+      "id": "xlsx-cinema-easy-13-bomb",
       "display": "Forrest Gump",
       "normalized": "forrest gump",
       "aliases": [],
@@ -2456,482 +2059,25 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cff9cefc7bb72bd5c0e3c9e8c162e358b76b80ea44f9feb9528c93024614bac3",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   },
   {
-    "id": "xlsx-cinema-easy-17",
-    "slug": "xlsx-cinema-easy-17",
+    "id": "xlsx-cinema-easy-14",
+    "slug": "xlsx-cinema-easy-14",
     "language": "fr",
     "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 films avec Tom Hanks.",
-    "shortTitle": "films avec Tom Hanks",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-cinema-easy-17-answer-1",
-        "display": "Forrest Gump",
-        "normalized": "forrest gump",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-2",
-        "display": "Seul au monde",
-        "normalized": "seul au monde",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-3",
-        "display": "Il faut sauver le soldat Ryan",
-        "normalized": "il faut sauver le soldat ryan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-4",
-        "display": "Apollo 13",
-        "normalized": "apollo 13",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-5",
-        "display": "Philadelphia",
-        "normalized": "philadelphia",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-6",
-        "display": "Big",
-        "normalized": "big",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-7",
-        "display": "La Ligne verte",
-        "normalized": "la ligne verte",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-8",
-        "display": "Le Terminal",
-        "normalized": "le terminal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-17-answer-9",
-        "display": "Da Vinci Code",
-        "normalized": "da vinci code",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "subthemeIds": [
+      "cinema:essentials"
     ],
-    "bomb": {
-      "id": "xlsx-cinema-easy-17-bomb",
-      "display": "Titanic",
-      "normalized": "titanic",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "951b2fb4c0f226eda436222d354fa691737108f5f26e5cb414fb28923d7c6627",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-cinema-easy-18",
-    "slug": "xlsx-cinema-easy-18",
-    "language": "fr",
-    "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 films mettant en scène des dinosaures ou créatures préhistoriques.",
-    "shortTitle": "films mettant en scène des dinosaures ou créa…",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-cinema-easy-18-answer-1",
-        "display": "Jurassic Park",
-        "normalized": "jurassic park",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-2",
-        "display": "Le Monde perdu : Jurassic Park",
-        "normalized": "le monde perdu jurassic park",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-3",
-        "display": "Jurassic Park III",
-        "normalized": "jurassic park iii",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-4",
-        "display": "Jurassic World",
-        "normalized": "jurassic world",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-5",
-        "display": "Jurassic World: Fallen Kingdom",
-        "normalized": "jurassic world fallen kingdom",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-6",
-        "display": "Jurassic World : Le Monde d'après",
-        "normalized": "jurassic world le monde d apres",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-7",
-        "display": "Le Voyage d'Arlo",
-        "normalized": "le voyage d arlo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-8",
-        "display": "Dinosaure",
-        "normalized": "dinosaure",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-18-answer-9",
-        "display": "10 000",
-        "normalized": "10 000",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
+    "tags": [
+      "essentials",
+      "facile"
     ],
-    "bomb": {
-      "id": "xlsx-cinema-easy-18-bomb",
-      "display": "Jaws",
-      "normalized": "jaws",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "71fef44a55356091b3c57f0f7a0ecd9a2bf1522a5ab67632299a15b35cc83644",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-cinema-easy-19",
-    "slug": "xlsx-cinema-easy-19",
-    "language": "fr",
-    "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
-    "questionText": "Cite 9 sagas ou franchises de cinéma connues.",
-    "shortTitle": "sagas ou franchises de cinéma connues",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-cinema-easy-19-answer-1",
-        "display": "Star Wars",
-        "normalized": "star wars",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-2",
-        "display": "Harry Potter",
-        "normalized": "harry potter",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-3",
-        "display": "James Bond",
-        "normalized": "james bond",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-4",
-        "display": "Fast & Furious",
-        "normalized": "fast furious",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-5",
-        "display": "Mission: Impossible",
-        "normalized": "mission impossible",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-6",
-        "display": "Jurassic Park",
-        "normalized": "jurassic park",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-7",
-        "display": "Rocky",
-        "normalized": "rocky",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-8",
-        "display": "Indiana Jones",
-        "normalized": "indiana jones",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-cinema-easy-19-answer-9",
-        "display": "Le Seigneur des anneaux",
-        "normalized": "le seigneur des anneaux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-cinema-easy-19-bomb",
-      "display": "Friends",
-      "normalized": "friends",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "093640460f93c5b2310eda6d0076bf7e7d2d7dbd4fdbcc7ff96ae883fa0fffae",
-    "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
-  },
-  {
-    "id": "xlsx-cinema-easy-20",
-    "slug": "xlsx-cinema-easy-20",
-    "language": "fr",
-    "themeId": "cinema",
-    "subthemeIds": ["cinema:essentials"],
-    "tags": ["essentials", "facile"],
     "questionText": "Cite 9 métiers du cinéma.",
     "shortTitle": "métiers du cinéma",
     "difficultyLevel": 1,
@@ -2947,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-cinema-easy-20-answer-1",
+        "id": "xlsx-cinema-easy-14-answer-1",
         "display": "Acteur",
         "normalized": "acteur",
         "aliases": [],
@@ -2959,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-2",
+        "id": "xlsx-cinema-easy-14-answer-2",
         "display": "Réalisateur",
         "normalized": "realisateur",
         "aliases": [],
@@ -2971,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-3",
+        "id": "xlsx-cinema-easy-14-answer-3",
         "display": "Scénariste",
         "normalized": "scenariste",
         "aliases": [],
@@ -2983,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-4",
+        "id": "xlsx-cinema-easy-14-answer-4",
         "display": "Producteur",
         "normalized": "producteur",
         "aliases": [],
@@ -2995,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-5",
+        "id": "xlsx-cinema-easy-14-answer-5",
         "display": "Monteur",
         "normalized": "monteur",
         "aliases": [],
@@ -3007,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-6",
+        "id": "xlsx-cinema-easy-14-answer-6",
         "display": "Chef opérateur",
         "normalized": "chef operateur",
         "aliases": [],
@@ -3019,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-7",
+        "id": "xlsx-cinema-easy-14-answer-7",
         "display": "Costumier",
         "normalized": "costumier",
         "aliases": [],
@@ -3031,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-8",
+        "id": "xlsx-cinema-easy-14-answer-8",
         "display": "Maquilleur",
         "normalized": "maquilleur",
         "aliases": [],
@@ -3043,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-cinema-easy-20-answer-9",
+        "id": "xlsx-cinema-easy-14-answer-9",
         "display": "Cascadeur",
         "normalized": "cascadeur",
         "aliases": [],
@@ -3056,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-cinema-easy-20-bomb",
+      "id": "xlsx-cinema-easy-14-bomb",
       "display": "Arbitre",
       "normalized": "arbitre",
       "aliases": [],
@@ -3072,11 +2218,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-17T20:12:38.658Z",
+    "reviewedAt": "2026-08-20T23:26:58.248Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f4e09d6e8ab21cba0ed0ca35d436217a8133064b2e21746528e0cb9f85e60542",
     "version": 4,
-    "createdAt": "2026-08-17T20:12:38.658Z",
-    "updatedAt": "2026-08-17T20:12:38.658Z"
+    "createdAt": "2026-08-20T23:26:58.248Z",
+    "updatedAt": "2026-08-20T23:26:58.248Z"
   }
 ]

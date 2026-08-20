@@ -9,7 +9,6 @@ import {
   confirmChoice,
   confirmJokerTheme,
   confirmPhonePass,
-  confirmQuestionPreparation,
   continueFromScoreboard,
   continueFromThemeReveal,
   createGame,
@@ -24,13 +23,13 @@ import {
   imposeRandomTheme,
   isBombTurn,
   recoverTimer,
-  reopenTurnForCorrection,
   replayGame,
   selectJokerTheme,
   skipOpponentThemeJoker,
   startTimer,
   toggleAnswer,
   toggleBomb,
+  toggleTurnResultAnswer,
   undoLastAnswer,
   activateOpponentThemeJoker,
   activateThemeChoiceJoker,
@@ -67,8 +66,7 @@ function prepareQuestion(game: GameState, themeId: string, difficultyLevel: Diff
   const atDifficulty =
     game.status === "difficulty_selection" ? game : reachDifficultySelection(game);
   const selectedDifficulty = chooseDifficulty(atDifficulty, difficultyLevel, questions);
-  const confirmed = confirmChoice(selectedDifficulty, questions, () => 0);
-  const ready = confirmQuestionPreparation(confirmed);
+  const ready = confirmChoice(selectedDifficulty, questions, () => 0);
   const question = questions.find((candidate) => candidate.id === ready.currentQuestionId);
   if (!question) throw new Error("Question de test introuvable");
   return { ready, question };
@@ -87,14 +85,14 @@ describe("scoring", () => {
   it("uses the configured coefficients", () => {
     expect(calculateTurnScore(5, 1)).toBe(500);
     expect(calculateTurnScore(5, 2)).toBe(750);
-    expect(calculateTurnScore(5, 3)).toBe(1000);
-    expect(calculateTurnScore(9, 3)).toBe(1800);
+    expect(calculateTurnScore(5, 3)).toBe(1500);
+    expect(calculateTurnScore(9, 3)).toBe(2700);
   });
 
   it("deducts two correct answers when a bomb is triggered", () => {
     expect(calculateBombPenalty(1)).toBe(200);
     expect(calculateBombPenalty(2)).toBe(300);
-    expect(calculateBombPenalty(3)).toBe(400);
+    expect(calculateBombPenalty(3)).toBe(600);
     expect(calculateTurnScore(0, 2, true)).toBe(-300);
     expect(calculateTurnScore(1, 2, true)).toBe(-150);
   });
@@ -332,7 +330,7 @@ describe("timer and answer locking", () => {
     expect(new Set(twoAgain.revealedAnswerIds).size).toBe(2);
   });
 
-  it("reopens a completed turn and replaces its score without double counting", () => {
+  it("corrects a completed turn's answers in place without double counting the score", () => {
     const { ready, question } = prepareQuestion(reachDifficultySelection(), "science");
     const startedAt = 1_000;
     const active = startTimer(ready, startedAt);
@@ -340,19 +338,19 @@ describe("timer and answer locking", () => {
     const expired = expireTurn(oneAnswer, 91_000);
     const firstResult = finalizeTurn(expired, question, "Science", 92_000);
 
+    expect(firstResult.status).toBe("turn_results");
     expect(firstResult.teams[0]!.score).toBe(100);
     expect(firstResult.history).toHaveLength(1);
 
-    const correction = reopenTurnForCorrection(firstResult, 93_000);
-    expect(correction.status).toBe("answer_correction");
-    expect(correction.teams[0]!.score).toBe(0);
-    expect(correction.history).toHaveLength(0);
+    const corrected = toggleTurnResultAnswer(firstResult, question.answers[1]!.id, 93_000);
+    expect(corrected.status).toBe("turn_results");
+    expect(corrected.teams[0]!.score).toBe(200);
+    expect(corrected.history).toHaveLength(1);
+    expect(corrected.history[0]?.foundAnswerIds).toHaveLength(2);
 
-    const twoAnswers = toggleAnswer(correction, question.answers[1]!.id, question, 94_000);
-    const correctedResult = finalizeTurn(twoAnswers, question, "Science", 95_000);
-    expect(correctedResult.teams[0]!.score).toBe(200);
-    expect(correctedResult.history).toHaveLength(1);
-    expect(correctedResult.history[0]?.foundAnswerIds).toHaveLength(2);
+    const reverted = toggleTurnResultAnswer(corrected, question.answers[1]!.id, 94_000);
+    expect(reverted.teams[0]!.score).toBe(100);
+    expect(reverted.history[0]?.foundAnswerIds).toHaveLength(1);
   });
 });
 
