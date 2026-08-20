@@ -178,40 +178,8 @@ html[data-theme="light"] .brand-mark--plm {
   animation: point-enter 220ms ease-out;
 }
 
-.shake-button {
-  display: inline-flex;
-  width: 100%;
-  min-height: 3.65rem;
-  max-width: 22rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  border: 1px solid transparent;
-  border-radius: 1.15rem;
-  padding: 0.9rem 1.25rem;
-  background: var(--plm-accent);
-  color: #1a0f08;
-  cursor: pointer;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-align: center;
-  text-transform: uppercase;
-  box-shadow: 0 14px 40px var(--plm-accent-glow);
-  transition:
-    transform 120ms ease,
-    filter 120ms ease;
-}
-.shake-button:active {
-  transform: scale(0.98);
-}
-.shake-button:hover {
-  filter: brightness(1.05);
-}
-.shake-button:disabled {
-  cursor: default;
-  opacity: 0.75;
-}
-.shake-button[data-shaking="true"] {
+/* Shake animation (button uses .button--primary for styling) */
+.button[data-shaking="true"] {
   animation: shake-cta 550ms ease-in-out;
 }
 

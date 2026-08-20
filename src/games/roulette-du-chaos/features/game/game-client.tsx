@@ -130,7 +130,7 @@ export function GameClient() {
           ) : (
             <button
               type="button"
-              className="spin-button"
+              className="button button--primary"
               onClick={spin}
               disabled={game.phase !== "idle"}
             >

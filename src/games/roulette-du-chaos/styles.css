@@ -208,35 +208,7 @@ html[data-theme="light"] .brand-mark--rdc {
   object-fit: contain;
 }
 
-.spin-button {
-  display: inline-flex;
-  width: 100%;
-  min-height: 3.65rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  border: 1px solid transparent;
-  border-radius: 1.15rem;
-  padding: 0.9rem 1.25rem;
-  background: linear-gradient(120deg, #ffc94d, #b91c1c);
-  color: white;
-  cursor: pointer;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-align: center;
-  text-transform: uppercase;
-  box-shadow: 0 14px 40px var(--rdc-accent-glow);
-  transition:
-    transform 120ms ease,
-    filter 120ms ease;
-}
-.spin-button:active {
-  transform: scale(0.98);
-}
-.spin-button:disabled {
-  opacity: 0.55;
-  cursor: default;
-}
+/* Spin button uses .button--primary for styling */
 .category-badge {
   display: inline-flex;
   align-items: center;

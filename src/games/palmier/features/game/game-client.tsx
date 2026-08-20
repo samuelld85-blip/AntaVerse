@@ -104,7 +104,7 @@ export function GameClient() {
             <h1 className="game-end-title">Le palmier est vide</h1>
             <p className="game-end-subtitle">Vous avez tiré les 52 cartes.</p>
             <div className="game-end-actions">
-              <button type="button" className="shake-button" onClick={restart}>
+              <button type="button" className="button button--primary" onClick={restart}>
                 Rejouer <span aria-hidden="true">↻</span>
               </button>
               <button
@@ -152,7 +152,7 @@ export function GameClient() {
           <PalmTree stage={palmStage} />
           <button
             type="button"
-            className="shake-button"
+            className="button button--primary"
             onClick={shakeAndDraw}
             disabled={revealing}
             data-shaking={revealing}
