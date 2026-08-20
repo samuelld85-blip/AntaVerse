@@ -198,6 +198,39 @@ Quoi de 9 additionally has `lib/i18n` (a handful of shared strings for that
 game only) and `generated/` (build-time generated content). These are
 Quoi de 9-specific and not part of any shared layer.
 
+### Legal & support pages — `src/app/legal`, `src/app/support`
+
+Not a game: this is app-shell content (public, no login) covering privacy,
+legal notice, terms of use, responsible play, and support. It follows the
+same layering principle as the rest of the app:
+
+- `src/lib/legal/legal-config.ts` — the single source of truth for
+  publisher identity, support/privacy contact, host, and document dates.
+  Every legal page reads from here; nothing duplicates these values inline.
+  Unknown fields are the literal `TODO_BEFORE_STORE_RELEASE`, never a
+  fabricated value — see `docs/compliance/PUBLISHER_INFO_REQUIRED.md`.
+- `src/components/legal/todo-value.tsx` — renders a `legal-config` value,
+  or a visibly-marked placeholder when it's still TODO, so an unfilled
+  legal field can never silently ship looking complete.
+- `src/components/legal/legal-page-shell.tsx` — the shared header (back
+  link, title) and cross-navigation footer every `/legal/*` and `/support`
+  page renders through, the same "shared shell, page owns its content"
+  pattern as `games/shared/components/page-shell.tsx`.
+- `src/components/legal/clear-local-data-button.tsx` — the one piece of
+  interactivity on these pages; its key list (`LOCAL_STORAGE_KEYS`) must
+  stay in sync with every game's actual `STORAGE_KEY` and the Quoi de 9
+  IndexedDB name — see `docs/compliance/DATA_INVENTORY.md` for the
+  authoritative inventory this list is derived from.
+- `src/app/legal/page.tsx` is the hub; each subroute
+  (`confidentialite`, `mentions-legales`, `conditions-utilisation`,
+  `jeu-responsable`) and `src/app/support/page.tsx` are plain static
+  Server Components — no client state beyond the clear-data button.
+
+Styling lives in `globals.css` under a `.legal-*` class prefix, reusing the
+launcher's existing tokens (`--launcher-*`, `--text-*`) rather than
+introducing a second design-token set — these pages are meant to look like
+part of AntaVerse, not a bolted-on document viewer.
+
 ## Coupling found, and what was done about it
 
 This section records the actual audit findings — both the ones that were

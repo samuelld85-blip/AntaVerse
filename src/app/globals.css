@@ -431,8 +431,26 @@ html[data-theme="light"] .game-icon {
   font-weight: 700;
 }
 
+.launcher-footer-left,
+.launcher-footer-center,
+.launcher-footer-right {
+  flex: 1;
+}
+
+.launcher-footer-left {
+  text-align: left;
+}
+
+.launcher-footer-center {
+  text-align: center;
+}
+
+.launcher-footer-right {
+  text-align: right;
+}
+
 .launcher-footer a {
-  color: var(--launcher-ink);
+  color: var(--launcher-muted);
   text-underline-offset: 0.25rem;
 }
 
@@ -578,4 +596,225 @@ html[data-theme="light"] .game-icon {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* Pages légales / support (/legal, /support) — zone fonctionnelle et sobre,
+   volontairement sans le CTA coloré du launcher : voir CLAUDE.md § UI. */
+
+.legal-shell {
+  padding-bottom: 3rem;
+}
+
+.legal-title {
+  margin: 0 0 0.75rem;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.7rem, 7vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.legal-hub-intro {
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+  color: var(--launcher-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.legal-hub-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--launcher-line);
+  border-radius: var(--launcher-radius);
+  background: var(--launcher-surface);
+  text-decoration: none;
+  color: var(--launcher-ink);
+}
+
+.legal-hub-card strong {
+  font-size: 1rem;
+}
+
+.legal-hub-card span {
+  color: var(--launcher-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.legal-meta {
+  margin: 0 0 1.5rem;
+  color: var(--launcher-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.legal-intro {
+  margin-bottom: 1.5rem;
+}
+
+.legal-content {
+  max-width: 42rem;
+  color: var(--launcher-ink);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.legal-content h2 {
+  margin: 2rem 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.legal-content h3 {
+  margin: 1.4rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 750;
+}
+
+.legal-content p,
+.legal-content ul,
+.legal-content dl {
+  margin: 0 0 1rem;
+}
+
+.legal-content ul {
+  padding-left: 1.2rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.35rem;
+}
+
+.legal-content a {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.legal-content code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.35rem;
+  background: var(--surface-subtle);
+  font-size: 0.85em;
+}
+
+.legal-note {
+  color: var(--launcher-muted);
+  font-size: 0.85rem;
+}
+
+.legal-todo {
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.3rem;
+  background: var(--surface-subtle);
+  color: var(--launcher-muted);
+  font-size: 0.85em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.legal-callout {
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--launcher-line);
+  border-radius: var(--launcher-radius);
+  background: var(--surface-subtle);
+}
+
+.legal-callout p:last-child,
+.legal-callout ul:last-child {
+  margin-bottom: 0;
+}
+
+.legal-identity {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.legal-identity li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--launcher-line);
+}
+
+.legal-faq dt {
+  margin-top: 1rem;
+  font-weight: 750;
+}
+
+.legal-faq dd {
+  margin: 0.25rem 0 0;
+  color: var(--launcher-muted);
+}
+
+.legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--launcher-line);
+}
+
+.legal-nav a {
+  color: var(--launcher-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.legal-clear-trigger,
+.legal-clear-confirm-button {
+  min-height: 2.75rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--launcher-line);
+  border-radius: var(--radius-md);
+  background: var(--launcher-surface);
+  color: var(--launcher-ink);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.legal-clear-confirm {
+  padding: 1rem 1.1rem;
+  margin: 0 0 1rem;
+  border: 1px solid var(--launcher-line);
+  border-radius: var(--launcher-radius);
+  background: var(--surface-subtle);
+}
+
+.legal-clear-confirm p {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+}
+
+.legal-clear-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.legal-clear-confirm-button {
+  border-color: color-mix(in srgb, var(--antaverse-pink) 45%, var(--launcher-line));
+}
+
+.legal-clear-done {
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--launcher-radius);
+  background: var(--surface-subtle);
+  font-size: 0.88rem;
+}
+
+.launcher-footer-links {
+  display: flex;
+  gap: 1rem;
 }

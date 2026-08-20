@@ -40,6 +40,7 @@
 15. [Exemple complet d'une interaction](#15-exemple-complet-dune-interaction)
 16. [Lexique](#16-lexique)
 17. [« Comment j'ai construit AntaVerse »](#17-comment-jai-construit-antaverse)
+18. [Légal, support et publication sur les stores](#18-légal-support-et-publication-sur-les-stores)
 
 ---
 
@@ -1275,3 +1276,41 @@ Une version orale, courte, de tout ce qui précède.
 > régénère le contenu, exporte le site statique et prépare le cache PWA —
 > chaque branche obtient une URL de preview, et `main` est ce qui sert le
 > domaine de production.
+
+---
+
+## 18. Légal, support et publication sur les stores
+
+AntaVerse a un chantier de préparation aux stores (Apple App Store, Google
+Play), sans être encore soumise nulle part. Deux choses existent pour ça.
+
+**Dans l'app** : un petit ensemble de pages publiques, sans connexion ni
+compte — `/legal` (le hub), `/legal/confidentialite`,
+`/legal/mentions-legales`, `/legal/conditions-utilisation`,
+`/legal/jeu-responsable`, et `/support`. Accessibles depuis un lien discret
+en bas de l'écran d'accueil ("Informations & support"). Elles sont
+construites comme le reste de l'app — des Server Components statiques,
+partageant un même habillage (`src/components/legal/legal-page-shell.tsx`)
+et les tokens CSS du launcher — pas un système à part. Une seule source
+centralise l'identité de l'éditeur, le contact support et les dates de
+version (`src/lib/legal/legal-config.ts`) : les pages la lisent, rien n'est
+recopié à la main à plusieurs endroits. Tant que l'identité réelle de
+l'éditeur n'est pas connue, ces champs restent visiblement marqués comme
+à compléter plutôt que remplis avec une valeur inventée.
+
+**Hors de l'app** : un dossier de documentation
+(`docs/compliance/`, `docs/store/`) qui audite honnêtement ce qu'AntaVerse
+fait réellement aujourd'hui (quelles données, quel contenu lié à l'alcool,
+quelles dépendances) et prépare ce qu'il faudra remplir le jour de la
+soumission (App Privacy, Data Safety, classification d'âge, checklists
+Apple/Google). Ce n'est pas une preuve de conformité — juste une
+préparation, à revalider à chaque changement significatif (voir la règle
+correspondante dans `CLAUDE.md`).
+
+**PWA aujourd'hui, app native plus tard** : AntaVerse reste, à ce stade, un
+export statique servi comme PWA — rien de ce chantier n'introduit de
+wrapper natif, de projet Xcode ou Android. `docs/store/NATIVE_PACKAGING_OPTIONS.md`
+compare les options pour le jour où cette étape sera engagée (un wrapper de
+type Capacitor, ou une Trusted Web Activity côté Android), sans trancher à
+l'avance — et sans que ce choix change quoi que ce soit à l'architecture
+décrite dans les sections précédentes de ce document.

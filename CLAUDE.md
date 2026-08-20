@@ -99,30 +99,40 @@ Do **not** spawn subagents for routine or targeted tasks.
 
 Do not use subagents for:
 
-* small UI edits;
-* simple bugs;
-* content changes;
-* game-rule adjustments;
-* straightforward refactors;
-* changes whose relevant files are already known.
+- small UI edits;
+- simple bugs;
+- content changes;
+- game-rule adjustments;
+- straightforward refactors;
+- changes whose relevant files are already known.
 
 Use Explore or another subagent only when:
 
-* the relevant implementation cannot be located efficiently with targeted search;
-* the task genuinely spans several unknown areas of the codebase;
-* broad exploration would materially reduce pollution of the main context;
-* a complex bug has an unclear source;
-* the task is architectural or cross-cutting;
-* an architecture audit, codebase audit, duplicate search, or broad review was explicitly requested.
+- the relevant implementation cannot be located efficiently with targeted search;
+- the task genuinely spans several unknown areas of the codebase;
+- broad exploration would materially reduce pollution of the main context;
+- a complex bug has an unclear source;
+- the task is architectural or cross-cutting;
+- an architecture audit, codebase audit, duplicate search, or broad review was explicitly requested.
 
 When a subagent is justified:
 
-* keep its mission narrow;
-* prefer targeted searches over repository-wide reading;
-* return concise findings with exact file paths;
-* avoid duplicate exploration between the main agent and subagent.
+- keep its mission narrow;
+- prefer targeted searches over repository-wide reading;
+- return concise findings with exact file paths;
+- avoid duplicate exploration between the main agent and subagent.
 
-If an Explore agent configured with a lightweight model such as Haiku is available, prefer it for **genuinely necessary** codebase discovery.
+Do **not** force or explicitly select a lightweight model such as Haiku for subagents.
+
+Prefer the currently available/default subagent model chosen by Claude Code.
+
+If a subagent model is unavailable, misconfigured, rate-limited, or fails with an API/model-access error:
+
+- do not repeatedly retry the same failing subagent configuration;
+- do not block the task;
+- continue the work directly in the main agent;
+- use targeted repository search/read tools instead;
+- preserve the original task scope and validation expectations.
 
 Do **not** invoke Explore merely because it is available.
 
@@ -337,6 +347,31 @@ questions or content, local rule corrections, or minor bugfixes.
 
 When in doubt, prefer leaving it stale over expanding scope — flag the
 drift to the user rather than rewriting large sections proactively.
+
+## Legal / store compliance
+
+AntaVerse has a store-readiness compliance layer: legal/support pages
+(`/legal/*`, `/support`), a single identity source
+(`src/lib/legal/legal-config.ts`), and audit documentation
+(`docs/compliance/`, `docs/store/`).
+
+Whenever a change significantly touches any of: data collection, a new SDK,
+analytics, advertising, a user account/login system, UGC/social features,
+native permissions, monetization, subscriptions, or PWA/native packaging —
+check whether the relevant file(s) in `docs/compliance/` or `docs/store/`
+need updating, and whether `src/lib/legal/legal-config.ts` or the
+`/legal/*` pages need a corresponding change (e.g. a new data category, a
+new third-party service entry). Never claim AntaVerse "collects" or "does
+not collect", "shares" or "does not share" a given piece of data without
+re-checking the actual code — the existing docs describe what was true at
+their last verification date, not a permanent guarantee.
+
+For a small CSS or gameplay-rule change with no compliance implication,
+leave these files alone.
+
+Never invent publisher identity, legal, or contact information. Unknown
+fields stay `TODO_BEFORE_STORE_RELEASE` in `legal-config.ts` — never filled
+with a plausible-looking placeholder that could accidentally ship.
 
 ## Completion
 

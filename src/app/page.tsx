@@ -40,8 +40,13 @@ export default function HomePage() {
       </section>
 
       <footer className="launcher-footer">
-        <span>{games.length} jeux · 1 téléphone</span>
-        <Link href="/installer">Installer l’app</Link>
+        <span className="launcher-footer-left">{games.length} jeux · 1 téléphone</span>
+        <span className="launcher-footer-center">
+          <Link href="/installer">Installer l’app</Link>
+        </span>
+        <span className="launcher-footer-right">
+          <Link href="/legal">Informations &amp; support</Link>
+        </span>
       </footer>
     </main>
   );
