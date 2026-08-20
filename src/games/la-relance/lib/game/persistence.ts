@@ -24,7 +24,7 @@ function isGameState(value: unknown): value is GameState {
     game.schemaVersion === 1 &&
     (game.status === "playing" || game.status === "pointAwarded" || game.status === "finished") &&
     Array.isArray(game.teams) &&
-    game.teams.length === 2 &&
+    (game.teams.length === 2 || game.teams.length === 3) &&
     game.teams.every(
       (team) =>
         team &&

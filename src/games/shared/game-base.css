@@ -402,18 +402,21 @@ html[data-theme="light"] .button--primary:hover {
 }
 .scoreboard {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  /* Set inline by the caller as game.teams.length so 2- and 3-team games
+     both get equal-width columns instead of a fixed 2-column grid. */
+  grid-template-columns: repeat(var(--team-count, 2), 1fr);
   gap: 0.65rem;
 }
 .score-team {
   display: flex;
+  flex-direction: column;
   min-width: 0;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.15rem;
   border: 1px solid var(--line);
   border-radius: 1rem;
-  padding: 0.65rem 0.75rem;
+  padding: 0.55rem 0.75rem;
   background: var(--surface);
 }
 .score-team--1 {
@@ -422,17 +425,19 @@ html[data-theme="light"] .button--primary:hover {
 .score-team--2 {
   border-bottom: 3px solid var(--blue);
 }
+.score-team--3 {
+  border-bottom: 3px solid var(--orange);
+}
 .score-name {
-  min-width: 0;
+  max-width: 100%;
   overflow: hidden;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .score-value {
-  flex: 0 0 auto;
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 .theme-stage {
@@ -461,22 +466,22 @@ html[data-theme="light"] .button--primary:hover {
   color: var(--text);
 }
 .winner-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.7rem;
 }
 .winner-button {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: clamp(5.4rem, 15vh, 7.5rem);
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  min-height: 4.2rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
   overflow: hidden;
   border: 0;
   border-radius: 1.3rem;
-  padding: 1rem;
+  padding: 0.9rem 2.6rem 0.9rem 1.15rem;
   color: white;
   cursor: pointer;
   text-align: left;
@@ -485,7 +490,7 @@ html[data-theme="light"] .button--primary:hover {
     filter 120ms ease;
 }
 .winner-button:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 .winner-button:hover {
   filter: brightness(1.06);
@@ -495,25 +500,29 @@ html[data-theme="light"] .button--primary:hover {
 }
 .winner-button--2 {
   background: linear-gradient(135deg, #159ac4, var(--blue));
-  color: var(--ink);
+}
+.winner-button--3 {
+  background: linear-gradient(135deg, #cc4620, var(--orange));
 }
 .winner-button > span:first-child {
-  max-width: calc(100% - 2.2rem);
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .winner-button strong {
-  font-size: 1.25rem;
+  flex: 0 0 auto;
+  font-size: 1.1rem;
   text-transform: uppercase;
 }
 .winner-plus {
   position: absolute;
-  right: 0.85rem;
+  right: 0.9rem;
   top: 50%;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 950;
   opacity: 0.72;
   transform: translateY(-50%);
@@ -544,16 +553,6 @@ html[data-theme="light"] .button--primary:hover {
 .point-card h1 {
   margin-top: 0.7rem;
   font-size: clamp(2.8rem, 13vw, 4.5rem);
-}
-.point-score {
-  margin: 1.5rem 0;
-  font-size: clamp(2.8rem, 13vw, 4rem);
-  font-weight: 950;
-  line-height: 1;
-}
-.point-score span,
-.final-score span {
-  color: var(--muted);
 }
 .point-card .button {
   margin-top: auto;
@@ -776,7 +775,7 @@ html[data-theme="light"] .button--primary:hover {
     margin-top: 0.55rem;
   }
   .winner-button {
-    min-height: 4.6rem;
+    min-height: 3.6rem;
   }
   .point-badge {
     width: 4rem;
@@ -785,9 +784,6 @@ html[data-theme="light"] .button--primary:hover {
   }
   .point-card h1 {
     font-size: 2.8rem;
-  }
-  .point-score {
-    margin: 0.9rem 0;
   }
   .trophy {
     width: 3.8rem;

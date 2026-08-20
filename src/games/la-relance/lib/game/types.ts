@@ -1,7 +1,7 @@
-export type TeamIndex = 0 | 1;
+export type TeamIndex = number;
 
 export interface Team {
-  id: "team-1" | "team-2";
+  id: "team-1" | "team-2" | "team-3";
   name: string;
   color: string;
   score: number;
@@ -13,7 +13,7 @@ export interface GameState {
   schemaVersion: 1;
   id: string;
   status: GameStatus;
-  teams: [Team, Team];
+  teams: Team[];
   roundIndex: number;
   selectedThemeIds: string[];
   suddenDeath: boolean;
@@ -23,8 +23,7 @@ export interface GameState {
 }
 
 export interface CreateGameInput {
-  teamOneName: string;
-  teamTwoName: string;
+  teamNames: [string, string] | [string, string, string];
 }
 
 export interface Theme {

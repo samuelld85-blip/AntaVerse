@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Brand, LogoMark } from "@/games/sans-le-dire/components/brand";
 import { Button, ButtonLink } from "@/games/shared/components/ui";
@@ -305,7 +305,11 @@ function RoundResult({ game, onContinue }: { game: GameState; onContinue: () => 
 
 function Scoreboard({ game }: { game: GameState }) {
   return (
-    <section className="scoreboard" aria-label="Score général">
+    <section
+      className="scoreboard"
+      aria-label="Score général"
+      style={{ "--team-count": game.teams.length } as CSSProperties}
+    >
       {game.teams.map((team, index) => (
         <div className={`score-team score-team--${index + 1}`} key={team.id}>
           <span className="score-name">{team.name}</span>

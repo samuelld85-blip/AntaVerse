@@ -58,3 +58,62 @@ html[data-theme="light"] .brand-mark--la-relance {
   content: url("/brand/games/la-relance-light.png");
 }
 
+/* .game-shell's gap is shared by six games (see game-base.css) — scoped
+   here via :has() on La Relance's own brand mark so only this game gets
+   extra breathing room between the header, scoreboard and theme stage. */
+.game-shell:has(.brand-mark--la-relance) {
+  gap: clamp(1.3rem, 4.5vh, 2.25rem);
+}
+
+/* .result-card h1 is shared, but La Relance's default team names ("Les
+   Antagonistes"...) are long enough to overflow narrow phones at the
+   shared clamp's size — scoped down via the brand mark on the ancestor
+   .result-shell (Brand and .result-card are siblings, so :has() can't
+   target .result-card directly from its own selector). */
+.result-shell:has(.brand-mark--la-relance) .result-card h1 {
+  font-size: clamp(2.1rem, 9.5vw, 3.6rem);
+}
+
+/* The victory block must sit at the true vertical center of the viewport, so
+   the logo and the action buttons are both taken out of the flow: whatever
+   they measure, the remaining flex area still spans the full shell and the
+   card centers inside it. Absolute offsets resolve against the PADDING box,
+   which ignores .safe-shell's own padding — so the insets are restated here
+   to land exactly where both elements sat in flow. */
+.result-shell:has(.brand-mark--la-relance) {
+  position: relative;
+}
+
+/* Top-left, matching where the in-flow Brand sits on every other game's
+   result screen. */
+.result-shell:has(.brand-mark--la-relance) .brand {
+  position: absolute;
+  top: max(1rem, env(safe-area-inset-top));
+  left: max(1rem, env(safe-area-inset-left));
+}
+
+.result-shell:has(.brand-mark--la-relance) .result-card {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-shell:has(.brand-mark--la-relance) .result-actions {
+  position: absolute;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: max(1rem, env(safe-area-inset-left));
+  width: auto;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (max-height: 680px) {
+  .result-shell:has(.brand-mark--la-relance) .brand {
+    top: max(0.7rem, env(safe-area-inset-top));
+  }
+  .result-shell:has(.brand-mark--la-relance) .result-actions {
+    bottom: max(0.7rem, env(safe-area-inset-bottom));
+  }
+}
+

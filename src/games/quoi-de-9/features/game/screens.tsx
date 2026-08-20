@@ -936,15 +936,7 @@ export function ScoreboardScreen({
   game: GameState;
   onContinue: () => void;
 }) {
-  const teamA = game.teams[0];
-  const teamB = game.teams[1];
-  if (!teamA || !teamB) throw new Error("Équipes introuvables");
-  const leader =
-    teamA.score === teamB.score
-      ? null
-      : teamA.score > teamB.score
-        ? teamA
-        : teamB;
+  const standing = getWinner(game);
   return (
     <section className="flex flex-1 flex-col justify-center">
       <div className="text-center">
@@ -953,7 +945,9 @@ export function ScoreboardScreen({
         </p>
         <h1 className="display-face mt-3 text-6xl">Point scores.</h1>
         <p className="mt-3 text-sm text-white/62">
-          {leader ? `${leader.name} mène la partie.` : "Égalité parfaite pour le moment."}
+          {standing.kind === "winner"
+            ? `${standing.winner!.name} mène la partie.`
+            : "Égalité parfaite pour le moment."}
         </p>
       </div>
       <div className="mt-8 grid gap-3">

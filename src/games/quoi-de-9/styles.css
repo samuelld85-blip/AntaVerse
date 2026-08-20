@@ -18,9 +18,9 @@
 
 /* `--game-accent-ink` is shared by NAME with every other game's stylesheet,
    so it must never be declared on a bare `:root` — see ARCHITECTURE.md. Quoi
-   de 9's brand mark carries `.quoi-brand-mark`, which only exists while this
+   de 9's brand mark carries `.brand-mark--quoi-de-9`, which only exists while this
    game's pages are mounted. Dark theme: white ink on all color CTAs. */
-:root:has(.quoi-brand-mark) {
+:root:has(.brand-mark--quoi-de-9) {
   --game-accent-ink: #ffffff;
 }
 
@@ -43,7 +43,7 @@ html[data-theme="light"] {
   color-scheme: light;
 }
 
-html[data-theme="light"]:has(.quoi-brand-mark) {
+html[data-theme="light"]:has(.brand-mark--quoi-de-9) {
   /* Light theme: dark gray ink on all color CTAs. */
   --game-accent-ink: #222222;
 }
@@ -164,7 +164,7 @@ a {
   text-transform: uppercase;
 }
 
-html[data-theme="light"] .quoi-brand-mark {
+html[data-theme="light"] .brand-mark--quoi-de-9 {
   content: url("/brand/games/quoi-de-9-light.png");
 }
 

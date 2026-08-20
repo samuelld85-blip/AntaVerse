@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Brand, LogoMark } from "@/games/la-relance/components/brand";
 import { Button, ButtonLink } from "@/games/shared/components/ui";
@@ -11,6 +11,7 @@ import {
   continueGame,
   getCurrentTheme,
   getWinnerIndex,
+  hasTiedLeaders,
   replayGame,
 } from "@/games/la-relance/lib/game/engine";
 import {
@@ -105,13 +106,17 @@ export function GameClient() {
             </p>
           </section>
 
-          <section className="winner-actions" aria-label="Équipe gagnante de la manche">
+          <section
+            className="winner-actions"
+            aria-label="Équipe gagnante de la manche"
+            style={{ "--team-count": game.teams.length } as CSSProperties}
+          >
             {game.teams.map((team, index) => (
               <button
                 key={team.id}
                 type="button"
                 className={`winner-button winner-button--${index + 1}`}
-                onClick={() => selectWinner(index as TeamIndex)}
+                onClick={() => selectWinner(index)}
               >
                 <span>{team.name}</span>
                 <strong>gagne</strong>
@@ -137,13 +142,10 @@ export function GameClient() {
             <br />
             {pointWinner?.name} !
           </h1>
-          <p className="point-score">
-            {game.teams[0].score} <span>—</span> {game.teams[1].score}
-          </p>
           <Button onClick={nextStep}>
             {game.roundIndex < STANDARD_ROUNDS - 1
               ? "Thème suivant"
-              : game.teams[0].score === game.teams[1].score
+              : hasTiedLeaders(game)
                 ? "Lancer la mort subite"
                 : "Voir le résultat"}
             <span aria-hidden="true">→</span>
@@ -156,7 +158,11 @@ export function GameClient() {
 
 function Scoreboard({ game }: { game: GameState }) {
   return (
-    <section className="scoreboard" aria-label="Scores">
+    <section
+      className="scoreboard"
+      aria-label="Scores"
+      style={{ "--team-count": game.teams.length } as CSSProperties}
+    >
       {game.teams.map((team, index) => (
         <div className={`score-team score-team--${index + 1}`} key={team.id}>
           <span className="score-name">{team.name}</span>
@@ -190,19 +196,13 @@ function FinishedGame({
       </div>
       <Brand compact />
       <section className="result-card" aria-live="polite">
-        <p className="eyebrow">Victoire !</p>
-        <div className="trophy" aria-hidden="true">
-          ★
-        </div>
         <h1>
           {winner?.name}
           <br />
-          <span>remporte la partie !</span>
+          <span style={{ color: winner?.color }}>remporte la partie !</span>
         </h1>
         <p className="final-label">Score final</p>
-        <p className="final-score">
-          {game.teams[0].score} <span>—</span> {game.teams[1].score}
-        </p>
+        <Scoreboard game={game} />
         <div className="result-actions">
           <Button onClick={onReplay}>
             Rejouer <span aria-hidden="true">↻</span>

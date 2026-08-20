@@ -153,7 +153,12 @@ assumptions baked in:
   every participant-setup screen (team cards and player cards): badge, side
   bar, tinted gradient, name field, and remove button. Team games pass a
   `TEAM_PALETTE` color by index; individual games pass their own game
-  accent — same component, different color source.
+  accent — same component, different color source. `AddParticipantButton` is
+  used unmodified by six setup forms (Quoi de 9, Sans le dire, Purple,
+  Triman, Roulette du Chaos, Palmier) and follows the stable-contract
+  pattern: a generic button (+ label) with optional `disabled` and optional
+  `color`. La Relance has no such button (two teams are fixed, not
+  variable).
 - `lib/participant-list.ts` + `lib/use-player-fields.ts` — the shared
   player-list convention for individual games (Purple, Triman, Roulette du
   Chaos, Palmier): a screen may pre-fill more fields than the game's
@@ -287,6 +292,17 @@ considered and rejected.
    in behavior, by two or more games.** Never create a shared abstraction
    for a single current use case "because a second game will probably need
    it later."
+
+   **Refinement**: what matters is a _stable conceptual contract_, not
+   byte-identical code. `ParticipantCard` proves this: a team card and a
+   player card are structurally different (badge is a letter vs. a number,
+   colors come from different sources), but they share the same contract
+   (badge + tinted gradient + name input + optional remove button + optional
+   error). Parameterized over color and badge, a single component served
+   both. If two implementations share the same contract and divergence is
+   only in data-passing, extraction is justified even if not 100%
+   identical.
+
 2. **Prefer the Rule of Three, but don't wait for three when two are already
    byte-identical and low-risk to parameterize** (as with `page-shell.tsx`
    and `resume-game-card.tsx` here). Do wait for three — or just leave

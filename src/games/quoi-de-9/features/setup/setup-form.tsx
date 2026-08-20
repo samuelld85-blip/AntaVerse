@@ -29,6 +29,7 @@ export function SetupForm({ mode }: { mode: GameMode }) {
   function removeThirdTeam() {
     setHasThirdTeam(false);
     setTeamCName("");
+    setRoundsPerTeam(5);
     // The third team could have been the one starting — fall back to team A.
     if (startingTeamIndex === 2) setStartingTeamIndex(0);
   }
@@ -126,7 +127,13 @@ export function SetupForm({ mode }: { mode: GameMode }) {
         </div>
 
         {!hasThirdTeam && (
-          <AddParticipantButton onClick={() => setHasThirdTeam(true)} color={TEAM_PALETTE[2]}>
+          <AddParticipantButton
+            onClick={() => {
+              setHasThirdTeam(true);
+              setRoundsPerTeam(3);
+            }}
+            color={TEAM_PALETTE[2]}
+          >
             Ajouter une équipe
           </AddParticipantButton>
         )}

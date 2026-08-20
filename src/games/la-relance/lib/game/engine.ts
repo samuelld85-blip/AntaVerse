@@ -1,9 +1,12 @@
 import { shuffle } from "@/lib/random";
-import { createGameId, createTwoTeams } from "@/games/shared/lib/two-team-setup";
-import type { CreateGameInput, GameState, TeamIndex, Theme } from "./types";
+import { cleanTeamName, createGameId } from "@/games/shared/lib/two-team-setup";
+import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
+import type { CreateGameInput, GameState, Team, TeamIndex, Theme } from "./types";
 
 export const STANDARD_ROUNDS = 5;
 const REQUIRED_THEME_COUNT = STANDARD_ROUNDS + 1;
+const DEFAULT_TEAM_NAMES = ["Les Antagonistes", "Les Sanglieeers", "Les Ouragans"] as const;
+const TEAM_IDS = ["team-1", "team-2", "team-3"] as const;
 
 export function createGame(
   input: CreateGameInput,
@@ -20,14 +23,18 @@ export function createGame(
   }
 
   const timestamp = new Date(now).toISOString();
+  const teams: Team[] = input.teamNames.map((name, index) => ({
+    id: TEAM_IDS[index]!,
+    name: cleanTeamName(name, DEFAULT_TEAM_NAMES[index]!),
+    color: TEAM_PALETTE[index]!,
+    score: 0,
+  }));
+
   return {
     schemaVersion: 1,
     id: createGameId(now, random),
     status: "playing",
-    teams: createTwoTeams({
-      teamOneName: input.teamOneName,
-      teamTwoName: input.teamTwoName,
-    }),
+    teams,
     roundIndex: 0,
     selectedThemeIds,
     suddenDeath: false,
@@ -39,8 +46,9 @@ export function createGame(
 
 export function awardPoint(game: GameState, winnerIndex: TeamIndex, now = Date.now()): GameState {
   assertStatus(game, "playing");
-  const teams: GameState["teams"] = [{ ...game.teams[0] }, { ...game.teams[1] }];
-  teams[winnerIndex].score += 1;
+  const teams = game.teams.map((team, index) =>
+    index === winnerIndex ? { ...team, score: team.score + 1 } : team,
+  );
 
   return {
     ...game,
@@ -49,6 +57,12 @@ export function awardPoint(game: GameState, winnerIndex: TeamIndex, now = Date.n
     lastPointWinner: winnerIndex,
     updatedAt: new Date(now).toISOString(),
   };
+}
+
+/** True when two or more teams share the lead — the case a decider round must resolve. */
+export function hasTiedLeaders(game: GameState): boolean {
+  const maxScore = Math.max(...game.teams.map((team) => team.score));
+  return game.teams.filter((team) => team.score === maxScore).length > 1;
 }
 
 export function continueGame(game: GameState, now = Date.now()): GameState {
@@ -64,7 +78,7 @@ export function continueGame(game: GameState, now = Date.now()): GameState {
     };
   }
 
-  if (game.teams[0].score === game.teams[1].score) {
+  if (hasTiedLeaders(game)) {
     return {
       ...game,
       status: "playing",
@@ -84,12 +98,10 @@ export function replayGame(
   random: () => number = Math.random,
   now = Date.now(),
 ): GameState {
-  return createGame(
-    { teamOneName: game.teams[0].name, teamTwoName: game.teams[1].name },
-    themes,
-    random,
-    now,
-  );
+  const teamNames = game.teams.map((team) => team.name) as
+    | [string, string]
+    | [string, string, string];
+  return createGame({ teamNames }, themes, random, now);
 }
 
 export function getCurrentTheme(game: GameState, themes: readonly Theme[]): Theme {
@@ -100,8 +112,10 @@ export function getCurrentTheme(game: GameState, themes: readonly Theme[]): Them
 }
 
 export function getWinnerIndex(game: GameState): TeamIndex | null {
-  if (game.teams[0].score === game.teams[1].score) return null;
-  return game.teams[0].score > game.teams[1].score ? 0 : 1;
+  const maxScore = Math.max(...game.teams.map((team) => team.score));
+  const leaders = game.teams.filter((team) => team.score === maxScore);
+  if (leaders.length > 1) return null;
+  return game.teams.findIndex((team) => team.score === maxScore);
 }
 
 function assertStatus(game: GameState, expected: GameState["status"]): void {

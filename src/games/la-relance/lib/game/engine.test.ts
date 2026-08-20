@@ -6,13 +6,15 @@ import {
   continueGame,
   createGame,
   getCurrentTheme,
+  getWinnerIndex,
+  hasTiedLeaders,
   replayGame,
 } from "./engine";
 
 describe("moteur de La Relance", () => {
   it("prépare cinq manches et un thème de réserve avec des thèmes uniques", () => {
     const game = createGame(
-      { teamOneName: "Les Verts", teamTwoName: "Les Bleus" },
+      { teamNames: ["Les Verts", "Les Bleus"] },
       themes,
       seededRandom(42),
       1_000,
@@ -25,11 +27,7 @@ describe("moteur de La Relance", () => {
   });
 
   it("attribue un point par manche et termine une partie normale après cinq manches", () => {
-    let game = createGame(
-      { teamOneName: "Équipe 1", teamTwoName: "Équipe 2" },
-      themes,
-      seededRandom(1),
-    );
+    let game = createGame({ teamNames: ["Équipe 1", "Équipe 2"] }, themes, seededRandom(1));
 
     for (let round = 0; round < STANDARD_ROUNDS; round += 1) {
       game = awardPoint(game, round < 3 ? 0 : 1);
@@ -41,26 +39,22 @@ describe("moteur de La Relance", () => {
   });
 
   it("conserve la gestion de la mort subite pour un état à égalité", () => {
-    let game = createGame(
-      { teamOneName: "Équipe 1", teamTwoName: "Équipe 2" },
-      themes,
-      seededRandom(2),
-    );
+    let game = createGame({ teamNames: ["Équipe 1", "Équipe 2"] }, themes, seededRandom(2));
 
     game = {
       ...game,
       roundIndex: STANDARD_ROUNDS - 1,
       teams: [
-        { ...game.teams[0], score: 2 },
-        { ...game.teams[1], score: 2 },
+        { ...game.teams[0]!, score: 2 },
+        { ...game.teams[1]!, score: 2 },
       ],
     };
     game = awardPoint(game, 0);
     game = {
       ...game,
       teams: [
-        { ...game.teams[0], score: 2 },
-        { ...game.teams[1], score: 2 },
+        { ...game.teams[0]!, score: 2 },
+        { ...game.teams[1]!, score: 2 },
       ],
     };
     game = continueGame(game);
@@ -77,7 +71,7 @@ describe("moteur de La Relance", () => {
 
   it("rejoue avec les mêmes noms, les scores à zéro et une nouvelle sélection", () => {
     const first = createGame(
-      { teamOneName: "Les Éclairs", teamTwoName: "Les Comètes" },
+      { teamNames: ["Les Éclairs", "Les Comètes"] },
       themes,
       seededRandom(3),
       1_000,
@@ -88,6 +82,65 @@ describe("moteur de La Relance", () => {
     expect(replay.teams.map((team) => team.score)).toEqual([0, 0]);
     expect(replay.selectedThemeIds).not.toEqual(first.selectedThemeIds);
     expect(replay.status).toBe("playing");
+  });
+
+  it("crée une partie à 3 équipes avec la palette et des scores à zéro", () => {
+    const game = createGame(
+      { teamNames: ["A", "B", "C"] },
+      themes,
+      seededRandom(5),
+      1_000,
+    );
+
+    expect(game.teams).toHaveLength(3);
+    expect(game.teams.map((team) => team.name)).toEqual(["A", "B", "C"]);
+    expect(game.teams.map((team) => team.score)).toEqual([0, 0, 0]);
+    expect(new Set(game.teams.map((team) => team.color)).size).toBe(3);
+  });
+
+  it("attribue un point à la 3e équipe et termine la partie sur son avance", () => {
+    let game = createGame({ teamNames: ["A", "B", "C"] }, themes, seededRandom(6));
+
+    for (let round = 0; round < STANDARD_ROUNDS; round += 1) {
+      game = awardPoint(game, 2);
+      game = continueGame(game);
+    }
+
+    expect(game.status).toBe("finished");
+    expect(game.teams.map((team) => team.score)).toEqual([0, 0, 5]);
+    expect(getWinnerIndex(game)).toBe(2);
+  });
+
+  it("déclenche la mort subite pour une égalité à 3 équipes, même si une équipe est derrière", () => {
+    let game = createGame({ teamNames: ["A", "B", "C"] }, themes, seededRandom(7));
+    game = {
+      ...game,
+      roundIndex: STANDARD_ROUNDS - 1,
+      status: "pointAwarded",
+      teams: [
+        { ...game.teams[0]!, score: 3 },
+        { ...game.teams[1]!, score: 3 },
+        { ...game.teams[2]!, score: 1 },
+      ],
+    };
+
+    expect(hasTiedLeaders(game)).toBe(true);
+    game = continueGame(game);
+    expect(game.status).toBe("playing");
+    expect(game.suddenDeath).toBe(true);
+
+    game = awardPoint(game, 1);
+    expect(game.status).toBe("finished");
+    expect(getWinnerIndex(game)).toBe(1);
+  });
+
+  it("rejoue une partie à 3 équipes en conservant les trois noms", () => {
+    const game = createGame({ teamNames: ["A", "B", "C"] }, themes, seededRandom(8), 1_000);
+    const replay = replayGame(game, themes, seededRandom(11), 2_000);
+
+    expect(replay.teams).toHaveLength(3);
+    expect(replay.teams.map((team) => team.name)).toEqual(["A", "B", "C"]);
+    expect(replay.teams.map((team) => team.score)).toEqual([0, 0, 0]);
   });
 });
 
