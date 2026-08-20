@@ -384,6 +384,11 @@ a {
   box-shadow: inset 0 0 0 0.35rem var(--launcher-icon-ring);
 }
 
+html[data-theme="light"] .game-icon {
+  border-color: color-mix(in srgb, var(--game-accent) 72%, transparent);
+  box-shadow: none;
+}
+
 .game-icon img {
   width: 78%;
   height: 78%;

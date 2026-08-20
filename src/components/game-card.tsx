@@ -1,12 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { GameDefinition } from "@/lib/games";
+import { useThemeMode } from "@/lib/use-theme-mode";
 
 export function GameCard({ game, index }: { game: GameDefinition; index: number }) {
+  const { theme } = useThemeMode("dark");
+  const iconSrc = theme === "light" && game.iconLight ? game.iconLight : game.icon;
+
   const style = {
     "--game-accent": game.accent,
-    "--icon-background": game.iconBackground,
+    "--icon-background": theme === "light" ? "transparent" : game.iconBackground,
   } as CSSProperties;
 
   return (
@@ -22,7 +28,7 @@ export function GameCard({ game, index }: { game: GameDefinition; index: number 
           {(game.drinkingGame || game.modes?.includes("fun")) && <span>🍺</span>}
         </span>
         <span className="game-icon" aria-hidden="true">
-          <Image src={game.icon} alt="" width={88} height={88} sizes="72px" />
+          <Image src={iconSrc} alt="" width={88} height={88} sizes="72px" />
         </span>
         <span className="game-copy">
           <strong>{game.name}</strong>
