@@ -47,13 +47,13 @@ html[data-theme="light"]:has(.brand-mark--plm) {
 }
 .brand-mark {
   display: block;
-  width: 9.5rem;
+  width: 8rem;
   height: auto;
   flex: 0 0 auto;
   object-fit: contain;
 }
 .brand-mark--small {
-  width: 7rem;
+  width: 6rem;
 }
 html[data-theme="light"] .brand-mark--plm {
   content: url("/brand/games/palmier-light.png");
