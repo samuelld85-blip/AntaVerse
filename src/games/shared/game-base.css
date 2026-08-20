@@ -864,3 +864,13 @@ html[data-theme="light"] .button--primary:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+.mode-selection-button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+}
+
+.mode-selection-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
