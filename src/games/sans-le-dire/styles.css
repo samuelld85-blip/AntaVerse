@@ -1,17 +1,17 @@
 /* Game identity — see GameAccent in shared/lib/game-accent.ts for the
-   main/dark/light convention. Sans le dire's own accent (emerald) is
-   distinct from the shared team-color palette: never use these vars for
-   anything that represents a specific team. */
+   main/dark/light convention. Sans le dire's own accent (cyan) mirrors
+   Quoi de 9's palette and is distinct from the shared team-color palette:
+   never use these vars for anything that represents a specific team. */
 :root {
-  --sld-accent: #10b981;
-  --sld-accent-dark: #064e3b;
-  --sld-accent-light: #34d399;
-  --sld-accent-glow: rgba(16, 185, 129, 0.2);
+  --sld-accent: #16c7e8;
+  --sld-accent-dark: #0a5f7a;
+  --sld-accent-light: #4dd9ff;
+  --sld-accent-glow: rgba(22, 199, 232, 0.2);
 }
 html[data-theme="light"] {
-  --sld-accent: #059669;
-  --sld-accent-dark: #064e3b;
-  --sld-accent-light: #10b981;
+  --sld-accent: #087f99;
+  --sld-accent-dark: #0a5f7a;
+  --sld-accent-light: #16c7e8;
 }
 
 /* --game-accent* is shared by NAME across every game's stylesheet, and

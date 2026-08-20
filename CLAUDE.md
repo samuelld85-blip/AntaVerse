@@ -256,6 +256,7 @@ For copy-only, label, content, or other non-behavioral edits:
 
 Do not automatically run the full test suite, full build, or `npm run verify` for a trivial change.
 
+
 ### Medium change
 
 Run:
@@ -340,3 +341,8 @@ For long tasks:
 * avoid repeating previously established context;
 * avoid reopening completed areas unless necessary;
 * stay focused on the requested outcome.
+
+
+## Global 
+
+For local visual verification, prefer the existing npm run dev server on http://localhost:3000. Only start/restart a server if that endpoint is unavailable or stale.
