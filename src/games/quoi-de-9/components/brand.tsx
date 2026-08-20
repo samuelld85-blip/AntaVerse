@@ -13,7 +13,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
         alt="Quoi des 9"
         width={1072}
         height={696}
-        className={compact ? "quoi-brand-mark h-8 w-auto" : "quoi-brand-mark h-12 w-auto"}
+        className={compact ? "quoi-brand-mark h-12 w-auto" : "quoi-brand-mark h-[6.5rem] w-auto"}
         priority
       />
     </Link>
