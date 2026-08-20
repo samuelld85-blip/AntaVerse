@@ -48,6 +48,7 @@ html[data-theme="light"]:has(.brand-mark--sans-le-dire) {
 }
 .brand-mark--small {
   width: 4.75rem;
+  height: auto;
 }
 
 html[data-theme="light"] .brand-mark--sans-le-dire {
