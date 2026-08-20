@@ -1,6 +1,6 @@
 # AntaVerse
 
-AntaVerse regroupe cinq jeux d’ambiance mobiles dans une seule application Next.js :
+AntaVerse regroupe sept jeux d’ambiance mobiles dans une seule application Next.js :
 
 ```text
 AntaVerse
@@ -9,7 +9,9 @@ AntaVerse
 ├── La Relance
 ├── Sans le dire
 ├── Purple
-└── Triman
+├── Triman
+├── Roulette du Chaos
+└── Palmier
 ```
 
 ## Lancer le projet

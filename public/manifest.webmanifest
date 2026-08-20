@@ -2,7 +2,7 @@
   "name": "AntaVerse",
   "short_name": "AntaVerse",
   "id": "/",
-  "description": "Cinq jeux d’ambiance, une seule application.",
+  "description": "Sept jeux d’ambiance, une seule application.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

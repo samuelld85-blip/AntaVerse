@@ -2,18 +2,27 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import sharp from "sharp";
 
+// "app" = referenced by public/manifest.webmanifest (PWA install icon).
+// "web" = referenced by src/app/layout.tsx's `icons` metadata (browser tab/favicon).
 const targets = [
-  [180, "apple-touch-icon.png"],
-  [192, "icon-192.png"],
-  [512, "icon-512.png"],
-  [512, "maskable-icon.png"],
+  ["app", 180, "apple-touch-icon.png"],
+  ["app", 192, "icon-192.png"],
+  ["app", 512, "icon-512.png"],
+  ["app", 512, "maskable-icon.png"],
+  ["web", 180, "apple-touch-icon.png"],
+  ["web", 192, "icon-192.png"],
+  ["web", 32, "favicon-32.png"],
 ];
 
-await mkdir(resolve("public", "icons"), { recursive: true });
-for (const [size, filename] of targets) {
-  await writeFile(resolve("public", "icons", filename), await createIcon(size));
+for (const dir of ["app", "web"]) {
+  await mkdir(resolve("public", "icons", dir), { recursive: true });
 }
-console.log(`Icônes PWA générées : ${targets.map(([, filename]) => filename).join(", ")}.`);
+for (const [dir, size, filename] of targets) {
+  await writeFile(resolve("public", "icons", dir, filename), await createIcon(size));
+}
+console.log(
+  `Icônes PWA générées : ${targets.map(([dir, , filename]) => `${dir}/${filename}`).join(", ")}.`,
+);
 
 async function createIcon(size) {
   const logo = await sharp(resolve("public", "brand", "antaverse-logo.png"))

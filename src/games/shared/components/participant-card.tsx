@@ -11,7 +11,7 @@ export interface ParticipantCardProps {
   error?: string;
   onRemove?: () => void;
   removeLabel?: string;
-  /** Spread onto the underlying <input> — supports both controlled state and react-hook-form's register(). */
+  /** Spread onto the underlying <input> — supports both controlled state and a ref-based form library's register(). */
   inputProps: InputHTMLAttributes<HTMLInputElement> & { ref?: Ref<HTMLInputElement> };
   /** Badge text color when the default dark ink doesn't have enough contrast. */
   badgeInk?: string;

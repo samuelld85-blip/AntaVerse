@@ -46,6 +46,10 @@ interface GameDatabase extends DBSchema {
 
 let databasePromise: Promise<IDBPDatabase<GameDatabase>> | null = null;
 const FALLBACK_STORAGE_KEY = "qui-des-9:current-game";
+// Last-resort fallback below IndexedDB and localStorage: some WebKit private-
+// browsing modes throw on both (IndexedDB unavailable, localStorage.setItem
+// quota-capped at 0), but still allow window.name, which survives reloads
+// (though not tab close) — see HOW_ANTAVERSE_WORKS.md §7.
 const WINDOW_NAME_PREFIX = "qui-des-9-game:";
 
 function database(): Promise<IDBPDatabase<GameDatabase>> {

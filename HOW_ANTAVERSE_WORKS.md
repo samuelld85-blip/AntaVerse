@@ -61,10 +61,6 @@ Aujourd'hui, sept jeux sont enregistrés dans l'app (voir
 - **Purple**, **Triman**, **Roulette du Chaos**, **Palmier** — jeux à liste de
   joueurs (pas d'équipes fixes).
 
-> Note : `ARCHITECTURE.md` a été écrit quand l'app comptait cinq jeux ; deux
-> se sont ajoutés depuis (Roulette du Chaos, Palmier) sans changer les règles
-> structurelles qu'il décrit — elles s'appliquent identiquement aux sept.
-
 ### Architecture générale, en une image
 
 ```mermaid
@@ -799,13 +795,18 @@ redéfinit `.theme-selector`.
   `<slug>-light.png` (une paire par thème, par jeu) — référencées
   directement dans `src/lib/games.ts` (`icon`/`iconLight`), et choisies au
   runtime par `game-card.tsx` selon le thème actif.
-- **Icônes web/PWA** : `public/icons/apple-touch-icon.png` (180px),
-  `icon-192.png`, `icon-512.png`, `maskable-icon.png` (512px) — **générées**,
-  pas dessinées à la main, par `scripts/generate-pwa-icons.mjs` : le script
-  utilise `sharp` pour composer le logo source (redimensionné, ~86 %×70 % de
-  la cible) sur un fond carré `#0B1118`, en plusieurs tailles. Une icône
-  "maskable" a une marge de sécurité pour que les OS puissent la découper en
-  cercle/squircle sans rogner le logo.
+- **Icônes web/PWA** : séparées en deux dossiers selon leur consommateur —
+  `public/icons/app/` (`icon-192.png`, `icon-512.png`, `maskable-icon.png`,
+  `apple-touch-icon.png`), référencé par `public/manifest.webmanifest` (icône
+  d'installation PWA), et `public/icons/web/` (`icon-192.png`,
+  `apple-touch-icon.png`, `favicon-32.png`), référencé par les métadonnées
+  `icons` de `src/app/layout.tsx` (favicon/onglet navigateur). Les deux
+  dossiers sont **générés**, pas dessinés à la main, par
+  `scripts/generate-pwa-icons.mjs` : le script utilise `sharp` pour composer
+  le logo source (redimensionné, ~86 %×70 % de la cible) sur un fond carré
+  `#0B1118`, en plusieurs tailles. Une icône "maskable" a une marge de
+  sécurité pour que les OS puissent la découper en cercle/squircle sans
+  rogner le logo.
 - **Manifest** : `public/manifest.webmanifest` référence ces icônes — voir
   §10.
 

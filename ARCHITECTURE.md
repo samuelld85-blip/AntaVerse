@@ -1,12 +1,13 @@
 # Architecture
 
 AntaVerse is a small collection of party games — **Quoi de 9 ?**, **La
-Relance**, **Sans le dire**, **Purple**, **Triman** — served from one Next.js
-app and exported statically. This document describes the layers that exist
-today, the boundaries between them, and the rules a future contributor (human
-or AI) should follow when adding or changing code. It reflects the current
-scale of the app (five games, a handful of contributors) — it is deliberately
-not an attempt to future-proof for a scale AntaVerse doesn't have yet.
+Relance**, **Sans le dire**, **Purple**, **Triman**, **Roulette du Chaos**,
+**Palmier** — served from one Next.js app and exported statically. This
+document describes the layers that exist today, the boundaries between them,
+and the rules a future contributor (human or AI) should follow when adding or
+changing code. It reflects the current scale of the app (seven games, a
+handful of contributors) — it is deliberately not an attempt to future-proof
+for a scale AntaVerse doesn't have yet.
 
 For a longer, pedagogical walkthrough of how the app actually works end to
 end (stack, routing, a game's full lifecycle, persistence, PWA, deployment),
@@ -22,12 +23,14 @@ src/
   components/      → app-shell UI (home page, cross-game chrome)
   lib/             → app-wide, game-agnostic utilities
   games/
-    shared/        → infrastructure used by 2+ games, never by only one
-    la-relance/     ┐
-    quoi-de-9/      │
-    sans-le-dire/   ├─ one folder per game, self-contained
-    purple/         │
-    triman/         ┘
+    shared/             → infrastructure used by 2+ games, never by only one
+    la-relance/          ┐
+    quoi-de-9/           │
+    sans-le-dire/        │
+    purple/               ├─ one folder per game, self-contained
+    triman/               │
+    roulette-du-chaos/   │
+    palmier/              ┘
 ```
 
 ### `src/app` — routing shell
