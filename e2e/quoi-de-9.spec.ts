@@ -1,23 +1,15 @@
 import { expect, test } from "@playwright/test";
 
-test("defaults to light mode and persists the selected appearance", async ({ page }) => {
+test("defaults to dark mode and persists the selected appearance", async ({ page }) => {
   await page.goto("/quoi-de-9");
 
   const lightMode = page.getByRole("button", { name: /mode clair/i });
   const darkMode = page.getByRole("button", { name: /mode sombre/i });
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
-  await expect(lightMode).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(darkMode).toHaveAttribute("aria-pressed", "true");
   await expect
     .poll(() => page.evaluate(() => document.documentElement.scrollHeight <= window.innerHeight))
     .toBe(true);
-
-  await darkMode.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-  await expect
-    .poll(() => page.evaluate(() => document.documentElement.scrollHeight <= window.innerHeight))
-    .toBe(true);
-  await page.reload();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
 
   await expect(lightMode).toBeEnabled();
   await lightMode.click();
@@ -33,7 +25,8 @@ test("defaults to light mode and persists the selected appearance", async ({ pag
 
 test("creates a local game and reaches theme selection", async ({ page }) => {
   await page.goto("/quoi-de-9");
-  await page.getByRole("link", { name: /nouvelle partie/i }).click();
+  await page.getByRole("link", { name: /^jouer/i }).click();
+  await page.getByRole("button", { name: /compétition/i }).click();
   await expect(page.getByRole("heading", { name: /composez vos équipes/i })).toBeVisible();
   await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled();
   await page.getByRole("button", { name: /lancer la partie/i }).click();
@@ -46,6 +39,7 @@ test("creates a local game and reaches theme selection", async ({ page }) => {
 
 test("keeps typographic apostrophes in team names", async ({ page }) => {
   await page.goto("/quoi-de-9/creer");
+  await page.getByRole("button", { name: /compétition/i }).click();
   const launchButton = page.getByRole("button", { name: /lancer la partie/i });
   await expect(launchButton).toBeEnabled({ timeout: 15_000 });
   const teamName = page.getByLabel("Équipe A", { exact: true });
@@ -59,6 +53,7 @@ test("keeps typographic apostrophes in team names", async ({ page }) => {
 
 test("shows the original French question on results and after refresh", async ({ page }) => {
   await page.goto("/quoi-de-9/creer");
+  await page.getByRole("button", { name: /compétition/i }).click();
   await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled({
     timeout: 15_000,
   });
@@ -93,6 +88,7 @@ test("shows the original French question on results and after refresh", async ({
 
 test("shows a black bomb banner on the second question of an équipe", async ({ page }) => {
   await page.goto("/quoi-de-9/creer");
+  await page.getByRole("button", { name: /compétition/i }).click();
   await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled({
     timeout: 15_000,
   });
@@ -127,19 +123,19 @@ test("shows a black bomb banner on the second question of an équipe", async ({ 
 
 test("third team is ephemeral state until game launch", async ({ page }) => {
   await page.goto("/quoi-de-9/creer");
+  await page.getByRole("button", { name: /compétition/i }).click();
   await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled({
     timeout: 15_000,
   });
-  await page.getByRole("button", { name: /compétition/i }).click();
 
-  const addTeamButton = page.getByRole("button", { name: /\+ ajouter équipe 3/i });
+  const addTeamButton = page.getByRole("button", { name: /ajouter une équipe/i });
   await expect(addTeamButton).toBeVisible();
   await addTeamButton.click();
 
   const teamCInput = page.getByLabel("Équipe C", { exact: true });
   await expect(teamCInput).toBeVisible();
 
-  const removeTeamButton = page.getByRole("button", { name: /supprimer équipe c/i });
+  const removeTeamButton = page.getByRole("button", { name: /supprimer l.équipe 3/i });
   await expect(removeTeamButton).toBeVisible();
   await removeTeamButton.click();
 
@@ -149,12 +145,12 @@ test("third team is ephemeral state until game launch", async ({ page }) => {
 
 test("third team persists when game is launched", async ({ page }) => {
   await page.goto("/quoi-de-9/creer");
+  await page.getByRole("button", { name: /compétition/i }).click();
   await expect(page.getByRole("button", { name: /lancer la partie/i })).toBeEnabled({
     timeout: 15_000,
   });
-  await page.getByRole("button", { name: /compétition/i }).click();
 
-  await page.getByRole("button", { name: /\+ ajouter équipe 3/i }).click();
+  await page.getByRole("button", { name: /ajouter une équipe/i }).click();
   await page.getByLabel("Équipe C", { exact: true }).fill("Équipe C");
   await page.getByRole("button", { name: /lancer la partie/i }).click();
 

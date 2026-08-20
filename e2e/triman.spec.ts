@@ -20,6 +20,7 @@ test("finds the Triman, stacks the Triman and doubles rules, and keeps the rolle
   await expect(page).toHaveURL(/\/joueurs\/?$/u);
 
   const names = ["Alice", "Bob", "Chris", "Dana"];
+  await page.getByRole("button", { name: /ajouter un joueur/i }).click();
   for (const [index, name] of names.entries()) {
     await page.getByLabel(`Nom du joueur ${index + 1}`).fill(name);
   }

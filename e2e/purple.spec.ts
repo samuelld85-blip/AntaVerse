@@ -5,12 +5,13 @@ test("sets up players, plays guesses, and can pass once eligible on mobile", asy
   await page.getByRole("link", { name: /^jouer/i }).click();
 
   await expect(page).toHaveURL(/\/joueurs\/?$/u);
+  await page.getByRole("button", { name: /retirer le joueur 3/i }).click();
   await page.getByLabel("Joueur 1").fill("Samuel");
   await page.getByLabel("Joueur 2").fill("Emma");
-  await page.getByRole("button", { name: /commencer la partie/i }).click();
+  await page.getByRole("button", { name: /lancer la partie/i }).click();
 
   await expect(page).toHaveURL(/\/partie\/?$/u);
-  const turnName = page.locator(".purple-turn-name");
+  const turnName = page.locator(".purple-active-name");
   await expect(turnName).toBeVisible();
   const startingPlayer = (await turnName.textContent())?.trim();
   expect(["Samuel", "Emma"]).toContain(startingPlayer);

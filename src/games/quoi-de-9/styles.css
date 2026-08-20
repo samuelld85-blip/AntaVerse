@@ -108,6 +108,7 @@ a {
   height: 100dvh;
   min-height: 0;
   overflow: hidden;
+  padding-top: max(0.5rem, env(safe-area-inset-top));
 }
 
 @media (min-width: 640px) {

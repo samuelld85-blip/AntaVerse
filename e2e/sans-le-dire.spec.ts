@@ -4,9 +4,10 @@ test("joue quatre manches sans scroll sur mobile", async ({ page }) => {
   await page.clock.install({ time: new Date("2026-01-01T12:00:00Z") });
   await page.goto("/sans-le-dire");
   await page.getByRole("link", { name: /^jouer/i }).click();
+  await page.getByRole("button", { name: /compétition/i }).click();
   await page.getByLabel("Équipe 1").fill("Les Verts");
   await page.getByLabel("Équipe 2").fill("Les Bleus");
-  await page.getByRole("button", { name: /commencer la partie/i }).click();
+  await page.getByRole("button", { name: /lancer la partie/i }).click();
   await expect(page).toHaveURL(/\/partie\/?$/u);
   for (let round = 0; round < 4; round += 1) {
     await expect(page.getByText(`Manche ${round + 1} / 4`)).toBeVisible();

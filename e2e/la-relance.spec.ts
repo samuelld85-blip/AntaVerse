@@ -6,7 +6,7 @@ test("joue cinq manches uniques et affiche le bon résultat sur mobile", async (
 
   await page.getByLabel("Équipe 1").fill("Les Verts");
   await page.getByLabel("Équipe 2").fill("Les Bleus");
-  await page.getByRole("button", { name: /commencer la partie/i }).click();
+  await page.getByRole("button", { name: /lancer la partie/i }).click();
 
   await expect(page).toHaveURL(/\/partie\/?$/u);
   await expect(page.getByText("Manche 1 / 5")).toBeVisible();
@@ -37,5 +37,6 @@ test("joue cinq manches uniques et affiche le bon résultat sur mobile", async (
 
   expect(seenThemes.size).toBe(5);
   await expect(page.getByRole("heading", { name: /Les Verts remporte la partie/i })).toBeVisible();
-  await expect(page.getByText("3 — 2")).toBeVisible();
+  await expect(page.locator(".score-value").nth(0)).toHaveText("3");
+  await expect(page.locator(".score-value").nth(1)).toHaveText("2");
 });

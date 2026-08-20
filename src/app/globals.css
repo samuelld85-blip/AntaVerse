@@ -454,7 +454,11 @@ html[data-theme="light"] .game-icon {
   text-underline-offset: 0.25rem;
 }
 
-.global-home-link {
+/* Shared pill shape for the "Jeux" / "Règles" pair atop every game's home
+   screen (GameHomeNav). One box model for both so a future tweak — sizing,
+   radius, spacing — only needs to happen here, not per game. */
+.global-home-link,
+.game-rules-link {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
@@ -473,6 +477,9 @@ html[data-theme="light"] .game-icon {
   text-transform: uppercase;
   letter-spacing: 0.07em;
   backdrop-filter: blur(10px);
+}
+.game-rules-link {
+  color: var(--launcher-muted);
 }
 
 .antaverse-brand em {

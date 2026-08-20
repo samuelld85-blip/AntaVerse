@@ -161,7 +161,7 @@ html[data-theme="light"] .brand-mark--purple {
     color 120ms ease;
 }
 .purple-reveal-toggle-button.is-selected {
-  background: var(--violet);
+  background: var(--purple-accent);
   color: white;
 }
 .purple-reveal-toggle-button:disabled {
