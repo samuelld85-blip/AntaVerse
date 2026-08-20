@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Brand } from "@/games/quoi-de-9/components/brand";
-import { BackButton } from "@/games/quoi-de-9/components/back-button";
 import { Button, ProgressDots } from "@/games/quoi-de-9/components/ui";
 import { getTheme, questions } from "@/games/quoi-de-9/data/questions";
 import {
@@ -31,13 +30,6 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
   if (!master) throw new Error("Équipe suivante introuvable");
   const phase = getGamePhase(game, active.name, master.name);
   const showHud = game.status !== "completed";
-  const showBack =
-    game.status !== "question_active" &&
-    game.status !== "turn_expired" &&
-    game.status !== "answer_correction" &&
-    game.status !== "turn_results" &&
-    game.status !== "scoreboard" &&
-    game.status !== "completed";
   const compact =
     game.status === "question_ready" ||
     game.status === "question_active" ||
@@ -95,7 +87,6 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
                 <p className="truncate text-[11px] font-bold text-white/65" aria-live="polite">
                   {phase.action}
                 </p>
-                {showBack ? <BackButton compact /> : null}
               </div>
             </>
           ) : null}

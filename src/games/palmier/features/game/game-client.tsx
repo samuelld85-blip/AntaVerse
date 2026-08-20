@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BackButton } from "@/games/shared/components/back-button";
+import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { Brand } from "@/games/palmier/components/brand";
 import { CardReveal } from "@/games/palmier/components/card-reveal";
 import { PalmTree } from "@/games/palmier/components/palm-tree";
@@ -73,7 +73,6 @@ export function GameClient() {
 
   function restart() {
     if (!game) return;
-    if (!window.confirm("Recommencer une nouvelle partie avec les mêmes joueurs ?")) return;
     setCollapseAnimating(false);
     setRevealing(false);
     busy.current = false;
@@ -93,9 +92,9 @@ export function GameClient() {
     return (
       <main className="game-shell safe-shell plm-shell">
         <header className="game-header">
-          <BackButton homeHref="/palmier" />
+          {/* No exit control here: the end card below already offers Rejouer
+              and Quitter as this screen's primary actions. */}
           <Brand compact />
-          <div style={{ width: "2.4rem" }} />
         </header>
         <section className="palm-stage">
           <PalmTree stage="stable" />
@@ -133,16 +132,8 @@ export function GameClient() {
   return (
     <main className="game-shell safe-shell plm-shell">
       <header className="game-header">
-        <BackButton homeHref="/palmier" />
         <Brand compact />
-        <button
-          type="button"
-          className="restart-button"
-          onClick={restart}
-          aria-label="Nouvelle partie"
-        >
-          <span aria-hidden="true">↻</span>
-        </button>
+        <QuitGameButton homeHref="/palmier" />
       </header>
 
       {game.phase === "idle" ? (

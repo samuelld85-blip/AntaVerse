@@ -291,6 +291,28 @@ html[data-theme="light"] .button--primary:hover {
   color: var(--text);
   cursor: pointer;
 }
+/* Deliberate session exit inside a game header. Same footprint as the
+   menu-level back control and the restart button so a game header reads as
+   one row of equal-weight controls, but muted by default: leaving is always
+   available, never the thing the screen invites you to do. */
+.quit-game-button {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: color var(--motion-fast, 160ms ease);
+}
+.quit-game-button:hover,
+.quit-game-button:focus-visible {
+  color: var(--text);
+}
 .setup-heading {
   padding: clamp(2rem, 9vh, 5rem) 0 2rem;
 }
@@ -379,11 +401,27 @@ html[data-theme="light"] .button--primary:hover {
   gap: clamp(0.75rem, 2vh, 1.15rem);
   overflow: hidden;
 }
+/* Every game's header is the same two things in the same places: brand mark on
+   the leading edge, session exit on the trailing edge. Game state (round pill,
+   scoreboard, badges) belongs to `.game-status` below, never in here. */
 .game-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+/* Game-state block sitting directly under the header: round/phase pill plus
+   the scoreboard. These belong to the game itself, not to the app chrome, so
+   they live here rather than in `.game-header` — which stays reserved for the
+   brand mark and the session-exit control, identically placed in every game. */
+.game-status {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: stretch;
+}
+.game-status > .round-pill,
+.game-status > .triman-badge {
+  justify-self: start;
 }
 .round-pill {
   margin: 0;

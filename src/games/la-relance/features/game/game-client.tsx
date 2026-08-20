@@ -4,6 +4,7 @@ import { useEffect, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Brand, LogoMark } from "@/games/la-relance/components/brand";
 import { Button, ButtonLink } from "@/games/shared/components/ui";
+import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { themes } from "@/games/la-relance/data/themes";
 import {
   STANDARD_ROUNDS,
@@ -89,12 +90,15 @@ export function GameClient() {
     <main className="game-shell safe-shell">
       <header className="game-header">
         <Brand compact />
+        <QuitGameButton homeHref="/la-relance" />
+      </header>
+
+      <div className="game-status">
         <p className={game.suddenDeath ? "round-pill round-pill--danger" : "round-pill"}>
           {game.suddenDeath ? "Mort subite" : `Manche ${game.roundIndex + 1} / ${STANDARD_ROUNDS}`}
         </p>
-      </header>
-
-      <Scoreboard game={game} />
+        <Scoreboard game={game} />
+      </div>
 
       {game.status === "playing" ? (
         <>

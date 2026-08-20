@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { Brand, LogoMark } from "@/games/triman/components/brand";
 import {
   getCurrentPlayer,
@@ -105,16 +106,19 @@ export function GameClient() {
     <main className="game-shell safe-shell triman-shell">
       <header className="game-header">
         <Brand compact />
+        <QuitGameButton homeHref="/triman" />
+      </header>
+
+      <div className="game-status">
         <p className={isSearching ? "round-pill round-pill--search" : "round-pill"}>
           {isSearching ? "Recherche du Triman" : "Triman actif"}
         </p>
-      </header>
-
-      {triman ? (
-        <p className="triman-badge">
-          <span aria-hidden="true">👑</span> Triman : <strong>{triman.name}</strong>
-        </p>
-      ) : null}
+        {triman ? (
+          <p className="triman-badge">
+            <span aria-hidden="true">👑</span> Triman : <strong>{triman.name}</strong>
+          </p>
+        ) : null}
+      </div>
 
       <button
         type="button"

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BackButton } from "@/games/shared/components/back-button";
+import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { Brand } from "@/games/purple/components/brand";
 import { PlayingCard } from "@/games/purple/components/playing-card";
 import { MiniCard } from "@/games/purple/components/mini-card";
@@ -224,7 +224,7 @@ export function GameClient() {
             Manuel
           </button>
         </div>
-        <BackButton homeHref="/purple" />
+        <QuitGameButton homeHref="/purple" />
       </header>
 
       <section className="purple-stats" aria-label="État de la partie">

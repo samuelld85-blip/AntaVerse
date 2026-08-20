@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BackButton } from "@/games/shared/components/back-button";
+import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { Brand } from "@/games/roulette-du-chaos/components/brand";
 import { EventCard } from "@/games/roulette-du-chaos/components/event-card";
 import { MiniGameRouter } from "@/games/roulette-du-chaos/components/mini-games/mini-game-router";
@@ -14,7 +14,6 @@ import {
   completeTurn,
   finishSpin,
   getActivePlayer,
-  replayGame,
   revealEvent,
   spinWheel,
   submitChoice,
@@ -70,12 +69,6 @@ export function GameClient() {
     }, CATEGORY_REVEAL_MS);
   }
 
-  function restart() {
-    if (!game) return;
-    if (!window.confirm("Recommencer une nouvelle partie avec les mêmes joueurs ?")) return;
-    commit(replayGame(game));
-  }
-
   if (!ready || !game) {
     return (
       <main className="game-shell safe-shell rdc-shell rdc-loading" aria-busy="true">
@@ -91,16 +84,8 @@ export function GameClient() {
   return (
     <main className="game-shell safe-shell rdc-shell">
       <header className="game-header">
-        <BackButton homeHref="/roulette-du-chaos" />
         <Brand compact />
-        <button
-          type="button"
-          className="restart-button"
-          onClick={restart}
-          aria-label="Nouvelle partie"
-        >
-          <span aria-hidden="true">↻</span>
-        </button>
+        <QuitGameButton homeHref="/roulette-du-chaos" />
       </header>
 
       {game.activeRule ? (
