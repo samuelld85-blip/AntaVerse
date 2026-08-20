@@ -38,11 +38,10 @@ const assets = new Set([
   ...routes,
   "/offline.html",
   "/manifest.webmanifest",
-  "/icons/app-icon.svg",
-  "/icons/maskable-icon.svg",
   "/icons/apple-touch-icon.png",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
+  "/icons/maskable-icon.png",
 ]);
 
 for (const route of routes) {
