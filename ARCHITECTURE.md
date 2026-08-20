@@ -8,6 +8,12 @@ or AI) should follow when adding or changing code. It reflects the current
 scale of the app (five games, a handful of contributors) — it is deliberately
 not an attempt to future-proof for a scale AntaVerse doesn't have yet.
 
+For a longer, pedagogical walkthrough of how the app actually works end to
+end (stack, routing, a game's full lifecycle, persistence, PWA, deployment),
+see [`HOW_ANTAVERSE_WORKS.md`](HOW_ANTAVERSE_WORKS.md). This file stays the
+concise structural reference; that one explains the same reality in more
+depth without duplicating these rules.
+
 ## Layers
 
 ```

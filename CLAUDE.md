@@ -312,6 +312,32 @@ Keep credentials out of client-side code.
 
 Apply normal proportional security practices without adding unnecessary bureaucracy.
 
+## Documentation maintenance — HOW_ANTAVERSE_WORKS.md
+
+`HOW_ANTAVERSE_WORKS.md` is a pedagogical, deep-dive explanation of how
+AntaVerse works, written for the project's creator (not just a concise
+technical reference like `ARCHITECTURE.md`).
+
+Do **not** update it after every small change.
+
+Do check whether it needs updating when a task introduces or significantly
+changes something it explains, for example:
+
+* a technology/framework migration;
+* a new shared architecture or cross-game pattern;
+* a significant structural refactor;
+* a major change to persistence (localStorage/IndexedDB strategy);
+* a change to how the PWA/service worker/cache works;
+* a new testing infrastructure;
+* a significant change to the deployment workflow;
+* a significant change to repository organization.
+
+Do **not** update it for: copy/text changes, color/CSS tweaks, new quiz
+questions or content, local rule corrections, or minor bugfixes.
+
+When in doubt, prefer leaving it stale over expanding scope — flag the
+drift to the user rather than rewriting large sections proactively.
+
 ## Completion
 
 A task is complete when:
