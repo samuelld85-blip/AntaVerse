@@ -68,7 +68,7 @@ describe("IndexedDB game recovery", () => {
     resetPersistenceConnectionForTests();
     const recovered = await loadCurrentGame();
 
-    expect(recovered?.schemaVersion).toBe(5);
+    expect(recovered?.schemaVersion).toBe(6);
     expect(recovered?.status).toBe("joker_opportunity");
     expect(recovered?.teamJokers[recovered.teams[0]!.id]).toEqual({
       themeChoiceAvailable: true,
@@ -102,7 +102,7 @@ describe("IndexedDB game recovery", () => {
       turnNumber: 1,
       roundNumber: 1,
       difficultyLevel: 2,
-      difficultyLabel: "Moyen",
+      difficultyLabel: "Challenge",
       foundAnswerIds: ["france"],
       missedAnswerIds: ["cote-divoire"],
       foundAnswers: [{ id: "france", display: "France" }],

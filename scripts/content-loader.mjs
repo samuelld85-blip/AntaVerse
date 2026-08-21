@@ -15,7 +15,7 @@ export async function loadContentLibrary() {
     const base = resolve(root, directory);
     const theme = await readUtf8Json(resolve(base, "theme.json"));
     themes.push(theme);
-    for (const difficulty of ["easy", "medium", "hard"]) {
+    for (const difficulty of ["classique", "challenge"]) {
       const records = await readUtf8Json(resolve(base, `questions.${difficulty}.json`));
       questions.push(...records);
     }

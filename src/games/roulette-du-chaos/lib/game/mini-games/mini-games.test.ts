@@ -60,6 +60,15 @@ describe("plus ou moins", () => {
     expect(resolvePlusMinus(5, 9, "plus", "moins")).toBe("aWins");
     expect(resolvePlusMinus(5, 2, "plus", "moins")).toBe("bWins");
   });
+
+  it("direction is determined by comparing drawn value to start", () => {
+    // drawn > start → "plus" is correct
+    expect(resolvePlusMinus(5, 6, "plus", "moins")).toBe("aWins");
+    expect(resolvePlusMinus(5, 13, "plus", "moins")).toBe("aWins");
+    // drawn < start → "moins" is correct
+    expect(resolvePlusMinus(5, 4, "moins", "plus")).toBe("aWins");
+    expect(resolvePlusMinus(5, 1, "moins", "plus")).toBe("aWins");
+  });
 });
 
 describe("secret number", () => {
@@ -81,6 +90,12 @@ describe("estimation", () => {
   it("closest guess to the real answer wins", () => {
     expect(resolveEstimation(88, 85, 60)).toBe("a");
     expect(resolveEstimation(88, 88, 90)).toBe("a");
+    expect(resolveEstimation(100, 40, 95)).toBe("b");
+  });
+
+  it("ties when both guesses are equidistant from the real answer", () => {
+    expect(resolveEstimation(50, 45, 55)).toBe("tie");
+    expect(resolveEstimation(100, 80, 120)).toBe("tie");
   });
 });
 

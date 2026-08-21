@@ -175,7 +175,7 @@ export function ContentReviewClient() {
           onChange={(event) => setDifficulty(event.target.value)}
         >
           <option value="all">Toutes les difficultés</option>
-          {([1, 2, 3] as const).map((level) => (
+          {([1, 2] as const).map((level) => (
             <option key={level} value={level}>
               Niveau {level} — {DIFFICULTY_LABELS[level]}
             </option>
@@ -392,7 +392,7 @@ function LocalReviewPanel({
             }))
           }
         >
-          {([1, 2, 3] as const).map((level) => (
+          {([1, 2] as const).map((level) => (
             <option key={level} value={level}>
               Niveau {level} — {DIFFICULTY_LABELS[level]}
             </option>

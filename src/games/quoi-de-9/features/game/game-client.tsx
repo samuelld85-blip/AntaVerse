@@ -6,9 +6,11 @@ import { ButtonLink } from "@/games/quoi-de-9/components/ui";
 import { getQuestion, getTheme, questions, themes } from "@/games/quoi-de-9/data/questions";
 import {
   acknowledgeInstructions,
+  activateChangeThemeJoker,
+  activateOpponentOverrideJoker,
   advanceAfterResults,
   cancelJokerTheme,
-  cancelDifficultyChoice,
+  cancelJokerThemeSelection,
   chooseDifficulty,
   confirmChoice,
   confirmJokerTheme,
@@ -29,8 +31,6 @@ import {
   toggleBomb,
   toggleTurnResultAnswer,
   undoLastAnswer,
-  activateOpponentThemeJoker,
-  activateThemeChoiceJoker,
 } from "@/games/quoi-de-9/lib/game/engine";
 import {
   clearCurrentGame,
@@ -39,7 +39,6 @@ import {
 } from "@/games/quoi-de-9/lib/game/persistence";
 import type { GameState } from "@/games/quoi-de-9/lib/game/types";
 import {
-  ChoiceConfirmationScreen,
   FinalScreen,
   GameHeader,
   JokerConfirmationScreen,
@@ -135,6 +134,31 @@ export function GameClient() {
     return () => window.clearInterval(interval);
   }, [game]);
 
+  // Dès qu'on entre en joker_opportunity, tirer le thème automatiquement.
+  // Le guard interne empêche un double-déclenchement (ex: StrictMode).
+  useEffect(() => {
+    if (game?.status !== "joker_opportunity") return;
+    transition((current) => {
+      if (current.status !== "joker_opportunity") return current;
+      const ready =
+        current.jokerOpportunityStage === "opponent"
+          ? skipOpponentThemeJoker(current)
+          : current;
+      return imposeRandomTheme(ready, themes, questions);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [game?.status]);
+
+  // Migration : une partie sauvegardée en choice_confirmation est auto-confirmée.
+  useEffect(() => {
+    if (game?.status !== "choice_confirmation") return;
+    transition((current) => {
+      if (current.status !== "choice_confirmation") return current;
+      return confirmChoice(current, questions);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [game?.status]);
+
   const remainingSeconds = game
     ? Math.min(game.turnDurationSeconds, getRemainingSeconds(game, timestamp))
     : 0;
@@ -187,14 +211,12 @@ export function GameClient() {
         </div>
       ) : null}
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+        {/* Passage du téléphone + sélection de thème joker */}
         {game.status === "instructions" ||
         game.status === "pass_phone" ||
-        game.status === "joker_opportunity" ||
-        game.status === "joker_theme_selection" ||
-        game.status === "difficulty_selection" ? (
+        game.status === "joker_theme_selection" ? (
           <RoundSetupScreen
             game={game}
-            theme={currentTheme}
             onPhoneReady={() =>
               transition((current) =>
                 confirmPhonePass(
@@ -202,45 +224,13 @@ export function GameClient() {
                 ),
               )
             }
-            onOpponentJoker={() =>
-              transition((current) => activateOpponentThemeJoker(current, themes, questions))
-            }
-            onThemeChoice={() =>
-              transition((current) => {
-                const ready =
-                  current.jokerOpportunityStage === "opponent"
-                    ? skipOpponentThemeJoker(current)
-                    : current;
-                return activateThemeChoiceJoker(ready, themes, questions);
-              })
-            }
-            onRandomTheme={() =>
-              transition((current) => {
-                const ready =
-                  current.jokerOpportunityStage === "opponent"
-                    ? skipOpponentThemeJoker(current)
-                    : current;
-                return continueFromThemeReveal(
-                  imposeRandomTheme(ready, themes, questions),
-                  questions,
-                );
-              })
-            }
             onSelect={(themeId) =>
-              transition((current) =>
-                continueFromThemeReveal(
-                  confirmJokerTheme(selectJokerTheme(current, themeId)),
-                  questions,
-                ),
-              )
+              transition((current) => confirmJokerTheme(selectJokerTheme(current, themeId)))
             }
-            onDifficulty={(difficulty) =>
-              transition((current) =>
-                confirmChoice(chooseDifficulty(current, difficulty, questions), questions),
-              )
-            }
+            onCancelJokerSelection={() => transition(cancelJokerThemeSelection)}
           />
         ) : null}
+        {/* Confirmation du thème joker */}
         {game.status === "joker_confirmation" && game.turnThemeSelection?.selectedThemeId ? (
           <JokerConfirmationScreen
             game={game}
@@ -248,19 +238,38 @@ export function GameClient() {
             onConfirm={() => transition(confirmJokerTheme)}
           />
         ) : null}
-        {game.status === "theme_reveal" && currentTheme ? (
+        {/* Écran combiné : thème + Classique/Challenge + jokers */}
+        {(game.status === "theme_reveal" || game.status === "difficulty_selection") &&
+        currentTheme ? (
           <ThemeRevealScreen
             game={game}
             theme={currentTheme}
-            onContinue={() => transition((current) => continueFromThemeReveal(current, questions))}
-          />
-        ) : null}
-        {game.status === "choice_confirmation" && currentTheme && game.currentDifficultyLevel ? (
-          <ChoiceConfirmationScreen
-            theme={currentTheme}
-            difficultyLevel={game.currentDifficultyLevel}
-            onCancel={() => transition(cancelDifficultyChoice)}
-            onConfirm={() => transition((current) => confirmChoice(current, questions))}
+            onDifficulty={(difficulty) =>
+              transition((current) => {
+                if (current.status === "theme_reveal") {
+                  return confirmChoice(
+                    chooseDifficulty(continueFromThemeReveal(current, questions), difficulty, questions),
+                    questions,
+                  );
+                }
+                // difficulty_selection : jeux sauvegardés avec l'ancien flow
+                return confirmChoice(chooseDifficulty(current, difficulty, questions), questions);
+              })
+            }
+            onChangeTheme={
+              game.status === "theme_reveal"
+                ? () =>
+                    transition((current) => activateChangeThemeJoker(current, themes, questions))
+                : undefined
+            }
+            onOpponentOverride={
+              game.status === "theme_reveal"
+                ? () =>
+                    transition((current) =>
+                      activateOpponentOverrideJoker(current, themes, questions),
+                    )
+                : undefined
+            }
           />
         ) : null}
         {(game.status === "question_ready" ||

@@ -1,4 +1,4 @@
-import { GAME_CONFIG, type DifficultyLevel } from "./config";
+import { GAME_CONFIG, SIP_REWARDS, type DifficultyLevel } from "./config";
 
 export function calculateFunSips(
   correctAnswers: number,
@@ -19,18 +19,7 @@ export function calculateFunSips(
     ? Math.max(0, correctAnswers - 2)
     : correctAnswers;
 
-  if (difficultyLevel === 1) {
-    if (effectiveCorrectAnswers === 9) return 3;
-    if (effectiveCorrectAnswers >= 5) return 2;
-    if (effectiveCorrectAnswers >= 3) return 1;
-    return 0;
-  }
-
-  if (difficultyLevel === 2) {
-    return Math.floor(effectiveCorrectAnswers / 2);
-  }
-
-  return effectiveCorrectAnswers;
+  return SIP_REWARDS[difficultyLevel][effectiveCorrectAnswers] ?? 0;
 }
 
 export function formatSips(sips: number): string {

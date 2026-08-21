@@ -23,20 +23,15 @@ import { calculateFunSips, formatSignedSips, formatSips } from "@/games/quoi-de-
 import type { GameState, Question, Team, Theme } from "@/games/quoi-de-9/lib/game/types";
 
 export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: () => void }) {
-  const active = game.teams[game.currentTeamIndex];
-  if (!active) throw new Error("Équipe active introuvable");
-  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
-  const master = game.teams[nextTeamIndex];
-  if (!master) throw new Error("Équipe suivante introuvable");
-  const phase = getGamePhase(game, active.name, master.name);
   const showHud = game.status !== "completed";
-  const compact =
-    game.status === "question_ready" ||
-    game.status === "question_active" ||
-    game.status === "turn_expired" ||
-    game.status === "turn_results";
-  const resultsOnly = game.status === "turn_results";
+  // Question en cours (avant et pendant le chrono) : aucun header, tout l'espace
+  // est laissé à la question et aux 9 réponses.
+  const liveQuestion = game.status === "question_ready" || game.status === "question_active";
+  // Fin de tour : on masque la ligne marque + Quitter pour gagner de la hauteur.
+  const compact = game.status === "turn_expired" || game.status === "turn_results";
   const totalTurns = game.roundsPerTeam * game.teams.length;
+
+  if (liveQuestion) return null;
 
   return (
     <header
@@ -53,10 +48,7 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
         </button>
       </div>
       {showHud ? (
-        <div
-          className={`glass-panel rounded-2xl ${compact ? "p-2" : "p-3"}`}
-          aria-label="État de la partie"
-        >
+        <div className="glass-panel rounded-2xl p-2" aria-label="État de la partie">
           <div
             className={`grid items-center gap-2 ${game.teams.length === 2 ? "grid-cols-[1fr_auto_1fr]" : "grid-cols-[1fr_auto_1fr_auto_1fr]"}`}
           >
@@ -64,31 +56,14 @@ export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: ()
             {game.teams.length === 3 && game.teams[2] && (
               <HudTeam team={game.teams[2]} active={game.currentTeamIndex === 2} align="center" />
             )}
-            <div className="text-center">
-              <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-white/52">
-                Tour {game.currentTurn}/{totalTurns}
-              </p>
-              <p className="display-face mt-0.5 text-xl text-white/65">M{game.currentRound}</p>
-            </div>
+            <p className="text-center text-[9px] font-bold uppercase tracking-[0.12em] text-white/52">
+              Tour {game.currentTurn}/{totalTurns}
+            </p>
             {game.teams[1] && <HudTeam team={game.teams[1]} active={game.currentTeamIndex === 1} align="right" />}
           </div>
-          {!resultsOnly ? (
-            <>
-              <div className={compact ? "my-1.5" : "my-2.5"}>
-                <ProgressDots current={game.history.length} total={totalTurns} />
-              </div>
-              <div
-                className={`flex items-center gap-2 border-t border-white/8 ${compact ? "pt-1.5" : "pt-2"}`}
-              >
-                <span className="shrink-0 rounded-full bg-[var(--lime)]/12 px-2 py-1 text-[9px] font-black uppercase tracking-wider text-[var(--accent-text)]">
-                  {phase.label}
-                </span>
-                <p className="truncate text-[11px] font-bold text-white/65" aria-live="polite">
-                  {phase.action}
-                </p>
-              </div>
-            </>
-          ) : null}
+          <div className="mt-1.5">
+            <ProgressDots current={game.history.length} total={totalTurns} />
+          </div>
         </div>
       ) : null}
     </header>
@@ -118,58 +93,16 @@ function HudTeam({
   );
 }
 
-function getGamePhase(game: GameState, activeName: string, masterName: string) {
-  switch (game.status) {
-    case "pass_phone":
-      return { label: "Passage", action: `Téléphone à ${masterName}` };
-    case "joker_opportunity":
-      return {
-        label: "Joker",
-        action:
-          game.jokerOpportunityStage === "opponent"
-            ? `${masterName} décide`
-            : `${activeName} choisit`,
-      };
-    case "joker_theme_selection":
-    case "joker_confirmation":
-      return { label: "Thème", action: "Choisissez un thème" };
-    case "theme_reveal":
-    case "difficulty_selection":
-    case "choice_confirmation":
-      return { label: "Niveau", action: `${activeName} choisit la difficulté` };
-    case "question_ready":
-      return { label: "Prêts ?", action: `${masterName} lit, puis lance le chrono` };
-    case "question_active":
-      return { label: "En jeu", action: `${masterName} valide les réponses` };
-    case "turn_expired":
-      return { label: "Terminé", action: "Affichez le bilan du tour" };
-    case "turn_results":
-      return { label: "Bilan", action: "Consultez le score, puis continuez" };
-    case "scoreboard":
-      return { label: "Scores", action: "Passez au tour suivant" };
-    default:
-      return { label: "Partie", action: `${activeName} répond` };
-  }
-}
-
 export function RoundSetupScreen({
   game,
-  theme,
   onPhoneReady,
-  onOpponentJoker,
-  onThemeChoice,
-  onRandomTheme,
   onSelect,
-  onDifficulty,
+  onCancelJokerSelection,
 }: {
   game: GameState;
-  theme: Theme | null;
   onPhoneReady: () => void;
-  onOpponentJoker: () => void;
-  onThemeChoice: () => void;
-  onRandomTheme: () => void;
   onSelect: (themeId: string) => void;
-  onDifficulty: (difficulty: DifficultyLevel) => void;
+  onCancelJokerSelection: () => void;
 }) {
   const active = game.teams[game.currentTeamIndex];
   if (!active) throw new Error("Équipe active introuvable");
@@ -177,15 +110,13 @@ export function RoundSetupScreen({
   const master = game.teams[nextTeamIndex];
   if (!master) throw new Error("Équipe suivante introuvable");
   const waitingForPhone = game.status === "instructions" || game.status === "pass_phone";
-  const choosingMethod = game.status === "joker_opportunity";
   const choosingTheme = game.status === "joker_theme_selection";
-  const choosingDifficulty = game.status === "difficulty_selection" && theme;
   const proposedThemes = (game.turnThemeSelection?.proposedThemeIds ?? [])
     .map((id) => getTheme(id))
     .filter((item): item is Theme => Boolean(item));
-  const availability = theme
-    ? getDifficultyAvailability(questions, theme.id, game.usedQuestionIds)
-    : null;
+  const jokerMode = game.turnThemeSelection?.selectionMode;
+  const jokerLabel =
+    jokerMode === "opponent_imposed" ? "Choisissez le thème à imposer" : "Choisissez votre thème";
 
   return (
     <section className="flex min-h-0 flex-1 flex-col justify-center">
@@ -200,14 +131,13 @@ export function RoundSetupScreen({
         </p>
       </div>
       <div className="glass-panel mt-4 rounded-3xl p-3">
-        <div className="mb-2.5 px-0.5">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/62">
-            {waitingForPhone ? "Passage du téléphone" : "Thème du tour"}
-          </p>
-        </div>
-
         {waitingForPhone ? (
-          <div>
+          <>
+            <div className="mb-2.5 px-0.5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/62">
+                Passage du téléphone
+              </p>
+            </div>
             <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[color:var(--surface-subtle)] p-3">
               <span
                 className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[.07] text-xl text-[var(--accent-text)]"
@@ -218,132 +148,45 @@ export function RoundSetupScreen({
               <div className="min-w-0 text-left">
                 <p className="truncate text-base font-black leading-snug">{master.name}</p>
                 <p className="mt-0.5 text-[11px] leading-relaxed text-tertiary">
-                  Choisit le thème, puis valide les réponses
+                  Affiche les réponses, valide les bonnes
                 </p>
               </div>
             </div>
             <Button className="mt-2.5 min-h-11 py-2" onClick={onPhoneReady}>
               J’ai le téléphone
             </Button>
-          </div>
-        ) : null}
-
-        {choosingMethod ? (
-          <div className="grid gap-3">
-            <button
-              type="button"
-              onClick={onRandomTheme}
-              className="flex min-h-16 items-center gap-3 rounded-2xl border border-[var(--lime)]/35 bg-[var(--lime)]/[.1] px-4 py-3 text-left transition active:scale-[.98]"
-            >
-              <span
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[var(--lime)] text-xl font-black text-[var(--accent-ink)]"
-                aria-hidden="true"
-              >
-                ↻
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-black">Thème au hasard</span>
-                <span className="mt-0.5 block text-[10px] font-medium text-tertiary">
-                  Choix standard · aucun joker utilisé
-                </span>
-              </span>
-              <span className="text-lg text-[var(--accent-text)]" aria-hidden="true">
-                →
-              </span>
-            </button>
-
-            <div>
-              <div className="mb-2 px-1">
-                <p className="text-[10px] font-black uppercase tracking-[0.14em] text-white/62">
-                  Jokers
-                </p>
-              </div>
-              <div className="grid gap-2">
-                <JokerChoice
-                  icon="✦"
-                  teamName={active.name}
-                  teamColor={active.color}
-                  label="Choisir notre thème"
-                  available={game.teamJokers[active.id]?.themeChoiceAvailable ?? false}
-                  onClick={onThemeChoice}
-                />
-                <JokerChoice
-                  icon="◉"
-                  teamName={master.name}
-                  teamColor={master.color}
-                  label="Choisir le thème adverse"
-                  available={game.teamJokers[master.id]?.opponentThemeAvailable ?? false}
-                  onClick={onOpponentJoker}
-                />
-              </div>
-            </div>
-          </div>
+          </>
         ) : null}
 
         {choosingTheme ? (
-          <div className="grid grid-cols-3 gap-2">
-            {proposedThemes.map((item) => (
-              <SetupChoice
-                key={item.id}
-                icon={item.icon}
-                label={item.name}
-                meta=""
-                primaryChoice
-                onClick={() => onSelect(item.id)}
-              />
-            ))}
-          </div>
-        ) : null}
-
-        {choosingDifficulty && availability ? (
-          <div>
-            <div className="mb-3 flex items-center gap-2 rounded-xl bg-[color:var(--surface-subtle)] px-3 py-2">
-              <span className="text-xl" aria-hidden="true">
-                {theme.icon}
-              </span>
-              <p className="min-w-0 truncate text-sm font-black">{theme.name}</p>
-              <span className="ml-auto text-[10px] font-bold uppercase tracking-wider text-[var(--accent-text)]">
-                Thème tiré
-              </span>
+          <>
+            <div className="mb-2.5 px-0.5">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/62">
+                {jokerLabel}
+              </p>
             </div>
             <div className="grid grid-cols-3 gap-2">
-              {DIFFICULTY_LEVELS.map((difficulty) => {
-                const config = GAME_CONFIG.difficulties[difficulty];
-                let meta: string;
-                if (game.mode === "fun") {
-                  if (difficulty === 1) {
-                    meta = "3 / 5 / 9 réponses";
-                  } else if (difficulty === 2) {
-                    meta = "1 gorgée / 2 réponses";
-                  } else {
-                    meta = "1 gorgée / réponse";
-                  }
-                } else {
-                  const pointsPerAnswer = calculateTurnScore(1, difficulty);
-                  const maximumPoints = calculateTurnScore(GAME_CONFIG.answerCount, difficulty);
-                  meta = `${formatScore(pointsPerAnswer)} pts/réponse · ${formatScore(maximumPoints)} max`;
-                }
-                return (
-                  <SetupChoice
-                    key={difficulty}
-                    icon=""
-                    label={config.label}
-                    meta={meta}
-                    prominentLabel
-                    disabled={availability[difficulty] < 1}
-                    onClick={() => onDifficulty(difficulty)}
-                  />
-                );
-              })}
+              {proposedThemes.map((item) => (
+                <SetupChoice
+                  key={item.id}
+                  icon={item.icon}
+                  label={item.name}
+                  meta=""
+                  primaryChoice
+                  onClick={() => onSelect(item.id)}
+                />
+              ))}
             </div>
-          </div>
+            <button
+              type="button"
+              onClick={onCancelJokerSelection}
+              className="mt-3 w-full rounded-xl py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-tertiary transition active:opacity-70"
+            >
+              Annuler le joker
+            </button>
+          </>
         ) : null}
       </div>
-      {!waitingForPhone ? (
-        <p className="mt-3 text-center text-[11px] text-tertiary">
-          Ensuite, {master.name} affiche les réponses à l’abri des regards.
-        </p>
-      ) : null}
     </section>
   );
 }
@@ -377,14 +220,14 @@ function JokerChoice({
         {icon}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.12em] text-tertiary">
+        <span className="flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-tertiary">
           <span
             className="h-1.5 w-1.5 shrink-0 rounded-full"
             style={{ backgroundColor: teamColor }}
           />
           <span className="truncate">{teamName}</span>
         </span>
-        <span className="mt-1 block truncate text-sm font-black">{label}</span>
+        <span className="mt-1 block truncate text-sm font-semibold">{label}</span>
         {!available ? (
           <span className="mt-0.5 block truncate text-[9px] text-tertiary">Joker déjà utilisé</span>
         ) : null}
@@ -486,30 +329,152 @@ export function JokerConfirmationScreen({
 export function ThemeRevealScreen({
   game,
   theme,
-  onContinue,
+  onDifficulty,
+  onChangeTheme,
+  onOpponentOverride,
 }: {
   game: GameState;
   theme: Theme;
-  onContinue: () => void;
+  onDifficulty: (difficulty: DifficultyLevel) => void;
+  onChangeTheme: (() => void) | undefined;
+  onOpponentOverride: (() => void) | undefined;
 }) {
+  const active = game.teams[game.currentTeamIndex];
+  if (!active) throw new Error("Équipe active introuvable");
+  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
+  const master = game.teams[nextTeamIndex];
+  if (!master) throw new Error("Équipe suivante introuvable");
+  const availability = getDifficultyAvailability(questions, theme.id, game.usedQuestionIds);
   const method = game.turnThemeSelection?.selectionMode;
-  const label =
-    method === "opponent_imposed"
-      ? "Imposé par l’adversaire"
-      : method === "active_team_choice"
-        ? "Choisi avec un joker"
-        : "Thème imposé au hasard";
+  const showJokers = onChangeTheme !== undefined || onOpponentOverride !== undefined;
+  const activeJokerAvailable = game.teamJokers[active.id]?.themeChoiceAvailable ?? false;
+  const opponentJokerAvailable = game.teamJokers[master.id]?.opponentThemeAvailable ?? false;
+  const hasAnyJoker = activeJokerAvailable || opponentJokerAvailable;
+
   return (
-    <section className="flex flex-1 flex-col justify-center text-center">
-      <span className="text-6xl text-[var(--accent-text)]">{theme.icon}</span>
-      <p className="mt-5 text-xs font-bold uppercase tracking-[.18em] text-tertiary">{label}</p>
-      <h1 className="display-face mt-3 text-6xl leading-[.86]">{theme.name}</h1>
-      <p className="mx-auto mt-5 max-w-sm text-sm text-white/65">
-        L’équipe qui répond choisit maintenant le niveau de difficulté.
+    <section className="flex min-h-0 flex-1 flex-col justify-center">
+      <div className="text-center">
+        <h1 className="balance text-[clamp(2rem,7vw,3rem)] font-black leading-[1.02] tracking-[-0.025em]">
+          {active.name} répond
+        </h1>
+        <p className="mt-3 text-sm leading-relaxed text-tertiary">
+          <strong style={{ color: master.color }}>{master.name}</strong> garde le téléphone
+        </p>
+      </div>
+
+      <div className="glass-panel mt-4 rounded-3xl p-3">
+        {/* Thème */}
+        <div className="mb-3 px-0.5">
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/62">
+            Thème du tour
+          </p>
+        </div>
+        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[color:var(--surface-subtle)] px-3 py-2.5">
+          <span className="text-2xl" aria-hidden="true">
+            {theme.icon}
+          </span>
+          <p className="min-w-0 flex-1 truncate text-base font-semibold">{theme.name}</p>
+          {method === "opponent_imposed" ? (
+            <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-[var(--coral)]">
+              Imposé
+            </span>
+          ) : method === "active_team_choice" ? (
+            <span className="shrink-0 text-[10px] font-bold uppercase tracking-wider text-[var(--lime)]">
+              Joker
+            </span>
+          ) : null}
+        </div>
+
+        {/* Classique / Challenge */}
+        <div className="mt-4">
+          <div className="mb-2.5 px-0.5">
+            <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/62">
+              Choisissez votre mode
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            {DIFFICULTY_LEVELS.map((difficulty) => {
+              const config = GAME_CONFIG.difficulties[difficulty];
+              const meta =
+                game.mode === "fun"
+                  ? difficulty === 1
+                    ? "Jusqu’à 3 gorgées"
+                    : "Jusqu’à 5 gorgées"
+                  : `${formatScore(calculateTurnScore(1, difficulty))} pts/réponse`;
+              const isClassique = difficulty === 1;
+              const accent = isClassique ? "#38bdf8" : "#c084fc";
+              const icon = isClassique ? "◎" : "⚡";
+              return (
+                <button
+                  key={difficulty}
+                  type="button"
+                  disabled={availability[difficulty] < 1}
+                  onClick={() => onDifficulty(difficulty)}
+                  style={{
+                    borderColor: `color-mix(in srgb, ${accent} 22%, transparent)`,
+                    boxShadow: `0 0 16px color-mix(in srgb, ${accent} 14%, transparent)`,
+                  }}
+                  className="flex min-h-24 flex-col items-center justify-center rounded-2xl border bg-[color:var(--surface-subtle)] px-2 py-3 transition active:scale-[.97] disabled:opacity-35"
+                >
+                  <div className="relative">
+                    <span
+                      style={{ color: accent }}
+                      className={`absolute right-full top-1/2 -translate-y-1/2 ${isClassique ? "pr-3.5" : "pr-2"} text-xl opacity-80`}
+                      aria-hidden="true"
+                    >
+                      {icon}
+                    </span>
+                    <span className="block text-base font-black leading-tight">{config.label}</span>
+                  </div>
+                  <span
+                    style={{ color: accent }}
+                    className="mt-1.5 text-[10px] font-bold leading-tight"
+                  >
+                    {meta}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Jokers — uniquement si disponibles et activables depuis theme_reveal */}
+        {showJokers && hasAnyJoker ? (
+          <div className="mt-4">
+            <div className="mb-2 px-0.5">
+              <p className="text-[10px] font-black uppercase tracking-[0.14em] text-white/62">
+                Jokers
+              </p>
+            </div>
+            <div className="grid gap-2">
+              {onChangeTheme ? (
+                <JokerChoice
+                  icon="✦"
+                  teamName={active.name}
+                  teamColor={active.color}
+                  label="Changer le thème"
+                  available={activeJokerAvailable}
+                  onClick={onChangeTheme}
+                />
+              ) : null}
+              {onOpponentOverride ? (
+                <JokerChoice
+                  icon="◉"
+                  teamName={master.name}
+                  teamColor={master.color}
+                  label="Imposer un thème"
+                  available={opponentJokerAvailable}
+                  onClick={onOpponentOverride}
+                />
+              ) : null}
+            </div>
+          </div>
+        ) : null}
+      </div>
+
+      <p className="mt-3 text-center text-[11px] text-tertiary">
+        {master.name} affiche les réponses à l’abri des regards.
       </p>
-      <Button className="mt-8" onClick={onContinue}>
-        Choisir la difficulté
-      </Button>
     </section>
   );
 }
@@ -578,11 +543,6 @@ export function QuestionScreen({
   onEnd: () => void;
   onResults: () => void;
 }) {
-  const active = game.teams[game.currentTeamIndex];
-  if (!active) throw new Error("Équipe active introuvable");
-  const nextTeamIndex = (game.currentTeamIndex + 1) % game.teams.length;
-  const master = game.teams[nextTeamIndex];
-  if (!master) throw new Error("Équipe suivante introuvable");
   const isReady = game.status === "question_ready";
   const isActive = game.status === "question_active";
   const expired = game.status === "turn_expired";
@@ -599,14 +559,9 @@ export function QuestionScreen({
       >
         <div className="p-3 pb-2">
           <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
-                {theme.name} · {question.difficultyLabel}
-              </p>
-              <p className="mt-1 text-xs font-bold" style={{ color: active.color }}>
-                {active.name} répond
-              </p>
-            </div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
+              {theme.name} · {question.difficultyLabel}
+            </p>
             <div
               className={`text-right ${critical ? "text-[var(--coral)]" : urgent ? "text-amber-300" : "text-white"}`}
             >
@@ -627,7 +582,6 @@ export function QuestionScreen({
           <h1 className="balance mt-3 text-[clamp(1.15rem,5.5vw,1.7rem)] font-black leading-[1.08]">
             {question.question}
           </h1>
-          <p className="mt-1.5 text-[10px] text-tertiary">{master.name} lit à voix haute.</p>
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col gap-1.5 border-t border-white/10 bg-black/10 p-2">
@@ -975,7 +929,7 @@ export function FinalScreen({
                     key={difficultyLevel}
                     className="rounded-lg bg-[color:var(--surface-subtle)] px-2 py-1 text-[9px] font-semibold text-white/60"
                   >
-                    {GAME_CONFIG.difficulties[difficultyLevel].label.slice(0, 1)}{" "}
+                    {GAME_CONFIG.difficulties[difficultyLevel].abbr}{" "}
                     {turns.filter((turn) => turn.difficultyLevel === difficultyLevel).length}
                   </span>
                 ))}

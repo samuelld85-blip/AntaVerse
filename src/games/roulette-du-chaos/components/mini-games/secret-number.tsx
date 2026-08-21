@@ -28,6 +28,7 @@ export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
   const opponent = playerB!;
   const [step, setStep] = useState<Step>("handoffA");
   const [guessA, setGuessA] = useState<number | null>(null);
+  const [finalGuessB, setFinalGuessB] = useState<number | null>(null);
   const [revealedTarget, setRevealedTarget] = useState<number | null>(null);
   const [winner, setWinner] = useState<"a" | "b" | null>(null);
 
@@ -46,6 +47,7 @@ export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
       return;
     }
     setRevealedTarget(target);
+    setFinalGuessB(guess);
     setWinner(result);
     setStep("result");
   }
@@ -80,7 +82,10 @@ export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
             {winner === "a" ? playerA.name : opponent.name} gagne !
           </p>
           {revealedTarget !== null ? (
-            <p className="mini-game-result-detail">Le nombre à trouver était : {revealedTarget}</p>
+            <p className="mini-game-result-detail">
+              Nombre à trouver : {revealedTarget} · {playerA.name} : {guessA} · {opponent.name} :{" "}
+              {finalGuessB}
+            </p>
           ) : null}
           <Button type="button" onClick={() => onComplete(duelOutcome(winner, playerA, opponent))}>
             Continuer <span aria-hidden="true">→</span>

@@ -34,7 +34,7 @@ interface BundleQuestion {
   questionText: string;
   shortTitle: string;
   difficultyLevel: DifficultyLevel;
-  difficultyLabel: "Facile" | "Moyen" | "Difficile";
+  difficultyLabel: "Classique" | "Challenge";
   language: "fr";
   status: "published";
   version: number;

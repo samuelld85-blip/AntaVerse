@@ -11,37 +11,44 @@ export const GAME_CONFIG = {
   basePointsPerAnswer: 100,
   difficulties: {
     1: {
-      label: "Facile",
-      key: "easy",
+      label: "Classique",
+      abbr: "Cl",
+      key: "classique",
       coefficient: 1,
-      eyebrow: "Pour se chauffer",
+      eyebrow: "Le classique du jeu",
       accent: "lime",
     },
     2: {
-      label: "Moyen",
-      key: "medium",
-      coefficient: 1.5,
-      eyebrow: "Le bon équilibre",
-      accent: "violet",
-    },
-    3: {
-      label: "Difficile",
-      key: "hard",
-      coefficient: 3,
-      eyebrow: "Tout peut basculer",
+      label: "Challenge",
+      abbr: "Ch",
+      key: "challenge",
+      coefficient: 1.35,
+      eyebrow: "Plus corsé, plus payant",
       accent: "coral",
     },
   },
 } as const;
 
-export type DifficultyLevel = 1 | 2 | 3;
+export type DifficultyLevel = 1 | 2;
 
 export const DIFFICULTY_LABELS = {
-  1: "Facile",
-  2: "Moyen",
-  3: "Difficile",
+  1: "Classique",
+  2: "Challenge",
 } as const satisfies Record<DifficultyLevel, string>;
 
 export type DifficultyLabel = (typeof DIFFICULTY_LABELS)[DifficultyLevel];
 
-export const DIFFICULTY_LEVELS = [1, 2, 3] as const satisfies readonly DifficultyLevel[];
+export const DIFFICULTY_LEVELS = [1, 2] as const satisfies readonly DifficultyLevel[];
+
+// Points per correct answer, indexed by difficulty level.
+export const POINTS_PER_ANSWER: Record<DifficultyLevel, number> = {
+  1: 100,
+  2: 135,
+};
+
+// Sip rewards per correct-answer count for Fun mode, indexed by difficulty level.
+// Indexed as SIP_REWARDS[level][correctAnswers] (correctAnswers: 0–9).
+export const SIP_REWARDS: Record<DifficultyLevel, readonly number[]> = {
+  1: [0, 0, 0, 1, 1, 2, 2, 2, 3, 3],
+  2: [0, 0, 1, 1, 2, 2, 3, 3, 4, 5],
+};

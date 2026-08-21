@@ -33,9 +33,8 @@ HEADERS = [
     "Nouvelle question",
 ]
 DIFFICULTIES = {
-    "Facile": (1, "easy", 25, 25, 88, 25, 88, 8),
-    "Moyen": (2, "medium", 55, 50, 72, 55, 82, 6),
-    "Difficile": (3, "hard", 80, 70, 60, 78, 76, 4),
+    "Classique": (1, "classique", 25, 25, 88, 25, 88, 8),
+    "Challenge": (2, "challenge", 55, 50, 72, 55, 82, 6),
 }
 
 
@@ -243,7 +242,7 @@ def main() -> None:
         theme["category"] = categories[label]
         theme["contentVersion"] = "2026.08.17-excel-import"
         theme_path.write_text(json.dumps(theme, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        for filename_key in ("easy", "medium", "hard"):
+        for filename_key in ("classique", "challenge"):
             output = theme_path.parent / f"questions.{filename_key}.json"
             output.write_text(
                 json.dumps(grouped[(theme["id"], filename_key)], ensure_ascii=False, indent=2) + "\n",

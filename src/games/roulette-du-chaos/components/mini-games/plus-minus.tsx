@@ -23,12 +23,18 @@ function draw(start: number): number {
   return drawPlusMinusValue(start, Math.random());
 }
 
+function guessLabel(guess: PlusMinusGuess): string {
+  return guess === "plus" ? "↑ Plus" : "↓ Moins";
+}
+
 /** Plus ou moins (spec §17): same guess plays both against the app and replays on a wash; different guesses, the correct one wins. */
 export function PlusMinus({ playerA, playerB, onComplete }: MiniGameProps) {
   const opponent = playerB!;
   const [start, setStart] = useState(randomStart);
   const [step, setStep] = useState<Step>("handoffA");
   const [guessA, setGuessA] = useState<PlusMinusGuess | null>(null);
+  const [drawnValue, setDrawnValue] = useState<number | null>(null);
+  const [finalGuessB, setFinalGuessB] = useState<PlusMinusGuess | null>(null);
   const [winner, setWinner] = useState<"a" | "b" | null>(null);
 
   function pick(who: "a" | "b", guess: PlusMinusGuess) {
@@ -40,6 +46,8 @@ export function PlusMinus({ playerA, playerB, onComplete }: MiniGameProps) {
     const drawn = draw(start);
     const result = resolvePlusMinus(start, drawn, guessA!, guess);
     if (result === "aWins" || result === "bWins") {
+      setDrawnValue(drawn);
+      setFinalGuessB(guess);
       setWinner(result === "aWins" ? "a" : "b");
       setStep("result");
       return;
@@ -81,8 +89,18 @@ export function PlusMinus({ playerA, playerB, onComplete }: MiniGameProps) {
         />
       ) : null}
       {step === "playB" ? guessButtons("b") : null}
-      {step === "result" && winner ? (
+      {step === "result" && winner && drawnValue !== null ? (
         <div className="mini-game-result">
+          <div className="mini-game-answer-reveal">
+            <p className="mini-game-answer-reveal-label">Nombre tiré</p>
+            <p className="mini-game-answer-reveal-value">{drawnValue}</p>
+            <p className="mini-game-answer-reveal-context">
+              {drawnValue > start ? "↑ Plus" : "↓ Moins"} que {start}
+            </p>
+          </div>
+          <p className="mini-game-result-detail">
+            {playerA.name} : {guessLabel(guessA!)} · {opponent.name} : {guessLabel(finalGuessB!)}
+          </p>
           <p className="mini-game-result-headline">
             {winner === "a" ? playerA.name : opponent.name} gagne !
           </p>

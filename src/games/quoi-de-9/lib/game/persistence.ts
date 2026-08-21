@@ -31,9 +31,9 @@ type LegacyGame = Omit<
   | "jokerOpportunityStage"
   | "turnThemeSelection"
 > & {
-  schemaVersion?: 1 | 2 | 3;
+  schemaVersion?: 1 | 2 | 3 | 4;
   currentDifficulty?: "easy" | "medium" | "hard" | null;
-  currentDifficultyLevel?: DifficultyLevel | null;
+  currentDifficultyLevel?: DifficultyLevel | number | null;
   history: Array<LegacyTurn | Omit<TurnResult, "themeSelection" | "jokerUsage">>;
 };
 
@@ -128,21 +128,36 @@ export function resetPersistenceConnectionForTests(): void {
 }
 
 function migrateStoredGame(stored: GameState | LegacyGame): GameState {
-  if ("schemaVersion" in stored && stored.schemaVersion === 5) return stored as GameState;
+  if ("schemaVersion" in stored && stored.schemaVersion === 6) return stored as GameState;
+  if ("schemaVersion" in stored && (stored.schemaVersion as number | undefined) === 5) {
+    // v5 → v6: difficulty level 3 (Difficile) no longer exists.
+    const v5 = stored as unknown as Omit<GameState, "schemaVersion" | "currentDifficultyLevel"> & {
+      schemaVersion: 5;
+      currentDifficultyLevel: number | null;
+    };
+    const rawLevel = v5.currentDifficultyLevel;
+    const currentDifficultyLevel: DifficultyLevel | null =
+      rawLevel === 1 || rawLevel === 2 ? rawLevel : null;
+    const status: GameState["status"] =
+      rawLevel === 3 && v5.status === "choice_confirmation" ? "difficulty_selection" : v5.status;
+    return { ...v5, schemaVersion: 6, currentDifficultyLevel, status };
+  }
   if (
     "schemaVersion" in stored &&
     (stored.schemaVersion as number | undefined) === 4
   ) {
-    return { ...(stored as unknown as GameState), schemaVersion: 5 };
+    return { ...(stored as unknown as GameState), schemaVersion: 6 };
   }
   const legacy = stored as LegacyGame;
   const status =
     (legacy.status as string) === "theme_selection" ? "joker_opportunity" : legacy.status;
-  const currentDifficultyLevel =
+  const rawDifficultyLevel =
     legacy.currentDifficultyLevel ?? difficultyLevelFromLegacy(legacy.currentDifficulty ?? null);
+  const currentDifficultyLevel: DifficultyLevel | null =
+    rawDifficultyLevel === 1 || rawDifficultyLevel === 2 ? rawDifficultyLevel : null;
   return {
     ...legacy,
-    schemaVersion: 5,
+    schemaVersion: 6,
     status,
     currentDifficultyLevel,
     bombTriggered: "bombTriggered" in legacy ? Boolean(legacy.bombTriggered) : false,
@@ -225,6 +240,7 @@ function difficultyLevelFromLegacy(
 ): DifficultyLevel | null {
   if (difficulty === "easy") return 1;
   if (difficulty === "medium") return 2;
-  if (difficulty === "hard") return 3;
+  // "hard" (niveau 3) n'existe plus — les tours legacy avec ce niveau gardent
+  // leur historique mais le niveau actif est remis à null.
   return null;
 }

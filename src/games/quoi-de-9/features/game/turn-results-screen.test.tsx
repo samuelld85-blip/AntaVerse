@@ -20,7 +20,7 @@ function completedTurn({ themeSelection, ...overrides }: Partial<TurnResult> = {
     turnNumber: 2,
     roundNumber: 1,
     difficultyLevel: 2,
-    difficultyLabel: "Moyen",
+    difficultyLabel: "Challenge",
     foundAnswerIds: ["a1", "a2", "a3", "a4", "a5", "a6"],
     missedAnswerIds: ["a7", "a8", "a9"],
     foundAnswers: [

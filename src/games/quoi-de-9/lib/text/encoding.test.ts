@@ -15,7 +15,7 @@ function sampleQuestion(question: string) {
     question,
     teaser: "Pays d’Europe",
     difficultyLevel: 1 as const,
-    difficultyLabel: "Facile" as const,
+    difficultyLabel: "Classique" as const,
     coefficient: 1,
     answers: Array.from({ length: 9 }, (_, index) => ({
       id: `reponse-${index + 1}`,

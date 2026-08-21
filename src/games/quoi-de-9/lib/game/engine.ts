@@ -65,7 +65,7 @@ export function createGame(input: CreateGameInput): GameState {
       : 0;
 
   return {
-    schemaVersion: 5,
+    schemaVersion: 6,
     id: uid("game"),
     mode: input.mode,
     status: "instructions",
@@ -733,6 +733,67 @@ export function getWinner(game: GameState): WinnerResult {
   );
   const difference = winner.score - (secondMaxScore === -Infinity ? 0 : secondMaxScore);
   return { kind: "winner", winner, difference };
+}
+
+// Joker de changement de thème activé depuis l'écran de révélation (nouveau flow).
+// L'équipe qui répond souhaite changer le thème tiré au hasard.
+export function activateChangeThemeJoker(
+  game: GameState,
+  themes: Theme[],
+  questions: Question[],
+  random = Math.random,
+): GameState {
+  assertStatus(game, "theme_reveal");
+  if (!game.teamJokers[activeTeamId(game)]?.themeChoiceAvailable)
+    throw new Error("Ce joker a déjà été utilisé");
+  const proposedThemeIds = drawEligibleThemes(game, themes, questions, 3, random).map((t) => t.id);
+  if (proposedThemeIds.length === 0) throw new Error("Aucun thème éligible");
+  return touch({
+    ...game,
+    status: "joker_theme_selection",
+    turnThemeSelection: {
+      selectionMode: "active_team_choice",
+      proposedThemeIds,
+      selectedThemeId: null,
+    },
+  });
+}
+
+// Joker d'imposition de thème activé depuis l'écran de révélation (nouveau flow).
+// L'équipe adverse souhaite imposer un thème à l'équipe qui répond.
+export function activateOpponentOverrideJoker(
+  game: GameState,
+  themes: Theme[],
+  questions: Question[],
+  random = Math.random,
+): GameState {
+  assertStatus(game, "theme_reveal");
+  if (!game.teamJokers[opponentTeamId(game)]?.opponentThemeAvailable)
+    throw new Error("Ce joker a déjà été utilisé");
+  const proposedThemeIds = drawEligibleThemes(game, themes, questions, 3, random).map((t) => t.id);
+  if (proposedThemeIds.length === 0) throw new Error("Aucun thème éligible");
+  return touch({
+    ...game,
+    status: "joker_theme_selection",
+    turnThemeSelection: {
+      selectionMode: "opponent_imposed",
+      proposedThemeIds,
+      selectedThemeId: null,
+    },
+  });
+}
+
+// Annule la sélection de thème joker avant confirmation (depuis joker_theme_selection).
+export function cancelJokerThemeSelection(game: GameState): GameState {
+  assertStatus(game, "joker_theme_selection");
+  const mode = game.turnThemeSelection?.selectionMode;
+  return touch({
+    ...game,
+    status: "joker_opportunity",
+    jokerOpportunityStage: mode === "opponent_imposed" ? "opponent" : "active",
+    selectedThemeId: null,
+    turnThemeSelection: null,
+  });
 }
 
 export function replayGame(game: GameState): GameState {

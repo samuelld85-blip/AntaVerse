@@ -24,6 +24,7 @@ export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
   const [step, setStep] = useState<Step>("handoffA");
   const [guessInput, setGuessInput] = useState("");
   const [guessA, setGuessA] = useState<number | null>(null);
+  const [guessB, setGuessB] = useState<number | null>(null);
   const [winner, setWinner] = useState<"a" | "b" | null>(null);
 
   function submit(who: "a" | "b") {
@@ -39,12 +40,16 @@ export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
     if (result === "tie") {
       setQuestion(randomQuestion());
       setGuessA(null);
+      setGuessB(null);
       setStep("handoffA");
       return;
     }
+    setGuessB(value);
     setWinner(result);
     setStep("result");
   }
+
+  const unit = question.unit ?? "";
 
   const guessForm = (who: "a" | "b") => (
     <form
@@ -84,9 +89,20 @@ export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
       {step === "playB" ? guessForm("b") : null}
       {step === "result" && winner ? (
         <div className="mini-game-result">
+          <div className="mini-game-answer-reveal">
+            <p className="mini-game-answer-reveal-label">Bonne réponse</p>
+            <p className="mini-game-answer-reveal-value">
+              {question.answer}
+              {unit}
+            </p>
+          </div>
+          <p className="mini-game-result-detail">
+            {playerA.name} : {guessA}
+            {unit} · {opponent.name} : {guessB}
+            {unit}
+          </p>
           <p className="mini-game-result-headline">
-            {winner === "a" ? playerA.name : opponent.name} gagne ! (réponse : {question.answer}
-            {question.unit ?? ""})
+            {winner === "a" ? playerA.name : opponent.name} gagne !
           </p>
           <Button type="button" onClick={() => onComplete(duelOutcome(winner, playerA, opponent))}>
             Continuer <span aria-hidden="true">→</span>

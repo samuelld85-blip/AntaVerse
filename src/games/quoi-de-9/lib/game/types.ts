@@ -121,7 +121,7 @@ export interface TurnResult {
 }
 
 export interface GameState {
-  schemaVersion: 5;
+  schemaVersion: 6;
   id: string;
   mode: "competition" | "fun";
   status: GameStatus;

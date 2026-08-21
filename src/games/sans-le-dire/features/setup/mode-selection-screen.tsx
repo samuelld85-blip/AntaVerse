@@ -24,10 +24,12 @@ export function ModeSelectionScreen({
           onClick={() => onModeSelected("competition")}
           className="mode-selection-button mode-selection-button--competition flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl px-4 py-3 text-left transition active:scale-[.98]"
         >
-          <span className="text-2xl" aria-hidden="true">
-            🏆
-          </span>
-          <span className="block text-base font-black">Compétition</span>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl" aria-hidden="true">
+              🏆
+            </span>
+            <span className="text-base font-black">Compétition</span>
+          </div>
           <span className="block text-[10px] font-medium text-tertiary">
             Marquez des points et visez le meilleur score
           </span>
@@ -38,10 +40,12 @@ export function ModeSelectionScreen({
           onClick={() => onModeSelected("fun")}
           className="mode-selection-button mode-selection-button--fun flex min-h-20 flex-col items-start justify-center gap-1.5 rounded-2xl px-4 py-3 text-left transition active:scale-[.98]"
         >
-          <span className="text-2xl" aria-hidden="true">
-            🍺
-          </span>
-          <span className="block text-base font-black">Fun</span>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl" aria-hidden="true">
+              🎉
+            </span>
+            <span className="text-base font-black">Fun</span>
+          </div>
           <span className="block text-[10px] font-medium text-tertiary">
             Trouvez des réponses et distribuez des gorgées
           </span>

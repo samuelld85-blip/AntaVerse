@@ -2,8 +2,8 @@ import { z } from "zod";
 import { computeAnswerSetFingerprint } from "./content-fingerprint.mjs";
 import { findSuspiciousMojibake } from "./text-encoding.mjs";
 
-export const DIFFICULTY_LABELS = { 1: "Facile", 2: "Moyen", 3: "Difficile" };
-export const DIFFICULTY_LEVELS = [1, 2, 3];
+export const DIFFICULTY_LABELS = { 1: "Classique", 2: "Challenge" };
+export const DIFFICULTY_LEVELS = [1, 2];
 export const CONTENT_STATUSES = [
   "draft",
   "needs_review",
@@ -67,8 +67,8 @@ export const quizQuestionSchema = z
     tags: z.array(slug),
     questionText: z.string().trim().min(12),
     shortTitle: z.string().trim().min(2).max(80),
-    difficultyLevel: z.union([z.literal(1), z.literal(2), z.literal(3)]),
-    difficultyLabel: z.enum(["Facile", "Moyen", "Difficile"]),
+    difficultyLevel: z.union([z.literal(1), z.literal(2)]),
+    difficultyLabel: z.enum(["Classique", "Challenge"]),
     editorialDifficultyScore: score,
     specificityScore: score,
     popularityScore: score,

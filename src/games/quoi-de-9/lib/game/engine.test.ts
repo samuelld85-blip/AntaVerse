@@ -3,8 +3,13 @@ import { questions, themes } from "@/games/quoi-de-9/data/questions";
 import type { DifficultyLevel } from "./config";
 import {
   acknowledgeInstructions,
+  activateChangeThemeJoker,
+  activateOpponentOverrideJoker,
+  activateOpponentThemeJoker,
+  activateThemeChoiceJoker,
   advanceAfterResults,
   cancelJokerTheme,
+  cancelJokerThemeSelection,
   chooseDifficulty,
   confirmChoice,
   confirmJokerTheme,
@@ -31,8 +36,6 @@ import {
   toggleBomb,
   toggleTurnResultAnswer,
   undoLastAnswer,
-  activateOpponentThemeJoker,
-  activateThemeChoiceJoker,
 } from "./engine";
 import { calculateBombPenalty, calculateTurnScore } from "./scoring";
 import type { GameState } from "./types";
@@ -84,17 +87,14 @@ function completeTurn(game: GameState, themeId: string, difficultyLevel: Difficu
 describe("scoring", () => {
   it("uses the configured coefficients", () => {
     expect(calculateTurnScore(5, 1)).toBe(500);
-    expect(calculateTurnScore(5, 2)).toBe(750);
-    expect(calculateTurnScore(5, 3)).toBe(1500);
-    expect(calculateTurnScore(9, 3)).toBe(2700);
+    expect(calculateTurnScore(5, 2)).toBe(675);
+    expect(calculateTurnScore(9, 2)).toBe(1215);
   });
 
-  it("deducts two correct answers when a bomb is triggered", () => {
+  it("deducts bomb penalty correctly", () => {
     expect(calculateBombPenalty(1)).toBe(200);
-    expect(calculateBombPenalty(2)).toBe(300);
-    expect(calculateBombPenalty(3)).toBe(600);
-    expect(calculateTurnScore(0, 2, true)).toBe(-300);
-    expect(calculateTurnScore(1, 2, true)).toBe(-150);
+    expect(calculateBombPenalty(2)).toBe(270);
+    expect(calculateTurnScore(0, 2, true)).toBe(-270);
   });
 });
 
@@ -138,7 +138,7 @@ describe("theme and question availability", () => {
     );
   });
 
-  it("only enables themes with an unused question in all three difficulties", () => {
+  it("only enables themes with an unused question in both difficulties", () => {
     const game = reachDifficultySelection();
     const cinema = getThemeAvailability(themes, questions, game.usedQuestionIds).find(
       (entry) => entry.theme.id === "cinema",
@@ -146,7 +146,6 @@ describe("theme and question availability", () => {
     expect(cinema?.available).toBe(true);
     expect(cinema?.byDifficulty[1]).toBeGreaterThan(0);
     expect(cinema?.byDifficulty[2]).toBeGreaterThan(0);
-    expect(cinema?.byDifficulty[3]).toBeGreaterThan(0);
   });
 
   it("disables an exhausted difficulty and never selects a used question", () => {
@@ -157,7 +156,6 @@ describe("theme and question availability", () => {
     const availability = getDifficultyAvailability(questions, "work-office", easyIds);
     expect(availability[1]).toBe(0);
     expect(availability[2]).toBeGreaterThan(0);
-    expect(availability[3]).toBeGreaterThan(0);
   });
 
   it("selects randomly only among published eligible questions", () => {
@@ -261,14 +259,15 @@ describe("timer and answer locking", () => {
     const started = startTimer(ready, 1_000);
     const bombed = toggleBomb(started, question, 2_000);
     expect(bombed.bombTriggered).toBe(true);
-    expect(bombed.turnScore).toBe(-300);
+    expect(bombed.turnScore).toBe(-270); // bomb seul : 0 - 270
 
     const withAnswer = toggleAnswer(bombed, question.answers[0]!.id, question, 3_000);
-    expect(withAnswer.turnScore).toBe(-150);
+    expect(withAnswer.turnScore).toBe(-135); // 135 - 270
     const result = finalizeTurn(expireTurn(withAnswer, 91_000), question, "Science", 92_000);
-    expect(result.teams[0]!.score).toBe(-50);
-    expect(result.history.at(-1)?.pointsEarned).toBe(-150);
-    expect(result.history.at(-1)).toMatchObject({ bombTriggered: true, bombPenalty: 300 });
+    // Team A had +100 from turn 1 (1 correct answer at Classique) → 100 + (-135) = -35
+    expect(result.teams[0]!.score).toBe(-35);
+    expect(result.history.at(-1)?.pointsEarned).toBe(-135);
+    expect(result.history.at(-1)).toMatchObject({ bombTriggered: true, bombPenalty: 270 });
   });
 
   it("recovers an expired timer from timestamps", () => {
@@ -497,11 +496,151 @@ describe("three teams support", () => {
     expect(replayed.teams).toHaveLength(3);
     expect(replayed.teams[0]?.name).toBe("Équipe A");
     expect(replayed.teams[2]?.name).toBe("Équipe C");
-    expect(replayed.schemaVersion).toBe(5);
+    expect(replayed.schemaVersion).toBe(6);
   });
 });
 
-const DIFFICULTIES_FOR_TEST: DifficultyLevel[] = [1, 2, 3];
+describe("nouveau flow : thème automatique + Classique/Challenge depuis theme_reveal", () => {
+  function reachThemeReveal(game = createGame(input)): ReturnType<typeof imposeRandomTheme> {
+    const jokerOpportunity =
+      game.status === "instructions"
+        ? confirmPhonePass(acknowledgeInstructions(game))
+        : game.status === "pass_phone"
+          ? confirmPhonePass(game)
+          : (() => {
+              throw new Error("Le test attend une partie prête à passer le téléphone");
+            })();
+    const activeChoice = skipOpponentThemeJoker(jokerOpportunity);
+    return imposeRandomTheme(activeChoice, themes, questions, () => 0);
+  }
+
+  it("imposeRandomTheme depuis joker_opportunity amène directement à theme_reveal", () => {
+    const revealed = reachThemeReveal();
+    expect(revealed.status).toBe("theme_reveal");
+    expect(revealed.selectedThemeId).toBeTruthy();
+    expect(revealed.turnThemeSelection?.selectionMode).toBe("random_imposed");
+    expect(revealed.turnThemeSelection?.selectedThemeId).toBe(revealed.selectedThemeId);
+  });
+
+  it("Classique depuis theme_reveal : continueFromThemeReveal → chooseDifficulty → confirmChoice → question_ready en une seule chaîne", () => {
+    const revealed = reachThemeReveal();
+    const afterReveal = continueFromThemeReveal(revealed, questions);
+    const afterChoice = chooseDifficulty(afterReveal, 1, questions);
+    const ready = confirmChoice(afterChoice, questions, () => 0);
+    expect(ready.status).toBe("question_ready");
+    expect(ready.currentQuestionId).toBeTruthy();
+    const question = questions.find((q) => q.id === ready.currentQuestionId);
+    expect(question?.difficultyLevel).toBe(1);
+    expect(question?.themeId).toBe(revealed.selectedThemeId);
+  });
+
+  it("Challenge depuis theme_reveal : question sélectionnée au bon niveau", () => {
+    const revealed = reachThemeReveal();
+    const ready = confirmChoice(
+      chooseDifficulty(continueFromThemeReveal(revealed, questions), 2, questions),
+      questions,
+      () => 0,
+    );
+    expect(ready.status).toBe("question_ready");
+    const question = questions.find((q) => q.id === ready.currentQuestionId);
+    expect(question?.difficultyLevel).toBe(2);
+  });
+
+  it("activateChangeThemeJoker depuis theme_reveal : joker_theme_selection active_team_choice", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateChangeThemeJoker(revealed, themes, questions, () => 0.42);
+    expect(choosing.status).toBe("joker_theme_selection");
+    expect(choosing.turnThemeSelection?.selectionMode).toBe("active_team_choice");
+    expect(choosing.turnThemeSelection?.proposedThemeIds).toHaveLength(3);
+    expect(choosing.teamJokers[choosing.teams[0]!.id]?.themeChoiceAvailable).toBe(true);
+  });
+
+  it("activateChangeThemeJoker confirmé → theme_reveal avec le thème du joker", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateChangeThemeJoker(revealed, themes, questions, () => 0.42);
+    const proposed = choosing.turnThemeSelection!.proposedThemeIds[0]!;
+    const confirmed = confirmJokerTheme(selectJokerTheme(choosing, proposed), 1_000);
+    expect(confirmed.status).toBe("theme_reveal");
+    expect(confirmed.selectedThemeId).toBe(proposed);
+    expect(confirmed.teamJokers[confirmed.teams[0]!.id]?.themeChoiceAvailable).toBe(false);
+    expect(confirmed.jokerUsages).toHaveLength(1);
+    expect(confirmed.jokerUsages[0]?.jokerType).toBe("theme_choice");
+  });
+
+  it("activateOpponentOverrideJoker depuis theme_reveal : joker_theme_selection opponent_imposed", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateOpponentOverrideJoker(revealed, themes, questions, () => 0.5);
+    expect(choosing.status).toBe("joker_theme_selection");
+    expect(choosing.turnThemeSelection?.selectionMode).toBe("opponent_imposed");
+    expect(choosing.turnThemeSelection?.proposedThemeIds).toHaveLength(3);
+    const opponent = choosing.teams[1]!;
+    expect(choosing.teamJokers[opponent.id]?.opponentThemeAvailable).toBe(true);
+  });
+
+  it("activateOpponentOverrideJoker confirmé → theme_reveal, consomme le joker adverse", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateOpponentOverrideJoker(revealed, themes, questions, () => 0.5);
+    const proposed = choosing.turnThemeSelection!.proposedThemeIds[1]!;
+    const confirmed = confirmJokerTheme(selectJokerTheme(choosing, proposed), 1_000);
+    expect(confirmed.status).toBe("theme_reveal");
+    expect(confirmed.selectedThemeId).toBe(proposed);
+    const opponent = confirmed.teams[1]!;
+    expect(confirmed.teamJokers[opponent.id]?.opponentThemeAvailable).toBe(false);
+    expect(confirmed.jokerUsages[0]?.jokerType).toBe("opponent_theme");
+  });
+
+  it("activateChangeThemeJoker échoue si le joker a déjà été utilisé", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateChangeThemeJoker(revealed, themes, questions, () => 0);
+    const proposed = choosing.turnThemeSelection!.proposedThemeIds[0]!;
+    const confirmedOnce = confirmJokerTheme(selectJokerTheme(choosing, proposed), 1_000);
+    expect(() => activateChangeThemeJoker(confirmedOnce, themes, questions)).toThrow(
+      "Ce joker a déjà été utilisé",
+    );
+  });
+
+  it("activateChangeThemeJoker échoue depuis un état autre que theme_reveal", () => {
+    const game = confirmPhonePass(acknowledgeInstructions(createGame(input)));
+    expect(() => activateChangeThemeJoker(game, themes, questions)).toThrow();
+  });
+
+  it("cancelJokerThemeSelection depuis joker_theme_selection retourne à joker_opportunity", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateChangeThemeJoker(revealed, themes, questions, () => 0);
+    const cancelled = cancelJokerThemeSelection(choosing);
+    expect(cancelled.status).toBe("joker_opportunity");
+    expect(cancelled.jokerOpportunityStage).toBe("active");
+    expect(cancelled.turnThemeSelection).toBeNull();
+    expect(cancelled.teamJokers[cancelled.teams[0]!.id]?.themeChoiceAvailable).toBe(true);
+  });
+
+  it("cancelJokerThemeSelection depuis opponent_imposed retourne le bon stage", () => {
+    const revealed = reachThemeReveal();
+    const choosing = activateOpponentOverrideJoker(revealed, themes, questions, () => 0);
+    const cancelled = cancelJokerThemeSelection(choosing);
+    expect(cancelled.status).toBe("joker_opportunity");
+    expect(cancelled.jokerOpportunityStage).toBe("opponent");
+  });
+
+  it("aucune question de l'ancien thème n'est utilisée après changement de thème via joker", () => {
+    const revealed = reachThemeReveal();
+    const originalThemeId = revealed.selectedThemeId;
+    const choosing = activateChangeThemeJoker(revealed, themes, questions, () => 0.99);
+    const newThemeId = choosing.turnThemeSelection!.proposedThemeIds[0]!;
+    const afterJoker = confirmJokerTheme(selectJokerTheme(choosing, newThemeId), 1_000);
+    // La question sélectionnée doit appartenir au nouveau thème, pas à l'ancien
+    const ready = confirmChoice(
+      chooseDifficulty(continueFromThemeReveal(afterJoker, questions), 1, questions),
+      questions,
+      () => 0,
+    );
+    const question = questions.find((q) => q.id === ready.currentQuestionId);
+    expect(question?.themeId).toBe(newThemeId);
+    expect(question?.themeId).not.toBe(originalThemeId);
+  });
+});
+
+const DIFFICULTIES_FOR_TEST: DifficultyLevel[] = [1, 2];
 
 function seededRandom(seed: number): () => number {
   let state = seed >>> 0;

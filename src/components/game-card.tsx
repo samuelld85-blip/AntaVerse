@@ -23,10 +23,6 @@ export function GameCard({ game, index }: { game: GameDefinition; index: number 
         style={style}
         aria-label={`Jouer à ${game.name}`}
       >
-        <span className="game-card-modes" aria-hidden="true">
-          {game.modes?.includes("competition") && <span>🏆</span>}
-          {(game.drinkingGame || game.modes?.includes("fun")) && <span>🍺</span>}
-        </span>
         <span className="game-icon" aria-hidden="true">
           <Image src={iconSrc} alt="" width={88} height={88} sizes="72px" />
         </span>
