@@ -435,3 +435,65 @@ Before any requested push, first verify:
 - commit contents.
 
 Then push only the exact changes the user authorized.
+
+## Browser / visual verification policy
+
+Browser verification is NOT the default validation method.
+
+Prioritize the cheapest reliable validation method for the task.
+
+### Do NOT use Claude Browser for
+
+- small UI changes;
+- text/copy changes;
+- spacing, sizing, colors, borders, or other minor CSS adjustments;
+- simple component refactors;
+- straightforward bug fixes that can be verified from the code;
+- asset swaps;
+- isolated changes with an obvious expected result;
+- tasks adequately validated by typecheck, targeted tests, or code inspection.
+
+For these tasks, normally:
+
+1. inspect only the relevant files;
+2. make the smallest necessary change;
+3. run typecheck or targeted tests only when useful;
+4. stop.
+
+Do not launch a browser merely to prove that an obvious change exists.
+
+### Browser preflight
+
+Before opening Claude Browser:
+
+1. Check that port 3000 is listening.
+2. Check that `http://localhost:3000` returns an HTTP response.
+3. Only after those checks succeed, open the browser.
+4. If the browser still cannot access the page, retry once.
+5. If the second attempt fails, stop browser verification instead of repeatedly restarting the server.
+
+## Local development server policy
+
+The user normally keeps the AntaVerse dev server running manually on:
+
+http://localhost:3000
+
+Before starting any dev server:
+
+1. First check whether http://localhost:3000 is already responding.
+2. If it is responding, ALWAYS reuse that server.
+3. Do NOT run `npm run dev`, `next dev`, or start another server.
+4. Do NOT change ports unless the user explicitly asks.
+
+If localhost:3000 does not respond:
+
+- perform one lightweight connectivity check;
+- only then consider starting the project server;
+- never start multiple dev-server processes;
+- if port 3000 is occupied but inaccessible, diagnose the existing process before starting another server.
+
+For browser verification, always try this URL first:
+
+http://localhost:3000
+
+Do not invent alternate ports such as 3001, 3002, etc. unless necessary.

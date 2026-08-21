@@ -7,9 +7,11 @@ import { PlayingCard } from "./playing-card";
 
 export function CardReveal({
   game,
+  penaltySips = 0,
   onContinue,
 }: {
   game: GameState;
+  penaltySips?: number;
   onContinue: () => void;
 }) {
   const card = game.currentCard;
@@ -38,6 +40,11 @@ export function CardReveal({
       className={`card-reveal ${isCollapse ? "card-reveal--collapse" : ""}`}
       aria-live="polite"
     >
+      {penaltySips > 0 ? (
+        <p className="card-reveal-penalty">
+          Raté : +{penaltySips} gorgée{penaltySips > 1 ? "s" : ""}
+        </p>
+      ) : null}
       <div className="card-reveal-card-wrap">
         <PlayingCard card={card} faceUp className="card-reveal-playing-card" />
       </div>

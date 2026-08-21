@@ -6,6 +6,7 @@ import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { Brand } from "@/games/palmier/components/brand";
 import { CardReveal } from "@/games/palmier/components/card-reveal";
 import { PalmTree } from "@/games/palmier/components/palm-tree";
+import { PalmierGoalMiniGame } from "@/games/palmier/components/goal-mini-game";
 import {
   completeCollapse,
   completeTurn,
@@ -17,15 +18,16 @@ import {
 import { loadCurrentGame, saveCurrentGame } from "@/games/palmier/lib/game/persistence";
 import type { GameState } from "@/games/palmier/lib/game/types";
 
-const SHAKE_REVEAL_MS = 550;
 const COLLAPSE_ANIM_MS = 1900;
+const TOTAL_CARDS = 52;
 
 export function GameClient() {
   const router = useRouter();
   const [game, setGame] = useState<GameState | null>(null);
   const [ready, setReady] = useState(false);
-  const [revealing, setRevealing] = useState(false);
   const [collapseAnimating, setCollapseAnimating] = useState(false);
+  // penalty sips added by the mini-game before card reveal
+  const [penaltySips, setPenaltySips] = useState(0);
   const busy = useRef(false);
 
   useEffect(() => {
@@ -46,24 +48,24 @@ export function GameClient() {
     setGame(next);
   }
 
-  function shakeAndDraw() {
-    if (!game || busy.current || game.phase !== "idle") return;
+  // Called by the mini-game when the player releases the card.
+  // failed=true → 1 penalty sip, then draw anyway.
+  function onMiniGameResolved(failed: boolean) {
+    if (!game || busy.current) return;
     busy.current = true;
-    setRevealing(true);
-    window.setTimeout(() => {
-      const next = drawCard(game);
-      commit(next);
-      setRevealing(false);
-      busy.current = false;
-      if (next.phase === "collapse") {
-        setCollapseAnimating(true);
-        window.setTimeout(() => setCollapseAnimating(false), COLLAPSE_ANIM_MS);
-      }
-    }, SHAKE_REVEAL_MS);
+    setPenaltySips(failed ? 1 : 0);
+    const next = drawCard(game);
+    commit(next);
+    busy.current = false;
+    if (next.phase === "collapse") {
+      setCollapseAnimating(true);
+      window.setTimeout(() => setCollapseAnimating(false), COLLAPSE_ANIM_MS);
+    }
   }
 
   function onContinue() {
     if (!game) return;
+    setPenaltySips(0);
     if (game.phase === "collapse") {
       commit(completeCollapse(game));
     } else {
@@ -74,7 +76,7 @@ export function GameClient() {
   function restart() {
     if (!game) return;
     setCollapseAnimating(false);
-    setRevealing(false);
+    setPenaltySips(0);
     busy.current = false;
     commit(replayGame(game));
   }
@@ -121,7 +123,6 @@ export function GameClient() {
   }
 
   const activePlayer = getActivePlayer(game);
-  // After the 4th king collapse has been shown, show stable palm (no more kings possible)
   const palmStage =
     game.kingsDrawn < 4 || game.phase === "collapse"
       ? palmStageForKings(game.kingsDrawn)
@@ -137,37 +138,19 @@ export function GameClient() {
       </header>
 
       {game.phase === "idle" ? (
-        <section className="palm-stage">
-          <p className="current-player-label">Au tour de</p>
-          <h1 className="current-player-name">{activePlayer.name}</h1>
-          <PalmTree stage={palmStage} />
-          <button
-            type="button"
-            className="button button--primary"
-            onClick={shakeAndDraw}
-            disabled={revealing}
-            data-shaking={revealing}
-          >
-            {revealing ? "…" : "Secoue le palmier"}
-          </button>
-          <p className="cards-remaining">
-            {cardsLeft} carte{cardsLeft !== 1 ? "s" : ""} restante{cardsLeft !== 1 ? "s" : ""}
-          </p>
-          {game.maitrePouce || game.maitreQuestions ? (
-            <div className="maitre-bar">
-              {game.maitrePouce ? (
-                <span className="maitre-chip">👍 Maître du pouce : {game.maitrePouce}</span>
-              ) : null}
-              {game.maitreQuestions ? (
-                <span className="maitre-chip">❓ Maître des questions : {game.maitreQuestions}</span>
-              ) : null}
-            </div>
-          ) : null}
-        </section>
+        <PalmierGoalMiniGame
+          totalCards={TOTAL_CARDS}
+          remainingCards={cardsLeft}
+          playerName={activePlayer.name}
+          cardsLeft={cardsLeft}
+          maitrePouce={game.maitrePouce}
+          maitreQuestions={game.maitreQuestions}
+          onResolved={onMiniGameResolved}
+        />
       ) : null}
 
       {(game.phase === "reveal" || (game.phase === "collapse" && !collapseAnimating)) ? (
-        <CardReveal game={game} onContinue={onContinue} />
+        <CardReveal game={game} penaltySips={penaltySips} onContinue={onContinue} />
       ) : null}
 
       {isCollapsing ? (
