@@ -151,175 +151,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7b9757c10bee2577e50658ddc4f9a2b3560a1ed2debd9e04ebbe29688e0a7914",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-hard-02",
     "slug": "xlsx-brands-shopping-hard-02",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
-    "questionText": "Cite 9 grandes enseignes ou marques de distribution nées en France.",
-    "shortTitle": "grandes enseignes ou marques de distribution…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-1",
-        "display": "Carrefour",
-        "normalized": "carrefour",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-2",
-        "display": "Decathlon",
-        "normalized": "decathlon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-3",
-        "display": "Sephora",
-        "normalized": "sephora",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-4",
-        "display": "Fnac",
-        "normalized": "fnac",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-5",
-        "display": "Darty",
-        "normalized": "darty",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-6",
-        "display": "Monoprix",
-        "normalized": "monoprix",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-7",
-        "display": "Leroy Merlin",
-        "normalized": "leroy merlin",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-8",
-        "display": "Auchan",
-        "normalized": "auchan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-hard-02-answer-9",
-        "display": "Castorama",
-        "normalized": "castorama",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-hard-02-bomb",
-      "display": "IKEA",
-      "normalized": "ikea",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "ef75ed75a4f31236c00bfc30bf39ef40f01bb938cfb0f7663d3f49504c7f75ef",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-hard-03",
-    "slug": "xlsx-brands-shopping-hard-03",
     "language": "fr",
     "themeId": "brands-shopping",
     "subthemeIds": [
@@ -344,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-1",
+        "id": "xlsx-brands-shopping-hard-02-answer-1",
         "display": "Ford",
         "normalized": "ford",
         "aliases": [],
@@ -356,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-2",
+        "id": "xlsx-brands-shopping-hard-02-answer-2",
         "display": "Ferrari",
         "normalized": "ferrari",
         "aliases": [],
@@ -368,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-3",
+        "id": "xlsx-brands-shopping-hard-02-answer-3",
         "display": "Chanel",
         "normalized": "chanel",
         "aliases": [],
@@ -380,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-4",
+        "id": "xlsx-brands-shopping-hard-02-answer-4",
         "display": "Honda",
         "normalized": "honda",
         "aliases": [],
@@ -392,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-5",
+        "id": "xlsx-brands-shopping-hard-02-answer-5",
         "display": "Disney",
         "normalized": "disney",
         "aliases": [],
@@ -404,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-6",
+        "id": "xlsx-brands-shopping-hard-02-answer-6",
         "display": "Michelin",
         "normalized": "michelin",
         "aliases": [],
@@ -416,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-7",
+        "id": "xlsx-brands-shopping-hard-02-answer-7",
         "display": "Cartier",
         "normalized": "cartier",
         "aliases": [],
@@ -428,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-8",
+        "id": "xlsx-brands-shopping-hard-02-answer-8",
         "display": "Kellogg's",
         "normalized": "kellogg s",
         "aliases": [],
@@ -440,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-hard-03-answer-9",
+        "id": "xlsx-brands-shopping-hard-02-answer-9",
         "display": "Levi's",
         "normalized": "levi s",
         "aliases": [],
@@ -453,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-hard-03-bomb",
+      "id": "xlsx-brands-shopping-hard-02-bomb",
       "display": "Nike",
       "normalized": "nike",
       "aliases": [],
@@ -469,11 +310,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6da2757b94b11d1b68a26f0a7173e9414eed454bb26fb1021d86fb5c9b7ee778",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

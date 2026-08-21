@@ -11,165 +11,6 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 jeux ou licences Ubisoft très connus.",
-    "shortTitle": "jeux ou licences Ubisoft très connus",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-video-games-hard-01-answer-1",
-        "display": "Assassin's Creed",
-        "normalized": "assassin s creed",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-2",
-        "display": "Far Cry",
-        "normalized": "far cry",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-3",
-        "display": "Just Dance",
-        "normalized": "just dance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-4",
-        "display": "Rayman",
-        "normalized": "rayman",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-5",
-        "display": "Prince of Persia",
-        "normalized": "prince of persia",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-6",
-        "display": "Watch Dogs",
-        "normalized": "watch dogs",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-7",
-        "display": "Rainbow Six",
-        "normalized": "rainbow six",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-8",
-        "display": "Splinter Cell",
-        "normalized": "splinter cell",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-video-games-hard-01-answer-9",
-        "display": "The Division",
-        "normalized": "the division",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-video-games-hard-01-bomb",
-      "display": "God of War",
-      "normalized": "god of war",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "12a922cf3dcdd7b450ff32e4cd81f352578f27c0055ad6d1b5d271edc2c6dc8e",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-video-games-hard-02",
-    "slug": "xlsx-video-games-hard-02",
-    "language": "fr",
-    "themeId": "video-games",
-    "subthemeIds": [
-      "video-games:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
     "questionText": "Cite 9 jeux développés par un studio Rockstar Games.",
     "shortTitle": "jeux développés par un studio Rockstar Games",
     "difficultyLevel": 3,
@@ -185,7 +26,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-video-games-hard-02-answer-1",
+        "id": "xlsx-video-games-hard-01-answer-1",
         "display": "Grand Theft Auto III",
         "normalized": "grand theft auto iii",
         "aliases": [],
@@ -197,7 +38,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-2",
+        "id": "xlsx-video-games-hard-01-answer-2",
         "display": "Grand Theft Auto: Vice City",
         "normalized": "grand theft auto vice city",
         "aliases": [],
@@ -209,7 +50,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-3",
+        "id": "xlsx-video-games-hard-01-answer-3",
         "display": "Grand Theft Auto: San Andreas",
         "normalized": "grand theft auto san andreas",
         "aliases": [],
@@ -221,7 +62,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-4",
+        "id": "xlsx-video-games-hard-01-answer-4",
         "display": "Grand Theft Auto IV",
         "normalized": "grand theft auto iv",
         "aliases": [],
@@ -233,7 +74,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-5",
+        "id": "xlsx-video-games-hard-01-answer-5",
         "display": "Grand Theft Auto V",
         "normalized": "grand theft auto v",
         "aliases": [],
@@ -245,7 +86,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-6",
+        "id": "xlsx-video-games-hard-01-answer-6",
         "display": "Red Dead Redemption",
         "normalized": "red dead redemption",
         "aliases": [],
@@ -257,7 +98,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-7",
+        "id": "xlsx-video-games-hard-01-answer-7",
         "display": "Red Dead Redemption 2",
         "normalized": "red dead redemption 2",
         "aliases": [],
@@ -269,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-8",
+        "id": "xlsx-video-games-hard-01-answer-8",
         "display": "Bully",
         "normalized": "bully",
         "aliases": [],
@@ -281,7 +122,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-02-answer-9",
+        "id": "xlsx-video-games-hard-01-answer-9",
         "display": "Max Payne 3",
         "normalized": "max payne 3",
         "aliases": [],
@@ -294,7 +135,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-video-games-hard-02-bomb",
+      "id": "xlsx-video-games-hard-01-bomb",
       "display": "Mafia III",
       "normalized": "mafia iii",
       "aliases": [],
@@ -310,16 +151,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "53fcfcab4d107c22885f547a20fcf344d2b6b8ebcf02f4216af027f73bc6a59e",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-video-games-hard-03",
-    "slug": "xlsx-video-games-hard-03",
+    "id": "xlsx-video-games-hard-02",
+    "slug": "xlsx-video-games-hard-02",
     "language": "fr",
     "themeId": "video-games",
     "subthemeIds": [
@@ -344,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-video-games-hard-03-answer-1",
+        "id": "xlsx-video-games-hard-02-answer-1",
         "display": "AK-47",
         "normalized": "ak 47",
         "aliases": [],
@@ -356,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-2",
+        "id": "xlsx-video-games-hard-02-answer-2",
         "display": "M4A1-S",
         "normalized": "m4a1 s",
         "aliases": [],
@@ -368,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-3",
+        "id": "xlsx-video-games-hard-02-answer-3",
         "display": "AWP",
         "normalized": "awp",
         "aliases": [],
@@ -380,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-4",
+        "id": "xlsx-video-games-hard-02-answer-4",
         "display": "Desert Eagle",
         "normalized": "desert eagle",
         "aliases": [],
@@ -392,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-5",
+        "id": "xlsx-video-games-hard-02-answer-5",
         "display": "Glock-18",
         "normalized": "glock 18",
         "aliases": [],
@@ -404,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-6",
+        "id": "xlsx-video-games-hard-02-answer-6",
         "display": "USP-S",
         "normalized": "usp s",
         "aliases": [],
@@ -416,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-7",
+        "id": "xlsx-video-games-hard-02-answer-7",
         "display": "FAMAS",
         "normalized": "famas",
         "aliases": [],
@@ -428,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-8",
+        "id": "xlsx-video-games-hard-02-answer-8",
         "display": "Galil AR",
         "normalized": "galil ar",
         "aliases": [],
@@ -440,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-03-answer-9",
+        "id": "xlsx-video-games-hard-02-answer-9",
         "display": "P90",
         "normalized": "p90",
         "aliases": [],
@@ -453,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-video-games-hard-03-bomb",
+      "id": "xlsx-video-games-hard-02-bomb",
       "display": "BFG 9000",
       "normalized": "bfg 9000",
       "aliases": [],
@@ -469,16 +310,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6caf9fa3b70d83e2949735d7918b73ccf9490628aacb48e5d693f4d8d7d4aedc",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-video-games-hard-04",
-    "slug": "xlsx-video-games-hard-04",
+    "id": "xlsx-video-games-hard-03",
+    "slug": "xlsx-video-games-hard-03",
     "language": "fr",
     "themeId": "video-games",
     "subthemeIds": [
@@ -503,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-video-games-hard-04-answer-1",
+        "id": "xlsx-video-games-hard-03-answer-1",
         "display": "Half-Life",
         "normalized": "half life",
         "aliases": [],
@@ -515,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-2",
+        "id": "xlsx-video-games-hard-03-answer-2",
         "display": "Half-Life 2",
         "normalized": "half life 2",
         "aliases": [],
@@ -527,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-3",
+        "id": "xlsx-video-games-hard-03-answer-3",
         "display": "Portal",
         "normalized": "portal",
         "aliases": [],
@@ -539,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-4",
+        "id": "xlsx-video-games-hard-03-answer-4",
         "display": "Portal 2",
         "normalized": "portal 2",
         "aliases": [],
@@ -551,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-5",
+        "id": "xlsx-video-games-hard-03-answer-5",
         "display": "Left 4 Dead",
         "normalized": "left 4 dead",
         "aliases": [],
@@ -563,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-6",
+        "id": "xlsx-video-games-hard-03-answer-6",
         "display": "Left 4 Dead 2",
         "normalized": "left 4 dead 2",
         "aliases": [],
@@ -575,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-7",
+        "id": "xlsx-video-games-hard-03-answer-7",
         "display": "Team Fortress 2",
         "normalized": "team fortress 2",
         "aliases": [],
@@ -587,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-8",
+        "id": "xlsx-video-games-hard-03-answer-8",
         "display": "Dota 2",
         "normalized": "dota 2",
         "aliases": [],
@@ -599,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-video-games-hard-04-answer-9",
+        "id": "xlsx-video-games-hard-03-answer-9",
         "display": "Counter-Strike 2",
         "normalized": "counter strike 2",
         "aliases": [],
@@ -612,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-video-games-hard-04-bomb",
+      "id": "xlsx-video-games-hard-03-bomb",
       "display": "Overwatch",
       "normalized": "overwatch",
       "aliases": [],
@@ -628,11 +469,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "88bc8954d15a8a510b8096688efefe058e92cb75227e51511b37a810a7b78e53",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

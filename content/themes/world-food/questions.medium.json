@@ -11,6 +11,165 @@
       "essentials",
       "moyen"
     ],
+    "questionText": "Cite 9 spécialités françaises dont le nom renvoie directement à une ville ou une région.",
+    "shortTitle": "spécialités françaises dont le nom renvoie di…",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-world-food-medium-01-answer-1",
+        "display": "Bœuf bourguignon",
+        "normalized": "bœuf bourguignon",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-2",
+        "display": "Quiche lorraine",
+        "normalized": "quiche lorraine",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-3",
+        "display": "Salade niçoise",
+        "normalized": "salade nicoise",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-4",
+        "display": "Gratin dauphinois",
+        "normalized": "gratin dauphinois",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-5",
+        "display": "Poulet basquaise",
+        "normalized": "poulet basquaise",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-6",
+        "display": "Tarte normande",
+        "normalized": "tarte normande",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-7",
+        "display": "Cassoulet toulousain",
+        "normalized": "cassoulet toulousain",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-8",
+        "display": "Bouillabaisse marseillaise",
+        "normalized": "bouillabaisse marseillaise",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-world-food-medium-01-answer-9",
+        "display": "Brandade de Nîmes",
+        "normalized": "brandade de nimes",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-world-food-medium-01-bomb",
+      "display": "Tiramisu",
+      "normalized": "tiramisu",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "81651d88c6a40955742677358ef9e407f5c14853cce5a8b1cde424100f13287b",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-world-food-medium-02",
+    "slug": "xlsx-world-food-medium-02",
+    "language": "fr",
+    "themeId": "world-food",
+    "subthemeIds": [
+      "world-food:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 agrumes couramment utilisés en cuisine.",
     "shortTitle": "agrumes couramment utilisés en cuisine",
     "difficultyLevel": 2,
@@ -26,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-world-food-medium-01-answer-1",
+        "id": "xlsx-world-food-medium-02-answer-1",
         "display": "Orange",
         "normalized": "orange",
         "aliases": [],
@@ -38,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-2",
+        "id": "xlsx-world-food-medium-02-answer-2",
         "display": "Citron jaune",
         "normalized": "citron jaune",
         "aliases": [],
@@ -50,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-3",
+        "id": "xlsx-world-food-medium-02-answer-3",
         "display": "Citron vert",
         "normalized": "citron vert",
         "aliases": [],
@@ -62,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-4",
+        "id": "xlsx-world-food-medium-02-answer-4",
         "display": "Pamplemousse",
         "normalized": "pamplemousse",
         "aliases": [],
@@ -74,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-5",
+        "id": "xlsx-world-food-medium-02-answer-5",
         "display": "Mandarine",
         "normalized": "mandarine",
         "aliases": [],
@@ -86,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-6",
+        "id": "xlsx-world-food-medium-02-answer-6",
         "display": "Clémentine",
         "normalized": "clementine",
         "aliases": [],
@@ -98,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-7",
+        "id": "xlsx-world-food-medium-02-answer-7",
         "display": "Kumquat",
         "normalized": "kumquat",
         "aliases": [],
@@ -110,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-8",
+        "id": "xlsx-world-food-medium-02-answer-8",
         "display": "Yuzu",
         "normalized": "yuzu",
         "aliases": [],
@@ -122,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-01-answer-9",
+        "id": "xlsx-world-food-medium-02-answer-9",
         "display": "Cédrat",
         "normalized": "cedrat",
         "aliases": [],
@@ -135,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-world-food-medium-01-bomb",
+      "id": "xlsx-world-food-medium-02-bomb",
       "display": "Kiwi",
       "normalized": "kiwi",
       "aliases": [],
@@ -151,171 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1ef9cce76c397b52ee310ef41a2eda8ba6d46d73fbbde3d114d10de21ceb07db",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-world-food-medium-02",
-    "slug": "xlsx-world-food-medium-02",
-    "language": "fr",
-    "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 pays européens connus pour un fromage emblématique.",
-    "shortTitle": "pays européens connus pour un fromage embléma…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-world-food-medium-02-answer-1",
-        "display": "France",
-        "normalized": "france",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-2",
-        "display": "Italie",
-        "normalized": "italie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-3",
-        "display": "Suisse",
-        "normalized": "suisse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-4",
-        "display": "Pays-Bas",
-        "normalized": "pays bas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-5",
-        "display": "Grèce",
-        "normalized": "grece",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-6",
-        "display": "Espagne",
-        "normalized": "espagne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-7",
-        "display": "Royaume-Uni",
-        "normalized": "royaume uni",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-8",
-        "display": "Chypre",
-        "normalized": "chypre",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-02-answer-9",
-        "display": "Portugal",
-        "normalized": "portugal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-world-food-medium-02-bomb",
-      "display": "Japon",
-      "normalized": "japon",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "e05ad1590bb5d27a98066208389fecda17cb6fb965c2a89d8edc8ac558fc3f31",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-world-food-medium-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2bfd07708796283ceaf68c9f84580734404a3f3f793a291b0c9fd50da23c5303",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-world-food-medium-04",
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d0c2277b9d0940b81d7f265cf823a42c843bb6d90c6a775fb4e29929c5f1039a",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-world-food-medium-05",
@@ -787,334 +787,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a8047dc71413ca855f53072338df4d8e17a8be145a7615747dc4ed1268383ec9",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-world-food-medium-06",
     "slug": "xlsx-world-food-medium-06",
-    "language": "fr",
-    "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 légumes verts.",
-    "shortTitle": "légumes verts",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-world-food-medium-06-answer-1",
-        "display": "Brocoli",
-        "normalized": "brocoli",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-2",
-        "display": "Épinard",
-        "normalized": "epinard",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-3",
-        "display": "Courgette",
-        "normalized": "courgette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-4",
-        "display": "Haricot vert",
-        "normalized": "haricot vert",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-5",
-        "display": "Petit pois",
-        "normalized": "petit pois",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-6",
-        "display": "Chou kale",
-        "normalized": "chou kale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-7",
-        "display": "Poireau",
-        "normalized": "poireau",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-8",
-        "display": "Céleri",
-        "normalized": "celeri",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-06-answer-9",
-        "display": "Asperge",
-        "normalized": "asperge",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-world-food-medium-06-bomb",
-      "display": "Tomate",
-      "normalized": "tomate",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "10e77fb75d1698070a1e54e29c687463a20ad9230a56f4ed28df07b4fd4a597b",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-world-food-medium-07",
-    "slug": "xlsx-world-food-medium-07",
-    "language": "fr",
-    "themeId": "world-food",
-    "subthemeIds": [
-      "world-food:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 plats que l’on mange avec les doigts.",
-    "shortTitle": "plats que l’on mange avec les doigts",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-world-food-medium-07-answer-1",
-        "display": "burger",
-        "normalized": "burger",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-2",
-        "display": "tacos",
-        "normalized": "tacos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-3",
-        "display": "pizza",
-        "normalized": "pizza",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-4",
-        "display": "sandwich",
-        "normalized": "sandwich",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-5",
-        "display": "hot-dog",
-        "normalized": "hot dog",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-6",
-        "display": "frites",
-        "normalized": "frites",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-7",
-        "display": "nems",
-        "normalized": "nems",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-8",
-        "display": "ailes de poulet",
-        "normalized": "ailes de poulet",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-world-food-medium-07-answer-9",
-        "display": "kebab",
-        "normalized": "kebab",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-world-food-medium-07-bomb",
-      "display": "Soupe",
-      "normalized": "soupe",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d7089d56a385c399ffa4af88dc5706280a0b1727daebe12366808e3402a38f4f",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-world-food-medium-08",
-    "slug": "xlsx-world-food-medium-08",
     "language": "fr",
     "themeId": "world-food",
     "subthemeIds": [
@@ -1139,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-world-food-medium-08-answer-1",
+        "id": "xlsx-world-food-medium-06-answer-1",
         "display": "Sushi",
         "normalized": "sushi",
         "aliases": [],
@@ -1151,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-2",
+        "id": "xlsx-world-food-medium-06-answer-2",
         "display": "Ramen",
         "normalized": "ramen",
         "aliases": [],
@@ -1163,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-3",
+        "id": "xlsx-world-food-medium-06-answer-3",
         "display": "Pho",
         "normalized": "pho",
         "aliases": [],
@@ -1175,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-4",
+        "id": "xlsx-world-food-medium-06-answer-4",
         "display": "Pad thaï",
         "normalized": "pad thai",
         "aliases": [],
@@ -1187,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-5",
+        "id": "xlsx-world-food-medium-06-answer-5",
         "display": "Bibimbap",
         "normalized": "bibimbap",
         "aliases": [],
@@ -1199,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-6",
+        "id": "xlsx-world-food-medium-06-answer-6",
         "display": "Nasi goreng",
         "normalized": "nasi goreng",
         "aliases": [],
@@ -1211,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-7",
+        "id": "xlsx-world-food-medium-06-answer-7",
         "display": "Dim sum",
         "normalized": "dim sum",
         "aliases": [],
@@ -1223,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-8",
+        "id": "xlsx-world-food-medium-06-answer-8",
         "display": "Curry vert thaï",
         "normalized": "curry vert thai",
         "aliases": [],
@@ -1235,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-08-answer-9",
+        "id": "xlsx-world-food-medium-06-answer-9",
         "display": "Biryani",
         "normalized": "biryani",
         "aliases": [],
@@ -1248,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-world-food-medium-08-bomb",
+      "id": "xlsx-world-food-medium-06-bomb",
       "display": "Paella",
       "normalized": "paella",
       "aliases": [],
@@ -1264,16 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4456151d7a20b17246586b85bbb5f84d8a09a4c895bcccc8af3db451cff38d09",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-world-food-medium-09",
-    "slug": "xlsx-world-food-medium-09",
+    "id": "xlsx-world-food-medium-07",
+    "slug": "xlsx-world-food-medium-07",
     "language": "fr",
     "themeId": "world-food",
     "subthemeIds": [
@@ -1298,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-world-food-medium-09-answer-1",
+        "id": "xlsx-world-food-medium-07-answer-1",
         "display": "Parmesan",
         "normalized": "parmesan",
         "aliases": [],
@@ -1310,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-2",
+        "id": "xlsx-world-food-medium-07-answer-2",
         "display": "Mozzarella",
         "normalized": "mozzarella",
         "aliases": [],
@@ -1322,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-3",
+        "id": "xlsx-world-food-medium-07-answer-3",
         "display": "Gorgonzola",
         "normalized": "gorgonzola",
         "aliases": [],
@@ -1334,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-4",
+        "id": "xlsx-world-food-medium-07-answer-4",
         "display": "Pecorino",
         "normalized": "pecorino",
         "aliases": [],
@@ -1346,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-5",
+        "id": "xlsx-world-food-medium-07-answer-5",
         "display": "Ricotta",
         "normalized": "ricotta",
         "aliases": [],
@@ -1358,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-6",
+        "id": "xlsx-world-food-medium-07-answer-6",
         "display": "Mascarpone",
         "normalized": "mascarpone",
         "aliases": [],
@@ -1370,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-7",
+        "id": "xlsx-world-food-medium-07-answer-7",
         "display": "Taleggio",
         "normalized": "taleggio",
         "aliases": [],
@@ -1382,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-8",
+        "id": "xlsx-world-food-medium-07-answer-8",
         "display": "Provolone",
         "normalized": "provolone",
         "aliases": [],
@@ -1394,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-09-answer-9",
+        "id": "xlsx-world-food-medium-07-answer-9",
         "display": "Burrata",
         "normalized": "burrata",
         "aliases": [],
@@ -1407,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-world-food-medium-09-bomb",
+      "id": "xlsx-world-food-medium-07-bomb",
       "display": "Roquefort",
       "normalized": "roquefort",
       "aliases": [],
@@ -1423,16 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d76cff30e80687e9b5898b06494ef2c06ec182b2da43a70704a6e01dec9dd2c0",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-world-food-medium-10",
-    "slug": "xlsx-world-food-medium-10",
+    "id": "xlsx-world-food-medium-08",
+    "slug": "xlsx-world-food-medium-08",
     "language": "fr",
     "themeId": "world-food",
     "subthemeIds": [
@@ -1457,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-world-food-medium-10-answer-1",
+        "id": "xlsx-world-food-medium-08-answer-1",
         "display": "Risotto",
         "normalized": "risotto",
         "aliases": [],
@@ -1469,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-2",
+        "id": "xlsx-world-food-medium-08-answer-2",
         "display": "Paella",
         "normalized": "paella",
         "aliases": [],
@@ -1481,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-3",
+        "id": "xlsx-world-food-medium-08-answer-3",
         "display": "Biryani",
         "normalized": "biryani",
         "aliases": [],
@@ -1493,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-4",
+        "id": "xlsx-world-food-medium-08-answer-4",
         "display": "Sushi",
         "normalized": "sushi",
         "aliases": [],
@@ -1505,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-5",
+        "id": "xlsx-world-food-medium-08-answer-5",
         "display": "Nasi goreng",
         "normalized": "nasi goreng",
         "aliases": [],
@@ -1517,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-6",
+        "id": "xlsx-world-food-medium-08-answer-6",
         "display": "Jollof rice",
         "normalized": "jollof rice",
         "aliases": [],
@@ -1529,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-7",
+        "id": "xlsx-world-food-medium-08-answer-7",
         "display": "Arroz con pollo",
         "normalized": "arroz con pollo",
         "aliases": [],
@@ -1541,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-8",
+        "id": "xlsx-world-food-medium-08-answer-8",
         "display": "Kabsa",
         "normalized": "kabsa",
         "aliases": [],
@@ -1553,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-world-food-medium-10-answer-9",
+        "id": "xlsx-world-food-medium-08-answer-9",
         "display": "Bibimbap",
         "normalized": "bibimbap",
         "aliases": [],
@@ -1566,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-world-food-medium-10-bomb",
+      "id": "xlsx-world-food-medium-08-bomb",
       "display": "Ratatouille",
       "normalized": "ratatouille",
       "aliases": [],
@@ -1582,11 +1264,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "51f2bdc57d8670c1ff354edf1e6d36e7f2d6667f738e9b41800708fbd9ac3660",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

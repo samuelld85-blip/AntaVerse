@@ -11,6 +11,324 @@
       "essentials",
       "moyen"
     ],
+    "questionText": "Cite 9 navigateurs Internet connus.",
+    "shortTitle": "navigateurs Internet connus",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-internet-social-medium-01-answer-1",
+        "display": "Chrome",
+        "normalized": "chrome",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-2",
+        "display": "Safari",
+        "normalized": "safari",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-3",
+        "display": "Firefox",
+        "normalized": "firefox",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-4",
+        "display": "Edge",
+        "normalized": "edge",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-5",
+        "display": "Opera",
+        "normalized": "opera",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-6",
+        "display": "Brave",
+        "normalized": "brave",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-7",
+        "display": "Vivaldi",
+        "normalized": "vivaldi",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-8",
+        "display": "Tor Browser",
+        "normalized": "tor browser",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-01-answer-9",
+        "display": "Samsung Internet",
+        "normalized": "samsung internet",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-internet-social-medium-01-bomb",
+      "display": "Excel",
+      "normalized": "excel",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "4374b57f11bdbad7e59eb801201077d72b1a79df1e6239f7a45655c2e6a59955",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-internet-social-medium-02",
+    "slug": "xlsx-internet-social-medium-02",
+    "language": "fr",
+    "themeId": "internet-social",
+    "subthemeIds": [
+      "internet-social:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
+    "questionText": "Cite 9 plateformes ou services Internet lancés avant 2010.",
+    "shortTitle": "plateformes ou services Internet lancés avant…",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-internet-social-medium-02-answer-1",
+        "display": "Wikipedia",
+        "normalized": "wikipedia",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-2",
+        "display": "LinkedIn",
+        "normalized": "linkedin",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-3",
+        "display": "Facebook",
+        "normalized": "facebook",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-4",
+        "display": "Flickr",
+        "normalized": "flickr",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-5",
+        "display": "YouTube",
+        "normalized": "youtube",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-6",
+        "display": "Reddit",
+        "normalized": "reddit",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-7",
+        "display": "Twitter",
+        "normalized": "twitter",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-8",
+        "display": "Tumblr",
+        "normalized": "tumblr",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-internet-social-medium-02-answer-9",
+        "display": "Spotify",
+        "normalized": "spotify",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-internet-social-medium-02-bomb",
+      "display": "Instagram",
+      "normalized": "instagram",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "5aaadfbe5080a99ba16dc7909cb23b01854d1ee507042ad724b6d8bcca876987",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-internet-social-medium-03",
+    "slug": "xlsx-internet-social-medium-03",
+    "language": "fr",
+    "themeId": "internet-social",
+    "subthemeIds": [
+      "internet-social:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 sigles ou acronymes fondamentaux du Web et d’Internet.",
     "shortTitle": "sigles ou acronymes fondamentaux du Web et d’…",
     "difficultyLevel": 2,
@@ -26,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-01-answer-1",
+        "id": "xlsx-internet-social-medium-03-answer-1",
         "display": "URL",
         "normalized": "url",
         "aliases": [],
@@ -38,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-2",
+        "id": "xlsx-internet-social-medium-03-answer-2",
         "display": "DNS",
         "normalized": "dns",
         "aliases": [],
@@ -50,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-3",
+        "id": "xlsx-internet-social-medium-03-answer-3",
         "display": "IP",
         "normalized": "ip",
         "aliases": [],
@@ -62,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-4",
+        "id": "xlsx-internet-social-medium-03-answer-4",
         "display": "HTTP",
         "normalized": "http",
         "aliases": [],
@@ -74,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-5",
+        "id": "xlsx-internet-social-medium-03-answer-5",
         "display": "HTTPS",
         "normalized": "https",
         "aliases": [],
@@ -86,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-6",
+        "id": "xlsx-internet-social-medium-03-answer-6",
         "display": "HTML",
         "normalized": "html",
         "aliases": [],
@@ -98,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-7",
+        "id": "xlsx-internet-social-medium-03-answer-7",
         "display": "CSS",
         "normalized": "css",
         "aliases": [],
@@ -110,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-8",
+        "id": "xlsx-internet-social-medium-03-answer-8",
         "display": "VPN",
         "normalized": "vpn",
         "aliases": [],
@@ -122,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-01-answer-9",
+        "id": "xlsx-internet-social-medium-03-answer-9",
         "display": "CAPTCHA",
         "normalized": "captcha",
         "aliases": [],
@@ -135,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-01-bomb",
+      "id": "xlsx-internet-social-medium-03-bomb",
       "display": "HDMI",
       "normalized": "hdmi",
       "aliases": [],
@@ -151,16 +469,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "01ceeacc178a1e4c86fdbe9cfa93c5e6e27f6d3cbc58bc2377bf71df1d09ca77",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-internet-social-medium-02",
-    "slug": "xlsx-internet-social-medium-02",
+    "id": "xlsx-internet-social-medium-04",
+    "slug": "xlsx-internet-social-medium-04",
     "language": "fr",
     "themeId": "internet-social",
     "subthemeIds": [
@@ -185,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-02-answer-1",
+        "id": "xlsx-internet-social-medium-04-answer-1",
         "display": "Distracted Boyfriend",
         "normalized": "distracted boyfriend",
         "aliases": [],
@@ -197,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-2",
+        "id": "xlsx-internet-social-medium-04-answer-2",
         "display": "Doge",
         "normalized": "doge",
         "aliases": [],
@@ -209,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-3",
+        "id": "xlsx-internet-social-medium-04-answer-3",
         "display": "Drake Hotline Bling",
         "normalized": "drake hotline bling",
         "aliases": [],
@@ -221,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-4",
+        "id": "xlsx-internet-social-medium-04-answer-4",
         "display": "Woman Yelling at a Cat",
         "normalized": "woman yelling at a cat",
         "aliases": [],
@@ -233,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-5",
+        "id": "xlsx-internet-social-medium-04-answer-5",
         "display": "Success Kid",
         "normalized": "success kid",
         "aliases": [],
@@ -245,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-6",
+        "id": "xlsx-internet-social-medium-04-answer-6",
         "display": "This Is Fine",
         "normalized": "this is fine",
         "aliases": [],
@@ -257,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-7",
+        "id": "xlsx-internet-social-medium-04-answer-7",
         "display": "Grumpy Cat",
         "normalized": "grumpy cat",
         "aliases": [],
@@ -269,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-8",
+        "id": "xlsx-internet-social-medium-04-answer-8",
         "display": "Hide the Pain Harold",
         "normalized": "hide the pain harold",
         "aliases": [],
@@ -281,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-02-answer-9",
+        "id": "xlsx-internet-social-medium-04-answer-9",
         "display": "Expanding Brain",
         "normalized": "expanding brain",
         "aliases": [],
@@ -294,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-02-bomb",
+      "id": "xlsx-internet-social-medium-04-bomb",
       "display": "Wikipedia",
       "normalized": "wikipedia",
       "aliases": [],
@@ -310,16 +628,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b348e12a3a54b1e23fbeca71f7fc817bf06e7d788356a67d083dd267ef984f62",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-internet-social-medium-03",
-    "slug": "xlsx-internet-social-medium-03",
+    "id": "xlsx-internet-social-medium-05",
+    "slug": "xlsx-internet-social-medium-05",
     "language": "fr",
     "themeId": "internet-social",
     "subthemeIds": [
@@ -344,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-03-answer-1",
+        "id": "xlsx-internet-social-medium-05-answer-1",
         "display": "pare-feu",
         "normalized": "pare feu",
         "aliases": [],
@@ -356,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-2",
+        "id": "xlsx-internet-social-medium-05-answer-2",
         "display": "malware",
         "normalized": "malware",
         "aliases": [],
@@ -368,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-3",
+        "id": "xlsx-internet-social-medium-05-answer-3",
         "display": "authentification à deux facteurs",
         "normalized": "authentification a deux facteurs",
         "aliases": [],
@@ -380,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-4",
+        "id": "xlsx-internet-social-medium-05-answer-4",
         "display": "phishing",
         "normalized": "phishing",
         "aliases": [],
@@ -392,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-5",
+        "id": "xlsx-internet-social-medium-05-answer-5",
         "display": "ransomware",
         "normalized": "ransomware",
         "aliases": [],
@@ -404,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-6",
+        "id": "xlsx-internet-social-medium-05-answer-6",
         "display": "VPN",
         "normalized": "vpn",
         "aliases": [],
@@ -416,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-7",
+        "id": "xlsx-internet-social-medium-05-answer-7",
         "display": "chiffrement",
         "normalized": "chiffrement",
         "aliases": [],
@@ -428,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-8",
+        "id": "xlsx-internet-social-medium-05-answer-8",
         "display": "mot de passe",
         "normalized": "mot de passe",
         "aliases": [],
@@ -440,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-03-answer-9",
+        "id": "xlsx-internet-social-medium-05-answer-9",
         "display": "faille",
         "normalized": "faille",
         "aliases": [],
@@ -453,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-03-bomb",
+      "id": "xlsx-internet-social-medium-05-bomb",
       "display": "Câble Ethernet",
       "normalized": "cable ethernet",
       "aliases": [],
@@ -469,16 +787,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7ca74983b3d7edde5a462ca53e3885610fa88d139c9c450d0a8702b7b8985932",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-internet-social-medium-04",
-    "slug": "xlsx-internet-social-medium-04",
+    "id": "xlsx-internet-social-medium-06",
+    "slug": "xlsx-internet-social-medium-06",
     "language": "fr",
     "themeId": "internet-social",
     "subthemeIds": [
@@ -503,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-04-answer-1",
+        "id": "xlsx-internet-social-medium-06-answer-1",
         "display": "humour",
         "normalized": "humour",
         "aliases": [],
@@ -515,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-2",
+        "id": "xlsx-internet-social-medium-06-answer-2",
         "display": "surprise",
         "normalized": "surprise",
         "aliases": [],
@@ -527,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-3",
+        "id": "xlsx-internet-social-medium-06-answer-3",
         "display": "actualité",
         "normalized": "actualite",
         "aliases": [],
@@ -539,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-4",
+        "id": "xlsx-internet-social-medium-06-answer-4",
         "display": "émotion",
         "normalized": "emotion",
         "aliases": [],
@@ -551,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-5",
+        "id": "xlsx-internet-social-medium-06-answer-5",
         "display": "tendance",
         "normalized": "tendance",
         "aliases": [],
@@ -563,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-6",
+        "id": "xlsx-internet-social-medium-06-answer-6",
         "display": "célébrité",
         "normalized": "celebrite",
         "aliases": [],
@@ -575,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-7",
+        "id": "xlsx-internet-social-medium-06-answer-7",
         "display": "défi",
         "normalized": "defi",
         "aliases": [],
@@ -587,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-8",
+        "id": "xlsx-internet-social-medium-06-answer-8",
         "display": "controverse",
         "normalized": "controverse",
         "aliases": [],
@@ -599,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-04-answer-9",
+        "id": "xlsx-internet-social-medium-06-answer-9",
         "display": "partage par un influenceur",
         "normalized": "partage par un influenceur",
         "aliases": [],
@@ -612,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-04-bomb",
+      "id": "xlsx-internet-social-medium-06-bomb",
       "display": "Personne ne le partage",
       "normalized": "personne ne le partage",
       "aliases": [],
@@ -628,16 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d5709f12dace60bfcac3a26fbf3ec926842e330962c8ebbeb2aff17bc6cb2303",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-internet-social-medium-05",
-    "slug": "xlsx-internet-social-medium-05",
+    "id": "xlsx-internet-social-medium-07",
+    "slug": "xlsx-internet-social-medium-07",
     "language": "fr",
     "themeId": "internet-social",
     "subthemeIds": [
@@ -662,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-05-answer-1",
+        "id": "xlsx-internet-social-medium-07-answer-1",
         "display": "Rickroll",
         "normalized": "rickroll",
         "aliases": [],
@@ -674,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-2",
+        "id": "xlsx-internet-social-medium-07-answer-2",
         "display": "Ice Bucket Challenge",
         "normalized": "ice bucket challenge",
         "aliases": [],
@@ -686,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-3",
+        "id": "xlsx-internet-social-medium-07-answer-3",
         "display": "Harlem Shake",
         "normalized": "harlem shake",
         "aliases": [],
@@ -698,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-4",
+        "id": "xlsx-internet-social-medium-07-answer-4",
         "display": "Mannequin Challenge",
         "normalized": "mannequin challenge",
         "aliases": [],
@@ -710,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-5",
+        "id": "xlsx-internet-social-medium-07-answer-5",
         "display": "Unboxing",
         "normalized": "unboxing",
         "aliases": [],
@@ -722,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-6",
+        "id": "xlsx-internet-social-medium-07-answer-6",
         "display": "Vidéo réaction",
         "normalized": "video reaction",
         "aliases": [],
@@ -734,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-7",
+        "id": "xlsx-internet-social-medium-07-answer-7",
         "display": "Livestream",
         "normalized": "livestream",
         "aliases": [],
@@ -746,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-8",
+        "id": "xlsx-internet-social-medium-07-answer-8",
         "display": "Hashtag",
         "normalized": "hashtag",
         "aliases": [],
@@ -758,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-05-answer-9",
+        "id": "xlsx-internet-social-medium-07-answer-9",
         "display": "Challenge TikTok",
         "normalized": "challenge tiktok",
         "aliases": [],
@@ -771,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-05-bomb",
+      "id": "xlsx-internet-social-medium-07-bomb",
       "display": "Journal télévisé",
       "normalized": "journal televise",
       "aliases": [],
@@ -787,16 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f9b08a738749c030ea876fcf929024d369f6d85768e02b1e21b81ae4839b5b2f",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-internet-social-medium-06",
-    "slug": "xlsx-internet-social-medium-06",
+    "id": "xlsx-internet-social-medium-08",
+    "slug": "xlsx-internet-social-medium-08",
     "language": "fr",
     "themeId": "internet-social",
     "subthemeIds": [
@@ -821,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-06-answer-1",
+        "id": "xlsx-internet-social-medium-08-answer-1",
         "display": "LOL",
         "normalized": "lol",
         "aliases": [],
@@ -833,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-2",
+        "id": "xlsx-internet-social-medium-08-answer-2",
         "display": "MDR",
         "normalized": "mdr",
         "aliases": [],
@@ -845,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-3",
+        "id": "xlsx-internet-social-medium-08-answer-3",
         "display": "IRL",
         "normalized": "irl",
         "aliases": [],
@@ -857,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-4",
+        "id": "xlsx-internet-social-medium-08-answer-4",
         "display": "DM",
         "normalized": "dm",
         "aliases": [],
@@ -869,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-5",
+        "id": "xlsx-internet-social-medium-08-answer-5",
         "display": "POV",
         "normalized": "pov",
         "aliases": [],
@@ -881,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-6",
+        "id": "xlsx-internet-social-medium-08-answer-6",
         "display": "AMA",
         "normalized": "ama",
         "aliases": [],
@@ -893,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-7",
+        "id": "xlsx-internet-social-medium-08-answer-7",
         "display": "TL;DR",
         "normalized": "tl dr",
         "aliases": [],
@@ -905,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-8",
+        "id": "xlsx-internet-social-medium-08-answer-8",
         "display": "NSFW",
         "normalized": "nsfw",
         "aliases": [],
@@ -917,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-06-answer-9",
+        "id": "xlsx-internet-social-medium-08-answer-9",
         "display": "GG",
         "normalized": "gg",
         "aliases": [],
@@ -930,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-06-bomb",
+      "id": "xlsx-internet-social-medium-08-bomb",
       "display": "Emoji",
       "normalized": "emoji",
       "aliases": [],
@@ -946,16 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bdbe0cd69921dab93d5efc423188d20681a576dc16a265f1c7e2b78c65a2772c",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-internet-social-medium-07",
-    "slug": "xlsx-internet-social-medium-07",
+    "id": "xlsx-internet-social-medium-09",
+    "slug": "xlsx-internet-social-medium-09",
     "language": "fr",
     "themeId": "internet-social",
     "subthemeIds": [
@@ -980,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-internet-social-medium-07-answer-1",
+        "id": "xlsx-internet-social-medium-09-answer-1",
         "display": "Python",
         "normalized": "python",
         "aliases": [],
@@ -992,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-2",
+        "id": "xlsx-internet-social-medium-09-answer-2",
         "display": "JavaScript",
         "normalized": "javascript",
         "aliases": [],
@@ -1004,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-3",
+        "id": "xlsx-internet-social-medium-09-answer-3",
         "display": "Java",
         "normalized": "java",
         "aliases": [],
@@ -1016,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-4",
+        "id": "xlsx-internet-social-medium-09-answer-4",
         "display": "Langage C",
         "normalized": "langage c",
         "aliases": [],
@@ -1028,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-5",
+        "id": "xlsx-internet-social-medium-09-answer-5",
         "display": "C Plus Plus",
         "normalized": "c plus plus",
         "aliases": [],
@@ -1040,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-6",
+        "id": "xlsx-internet-social-medium-09-answer-6",
         "display": "C Sharp",
         "normalized": "c sharp",
         "aliases": [],
@@ -1052,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-7",
+        "id": "xlsx-internet-social-medium-09-answer-7",
         "display": "PHP",
         "normalized": "php",
         "aliases": [],
@@ -1064,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-8",
+        "id": "xlsx-internet-social-medium-09-answer-8",
         "display": "Swift",
         "normalized": "swift",
         "aliases": [],
@@ -1076,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-internet-social-medium-07-answer-9",
+        "id": "xlsx-internet-social-medium-09-answer-9",
         "display": "Ruby",
         "normalized": "ruby",
         "aliases": [],
@@ -1089,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-internet-social-medium-07-bomb",
+      "id": "xlsx-internet-social-medium-09-bomb",
       "display": "CSS",
       "normalized": "css",
       "aliases": [],
@@ -1105,330 +1423,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "8928afe3ce4bc04785774f880d9775bf60244bcabb96796d9abf731dcad711fc",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-internet-social-medium-08",
-    "slug": "xlsx-internet-social-medium-08",
-    "language": "fr",
-    "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 systèmes d’exploitation connus du grand public.",
-    "shortTitle": "systèmes d’exploitation connus du grand public",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-internet-social-medium-08-answer-1",
-        "display": "Windows",
-        "normalized": "windows",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-2",
-        "display": "macOS",
-        "normalized": "macos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-3",
-        "display": "Android",
-        "normalized": "android",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-4",
-        "display": "iOS",
-        "normalized": "ios",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-5",
-        "display": "Linux",
-        "normalized": "linux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-6",
-        "display": "ChromeOS",
-        "normalized": "chromeos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-7",
-        "display": "Ubuntu",
-        "normalized": "ubuntu",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-8",
-        "display": "watchOS",
-        "normalized": "watchos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-08-answer-9",
-        "display": "HarmonyOS",
-        "normalized": "harmonyos",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-internet-social-medium-08-bomb",
-      "display": "Ordinateur portable",
-      "normalized": "ordinateur portable",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "fd8911b0f3f260c24e260818653c5d1723ec0e976daabf22b094c900fee3e4e9",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-internet-social-medium-09",
-    "slug": "xlsx-internet-social-medium-09",
-    "language": "fr",
-    "themeId": "internet-social",
-    "subthemeIds": [
-      "internet-social:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 supports ou services de stockage numérique.",
-    "shortTitle": "supports ou services de stockage numérique",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-internet-social-medium-09-answer-1",
-        "display": "Disque dur",
-        "normalized": "disque dur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-2",
-        "display": "SSD",
-        "normalized": "ssd",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-3",
-        "display": "Clé USB",
-        "normalized": "cle usb",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-4",
-        "display": "Carte SD",
-        "normalized": "carte sd",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-5",
-        "display": "CD-ROM",
-        "normalized": "cd rom",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-6",
-        "display": "DVD",
-        "normalized": "dvd",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-7",
-        "display": "Blu-ray",
-        "normalized": "blu ray",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-8",
-        "display": "Google Drive",
-        "normalized": "google drive",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-internet-social-medium-09-answer-9",
-        "display": "iCloud",
-        "normalized": "icloud",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-internet-social-medium-09-bomb",
-      "display": "Écran",
-      "normalized": "ecran",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "c363c953f0aa4069aa4168d095872b60e57c58f8cc07ad54994e51a374eea063",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-internet-social-medium-10",
@@ -1582,12 +1582,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0187f9c83002edeac68517e4d6e8c30dfcbb59a03872daa9fb0e3a0f9a312493",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-internet-social-medium-11",
@@ -1741,11 +1741,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "aa665af1da5d8fa18f7884e15b96a17a7fe9a66a2688672241bb36ffa8b6e92f",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

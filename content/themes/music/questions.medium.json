@@ -11,8 +11,8 @@
       "essentials",
       "moyen"
     ],
-    "questionText": "Cite 9 compositeurs de musique classique célèbres.",
-    "shortTitle": "compositeurs de musique classique célèbres",
+    "questionText": "Cite 9 DJ connus internationalement.",
+    "shortTitle": "DJ connus internationalement",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -27,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-music-medium-01-answer-1",
-        "display": "Mozart",
-        "normalized": "mozart",
+        "display": "David Guetta",
+        "normalized": "david guetta",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -39,8 +39,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-2",
-        "display": "Beethoven",
-        "normalized": "beethoven",
+        "display": "Calvin Harris",
+        "normalized": "calvin harris",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -51,8 +51,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-3",
-        "display": "Bach",
-        "normalized": "bach",
+        "display": "Martin Garrix",
+        "normalized": "martin garrix",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -63,8 +63,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-4",
-        "display": "Vivaldi",
-        "normalized": "vivaldi",
+        "display": "Tiësto",
+        "normalized": "tiesto",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -75,8 +75,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-5",
-        "display": "Chopin",
-        "normalized": "chopin",
+        "display": "Avicii",
+        "normalized": "avicii",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -87,8 +87,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-6",
-        "display": "Tchaïkovski",
-        "normalized": "tchaikovski",
+        "display": "Armin van Buuren",
+        "normalized": "armin van buuren",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -99,8 +99,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-7",
-        "display": "Debussy",
-        "normalized": "debussy",
+        "display": "Steve Aoki",
+        "normalized": "steve aoki",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -111,8 +111,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-8",
-        "display": "Schubert",
-        "normalized": "schubert",
+        "display": "Diplo",
+        "normalized": "diplo",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -123,8 +123,8 @@
       },
       {
         "id": "xlsx-music-medium-01-answer-9",
-        "display": "Haendel",
-        "normalized": "haendel",
+        "display": "DJ Snake",
+        "normalized": "dj snake",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -136,8 +136,8 @@
     ],
     "bomb": {
       "id": "xlsx-music-medium-01-bomb",
-      "display": "Hans Zimmer",
-      "normalized": "hans zimmer",
+      "display": "Stromae",
+      "normalized": "stromae",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "5a94aab70a1e370b5cc3070b18f86b126b9528865cb8e3047fa376c8290e3d49",
+    "answerSetFingerprint": "5be03ce97a0fa88bc1404f7319a8c1f690b5bcf9e59e611905fc03ba45626b51",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-music-medium-02",
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "631000f1c53d59a891dff44a1bbd5d866de4082fff281fd2c2ef6cf1a6b5a664",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-music-medium-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "80efd1d663b2217d4a0cd2f2ccdc7a0f2f01c538f7233818b9043807b20d4e6c",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-music-medium-04",
@@ -628,493 +628,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a36a3344998ebefd050c171cf90c5e1d87cb36b3d7946c07972455b454ecf1aa",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-music-medium-05",
     "slug": "xlsx-music-medium-05",
-    "language": "fr",
-    "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 instruments à cordes.",
-    "shortTitle": "instruments à cordes",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-music-medium-05-answer-1",
-        "display": "violon",
-        "normalized": "violon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-2",
-        "display": "guitare",
-        "normalized": "guitare",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-3",
-        "display": "harpe",
-        "normalized": "harpe",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-4",
-        "display": "contrebasse",
-        "normalized": "contrebasse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-5",
-        "display": "ukulélé",
-        "normalized": "ukulele",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-6",
-        "display": "mandoline",
-        "normalized": "mandoline",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-7",
-        "display": "banjo",
-        "normalized": "banjo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-8",
-        "display": "alto",
-        "normalized": "alto",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-05-answer-9",
-        "display": "cithare",
-        "normalized": "cithare",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-music-medium-05-bomb",
-      "display": "Tambour",
-      "normalized": "tambour",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "13064222b6f717a7985264b5d96e441f3d6d1ee87fbc43e50bd1e9691d873d05",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-music-medium-06",
-    "slug": "xlsx-music-medium-06",
-    "language": "fr",
-    "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 instruments à vent.",
-    "shortTitle": "instruments à vent",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-music-medium-06-answer-1",
-        "display": "flûte",
-        "normalized": "flute",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-2",
-        "display": "trompette",
-        "normalized": "trompette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-3",
-        "display": "saxophone",
-        "normalized": "saxophone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-4",
-        "display": "clarinette",
-        "normalized": "clarinette",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-5",
-        "display": "hautbois",
-        "normalized": "hautbois",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-6",
-        "display": "tuba",
-        "normalized": "tuba",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-7",
-        "display": "trombone",
-        "normalized": "trombone",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-8",
-        "display": "cor",
-        "normalized": "cor",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-06-answer-9",
-        "display": "harmonica",
-        "normalized": "harmonica",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-music-medium-06-bomb",
-      "display": "Guitare",
-      "normalized": "guitare",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "64d703a95c6b705eda83fd8b52b8115f127037c35a001603ab6830e359001c3e",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-music-medium-07",
-    "slug": "xlsx-music-medium-07",
-    "language": "fr",
-    "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 rappeurs francophones connus.",
-    "shortTitle": "rappeurs francophones connus",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-music-medium-07-answer-1",
-        "display": "Orelsan",
-        "normalized": "orelsan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-2",
-        "display": "Booba",
-        "normalized": "booba",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-3",
-        "display": "Ninho",
-        "normalized": "ninho",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-4",
-        "display": "Damso",
-        "normalized": "damso",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-5",
-        "display": "SCH",
-        "normalized": "sch",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-6",
-        "display": "Gims",
-        "normalized": "gims",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-7",
-        "display": "Nekfeu",
-        "normalized": "nekfeu",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-8",
-        "display": "Jul",
-        "normalized": "jul",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-07-answer-9",
-        "display": "Lomepal",
-        "normalized": "lomepal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-music-medium-07-bomb",
-      "display": "Angèle",
-      "normalized": "angele",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6eb3c8a13220f73d8ac37fc1fb7ae4f0a8ad7d7d4075b2cc9d93c8a694f84911",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-music-medium-08",
-    "slug": "xlsx-music-medium-08",
     "language": "fr",
     "themeId": "music",
     "subthemeIds": [
@@ -1139,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-music-medium-08-answer-1",
+        "id": "xlsx-music-medium-05-answer-1",
         "display": "Coachella",
         "normalized": "coachella",
         "aliases": [],
@@ -1151,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-2",
+        "id": "xlsx-music-medium-05-answer-2",
         "display": "Tomorrowland",
         "normalized": "tomorrowland",
         "aliases": [],
@@ -1163,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-3",
+        "id": "xlsx-music-medium-05-answer-3",
         "display": "Glastonbury",
         "normalized": "glastonbury",
         "aliases": [],
@@ -1175,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-4",
+        "id": "xlsx-music-medium-05-answer-4",
         "display": "Rock en Seine",
         "normalized": "rock en seine",
         "aliases": [],
@@ -1187,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-5",
+        "id": "xlsx-music-medium-05-answer-5",
         "display": "Hellfest",
         "normalized": "hellfest",
         "aliases": [],
@@ -1199,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-6",
+        "id": "xlsx-music-medium-05-answer-6",
         "display": "Vieilles Charrues",
         "normalized": "vieilles charrues",
         "aliases": [],
@@ -1211,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-7",
+        "id": "xlsx-music-medium-05-answer-7",
         "display": "Sziget",
         "normalized": "sziget",
         "aliases": [],
@@ -1223,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-8",
+        "id": "xlsx-music-medium-05-answer-8",
         "display": "Primavera Sound",
         "normalized": "primavera sound",
         "aliases": [],
@@ -1235,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-08-answer-9",
+        "id": "xlsx-music-medium-05-answer-9",
         "display": "Lollapalooza",
         "normalized": "lollapalooza",
         "aliases": [],
@@ -1248,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-music-medium-08-bomb",
+      "id": "xlsx-music-medium-05-bomb",
       "display": "Spotify",
       "normalized": "spotify",
       "aliases": [],
@@ -1264,334 +787,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0a31cf4d15a7ab982607b55a8adbb9c24f93158aef06efead7f8503953264190",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-music-medium-09",
-    "slug": "xlsx-music-medium-09",
-    "language": "fr",
-    "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 artistes connus sous un nom de scène.",
-    "shortTitle": "artistes connus sous un nom de scène",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-music-medium-09-answer-1",
-        "display": "Sting",
-        "normalized": "sting",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-2",
-        "display": "Bono",
-        "normalized": "bono",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-3",
-        "display": "Soprano",
-        "normalized": "soprano",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-4",
-        "display": "The Weeknd",
-        "normalized": "the weeknd",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-5",
-        "display": "Pink",
-        "normalized": "pink",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-6",
-        "display": "Moby",
-        "normalized": "moby",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-7",
-        "display": "Eminem",
-        "normalized": "eminem",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-8",
-        "display": "Zaz",
-        "normalized": "zaz",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-09-answer-9",
-        "display": "Grand Corps Malade",
-        "normalized": "grand corps malade",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-music-medium-09-bomb",
-      "display": "Jean-Jacques Goldman",
-      "normalized": "jean jacques goldman",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b974014c44d03b52b6645421ffc0cd70c6d35139f6a06e80462cb95c2e0ea312",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-music-medium-10",
-    "slug": "xlsx-music-medium-10",
-    "language": "fr",
-    "themeId": "music",
-    "subthemeIds": [
-      "music:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 groupes britanniques de rock ou pop-rock connus.",
-    "shortTitle": "groupes britanniques de rock ou pop-rock connus",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-music-medium-10-answer-1",
-        "display": "The Beatles",
-        "normalized": "the beatles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-2",
-        "display": "The Rolling Stones",
-        "normalized": "the rolling stones",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-3",
-        "display": "Queen",
-        "normalized": "queen",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-4",
-        "display": "Oasis",
-        "normalized": "oasis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-5",
-        "display": "Blur",
-        "normalized": "blur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-6",
-        "display": "Radiohead",
-        "normalized": "radiohead",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-7",
-        "display": "Muse",
-        "normalized": "muse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-8",
-        "display": "The Who",
-        "normalized": "the who",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-music-medium-10-answer-9",
-        "display": "Arctic Monkeys",
-        "normalized": "arctic monkeys",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-music-medium-10-bomb",
-      "display": "Nirvana",
-      "normalized": "nirvana",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "9ae0769c35bcfa57afc477df0a09e1317dd062806514f69f6e067b04735fd826",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-music-medium-11",
-    "slug": "xlsx-music-medium-11",
+    "id": "xlsx-music-medium-06",
+    "slug": "xlsx-music-medium-06",
     "language": "fr",
     "themeId": "music",
     "subthemeIds": [
@@ -1616,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-music-medium-11-answer-1",
+        "id": "xlsx-music-medium-06-answer-1",
         "display": "Glastonbury",
         "normalized": "glastonbury",
         "aliases": [],
@@ -1628,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-2",
+        "id": "xlsx-music-medium-06-answer-2",
         "display": "Tomorrowland",
         "normalized": "tomorrowland",
         "aliases": [],
@@ -1640,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-3",
+        "id": "xlsx-music-medium-06-answer-3",
         "display": "Primavera Sound",
         "normalized": "primavera sound",
         "aliases": [],
@@ -1652,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-4",
+        "id": "xlsx-music-medium-06-answer-4",
         "display": "Sziget",
         "normalized": "sziget",
         "aliases": [],
@@ -1664,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-5",
+        "id": "xlsx-music-medium-06-answer-5",
         "display": "Rock Werchter",
         "normalized": "rock werchter",
         "aliases": [],
@@ -1676,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-6",
+        "id": "xlsx-music-medium-06-answer-6",
         "display": "Roskilde",
         "normalized": "roskilde",
         "aliases": [],
@@ -1688,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-7",
+        "id": "xlsx-music-medium-06-answer-7",
         "display": "Hellfest",
         "normalized": "hellfest",
         "aliases": [],
@@ -1700,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-8",
+        "id": "xlsx-music-medium-06-answer-8",
         "display": "Sonar",
         "normalized": "sonar",
         "aliases": [],
@@ -1712,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-11-answer-9",
+        "id": "xlsx-music-medium-06-answer-9",
         "display": "Exit Festival",
         "normalized": "exit festival",
         "aliases": [],
@@ -1725,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-music-medium-11-bomb",
+      "id": "xlsx-music-medium-06-bomb",
       "display": "Coachella",
       "normalized": "coachella",
       "aliases": [],
@@ -1741,16 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d34ca24068e04f4693a6cf0901aaf59db506ab912566b5d45c756e26d96ec9a6",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-music-medium-12",
-    "slug": "xlsx-music-medium-12",
+    "id": "xlsx-music-medium-07",
+    "slug": "xlsx-music-medium-07",
     "language": "fr",
     "themeId": "music",
     "subthemeIds": [
@@ -1775,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-music-medium-12-answer-1",
+        "id": "xlsx-music-medium-07-answer-1",
         "display": "Marie Myriam",
         "normalized": "marie myriam",
         "aliases": [],
@@ -1787,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-2",
+        "id": "xlsx-music-medium-07-answer-2",
         "display": "Barbara Pravi",
         "normalized": "barbara pravi",
         "aliases": [],
@@ -1799,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-3",
+        "id": "xlsx-music-medium-07-answer-3",
         "display": "Amir",
         "normalized": "amir",
         "aliases": [],
@@ -1811,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-4",
+        "id": "xlsx-music-medium-07-answer-4",
         "display": "Bilal Hassani",
         "normalized": "bilal hassani",
         "aliases": [],
@@ -1823,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-5",
+        "id": "xlsx-music-medium-07-answer-5",
         "display": "Slimane",
         "normalized": "slimane",
         "aliases": [],
@@ -1835,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-6",
+        "id": "xlsx-music-medium-07-answer-6",
         "display": "La Zarra",
         "normalized": "la zarra",
         "aliases": [],
@@ -1847,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-7",
+        "id": "xlsx-music-medium-07-answer-7",
         "display": "Patricia Kaas",
         "normalized": "patricia kaas",
         "aliases": [],
@@ -1859,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-8",
+        "id": "xlsx-music-medium-07-answer-8",
         "display": "Natasha St-Pier",
         "normalized": "natasha st pier",
         "aliases": [],
@@ -1871,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-music-medium-12-answer-9",
+        "id": "xlsx-music-medium-07-answer-9",
         "display": "Alma",
         "normalized": "alma",
         "aliases": [],
@@ -1884,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-music-medium-12-bomb",
+      "id": "xlsx-music-medium-07-bomb",
       "display": "Céline Dion",
       "normalized": "celine dion",
       "aliases": [],
@@ -1900,11 +1105,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "648dad472c256a5b4933a325fcbaaba78caec2410fc5be820d7ab60c18c1a14a",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

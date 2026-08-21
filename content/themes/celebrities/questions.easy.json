@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "345d6304c9400a6e1b6d467e9adcfccc85b854865a300fb75193316d124205fe",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-easy-02",
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a183294f14cccc99f8d4213b85c9d2810a0aebb3ce8d6b2bc932efd70f9b93b2",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-easy-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0e22cb95492ba422d8b8d6357b8603446d4d8ecf982c3d26246f2f692559b97f",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-easy-04",
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "543e97e4c90de97e261d874d20910e2893933f0a0648b6572050c47b2871869a",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-easy-05",
@@ -787,12 +787,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "116f55fc550d02b963b4a50f110288d339cc9cb96c5bae2e8967e5e1014e8e49",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-easy-06",
@@ -946,175 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6f8c8dd3d4bb16dbe8bfdce20dcc7f1f698540ffb6fffb4ce7f0d8d5f0be4095",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-easy-07",
     "slug": "xlsx-celebrities-easy-07",
-    "language": "fr",
-    "themeId": "celebrities",
-    "subthemeIds": [
-      "celebrities:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "facile"
-    ],
-    "questionText": "Cite 9 personnalités ayant lancé une marque.",
-    "shortTitle": "personnalités ayant lancé une marque",
-    "difficultyLevel": 1,
-    "difficultyLabel": "Facile",
-    "editorialDifficultyScore": 25,
-    "specificityScore": 25,
-    "popularityScore": 88,
-    "recallDifficultyScore": 25,
-    "answerSetHomogeneityScore": 88,
-    "expectedAverageAnswers": 8,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-celebrities-easy-07-answer-1",
-        "display": "Rihanna",
-        "normalized": "rihanna",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-2",
-        "display": "George Clooney",
-        "normalized": "george clooney",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-3",
-        "display": "Kim Kardashian",
-        "normalized": "kim kardashian",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-4",
-        "display": "Selena Gomez",
-        "normalized": "selena gomez",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-5",
-        "display": "Kylie Jenner",
-        "normalized": "kylie jenner",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-6",
-        "display": "Jessica Alba",
-        "normalized": "jessica alba",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-7",
-        "display": "Ryan Reynolds",
-        "normalized": "ryan reynolds",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-8",
-        "display": "Dwayne Johnson",
-        "normalized": "dwayne johnson",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-celebrities-easy-07-answer-9",
-        "display": "Beyoncé",
-        "normalized": "beyonce",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-celebrities-easy-07-bomb",
-      "display": "Zinedine Zidane",
-      "normalized": "zinedine zidane",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "29adfe3c1e355c5d1d4e1c4af45c29f3127109174831d6cde4f14ecfa36a1565",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-celebrities-easy-08",
-    "slug": "xlsx-celebrities-easy-08",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -1139,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-08-answer-1",
+        "id": "xlsx-celebrities-easy-07-answer-1",
         "display": "Omar Sy",
         "normalized": "omar sy",
         "aliases": [],
@@ -1151,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-2",
+        "id": "xlsx-celebrities-easy-07-answer-2",
         "display": "Jean Dujardin",
         "normalized": "jean dujardin",
         "aliases": [],
@@ -1163,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-3",
+        "id": "xlsx-celebrities-easy-07-answer-3",
         "display": "Marion Cotillard",
         "normalized": "marion cotillard",
         "aliases": [],
@@ -1175,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-4",
+        "id": "xlsx-celebrities-easy-07-answer-4",
         "display": "Dany Boon",
         "normalized": "dany boon",
         "aliases": [],
@@ -1187,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-5",
+        "id": "xlsx-celebrities-easy-07-answer-5",
         "display": "Sophie Marceau",
         "normalized": "sophie marceau",
         "aliases": [],
@@ -1199,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-6",
+        "id": "xlsx-celebrities-easy-07-answer-6",
         "display": "Kad Merad",
         "normalized": "kad merad",
         "aliases": [],
@@ -1211,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-7",
+        "id": "xlsx-celebrities-easy-07-answer-7",
         "display": "Gad Elmaleh",
         "normalized": "gad elmaleh",
         "aliases": [],
@@ -1223,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-8",
+        "id": "xlsx-celebrities-easy-07-answer-8",
         "display": "Florence Foresti",
         "normalized": "florence foresti",
         "aliases": [],
@@ -1235,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-08-answer-9",
+        "id": "xlsx-celebrities-easy-07-answer-9",
         "display": "Jamel Debbouze",
         "normalized": "jamel debbouze",
         "aliases": [],
@@ -1248,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-08-bomb",
+      "id": "xlsx-celebrities-easy-07-bomb",
       "display": "Brad Pitt",
       "normalized": "brad pitt",
       "aliases": [],
@@ -1264,16 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "94e064d1b6982ddd7ad8fba4d7f6522dbf719348d84ab898c3bb2a1578d63877",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-09",
-    "slug": "xlsx-celebrities-easy-09",
+    "id": "xlsx-celebrities-easy-08",
+    "slug": "xlsx-celebrities-easy-08",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -1298,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-09-answer-1",
+        "id": "xlsx-celebrities-easy-08-answer-1",
         "display": "Julia Roberts",
         "normalized": "julia roberts",
         "aliases": [],
@@ -1310,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-2",
+        "id": "xlsx-celebrities-easy-08-answer-2",
         "display": "Angelina Jolie",
         "normalized": "angelina jolie",
         "aliases": [],
@@ -1322,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-3",
+        "id": "xlsx-celebrities-easy-08-answer-3",
         "display": "Scarlett Johansson",
         "normalized": "scarlett johansson",
         "aliases": [],
@@ -1334,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-4",
+        "id": "xlsx-celebrities-easy-08-answer-4",
         "display": "Natalie Portman",
         "normalized": "natalie portman",
         "aliases": [],
@@ -1346,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-5",
+        "id": "xlsx-celebrities-easy-08-answer-5",
         "display": "Meryl Streep",
         "normalized": "meryl streep",
         "aliases": [],
@@ -1358,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-6",
+        "id": "xlsx-celebrities-easy-08-answer-6",
         "display": "Emma Stone",
         "normalized": "emma stone",
         "aliases": [],
@@ -1370,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-7",
+        "id": "xlsx-celebrities-easy-08-answer-7",
         "display": "Jennifer Lawrence",
         "normalized": "jennifer lawrence",
         "aliases": [],
@@ -1382,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-8",
+        "id": "xlsx-celebrities-easy-08-answer-8",
         "display": "Cate Blanchett",
         "normalized": "cate blanchett",
         "aliases": [],
@@ -1394,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-09-answer-9",
+        "id": "xlsx-celebrities-easy-08-answer-9",
         "display": "Margot Robbie",
         "normalized": "margot robbie",
         "aliases": [],
@@ -1407,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-09-bomb",
+      "id": "xlsx-celebrities-easy-08-bomb",
       "display": "Adele",
       "normalized": "adele",
       "aliases": [],
@@ -1423,16 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "34fe80dc1dfdd497ba43c58a3d4a585cd13a1949322394f44a9820c647ab9d3c",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-10",
-    "slug": "xlsx-celebrities-easy-10",
+    "id": "xlsx-celebrities-easy-09",
+    "slug": "xlsx-celebrities-easy-09",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -1457,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-10-answer-1",
+        "id": "xlsx-celebrities-easy-09-answer-1",
         "display": "Zinédine Zidane",
         "normalized": "zinedine zidane",
         "aliases": [],
@@ -1469,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-2",
+        "id": "xlsx-celebrities-easy-09-answer-2",
         "display": "Kylian Mbappé",
         "normalized": "kylian mbappe",
         "aliases": [],
@@ -1481,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-3",
+        "id": "xlsx-celebrities-easy-09-answer-3",
         "display": "Serena Williams",
         "normalized": "serena williams",
         "aliases": [],
@@ -1493,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-4",
+        "id": "xlsx-celebrities-easy-09-answer-4",
         "display": "Roger Federer",
         "normalized": "roger federer",
         "aliases": [],
@@ -1505,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-5",
+        "id": "xlsx-celebrities-easy-09-answer-5",
         "display": "Usain Bolt",
         "normalized": "usain bolt",
         "aliases": [],
@@ -1517,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-6",
+        "id": "xlsx-celebrities-easy-09-answer-6",
         "display": "Michael Jordan",
         "normalized": "michael jordan",
         "aliases": [],
@@ -1529,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-7",
+        "id": "xlsx-celebrities-easy-09-answer-7",
         "display": "Rafael Nadal",
         "normalized": "rafael nadal",
         "aliases": [],
@@ -1541,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-8",
+        "id": "xlsx-celebrities-easy-09-answer-8",
         "display": "Simone Biles",
         "normalized": "simone biles",
         "aliases": [],
@@ -1553,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-10-answer-9",
+        "id": "xlsx-celebrities-easy-09-answer-9",
         "display": "Lewis Hamilton",
         "normalized": "lewis hamilton",
         "aliases": [],
@@ -1566,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-10-bomb",
+      "id": "xlsx-celebrities-easy-09-bomb",
       "display": "Tom Cruise",
       "normalized": "tom cruise",
       "aliases": [],
@@ -1582,16 +1423,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "25f6b2a57e930a434a073e38055396260bc92660bd5f700632cf071f828c96b2",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-11",
-    "slug": "xlsx-celebrities-easy-11",
+    "id": "xlsx-celebrities-easy-10",
+    "slug": "xlsx-celebrities-easy-10",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -1616,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-11-answer-1",
+        "id": "xlsx-celebrities-easy-10-answer-1",
         "display": "Beyoncé",
         "normalized": "beyonce",
         "aliases": [],
@@ -1628,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-2",
+        "id": "xlsx-celebrities-easy-10-answer-2",
         "display": "Taylor Swift",
         "normalized": "taylor swift",
         "aliases": [],
@@ -1640,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-3",
+        "id": "xlsx-celebrities-easy-10-answer-3",
         "display": "Lady Gaga",
         "normalized": "lady gaga",
         "aliases": [],
@@ -1652,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-4",
+        "id": "xlsx-celebrities-easy-10-answer-4",
         "display": "Bruno Mars",
         "normalized": "bruno mars",
         "aliases": [],
@@ -1664,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-5",
+        "id": "xlsx-celebrities-easy-10-answer-5",
         "display": "Billie Eilish",
         "normalized": "billie eilish",
         "aliases": [],
@@ -1676,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-6",
+        "id": "xlsx-celebrities-easy-10-answer-6",
         "display": "Katy Perry",
         "normalized": "katy perry",
         "aliases": [],
@@ -1688,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-7",
+        "id": "xlsx-celebrities-easy-10-answer-7",
         "display": "Justin Timberlake",
         "normalized": "justin timberlake",
         "aliases": [],
@@ -1700,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-8",
+        "id": "xlsx-celebrities-easy-10-answer-8",
         "display": "Snoop Dogg",
         "normalized": "snoop dogg",
         "aliases": [],
@@ -1712,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-11-answer-9",
+        "id": "xlsx-celebrities-easy-10-answer-9",
         "display": "Ariana Grande",
         "normalized": "ariana grande",
         "aliases": [],
@@ -1725,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-11-bomb",
+      "id": "xlsx-celebrities-easy-10-bomb",
       "display": "Emma Stone",
       "normalized": "emma stone",
       "aliases": [],
@@ -1741,16 +1582,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "825a158e197c8adacb3078e7921c5bb7077fe720dfc1f42735d9f73b4c5bd0d5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-12",
-    "slug": "xlsx-celebrities-easy-12",
+    "id": "xlsx-celebrities-easy-11",
+    "slug": "xlsx-celebrities-easy-11",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -1775,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-12-answer-1",
+        "id": "xlsx-celebrities-easy-11-answer-1",
         "display": "Florence Foresti",
         "normalized": "florence foresti",
         "aliases": [],
@@ -1787,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-2",
+        "id": "xlsx-celebrities-easy-11-answer-2",
         "display": "Gad Elmaleh",
         "normalized": "gad elmaleh",
         "aliases": [],
@@ -1799,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-3",
+        "id": "xlsx-celebrities-easy-11-answer-3",
         "display": "Jamel Debbouze",
         "normalized": "jamel debbouze",
         "aliases": [],
@@ -1811,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-4",
+        "id": "xlsx-celebrities-easy-11-answer-4",
         "display": "Dany Boon",
         "normalized": "dany boon",
         "aliases": [],
@@ -1823,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-5",
+        "id": "xlsx-celebrities-easy-11-answer-5",
         "display": "Kev Adams",
         "normalized": "kev adams",
         "aliases": [],
@@ -1835,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-6",
+        "id": "xlsx-celebrities-easy-11-answer-6",
         "display": "Paul Mirabel",
         "normalized": "paul mirabel",
         "aliases": [],
@@ -1847,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-7",
+        "id": "xlsx-celebrities-easy-11-answer-7",
         "display": "Fary",
         "normalized": "fary",
         "aliases": [],
@@ -1859,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-8",
+        "id": "xlsx-celebrities-easy-11-answer-8",
         "display": "Blanche Gardin",
         "normalized": "blanche gardin",
         "aliases": [],
@@ -1871,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-12-answer-9",
+        "id": "xlsx-celebrities-easy-11-answer-9",
         "display": "Franck Dubosc",
         "normalized": "franck dubosc",
         "aliases": [],
@@ -1884,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-12-bomb",
+      "id": "xlsx-celebrities-easy-11-bomb",
       "display": "Jean Dujardin",
       "normalized": "jean dujardin",
       "aliases": [],
@@ -1900,16 +1741,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3ad1abdcd78bb830fac76b169daad3ea83370babc5ddc33cae49adbf198dbb50",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-13",
-    "slug": "xlsx-celebrities-easy-13",
+    "id": "xlsx-celebrities-easy-12",
+    "slug": "xlsx-celebrities-easy-12",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -1934,7 +1775,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-13-answer-1",
+        "id": "xlsx-celebrities-easy-12-answer-1",
         "display": "Naomi Campbell",
         "normalized": "naomi campbell",
         "aliases": [],
@@ -1946,7 +1787,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-2",
+        "id": "xlsx-celebrities-easy-12-answer-2",
         "display": "Kate Moss",
         "normalized": "kate moss",
         "aliases": [],
@@ -1958,7 +1799,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-3",
+        "id": "xlsx-celebrities-easy-12-answer-3",
         "display": "Cindy Crawford",
         "normalized": "cindy crawford",
         "aliases": [],
@@ -1970,7 +1811,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-4",
+        "id": "xlsx-celebrities-easy-12-answer-4",
         "display": "Gisele Bündchen",
         "normalized": "gisele bundchen",
         "aliases": [],
@@ -1982,7 +1823,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-5",
+        "id": "xlsx-celebrities-easy-12-answer-5",
         "display": "Claudia Schiffer",
         "normalized": "claudia schiffer",
         "aliases": [],
@@ -1994,7 +1835,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-6",
+        "id": "xlsx-celebrities-easy-12-answer-6",
         "display": "Cara Delevingne",
         "normalized": "cara delevingne",
         "aliases": [],
@@ -2006,7 +1847,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-7",
+        "id": "xlsx-celebrities-easy-12-answer-7",
         "display": "Heidi Klum",
         "normalized": "heidi klum",
         "aliases": [],
@@ -2018,7 +1859,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-8",
+        "id": "xlsx-celebrities-easy-12-answer-8",
         "display": "Bella Hadid",
         "normalized": "bella hadid",
         "aliases": [],
@@ -2030,7 +1871,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-13-answer-9",
+        "id": "xlsx-celebrities-easy-12-answer-9",
         "display": "Gigi Hadid",
         "normalized": "gigi hadid",
         "aliases": [],
@@ -2043,7 +1884,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-13-bomb",
+      "id": "xlsx-celebrities-easy-12-bomb",
       "display": "Adele",
       "normalized": "adele",
       "aliases": [],
@@ -2059,16 +1900,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2d9564adac3e7968c294a9ddedc50d36594249fb82cf9c987fec68816057f885",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-14",
-    "slug": "xlsx-celebrities-easy-14",
+    "id": "xlsx-celebrities-easy-13",
+    "slug": "xlsx-celebrities-easy-13",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -2093,7 +1934,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-14-answer-1",
+        "id": "xlsx-celebrities-easy-13-answer-1",
         "display": "Philippe Etchebest",
         "normalized": "philippe etchebest",
         "aliases": [],
@@ -2105,7 +1946,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-2",
+        "id": "xlsx-celebrities-easy-13-answer-2",
         "display": "Cyril Lignac",
         "normalized": "cyril lignac",
         "aliases": [],
@@ -2117,7 +1958,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-3",
+        "id": "xlsx-celebrities-easy-13-answer-3",
         "display": "Paul Bocuse",
         "normalized": "paul bocuse",
         "aliases": [],
@@ -2129,7 +1970,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-4",
+        "id": "xlsx-celebrities-easy-13-answer-4",
         "display": "Alain Ducasse",
         "normalized": "alain ducasse",
         "aliases": [],
@@ -2141,7 +1982,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-5",
+        "id": "xlsx-celebrities-easy-13-answer-5",
         "display": "Anne-Sophie Pic",
         "normalized": "anne sophie pic",
         "aliases": [],
@@ -2153,7 +1994,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-6",
+        "id": "xlsx-celebrities-easy-13-answer-6",
         "display": "Hélène Darroze",
         "normalized": "helene darroze",
         "aliases": [],
@@ -2165,7 +2006,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-7",
+        "id": "xlsx-celebrities-easy-13-answer-7",
         "display": "Thierry Marx",
         "normalized": "thierry marx",
         "aliases": [],
@@ -2177,7 +2018,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-8",
+        "id": "xlsx-celebrities-easy-13-answer-8",
         "display": "Guy Savoy",
         "normalized": "guy savoy",
         "aliases": [],
@@ -2189,7 +2030,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-14-answer-9",
+        "id": "xlsx-celebrities-easy-13-answer-9",
         "display": "Pierre Gagnaire",
         "normalized": "pierre gagnaire",
         "aliases": [],
@@ -2202,7 +2043,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-14-bomb",
+      "id": "xlsx-celebrities-easy-13-bomb",
       "display": "Didier Deschamps",
       "normalized": "didier deschamps",
       "aliases": [],
@@ -2218,16 +2059,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d3f03bae755665e250e2be6300e6ed9cd009f02972e9cab00eeeab5b1d713a1e",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-celebrities-easy-15",
-    "slug": "xlsx-celebrities-easy-15",
+    "id": "xlsx-celebrities-easy-14",
+    "slug": "xlsx-celebrities-easy-14",
     "language": "fr",
     "themeId": "celebrities",
     "subthemeIds": [
@@ -2252,7 +2093,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-celebrities-easy-15-answer-1",
+        "id": "xlsx-celebrities-easy-14-answer-1",
         "display": "Jean-Jacques Goldman",
         "normalized": "jean jacques goldman",
         "aliases": [],
@@ -2264,7 +2105,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-2",
+        "id": "xlsx-celebrities-easy-14-answer-2",
         "display": "Mylène Farmer",
         "normalized": "mylene farmer",
         "aliases": [],
@@ -2276,7 +2117,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-3",
+        "id": "xlsx-celebrities-easy-14-answer-3",
         "display": "Julien Doré",
         "normalized": "julien dore",
         "aliases": [],
@@ -2288,7 +2129,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-4",
+        "id": "xlsx-celebrities-easy-14-answer-4",
         "display": "Vianney",
         "normalized": "vianney",
         "aliases": [],
@@ -2300,7 +2141,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-5",
+        "id": "xlsx-celebrities-easy-14-answer-5",
         "display": "Clara Luciani",
         "normalized": "clara luciani",
         "aliases": [],
@@ -2312,7 +2153,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-6",
+        "id": "xlsx-celebrities-easy-14-answer-6",
         "display": "Aya Nakamura",
         "normalized": "aya nakamura",
         "aliases": [],
@@ -2324,7 +2165,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-7",
+        "id": "xlsx-celebrities-easy-14-answer-7",
         "display": "Soprano",
         "normalized": "soprano",
         "aliases": [],
@@ -2336,7 +2177,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-8",
+        "id": "xlsx-celebrities-easy-14-answer-8",
         "display": "Orelsan",
         "normalized": "orelsan",
         "aliases": [],
@@ -2348,7 +2189,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-celebrities-easy-15-answer-9",
+        "id": "xlsx-celebrities-easy-14-answer-9",
         "display": "Louane",
         "normalized": "louane",
         "aliases": [],
@@ -2361,7 +2202,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-celebrities-easy-15-bomb",
+      "id": "xlsx-celebrities-easy-14-bomb",
       "display": "Jean Dujardin",
       "normalized": "jean dujardin",
       "aliases": [],
@@ -2377,11 +2218,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b3a41abb198bb55cf1a1393d9a547bf426c5398463b1870a83e5fec1e3988a99",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

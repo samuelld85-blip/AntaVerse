@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fc24dc3a2df8a761b72fb38c72f0a5d79ee436468b4a9f5228261b82b3c2b07d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-party-alcohol-medium-02",
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c893e28e0839de5af8b26e4f4e2e37031590c94ed65271349af5d2c695470633",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-party-alcohol-medium-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3fa0c2c2a6a1e928dca081e2dddd94b2614ab377960566507327742a41695cc1",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-party-alcohol-medium-04",
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6143770fe0fe4277da11dba04889b3f6e5d5da97576730708b5356078a372e32",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-party-alcohol-medium-05",
@@ -787,12 +787,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7fd646b1e02d798bb84b0786c5ee925e157565ac4d0cab38902534326bcbf8b0",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-party-alcohol-medium-06",
@@ -946,175 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "45ba3cc8167f58ac82f47d9178ea3e27d7d39045f27767dc9ab2947b30b8aaf6",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-party-alcohol-medium-07",
     "slug": "xlsx-party-alcohol-medium-07",
-    "language": "fr",
-    "themeId": "party-alcohol",
-    "subthemeIds": [
-      "party-alcohol:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 cocktails classiques à base de tequila.",
-    "shortTitle": "cocktails classiques à base de tequila",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-1",
-        "display": "Margarita",
-        "normalized": "margarita",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-2",
-        "display": "Tequila Sunrise",
-        "normalized": "tequila sunrise",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-3",
-        "display": "Paloma",
-        "normalized": "paloma",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-4",
-        "display": "Tommy's Margarita",
-        "normalized": "tommy s margarita",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-5",
-        "display": "El Diablo",
-        "normalized": "el diablo",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-6",
-        "display": "Matador",
-        "normalized": "matador",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-7",
-        "display": "Mexican Mule",
-        "normalized": "mexican mule",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-8",
-        "display": "Tequila Sour",
-        "normalized": "tequila sour",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-party-alcohol-medium-07-answer-9",
-        "display": "Juan Collins",
-        "normalized": "juan collins",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-party-alcohol-medium-07-bomb",
-      "display": "Mojito",
-      "normalized": "mojito",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "bf32b82e1e5971a62c6c4605de70d9ab712d5edeed8c667dbe4525293613c55a",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-party-alcohol-medium-08",
-    "slug": "xlsx-party-alcohol-medium-08",
     "language": "fr",
     "themeId": "party-alcohol",
     "subthemeIds": [
@@ -1139,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-1",
+        "id": "xlsx-party-alcohol-medium-07-answer-1",
         "display": "Rouge",
         "normalized": "rouge",
         "aliases": [],
@@ -1151,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-2",
+        "id": "xlsx-party-alcohol-medium-07-answer-2",
         "display": "Blanc",
         "normalized": "blanc",
         "aliases": [],
@@ -1163,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-3",
+        "id": "xlsx-party-alcohol-medium-07-answer-3",
         "display": "Rosé",
         "normalized": "rose",
         "aliases": [],
@@ -1175,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-4",
+        "id": "xlsx-party-alcohol-medium-07-answer-4",
         "display": "Effervescent",
         "normalized": "effervescent",
         "aliases": [],
@@ -1187,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-5",
+        "id": "xlsx-party-alcohol-medium-07-answer-5",
         "display": "Liquoreux",
         "normalized": "liquoreux",
         "aliases": [],
@@ -1199,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-6",
+        "id": "xlsx-party-alcohol-medium-07-answer-6",
         "display": "Moelleux",
         "normalized": "moelleux",
         "aliases": [],
@@ -1211,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-7",
+        "id": "xlsx-party-alcohol-medium-07-answer-7",
         "display": "Vin orange",
         "normalized": "vin orange",
         "aliases": [],
@@ -1223,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-8",
+        "id": "xlsx-party-alcohol-medium-07-answer-8",
         "display": "Vin fortifié",
         "normalized": "vin fortifie",
         "aliases": [],
@@ -1235,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-08-answer-9",
+        "id": "xlsx-party-alcohol-medium-07-answer-9",
         "display": "Vin doux naturel",
         "normalized": "vin doux naturel",
         "aliases": [],
@@ -1248,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-medium-08-bomb",
+      "id": "xlsx-party-alcohol-medium-07-bomb",
       "display": "Bière blonde",
       "normalized": "biere blonde",
       "aliases": [],
@@ -1264,16 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1f4866ce96bc568178503ae45afb363da4a86cd4522c2d721fde5ba62c2729da",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-party-alcohol-medium-09",
-    "slug": "xlsx-party-alcohol-medium-09",
+    "id": "xlsx-party-alcohol-medium-08",
+    "slug": "xlsx-party-alcohol-medium-08",
     "language": "fr",
     "themeId": "party-alcohol",
     "subthemeIds": [
@@ -1298,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-1",
+        "id": "xlsx-party-alcohol-medium-08-answer-1",
         "display": "Shaker",
         "normalized": "shaker",
         "aliases": [],
@@ -1310,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-2",
+        "id": "xlsx-party-alcohol-medium-08-answer-2",
         "display": "Doseur",
         "normalized": "doseur",
         "aliases": [],
@@ -1322,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-3",
+        "id": "xlsx-party-alcohol-medium-08-answer-3",
         "display": "Passoire",
         "normalized": "passoire",
         "aliases": [],
@@ -1334,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-4",
+        "id": "xlsx-party-alcohol-medium-08-answer-4",
         "display": "Cuillère de bar",
         "normalized": "cuillere de bar",
         "aliases": [],
@@ -1346,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-5",
+        "id": "xlsx-party-alcohol-medium-08-answer-5",
         "display": "Pilon",
         "normalized": "pilon",
         "aliases": [],
@@ -1358,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-6",
+        "id": "xlsx-party-alcohol-medium-08-answer-6",
         "display": "Ouvre-bouteille",
         "normalized": "ouvre bouteille",
         "aliases": [],
@@ -1370,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-7",
+        "id": "xlsx-party-alcohol-medium-08-answer-7",
         "display": "Tire-bouchon",
         "normalized": "tire bouchon",
         "aliases": [],
@@ -1382,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-8",
+        "id": "xlsx-party-alcohol-medium-08-answer-8",
         "display": "Seau à glace",
         "normalized": "seau a glace",
         "aliases": [],
@@ -1394,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-09-answer-9",
+        "id": "xlsx-party-alcohol-medium-08-answer-9",
         "display": "Pince à glaçons",
         "normalized": "pince a glacons",
         "aliases": [],
@@ -1407,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-medium-09-bomb",
+      "id": "xlsx-party-alcohol-medium-08-bomb",
       "display": "Marteau",
       "normalized": "marteau",
       "aliases": [],
@@ -1423,16 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "04aeb685e9c43c4fd5f175e2d99a4fd02172d654596694b2b21390fc40d4046f",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-party-alcohol-medium-10",
-    "slug": "xlsx-party-alcohol-medium-10",
+    "id": "xlsx-party-alcohol-medium-09",
+    "slug": "xlsx-party-alcohol-medium-09",
     "language": "fr",
     "themeId": "party-alcohol",
     "subthemeIds": [
@@ -1457,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-1",
+        "id": "xlsx-party-alcohol-medium-09-answer-1",
         "display": "Beer pong",
         "normalized": "beer pong",
         "aliases": [],
@@ -1469,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-2",
+        "id": "xlsx-party-alcohol-medium-09-answer-2",
         "display": "Karaoké",
         "normalized": "karaoke",
         "aliases": [],
@@ -1481,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-3",
+        "id": "xlsx-party-alcohol-medium-09-answer-3",
         "display": "Time's Up!",
         "normalized": "time s up",
         "aliases": [],
@@ -1493,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-4",
+        "id": "xlsx-party-alcohol-medium-09-answer-4",
         "display": "Blind test",
         "normalized": "blind test",
         "aliases": [],
@@ -1505,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-5",
+        "id": "xlsx-party-alcohol-medium-09-answer-5",
         "display": "Jeu à boire",
         "normalized": "jeu a boire",
         "aliases": [],
@@ -1517,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-6",
+        "id": "xlsx-party-alcohol-medium-09-answer-6",
         "display": "Mimes",
         "normalized": "mimes",
         "aliases": [],
@@ -1529,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-7",
+        "id": "xlsx-party-alcohol-medium-09-answer-7",
         "display": "Action ou vérité",
         "normalized": "action ou verite",
         "aliases": [],
@@ -1541,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-8",
+        "id": "xlsx-party-alcohol-medium-09-answer-8",
         "display": "Pictionary",
         "normalized": "pictionary",
         "aliases": [],
@@ -1553,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-10-answer-9",
+        "id": "xlsx-party-alcohol-medium-09-answer-9",
         "display": "Danse",
         "normalized": "danse",
         "aliases": [],
@@ -1566,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-medium-10-bomb",
+      "id": "xlsx-party-alcohol-medium-09-bomb",
       "display": "Sudoku silencieux",
       "normalized": "sudoku silencieux",
       "aliases": [],
@@ -1582,16 +1423,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "45782d8287b14668cd01c8bc06074411c9fb413d05a594d35a9de472079aabec",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-party-alcohol-medium-11",
-    "slug": "xlsx-party-alcohol-medium-11",
+    "id": "xlsx-party-alcohol-medium-10",
+    "slug": "xlsx-party-alcohol-medium-10",
     "language": "fr",
     "themeId": "party-alcohol",
     "subthemeIds": [
@@ -1616,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-1",
+        "id": "xlsx-party-alcohol-medium-10-answer-1",
         "display": "House",
         "normalized": "house",
         "aliases": [],
@@ -1628,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-2",
+        "id": "xlsx-party-alcohol-medium-10-answer-2",
         "display": "Techno",
         "normalized": "techno",
         "aliases": [],
@@ -1640,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-3",
+        "id": "xlsx-party-alcohol-medium-10-answer-3",
         "display": "Trance",
         "normalized": "trance",
         "aliases": [],
@@ -1652,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-4",
+        "id": "xlsx-party-alcohol-medium-10-answer-4",
         "display": "Drum and bass",
         "normalized": "drum and bass",
         "aliases": [],
@@ -1664,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-5",
+        "id": "xlsx-party-alcohol-medium-10-answer-5",
         "display": "Hardstyle",
         "normalized": "hardstyle",
         "aliases": [],
@@ -1676,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-6",
+        "id": "xlsx-party-alcohol-medium-10-answer-6",
         "display": "Dubstep",
         "normalized": "dubstep",
         "aliases": [],
@@ -1688,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-7",
+        "id": "xlsx-party-alcohol-medium-10-answer-7",
         "display": "UK garage",
         "normalized": "uk garage",
         "aliases": [],
@@ -1700,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-8",
+        "id": "xlsx-party-alcohol-medium-10-answer-8",
         "display": "Disco",
         "normalized": "disco",
         "aliases": [],
@@ -1712,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-party-alcohol-medium-11-answer-9",
+        "id": "xlsx-party-alcohol-medium-10-answer-9",
         "display": "Electro",
         "normalized": "electro",
         "aliases": [],
@@ -1725,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-party-alcohol-medium-11-bomb",
+      "id": "xlsx-party-alcohol-medium-10-bomb",
       "display": "Opéra",
       "normalized": "opera",
       "aliases": [],
@@ -1741,11 +1582,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bfb83868951d5d8bc94f1714a8d452928646f47b7233eb98232f32f100fb4245",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

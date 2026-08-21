@@ -11,8 +11,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 acteurs ou actrices ayant remporté au moins deux Oscars d’interprétation.",
-    "shortTitle": "acteurs ou actrices ayant remporté au moins d…",
+    "questionText": "Cite 9 personnalités ayant lancé une marque.",
+    "shortTitle": "personnalités ayant lancé une marque",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -27,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-celebrities-hard-01-answer-1",
-        "display": "Katharine Hepburn",
-        "normalized": "katharine hepburn",
+        "display": "Rihanna",
+        "normalized": "rihanna",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -39,8 +39,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-2",
-        "display": "Daniel Day-Lewis",
-        "normalized": "daniel day lewis",
+        "display": "George Clooney",
+        "normalized": "george clooney",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -51,8 +51,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-3",
-        "display": "Meryl Streep",
-        "normalized": "meryl streep",
+        "display": "Kim Kardashian",
+        "normalized": "kim kardashian",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -63,8 +63,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-4",
-        "display": "Jack Nicholson",
-        "normalized": "jack nicholson",
+        "display": "Selena Gomez",
+        "normalized": "selena gomez",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -75,8 +75,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-5",
-        "display": "Frances McDormand",
-        "normalized": "frances mcdormand",
+        "display": "Kylie Jenner",
+        "normalized": "kylie jenner",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -87,8 +87,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-6",
-        "display": "Tom Hanks",
-        "normalized": "tom hanks",
+        "display": "Jessica Alba",
+        "normalized": "jessica alba",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -99,8 +99,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-7",
-        "display": "Anthony Hopkins",
-        "normalized": "anthony hopkins",
+        "display": "Ryan Reynolds",
+        "normalized": "ryan reynolds",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -111,8 +111,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-8",
-        "display": "Cate Blanchett",
-        "normalized": "cate blanchett",
+        "display": "Dwayne Johnson",
+        "normalized": "dwayne johnson",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -123,8 +123,8 @@
       },
       {
         "id": "xlsx-celebrities-hard-01-answer-9",
-        "display": "Denzel Washington",
-        "normalized": "denzel washington",
+        "display": "Beyoncé",
+        "normalized": "beyonce",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -136,8 +136,8 @@
     ],
     "bomb": {
       "id": "xlsx-celebrities-hard-01-bomb",
-      "display": "Leonardo DiCaprio",
-      "normalized": "leonardo dicaprio",
+      "display": "Zinedine Zidane",
+      "normalized": "zinedine zidane",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d29c12172dd4d88eec7b3795f7256cd6faf22a9f4d1866435991abc134cfb774",
+    "answerSetFingerprint": "29adfe3c1e355c5d1d4e1c4af45c29f3127109174831d6cde4f14ecfa36a1565",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-hard-02",
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a3d3f7cbe0e08e787d6db586703a28346dc94da9687cdd056bd1c742b00e8911",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-hard-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d5b3be79360b85201f91a7be9449bce4842e04fd7b4985f1c05e1651d7d8069a",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-celebrities-hard-04",
@@ -628,11 +628,170 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "6cdad533f2ab22992455f84053f96dddff5a59c05f1c81870f6a0e08b1c5a442",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-celebrities-hard-05",
+    "slug": "xlsx-celebrities-hard-05",
+    "language": "fr",
+    "themeId": "celebrities",
+    "subthemeIds": [
+      "celebrities:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "difficile"
+    ],
+    "questionText": "Cite 9 films connus avec Denzel Washington.",
+    "shortTitle": "films connus avec Denzel Washington",
+    "difficultyLevel": 3,
+    "difficultyLabel": "Difficile",
+    "editorialDifficultyScore": 80,
+    "specificityScore": 70,
+    "popularityScore": 60,
+    "recallDifficultyScore": 78,
+    "answerSetHomogeneityScore": 76,
+    "expectedAverageAnswers": 4,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-celebrities-hard-05-answer-1",
+        "display": "Glory",
+        "normalized": "glory",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-2",
+        "display": "Malcolm X",
+        "normalized": "malcolm x",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-3",
+        "display": "Philadelphia",
+        "normalized": "philadelphia",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-4",
+        "display": "Training Day",
+        "normalized": "training day",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-5",
+        "display": "Man on Fire",
+        "normalized": "man on fire",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-6",
+        "display": "Inside Man",
+        "normalized": "inside man",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-7",
+        "display": "American Gangster",
+        "normalized": "american gangster",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-8",
+        "display": "Equalizer",
+        "normalized": "equalizer",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-celebrities-hard-05-answer-9",
+        "display": "Fences",
+        "normalized": "fences",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-celebrities-hard-05-bomb",
+      "display": "Titanic",
+      "normalized": "titanic",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "7adbbe254e4f35a635c13c4337b8db4e342ca9a7ba61a10e7b06bca7c0e35620",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

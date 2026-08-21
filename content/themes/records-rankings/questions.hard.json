@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2d6dcbed09a5a300da733512d2b5e2fcb28ee368512f221cc81b3134563d818a",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-records-rankings-hard-02",
@@ -170,8 +170,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 plus hautes montagnes connues.",
-    "shortTitle": "plus hautes montagnes connues",
+    "questionText": "Cite 9 montagnes ou sommets parmi les plus célèbres du monde.",
+    "shortTitle": "montagnes ou sommets parmi les plus célèbres…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -210,8 +210,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-3",
-        "display": "Kangchenjunga",
-        "normalized": "kangchenjunga",
+        "display": "Mont Blanc",
+        "normalized": "mont blanc",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -222,8 +222,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-4",
-        "display": "Lhotse",
-        "normalized": "lhotse",
+        "display": "Kilimandjaro",
+        "normalized": "kilimandjaro",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -234,8 +234,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-5",
-        "display": "Makalu",
-        "normalized": "makalu",
+        "display": "Mont Fuji",
+        "normalized": "mont fuji",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -246,8 +246,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-6",
-        "display": "Cho Oyu",
-        "normalized": "cho oyu",
+        "display": "Cervin",
+        "normalized": "cervin",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -258,8 +258,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-7",
-        "display": "Dhaulagiri",
-        "normalized": "dhaulagiri",
+        "display": "Denali",
+        "normalized": "denali",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -270,8 +270,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-8",
-        "display": "Manaslu",
-        "normalized": "manaslu",
+        "display": "Aconcagua",
+        "normalized": "aconcagua",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -282,8 +282,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-02-answer-9",
-        "display": "Nanga Parbat",
-        "normalized": "nanga parbat",
+        "display": "Annapurna",
+        "normalized": "annapurna",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -295,8 +295,8 @@
     ],
     "bomb": {
       "id": "xlsx-records-rankings-hard-02-bomb",
-      "display": "Mont Blanc",
-      "normalized": "mont blanc",
+      "display": "Tour Eiffel",
+      "normalized": "tour eiffel",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "d8795bf73f46fd61aea633c70c237916936719e0065c85ee2bd5b64925e050be",
+    "answerSetFingerprint": "3e5459b3db2d25983384486d24f899e1158b6691b356dd290744fbfcb3366fd5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-records-rankings-hard-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0a28fcf764705daa7bcddd20d821e6306d2748fbb35fd271831a92ddea381f8d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-records-rankings-hard-04",
@@ -488,8 +488,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 bâtiments ou tours parmi les plus hauts et les plus connus du monde.",
-    "shortTitle": "bâtiments ou tours parmi les plus hauts et le…",
+    "questionText": "Cite 9 gratte-ciel ou grandes tours célèbres dans le monde.",
+    "shortTitle": "gratte-ciel ou grandes tours célèbres dans le…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -516,8 +516,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-2",
-        "display": "Tokyo Skytree",
-        "normalized": "tokyo skytree",
+        "display": "Tour Eiffel",
+        "normalized": "tour eiffel",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -528,8 +528,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-3",
-        "display": "Tour Shanghai",
-        "normalized": "tour shanghai",
+        "display": "Empire State Building",
+        "normalized": "empire state building",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -540,8 +540,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-4",
-        "display": "Abraj Al Bait",
-        "normalized": "abraj al bait",
+        "display": "One World Trade Center",
+        "normalized": "one world trade center",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -552,8 +552,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-5",
-        "display": "Canton Tower",
-        "normalized": "canton tower",
+        "display": "CN Tower",
+        "normalized": "cn tower",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -564,8 +564,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-6",
-        "display": "CN Tower",
-        "normalized": "cn tower",
+        "display": "Taipei 101",
+        "normalized": "taipei 101",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -576,8 +576,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-7",
-        "display": "One World Trade Center",
-        "normalized": "one world trade center",
+        "display": "Tours Petronas",
+        "normalized": "tours petronas",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -588,8 +588,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-8",
-        "display": "Lotte World Tower",
-        "normalized": "lotte world tower",
+        "display": "Tour Shanghai",
+        "normalized": "tour shanghai",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -600,8 +600,8 @@
       },
       {
         "id": "xlsx-records-rankings-hard-04-answer-9",
-        "display": "Ping An Finance Centre",
-        "normalized": "ping an finance centre",
+        "display": "Big Ben / Elizabeth Tower",
+        "normalized": "big ben elizabeth tower",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -613,8 +613,8 @@
     ],
     "bomb": {
       "id": "xlsx-records-rankings-hard-04-bomb",
-      "display": "Mont Blanc",
-      "normalized": "mont blanc",
+      "display": "Colisée",
+      "normalized": "colisee",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -628,11 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "6677f8ceb71e5baf995235d17423f0cd75b1f7923759616f5f9a966b8f523e88",
+    "answerSetFingerprint": "63220644f993bfd1e7a93fd3111e5e5357d65ea8d690ccd6ff037b964050801d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

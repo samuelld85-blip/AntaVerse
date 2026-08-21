@@ -11,6 +11,165 @@
       "essentials",
       "moyen"
     ],
+    "questionText": "Cite 9 héros ou héroïnes de la mythologie grecque.",
+    "shortTitle": "héros ou héroïnes de la mythologie grecque",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-1",
+        "display": "Héraclès",
+        "normalized": "heracles",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-2",
+        "display": "Achille",
+        "normalized": "achille",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-3",
+        "display": "Ulysse",
+        "normalized": "ulysse",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-4",
+        "display": "Persée",
+        "normalized": "persee",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-5",
+        "display": "Thésée",
+        "normalized": "thesee",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-6",
+        "display": "Jason",
+        "normalized": "jason",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-7",
+        "display": "Orphée",
+        "normalized": "orphee",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-8",
+        "display": "Atalante",
+        "normalized": "atalante",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-arts-literature-medium-01-answer-9",
+        "display": "Œdipe",
+        "normalized": "œdipe",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-arts-literature-medium-01-bomb",
+      "display": "Jules César",
+      "normalized": "jules cesar",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "c572aa7ccbfff16d3c9923673644ce236069a8c6b6f2ee67596ab8e51819c93c",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-arts-literature-medium-02",
+    "slug": "xlsx-arts-literature-medium-02",
+    "language": "fr",
+    "themeId": "arts-literature",
+    "subthemeIds": [
+      "arts-literature:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 dieux ou déesses de l’Égypte antique.",
     "shortTitle": "dieux ou déesses de l’Égypte antique",
     "difficultyLevel": 2,
@@ -26,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-medium-01-answer-1",
+        "id": "xlsx-arts-literature-medium-02-answer-1",
         "display": "Rê",
         "normalized": "re",
         "aliases": [],
@@ -38,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-2",
+        "id": "xlsx-arts-literature-medium-02-answer-2",
         "display": "Anubis",
         "normalized": "anubis",
         "aliases": [],
@@ -50,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-3",
+        "id": "xlsx-arts-literature-medium-02-answer-3",
         "display": "Isis",
         "normalized": "isis",
         "aliases": [],
@@ -62,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-4",
+        "id": "xlsx-arts-literature-medium-02-answer-4",
         "display": "Osiris",
         "normalized": "osiris",
         "aliases": [],
@@ -74,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-5",
+        "id": "xlsx-arts-literature-medium-02-answer-5",
         "display": "Horus",
         "normalized": "horus",
         "aliases": [],
@@ -86,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-6",
+        "id": "xlsx-arts-literature-medium-02-answer-6",
         "display": "Thot",
         "normalized": "thot",
         "aliases": [],
@@ -98,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-7",
+        "id": "xlsx-arts-literature-medium-02-answer-7",
         "display": "Seth",
         "normalized": "seth",
         "aliases": [],
@@ -110,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-8",
+        "id": "xlsx-arts-literature-medium-02-answer-8",
         "display": "Sekhmet",
         "normalized": "sekhmet",
         "aliases": [],
@@ -122,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-01-answer-9",
+        "id": "xlsx-arts-literature-medium-02-answer-9",
         "display": "Hâpy",
         "normalized": "hapy",
         "aliases": [],
@@ -135,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-medium-01-bomb",
+      "id": "xlsx-arts-literature-medium-02-bomb",
       "display": "Hadès",
       "normalized": "hades",
       "aliases": [],
@@ -151,16 +310,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f745ad69a898d66b774339eed7195b443bbbcf8d9106c87a3af2482080d7cbd5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-arts-literature-medium-02",
-    "slug": "xlsx-arts-literature-medium-02",
+    "id": "xlsx-arts-literature-medium-03",
+    "slug": "xlsx-arts-literature-medium-03",
     "language": "fr",
     "themeId": "arts-literature",
     "subthemeIds": [
@@ -185,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-arts-literature-medium-02-answer-1",
+        "id": "xlsx-arts-literature-medium-03-answer-1",
         "display": "Odin",
         "normalized": "odin",
         "aliases": [],
@@ -197,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-2",
+        "id": "xlsx-arts-literature-medium-03-answer-2",
         "display": "Thor",
         "normalized": "thor",
         "aliases": [],
@@ -209,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-3",
+        "id": "xlsx-arts-literature-medium-03-answer-3",
         "display": "Loki",
         "normalized": "loki",
         "aliases": [],
@@ -221,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-4",
+        "id": "xlsx-arts-literature-medium-03-answer-4",
         "display": "Frigg",
         "normalized": "frigg",
         "aliases": [],
@@ -233,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-5",
+        "id": "xlsx-arts-literature-medium-03-answer-5",
         "display": "Freyja",
         "normalized": "freyja",
         "aliases": [],
@@ -245,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-6",
+        "id": "xlsx-arts-literature-medium-03-answer-6",
         "display": "Freyr",
         "normalized": "freyr",
         "aliases": [],
@@ -257,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-7",
+        "id": "xlsx-arts-literature-medium-03-answer-7",
         "display": "Týr",
         "normalized": "tyr",
         "aliases": [],
@@ -269,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-8",
+        "id": "xlsx-arts-literature-medium-03-answer-8",
         "display": "Heimdall",
         "normalized": "heimdall",
         "aliases": [],
@@ -281,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-arts-literature-medium-02-answer-9",
+        "id": "xlsx-arts-literature-medium-03-answer-9",
         "display": "Baldr",
         "normalized": "baldr",
         "aliases": [],
@@ -294,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-arts-literature-medium-02-bomb",
+      "id": "xlsx-arts-literature-medium-03-bomb",
       "display": "Zeus",
       "normalized": "zeus",
       "aliases": [],
@@ -310,171 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2e566f9330a53c43bf9146afe2e07c08458b54673083e34659df0304aefdec21",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-arts-literature-medium-03",
-    "slug": "xlsx-arts-literature-medium-03",
-    "language": "fr",
-    "themeId": "arts-literature",
-    "subthemeIds": [
-      "arts-literature:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 objets célèbres de la mythologie grecque.",
-    "shortTitle": "objets célèbres de la mythologie grecque",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-1",
-        "display": "Toison d’or",
-        "normalized": "toison d or",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-2",
-        "display": "Boîte de Pandore",
-        "normalized": "boite de pandore",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-3",
-        "display": "Égide",
-        "normalized": "egide",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-4",
-        "display": "Foudre de Zeus",
-        "normalized": "foudre de zeus",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-5",
-        "display": "Trident de Poséidon",
-        "normalized": "trident de poseidon",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-6",
-        "display": "Casque d’Hadès",
-        "normalized": "casque d hades",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-7",
-        "display": "Sandales ailées d’Hermès",
-        "normalized": "sandales ailees d hermes",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-8",
-        "display": "Arc d’Artémis",
-        "normalized": "arc d artemis",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-arts-literature-medium-03-answer-9",
-        "display": "Fil d’Ariane",
-        "normalized": "fil d ariane",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-arts-literature-medium-03-bomb",
-      "display": "Héraclès",
-      "normalized": "heracles",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "cd2e44fa7b1effb1a4fc0dc0413eaf006851e49e8333ef710f3c29b61974c19c",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-04",
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b7678aa363245fa93d806f362b60c83fe7cfa0ab482bfa9ec030762da55a2ead",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-05",
@@ -787,12 +787,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fa70572232453c55d8364f431e5dbdc857c1b72b6487a5f7da0f2901265ce9a5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-06",
@@ -946,12 +946,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4630c5bf7b8cdd2c4f42ff43f3bf070c78d26dad2fa2a4625185db00948ab51d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-07",
@@ -1105,12 +1105,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "9790139b65afb580f13897da5e09d8438a1129745d525dde694462c637ad8e70",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-08",
@@ -1264,12 +1264,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "619dd1c9b3722ee08564812e6c02ba2ae56961bf3e6c7cad7b81638ff7f936e7",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-09",
@@ -1423,12 +1423,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ad7073d6f0e888e2a93c1e49f40c27f3a267d5bc4bb130e6bf874e73a641c0c5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-arts-literature-medium-10",
@@ -1582,11 +1582,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "ed8531e9e0e0403c8cde12571888120296ba09668e3ea1d878098e62d05f13d4",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

@@ -11,6 +11,165 @@
       "essentials",
       "moyen"
     ],
+    "questionText": "Cite 9 jeux de cartes traditionnels jouables avec un paquet standard.",
+    "shortTitle": "jeux de cartes traditionnels jouables avec un…",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-1",
+        "display": "Poker",
+        "normalized": "poker",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-2",
+        "display": "Bridge",
+        "normalized": "bridge",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-3",
+        "display": "Belote",
+        "normalized": "belote",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-4",
+        "display": "Rami",
+        "normalized": "rami",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-5",
+        "display": "Blackjack",
+        "normalized": "blackjack",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-6",
+        "display": "Bataille",
+        "normalized": "bataille",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-7",
+        "display": "Solitaire",
+        "normalized": "solitaire",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-8",
+        "display": "Président",
+        "normalized": "president",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-games-entertainment-medium-01-answer-9",
+        "display": "Crapette",
+        "normalized": "crapette",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-games-entertainment-medium-01-bomb",
+      "display": "Uno",
+      "normalized": "uno",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "4f21fe371544464fc3b43df814fefedc1616a3a960b258dfce88a0c06e267600",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-games-entertainment-medium-02",
+    "slug": "xlsx-games-entertainment-medium-02",
+    "language": "fr",
+    "themeId": "games-entertainment",
+    "subthemeIds": [
+      "games-entertainment:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 personnages de l’univers Pokémon.",
     "shortTitle": "personnages de l’univers Pokémon",
     "difficultyLevel": 2,
@@ -26,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-1",
+        "id": "xlsx-games-entertainment-medium-02-answer-1",
         "display": "Pikachu",
         "normalized": "pikachu",
         "aliases": [],
@@ -38,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-2",
+        "id": "xlsx-games-entertainment-medium-02-answer-2",
         "display": "Sacha",
         "normalized": "sacha",
         "aliases": [],
@@ -50,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-3",
+        "id": "xlsx-games-entertainment-medium-02-answer-3",
         "display": "Miaouss",
         "normalized": "miaouss",
         "aliases": [],
@@ -62,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-4",
+        "id": "xlsx-games-entertainment-medium-02-answer-4",
         "display": "Ondine",
         "normalized": "ondine",
         "aliases": [],
@@ -74,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-5",
+        "id": "xlsx-games-entertainment-medium-02-answer-5",
         "display": "Pierre",
         "normalized": "pierre",
         "aliases": [],
@@ -86,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-6",
+        "id": "xlsx-games-entertainment-medium-02-answer-6",
         "display": "Professeur Chen",
         "normalized": "professeur chen",
         "aliases": [],
@@ -98,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-7",
+        "id": "xlsx-games-entertainment-medium-02-answer-7",
         "display": "Jessie",
         "normalized": "jessie",
         "aliases": [],
@@ -110,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-8",
+        "id": "xlsx-games-entertainment-medium-02-answer-8",
         "display": "James",
         "normalized": "james",
         "aliases": [],
@@ -122,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-01-answer-9",
+        "id": "xlsx-games-entertainment-medium-02-answer-9",
         "display": "Dracaufeu",
         "normalized": "dracaufeu",
         "aliases": [],
@@ -135,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-games-entertainment-medium-01-bomb",
+      "id": "xlsx-games-entertainment-medium-02-bomb",
       "display": "Mario",
       "normalized": "mario",
       "aliases": [],
@@ -151,16 +310,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "382e6b6a769b4022fede1da74f0b965bbe2a655189362489329b14feea45403f",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-games-entertainment-medium-02",
-    "slug": "xlsx-games-entertainment-medium-02",
+    "id": "xlsx-games-entertainment-medium-03",
+    "slug": "xlsx-games-entertainment-medium-03",
     "language": "fr",
     "themeId": "games-entertainment",
     "subthemeIds": [
@@ -185,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-1",
+        "id": "xlsx-games-entertainment-medium-03-answer-1",
         "display": "roulette",
         "normalized": "roulette",
         "aliases": [],
@@ -197,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-2",
+        "id": "xlsx-games-entertainment-medium-03-answer-2",
         "display": "poker",
         "normalized": "poker",
         "aliases": [],
@@ -209,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-3",
+        "id": "xlsx-games-entertainment-medium-03-answer-3",
         "display": "blackjack",
         "normalized": "blackjack",
         "aliases": [],
@@ -221,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-4",
+        "id": "xlsx-games-entertainment-medium-03-answer-4",
         "display": "baccarat",
         "normalized": "baccarat",
         "aliases": [],
@@ -233,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-5",
+        "id": "xlsx-games-entertainment-medium-03-answer-5",
         "display": "craps",
         "normalized": "craps",
         "aliases": [],
@@ -245,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-6",
+        "id": "xlsx-games-entertainment-medium-03-answer-6",
         "display": "machines à sous",
         "normalized": "machines a sous",
         "aliases": [],
@@ -257,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-7",
+        "id": "xlsx-games-entertainment-medium-03-answer-7",
         "display": "chemin de fer",
         "normalized": "chemin de fer",
         "aliases": [],
@@ -269,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-8",
+        "id": "xlsx-games-entertainment-medium-03-answer-8",
         "display": "keno",
         "normalized": "keno",
         "aliases": [],
@@ -281,168 +440,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-02-answer-9",
+        "id": "xlsx-games-entertainment-medium-03-answer-9",
         "display": "roue de la fortune",
         "normalized": "roue de la fortune",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-games-entertainment-medium-02-bomb",
-      "display": "Monopoly",
-      "normalized": "monopoly",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "73e7e0ef314f218134a39a021f586fa5ca25f23012651610aecbe0f959fe3ce4",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-games-entertainment-medium-03",
-    "slug": "xlsx-games-entertainment-medium-03",
-    "language": "fr",
-    "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 jeux de société modernes connus sortis depuis les années 1990.",
-    "shortTitle": "jeux de société modernes connus sortis depuis…",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-1",
-        "display": "Catan",
-        "normalized": "catan",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-2",
-        "display": "Carcassonne",
-        "normalized": "carcassonne",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-3",
-        "display": "Dixit",
-        "normalized": "dixit",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-4",
-        "display": "7 Wonders",
-        "normalized": "7 wonders",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-5",
-        "display": "Ticket to Ride",
-        "normalized": "ticket to ride",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-6",
-        "display": "Codenames",
-        "normalized": "codenames",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-7",
-        "display": "Azul",
-        "normalized": "azul",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-8",
-        "display": "Splendor",
-        "normalized": "splendor",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-03-answer-9",
-        "display": "Pandemic",
-        "normalized": "pandemic",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0a2c1a4a68bac877aca7dab48071b1daad0cbd94223b0faed03c33a14b11f1c5",
+    "answerSetFingerprint": "73e7e0ef314f218134a39a021f586fa5ca25f23012651610aecbe0f959fe3ce4",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-games-entertainment-medium-04",
@@ -488,8 +488,8 @@
       "essentials",
       "moyen"
     ],
-    "questionText": "Cite 9 jeux de société coopératifs.",
-    "shortTitle": "jeux de société coopératifs",
+    "questionText": "Cite 9 jeux de société modernes connus sortis depuis les années 1990.",
+    "shortTitle": "jeux de société modernes connus sortis depuis…",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -504,8 +504,8 @@
     "answers": [
       {
         "id": "xlsx-games-entertainment-medium-04-answer-1",
-        "display": "Pandemic",
-        "normalized": "pandemic",
+        "display": "Catan",
+        "normalized": "catan",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -516,8 +516,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-2",
-        "display": "The Crew",
-        "normalized": "the crew",
+        "display": "Carcassonne",
+        "normalized": "carcassonne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -528,8 +528,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-3",
-        "display": "Hanabi",
-        "normalized": "hanabi",
+        "display": "Dixit",
+        "normalized": "dixit",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -540,8 +540,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-4",
-        "display": "Spirit Island",
-        "normalized": "spirit island",
+        "display": "7 Wonders",
+        "normalized": "7 wonders",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -552,8 +552,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-5",
-        "display": "Robinson Crusoé",
-        "normalized": "robinson crusoe",
+        "display": "Ticket to Ride",
+        "normalized": "ticket to ride",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -564,8 +564,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-6",
-        "display": "Andor",
-        "normalized": "andor",
+        "display": "Codenames",
+        "normalized": "codenames",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -576,8 +576,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-7",
-        "display": "Mysterium",
-        "normalized": "mysterium",
+        "display": "Azul",
+        "normalized": "azul",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -588,8 +588,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-8",
-        "display": "Unlock!",
-        "normalized": "unlock",
+        "display": "Splendor",
+        "normalized": "splendor",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -600,8 +600,8 @@
       },
       {
         "id": "xlsx-games-entertainment-medium-04-answer-9",
-        "display": "Zombicide",
-        "normalized": "zombicide",
+        "display": "Pandemic",
+        "normalized": "pandemic",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -613,8 +613,8 @@
     ],
     "bomb": {
       "id": "xlsx-games-entertainment-medium-04-bomb",
-      "display": "Risk",
-      "normalized": "risk",
+      "display": "Monopoly",
+      "normalized": "monopoly",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "0c172c5f6818c2a00b83fa81266d2a5c56d7e34d00b54f99cdb6b5dc2a91c223",
+    "answerSetFingerprint": "0a2c1a4a68bac877aca7dab48071b1daad0cbd94223b0faed03c33a14b11f1c5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-games-entertainment-medium-05",
@@ -787,12 +787,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c06c6a9c0264abd69f48a47f250b2ea3ef0604100fc883f2637712d31adbcf02",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-games-entertainment-medium-06",
@@ -946,175 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f70590cb3d4b1897180f2f532261bfca5b08fc8ec80410f2f3a7d45109838f46",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-games-entertainment-medium-07",
     "slug": "xlsx-games-entertainment-medium-07",
-    "language": "fr",
-    "themeId": "games-entertainment",
-    "subthemeIds": [
-      "games-entertainment:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 jeux de bluff ou de déduction sociale.",
-    "shortTitle": "jeux de bluff ou de déduction sociale",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-1",
-        "display": "Loups-Garous de Thiercelieux",
-        "normalized": "loups garous de thiercelieux",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-2",
-        "display": "Secret Hitler",
-        "normalized": "secret hitler",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-3",
-        "display": "The Resistance",
-        "normalized": "the resistance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-4",
-        "display": "Coup",
-        "normalized": "coup",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-5",
-        "display": "Skull",
-        "normalized": "skull",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-6",
-        "display": "Love Letter",
-        "normalized": "love letter",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-7",
-        "display": "Saboteur",
-        "normalized": "saboteur",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-8",
-        "display": "Time Bomb",
-        "normalized": "time bomb",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-games-entertainment-medium-07-answer-9",
-        "display": "Citadelles",
-        "normalized": "citadelles",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-games-entertainment-medium-07-bomb",
-      "display": "Tetris",
-      "normalized": "tetris",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "b512e2700071661207d30aea375a63fd875ca2edb6f5114b7b3d0d8f13fa0446",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-games-entertainment-medium-08",
-    "slug": "xlsx-games-entertainment-medium-08",
     "language": "fr",
     "themeId": "games-entertainment",
     "subthemeIds": [
@@ -1139,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-1",
+        "id": "xlsx-games-entertainment-medium-07-answer-1",
         "display": "Échecs",
         "normalized": "echecs",
         "aliases": [],
@@ -1151,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-2",
+        "id": "xlsx-games-entertainment-medium-07-answer-2",
         "display": "Dames",
         "normalized": "dames",
         "aliases": [],
@@ -1163,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-3",
+        "id": "xlsx-games-entertainment-medium-07-answer-3",
         "display": "Go",
         "normalized": "go",
         "aliases": [],
@@ -1175,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-4",
+        "id": "xlsx-games-entertainment-medium-07-answer-4",
         "display": "Othello",
         "normalized": "othello",
         "aliases": [],
@@ -1187,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-5",
+        "id": "xlsx-games-entertainment-medium-07-answer-5",
         "display": "Abalone",
         "normalized": "abalone",
         "aliases": [],
@@ -1199,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-6",
+        "id": "xlsx-games-entertainment-medium-07-answer-6",
         "display": "Quoridor",
         "normalized": "quoridor",
         "aliases": [],
@@ -1211,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-7",
+        "id": "xlsx-games-entertainment-medium-07-answer-7",
         "display": "Puissance 4",
         "normalized": "puissance 4",
         "aliases": [],
@@ -1223,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-8",
+        "id": "xlsx-games-entertainment-medium-07-answer-8",
         "display": "Stratego",
         "normalized": "stratego",
         "aliases": [],
@@ -1235,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-08-answer-9",
+        "id": "xlsx-games-entertainment-medium-07-answer-9",
         "display": "Mastermind",
         "normalized": "mastermind",
         "aliases": [],
@@ -1248,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-games-entertainment-medium-08-bomb",
+      "id": "xlsx-games-entertainment-medium-07-bomb",
       "display": "Twister",
       "normalized": "twister",
       "aliases": [],
@@ -1264,16 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f37e6325b1d959ec9b5ea7adc08ccd1bbb7146e4b44f1265f2906e7708892eff",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-games-entertainment-medium-09",
-    "slug": "xlsx-games-entertainment-medium-09",
+    "id": "xlsx-games-entertainment-medium-08",
+    "slug": "xlsx-games-entertainment-medium-08",
     "language": "fr",
     "themeId": "games-entertainment",
     "subthemeIds": [
@@ -1298,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-1",
+        "id": "xlsx-games-entertainment-medium-08-answer-1",
         "display": "Lego",
         "normalized": "lego",
         "aliases": [],
@@ -1310,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-2",
+        "id": "xlsx-games-entertainment-medium-08-answer-2",
         "display": "Meccano",
         "normalized": "meccano",
         "aliases": [],
@@ -1322,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-3",
+        "id": "xlsx-games-entertainment-medium-08-answer-3",
         "display": "Kapla",
         "normalized": "kapla",
         "aliases": [],
@@ -1334,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-4",
+        "id": "xlsx-games-entertainment-medium-08-answer-4",
         "display": "Geomag",
         "normalized": "geomag",
         "aliases": [],
@@ -1346,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-5",
+        "id": "xlsx-games-entertainment-medium-08-answer-5",
         "display": "K'Nex",
         "normalized": "k nex",
         "aliases": [],
@@ -1358,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-6",
+        "id": "xlsx-games-entertainment-medium-08-answer-6",
         "display": "Magna-Tiles",
         "normalized": "magna tiles",
         "aliases": [],
@@ -1370,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-7",
+        "id": "xlsx-games-entertainment-medium-08-answer-7",
         "display": "Plus-Plus",
         "normalized": "plus plus",
         "aliases": [],
@@ -1382,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-8",
+        "id": "xlsx-games-entertainment-medium-08-answer-8",
         "display": "Brio Builder",
         "normalized": "brio builder",
         "aliases": [],
@@ -1394,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-09-answer-9",
+        "id": "xlsx-games-entertainment-medium-08-answer-9",
         "display": "Playmobil",
         "normalized": "playmobil",
         "aliases": [],
@@ -1407,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-games-entertainment-medium-09-bomb",
+      "id": "xlsx-games-entertainment-medium-08-bomb",
       "display": "Barbie",
       "normalized": "barbie",
       "aliases": [],
@@ -1423,16 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1d0b335b37d54eff659cb89a357c9b9769f67dea87dc839bf8e7dd19ba4aa338",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-games-entertainment-medium-10",
-    "slug": "xlsx-games-entertainment-medium-10",
+    "id": "xlsx-games-entertainment-medium-09",
+    "slug": "xlsx-games-entertainment-medium-09",
     "language": "fr",
     "themeId": "games-entertainment",
     "subthemeIds": [
@@ -1457,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-1",
+        "id": "xlsx-games-entertainment-medium-09-answer-1",
         "display": "Pictionary",
         "normalized": "pictionary",
         "aliases": [],
@@ -1469,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-2",
+        "id": "xlsx-games-entertainment-medium-09-answer-2",
         "display": "Time's Up!",
         "normalized": "time s up",
         "aliases": [],
@@ -1481,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-3",
+        "id": "xlsx-games-entertainment-medium-09-answer-3",
         "display": "Concept",
         "normalized": "concept",
         "aliases": [],
@@ -1493,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-4",
+        "id": "xlsx-games-entertainment-medium-09-answer-4",
         "display": "Cranium",
         "normalized": "cranium",
         "aliases": [],
@@ -1505,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-5",
+        "id": "xlsx-games-entertainment-medium-09-answer-5",
         "display": "Activity",
         "normalized": "activity",
         "aliases": [],
@@ -1517,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-6",
+        "id": "xlsx-games-entertainment-medium-09-answer-6",
         "display": "Esquissé ?",
         "normalized": "esquisse",
         "aliases": [],
@@ -1529,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-7",
+        "id": "xlsx-games-entertainment-medium-09-answer-7",
         "display": "Top Ten",
         "normalized": "top ten",
         "aliases": [],
@@ -1541,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-8",
+        "id": "xlsx-games-entertainment-medium-09-answer-8",
         "display": "Imagine",
         "normalized": "imagine",
         "aliases": [],
@@ -1553,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-games-entertainment-medium-10-answer-9",
+        "id": "xlsx-games-entertainment-medium-09-answer-9",
         "display": "Dixit",
         "normalized": "dixit",
         "aliases": [],
@@ -1566,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-games-entertainment-medium-10-bomb",
+      "id": "xlsx-games-entertainment-medium-09-bomb",
       "display": "Risk",
       "normalized": "risk",
       "aliases": [],
@@ -1582,11 +1423,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bddb18f0b488c02359d4e13120903203189e912029e8706d139fa94c1b08aca2",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

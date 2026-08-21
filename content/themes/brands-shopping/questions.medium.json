@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fa5f5e1f163601d30c0b30c32b5fcb19de359376f72329cea82a06df3ff431de",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-02",
@@ -170,8 +170,8 @@
       "essentials",
       "moyen"
     ],
-    "questionText": "Cite 9 entreprises derrière des produits tech très connus.",
-    "shortTitle": "entreprises derrière des produits tech très c…",
+    "questionText": "Cite 9 grandes enseignes ou marques de distribution nées en France.",
+    "shortTitle": "grandes enseignes ou marques de distribution…",
     "difficultyLevel": 2,
     "difficultyLabel": "Moyen",
     "editorialDifficultyScore": 55,
@@ -186,8 +186,8 @@
     "answers": [
       {
         "id": "xlsx-brands-shopping-medium-02-answer-1",
-        "display": "Apple",
-        "normalized": "apple",
+        "display": "Carrefour",
+        "normalized": "carrefour",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -198,8 +198,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-2",
-        "display": "Sony",
-        "normalized": "sony",
+        "display": "Decathlon",
+        "normalized": "decathlon",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -210,8 +210,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-3",
-        "display": "Microsoft",
-        "normalized": "microsoft",
+        "display": "Sephora",
+        "normalized": "sephora",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -222,8 +222,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-4",
-        "display": "Samsung",
-        "normalized": "samsung",
+        "display": "Fnac",
+        "normalized": "fnac",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -234,8 +234,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-5",
-        "display": "Amazon",
-        "normalized": "amazon",
+        "display": "Darty",
+        "normalized": "darty",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -246,8 +246,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-6",
-        "display": "Nintendo",
-        "normalized": "nintendo",
+        "display": "Monoprix",
+        "normalized": "monoprix",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -258,8 +258,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-7",
-        "display": "Lenovo",
-        "normalized": "lenovo",
+        "display": "Leroy Merlin",
+        "normalized": "leroy merlin",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -270,8 +270,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-8",
-        "display": "GoPro",
-        "normalized": "gopro",
+        "display": "Auchan",
+        "normalized": "auchan",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -282,8 +282,8 @@
       },
       {
         "id": "xlsx-brands-shopping-medium-02-answer-9",
-        "display": "Google",
-        "normalized": "google",
+        "display": "Castorama",
+        "normalized": "castorama",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -295,8 +295,8 @@
     ],
     "bomb": {
       "id": "xlsx-brands-shopping-medium-02-bomb",
-      "display": "Nestlé — Nespresso",
-      "normalized": "nestle nespresso",
+      "display": "IKEA",
+      "normalized": "ikea",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "2ae65516aa7fdceb8974e3da9205b60ad42b8af0980497ed773bef33a719fb1c",
+    "answerSetFingerprint": "ef75ed75a4f31236c00bfc30bf39ef40f01bb938cfb0f7663d3f49504c7f75ef",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "df001271c9b147e8fefa95845cc99b11929454946edef225dfd7a4e3c617db54",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-04",
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "cd4c0a8d49ae483288bb79ff85fd9e89dfcd5cfab007d759805c4ee6cf5286f1",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-05",
@@ -787,12 +787,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "02376ed539b25da4ab351e78125f01579f48e2427b7991d910752c2b18790c67",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-06",
@@ -946,12 +946,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "84483c70a861eab2bffb3be2ddefb45b61814e6a3650f46e610330a824d5559d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-07",
@@ -1105,175 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "c9fe6b321b999fa78767b9296447cf3a75ab78d8f4c02aa699086fea1a5092e5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-brands-shopping-medium-08",
     "slug": "xlsx-brands-shopping-medium-08",
-    "language": "fr",
-    "themeId": "brands-shopping",
-    "subthemeIds": [
-      "brands-shopping:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 marques de chaussures connues.",
-    "shortTitle": "marques de chaussures connues",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-1",
-        "display": "Nike",
-        "normalized": "nike",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-2",
-        "display": "Adidas",
-        "normalized": "adidas",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-3",
-        "display": "Converse",
-        "normalized": "converse",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-4",
-        "display": "Vans",
-        "normalized": "vans",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-5",
-        "display": "Dr. Martens",
-        "normalized": "dr martens",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-6",
-        "display": "Timberland",
-        "normalized": "timberland",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-7",
-        "display": "New Balance",
-        "normalized": "new balance",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-8",
-        "display": "Birkenstock",
-        "normalized": "birkenstock",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-brands-shopping-medium-08-answer-9",
-        "display": "Clarks",
-        "normalized": "clarks",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-brands-shopping-medium-08-bomb",
-      "display": "Nespresso",
-      "normalized": "nespresso",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "687b182b84119a9525d0724a23d3704054901caa30e341f2ecfc3f8dfe3007b1",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-brands-shopping-medium-09",
-    "slug": "xlsx-brands-shopping-medium-09",
     "language": "fr",
     "themeId": "brands-shopping",
     "subthemeIds": [
@@ -1298,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-1",
+        "id": "xlsx-brands-shopping-medium-08-answer-1",
         "display": "Rolex",
         "normalized": "rolex",
         "aliases": [],
@@ -1310,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-2",
+        "id": "xlsx-brands-shopping-medium-08-answer-2",
         "display": "Omega",
         "normalized": "omega",
         "aliases": [],
@@ -1322,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-3",
+        "id": "xlsx-brands-shopping-medium-08-answer-3",
         "display": "Cartier",
         "normalized": "cartier",
         "aliases": [],
@@ -1334,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-4",
+        "id": "xlsx-brands-shopping-medium-08-answer-4",
         "display": "Tag Heuer",
         "normalized": "tag heuer",
         "aliases": [],
@@ -1346,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-5",
+        "id": "xlsx-brands-shopping-medium-08-answer-5",
         "display": "Tissot",
         "normalized": "tissot",
         "aliases": [],
@@ -1358,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-6",
+        "id": "xlsx-brands-shopping-medium-08-answer-6",
         "display": "Seiko",
         "normalized": "seiko",
         "aliases": [],
@@ -1370,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-7",
+        "id": "xlsx-brands-shopping-medium-08-answer-7",
         "display": "Casio",
         "normalized": "casio",
         "aliases": [],
@@ -1382,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-8",
+        "id": "xlsx-brands-shopping-medium-08-answer-8",
         "display": "Swatch",
         "normalized": "swatch",
         "aliases": [],
@@ -1394,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-09-answer-9",
+        "id": "xlsx-brands-shopping-medium-08-answer-9",
         "display": "Breitling",
         "normalized": "breitling",
         "aliases": [],
@@ -1407,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-medium-09-bomb",
+      "id": "xlsx-brands-shopping-medium-08-bomb",
       "display": "Ray-Ban",
       "normalized": "ray ban",
       "aliases": [],
@@ -1423,16 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "33d30943215cb6975ba3c3c1118f7eb8faa5346b95ef2f09433207383f411eca",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-brands-shopping-medium-10",
-    "slug": "xlsx-brands-shopping-medium-10",
+    "id": "xlsx-brands-shopping-medium-09",
+    "slug": "xlsx-brands-shopping-medium-09",
     "language": "fr",
     "themeId": "brands-shopping",
     "subthemeIds": [
@@ -1457,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-1",
+        "id": "xlsx-brands-shopping-medium-09-answer-1",
         "display": "L'Oréal Paris",
         "normalized": "l oreal paris",
         "aliases": [],
@@ -1469,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-2",
+        "id": "xlsx-brands-shopping-medium-09-answer-2",
         "display": "Maybelline",
         "normalized": "maybelline",
         "aliases": [],
@@ -1481,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-3",
+        "id": "xlsx-brands-shopping-medium-09-answer-3",
         "display": "Nivea",
         "normalized": "nivea",
         "aliases": [],
@@ -1493,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-4",
+        "id": "xlsx-brands-shopping-medium-09-answer-4",
         "display": "Garnier",
         "normalized": "garnier",
         "aliases": [],
@@ -1505,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-5",
+        "id": "xlsx-brands-shopping-medium-09-answer-5",
         "display": "Lancôme",
         "normalized": "lancome",
         "aliases": [],
@@ -1517,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-6",
+        "id": "xlsx-brands-shopping-medium-09-answer-6",
         "display": "Estée Lauder",
         "normalized": "estee lauder",
         "aliases": [],
@@ -1529,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-7",
+        "id": "xlsx-brands-shopping-medium-09-answer-7",
         "display": "Clinique",
         "normalized": "clinique",
         "aliases": [],
@@ -1541,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-8",
+        "id": "xlsx-brands-shopping-medium-09-answer-8",
         "display": "MAC",
         "normalized": "mac",
         "aliases": [],
@@ -1553,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-10-answer-9",
+        "id": "xlsx-brands-shopping-medium-09-answer-9",
         "display": "Kérastase",
         "normalized": "kerastase",
         "aliases": [],
@@ -1566,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-medium-10-bomb",
+      "id": "xlsx-brands-shopping-medium-09-bomb",
       "display": "Michelin",
       "normalized": "michelin",
       "aliases": [],
@@ -1582,16 +1423,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "2a2a3aa47cc86971d92a139e1691551ff06e61b5da0c1386eeaa057ce4309d2d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-brands-shopping-medium-11",
-    "slug": "xlsx-brands-shopping-medium-11",
+    "id": "xlsx-brands-shopping-medium-10",
+    "slug": "xlsx-brands-shopping-medium-10",
     "language": "fr",
     "themeId": "brands-shopping",
     "subthemeIds": [
@@ -1616,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-1",
+        "id": "xlsx-brands-shopping-medium-10-answer-1",
         "display": "Nespresso",
         "normalized": "nespresso",
         "aliases": [],
@@ -1628,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-2",
+        "id": "xlsx-brands-shopping-medium-10-answer-2",
         "display": "Senseo",
         "normalized": "senseo",
         "aliases": [],
@@ -1640,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-3",
+        "id": "xlsx-brands-shopping-medium-10-answer-3",
         "display": "Dolce Gusto",
         "normalized": "dolce gusto",
         "aliases": [],
@@ -1652,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-4",
+        "id": "xlsx-brands-shopping-medium-10-answer-4",
         "display": "Lavazza",
         "normalized": "lavazza",
         "aliases": [],
@@ -1664,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-5",
+        "id": "xlsx-brands-shopping-medium-10-answer-5",
         "display": "Illy",
         "normalized": "illy",
         "aliases": [],
@@ -1676,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-6",
+        "id": "xlsx-brands-shopping-medium-10-answer-6",
         "display": "De'Longhi",
         "normalized": "de longhi",
         "aliases": [],
@@ -1688,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-7",
+        "id": "xlsx-brands-shopping-medium-10-answer-7",
         "display": "Krups",
         "normalized": "krups",
         "aliases": [],
@@ -1700,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-8",
+        "id": "xlsx-brands-shopping-medium-10-answer-8",
         "display": "Melitta",
         "normalized": "melitta",
         "aliases": [],
@@ -1712,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-brands-shopping-medium-11-answer-9",
+        "id": "xlsx-brands-shopping-medium-10-answer-9",
         "display": "Tassimo",
         "normalized": "tassimo",
         "aliases": [],
@@ -1725,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-brands-shopping-medium-11-bomb",
+      "id": "xlsx-brands-shopping-medium-10-bomb",
       "display": "Evian",
       "normalized": "evian",
       "aliases": [],
@@ -1741,11 +1582,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "400a93b805d3309f6e151d4a5cd2f07b95feeb8ce98da5a0400a1c081c8bc4e4",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

@@ -11,6 +11,165 @@
       "essentials",
       "moyen"
     ],
+    "questionText": "Cite 9 éléments que l’on peut trouver dans un contrat de travail.",
+    "shortTitle": "éléments que l’on peut trouver dans un contra…",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-work-office-medium-01-answer-1",
+        "display": "Identité des parties",
+        "normalized": "identite des parties",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-2",
+        "display": "Intitulé du poste",
+        "normalized": "intitule du poste",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-3",
+        "display": "Rémunération",
+        "normalized": "remuneration",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-4",
+        "display": "Durée du contrat",
+        "normalized": "duree du contrat",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-5",
+        "display": "Lieu de travail",
+        "normalized": "lieu de travail",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-6",
+        "display": "Temps de travail",
+        "normalized": "temps de travail",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-7",
+        "display": "Période d’essai",
+        "normalized": "periode d essai",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-8",
+        "display": "Convention collective",
+        "normalized": "convention collective",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-work-office-medium-01-answer-9",
+        "display": "Congés",
+        "normalized": "conges",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-work-office-medium-01-bomb",
+      "display": "CV",
+      "normalized": "cv",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "f491ae9c500fd9c871606a97fe00775ed3b14986a40f6e3703f3aaa0bf00e29c",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-work-office-medium-02",
+    "slug": "xlsx-work-office-medium-02",
+    "language": "fr",
+    "themeId": "work-office",
+    "subthemeIds": [
+      "work-office:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 étapes courantes d’un recrutement.",
     "shortTitle": "étapes courantes d’un recrutement",
     "difficultyLevel": 2,
@@ -26,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-work-office-medium-01-answer-1",
+        "id": "xlsx-work-office-medium-02-answer-1",
         "display": "Candidature",
         "normalized": "candidature",
         "aliases": [],
@@ -38,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-2",
+        "id": "xlsx-work-office-medium-02-answer-2",
         "display": "Tri des CV",
         "normalized": "tri des cv",
         "aliases": [],
@@ -50,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-3",
+        "id": "xlsx-work-office-medium-02-answer-3",
         "display": "Présélection téléphonique",
         "normalized": "preselection telephonique",
         "aliases": [],
@@ -62,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-4",
+        "id": "xlsx-work-office-medium-02-answer-4",
         "display": "Entretien RH",
         "normalized": "entretien rh",
         "aliases": [],
@@ -74,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-5",
+        "id": "xlsx-work-office-medium-02-answer-5",
         "display": "Entretien manager",
         "normalized": "entretien manager",
         "aliases": [],
@@ -86,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-6",
+        "id": "xlsx-work-office-medium-02-answer-6",
         "display": "Test technique ou cas pratique",
         "normalized": "test technique ou cas pratique",
         "aliases": [],
@@ -98,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-7",
+        "id": "xlsx-work-office-medium-02-answer-7",
         "display": "Prise de références",
         "normalized": "prise de references",
         "aliases": [],
@@ -110,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-8",
+        "id": "xlsx-work-office-medium-02-answer-8",
         "display": "Offre d’embauche",
         "normalized": "offre d embauche",
         "aliases": [],
@@ -122,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-01-answer-9",
+        "id": "xlsx-work-office-medium-02-answer-9",
         "display": "Signature du contrat",
         "normalized": "signature du contrat",
         "aliases": [],
@@ -135,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-work-office-medium-01-bomb",
+      "id": "xlsx-work-office-medium-02-bomb",
       "display": "Déclaration de TVA",
       "normalized": "declaration de tva",
       "aliases": [],
@@ -151,16 +310,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "749d1365b356567c953de283a090e70d0b857bb0a84bb58324d29a7ab1de46ec",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-work-office-medium-02",
-    "slug": "xlsx-work-office-medium-02",
+    "id": "xlsx-work-office-medium-03",
+    "slug": "xlsx-work-office-medium-03",
     "language": "fr",
     "themeId": "work-office",
     "subthemeIds": [
@@ -185,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-work-office-medium-02-answer-1",
+        "id": "xlsx-work-office-medium-03-answer-1",
         "display": "Photoshop",
         "normalized": "photoshop",
         "aliases": [],
@@ -197,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-2",
+        "id": "xlsx-work-office-medium-03-answer-2",
         "display": "Illustrator",
         "normalized": "illustrator",
         "aliases": [],
@@ -209,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-3",
+        "id": "xlsx-work-office-medium-03-answer-3",
         "display": "Premiere Pro",
         "normalized": "premiere pro",
         "aliases": [],
@@ -221,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-4",
+        "id": "xlsx-work-office-medium-03-answer-4",
         "display": "After Effects",
         "normalized": "after effects",
         "aliases": [],
@@ -233,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-5",
+        "id": "xlsx-work-office-medium-03-answer-5",
         "display": "Blender",
         "normalized": "blender",
         "aliases": [],
@@ -245,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-6",
+        "id": "xlsx-work-office-medium-03-answer-6",
         "display": "Final Cut Pro",
         "normalized": "final cut pro",
         "aliases": [],
@@ -257,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-7",
+        "id": "xlsx-work-office-medium-03-answer-7",
         "display": "Pro Tools",
         "normalized": "pro tools",
         "aliases": [],
@@ -269,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-8",
+        "id": "xlsx-work-office-medium-03-answer-8",
         "display": "Ableton Live",
         "normalized": "ableton live",
         "aliases": [],
@@ -281,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-02-answer-9",
+        "id": "xlsx-work-office-medium-03-answer-9",
         "display": "DaVinci Resolve",
         "normalized": "davinci resolve",
         "aliases": [],
@@ -294,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-work-office-medium-02-bomb",
+      "id": "xlsx-work-office-medium-03-bomb",
       "display": "PowerPoint",
       "normalized": "powerpoint",
       "aliases": [],
@@ -310,16 +469,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "864851e5bcbb8d786b1a15f6b1d027a488ebc54ba908463f1b34603600547084",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-work-office-medium-03",
-    "slug": "xlsx-work-office-medium-03",
+    "id": "xlsx-work-office-medium-04",
+    "slug": "xlsx-work-office-medium-04",
     "language": "fr",
     "themeId": "work-office",
     "subthemeIds": [
@@ -344,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-work-office-medium-03-answer-1",
+        "id": "xlsx-work-office-medium-04-answer-1",
         "display": "Comptable",
         "normalized": "comptable",
         "aliases": [],
@@ -356,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-2",
+        "id": "xlsx-work-office-medium-04-answer-2",
         "display": "Contrôleur de gestion",
         "normalized": "controleur de gestion",
         "aliases": [],
@@ -368,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-3",
+        "id": "xlsx-work-office-medium-04-answer-3",
         "display": "Auditeur",
         "normalized": "auditeur",
         "aliases": [],
@@ -380,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-4",
+        "id": "xlsx-work-office-medium-04-answer-4",
         "display": "Analyste financier",
         "normalized": "analyste financier",
         "aliases": [],
@@ -392,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-5",
+        "id": "xlsx-work-office-medium-04-answer-5",
         "display": "Trésorier",
         "normalized": "tresorier",
         "aliases": [],
@@ -404,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-6",
+        "id": "xlsx-work-office-medium-04-answer-6",
         "display": "Actuaire",
         "normalized": "actuaire",
         "aliases": [],
@@ -416,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-7",
+        "id": "xlsx-work-office-medium-04-answer-7",
         "display": "Expert-comptable",
         "normalized": "expert comptable",
         "aliases": [],
@@ -428,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-8",
+        "id": "xlsx-work-office-medium-04-answer-8",
         "display": "Fiscaliste",
         "normalized": "fiscaliste",
         "aliases": [],
@@ -440,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-03-answer-9",
+        "id": "xlsx-work-office-medium-04-answer-9",
         "display": "Risk manager",
         "normalized": "risk manager",
         "aliases": [],
@@ -453,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-work-office-medium-03-bomb",
+      "id": "xlsx-work-office-medium-04-bomb",
       "display": "Architecte",
       "normalized": "architecte",
       "aliases": [],
@@ -469,171 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b9d514d1cdf84acd6031d0a8b704c605265011b5a6ea731730234ace9ca9b2a2",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-work-office-medium-04",
-    "slug": "xlsx-work-office-medium-04",
-    "language": "fr",
-    "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 indicateurs ou termes utilisés en marketing.",
-    "shortTitle": "indicateurs ou termes utilisés en marketing",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-work-office-medium-04-answer-1",
-        "display": "CTR",
-        "normalized": "ctr",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-2",
-        "display": "CPC",
-        "normalized": "cpc",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-3",
-        "display": "CPM",
-        "normalized": "cpm",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-4",
-        "display": "ROI",
-        "normalized": "roi",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-5",
-        "display": "Conversion",
-        "normalized": "conversion",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-6",
-        "display": "Reach",
-        "normalized": "reach",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-7",
-        "display": "Impressions",
-        "normalized": "impressions",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-8",
-        "display": "Engagement",
-        "normalized": "engagement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-04-answer-9",
-        "display": "CAC",
-        "normalized": "cac",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-work-office-medium-04-bomb",
-      "display": "Tension artérielle",
-      "normalized": "tension arterielle",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "366483b8d80821eedcd4e3bdcdbec1c4257e1c531316250575920b5ab4c054d7",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-work-office-medium-05",
@@ -787,12 +787,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bed41d27296f59143289eabd21e1817d89f7b9991f8a1ffe21685873658e2d28",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-work-office-medium-06",
@@ -946,12 +946,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a98eb087939ab616d748c4de89026fa3ebbf49452b4cb6ab97ed4a17085292bb",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-work-office-medium-07",
@@ -1105,12 +1105,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "dbd9059a0205998a6312b7384ed24086dc771a1a8241ed1d6e8c724d53980ad1",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-work-office-medium-08",
@@ -1264,175 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "80ed786103dbe75f4d0e5f07952af247b2e85c76ebd31f6650e87f99dd98efa8",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-work-office-medium-09",
     "slug": "xlsx-work-office-medium-09",
-    "language": "fr",
-    "themeId": "work-office",
-    "subthemeIds": [
-      "work-office:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "moyen"
-    ],
-    "questionText": "Cite 9 éléments d’un budget d’entreprise.",
-    "shortTitle": "éléments d’un budget d’entreprise",
-    "difficultyLevel": 2,
-    "difficultyLabel": "Moyen",
-    "editorialDifficultyScore": 55,
-    "specificityScore": 50,
-    "popularityScore": 72,
-    "recallDifficultyScore": 55,
-    "answerSetHomogeneityScore": 82,
-    "expectedAverageAnswers": 6,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-work-office-medium-09-answer-1",
-        "display": "Chiffre d'affaires",
-        "normalized": "chiffre d affaires",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-2",
-        "display": "Salaires",
-        "normalized": "salaires",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-3",
-        "display": "Loyer",
-        "normalized": "loyer",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-4",
-        "display": "Marketing",
-        "normalized": "marketing",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-5",
-        "display": "Achats",
-        "normalized": "achats",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-6",
-        "display": "Investissements",
-        "normalized": "investissements",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-7",
-        "display": "Impôts",
-        "normalized": "impots",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-8",
-        "display": "Frais de déplacement",
-        "normalized": "frais de deplacement",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-work-office-medium-09-answer-9",
-        "display": "Trésorerie",
-        "normalized": "tresorerie",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-work-office-medium-09-bomb",
-      "display": "Followers Instagram personnels",
-      "normalized": "followers instagram personnels",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "81e8321d3c239163d661e11aff8339a8fba70371d1886e8a81b99fc3ab73fc26",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-work-office-medium-10",
-    "slug": "xlsx-work-office-medium-10",
     "language": "fr",
     "themeId": "work-office",
     "subthemeIds": [
@@ -1457,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-work-office-medium-10-answer-1",
+        "id": "xlsx-work-office-medium-09-answer-1",
         "display": "Base de données",
         "normalized": "base de donnees",
         "aliases": [],
@@ -1469,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-2",
+        "id": "xlsx-work-office-medium-09-answer-2",
         "display": "Table",
         "normalized": "table",
         "aliases": [],
@@ -1481,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-3",
+        "id": "xlsx-work-office-medium-09-answer-3",
         "display": "Colonne",
         "normalized": "colonne",
         "aliases": [],
@@ -1493,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-4",
+        "id": "xlsx-work-office-medium-09-answer-4",
         "display": "Ligne",
         "normalized": "ligne",
         "aliases": [],
@@ -1505,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-5",
+        "id": "xlsx-work-office-medium-09-answer-5",
         "display": "Clé primaire",
         "normalized": "cle primaire",
         "aliases": [],
@@ -1517,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-6",
+        "id": "xlsx-work-office-medium-09-answer-6",
         "display": "Jointure",
         "normalized": "jointure",
         "aliases": [],
@@ -1529,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-7",
+        "id": "xlsx-work-office-medium-09-answer-7",
         "display": "ETL",
         "normalized": "etl",
         "aliases": [],
@@ -1541,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-8",
+        "id": "xlsx-work-office-medium-09-answer-8",
         "display": "Dashboard",
         "normalized": "dashboard",
         "aliases": [],
@@ -1553,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-work-office-medium-10-answer-9",
+        "id": "xlsx-work-office-medium-09-answer-9",
         "display": "KPI",
         "normalized": "kpi",
         "aliases": [],
@@ -1566,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-work-office-medium-10-bomb",
+      "id": "xlsx-work-office-medium-09-bomb",
       "display": "Tournevis",
       "normalized": "tournevis",
       "aliases": [],
@@ -1582,11 +1423,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "a6f260020e33c25952df0e9e26eb205c814819f7c0f1e4cecc18889199a25248",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

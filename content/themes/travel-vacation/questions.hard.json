@@ -11,8 +11,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 grandes gares européennes très connues.",
-    "shortTitle": "grandes gares européennes très connues",
+    "questionText": "Cite 9 trains ou services ferroviaires célèbres dans le monde.",
+    "shortTitle": "trains ou services ferroviaires célèbres dans…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -27,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-travel-vacation-hard-01-answer-1",
-        "display": "Gare du Nord",
-        "normalized": "gare du nord",
+        "display": "TGV",
+        "normalized": "tgv",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -39,8 +39,8 @@
       },
       {
         "id": "xlsx-travel-vacation-hard-01-answer-2",
-        "display": "London St Pancras",
-        "normalized": "london st pancras",
+        "display": "Eurostar",
+        "normalized": "eurostar",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -51,165 +51,6 @@
       },
       {
         "id": "xlsx-travel-vacation-hard-01-answer-3",
-        "display": "Amsterdam Centraal",
-        "normalized": "amsterdam centraal",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 3,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-01-answer-4",
-        "display": "Berlin Hauptbahnhof",
-        "normalized": "berlin hauptbahnhof",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 4,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-01-answer-5",
-        "display": "Roma Termini",
-        "normalized": "roma termini",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 5,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-01-answer-6",
-        "display": "Milano Centrale",
-        "normalized": "milano centrale",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 6,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-01-answer-7",
-        "display": "Madrid Atocha",
-        "normalized": "madrid atocha",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 7,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-01-answer-8",
-        "display": "Zürich Hauptbahnhof",
-        "normalized": "zurich hauptbahnhof",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 8,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-01-answer-9",
-        "display": "Wien Hauptbahnhof",
-        "normalized": "wien hauptbahnhof",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 9,
-        "sources": []
-      }
-    ],
-    "bomb": {
-      "id": "xlsx-travel-vacation-hard-01-bomb",
-      "display": "JFK",
-      "normalized": "jfk",
-      "aliases": [],
-      "abbreviations": [],
-      "alternativeSpellings": [],
-      "accentInsensitiveVariants": [],
-      "hyphenationVariants": [],
-      "explanation": "Bombe fournie par la banque de questions source."
-    },
-    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
-    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
-    "timeSensitive": false,
-    "sources": [],
-    "status": "published",
-    "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
-    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "acf7f32b32840a8c1c63907e32371f0d7369ed867e2002e63788d71bab7055c9",
-    "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
-  },
-  {
-    "id": "xlsx-travel-vacation-hard-02",
-    "slug": "xlsx-travel-vacation-hard-02",
-    "language": "fr",
-    "themeId": "travel-vacation",
-    "subthemeIds": [
-      "travel-vacation:essentials"
-    ],
-    "tags": [
-      "essentials",
-      "difficile"
-    ],
-    "questionText": "Cite 9 trains ou itinéraires ferroviaires touristiques célèbres dans le monde.",
-    "shortTitle": "trains ou itinéraires ferroviaires touristiqu…",
-    "difficultyLevel": 3,
-    "difficultyLabel": "Difficile",
-    "editorialDifficultyScore": 80,
-    "specificityScore": 70,
-    "popularityScore": 60,
-    "recallDifficultyScore": 78,
-    "answerSetHomogeneityScore": 76,
-    "expectedAverageAnswers": 4,
-    "playCount": 0,
-    "difficultyConfidence": "medium",
-    "validationMode": "editorial_panel",
-    "answers": [
-      {
-        "id": "xlsx-travel-vacation-hard-02-answer-1",
-        "display": "Orient-Express",
-        "normalized": "orient express",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 1,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-02-answer-2",
-        "display": "Transsibérien",
-        "normalized": "transsiberien",
-        "aliases": [],
-        "abbreviations": [],
-        "alternativeSpellings": [],
-        "accentInsensitiveVariants": [],
-        "hyphenationVariants": [],
-        "displayOrder": 2,
-        "sources": []
-      },
-      {
-        "id": "xlsx-travel-vacation-hard-02-answer-3",
         "display": "Shinkansen",
         "normalized": "shinkansen",
         "aliases": [],
@@ -221,9 +62,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-02-answer-4",
-        "display": "Rocky Mountaineer",
-        "normalized": "rocky mountaineer",
+        "id": "xlsx-travel-vacation-hard-01-answer-4",
+        "display": "Orient-Express",
+        "normalized": "orient express",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -233,9 +74,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-02-answer-5",
-        "display": "The Ghan",
-        "normalized": "the ghan",
+        "id": "xlsx-travel-vacation-hard-01-answer-5",
+        "display": "Transsibérien",
+        "normalized": "transsiberien",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -245,9 +86,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-02-answer-6",
-        "display": "Blue Train",
-        "normalized": "blue train",
+        "id": "xlsx-travel-vacation-hard-01-answer-6",
+        "display": "ICE",
+        "normalized": "ice",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -257,9 +98,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-02-answer-7",
-        "display": "California Zephyr",
-        "normalized": "california zephyr",
+        "id": "xlsx-travel-vacation-hard-01-answer-7",
+        "display": "AVE",
+        "normalized": "ave",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -269,7 +110,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-02-answer-8",
+        "id": "xlsx-travel-vacation-hard-01-answer-8",
         "display": "Glacier Express",
         "normalized": "glacier express",
         "aliases": [],
@@ -281,9 +122,9 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-02-answer-9",
-        "display": "Bernina Express",
-        "normalized": "bernina express",
+        "id": "xlsx-travel-vacation-hard-01-answer-9",
+        "display": "Frecciarossa",
+        "normalized": "frecciarossa",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -294,9 +135,9 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-hard-02-bomb",
-      "display": "Route 66",
-      "normalized": "route 66",
+      "id": "xlsx-travel-vacation-hard-01-bomb",
+      "display": "Airbus A380",
+      "normalized": "airbus a380",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -310,16 +151,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "4cdf7354062159a5687f8c81033f23cac4a72ec7ef0c58238a6228d823866b49",
+    "answerSetFingerprint": "687294031ee396e26149cc3394e2d649a26a43248aed5b8dbf938a2e6d73e1f0",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-travel-vacation-hard-03",
-    "slug": "xlsx-travel-vacation-hard-03",
+    "id": "xlsx-travel-vacation-hard-02",
+    "slug": "xlsx-travel-vacation-hard-02",
     "language": "fr",
     "themeId": "travel-vacation",
     "subthemeIds": [
@@ -344,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-1",
+        "id": "xlsx-travel-vacation-hard-02-answer-1",
         "display": "Camino Francés",
         "normalized": "camino frances",
         "aliases": [],
@@ -356,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-2",
+        "id": "xlsx-travel-vacation-hard-02-answer-2",
         "display": "GR20",
         "normalized": "gr20",
         "aliases": [],
@@ -368,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-3",
+        "id": "xlsx-travel-vacation-hard-02-answer-3",
         "display": "Tour du Mont-Blanc",
         "normalized": "tour du mont blanc",
         "aliases": [],
@@ -380,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-4",
+        "id": "xlsx-travel-vacation-hard-02-answer-4",
         "display": "Appalachian Trail",
         "normalized": "appalachian trail",
         "aliases": [],
@@ -392,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-5",
+        "id": "xlsx-travel-vacation-hard-02-answer-5",
         "display": "Pacific Crest Trail",
         "normalized": "pacific crest trail",
         "aliases": [],
@@ -404,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-6",
+        "id": "xlsx-travel-vacation-hard-02-answer-6",
         "display": "Chemin de l’Inca",
         "normalized": "chemin de l inca",
         "aliases": [],
@@ -416,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-7",
+        "id": "xlsx-travel-vacation-hard-02-answer-7",
         "display": "Kumano Kodo",
         "normalized": "kumano kodo",
         "aliases": [],
@@ -428,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-8",
+        "id": "xlsx-travel-vacation-hard-02-answer-8",
         "display": "Milford Track",
         "normalized": "milford track",
         "aliases": [],
@@ -440,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-travel-vacation-hard-03-answer-9",
+        "id": "xlsx-travel-vacation-hard-02-answer-9",
         "display": "West Highland Way",
         "normalized": "west highland way",
         "aliases": [],
@@ -453,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-travel-vacation-hard-03-bomb",
+      "id": "xlsx-travel-vacation-hard-02-bomb",
       "display": "Autoroute A6",
       "normalized": "autoroute a6",
       "aliases": [],
@@ -469,11 +310,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "e0f94155d73775a46c8d315805a1f26469c33e0c39485ca2e0e5bdabcbc142aa",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

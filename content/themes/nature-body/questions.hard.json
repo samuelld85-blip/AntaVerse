@@ -11,8 +11,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 mers ou bassins nommés faisant partie de la Méditerranée.",
-    "shortTitle": "mers ou bassins nommés faisant partie de la M…",
+    "questionText": "Cite 9 mers célèbres bordant l’Europe ou situées autour du bassin méditerranéen.",
+    "shortTitle": "mers célèbres bordant l’Europe ou situées aut…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -27,8 +27,8 @@
     "answers": [
       {
         "id": "xlsx-nature-body-hard-01-answer-1",
-        "display": "Mer d’Alboran",
-        "normalized": "mer d alboran",
+        "display": "Mer Méditerranée",
+        "normalized": "mer mediterranee",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -39,8 +39,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-2",
-        "display": "Mer des Baléares",
-        "normalized": "mer des baleares",
+        "display": "Mer du Nord",
+        "normalized": "mer du nord",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -51,8 +51,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-3",
-        "display": "Mer Ligure",
-        "normalized": "mer ligure",
+        "display": "Mer Baltique",
+        "normalized": "mer baltique",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -63,8 +63,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-4",
-        "display": "Mer Tyrrhénienne",
-        "normalized": "mer tyrrhenienne",
+        "display": "Mer Noire",
+        "normalized": "mer noire",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -87,8 +87,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-6",
-        "display": "Mer Ionienne",
-        "normalized": "mer ionienne",
+        "display": "Mer Égée",
+        "normalized": "mer egee",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -99,8 +99,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-7",
-        "display": "Mer Égée",
-        "normalized": "mer egee",
+        "display": "Mer Ionienne",
+        "normalized": "mer ionienne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -111,8 +111,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-8",
-        "display": "Mer de Crète",
-        "normalized": "mer de crete",
+        "display": "Mer Tyrrhénienne",
+        "normalized": "mer tyrrhenienne",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -123,8 +123,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-01-answer-9",
-        "display": "Mer de Libye",
-        "normalized": "mer de libye",
+        "display": "Mer de Norvège",
+        "normalized": "mer de norvege",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -136,8 +136,8 @@
     ],
     "bomb": {
       "id": "xlsx-nature-body-hard-01-bomb",
-      "display": "Alpes",
-      "normalized": "alpes",
+      "display": "Mer des Caraïbes",
+      "normalized": "mer des caraibes",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "18dd852955a24bd7c668cb73f97fa2a1f1688d4dd1a2ce5bb7bb212530a7a346",
+    "answerSetFingerprint": "e68718ac06f05eaf47a796d0cf98065bb8059577b2a343817a0c1b1233b969f8",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-nature-body-hard-02",
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "3a433ac05f8b159a906a0495a8d08ce7b97f649af0f7f9c64485eafbfc731b2e",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-nature-body-hard-03",
@@ -329,8 +329,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 primates anthropoïdes connus, humains exclus.",
-    "shortTitle": "primates anthropoïdes connus, humains exclus",
+    "questionText": "Cite 9 primates connus, humains exclus.",
+    "shortTitle": "primates connus, humains exclus",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -345,8 +345,8 @@
     "answers": [
       {
         "id": "xlsx-nature-body-hard-03-answer-1",
-        "display": "Chimpanzé commun",
-        "normalized": "chimpanze commun",
+        "display": "Chimpanzé",
+        "normalized": "chimpanze",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -369,8 +369,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-3",
-        "display": "Gorille de l’Ouest",
-        "normalized": "gorille de l ouest",
+        "display": "Gorille",
+        "normalized": "gorille",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -381,8 +381,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-4",
-        "display": "Gorille de l’Est",
-        "normalized": "gorille de l est",
+        "display": "Orang-outan",
+        "normalized": "orang outan",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -393,8 +393,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-5",
-        "display": "Orang-outan de Bornéo",
-        "normalized": "orang outan de borneo",
+        "display": "Gibbon",
+        "normalized": "gibbon",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -405,8 +405,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-6",
-        "display": "Orang-outan de Sumatra",
-        "normalized": "orang outan de sumatra",
+        "display": "Babouin",
+        "normalized": "babouin",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -417,8 +417,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-7",
-        "display": "Gibbon à mains blanches",
-        "normalized": "gibbon a mains blanches",
+        "display": "Macaque",
+        "normalized": "macaque",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -429,8 +429,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-8",
-        "display": "Siamang",
-        "normalized": "siamang",
+        "display": "Capucin",
+        "normalized": "capucin",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -441,8 +441,8 @@
       },
       {
         "id": "xlsx-nature-body-hard-03-answer-9",
-        "display": "Macaque japonais",
-        "normalized": "macaque japonais",
+        "display": "Lémurien",
+        "normalized": "lemurien",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -454,8 +454,8 @@
     ],
     "bomb": {
       "id": "xlsx-nature-body-hard-03-bomb",
-      "display": "Lémurien",
-      "normalized": "lemurien",
+      "display": "Panda",
+      "normalized": "panda",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "a88eaf3f438391926d9ce0f435daea076859194f6df1f88daca2fee51f018f7b",
+    "answerSetFingerprint": "eddbaa007263f114285fea1361686973078292015cb9088c69d57d12f2f2a142",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-nature-body-hard-04",
@@ -628,11 +628,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "4baa5ae727d85e9fc1b88b9d72b5f8e4369ceee87f2e832c747f73679e655ba5",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

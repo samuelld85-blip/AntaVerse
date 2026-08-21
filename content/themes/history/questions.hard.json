@@ -151,12 +151,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "0c9583345932d84d747c1ce7c6611f2339d5b2407024d5b988969e4e4cc96fcf",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-history-hard-02",
@@ -170,8 +170,8 @@
       "essentials",
       "difficile"
     ],
-    "questionText": "Cite 9 batailles majeures livrées par Napoléon Ier entre 1800 et 1815.",
-    "shortTitle": "batailles majeures livrées par Napoléon Ier e…",
+    "questionText": "Cite 9 batailles, campagnes ou événements célèbres liés à Napoléon Ier.",
+    "shortTitle": "batailles, campagnes ou événements célèbres l…",
     "difficultyLevel": 3,
     "difficultyLabel": "Difficile",
     "editorialDifficultyScore": 80,
@@ -186,8 +186,8 @@
     "answers": [
       {
         "id": "xlsx-history-hard-02-answer-1",
-        "display": "Marengo",
-        "normalized": "marengo",
+        "display": "Austerlitz",
+        "normalized": "austerlitz",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -198,8 +198,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-2",
-        "display": "Austerlitz",
-        "normalized": "austerlitz",
+        "display": "Waterloo",
+        "normalized": "waterloo",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -210,8 +210,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-3",
-        "display": "Iéna",
-        "normalized": "iena",
+        "display": "Campagne d’Égypte",
+        "normalized": "campagne d egypte",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -222,8 +222,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-4",
-        "display": "Eylau",
-        "normalized": "eylau",
+        "display": "Campagne de Russie",
+        "normalized": "campagne de russie",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -234,8 +234,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-5",
-        "display": "Friedland",
-        "normalized": "friedland",
+        "display": "Trafalgar",
+        "normalized": "trafalgar",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -246,8 +246,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-6",
-        "display": "Wagram",
-        "normalized": "wagram",
+        "display": "Sacre de Napoléon",
+        "normalized": "sacre de napoleon",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -258,8 +258,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-7",
-        "display": "Borodino",
-        "normalized": "borodino",
+        "display": "Les Cent-Jours",
+        "normalized": "les cent jours",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -270,8 +270,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-8",
-        "display": "Leipzig",
-        "normalized": "leipzig",
+        "display": "Exil à l’île d’Elbe",
+        "normalized": "exil a l ile d elbe",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -282,8 +282,8 @@
       },
       {
         "id": "xlsx-history-hard-02-answer-9",
-        "display": "Waterloo",
-        "normalized": "waterloo",
+        "display": "Exil à Sainte-Hélène",
+        "normalized": "exil a sainte helene",
         "aliases": [],
         "abbreviations": [],
         "alternativeSpellings": [],
@@ -295,8 +295,8 @@
     ],
     "bomb": {
       "id": "xlsx-history-hard-02-bomb",
-      "display": "Traité de Vienne",
-      "normalized": "traite de vienne",
+      "display": "Prise de la Bastille",
+      "normalized": "prise de la bastille",
       "aliases": [],
       "abbreviations": [],
       "alternativeSpellings": [],
@@ -310,12 +310,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
-    "answerSetFingerprint": "67b04a25f2c0f1f03bb8e111c8c001dcfd15cefd0246af22aeaf5fd0efe27256",
+    "answerSetFingerprint": "93e12bbb9ff03eeefaab24638e198ad87f310b3af88246ad2cbdb02ed82e95a8",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-history-hard-03",
@@ -469,12 +469,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bdd4f9bf6c5fc3ecd2c1fa00218d63cd5b80e24f850f19a09bf7a91c2677e792",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-history-hard-04",
@@ -628,12 +628,12 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "44031b5386e441b9d775d23ebd19f30f4002b94551cbadfdff386957528fefd6",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
     "id": "xlsx-history-hard-05",
@@ -787,11 +787,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "1a4c8e58f23fd0c811f832a3ac35d875d5ea2d97f9278d29a19590983ee5696e",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]

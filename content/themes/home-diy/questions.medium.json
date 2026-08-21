@@ -11,6 +11,165 @@
       "essentials",
       "moyen"
     ],
+    "questionText": "Cite 9 essences de bois couramment utilisées en menuiserie ou ameublement.",
+    "shortTitle": "essences de bois couramment utilisées en menu…",
+    "difficultyLevel": 2,
+    "difficultyLabel": "Moyen",
+    "editorialDifficultyScore": 55,
+    "specificityScore": 50,
+    "popularityScore": 72,
+    "recallDifficultyScore": 55,
+    "answerSetHomogeneityScore": 82,
+    "expectedAverageAnswers": 6,
+    "playCount": 0,
+    "difficultyConfidence": "medium",
+    "validationMode": "editorial_panel",
+    "answers": [
+      {
+        "id": "xlsx-home-diy-medium-01-answer-1",
+        "display": "Chêne",
+        "normalized": "chene",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 1,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-2",
+        "display": "Hêtre",
+        "normalized": "hetre",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 2,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-3",
+        "display": "Pin",
+        "normalized": "pin",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 3,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-4",
+        "display": "Sapin",
+        "normalized": "sapin",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 4,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-5",
+        "display": "Bouleau",
+        "normalized": "bouleau",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 5,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-6",
+        "display": "Frêne",
+        "normalized": "frene",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 6,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-7",
+        "display": "Noyer",
+        "normalized": "noyer",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 7,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-8",
+        "display": "Merisier",
+        "normalized": "merisier",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 8,
+        "sources": []
+      },
+      {
+        "id": "xlsx-home-diy-medium-01-answer-9",
+        "display": "Acajou",
+        "normalized": "acajou",
+        "aliases": [],
+        "abbreviations": [],
+        "alternativeSpellings": [],
+        "accentInsensitiveVariants": [],
+        "hyphenationVariants": [],
+        "displayOrder": 9,
+        "sources": []
+      }
+    ],
+    "bomb": {
+      "id": "xlsx-home-diy-medium-01-bomb",
+      "display": "MDF",
+      "normalized": "mdf",
+      "aliases": [],
+      "abbreviations": [],
+      "alternativeSpellings": [],
+      "accentInsensitiveVariants": [],
+      "hyphenationVariants": [],
+      "explanation": "Bombe fournie par la banque de questions source."
+    },
+    "explanation": "Question et panel importés tels quels depuis la banque Excel source.",
+    "qualificationRule": "Les réponses sont celles fournies dans la banque Excel source.",
+    "timeSensitive": false,
+    "sources": [],
+    "status": "published",
+    "reviewer": "Import Excel source",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
+    "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
+    "answerSetFingerprint": "c0c64e951b02382df1ec0e3470353573375c13391b57f7f6b4be30d4a71cf1ec",
+    "version": 4,
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
+  },
+  {
+    "id": "xlsx-home-diy-medium-02",
+    "slug": "xlsx-home-diy-medium-02",
+    "language": "fr",
+    "themeId": "home-diy",
+    "subthemeIds": [
+      "home-diy:essentials"
+    ],
+    "tags": [
+      "essentials",
+      "moyen"
+    ],
     "questionText": "Cite 9 outils utilisés pour visser, dévisser ou serrer.",
     "shortTitle": "outils utilisés pour visser, dévisser ou serrer",
     "difficultyLevel": 2,
@@ -26,7 +185,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-01-answer-1",
+        "id": "xlsx-home-diy-medium-02-answer-1",
         "display": "Tournevis plat",
         "normalized": "tournevis plat",
         "aliases": [],
@@ -38,7 +197,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-2",
+        "id": "xlsx-home-diy-medium-02-answer-2",
         "display": "Tournevis cruciforme",
         "normalized": "tournevis cruciforme",
         "aliases": [],
@@ -50,7 +209,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-3",
+        "id": "xlsx-home-diy-medium-02-answer-3",
         "display": "Clé Allen",
         "normalized": "cle allen",
         "aliases": [],
@@ -62,7 +221,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-4",
+        "id": "xlsx-home-diy-medium-02-answer-4",
         "display": "Clé plate",
         "normalized": "cle plate",
         "aliases": [],
@@ -74,7 +233,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-5",
+        "id": "xlsx-home-diy-medium-02-answer-5",
         "display": "Clé à molette",
         "normalized": "cle a molette",
         "aliases": [],
@@ -86,7 +245,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-6",
+        "id": "xlsx-home-diy-medium-02-answer-6",
         "display": "Clé à pipe",
         "normalized": "cle a pipe",
         "aliases": [],
@@ -98,7 +257,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-7",
+        "id": "xlsx-home-diy-medium-02-answer-7",
         "display": "Clé Torx",
         "normalized": "cle torx",
         "aliases": [],
@@ -110,7 +269,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-8",
+        "id": "xlsx-home-diy-medium-02-answer-8",
         "display": "Clé à cliquet",
         "normalized": "cle a cliquet",
         "aliases": [],
@@ -122,7 +281,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-01-answer-9",
+        "id": "xlsx-home-diy-medium-02-answer-9",
         "display": "Visseuse électrique",
         "normalized": "visseuse electrique",
         "aliases": [],
@@ -135,7 +294,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-01-bomb",
+      "id": "xlsx-home-diy-medium-02-bomb",
       "display": "Marteau",
       "normalized": "marteau",
       "aliases": [],
@@ -151,16 +310,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7c940746dbbba8b0d8b04138c8c072f1f8f2d8d1dbc02a719d3b415016114e81",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-02",
-    "slug": "xlsx-home-diy-medium-02",
+    "id": "xlsx-home-diy-medium-03",
+    "slug": "xlsx-home-diy-medium-03",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -185,7 +344,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-02-answer-1",
+        "id": "xlsx-home-diy-medium-03-answer-1",
         "display": "Parquet",
         "normalized": "parquet",
         "aliases": [],
@@ -197,7 +356,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-2",
+        "id": "xlsx-home-diy-medium-03-answer-2",
         "display": "Stratifié",
         "normalized": "stratifie",
         "aliases": [],
@@ -209,7 +368,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-3",
+        "id": "xlsx-home-diy-medium-03-answer-3",
         "display": "Carrelage",
         "normalized": "carrelage",
         "aliases": [],
@@ -221,7 +380,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-4",
+        "id": "xlsx-home-diy-medium-03-answer-4",
         "display": "Moquette",
         "normalized": "moquette",
         "aliases": [],
@@ -233,7 +392,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-5",
+        "id": "xlsx-home-diy-medium-03-answer-5",
         "display": "Vinyle",
         "normalized": "vinyle",
         "aliases": [],
@@ -245,7 +404,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-6",
+        "id": "xlsx-home-diy-medium-03-answer-6",
         "display": "Linoléum",
         "normalized": "linoleum",
         "aliases": [],
@@ -257,7 +416,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-7",
+        "id": "xlsx-home-diy-medium-03-answer-7",
         "display": "Béton ciré",
         "normalized": "beton cire",
         "aliases": [],
@@ -269,7 +428,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-8",
+        "id": "xlsx-home-diy-medium-03-answer-8",
         "display": "Terrazzo",
         "normalized": "terrazzo",
         "aliases": [],
@@ -281,7 +440,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-02-answer-9",
+        "id": "xlsx-home-diy-medium-03-answer-9",
         "display": "Liège",
         "normalized": "liege",
         "aliases": [],
@@ -294,7 +453,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-02-bomb",
+      "id": "xlsx-home-diy-medium-03-bomb",
       "display": "Papier peint",
       "normalized": "papier peint",
       "aliases": [],
@@ -310,16 +469,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "f5aca65ad951929f7233a883a53b6a0e19ff4a2abea4c01f1f1dfc95c0f66f4d",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-03",
-    "slug": "xlsx-home-diy-medium-03",
+    "id": "xlsx-home-diy-medium-04",
+    "slug": "xlsx-home-diy-medium-04",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -344,7 +503,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-03-answer-1",
+        "id": "xlsx-home-diy-medium-04-answer-1",
         "display": "Robinet",
         "normalized": "robinet",
         "aliases": [],
@@ -356,7 +515,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-2",
+        "id": "xlsx-home-diy-medium-04-answer-2",
         "display": "Siphon",
         "normalized": "siphon",
         "aliases": [],
@@ -368,7 +527,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-3",
+        "id": "xlsx-home-diy-medium-04-answer-3",
         "display": "Flexible",
         "normalized": "flexible",
         "aliases": [],
@@ -380,7 +539,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-4",
+        "id": "xlsx-home-diy-medium-04-answer-4",
         "display": "Vanne d'arrêt",
         "normalized": "vanne d arret",
         "aliases": [],
@@ -392,7 +551,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-5",
+        "id": "xlsx-home-diy-medium-04-answer-5",
         "display": "Tuyau",
         "normalized": "tuyau",
         "aliases": [],
@@ -404,7 +563,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-6",
+        "id": "xlsx-home-diy-medium-04-answer-6",
         "display": "Raccord",
         "normalized": "raccord",
         "aliases": [],
@@ -416,7 +575,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-7",
+        "id": "xlsx-home-diy-medium-04-answer-7",
         "display": "Joint",
         "normalized": "joint",
         "aliases": [],
@@ -428,7 +587,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-8",
+        "id": "xlsx-home-diy-medium-04-answer-8",
         "display": "Évacuation",
         "normalized": "evacuation",
         "aliases": [],
@@ -440,7 +599,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-03-answer-9",
+        "id": "xlsx-home-diy-medium-04-answer-9",
         "display": "Chasse d'eau",
         "normalized": "chasse d eau",
         "aliases": [],
@@ -453,7 +612,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-03-bomb",
+      "id": "xlsx-home-diy-medium-04-bomb",
       "display": "Disjoncteur",
       "normalized": "disjoncteur",
       "aliases": [],
@@ -469,16 +628,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "730b7f1d9e4b1f08ea014cfdd2e751695e20af7e8167fc9270941af709fb27a1",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-04",
-    "slug": "xlsx-home-diy-medium-04",
+    "id": "xlsx-home-diy-medium-05",
+    "slug": "xlsx-home-diy-medium-05",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -503,7 +662,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-04-answer-1",
+        "id": "xlsx-home-diy-medium-05-answer-1",
         "display": "Peinture mate",
         "normalized": "peinture mate",
         "aliases": [],
@@ -515,7 +674,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-2",
+        "id": "xlsx-home-diy-medium-05-answer-2",
         "display": "Peinture satinée",
         "normalized": "peinture satinee",
         "aliases": [],
@@ -527,7 +686,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-3",
+        "id": "xlsx-home-diy-medium-05-answer-3",
         "display": "Peinture brillante",
         "normalized": "peinture brillante",
         "aliases": [],
@@ -539,7 +698,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-4",
+        "id": "xlsx-home-diy-medium-05-answer-4",
         "display": "Peinture acrylique",
         "normalized": "peinture acrylique",
         "aliases": [],
@@ -551,7 +710,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-5",
+        "id": "xlsx-home-diy-medium-05-answer-5",
         "display": "Peinture glycéro",
         "normalized": "peinture glycero",
         "aliases": [],
@@ -563,7 +722,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-6",
+        "id": "xlsx-home-diy-medium-05-answer-6",
         "display": "Lasure",
         "normalized": "lasure",
         "aliases": [],
@@ -575,7 +734,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-7",
+        "id": "xlsx-home-diy-medium-05-answer-7",
         "display": "Vernis",
         "normalized": "vernis",
         "aliases": [],
@@ -587,7 +746,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-8",
+        "id": "xlsx-home-diy-medium-05-answer-8",
         "display": "Enduit décoratif",
         "normalized": "enduit decoratif",
         "aliases": [],
@@ -599,7 +758,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-04-answer-9",
+        "id": "xlsx-home-diy-medium-05-answer-9",
         "display": "Chaux",
         "normalized": "chaux",
         "aliases": [],
@@ -612,7 +771,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-04-bomb",
+      "id": "xlsx-home-diy-medium-05-bomb",
       "display": "Huile moteur",
       "normalized": "huile moteur",
       "aliases": [],
@@ -628,16 +787,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "504b68a7565f01e2f21b56cd9ba7a279eacde0cd16a5cb880fa0f3b1f2f67d30",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-05",
-    "slug": "xlsx-home-diy-medium-05",
+    "id": "xlsx-home-diy-medium-06",
+    "slug": "xlsx-home-diy-medium-06",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -662,7 +821,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-05-answer-1",
+        "id": "xlsx-home-diy-medium-06-answer-1",
         "display": "Perceuse",
         "normalized": "perceuse",
         "aliases": [],
@@ -674,7 +833,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-2",
+        "id": "xlsx-home-diy-medium-06-answer-2",
         "display": "Visseuse",
         "normalized": "visseuse",
         "aliases": [],
@@ -686,7 +845,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-3",
+        "id": "xlsx-home-diy-medium-06-answer-3",
         "display": "Scie sauteuse",
         "normalized": "scie sauteuse",
         "aliases": [],
@@ -698,7 +857,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-4",
+        "id": "xlsx-home-diy-medium-06-answer-4",
         "display": "Scie circulaire",
         "normalized": "scie circulaire",
         "aliases": [],
@@ -710,7 +869,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-5",
+        "id": "xlsx-home-diy-medium-06-answer-5",
         "display": "Ponceuse",
         "normalized": "ponceuse",
         "aliases": [],
@@ -722,7 +881,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-6",
+        "id": "xlsx-home-diy-medium-06-answer-6",
         "display": "Meuleuse",
         "normalized": "meuleuse",
         "aliases": [],
@@ -734,7 +893,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-7",
+        "id": "xlsx-home-diy-medium-06-answer-7",
         "display": "Défonceuse",
         "normalized": "defonceuse",
         "aliases": [],
@@ -746,7 +905,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-8",
+        "id": "xlsx-home-diy-medium-06-answer-8",
         "display": "Marteau perforateur",
         "normalized": "marteau perforateur",
         "aliases": [],
@@ -758,7 +917,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-05-answer-9",
+        "id": "xlsx-home-diy-medium-06-answer-9",
         "display": "Décapeur thermique",
         "normalized": "decapeur thermique",
         "aliases": [],
@@ -771,7 +930,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-05-bomb",
+      "id": "xlsx-home-diy-medium-06-bomb",
       "display": "Marteau",
       "normalized": "marteau",
       "aliases": [],
@@ -787,16 +946,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "7fdb77cac69d054a7d8eb78746aa8052e9a450a49e8f37bb46e4c591d575b111",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-06",
-    "slug": "xlsx-home-diy-medium-06",
+    "id": "xlsx-home-diy-medium-07",
+    "slug": "xlsx-home-diy-medium-07",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -821,7 +980,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-06-answer-1",
+        "id": "xlsx-home-diy-medium-07-answer-1",
         "display": "Meuble bas",
         "normalized": "meuble bas",
         "aliases": [],
@@ -833,7 +992,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-2",
+        "id": "xlsx-home-diy-medium-07-answer-2",
         "display": "Meuble haut",
         "normalized": "meuble haut",
         "aliases": [],
@@ -845,7 +1004,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-3",
+        "id": "xlsx-home-diy-medium-07-answer-3",
         "display": "Plan de travail",
         "normalized": "plan de travail",
         "aliases": [],
@@ -857,7 +1016,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-4",
+        "id": "xlsx-home-diy-medium-07-answer-4",
         "display": "Évier",
         "normalized": "evier",
         "aliases": [],
@@ -869,7 +1028,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-5",
+        "id": "xlsx-home-diy-medium-07-answer-5",
         "display": "Hotte",
         "normalized": "hotte",
         "aliases": [],
@@ -881,7 +1040,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-6",
+        "id": "xlsx-home-diy-medium-07-answer-6",
         "display": "Plaque de cuisson",
         "normalized": "plaque de cuisson",
         "aliases": [],
@@ -893,7 +1052,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-7",
+        "id": "xlsx-home-diy-medium-07-answer-7",
         "display": "Four encastré",
         "normalized": "four encastre",
         "aliases": [],
@@ -905,7 +1064,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-8",
+        "id": "xlsx-home-diy-medium-07-answer-8",
         "display": "Crédence",
         "normalized": "credence",
         "aliases": [],
@@ -917,7 +1076,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-06-answer-9",
+        "id": "xlsx-home-diy-medium-07-answer-9",
         "display": "Tiroir",
         "normalized": "tiroir",
         "aliases": [],
@@ -930,7 +1089,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-06-bomb",
+      "id": "xlsx-home-diy-medium-07-bomb",
       "display": "Canapé",
       "normalized": "canape",
       "aliases": [],
@@ -946,16 +1105,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "d3a343367f7cdb35928260f23a78e7ea28dd5db56f64a530a7a03da698ef5ec7",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-07",
-    "slug": "xlsx-home-diy-medium-07",
+    "id": "xlsx-home-diy-medium-08",
+    "slug": "xlsx-home-diy-medium-08",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -980,7 +1139,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-07-answer-1",
+        "id": "xlsx-home-diy-medium-08-answer-1",
         "display": "Brique",
         "normalized": "brique",
         "aliases": [],
@@ -992,7 +1151,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-2",
+        "id": "xlsx-home-diy-medium-08-answer-2",
         "display": "Béton",
         "normalized": "beton",
         "aliases": [],
@@ -1004,7 +1163,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-3",
+        "id": "xlsx-home-diy-medium-08-answer-3",
         "display": "Pierre",
         "normalized": "pierre",
         "aliases": [],
@@ -1016,7 +1175,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-4",
+        "id": "xlsx-home-diy-medium-08-answer-4",
         "display": "Bois",
         "normalized": "bois",
         "aliases": [],
@@ -1028,7 +1187,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-5",
+        "id": "xlsx-home-diy-medium-08-answer-5",
         "display": "Acier",
         "normalized": "acier",
         "aliases": [],
@@ -1040,7 +1199,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-6",
+        "id": "xlsx-home-diy-medium-08-answer-6",
         "display": "Verre",
         "normalized": "verre",
         "aliases": [],
@@ -1052,7 +1211,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-7",
+        "id": "xlsx-home-diy-medium-08-answer-7",
         "display": "Plâtre",
         "normalized": "platre",
         "aliases": [],
@@ -1064,7 +1223,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-8",
+        "id": "xlsx-home-diy-medium-08-answer-8",
         "display": "Parpaing",
         "normalized": "parpaing",
         "aliases": [],
@@ -1076,7 +1235,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-07-answer-9",
+        "id": "xlsx-home-diy-medium-08-answer-9",
         "display": "Terre cuite",
         "normalized": "terre cuite",
         "aliases": [],
@@ -1089,7 +1248,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-07-bomb",
+      "id": "xlsx-home-diy-medium-08-bomb",
       "display": "Coton",
       "normalized": "coton",
       "aliases": [],
@@ -1105,16 +1264,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "fda246e13e6e18b8f1a5d195c6def15bc7ff70981403cfed823f10324e17f5af",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-08",
-    "slug": "xlsx-home-diy-medium-08",
+    "id": "xlsx-home-diy-medium-09",
+    "slug": "xlsx-home-diy-medium-09",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -1139,7 +1298,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-08-answer-1",
+        "id": "xlsx-home-diy-medium-09-answer-1",
         "display": "Tuile",
         "normalized": "tuile",
         "aliases": [],
@@ -1151,7 +1310,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-2",
+        "id": "xlsx-home-diy-medium-09-answer-2",
         "display": "Ardoise",
         "normalized": "ardoise",
         "aliases": [],
@@ -1163,7 +1322,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-3",
+        "id": "xlsx-home-diy-medium-09-answer-3",
         "display": "Charpente",
         "normalized": "charpente",
         "aliases": [],
@@ -1175,7 +1334,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-4",
+        "id": "xlsx-home-diy-medium-09-answer-4",
         "display": "Gouttière",
         "normalized": "gouttiere",
         "aliases": [],
@@ -1187,7 +1346,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-5",
+        "id": "xlsx-home-diy-medium-09-answer-5",
         "display": "Faîtage",
         "normalized": "faitage",
         "aliases": [],
@@ -1199,7 +1358,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-6",
+        "id": "xlsx-home-diy-medium-09-answer-6",
         "display": "Chevrons",
         "normalized": "chevrons",
         "aliases": [],
@@ -1211,7 +1370,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-7",
+        "id": "xlsx-home-diy-medium-09-answer-7",
         "display": "Isolation",
         "normalized": "isolation",
         "aliases": [],
@@ -1223,7 +1382,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-8",
+        "id": "xlsx-home-diy-medium-09-answer-8",
         "display": "Écran sous-toiture",
         "normalized": "ecran sous toiture",
         "aliases": [],
@@ -1235,7 +1394,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-08-answer-9",
+        "id": "xlsx-home-diy-medium-09-answer-9",
         "display": "Solin",
         "normalized": "solin",
         "aliases": [],
@@ -1248,7 +1407,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-08-bomb",
+      "id": "xlsx-home-diy-medium-09-bomb",
       "display": "Plinthe",
       "normalized": "plinthe",
       "aliases": [],
@@ -1264,16 +1423,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "55634fe846de2f7e865f461b9e84f9d645dae4ad7d74da2c7000d89c92428fa9",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-09",
-    "slug": "xlsx-home-diy-medium-09",
+    "id": "xlsx-home-diy-medium-10",
+    "slug": "xlsx-home-diy-medium-10",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -1298,7 +1457,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-09-answer-1",
+        "id": "xlsx-home-diy-medium-10-answer-1",
         "display": "Bêche",
         "normalized": "beche",
         "aliases": [],
@@ -1310,7 +1469,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-2",
+        "id": "xlsx-home-diy-medium-10-answer-2",
         "display": "Pelle",
         "normalized": "pelle",
         "aliases": [],
@@ -1322,7 +1481,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-3",
+        "id": "xlsx-home-diy-medium-10-answer-3",
         "display": "Râteau",
         "normalized": "rateau",
         "aliases": [],
@@ -1334,7 +1493,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-4",
+        "id": "xlsx-home-diy-medium-10-answer-4",
         "display": "Sécateur",
         "normalized": "secateur",
         "aliases": [],
@@ -1346,7 +1505,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-5",
+        "id": "xlsx-home-diy-medium-10-answer-5",
         "display": "Binette",
         "normalized": "binette",
         "aliases": [],
@@ -1358,7 +1517,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-6",
+        "id": "xlsx-home-diy-medium-10-answer-6",
         "display": "Serfouette",
         "normalized": "serfouette",
         "aliases": [],
@@ -1370,7 +1529,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-7",
+        "id": "xlsx-home-diy-medium-10-answer-7",
         "display": "Fourche-bêche",
         "normalized": "fourche beche",
         "aliases": [],
@@ -1382,7 +1541,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-8",
+        "id": "xlsx-home-diy-medium-10-answer-8",
         "display": "Transplantoir",
         "normalized": "transplantoir",
         "aliases": [],
@@ -1394,7 +1553,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-09-answer-9",
+        "id": "xlsx-home-diy-medium-10-answer-9",
         "display": "Scie d'élagage",
         "normalized": "scie d elagage",
         "aliases": [],
@@ -1407,7 +1566,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-09-bomb",
+      "id": "xlsx-home-diy-medium-10-bomb",
       "display": "Perceuse",
       "normalized": "perceuse",
       "aliases": [],
@@ -1423,16 +1582,16 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "b77ba7b3d30bf91558d949f41f0ba26813b5e1523e03cfaf5b0556182b6e7fe0",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   },
   {
-    "id": "xlsx-home-diy-medium-10",
-    "slug": "xlsx-home-diy-medium-10",
+    "id": "xlsx-home-diy-medium-11",
+    "slug": "xlsx-home-diy-medium-11",
     "language": "fr",
     "themeId": "home-diy",
     "subthemeIds": [
@@ -1457,7 +1616,7 @@
     "validationMode": "editorial_panel",
     "answers": [
       {
-        "id": "xlsx-home-diy-medium-10-answer-1",
+        "id": "xlsx-home-diy-medium-11-answer-1",
         "display": "Vis",
         "normalized": "vis",
         "aliases": [],
@@ -1469,7 +1628,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-2",
+        "id": "xlsx-home-diy-medium-11-answer-2",
         "display": "Clou",
         "normalized": "clou",
         "aliases": [],
@@ -1481,7 +1640,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-3",
+        "id": "xlsx-home-diy-medium-11-answer-3",
         "display": "Écrou",
         "normalized": "ecrou",
         "aliases": [],
@@ -1493,7 +1652,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-4",
+        "id": "xlsx-home-diy-medium-11-answer-4",
         "display": "Rondelle",
         "normalized": "rondelle",
         "aliases": [],
@@ -1505,7 +1664,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-5",
+        "id": "xlsx-home-diy-medium-11-answer-5",
         "display": "Boulon",
         "normalized": "boulon",
         "aliases": [],
@@ -1517,7 +1676,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-6",
+        "id": "xlsx-home-diy-medium-11-answer-6",
         "display": "Charnière",
         "normalized": "charniere",
         "aliases": [],
@@ -1529,7 +1688,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-7",
+        "id": "xlsx-home-diy-medium-11-answer-7",
         "display": "Crochet",
         "normalized": "crochet",
         "aliases": [],
@@ -1541,7 +1700,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-8",
+        "id": "xlsx-home-diy-medium-11-answer-8",
         "display": "Rivet",
         "normalized": "rivet",
         "aliases": [],
@@ -1553,7 +1712,7 @@
         "sources": []
       },
       {
-        "id": "xlsx-home-diy-medium-10-answer-9",
+        "id": "xlsx-home-diy-medium-11-answer-9",
         "display": "Goupille",
         "normalized": "goupille",
         "aliases": [],
@@ -1566,7 +1725,7 @@
       }
     ],
     "bomb": {
-      "id": "xlsx-home-diy-medium-10-bomb",
+      "id": "xlsx-home-diy-medium-11-bomb",
       "display": "Éponge",
       "normalized": "eponge",
       "aliases": [],
@@ -1582,11 +1741,11 @@
     "sources": [],
     "status": "published",
     "reviewer": "Import Excel source",
-    "reviewedAt": "2026-08-20T23:26:58.248Z",
+    "reviewedAt": "2026-08-20T23:55:33.606Z",
     "duplicateJustification": "Fiche importée telle quelle depuis le classeur Excel source.",
     "answerSetFingerprint": "bd22c0667bc4ac348a02d034a43e791137f4aa8e770dd48298c29df02bac660c",
     "version": 4,
-    "createdAt": "2026-08-20T23:26:58.248Z",
-    "updatedAt": "2026-08-20T23:26:58.248Z"
+    "createdAt": "2026-08-20T23:55:33.606Z",
+    "updatedAt": "2026-08-20T23:55:33.606Z"
   }
 ]
