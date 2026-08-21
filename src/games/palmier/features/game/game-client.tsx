@@ -18,14 +18,12 @@ import {
 import { loadCurrentGame, saveCurrentGame } from "@/games/palmier/lib/game/persistence";
 import type { GameState } from "@/games/palmier/lib/game/types";
 
-const COLLAPSE_ANIM_MS = 1900;
 const TOTAL_CARDS = 52;
 
 export function GameClient() {
   const router = useRouter();
   const [game, setGame] = useState<GameState | null>(null);
   const [ready, setReady] = useState(false);
-  const [collapseAnimating, setCollapseAnimating] = useState(false);
   // penalty sips added by the mini-game before card reveal
   const [penaltySips, setPenaltySips] = useState(0);
   const busy = useRef(false);
@@ -57,10 +55,7 @@ export function GameClient() {
     const next = drawCard(game);
     commit(next);
     busy.current = false;
-    if (next.phase === "collapse") {
-      setCollapseAnimating(true);
-      window.setTimeout(() => setCollapseAnimating(false), COLLAPSE_ANIM_MS);
-    }
+    // No collapse animation — go straight to card reveal when 4th King drawn
   }
 
   function onContinue() {
@@ -75,7 +70,6 @@ export function GameClient() {
 
   function restart() {
     if (!game) return;
-    setCollapseAnimating(false);
     setPenaltySips(0);
     busy.current = false;
     commit(replayGame(game));
@@ -127,7 +121,6 @@ export function GameClient() {
     game.kingsDrawn < 4 || game.phase === "collapse"
       ? palmStageForKings(game.kingsDrawn)
       : "stable";
-  const isCollapsing = game.phase === "collapse" && collapseAnimating;
   const cardsLeft = game.remainingDeck.length;
 
   return (
@@ -149,15 +142,8 @@ export function GameClient() {
         />
       ) : null}
 
-      {(game.phase === "reveal" || (game.phase === "collapse" && !collapseAnimating)) ? (
+      {(game.phase === "reveal" || game.phase === "collapse") ? (
         <CardReveal game={game} penaltySips={penaltySips} onContinue={onContinue} />
-      ) : null}
-
-      {isCollapsing ? (
-        <section className="palm-stage palm-stage--collapse">
-          <p className="collapse-warning">Le palmier tombe…</p>
-          <PalmTree stage="critical" collapsing />
-        </section>
       ) : null}
     </main>
   );
