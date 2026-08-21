@@ -112,12 +112,14 @@ describe("écran de résultats", () => {
     expect(text).not.toMatch(/\u00c3|\u00c2|\u00e2\u20ac|\ufffd/u);
   });
 
-  it("conserve la bonne question pour chaque entrée du résumé final", () => {
+  it("affiche les scores finaux des deux équipes", () => {
     const game = { ...gameWithHistory(), status: "completed" as const };
     const text = textFromMarkup(
       renderToStaticMarkup(<FinalScreen game={game} onReplay={vi.fn()} onNew={vi.fn()} />),
     );
-    expect(text).toContain("Quelle était la question du tour précédent ?");
-    expect(text).toContain("Quels sont les neuf films de cette saga sortis entre 2001 et 2011 ?");
+    expect(text).toContain("Équipe Rouge");
+    expect(text).toContain("Équipe Bleue");
+    expect(text).toContain("bonnes réponses");
+    expect(text).not.toContain("Historique des manches");
   });
 });

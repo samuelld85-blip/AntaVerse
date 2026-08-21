@@ -557,7 +557,7 @@ export function QuestionScreen({
       <div
         className={`glass-panel flex min-h-0 flex-1 flex-col overflow-hidden rounded-3xl ${critical ? "border-[var(--coral)]/60" : ""}`}
       >
-        <div className="p-3 pb-2">
+        <div className="p-3 pb-3">
           <div className="flex items-start justify-between gap-4">
             <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
               {theme.name} · {question.difficultyLabel}
@@ -579,13 +579,18 @@ export function QuestionScreen({
               style={{ width: `${Math.max(0, progress)}%` }}
             />
           </div>
-          <h1 className="balance mt-3 text-[clamp(1.15rem,5.5vw,1.7rem)] font-black leading-[1.08]">
+          <h1 className="balance mt-4 text-[clamp(1.15rem,5.5vw,1.7rem)] font-black leading-[1.08]">
             {question.question}
           </h1>
         </div>
 
-        <div className="flex min-h-0 flex-1 flex-col gap-1.5 border-t border-white/10 bg-black/10 p-2">
-          <div className="answer-grid grid min-h-0 flex-1 grid-cols-3 grid-rows-3 gap-1.5">
+        {/* Zone flexible : absorbe l'espace restant et centre la grille au lieu
+            de laisser un vide sous les cartes ou d'étirer les cartes elles-mêmes. */}
+        <div className="flex min-h-0 flex-1 flex-col justify-center gap-1.5 border-t border-white/10 bg-black/10 p-2">
+          <div
+            className="answer-grid grid grid-cols-3 gap-1.5"
+            style={{ gridAutoRows: "minmax(3.6rem, auto)" }}
+          >
             {question.answers.map((answer) => {
               const found = game.revealedAnswerIds.includes(answer.id);
               return (
@@ -594,7 +599,7 @@ export function QuestionScreen({
                   type="button"
                   disabled={!isActive}
                   onClick={() => onAnswer(answer.id)}
-                  className={`answer-choice min-h-0 rounded-xl border px-1.5 py-1.5 text-[clamp(.62rem,2.8vw,.8rem)] font-black leading-[1.05] transition active:scale-[.96] ${found ? "border-[var(--lime)]/50 bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.055] text-white disabled:opacity-72"}`}
+                  className={`answer-choice flex items-center justify-center rounded-xl border px-1.5 py-1 text-center text-[clamp(.62rem,2.8vw,.8rem)] font-black leading-[1.05] transition active:scale-[.96] ${found ? "border-[var(--lime)]/50 bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.055] text-white disabled:opacity-72"}`}
                   aria-pressed={found}
                 >
                   <span>{answer.display}</span>
@@ -652,28 +657,30 @@ export function QuestionScreen({
             </div>
           ) : null}
         </div>
-      </div>
 
-      <div className="mt-2 flex items-end justify-between gap-4 px-1">
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
-            Réponses
-          </p>
-          <p className="display-face text-3xl">
-            {game.revealedAnswerIds.length}
-            <span className="text-quaternary">/9</span>
-          </p>
-        </div>
-        <div className="text-right">
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
-            Score provisoire
-          </p>
-          <p
-            key={game.turnScore}
-            className="score-pop display-face text-3xl text-[var(--accent-text)]"
-          >
-            {formatSignedScore(game.turnScore)}
-          </p>
+        {/* Réponses / score : intégrés en pied de panneau, comme le score
+            d'un match — pas de bloc flottant séparé sous le panel. */}
+        <div className="flex items-end justify-between gap-4 border-t border-white/10 px-3 py-2.5">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
+              Réponses
+            </p>
+            <p className="display-face text-3xl">
+              {game.revealedAnswerIds.length}
+              <span className="text-quaternary">/9</span>
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
+              Score provisoire
+            </p>
+            <p
+              key={game.turnScore}
+              className="score-pop display-face text-3xl text-[var(--accent-text)]"
+            >
+              {formatSignedScore(game.turnScore)}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -923,54 +930,9 @@ export function FinalScreen({
               <p className="mt-1 text-[10px] uppercase tracking-wider text-tertiary">
                 {answers} bonnes réponses
               </p>
-              <div className="mt-4 flex gap-1.5">
-                {DIFFICULTY_LEVELS.map((difficultyLevel) => (
-                  <span
-                    key={difficultyLevel}
-                    className="rounded-lg bg-[color:var(--surface-subtle)] px-2 py-1 text-[9px] font-semibold text-white/60"
-                  >
-                    {GAME_CONFIG.difficulties[difficultyLevel].abbr}{" "}
-                    {turns.filter((turn) => turn.difficultyLevel === difficultyLevel).length}
-                  </span>
-                ))}
-              </div>
             </div>
           );
         })}
-      </div>
-      <div className="mt-7 text-left">
-        <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-tertiary">
-          Historique des manches
-        </h2>
-        <div className="grid gap-3">
-          {game.history.map((turn) => {
-            const team = game.teams.find((candidate) => candidate.id === turn.answeringTeamId);
-            return (
-              <article key={turn.id} className="rounded-2xl bg-white/[.04] p-4 text-sm">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="font-black" style={{ color: team?.color }}>
-                    M{turn.roundNumber} · {team?.name}
-                  </span>
-                  <span className="font-black text-[var(--accent-text)]">
-                    {formatSignedScore(turn.pointsEarned)}
-                  </span>
-                </div>
-                <p className="mt-2 leading-relaxed text-white/62">{turn.questionText}</p>
-                <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-white/52">
-                  {turn.themeLabel} · Niveau {turn.difficultyLevel} — {turn.difficultyLabel} ·{" "}
-                  {turn.foundAnswerIds.length}/9
-                </p>
-                <p className="mt-1 text-[10px] text-tertiary">
-                  {turn.themeSelection.selectionMode === "opponent_imposed"
-                    ? "Joker Thème adverse"
-                    : turn.themeSelection.selectionMode === "active_team_choice"
-                      ? "Joker Choix du thème"
-                      : "Thème imposé au hasard"}
-                </p>
-              </article>
-            );
-          })}
-        </div>
       </div>
       <div className="mt-7 grid gap-3">
         <Button onClick={onReplay}>Rejouer avec les mêmes équipes</Button>
