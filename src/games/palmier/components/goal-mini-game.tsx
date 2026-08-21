@@ -5,10 +5,10 @@ import Image from "next/image";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-// Wider at tier 0 (much easier), much tighter at tier 9 (much harder) — visible
-// progression from "plenty of room" to "requires precision". This curve was flattened
-// too much on narrow phones; interpolation in JS and CSS sizing keeps it visible.
-const GAP_BY_TIER = [3.75, 3.5, 3.2, 2.85, 2.6, 2.35, 2.1, 1.85, 1.6, 1.35];
+/** Linear gap progression: starts at 3.25× card width, ends at 1.30× when all
+ *  52 cards drawn. Recalculated after every card, not in discrete tiers. */
+const START_GAP_IN_CARDS = 3.25;
+const END_GAP_IN_CARDS = 1.30;
 
 /** Must match the `width` prop on the card Image below. */
 const CARD_W = 100;
@@ -43,20 +43,12 @@ const PALM_SIZE_FLOOR = 70; // pure sanity minimum, only relevant on pathologica
 const PALM_MAX_W = 180;
 const PALM_VW_RATIO = 0.34;
 
-/** The palm PNGs have substantial transparent padding around the trunk
- *  artwork (measured with sharp against the actual asset files: canvas
- *  1254×1254, visible content x:[308,946] y:[145,1108]). The raw box
- *  edges (getBoundingClientRect) are NOT the trunk's visible edges — goal
- *  validation and the debug dots use the real trunk position, not the
- *  padded canvas edges. Both assets are (now) the same artwork mirrored.
- *
- *  For LEFT palm: trunk's right edge (inner edge of gap) is at x=946 → 946/1254 = 0.7544
- *  For RIGHT palm: trunk's left edge (inner edge of gap) is at x=307 → 307/1254 = 0.2447
- *  For both: trunk base is at y=1108 → 1108/1254 = 0.8835
- */
-const PALM_LEFT_INNER_FRACTION = 0.7544;  // RIGHT palm's inner edge (left edge of trunk)
-const PALM_RIGHT_INNER_FRACTION = 0.2447; // LEFT palm's inner edge (left edge of trunk)
-const PALM_BOTTOM_FRACTION = 0.8835; // trunk base sits this far down the box
+/** Normalized anchors for the base of each palm's trunk — exactly where the
+ *  visible trunk meets the ground. Measured by scanning trunk pixels in the
+ *  actual PNG files (1254×1254 canvas). These are used for both the debug
+ *  dots and the goal boundaries (innerLeft/innerRight). */
+const LEFT_PALM_GOAL_ANCHOR = { x: 0.4366, y: 0.8828 };
+const RIGHT_PALM_GOAL_ANCHOR = { x: 0.5626, y: 0.8828 };
 
 /** A release with total pointer travel under this (px) counts as a tap,
  *  not a throw — always resolves as a miss regardless of trajectory. */
@@ -64,16 +56,13 @@ const TAP_THRESHOLD_PX = 12;
 
 /** Fraction of the card→goal distance the player can manually drag the
  *  card up before the throw auto-releases (see onPointerMove) — keeps the
- *  outcome dependent on an actual flick, not on walking the card up by hand.
- *  Reduced from 0.42 to 0.32 to trigger auto-release sooner and reduce the
- *  time players spend near the boundary. */
-const DRAG_LIMIT_RATIO = 0.32;
+ *  outcome dependent on an actual flick, not on walking the card up by hand. */
+const DRAG_LIMIT_RATIO = 0.42;
 
-/** The hardest tier's gap must never be smaller than this, or the card
- *  (CARD_W wide) could never geometrically fit through it. Tier 9 now
- *  targets 135px (1.35× CARD_W), so this floor at 100px (1.0× CARD_W)
- *  forces genuine challenge in the endgame. */
-const MIN_PLAYABLE_GAP = CARD_W * 1.0;
+/** The final gap must never be smaller than this, or the card
+ *  (CARD_W wide) could never geometrically fit through it. Set to match the
+ *  END_GAP_IN_CARDS target (1.30×), so the hardest state is always playable. */
+const MIN_PLAYABLE_GAP = CARD_W * END_GAP_IN_CARDS;
 /** Palm sizing always leaves at least this much room for the gap — bigger
  *  than MIN_PLAYABLE_GAP so the easiest tier still has visible headroom
  *  above the hardest one instead of both collapsing to the same floor. */
@@ -82,15 +71,6 @@ const PALM_SIZING_GAP_RESERVE = CARD_W * 1.7;
 const SCREEN_MARGIN = 16;
 
 // ─── Public helpers (also used by tests) ─────────────────────────────────────
-
-export function getGoalTier(totalCards: number, remainingCards: number): number {
-  const drawn = totalCards - remainingCards;
-  return Math.min(9, Math.floor(drawn / 5));
-}
-
-export function getGoalGapMultiplier(tier: number): number {
-  return GAP_BY_TIER[Math.min(9, Math.max(0, tier))] ?? 1.8;
-}
 
 export function clampVelocity(vx: number, vy: number): { vx: number; vy: number } {
   const clampedVx = Math.max(-MAX_LAUNCH_SPEED, Math.min(MAX_LAUNCH_SPEED, vx));
@@ -177,45 +157,35 @@ export function PalmierGoalMiniGame({
   const resolvedRef = useRef(false);
 
   // ─── Difficulty ───────────────────────────────────────────────────────────
-  const tier = getGoalTier(totalCards, remainingCards);
   const screenW = typeof window !== "undefined" ? window.innerWidth : 390;
 
   // Palm width is sized DOWNWARD from the screen, not the other way around:
   // it's whatever fits PALM_VW_RATIO / PALM_MAX_W, but never so large that
   // it would leave less than PALM_SIZING_GAP_RESERVE of room for the gap.
-  // (A fixed minimum palm width, tried earlier, caused both overflow AND a
-  // frozen-looking gap on narrow phones — see PALM_SIZE_FLOOR's comment.)
-  // .plm-goal-palm-img's CSS clamp() must mirror this so JS and CSS agree
-  // on the rendered size.
+  // .plm-goal-palm-img's CSS clamp() must mirror this so JS and CSS agree.
   const maxPalmWidthForScreen = (screenW - SCREEN_MARGIN - PALM_SIZING_GAP_RESERVE) / 2;
   const palmWidthPx = Math.max(
     PALM_SIZE_FLOOR,
     Math.min(PALM_MAX_W, screenW * PALM_VW_RATIO, maxPalmWidthForScreen),
   );
 
-  // On a wide screen there's room for the full 3.25x → 1.8x tier curve as
-  // designed. On a narrow phone, two big palms can eat most of the width,
-  // leaving too little room for that whole range — naively clamping every
-  // tier's gap to whatever's left collapses ALL tiers to the same constant
-  // the moment tier 0 alone overflows, which is why the palms previously
-  // stopped visibly moving as the game progressed. Instead, interpolate:
-  // tier 0 gets as much of its intended gap as fits the screen, tier 9
-  // always keeps MIN_PLAYABLE_GAP (the card must be able to physically fit
-  // through it, always), and every tier in between is mapped proportionally
-  // onto whatever room exists between those two endpoints — so the palms
-  // keep moving at every tier, at every screen size.
-  const rawGapAtEasiestTier = CARD_W * getGoalGapMultiplier(0);
-  const rawGapAtHardestTier = CARD_W * getGoalGapMultiplier(9);
+  // Strictly linear gap progression: starts at START_GAP_IN_CARDS (3.25×),
+  // ends at END_GAP_IN_CARDS (1.30×) when no cards remain. Recalculated after
+  // every single card draw, not in discrete tiers.
+  const drawnCards = totalCards - remainingCards;
+  const progress = Math.min(Math.max(drawnCards / totalCards, 0), 1);
+  const gapInCards =
+    START_GAP_IN_CARDS - (START_GAP_IN_CARDS - END_GAP_IN_CARDS) * progress;
+  const rawGapPx = gapInCards * CARD_W;
+
+  // Bound gap to screen size while preserving linear progression: the
+  // progression stays linear between the clamped min/max, but never exceeds
+  // available width or undercuts MIN_PLAYABLE_GAP.
   const maxGapForScreen = Math.max(
     MIN_PLAYABLE_GAP,
     screenW - palmWidthPx * 2 - SCREEN_MARGIN,
   );
-  const easiestGapPx = Math.min(rawGapAtEasiestTier, maxGapForScreen);
-  const hardestGapPx = MIN_PLAYABLE_GAP;
-  const tierFraction =
-    (CARD_W * getGoalGapMultiplier(tier) - rawGapAtHardestTier) /
-    (rawGapAtEasiestTier - rawGapAtHardestTier);
-  const gapPx = hardestGapPx + tierFraction * (easiestGapPx - hardestGapPx);
+  const gapPx = Math.min(Math.max(rawGapPx, MIN_PLAYABLE_GAP), maxGapForScreen);
 
   // ─── Cleanup rAF on unmount ───────────────────────────────────────────────
   useEffect(() => {
@@ -232,13 +202,13 @@ export function PalmierGoalMiniGame({
     const lRect = leftPalmRef.current?.getBoundingClientRect();
     const rRect = rightPalmRef.current?.getBoundingClientRect();
     if (!lRect || !rRect) return;
-    // Use the real trunk edges (measured from the artwork itself), not the
-    // padded canvas box — see PALM_LEFT_INNER_FRACTION, PALM_RIGHT_INNER_FRACTION.
-    const innerLeft = lRect.left + lRect.width * PALM_LEFT_INNER_FRACTION;
-    const innerRight = rRect.left + rRect.width * PALM_RIGHT_INNER_FRACTION;
+    // Use the exact trunk base anchors — each point marks the center of the
+    // visible tronc base in its corresponding palm.
+    const innerLeft = lRect.left + lRect.width * LEFT_PALM_GOAL_ANCHOR.x;
+    const innerRight = rRect.left + rRect.width * RIGHT_PALM_GOAL_ANCHOR.x;
     const goalLine = Math.max(
-      lRect.top + lRect.height * PALM_BOTTOM_FRACTION,
-      rRect.top + rRect.height * PALM_BOTTOM_FRACTION,
+      lRect.top + lRect.height * LEFT_PALM_GOAL_ANCHOR.y,
+      rRect.top + rRect.height * RIGHT_PALM_GOAL_ANCHOR.y,
     );
     goalRef.current = {
       innerLeft,
@@ -349,24 +319,9 @@ export function PalmierGoalMiniGame({
               window.setTimeout(() => onResolved(false), 600);
             } else {
               setPhase("fail");
-              // Card always flies at least to the goal line to show the attempt,
-              // then snaps back and fades — even failed attempts reach the palms.
-              const goalLineRelativeY = goalLine - initTop;
-              applyCardTransform(
-                posRef.current.x,
-                goalLineRelativeY - 25,  // Stop 25px short of goal line
-                "transform 280ms ease-out",
-              );
-              window.setTimeout(() => {
-                // Then snap back and fade
-                applyCardTransform(
-                  posRef.current.x * 0.15,
-                  posRef.current.y * 0.25,
-                  "transform 350ms cubic-bezier(0.22,0,0.36,1), opacity 350ms ease",
-                );
-                applyCardOpacity("0.35");
-              }, 280);
-              window.setTimeout(() => onResolved(true), 1100);
+              // Just fade out, no animation back
+              applyCardOpacity("0", "opacity 400ms ease-in");
+              window.setTimeout(() => onResolved(true), 600);
             }
             return;
           }
