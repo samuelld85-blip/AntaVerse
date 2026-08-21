@@ -24,14 +24,15 @@ import type { GameState, Question, Team, Theme } from "@/games/quoi-de-9/lib/gam
 
 export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: () => void }) {
   const showHud = game.status !== "completed";
-  // Question en cours (avant et pendant le chrono) : aucun header, tout l'espace
-  // est laissé à la question et aux 9 réponses.
-  const liveQuestion = game.status === "question_ready" || game.status === "question_active";
-  // Fin de tour : on masque la ligne marque + Quitter pour gagner de la hauteur.
-  const compact = game.status === "turn_expired" || game.status === "turn_results";
+  // Question en cours ou bilan de tour : bandeau compact (scores + tour +
+  // progression uniquement) — on masque la ligne marque + Quitter pour
+  // gagner de la hauteur et laisser la place à la question.
+  const compact =
+    game.status === "question_ready" ||
+    game.status === "question_active" ||
+    game.status === "turn_expired" ||
+    game.status === "turn_results";
   const totalTurns = game.roundsPerTeam * game.teams.length;
-
-  if (liveQuestion) return null;
 
   return (
     <header
@@ -555,38 +556,45 @@ export function QuestionScreen({
   return (
     <section className="flex min-h-0 flex-1 flex-col pb-1">
       <div
-        className={`glass-panel flex min-h-0 flex-1 flex-col overflow-hidden rounded-3xl ${critical ? "border-[var(--coral)]/60" : ""}`}
+        className={`glass-panel flex min-h-0 flex-1 flex-col overflow-hidden rounded-3xl p-3 ${critical ? "border-[var(--coral)]/60" : ""}`}
+        style={{
+          backgroundImage:
+            "radial-gradient(120% 55% at 50% -8%, rgba(56,189,248,0.16), transparent 65%)",
+        }}
       >
-        <div className="p-3 pb-3">
-          <div className="flex items-start justify-between gap-4">
-            <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
-              {theme.name} · {question.difficultyLabel}
-            </p>
-            <div
-              className={`text-right ${critical ? "text-[var(--coral)]" : urgent ? "text-amber-300" : "text-white"}`}
-            >
-              <span className="display-face block text-4xl leading-none tabular-nums">
-                {formatTime(remainingSeconds)}
-              </span>
-              <span className="text-[9px] font-bold uppercase tracking-wider text-tertiary">
-                {isReady ? "prêt" : expired ? "terminé" : "restantes"}
-              </span>
-            </div>
+        {/* En-tête : thème/difficulté à gauche, chrono à droite. */}
+        <div className="flex items-start justify-between gap-4">
+          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-tertiary">
+            {theme.name} · {question.difficultyLabel}
+          </p>
+          <div
+            className={`text-right ${critical ? "text-[var(--coral)]" : urgent ? "text-amber-300" : "text-white"}`}
+          >
+            <span className="display-face block text-4xl leading-none tabular-nums">
+              {formatTime(remainingSeconds)}
+            </span>
+            <span className="text-[9px] font-bold uppercase tracking-wider text-tertiary">
+              {isReady ? "prêt" : expired ? "terminé" : "restantes"}
+            </span>
           </div>
-          <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-white/10">
-            <div
-              className={`h-full rounded-full transition-[width] duration-200 ${critical ? "bg-[var(--coral)]" : urgent ? "bg-amber-300" : "bg-[var(--lime)]"}`}
-              style={{ width: `${Math.max(0, progress)}%` }}
-            />
-          </div>
-          <h1 className="balance mt-4 text-[clamp(1.15rem,5.5vw,1.7rem)] font-black leading-[1.08]">
-            {question.question}
-          </h1>
         </div>
 
-        {/* Zone flexible : absorbe l'espace restant et centre la grille au lieu
-            de laisser un vide sous les cartes ou d'étirer les cartes elles-mêmes. */}
-        <div className="flex min-h-0 flex-1 flex-col justify-center gap-1.5 border-t border-white/10 bg-black/10 p-2">
+        {/* Seul séparateur fort du panneau : la ligne de progression du chrono. */}
+        <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-white/10">
+          <div
+            className={`h-full rounded-full transition-[width] duration-200 ${critical ? "bg-[var(--coral)]" : urgent ? "bg-amber-300" : "bg-[var(--lime)]"}`}
+            style={{ width: `${Math.max(0, progress)}%` }}
+          />
+        </div>
+
+        <h1 className="balance mt-4 text-[clamp(1.15rem,5.5vw,1.7rem)] font-bold leading-[1.08]">
+          {question.question}
+        </h1>
+
+        {/* Zone flexible : même surface que le reste du panneau (pas de fond ni
+            de bordure propres), absorbe l'espace restant et centre la grille
+            au lieu de laisser un vide ou d'étirer les cartes elles-mêmes. */}
+        <div className="flex min-h-0 flex-1 flex-col justify-center gap-1.5">
           <div
             className="answer-grid grid grid-cols-3 gap-1.5"
             style={{ gridAutoRows: "minmax(3.6rem, auto)" }}
@@ -599,7 +607,7 @@ export function QuestionScreen({
                   type="button"
                   disabled={!isActive}
                   onClick={() => onAnswer(answer.id)}
-                  className={`answer-choice flex items-center justify-center rounded-xl border px-1.5 py-1 text-center text-[clamp(.62rem,2.8vw,.8rem)] font-black leading-[1.05] transition active:scale-[.96] ${found ? "border-[var(--lime)]/50 bg-[var(--lime)] text-[var(--accent-ink)]" : "border-white/10 bg-white/[.055] text-white disabled:opacity-72"}`}
+                  className={`answer-choice flex items-center justify-center rounded-xl border px-1.5 py-1 text-center text-[clamp(.62rem,2.8vw,.8rem)] font-black leading-[1.05] transition active:scale-[.96] ${found ? "border-[var(--lime)]/50 bg-[var(--lime)] text-[var(--accent-ink)]" : "border-[rgba(56,189,248,0.16)] bg-[rgba(56,189,248,0.07)] text-white disabled:opacity-85"}`}
                   aria-pressed={found}
                 >
                   <span>{answer.display}</span>
@@ -658,16 +666,16 @@ export function QuestionScreen({
           ) : null}
         </div>
 
-        {/* Réponses / score : intégrés en pied de panneau, comme le score
-            d'un match — pas de bloc flottant séparé sous le panel. */}
-        <div className="flex items-end justify-between gap-4 border-t border-white/10 px-3 py-2.5">
+        {/* Réponses / score : pied du même panneau, sans séparateur — juste
+            un léger décalage vertical pour respirer par rapport à la grille. */}
+        <div className="mt-5 flex items-end justify-between gap-4">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-tertiary">
               Réponses
             </p>
-            <p className="display-face text-3xl">
-              {game.revealedAnswerIds.length}
-              <span className="text-quaternary">/9</span>
+            <p className="display-face mt-1.5 text-3xl">
+              <span className="text-[var(--accent-text)]">{game.revealedAnswerIds.length}</span>
+              <span className="text-quaternary"> / 9</span>
             </p>
           </div>
           <div className="text-right">
@@ -676,7 +684,7 @@ export function QuestionScreen({
             </p>
             <p
               key={game.turnScore}
-              className="score-pop display-face text-3xl text-[var(--accent-text)]"
+              className="score-pop display-face mt-1.5 text-3xl text-[var(--accent-text)]"
             >
               {formatSignedScore(game.turnScore)}
             </p>
