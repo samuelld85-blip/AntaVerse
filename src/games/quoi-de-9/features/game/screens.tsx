@@ -403,7 +403,7 @@ export function ThemeRevealScreen({
                   : `${formatScore(calculateTurnScore(1, difficulty))} pts/réponse`;
               const isClassique = difficulty === 1;
               const accent = isClassique ? "#38bdf8" : "#c084fc";
-              const icon = isClassique ? "◎" : "⚡";
+              const icon = isClassique ? "⭐" : "⚡";
               return (
                 <button
                   key={difficulty}
@@ -419,7 +419,7 @@ export function ThemeRevealScreen({
                   <div className="relative">
                     <span
                       style={{ color: accent }}
-                      className={`absolute right-full top-1/2 -translate-y-1/2 ${isClassique ? "pr-3.5" : "pr-2"} text-xl opacity-80`}
+                      className="absolute right-full top-1/2 -translate-y-1/2 pr-2 text-base opacity-80"
                       aria-hidden="true"
                     >
                       {icon}
