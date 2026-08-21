@@ -23,11 +23,11 @@ describe("getGoalTier", () => {
 
 describe("getGoalGapMultiplier", () => {
   it("returns largest gap for tier 0", () => {
-    expect(getGoalGapMultiplier(0)).toBe(3.25);
+    expect(getGoalGapMultiplier(0)).toBe(3.75);
   });
 
   it("returns smallest gap for tier 9", () => {
-    expect(getGoalGapMultiplier(9)).toBe(1.8);
+    expect(getGoalGapMultiplier(9)).toBe(1.35);
   });
 
   it("gap decreases monotonically", () => {
@@ -38,14 +38,14 @@ describe("getGoalGapMultiplier", () => {
   });
 
   it("clamps out-of-range tiers", () => {
-    expect(getGoalGapMultiplier(-1)).toBe(3.25);
-    expect(getGoalGapMultiplier(10)).toBe(1.8);
+    expect(getGoalGapMultiplier(-1)).toBe(3.75);
+    expect(getGoalGapMultiplier(10)).toBe(1.35);
   });
 
-  it("minimum gap at tier 9 fits ~1.8 card widths", () => {
+  it("minimum gap at tier 9 is tight (requires precision)", () => {
     const gapPx = getGoalGapMultiplier(9) * CARD_W;
-    expect(gapPx).toBeGreaterThanOrEqual(CARD_W * 1.7);
-    expect(gapPx).toBeLessThanOrEqual(CARD_W * 2.0);
+    expect(gapPx).toBeGreaterThanOrEqual(CARD_W * 1.3);
+    expect(gapPx).toBeLessThanOrEqual(CARD_W * 1.4);
   });
 });
 

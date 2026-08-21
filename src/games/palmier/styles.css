@@ -626,10 +626,19 @@ html[data-theme="light"] .palm-ground-shadow {
    (via getBoundingClientRect on .plm-goal-palm, used for goal validation)
    is always the true rendered base of the image, and it scales down in
    lockstep with the responsive width clamp() below on any screen size.
-   Assets are 1:1 square (1254×1254) — height: auto keeps them undistorted. */
+   Assets are 1:1 square (1254×1254) — height: auto keeps them undistorted.
+
+   This formula MUST mirror the JS in goal-mini-game.tsx exactly (palmWidthPx,
+   PALM_SIZE_FLOOR/PALM_MAX_W/PALM_VW_RATIO/SCREEN_MARGIN/
+   PALM_SIZING_GAP_RESERVE): the JS computes the goal gap assuming palms
+   render at this size, so if this clamp() and that formula ever drift
+   apart, the palms can overflow the screen or the gap math can be wrong.
+   The min() term reserves room for the gap (100vw - margin - gap reserve,
+   split between the two palms) so palms never grow so large there's no
+   space left for a visible, playable gap. */
 .plm-goal-palm-img {
   display: block !important;
-  width: clamp(130px, 34vw, 180px) !important;
+  width: clamp(70px, min(34vw, calc((100vw - 186px) / 2)), 180px) !important;
   height: auto !important;
 }
 

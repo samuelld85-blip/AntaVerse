@@ -5,7 +5,10 @@ import Image from "next/image";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const GAP_BY_TIER = [3.25, 3.05, 2.9, 2.7, 2.55, 2.4, 2.25, 2.1, 1.95, 1.8];
+// Wider at tier 0 (much easier), much tighter at tier 9 (much harder) — visible
+// progression from "plenty of room" to "requires precision". This curve was flattened
+// too much on narrow phones; interpolation in JS and CSS sizing keeps it visible.
+const GAP_BY_TIER = [3.75, 3.5, 3.2, 2.85, 2.6, 2.35, 2.1, 1.85, 1.6, 1.35];
 
 /** Must match the `width` prop on the card Image below. */
 const CARD_W = 100;
@@ -30,20 +33,30 @@ const MIN_CRUISE_VY = 260;
 /** Small tolerance on each edge for goal detection (px). */
 const GOAL_TOLERANCE = 8;
 
-/** Palm width sizing — must match the CSS clamp() on .plm-goal-palm-img. */
-const PALM_MIN_W = 130;
+/** Palm width sizing — must match the CSS clamp() on .plm-goal-palm-img.
+ *  There is deliberately no hard minimum here beyond PALM_SIZE_FLOOR: on a
+ *  narrow phone, two big palms can eat nearly the whole screen width,
+ *  leaving no room for the gap to visibly vary between tiers (or even to
+ *  fit without overflowing). Palm width is capped below by how much room
+ *  the gap needs (see PALM_SIZING_GAP_RESERVE), not by a fixed floor. */
+const PALM_SIZE_FLOOR = 70; // pure sanity minimum, only relevant on pathologically narrow screens
 const PALM_MAX_W = 180;
 const PALM_VW_RATIO = 0.34;
 
 /** The palm PNGs have substantial transparent padding around the trunk
  *  artwork (measured with sharp against the actual asset files: canvas
- *  1254×1254, visible content roughly x:[308,946] y:[145,1108]). The
- *  raw box edges (getBoundingClientRect) are NOT the trunk's visible
- *  edges — goal validation and the debug dots both need the real trunk
- *  position, not the padded canvas edges. Both assets are (now) the same
- *  artwork mirrored, so one fraction each is enough for both sides. */
-const PALM_SIDE_INSET_FRACTION = 0.245; // trunk's inner edge sits this far in from each side
-const PALM_BOTTOM_FRACTION = 0.884; // trunk base sits this far down the box (not all the way to 100%)
+ *  1254×1254, visible content x:[308,946] y:[145,1108]). The raw box
+ *  edges (getBoundingClientRect) are NOT the trunk's visible edges — goal
+ *  validation and the debug dots use the real trunk position, not the
+ *  padded canvas edges. Both assets are (now) the same artwork mirrored.
+ *
+ *  For LEFT palm: trunk's right edge (inner edge of gap) is at x=946 → 946/1254 = 0.7544
+ *  For RIGHT palm: trunk's left edge (inner edge of gap) is at x=307 → 307/1254 = 0.2447
+ *  For both: trunk base is at y=1108 → 1108/1254 = 0.8835
+ */
+const PALM_LEFT_INNER_FRACTION = 0.7544;  // RIGHT palm's inner edge (left edge of trunk)
+const PALM_RIGHT_INNER_FRACTION = 0.2447; // LEFT palm's inner edge (left edge of trunk)
+const PALM_BOTTOM_FRACTION = 0.8835; // trunk base sits this far down the box
 
 /** A release with total pointer travel under this (px) counts as a tap,
  *  not a throw — always resolves as a miss regardless of trajectory. */
@@ -51,12 +64,20 @@ const TAP_THRESHOLD_PX = 12;
 
 /** Fraction of the card→goal distance the player can manually drag the
  *  card up before the throw auto-releases (see onPointerMove) — keeps the
- *  outcome dependent on an actual flick, not on walking the card up by hand. */
-const DRAG_LIMIT_RATIO = 0.42;
+ *  outcome dependent on an actual flick, not on walking the card up by hand.
+ *  Reduced from 0.42 to 0.32 to trigger auto-release sooner and reduce the
+ *  time players spend near the boundary. */
+const DRAG_LIMIT_RATIO = 0.32;
 
 /** The hardest tier's gap must never be smaller than this, or the card
- *  (CARD_W wide) could never geometrically fit through it. */
-const MIN_PLAYABLE_GAP = CARD_W * 1.3;
+ *  (CARD_W wide) could never geometrically fit through it. Tier 9 now
+ *  targets 135px (1.35× CARD_W), so this floor at 100px (1.0× CARD_W)
+ *  forces genuine challenge in the endgame. */
+const MIN_PLAYABLE_GAP = CARD_W * 1.0;
+/** Palm sizing always leaves at least this much room for the gap — bigger
+ *  than MIN_PLAYABLE_GAP so the easiest tier still has visible headroom
+ *  above the hardest one instead of both collapsing to the same floor. */
+const PALM_SIZING_GAP_RESERVE = CARD_W * 1.7;
 /** Total horizontal breathing room reserved outside the two palms + gap. */
 const SCREEN_MARGIN = 16;
 
@@ -156,23 +177,33 @@ export function PalmierGoalMiniGame({
   const resolvedRef = useRef(false);
 
   // ─── Difficulty ───────────────────────────────────────────────────────────
-  // palmWidthPx mirrors the CSS clamp() on .plm-goal-palm-img exactly, so
-  // the JS geometry budget below stays in sync with what's actually rendered.
   const tier = getGoalTier(totalCards, remainingCards);
   const screenW = typeof window !== "undefined" ? window.innerWidth : 390;
-  const palmWidthPx = Math.min(PALM_MAX_W, Math.max(PALM_MIN_W, screenW * PALM_VW_RATIO));
+
+  // Palm width is sized DOWNWARD from the screen, not the other way around:
+  // it's whatever fits PALM_VW_RATIO / PALM_MAX_W, but never so large that
+  // it would leave less than PALM_SIZING_GAP_RESERVE of room for the gap.
+  // (A fixed minimum palm width, tried earlier, caused both overflow AND a
+  // frozen-looking gap on narrow phones — see PALM_SIZE_FLOOR's comment.)
+  // .plm-goal-palm-img's CSS clamp() must mirror this so JS and CSS agree
+  // on the rendered size.
+  const maxPalmWidthForScreen = (screenW - SCREEN_MARGIN - PALM_SIZING_GAP_RESERVE) / 2;
+  const palmWidthPx = Math.max(
+    PALM_SIZE_FLOOR,
+    Math.min(PALM_MAX_W, screenW * PALM_VW_RATIO, maxPalmWidthForScreen),
+  );
 
   // On a wide screen there's room for the full 3.25x → 1.8x tier curve as
   // designed. On a narrow phone, two big palms can eat most of the width,
   // leaving too little room for that whole range — naively clamping every
-  // tier's gap to whatever's left (the previous approach) collapsed ALL
-  // tiers to the same constant the moment tier 0 alone overflowed, which is
-  // why the palms visibly stopped moving as the game progressed. Instead,
-  // interpolate: tier 0 gets as much of its intended gap as fits the
-  // screen, tier 9 always keeps MIN_PLAYABLE_GAP (the card must be able to
-  // physically fit through it, always), and every tier in between is
-  // mapped proportionally onto whatever room exists between those two
-  // endpoints — so the palms keep moving at every tier, at every screen size.
+  // tier's gap to whatever's left collapses ALL tiers to the same constant
+  // the moment tier 0 alone overflows, which is why the palms previously
+  // stopped visibly moving as the game progressed. Instead, interpolate:
+  // tier 0 gets as much of its intended gap as fits the screen, tier 9
+  // always keeps MIN_PLAYABLE_GAP (the card must be able to physically fit
+  // through it, always), and every tier in between is mapped proportionally
+  // onto whatever room exists between those two endpoints — so the palms
+  // keep moving at every tier, at every screen size.
   const rawGapAtEasiestTier = CARD_W * getGoalGapMultiplier(0);
   const rawGapAtHardestTier = CARD_W * getGoalGapMultiplier(9);
   const maxGapForScreen = Math.max(
@@ -202,9 +233,9 @@ export function PalmierGoalMiniGame({
     const rRect = rightPalmRef.current?.getBoundingClientRect();
     if (!lRect || !rRect) return;
     // Use the real trunk edges (measured from the artwork itself), not the
-    // padded canvas box — see PALM_SIDE_INSET_FRACTION / PALM_BOTTOM_FRACTION.
-    const innerLeft = lRect.left + lRect.width * (1 - PALM_SIDE_INSET_FRACTION);
-    const innerRight = rRect.left + rRect.width * PALM_SIDE_INSET_FRACTION;
+    // padded canvas box — see PALM_LEFT_INNER_FRACTION, PALM_RIGHT_INNER_FRACTION.
+    const innerLeft = lRect.left + lRect.width * PALM_LEFT_INNER_FRACTION;
+    const innerRight = rRect.left + rRect.width * PALM_RIGHT_INNER_FRACTION;
     const goalLine = Math.max(
       lRect.top + lRect.height * PALM_BOTTOM_FRACTION,
       rRect.top + rRect.height * PALM_BOTTOM_FRACTION,
@@ -318,13 +349,23 @@ export function PalmierGoalMiniGame({
               window.setTimeout(() => onResolved(false), 600);
             } else {
               setPhase("fail");
-              // Snap back partially and fade
+              // Card always flies at least to the goal line to show the attempt,
+              // then snaps back and fades — even failed attempts reach the palms.
+              const goalLineRelativeY = goalLine - initTop;
               applyCardTransform(
-                posRef.current.x * 0.15,
-                posRef.current.y * 0.25,
-                "transform 350ms cubic-bezier(0.22,0,0.36,1), opacity 350ms ease",
+                posRef.current.x,
+                goalLineRelativeY - 25,  // Stop 25px short of goal line
+                "transform 280ms ease-out",
               );
-              applyCardOpacity("0.35");
+              window.setTimeout(() => {
+                // Then snap back and fade
+                applyCardTransform(
+                  posRef.current.x * 0.15,
+                  posRef.current.y * 0.25,
+                  "transform 350ms cubic-bezier(0.22,0,0.36,1), opacity 350ms ease",
+                );
+                applyCardOpacity("0.35");
+              }, 280);
               window.setTimeout(() => onResolved(true), 1100);
             }
             return;
