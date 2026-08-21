@@ -637,9 +637,16 @@ html[data-theme="light"] .palm-ground-shadow {
    stays anchored to the bottom of the screen. The arrow is absolutely
    positioned inside it, anchored to the bottom edge (just above the card)
    and sized to 80% of this zone's height, so it reaches close to — but
-   stops short of — the goal line without ever touching the palms. */
+   stops short of — the goal line without ever touching the palms.
+   width: 100% is required, not decorative: .plm-goal-stage is a column
+   flexbox with align-items: center (not stretch), and this zone's only
+   child (.plm-goal-lane) is position:absolute — meaning it contributes NO
+   intrinsic width to this element. Without an explicit width, this zone
+   (and everything absolutely positioned inside it: the arrow, the drag
+   boundary line) computed to 0 width and rendered invisible. */
 .plm-goal-flight-zone {
   position: relative;
+  width: 100%;
   flex: 1;
   min-height: 2rem;
   pointer-events: none;
@@ -662,8 +669,9 @@ html[data-theme="light"] .palm-ground-shadow {
 }
 
 /* Drag boundary: a soft glowing dashed line marking DRAG_LIMIT_RATIO — how
-   far the player can manually drag the card up before it stops following
-   the finger. Only shown while actively dragging. */
+   far the player can manually drag the card up before the throw
+   auto-releases (as if the finger had lifted right there, continuing in
+   the same direction/speed). Only shown while actively dragging. */
 .plm-goal-drag-limit {
   position: absolute;
   left: 12%;
@@ -678,6 +686,22 @@ html[data-theme="light"] .palm-ground-shadow {
 }
 .plm-goal-drag-limit--visible {
   opacity: 1;
+}
+
+/* Debug markers — the exact viewport point read for each palm's inner base
+   for goal validation. Temporary visual aid to confirm alignment; remove
+   once verified. */
+.plm-goal-debug-dot {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: #ffd54f;
+  box-shadow: 0 0 6px 2px rgba(255, 213, 79, 0.85);
+  pointer-events: none;
+  z-index: 999;
 }
 
 /* Bottom zone: card → hand → help.

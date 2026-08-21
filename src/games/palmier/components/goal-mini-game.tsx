@@ -35,16 +35,30 @@ const PALM_MIN_W = 130;
 const PALM_MAX_W = 180;
 const PALM_VW_RATIO = 0.34;
 
+/** The palm PNGs have substantial transparent padding around the trunk
+ *  artwork (measured with sharp against the actual asset files: canvas
+ *  1254×1254, visible content roughly x:[308,946] y:[145,1108]). The
+ *  raw box edges (getBoundingClientRect) are NOT the trunk's visible
+ *  edges — goal validation and the debug dots both need the real trunk
+ *  position, not the padded canvas edges. Both assets are (now) the same
+ *  artwork mirrored, so one fraction each is enough for both sides. */
+const PALM_SIDE_INSET_FRACTION = 0.245; // trunk's inner edge sits this far in from each side
+const PALM_BOTTOM_FRACTION = 0.884; // trunk base sits this far down the box (not all the way to 100%)
+
 /** A release with total pointer travel under this (px) counts as a tap,
  *  not a throw — always resolves as a miss regardless of trajectory. */
 const TAP_THRESHOLD_PX = 12;
 
 /** Fraction of the card→goal distance the player can manually drag the
- *  card up before hitting the boundary — beyond it, the card stops
- *  following the finger, though the finger's motion still counts toward
- *  the release velocity/direction. Prevents "walking" the card into the
- *  goal by hand instead of actually flicking it. */
-const DRAG_LIMIT_RATIO = 0.55;
+ *  card up before the throw auto-releases (see onPointerMove) — keeps the
+ *  outcome dependent on an actual flick, not on walking the card up by hand. */
+const DRAG_LIMIT_RATIO = 0.42;
+
+/** The hardest tier's gap must never be smaller than this, or the card
+ *  (CARD_W wide) could never geometrically fit through it. */
+const MIN_PLAYABLE_GAP = CARD_W * 1.3;
+/** Total horizontal breathing room reserved outside the two palms + gap. */
+const SCREEN_MARGIN = 16;
 
 // ─── Public helpers (also used by tests) ─────────────────────────────────────
 
@@ -107,6 +121,12 @@ export function PalmierGoalMiniGame({
   onResolved,
 }: Props) {
   const [phase, setPhase] = useState<Phase>("idle");
+  // Debug markers: exact viewport point read for each palm's inner base —
+  // lets you visually confirm the goal geometry lines up with the artwork.
+  const [goalMarkers, setGoalMarkers] = useState<{
+    left: { x: number; y: number };
+    right: { x: number; y: number };
+  } | null>(null);
 
   const cardRef = useRef<HTMLDivElement>(null);
   const leftPalmRef = useRef<HTMLDivElement>(null);
@@ -136,15 +156,35 @@ export function PalmierGoalMiniGame({
   const resolvedRef = useRef(false);
 
   // ─── Difficulty ───────────────────────────────────────────────────────────
-  const tier = getGoalTier(totalCards, remainingCards);
-  const rawGap = CARD_W * getGoalGapMultiplier(tier);
-  // Bound the gap so palmWidth + gap + palmWidth never exceeds the screen —
   // palmWidthPx mirrors the CSS clamp() on .plm-goal-palm-img exactly, so
-  // this stays in sync with what's actually rendered.
+  // the JS geometry budget below stays in sync with what's actually rendered.
+  const tier = getGoalTier(totalCards, remainingCards);
   const screenW = typeof window !== "undefined" ? window.innerWidth : 390;
   const palmWidthPx = Math.min(PALM_MAX_W, Math.max(PALM_MIN_W, screenW * PALM_VW_RATIO));
-  const maxGapForScreen = Math.max(60, screenW - palmWidthPx * 2 - 24);
-  const gapPx = Math.min(rawGap, maxGapForScreen);
+
+  // On a wide screen there's room for the full 3.25x → 1.8x tier curve as
+  // designed. On a narrow phone, two big palms can eat most of the width,
+  // leaving too little room for that whole range — naively clamping every
+  // tier's gap to whatever's left (the previous approach) collapsed ALL
+  // tiers to the same constant the moment tier 0 alone overflowed, which is
+  // why the palms visibly stopped moving as the game progressed. Instead,
+  // interpolate: tier 0 gets as much of its intended gap as fits the
+  // screen, tier 9 always keeps MIN_PLAYABLE_GAP (the card must be able to
+  // physically fit through it, always), and every tier in between is
+  // mapped proportionally onto whatever room exists between those two
+  // endpoints — so the palms keep moving at every tier, at every screen size.
+  const rawGapAtEasiestTier = CARD_W * getGoalGapMultiplier(0);
+  const rawGapAtHardestTier = CARD_W * getGoalGapMultiplier(9);
+  const maxGapForScreen = Math.max(
+    MIN_PLAYABLE_GAP,
+    screenW - palmWidthPx * 2 - SCREEN_MARGIN,
+  );
+  const easiestGapPx = Math.min(rawGapAtEasiestTier, maxGapForScreen);
+  const hardestGapPx = MIN_PLAYABLE_GAP;
+  const tierFraction =
+    (CARD_W * getGoalGapMultiplier(tier) - rawGapAtHardestTier) /
+    (rawGapAtEasiestTier - rawGapAtHardestTier);
+  const gapPx = hardestGapPx + tierFraction * (easiestGapPx - hardestGapPx);
 
   // ─── Cleanup rAF on unmount ───────────────────────────────────────────────
   useEffect(() => {
@@ -153,25 +193,45 @@ export function PalmierGoalMiniGame({
     };
   }, []);
 
+  // Reads the two palms' real rendered geometry and updates both goalRef
+  // (used by the engine for success/fail detection) and the on-screen debug
+  // dots — a single source of truth so the dots always show exactly what
+  // the detection logic is actually using.
+  function measureGoal() {
+    const lRect = leftPalmRef.current?.getBoundingClientRect();
+    const rRect = rightPalmRef.current?.getBoundingClientRect();
+    if (!lRect || !rRect) return;
+    // Use the real trunk edges (measured from the artwork itself), not the
+    // padded canvas box — see PALM_SIDE_INSET_FRACTION / PALM_BOTTOM_FRACTION.
+    const innerLeft = lRect.left + lRect.width * (1 - PALM_SIDE_INSET_FRACTION);
+    const innerRight = rRect.left + rRect.width * PALM_SIDE_INSET_FRACTION;
+    const goalLine = Math.max(
+      lRect.top + lRect.height * PALM_BOTTOM_FRACTION,
+      rRect.top + rRect.height * PALM_BOTTOM_FRACTION,
+    );
+    goalRef.current = {
+      innerLeft,
+      innerRight,
+      goalLine,
+    };
+    setGoalMarkers({
+      left: { x: innerLeft, y: goalLine },
+      right: { x: innerRight, y: goalLine },
+    });
+  }
+
   // ─── Measure geometry when returning to idle ──────────────────────────────
   useEffect(() => {
     if (phase !== "idle") return;
     const id = window.setTimeout(() => {
-      const lRect = leftPalmRef.current?.getBoundingClientRect();
-      const rRect = rightPalmRef.current?.getBoundingClientRect();
+      measureGoal();
       const cRect = cardRef.current?.getBoundingClientRect();
-      if (lRect && rRect) {
-        goalRef.current = {
-          innerLeft: lRect.right,
-          innerRight: rRect.left,
-          goalLine: Math.max(lRect.bottom, rRect.bottom),
-        };
-      }
       if (cRect) {
         cardOriginRef.current = { left: cRect.left, top: cRect.top };
       }
     }, 60);
     return () => window.clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase]);
 
   // ─── DOM helpers (imperative, bypass React re-renders for animation) ──────
@@ -320,15 +380,7 @@ export function PalmierGoalMiniGame({
       // Refresh goal geometry synchronously too (not just on the idle-entry
       // timer), so the drag limit below and later goal-line detection are
       // always based on up-to-date measurements.
-      const lRect = leftPalmRef.current?.getBoundingClientRect();
-      const rRect = rightPalmRef.current?.getBoundingClientRect();
-      if (lRect && rRect) {
-        goalRef.current = {
-          innerLeft: lRect.right,
-          innerRight: rRect.left,
-          goalLine: Math.max(lRect.bottom, rRect.bottom),
-        };
-      }
+      measureGoal();
 
       // Cap how far the player can manually drag the card up — beyond this,
       // dragging further doesn't move it (see onPointerMove), so reaching
@@ -351,49 +403,16 @@ export function PalmierGoalMiniGame({
     [phase],
   );
 
-  const onPointerMove = useCallback(
-    (e: React.PointerEvent) => {
-      if (phase !== "dragging") return;
-
-      // Delta-based drag: transform = pointerNow - pointerAtGrab. This is
-      // algebraically identical to the classic "grabOffset" formula
-      // (newLeft = pointerX - (pointerX0 - cardRect.left)) — the point of
-      // the card under the finger at pointerdown stays under the finger for
-      // the whole gesture, it's just expressed as a running delta instead
-      // of an absolute left/top.
-      const dx = e.clientX - pointerOriginRef.current.x;
-      // Allow free horizontal movement, but only upward vertical
-      let dy = Math.min(0, e.clientY - pointerOriginRef.current.y);
-      // Beyond the drag limit, the card stops following the finger — but
-      // the finger's real position is still recorded in samplesRef below,
-      // so a flick that blows past the boundary still launches at full
-      // speed in that same direction once released.
-      if (dragLimitYRef.current !== null) {
-        dy = Math.max(dy, dragLimitYRef.current);
-      }
-
-      posRef.current = { x: dx, y: dy };
-      applyCardTransform(dx, dy);
-
-      // Rolling sample window for velocity
-      const now = e.timeStamp;
-      samplesRef.current = [
-        ...samplesRef.current.filter((s) => now - s.t < VELOCITY_WINDOW_MS),
-        { x: e.clientX, y: e.clientY, t: now },
-      ];
-    },
-    [phase],
-  );
-
-  const onPointerUp = useCallback(
-    (e: React.PointerEvent) => {
-      if (phase !== "dragging") return;
-
+  // Shared by a normal pointerup release AND a boundary-triggered
+  // auto-release (see onPointerMove) — computes velocity from the recent
+  // pointer samples (or forces a fail for a tap) and starts the throw.
+  const releaseAndLaunch = useCallback(
+    (clientX: number, clientY: number) => {
       // A tap (negligible total finger travel) is always a miss — it
       // never gets a "lucky" straight-up shot through the gap.
       const totalTravel = Math.hypot(
-        e.clientX - pointerOriginRef.current.x,
-        e.clientY - pointerOriginRef.current.y,
+        clientX - pointerOriginRef.current.x,
+        clientY - pointerOriginRef.current.y,
       );
       const isTap = totalTravel < TAP_THRESHOLD_PX;
       forcedFailRef.current = isTap;
@@ -427,7 +446,56 @@ export function PalmierGoalMiniGame({
       setPhase("launching");
       startLaunch(vx, vy);
     },
-    [phase, startLaunch],
+    [startLaunch],
+  );
+
+  const onPointerMove = useCallback(
+    (e: React.PointerEvent) => {
+      if (phase !== "dragging") return;
+
+      // Delta-based drag: transform = pointerNow - pointerAtGrab. This is
+      // algebraically identical to the classic "grabOffset" formula
+      // (newLeft = pointerX - (pointerX0 - cardRect.left)) — the point of
+      // the card under the finger at pointerdown stays under the finger for
+      // the whole gesture, it's just expressed as a running delta instead
+      // of an absolute left/top.
+      const dx = e.clientX - pointerOriginRef.current.x;
+      // Allow free horizontal movement, but only upward vertical
+      const rawDy = Math.min(0, e.clientY - pointerOriginRef.current.y);
+
+      // Record the sample BEFORE checking the boundary, so a boundary-
+      // triggered release below still reflects the motion right up to it.
+      const now = e.timeStamp;
+      samplesRef.current = [
+        ...samplesRef.current.filter((s) => now - s.t < VELOCITY_WINDOW_MS),
+        { x: e.clientX, y: e.clientY, t: now },
+      ];
+
+      // Crossing the drag-limit boundary (dashed yellow line) auto-releases
+      // the card right there — exactly as if the finger had lifted at that
+      // point — instead of pinning the card at the line while still
+      // tracking the finger. This is what actually prevents "walking" the
+      // card up to the goal by hand: past the line, dragging further does
+      // nothing except end the drag.
+      if (dragLimitYRef.current !== null && rawDy < dragLimitYRef.current) {
+        posRef.current = { x: dx, y: dragLimitYRef.current };
+        applyCardTransform(dx, dragLimitYRef.current);
+        releaseAndLaunch(e.clientX, e.clientY);
+        return;
+      }
+
+      posRef.current = { x: dx, y: rawDy };
+      applyCardTransform(dx, rawDy);
+    },
+    [phase, releaseAndLaunch],
+  );
+
+  const onPointerUp = useCallback(
+    (e: React.PointerEvent) => {
+      if (phase !== "dragging") return;
+      releaseAndLaunch(e.clientX, e.clientY);
+    },
+    [phase, releaseAndLaunch],
   );
 
   const onPointerCancel = useCallback(() => {
@@ -581,6 +649,24 @@ export function PalmierGoalMiniGame({
           <p>L&apos;écart rétrécit au fil de la partie</p>
         </div>
       </div>
+
+      {/* Debug markers: the exact viewport point (base of each palm's inner
+          edge) the engine reads for goal validation — lets you visually
+          confirm it's aligned with the artwork. Remove once verified. */}
+      {goalMarkers ? (
+        <>
+          <div
+            className="plm-goal-debug-dot"
+            style={{ left: goalMarkers.left.x, top: goalMarkers.left.y }}
+            aria-hidden="true"
+          />
+          <div
+            className="plm-goal-debug-dot"
+            style={{ left: goalMarkers.right.x, top: goalMarkers.right.y }}
+            aria-hidden="true"
+          />
+        </>
+      ) : null}
     </section>
   );
 }
