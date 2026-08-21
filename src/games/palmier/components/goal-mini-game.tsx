@@ -33,15 +33,14 @@ const MIN_CRUISE_VY = 260;
 /** Small tolerance on each edge for goal detection (px). */
 const GOAL_TOLERANCE = 8;
 
-/** Palm width sizing — must match the CSS clamp() on .plm-goal-palm-img.
- *  There is deliberately no hard minimum here beyond PALM_SIZE_FLOOR: on a
- *  narrow phone, two big palms can eat nearly the whole screen width,
- *  leaving no room for the gap to visibly vary between tiers (or even to
- *  fit without overflowing). Palm width is capped below by how much room
- *  the gap needs (see PALM_SIZING_GAP_RESERVE), not by a fixed floor. */
-const PALM_SIZE_FLOOR = 70; // pure sanity minimum, only relevant on pathologically narrow screens
-const PALM_MAX_W = 180;
-const PALM_VW_RATIO = 0.34;
+/** Palm width — FIXED for the whole game. The palms must never resize as
+ *  cards are drawn; only the distance between them changes. Sizing the palms
+ *  with the gap (tried before) made the real trunk-to-trunk opening almost
+ *  constant: growing palms push their trunk anchors apart by exactly as much
+ *  as the shrinking CSS spacing pulled them together. */
+const PALM_SIZE_FLOOR = 80;
+const PALM_MAX_W = 130;
+const PALM_VW_RATIO = 0.26;
 
 /** Normalized anchors for the base of each palm's trunk — exactly where the
  *  visible trunk meets the ground. Measured by scanning trunk pixels in the
@@ -49,6 +48,21 @@ const PALM_VW_RATIO = 0.34;
  *  dots and the goal boundaries (innerLeft/innerRight). */
 const LEFT_PALM_GOAL_ANCHOR = { x: 0.4366, y: 0.8828 };
 const RIGHT_PALM_GOAL_ANCHOR = { x: 0.5626, y: 0.8828 };
+
+/** Horizontal distance between the two trunk anchors, in palm-box widths,
+ *  when the two boxes sit flush against each other (spacing 0). The anchors
+ *  are deep INSIDE their boxes, not at the edges, so the boxes are already
+ *  ~1.126 widths apart at their anchors before any spacing is added — this
+ *  is exactly what the CSS spacing has to compensate for. */
+const ANCHOR_SPAN = 1 + RIGHT_PALM_GOAL_ANCHOR.x - LEFT_PALM_GOAL_ANCHOR.x;
+
+/** Distance from a palm's trunk anchor out to the outer edge of its leaves,
+ *  as a fraction of box width (bbox starts at 0.2456 of the canvas). Used to
+ *  keep the visible artwork on screen even when the boxes overflow. */
+const LEAF_OVERHANG = LEFT_PALM_GOAL_ANCHOR.x - 0.2456;
+
+/** Keep this much clear space between the leaves and each screen edge (px). */
+const EDGE_MARGIN = 6;
 
 /** A release with total pointer travel under this (px) counts as a tap,
  *  not a throw — always resolves as a miss regardless of trajectory. */
@@ -59,16 +73,10 @@ const TAP_THRESHOLD_PX = 12;
  *  outcome dependent on an actual flick, not on walking the card up by hand. */
 const DRAG_LIMIT_RATIO = 0.42;
 
-/** The final gap must never be smaller than this, or the card
- *  (CARD_W wide) could never geometrically fit through it. Set to match the
+/** The goal opening must never be smaller than this, or the card
+ *  (CARD_W wide) could never geometrically fit through it. Matches the
  *  END_GAP_IN_CARDS target (1.30×), so the hardest state is always playable. */
 const MIN_PLAYABLE_GAP = CARD_W * END_GAP_IN_CARDS;
-/** Palm sizing always leaves at least this much room for the gap — bigger
- *  than MIN_PLAYABLE_GAP so the easiest tier still has visible headroom
- *  above the hardest one instead of both collapsing to the same floor. */
-const PALM_SIZING_GAP_RESERVE = CARD_W * 1.7;
-/** Total horizontal breathing room reserved outside the two palms + gap. */
-const SCREEN_MARGIN = 16;
 
 // ─── Public helpers (also used by tests) ─────────────────────────────────────
 
@@ -159,33 +167,33 @@ export function PalmierGoalMiniGame({
   // ─── Difficulty ───────────────────────────────────────────────────────────
   const screenW = typeof window !== "undefined" ? window.innerWidth : 390;
 
-  // Palm width is sized DOWNWARD from the screen, not the other way around:
-  // it's whatever fits PALM_VW_RATIO / PALM_MAX_W, but never so large that
-  // it would leave less than PALM_SIZING_GAP_RESERVE of room for the gap.
-  // .plm-goal-palm-img's CSS clamp() must mirror this so JS and CSS agree.
-  const maxPalmWidthForScreen = (screenW - SCREEN_MARGIN - PALM_SIZING_GAP_RESERVE) / 2;
+  // Palm size is FIXED for the whole game — only the spacing between the two
+  // palms changes as cards are drawn.
   const palmWidthPx = Math.max(
     PALM_SIZE_FLOOR,
-    Math.min(PALM_MAX_W, screenW * PALM_VW_RATIO, maxPalmWidthForScreen),
+    Math.min(PALM_MAX_W, screenW * PALM_VW_RATIO),
   );
 
-  // Strictly linear gap progression: starts at START_GAP_IN_CARDS (3.25×),
-  // ends at END_GAP_IN_CARDS (1.30×) when no cards remain. Recalculated after
-  // every single card draw, not in discrete tiers.
+  // Strictly linear progression of the REAL goal opening (trunk anchor to
+  // trunk anchor): START_GAP_IN_CARDS (3.25×) with a full deck down to
+  // END_GAP_IN_CARDS (1.30×) when none remain, recomputed on every draw.
   const drawnCards = totalCards - remainingCards;
   const progress = Math.min(Math.max(drawnCards / totalCards, 0), 1);
-  const gapInCards =
-    START_GAP_IN_CARDS - (START_GAP_IN_CARDS - END_GAP_IN_CARDS) * progress;
-  const rawGapPx = gapInCards * CARD_W;
+  const targetOpening =
+    CARD_W * (START_GAP_IN_CARDS - (START_GAP_IN_CARDS - END_GAP_IN_CARDS) * progress);
 
-  // Bound gap to screen size while preserving linear progression: the
-  // progression stays linear between the clamped min/max, but never exceeds
-  // available width or undercuts MIN_PLAYABLE_GAP.
-  const maxGapForScreen = Math.max(
-    MIN_PLAYABLE_GAP,
-    screenW - palmWidthPx * 2 - SCREEN_MARGIN,
-  );
-  const gapPx = Math.min(Math.max(rawGapPx, MIN_PLAYABLE_GAP), maxGapForScreen);
+  // Widest opening whose leaves still fit on screen. The palm boxes themselves
+  // may overflow the viewport — they are ~25% transparent padding on each side,
+  // so only the visible artwork has to fit (.plm-goal-stage clips the overflow).
+  const maxOpening = screenW - 2 * EDGE_MARGIN - 2 * LEAF_OVERHANG * palmWidthPx;
+  const openingPx = Math.min(Math.max(targetOpening, MIN_PLAYABLE_GAP), maxOpening);
+
+  // Convert the desired anchor-to-anchor opening into the CSS spacing between
+  // the two boxes. The anchors already sit ANCHOR_SPAN box-widths apart at
+  // spacing 0, so that offset has to come back out. On a wide screen with a
+  // tight opening this goes negative — which is why the right palm uses a
+  // margin (negative-capable) rather than a flex gap.
+  const gapPx = openingPx - ANCHOR_SPAN * palmWidthPx;
 
   // ─── Cleanup rAF on unmount ───────────────────────────────────────────────
   useEffect(() => {
@@ -510,7 +518,10 @@ export function PalmierGoalMiniGame({
   const isLocked = phase === "success" || phase === "fail" || phase === "launching";
 
   return (
-    <section className="plm-goal-stage">
+    <section
+      className="plm-goal-stage"
+      style={{ "--plm-palm-width": `${palmWidthPx}px` } as React.CSSProperties}
+    >
       {/* ── Top info bar: player, counter, badges ── */}
       <p className="current-player-label">Au tour de</p>
       <h1 className="current-player-name">{playerName}</h1>
@@ -529,13 +540,20 @@ export function PalmierGoalMiniGame({
         </div>
       ) : null}
 
-      {/* ── Goal zone: big palms as goal posts, right below badges.
-          Flex row + gap gives both palms one shared box model (identical
-          size) and gap is the exact px distance between their inner edges —
-          the same value the engine reads for goal-line validation. ── */}
+      {/* ── Goal zone: the two palms as goal posts, right below the badges.
+          Both palms keep one shared, fixed box size for the whole game; only
+          --plm-gap (the right palm's margin) changes as cards are drawn, so
+          the posts move closer together without ever resizing. The margin can
+          be negative on wide screens — the boxes overlap harmlessly, since
+          they are mostly transparent padding around the artwork. ── */}
       <div
         className="plm-goal-zone"
-        style={{ "--plm-gap": `${gapPx}px` } as React.CSSProperties}
+        style={
+          {
+            "--plm-gap": `${gapPx}px`,
+            "--plm-palm-width": `${palmWidthPx}px`,
+          } as React.CSSProperties
+        }
       >
         <div className="plm-goal-palm" ref={leftPalmRef}>
           <Image
@@ -546,7 +564,7 @@ export function PalmierGoalMiniGame({
             className="plm-goal-palm-img"
           />
         </div>
-        <div className="plm-goal-palm" ref={rightPalmRef}>
+        <div className="plm-goal-palm plm-goal-palm--right" ref={rightPalmRef}>
           <Image
             src="/games/palmier/goal/palm-right.png"
             alt="But — palmier droit"

@@ -591,23 +591,31 @@ html[data-theme="light"] .palm-ground-shadow {
   min-height: 0;
   flex-direction: column;
   align-items: center;
-  overflow: visible;
+  /* The palm boxes deliberately overflow sideways at the widest goal opening
+     (only their transparent padding does — the artwork stays on screen), so
+     clip horizontally to keep the page from scrolling. `clip` rather than
+     `hidden` so the vertical axis stays visible instead of becoming a
+     scroll container. */
+  overflow-x: clip;
+  overflow-y: visible;
   gap: clamp(0.2rem, 1vh, 0.5rem);
   padding: 0 0.25rem;
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
 }
 
-/* Goal zone: big palms used as posts, right below the badges.
-   Flex row + `gap` places both palms with one shared box model and makes
-   the gap value the exact px distance between their inner edges — matching
-   what the engine reads off leftRect.right / rightRect.left for validation.
+/* Goal zone: the two palms used as posts, right below the badges.
+   Spacing is applied as a margin on the right palm rather than a flex `gap`
+   because it must be able to go NEGATIVE: the trunk anchors sit deep inside
+   their boxes (~1.126 box-widths apart even when the boxes touch), so
+   reaching the tightest goal opening on a wide screen requires the boxes to
+   overlap. That overlap is harmless — the PNGs are ~25% transparent padding
+   per side, so the visible artwork never collides.
    align-items: flex-start keeps both tops flush against the zone's top, so
    there's no dead space between the badges above and the palm tops. */
 .plm-goal-zone {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--plm-gap, 220px);
   width: 100%;
   flex: 0 0 auto;
   overflow: visible;
@@ -618,6 +626,10 @@ html[data-theme="light"] .palm-ground-shadow {
 .plm-goal-palm {
   flex: 0 0 auto;
   display: flex;
+}
+
+.plm-goal-palm--right {
+  margin-left: var(--plm-gap, 200px);
 }
 
 /* Shared by both palms so left/right are guaranteed pixel-identical — one
@@ -638,7 +650,7 @@ html[data-theme="light"] .palm-ground-shadow {
    space left for a visible, playable gap. */
 .plm-goal-palm-img {
   display: block !important;
-  width: clamp(70px, min(34vw, calc((100vw - 186px) / 2)), 180px) !important;
+  width: var(--plm-palm-width, clamp(80px, 26vw, 130px)) !important;
   height: auto !important;
 }
 
