@@ -12,8 +12,8 @@ import {
 import { loadCurrentGame, saveCurrentGame } from "@/games/triman/lib/game/persistence";
 import type { GameState } from "@/games/triman/lib/game/types";
 
-const ROLL_ANIMATION_MS = 360;
-const TRIMAN_ROLL_ANIMATION_MS = Math.round(ROLL_ANIMATION_MS * 1.5); // 540ms
+const ROLL_ANIMATION_MS = 720;
+const TRIMAN_ROLL_ANIMATION_MS = Math.round(ROLL_ANIMATION_MS * 1.5); // 1080ms
 
 // Pip layout for a d6 face on a 3x3 grid (cell indices 0-8, left-to-right,
 // top-to-bottom).
