@@ -272,3 +272,5 @@ AntaVerse is an early-stage mobile-first party-game app.
 Prefer simple, correct React over clever React.
 
 Optimize real bottlenecks, shared hot paths, and mobile experience without introducing server complexity or premature abstractions.
+
+Refactor le component React de Quoi de 9 dans AntaVerse, vérifie le typecheck et les tests Playwright, puis commit les changements et push sur la branche QA sans modifier la logique IndexedDB ni le layout mobile-first

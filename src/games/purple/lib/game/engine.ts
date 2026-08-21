@@ -154,7 +154,7 @@ export function submitGuess(
     };
   }
 
-  const sipsDrunk = game.pile;
+  const sipsDrunk = game.pile + drawCount;
   return {
     ...game,
     deck,
@@ -166,8 +166,8 @@ export function submitGuess(
       playerId: currentPlayer.id,
       cards: drawn,
       outcome,
-      cardsGained: 0,
-      sipsAdded: 0,
+      cardsGained: drawCount,
+      sipsAdded: drawCount,
       sipsDrunk,
       reshuffled,
     },

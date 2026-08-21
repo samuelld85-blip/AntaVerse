@@ -196,10 +196,10 @@ describe("submitGuess", () => {
     expect(next.lastGuess?.cards).toHaveLength(2);
   });
 
-  it("failure makes the current player drink the full pre-failure pile and resets it", () => {
+  it("failure makes the current player drink the full pre-failure pile plus the cards they played", () => {
     const game = makeGame([RED_1, RED_2], { pile: 12, progress: 2 });
     const next = submitGuess(game, "purple", seededRandom(1));
-    expect(next.lastGuess?.sipsDrunk).toBe(12);
+    expect(next.lastGuess?.sipsDrunk).toBe(14); // 12 (pre-pile) + 2 (purple cards)
     expect(next.pile).toBe(0);
     expect(next.progress).toBe(0);
   });
@@ -319,6 +319,7 @@ describe("higher/lower mechanics", () => {
     const game = makeGame([draw8], { lastCard: ref9, pile: 10, progress: 2 });
     const next = submitGuess(game, "higher", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.lastGuess?.sipsDrunk).toBe(11); // 10 (pre-pile) + 1 (higher card)
     expect(next.pile).toBe(0);
     expect(next.progress).toBe(0);
     expect(next.lastCard).toBeUndefined();
@@ -330,6 +331,7 @@ describe("higher/lower mechanics", () => {
     const game = makeGame([draw9], { lastCard: ref9, pile: 5, progress: 2 });
     const next = submitGuess(game, "higher", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.lastGuess?.sipsDrunk).toBe(6); // 5 (pre-pile) + 1 (higher card)
     expect(next.pile).toBe(0);
     expect(next.progress).toBe(0);
   });
@@ -350,6 +352,7 @@ describe("higher/lower mechanics", () => {
     const game = makeGame([draw10], { lastCard: ref9, pile: 8, progress: 2 });
     const next = submitGuess(game, "lower", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.lastGuess?.sipsDrunk).toBe(9); // 8 (pre-pile) + 1 (lower card)
     expect(next.pile).toBe(0);
     expect(next.progress).toBe(0);
     expect(next.lastCard).toBeUndefined();
@@ -361,6 +364,7 @@ describe("higher/lower mechanics", () => {
     const game = makeGame([draw9], { lastCard: ref9, pile: 3, progress: 2 });
     const next = submitGuess(game, "lower", seededRandom(1));
     expect(next.lastGuess?.outcome).toBe("failure");
+    expect(next.lastGuess?.sipsDrunk).toBe(4); // 3 (pre-pile) + 1 (lower card)
     expect(next.pile).toBe(0);
     expect(next.progress).toBe(0);
   });
