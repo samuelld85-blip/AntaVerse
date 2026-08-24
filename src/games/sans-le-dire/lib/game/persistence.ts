@@ -16,15 +16,26 @@ export function clearCurrentGame(): void {
   removeJson(STORAGE_KEY);
 }
 
-export function saveTeamNames(names: readonly [string, string] | readonly [string, string, string]): void {
-  writeJson(TEAM_NAMES_KEY, names);
+export function saveTeamNames(
+  names: readonly [string, string] | readonly [string, string, string],
+): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem(TEAM_NAMES_KEY, JSON.stringify(names));
+  } catch {
+    // The current game remains playable if session storage is unavailable.
+  }
 }
 
 export function loadTeamNames(): [string, string] | [string, string, string] {
   if (typeof window === "undefined") return ["Les Antagonistes", "Les Sanglieeers"];
   try {
-    const value: unknown = JSON.parse(window.localStorage.getItem(TEAM_NAMES_KEY) ?? "null");
-    if (!Array.isArray(value) || (value.length !== 2 && value.length !== 3) || !value.every((name) => typeof name === "string"))
+    const value: unknown = JSON.parse(window.sessionStorage.getItem(TEAM_NAMES_KEY) ?? "null");
+    if (
+      !Array.isArray(value) ||
+      (value.length !== 2 && value.length !== 3) ||
+      !value.every((name) => typeof name === "string")
+    )
       return ["Les Antagonistes", "Les Sanglieeers"];
     const names = value as [string, string] | [string, string, string];
     if (names[0] === "Équipe 1" && names[1] === "Équipe 2")
@@ -32,6 +43,18 @@ export function loadTeamNames(): [string, string] | [string, string, string] {
     return names;
   } catch {
     return ["Les Antagonistes", "Les Sanglieeers"];
+  }
+}
+
+export function clearTeamNames(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.removeItem(TEAM_NAMES_KEY);
+    // Remove the previous persistent value during the transition to
+    // session-only retention.
+    window.localStorage.removeItem(TEAM_NAMES_KEY);
+  } catch {
+    // Storage can be unavailable in private browsing.
   }
 }
 

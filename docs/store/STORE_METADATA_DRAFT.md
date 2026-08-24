@@ -20,13 +20,13 @@ principal de vente.
 - **Nom (Apple & Google)** : AntaVerse
 - **Subtitle (Apple, 30 caractères max)** : brouillon — "Vos soirées, en
   jeux" (à valider, 20 caractères)
-- **Short description (Google, 80 caractères max)** : brouillon — "8 jeux
+- **Short description (Google, 80 caractères max)** : brouillon — "Des jeux
   d'ambiance à jouer entre amis, sur un seul téléphone." (à recompter
   précisément)
 
 ## Description longue (brouillon)
 
-> AntaVerse rassemble huit jeux d'ambiance pensés pour être joués à
+> AntaVerse rassemble des jeux d'ambiance pensés pour être joués à
 > plusieurs, sur un seul téléphone : quiz rapide, jeux de cartes, défis de
 > groupe et jeux de dés. Certains jeux proposent un mode "gorgées" — une
 > mécanique de jeu comme une autre, jamais une obligation de consommer de

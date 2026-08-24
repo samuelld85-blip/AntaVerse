@@ -1,9 +1,14 @@
 "use client";
 
+import { Capacitor } from "@capacitor/core";
 import { useEffect } from "react";
 
 export function ServiceWorkerRegistration() {
   useEffect(() => {
+    // Le build Android contient déjà tous les fichiers de l'export statique.
+    // Un Service Worker y dupliquerait inutilement l'application dans le Cache API.
+    if (Capacitor.isNativePlatform()) return;
+
     if (!("serviceWorker" in navigator)) return;
 
     if (process.env.NODE_ENV !== "production") {

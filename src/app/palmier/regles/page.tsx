@@ -109,7 +109,7 @@ export default function RulesPage() {
           <div>
             <h2>Un vrai jeu de 52 cartes</h2>
             <p>
-              L'appli mélange un jeu de 52 cartes au départ. Chaque carte n'apparaît qu'une fois par
+              L’appli mélange un jeu de 52 cartes au départ. Chaque carte n’apparaît qu’une fois par
               partie. La couleur (♠ ♥ ♦ ♣) est décorative — seule la valeur compte.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function RulesPage() {
           <div>
             <h2>Les « gorgées »</h2>
             <p>
-              Une gorgée, c'est n'importe quelle petite pénalité que le groupe choisit. Rien n'est
+              Une gorgée, c’est n’importe quelle petite pénalité que le groupe choisit. Rien n’est
               obligatoire.
             </p>
           </div>

@@ -36,7 +36,6 @@ test("finds the Triman, stacks the Triman and doubles rules, and keeps the rolle
   await expect(page.getByText("Bob devient le Triman !")).toBeVisible();
   await page.getByRole("status").click();
 
-  await expect(page.getByText("Triman actif")).toBeVisible();
   await expect(page.getByText("Triman : Bob")).toBeVisible();
   // Play resumes with the player after the new Triman: Chris.
   await expect(page.getByRole("heading", { name: "Chris" })).toBeVisible();

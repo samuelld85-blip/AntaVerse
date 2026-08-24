@@ -1,6 +1,6 @@
 # Prestataires et SDK tiers
 
-Dernière vérification technique : 2026-08-20.
+Dernière vérification technique : 2026-08-24.
 
 ## Méthode
 
@@ -12,14 +12,15 @@ réseau) et **SDK** (communique avec un serveur).
 
 ## Dépendances de production réelles
 
-| Paquet | Rôle | Communique avec un serveur ? | Déclaration Apple Privacy / Google Data Safety nécessaire ? |
-|---|---|---|---|
-| `next` | Framework applicatif (compile-time + runtime React) | Non — export statique, aucun runtime serveur Next côté client | Non |
-| `react` / `react-dom` | Bibliothèque d'interface utilisateur | Non | Non |
-| `idb` | Enveloppe utilitaire autour de l'API IndexedDB native du navigateur | Non — 100 % local | Non |
-| `zod` | Validation de schémas de données | Non — 100 % local | Non |
+| Paquet                                   | Rôle                                                                               | Communique avec un serveur ?                                  | Déclaration Apple Privacy / Google Data Safety nécessaire ? |
+| ---------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------- |
+| `next`                                   | Framework applicatif (compile-time + runtime React)                                | Non — export statique, aucun runtime serveur Next côté client | Non                                                         |
+| `react` / `react-dom`                    | Bibliothèque d'interface utilisateur                                               | Non                                                           | Non                                                         |
+| `idb`                                    | Enveloppe utilitaire autour de l'API IndexedDB native du navigateur                | Non — 100 % local                                             | Non                                                         |
+| `zod`                                    | Validation de schémas de données                                                   | Non — 100 % local                                             | Non                                                         |
+| `@capacitor/core` / `@capacitor/android` | Pont et conteneur natif Android ; sert les fichiers statiques depuis l'application | Non — aucun service distant Capacitor n'est configuré         | Non                                                         |
 
-**Aucune de ces quatre dépendances n'est un SDK au sens où l'entend cet
+**Aucune de ces dépendances n'est un SDK de collecte au sens où l'entend cet
 audit** : ce sont des bibliothèques exécutées entièrement dans le
 navigateur/l'appareil de l'utilisateur, sans appel réseau vers un serveur
 tiers. Aucune n'a donc à être déclarée comme "collecte de données par un
@@ -42,6 +43,12 @@ voir `docs/compliance/DATA_INVENTORY.md`. Ce n'est pas un SDK intégré au
 code de l'application, mais un prestataire d'infrastructure ; ses propres
 conditions et sa politique de confidentialité s'appliquent à ce traitement,
 indépendamment du code d'AntaVerse.
+
+Dans la version Android packagée, l'interface et les jeux sont servis depuis
+les assets inclus dans l'AAB et ne dépendent pas de Vercel au lancement. Les
+journaux de livraison Vercel ne concernent donc pas l'usage hors ligne de ce
+bundle. Une navigation volontaire vers une future URL publique externe de
+support ou de confidentialité repasserait naturellement par son hébergeur.
 
 ## Polices et assets externes
 

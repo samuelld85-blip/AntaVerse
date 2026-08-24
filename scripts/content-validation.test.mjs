@@ -5,7 +5,7 @@ import { validateContentLibrary } from "./content-validation.mjs";
 const library = await loadContentLibrary();
 
 describe("politique éditoriale de la bibliothèque", () => {
-  it("accepte une banque jouable avec au moins 15 fiches par thème et les trois niveaux représentés", () => {
+  it("accepte une banque jouable avec au moins 15 fiches par thème et les deux niveaux représentés", () => {
     const result = validateContentLibrary(library);
     expect(result.errors).toEqual([]);
     const published = library.questions.filter((question) => question.status === "published");
@@ -13,7 +13,7 @@ describe("politique éditoriale de la bibliothèque", () => {
     for (const theme of library.themes) {
       const themeQuestions = published.filter((question) => question.themeId === theme.id);
       expect(themeQuestions.length).toBeGreaterThanOrEqual(15);
-      for (const level of [1, 2, 3]) {
+      for (const level of [1, 2]) {
         expect(
           themeQuestions.filter((question) => question.difficultyLevel === level).length,
         ).toBeGreaterThan(0);

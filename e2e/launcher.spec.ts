@@ -1,10 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-test("lists the nine games vertically and opens each game", async ({ page }) => {
+test("lists the ten games vertically and opens each game", async ({ page }) => {
   await page.goto("/");
 
   const cards = page.getByRole("link", { name: /^jouer à /i });
-  await expect(cards).toHaveCount(9);
+  await expect(cards).toHaveCount(10);
   await expect(cards.nth(0)).toContainText("Quoi de 9 ?");
   await expect(cards.nth(1)).toContainText("La Relance");
   await expect(cards.nth(2)).toContainText("Sans le dire");
@@ -14,18 +14,14 @@ test("lists the nine games vertically and opens each game", async ({ page }) => 
   await expect(cards.nth(6)).toContainText("Palmier");
   await expect(cards.nth(7)).toContainText("Fuck");
   await expect(cards.nth(8)).toContainText("La Traversée");
+  await expect(cards.nth(9)).toContainText("PMU");
 
   const boxes = await cards.evaluateAll((elements) =>
     elements.map((element) => element.getBoundingClientRect().top),
   );
-  expect(boxes[0]).toBeLessThan(boxes[1]!);
-  expect(boxes[1]).toBeLessThan(boxes[2]!);
-  expect(boxes[2]).toBeLessThan(boxes[3]!);
-  expect(boxes[3]).toBeLessThan(boxes[4]!);
-  expect(boxes[4]).toBeLessThan(boxes[5]!);
-  expect(boxes[5]).toBeLessThan(boxes[6]!);
-  expect(boxes[6]).toBeLessThan(boxes[7]!);
-  expect(boxes[7]).toBeLessThan(boxes[8]!);
+  for (let index = 0; index < boxes.length - 1; index += 1) {
+    expect(boxes[index]).toBeLessThan(boxes[index + 1]!);
+  }
 
   for (const [name, route] of [
     ["Quoi de 9 ?", "/quoi-de-9/"],
@@ -37,6 +33,7 @@ test("lists the nine games vertically and opens each game", async ({ page }) => 
     ["Palmier", "/palmier/"],
     ["Fuck", "/fuck/"],
     ["La Traversée", "/la-traversee/"],
+    ["PMU", "/pmu/"],
   ] as const) {
     await page.goto("/");
     await page.getByRole("link", { name: `Jouer à ${name}` }).click();

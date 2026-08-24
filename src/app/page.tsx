@@ -33,8 +33,8 @@ export default function HomePage() {
 
       <section className="launcher-games" aria-label="Jeux disponibles">
         <ol>
-          {games.map((game, index) => (
-            <GameCard key={game.id} game={game} index={index} />
+          {games.map((game) => (
+            <GameCard key={game.id} game={game} />
           ))}
         </ol>
       </section>

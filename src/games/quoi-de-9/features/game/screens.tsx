@@ -19,7 +19,7 @@ import {
   formatScore,
   formatSignedScore,
 } from "@/games/quoi-de-9/lib/game/scoring";
-import { calculateFunSips, formatSignedSips, formatSips } from "@/games/quoi-de-9/lib/game/fun-rewards";
+import { calculateFunSips } from "@/games/quoi-de-9/lib/game/fun-rewards";
 import type { GameState, Question, Team, Theme } from "@/games/quoi-de-9/lib/game/types";
 
 export function GameHeader({ game, onAbandon }: { game: GameState; onAbandon: () => void }) {

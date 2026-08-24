@@ -250,6 +250,15 @@ The phone should support the game, not force players to record every real-world 
 
 ## Validation
 
+### Android validation is opt-in
+
+The Capacitor/Android package is currently maintenance-only. Do not run Android
+build, verification, emulator/device, native, instrumented, APK, or AAB tests
+by default, and do not include them in routine validation or `npm run verify`.
+Run commands such as `android:check`, `android:test:*`, `android:apk:debug`, or
+`android:bundle` only when the user explicitly requests Android work or an
+Android release check.
+
 Validate proportionally to the change.
 
 ### Small targeted change

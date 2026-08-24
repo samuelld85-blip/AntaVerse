@@ -1,6 +1,6 @@
 # Audit critique — contenu alcool et politique des stores
 
-Dernière vérification des exigences stores : 2026-08-20. Les politiques
+Dernière vérification des exigences stores : 2026-08-24. Les politiques
 Apple et Google évoluent régulièrement — à revalider juste avant toute
 soumission réelle sur les pages officielles (App Review Guidelines §1.4.3,
 Google Play Alcohol content policy).
@@ -28,10 +28,11 @@ le point le plus important de cet audit.
 
 ## Jeux inventoriés
 
-Registre réel (`src/lib/games.ts`) : 8 jeux, dont 5 marqués
-`drinkingGame: true` (Purple, Triman, Roulette du Chaos, Palmier, Fuck) et 2 avec
-un mode "Fun" optionnel à gorgées (Quoi de 9, Sans le dire) en plus de leur
-mode Compétition sans alcool. La Relance n'a aucun contenu alcool.
+Registre réel (`src/lib/games.ts`) : 10 jeux, dont 7 marqués
+`drinkingGame: true` (Purple, Triman, Roulette du Chaos, Palmier, Fuck,
+La Traversée et PMU) et 2 avec un mode "Fun" optionnel à gorgées (Quoi de 9,
+Sans le dire) en plus de leur mode Compétition sans alcool. La Relance n'a
+aucun contenu alcool.
 
 ---
 
@@ -46,6 +47,7 @@ Seuls les reviewers officiels (Apple Review, Google Play) trancheront au final.
 ### 🔴 Risque sérieux à traiter avant soumission
 
 **Purple — le mécanisme central du jeu (`src/games/purple/`).**
+
 > Règle réelle (`src/app/purple/regles/page.tsx`) : "Chaque carte réussie
 > ajoute 1 gorgée au pot commun... Une carte ratée fait boire tout le pot au
 > joueur en cours." Le pot n'a pas de plafond dans le code
@@ -61,7 +63,7 @@ fois, mise en scène compétitive de "qui écope du gros pot"). C'est le jeu
 entier, pas un seul événement rare — donc pas contournable par une simple
 reformulation de texte.
 
-*Solution produit minimale, à valider avec vous avant toute mise en œuvre :*
+_Solution produit minimale, à valider avec vous avant toute mise en œuvre :_
 un plafond visible sur le pot (ex. "le pot ne dépasse jamais 6 gorgées, le
 surplus est offert au groupe entier plutôt qu'à une seule personne"), ou
 transformer "boire tout le pot" en "distribuer le pot" comme le fait déjà
@@ -69,6 +71,7 @@ Roulette du Chaos pour ses événements à forte valeur. **Aucune mécanique
 n'a été modifiée dans ce chantier** — ce choix vous appartient.
 
 **Palmier — carte As, "Cascade" (`src/games/palmier/data/card-rules.ts`).**
+
 > "Tout le monde boit en cascade. Le joueur actif commence à boire. Le
 > joueur suivant peut s'arrêter uniquement après lui, et ainsi de suite."
 
@@ -77,12 +80,13 @@ lorsque le précédent s'arrête, sans durée plafonnée dans le texte — la du
 réelle dépend de combien de temps le premier joueur choisit de boire, ce qui
 en fait une mécanique ouverte plutôt que bornée.
 
-*Solution produit minimale :* fixer une durée ou un nombre de gorgées
+_Solution produit minimale :_ fixer une durée ou un nombre de gorgées
 explicite dans le texte de la règle (ex. "chacun boit au maximum 3 gorgées
 avant de pouvoir s'arrêter"), pour que la règle elle-même porte une limite
 plutôt que de reposer sur le bon sens du groupe.
 
 **Palmier — 4ᵉ Roi, carte "CUL SEC" (`src/games/palmier/data/card-rules.ts`).**
+
 > `getKingRule(4)` : titre "TU AS FAIT TOMBER LE PALMIER", corps **"CUL SEC !"**
 > — instruction explicite de terminer une boisson d'un trait.
 
@@ -91,7 +95,7 @@ littérale et sans ambiguïté de "cul sec", explicitement le type de formulatio
 que la politique alcool de Google cite comme signal de consommation
 dangereuse.
 
-*Solution produit minimale :* remplacer l'instruction par une pénalité
+_Solution produit minimale :_ remplacer l'instruction par une pénalité
 bornée en gorgées (cohérente avec le reste du jeu, ex. "bois 4 gorgées")
 plutôt qu'une injonction à finir un verre entier.
 
@@ -100,6 +104,7 @@ plutôt qu'une injonction à finir un verre entier.
 ### 🟠 À reformuler (risque modéré, correctif de texte suffisant)
 
 **Triman — règle "Double" (`src/games/triman/lib/game/rules.ts`).**
+
 > Sur un double au dé : "boit N gorgées et en distribue N", N pouvant
 > atteindre 6 (double six) — jusqu'à 6 gorgées personnelles + 6 distribuées
 > sur un seul lancer.
@@ -108,13 +113,21 @@ C'est un plafond net (6 est le maximum possible avec deux dés), donc borné
 et prévisible — mais la combinaison la plus élevée mérite d'être vérifiée
 lors d'un futur passage en revue éditorial, sans urgence.
 
+**PMU — mises et gains (`src/games/pmu/`).**
+Chaque joueur choisit une mise bornée de 1 à 5 gorgées. Un pari perdant fait
+prendre cette mise ; un pari gagnant permet d'en distribuer le double, soit
+jusqu'à 10 gorgées. La perte individuelle est plafonnée à 5, mais le gain à
+distribuer est plus élevé que dans plusieurs autres jeux : conserver une
+répartition entre plusieurs personnes et éviter toute formulation permettant
+d'imposer les 10 à une seule personne.
+
 **Roulette du Chaos — catégorie JACKPOT (`data/events/jackpot.ts`).**
 Événements rares distribuant jusqu'à 8–9 gorgées, mais **toujours en mode
 "distribue"** (réparties entre plusieurs joueurs, "gérez entre vous"), avec
 des plafonds explicites sur plusieurs événements ("maximum 3 par personne",
 "maximum 2 gorgées maximum"). Le commentaire du fichier source lui-même
-précise l'intention : *"Never punishes with more than the group can
-handle."* Risque plus faible que Purple/Palmier car ce n'est jamais une
+précise l'intention : _"Never punishes with more than the group can
+handle."_ Risque plus faible que Purple/Palmier car ce n'est jamais une
 seule personne qui absorbe le total, et l'intention de conception est déjà
 alignée avec les politiques des stores.
 
@@ -127,7 +140,7 @@ glorifie la consommation excessive comme un objectif à atteindre — ce sont
 des questions de type "qui, parmi vous" ou des affirmations "je n'ai
 jamais" — mais la densité de ce contenu justifie une classification d'âge
 élevée assumée plutôt que minimisée. Voir `docs/compliance/AGE_RATING.md`.
-Ce point n'est pas un risque *alcool* à proprement parler, il est documenté
+Ce point n'est pas un risque _alcool_ à proprement parler, il est documenté
 ici parce que le contenu est mélangé dans les mêmes bancs.
 
 ---
@@ -148,6 +161,10 @@ ici parce que le contenu est mélangé dans les mêmes bancs.
 - **Triman — règles de somme (7, 9, 11) et réflexes** (`rules.ts`) :
   1 à 3 gorgées, bornées, mécaniques de réflexe classiques (dernier à poser
   le doigt/poing boit) sans compétition de vitesse de consommation.
+- **La Traversée** (`src/games/la-traversee/`) : une erreur fait boire le
+  nombre d'étapes tentées, avec un plafond technique explicite de 6
+  (`MAX_ROUND_GUESSES`). La pénalité est bornée et ne met pas en scène une
+  vitesse de consommation.
 - **`mime-words.ts` / `voice-styles.ts`** : mimes/imitations mentionnant
   "être bourré" comme thème à jouer (ex. "marcher droit en étant
   complètement bourré") — évoquent l'ivresse comme sujet comique/social,

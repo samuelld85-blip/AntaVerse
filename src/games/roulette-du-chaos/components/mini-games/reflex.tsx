@@ -87,9 +87,6 @@ export function Reflex({
     firstTapRef.current = null;
     goStartedRef.current = false;
 
-    setResult(null);
-    setPhase("wait");
-
     const delay =
       MIN_DELAY_MS +
       Math.random() * (MAX_DELAY_MS - MIN_DELAY_MS);

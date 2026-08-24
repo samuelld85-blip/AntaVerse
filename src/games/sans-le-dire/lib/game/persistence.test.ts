@@ -4,9 +4,8 @@ import { createSoloGame } from "./solo-engine";
 import {
   saveTeamNames,
   loadTeamNames,
-  saveCurrentGame,
+  clearTeamNames,
   loadCurrentGame,
-  clearCurrentGame,
   saveSoloGame,
   loadSoloGame,
   clearSoloGame,
@@ -15,10 +14,12 @@ import {
 describe("Sans le dire - Persistance des équipes", () => {
   beforeEach(() => {
     localStorage.clear();
+    sessionStorage.clear();
   });
 
   afterEach(() => {
     localStorage.clear();
+    sessionStorage.clear();
   });
 
   it("charge la configuration par défaut au premier démarrage", () => {
@@ -30,6 +31,12 @@ describe("Sans le dire - Persistance des équipes", () => {
     saveTeamNames(["Team A", "Team B"]);
     const names = loadTeamNames();
     expect(names).toEqual(["Team A", "Team B"]);
+  });
+
+  it("efface les noms quand la session Sans le dire se termine", () => {
+    saveTeamNames(["Team A", "Team B"]);
+    clearTeamNames();
+    expect(loadTeamNames()).toEqual(["Les Antagonistes", "Les Sanglieeers"]);
   });
 
   it("persiste une configuration avec 3 équipes", () => {
@@ -69,13 +76,16 @@ describe("Sans le dire - Persistance des équipes", () => {
   });
 
   it("rejette les configurations avec plus de 3 équipes", () => {
-    localStorage.setItem("sans-le-dire:team-names", JSON.stringify(["Team A", "Team B", "Team C", "Team D"]));
+    sessionStorage.setItem(
+      "sans-le-dire:team-names",
+      JSON.stringify(["Team A", "Team B", "Team C", "Team D"]),
+    );
     const names = loadTeamNames();
     expect(names).toEqual(["Les Antagonistes", "Les Sanglieeers"]);
   });
 
   it("gère les noms spéciaux correctement", () => {
-    saveTeamNames(["Équipe 1 & Co.", "Équipe 2 (édition)"] as any);
+    saveTeamNames(["Équipe 1 & Co.", "Équipe 2 (édition)"]);
     const names = loadTeamNames();
     expect(names).toEqual(["Équipe 1 & Co.", "Équipe 2 (édition)"]);
   });

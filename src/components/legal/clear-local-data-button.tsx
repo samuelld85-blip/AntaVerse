@@ -8,13 +8,20 @@ import { useState } from "react";
 const LOCAL_STORAGE_KEYS = [
   "la-relance:current-game",
   "sans-le-dire:current-game",
+  "sans-le-dire:solo-current-game",
+  // Legacy preference key: it is no longer written, but can remain on an
+  // older installation until the user clears their local data.
   "sans-le-dire:team-names",
   "palmier:current-game",
   "triman:current-game",
   "purple:current-game",
+  // Legacy optional preference key, kept here solely so older installations
+  // can erase it.
   "purple:reveal-mode",
   "roulette-du-chaos:current-game",
   "fuck:current-game",
+  "la-traversee:current-game",
+  "pmu:current-game",
   "qui-des-9:current-game",
 ] as const;
 
@@ -34,6 +41,11 @@ function clearAntaVerseLocalData(): void {
     window.indexedDB.deleteDatabase(INDEXED_DB_NAME);
   } catch {
     // IndexedDB indisponible sur cette origine.
+  }
+  try {
+    window.sessionStorage.removeItem("sans-le-dire:team-names");
+  } catch {
+    // Stockage de session indisponible : rien à effacer.
   }
 }
 

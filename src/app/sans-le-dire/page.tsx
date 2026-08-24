@@ -1,5 +1,9 @@
 import { Brand } from "@/games/sans-le-dire/components/brand";
-import { ResumeGameCard, SoloResumeGameCard } from "@/games/sans-le-dire/components/resume-game-card";
+import { ClearTeamNamesOnHome } from "@/games/sans-le-dire/components/clear-team-names-on-home";
+import {
+  ResumeGameCard,
+  SoloResumeGameCard,
+} from "@/games/sans-le-dire/components/resume-game-card";
 import { ThemeSelector } from "@/games/shared/components/theme-selector";
 import { ButtonLink } from "@/games/shared/components/ui";
 import { GameHomeNav } from "@/components/game-home-nav";
@@ -7,6 +11,7 @@ import { GameHomeNav } from "@/components/game-home-nav";
 export default function HomePage() {
   return (
     <main className="home-shell safe-shell">
+      <ClearTeamNamesOnHome />
       <header className="game-home-header">
         <Brand />
         <GameHomeNav rulesHref="/sans-le-dire/regles" />

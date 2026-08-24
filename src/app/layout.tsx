@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: "AntaVerse",
     template: "%s · AntaVerse",
   },
-  description: "Neuf jeux d’ambiance, une seule application.",
+  description: "Des jeux d’ambiance, une seule application.",
   applicationName: "AntaVerse",
   manifest: "/manifest.webmanifest",
   appleWebApp: {

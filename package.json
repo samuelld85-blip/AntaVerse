@@ -6,7 +6,7 @@
     "node": "22.x"
   },
   "overrides": {
-    "postcss": "8.5.19"
+    "postcss": "8.5.23"
   },
   "scripts": {
     "dev": "next dev",
@@ -15,6 +15,15 @@
     "postbuild": "node scripts/prepare-static-pwa.mjs",
     "preview": "node scripts/serve-static.mjs",
     "pwa:icons": "node scripts/generate-pwa-icons.mjs",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "cap open android",
+    "android:apk:debug": "npm run android:sync && node scripts/run-android-gradle.mjs assembleDebug",
+    "android:check": "npm run android:sync && node scripts/verify-android-release.mjs",
+    "android:test:native": "node scripts/run-android-gradle.mjs testDebugUnitTest",
+    "android:test:device": "node scripts/run-android-gradle.mjs app:connectedDebugAndroidTest",
+    "android:test:bundle": "node scripts/test-android-release-bundle.mjs",
+    "android:bundle": "npm run android:sync && node scripts/verify-android-release.mjs --require-signing && node scripts/run-android-gradle.mjs bundleRelease",
+    "android:verify": "node scripts/verify-android-release.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -42,20 +51,23 @@
     "verify": "npm run encoding:check && npm run content:validate && npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
     "idb": "8.0.3",
-    "next": "16.2.10",
+    "next": "16.3.2",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "zod": "4.4.3"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.0",
     "@playwright/test": "1.61.1",
     "@tailwindcss/postcss": "4.3.2",
     "@types/node": "26.1.1",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.5",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.3.2",
     "fake-indexeddb": "6.2.5",
     "jsdom": "29.1.1",
     "prettier": "3.9.5",

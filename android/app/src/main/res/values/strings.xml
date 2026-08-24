@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AntaVerse</string>
+    <string name="title_activity_main">AntaVerse</string>
+    <string name="package_name">com.antaverse.app</string>
+    <string name="custom_url_scheme">com.antaverse.app</string>
+</resources>

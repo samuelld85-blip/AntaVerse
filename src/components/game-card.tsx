@@ -6,7 +6,7 @@ import type { CSSProperties } from "react";
 import type { GameDefinition } from "@/lib/games";
 import { useThemeMode } from "@/lib/use-theme-mode";
 
-export function GameCard({ game, index }: { game: GameDefinition; index: number }) {
+export function GameCard({ game }: { game: GameDefinition }) {
   const { theme } = useThemeMode("dark");
   const iconSrc = theme === "light" && game.iconLight ? game.iconLight : game.icon;
 

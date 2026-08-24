@@ -39,5 +39,11 @@ next-env.d.ts
 
 .vercel
 
+# Android release signing (never commit private keys or passwords)
+/android/keystore.properties
+/android/keystores/
+*.jks
+*.keystore
+
 .vercel
 .env*

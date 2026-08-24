@@ -1,6 +1,6 @@
 # Préparation — Data Safety (Google Play Console)
 
-Dernière vérification des exigences stores : 2026-08-20. Basé sur le même
+Dernière vérification des exigences stores : 2026-08-24. Basé sur le même
 audit que `docs/store/APPLE_PRIVACY_DECLARATION.md` — les deux déclarations
 doivent rester cohérentes entre elles et avec
 `/legal/confidentialite`.
@@ -9,7 +9,7 @@ doivent rester cohérentes entre elles et avec
 
 - **Votre application collecte-t-elle ou partage-t-elle des types de
   données utilisateur requis ?** Non, sur la base de l'audit actuel :
-  aucune requête réseau applicative, aucun SDK tiers, aucune donnée
+  aucune requête réseau applicative, aucun SDK de collecte, aucune donnée
   transmise à l'éditeur (voir `docs/compliance/DATA_INVENTORY.md`).
 - **Toutes les données utilisateur collectées par votre application
   sont-elles chiffrées en transit ?** Sans objet : aucune donnée
@@ -27,19 +27,19 @@ doivent rester cohérentes entre elles et avec
 
 ## Tableau par catégorie Google Play
 
-| Catégorie | Collectée ? | Partagée avec un tiers ? | Optionnelle ? | Finalité déclarée |
-|---|---|---|---|---|
-| Localisation | Non | — | — | — |
-| Informations personnelles | Non | — | — | — |
-| Informations financières | Non | — | — | — |
-| Santé et fitness | Non | — | — | — |
-| Messages | Non | — | — | — |
-| Photos et vidéos | Non | — | — | — |
-| Fichiers audio | Non | — | — | — |
-| Stockage | Non (au sens "transmis à un tiers") — le stockage local existe mais reste sur l'appareil | Non | — | Fonctionnement de l'application (parties sauvegardées, préférences) |
-| Activité dans l'application | Non | — | — | — |
-| Informations sur l'application et les performances (crash logs) | Non | — | — | Aucun SDK de diagnostic intégré |
-| Identifiants de l'appareil ou autres identifiants | Non | — | — | Aucun identifiant généré ou transmis |
+| Catégorie                                                       | Collectée ?                                                                              | Partagée avec un tiers ? | Optionnelle ? | Finalité déclarée                                                   |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------ | ------------- | ------------------------------------------------------------------- |
+| Localisation                                                    | Non                                                                                      | —                        | —             | —                                                                   |
+| Informations personnelles                                       | Non                                                                                      | —                        | —             | —                                                                   |
+| Informations financières                                        | Non                                                                                      | —                        | —             | —                                                                   |
+| Santé et fitness                                                | Non                                                                                      | —                        | —             | —                                                                   |
+| Messages                                                        | Non                                                                                      | —                        | —             | —                                                                   |
+| Photos et vidéos                                                | Non                                                                                      | —                        | —             | —                                                                   |
+| Fichiers audio                                                  | Non                                                                                      | —                        | —             | —                                                                   |
+| Stockage                                                        | Non (au sens "transmis à un tiers") — le stockage local existe mais reste sur l'appareil | Non                      | —             | Fonctionnement de l'application (parties sauvegardées, préférences) |
+| Activité dans l'application                                     | Non                                                                                      | —                        | —             | —                                                                   |
+| Informations sur l'application et les performances (crash logs) | Non                                                                                      | —                        | —             | Aucun SDK de diagnostic intégré                                     |
+| Identifiants de l'appareil ou autres identifiants               | Non                                                                                      | —                        | —             | Aucun identifiant généré ou transmis                                |
 
 ## Chiffrement en transit
 
@@ -57,6 +57,12 @@ Ces réponses doivent correspondre exactement à celles saisies dans
 conclusion d'audit, il ne devrait donc jamais y avoir de divergence
 factuelle entre eux. Toute divergence future signale que l'un des trois
 documents n'a pas été mis à jour après un changement de code.
+
+L'intégration Capacitor Android ne change pas les réponses : elle embarque
+l'export statique localement, n'ajoute ni analytics ni backend, et ne transmet
+aucune partie ou préférence. La permission Android `INTERNET` est une capacité
+de WebView, pas la preuve d'une collecte ; la déclaration doit décrire le
+comportement effectif du code et être réauditée avant chaque release.
 
 ## Ce qui déclenche une réévaluation obligatoire
 

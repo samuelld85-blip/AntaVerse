@@ -1,16 +1,17 @@
 import { expect, test } from "@playwright/test";
 
-test("joue quatre manches sans scroll sur mobile", async ({ page }) => {
+test("joue huit tours sans scroll sur mobile", async ({ page }) => {
   await page.clock.install({ time: new Date("2026-01-01T12:00:00Z") });
   await page.goto("/sans-le-dire");
   await page.getByRole("link", { name: /^jouer/i }).click();
+  await page.getByRole("button", { name: /^équipes/i }).click();
   await page.getByRole("button", { name: /compétition/i }).click();
   await page.getByLabel("Équipe 1").fill("Les Verts");
   await page.getByLabel("Équipe 2").fill("Les Bleus");
   await page.getByRole("button", { name: /lancer la partie/i }).click();
   await expect(page).toHaveURL(/\/partie\/?$/u);
-  for (let round = 0; round < 4; round += 1) {
-    await expect(page.getByText(`Manche ${round + 1} / 4`)).toBeVisible();
+  for (let round = 0; round < 8; round += 1) {
+    await expect(page.getByText(`Manche ${round + 1} / 8`)).toBeVisible();
     await expect(page.locator(".word-card h1")).toBeVisible();
     await expect(page.locator(".word-card li")).toHaveCount(3);
     await expect(page.getByLabel(/chronomètre prêt à démarrer/i)).toHaveText("00:45");
@@ -25,7 +26,7 @@ test("joue quatre manches sans scroll sur mobile", async ({ page }) => {
     await page.clock.fastForward("46:00");
     await expect(page.getByText("Fin du tour !")).toBeVisible();
     await page
-      .getByRole("button", { name: round === 3 ? /voir le résultat/i : /équipe suivante/i })
+      .getByRole("button", { name: round === 7 ? /voir le résultat/i : /équipe suivante/i })
       .click();
   }
   await expect(page.getByRole("heading", { name: /Les Verts.*gagne/i })).toBeVisible();

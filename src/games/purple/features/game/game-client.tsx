@@ -33,7 +33,13 @@ const GUESS_LABEL: Record<GuessType, string> = {
   lower: "Moins",
 };
 
-function GuessExample({ guessType, referenceCard }: { guessType: GuessType; referenceCard?: Card }) {
+function GuessExample({
+  guessType,
+  referenceCard,
+}: {
+  guessType: GuessType;
+  referenceCard?: Card;
+}) {
   switch (guessType) {
     case "red":
       return (
@@ -80,9 +86,13 @@ function GuessExample({ guessType, referenceCard }: { guessType: GuessType; refe
         </div>
       );
     case "higher":
-      return referenceCard ? <MiniCard rank={referenceCard.rank} suit={referenceCard.suit} /> : null;
+      return referenceCard ? (
+        <MiniCard rank={referenceCard.rank} suit={referenceCard.suit} />
+      ) : null;
     case "lower":
-      return referenceCard ? <MiniCard rank={referenceCard.rank} suit={referenceCard.suit} /> : null;
+      return referenceCard ? (
+        <MiniCard rank={referenceCard.rank} suit={referenceCard.suit} />
+      ) : null;
   }
 }
 
@@ -91,7 +101,6 @@ const REVEAL_STAGGER_MS = 90;
 const REVEAL_BUFFER_MS = 220;
 
 type RevealMode = "auto" | "manual";
-const REVEAL_MODE_STORAGE_KEY = "purple:reveal-mode";
 
 export function GameClient() {
   const router = useRouter();
@@ -114,15 +123,14 @@ export function GameClient() {
       setGame(stored);
       setReady(true);
 
-      const storedMode = window.localStorage.getItem(REVEAL_MODE_STORAGE_KEY);
-      if (storedMode === "auto" || storedMode === "manual") setRevealModeState(storedMode);
+      // This optional display choice lasts only for the open game. Keeping it
+      // across sessions would create non-essential local storage.
     }, 0);
     return () => window.clearTimeout(timer);
   }, [router]);
 
   function setRevealMode(mode: RevealMode) {
     setRevealModeState(mode);
-    window.localStorage.setItem(REVEAL_MODE_STORAGE_KEY, mode);
   }
 
   function act(guessType: GuessType) {
@@ -315,9 +323,7 @@ export function GameClient() {
         <div className="guess-grid" role="group" aria-label="Choix de la carte">
           {GUESS_ORDER.map((guessType) => {
             const isHigherLower = guessType === "higher" || guessType === "lower";
-            const label = isHigherLower
-              ? `${GUESS_LABEL[guessType]} que`
-              : GUESS_LABEL[guessType];
+            const label = isHigherLower ? `${GUESS_LABEL[guessType]} que` : GUESS_LABEL[guessType];
             return (
               <button
                 key={guessType}

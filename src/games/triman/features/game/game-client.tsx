@@ -182,7 +182,7 @@ export function GameClient() {
             className="handoff-btn"
             onClick={() => setHandoff(false)}
           >
-            C'est à moi&nbsp;!
+            C’est à moi&nbsp;!
           </button>
         </div>
       ) : null}

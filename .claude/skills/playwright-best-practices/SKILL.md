@@ -24,6 +24,12 @@ Do not invoke this skill for tasks that do not touch E2E behavior.
 
 When this skill conflicts with `CLAUDE.md`, follow `CLAUDE.md`.
 
+## Android boundary
+
+This skill covers web Playwright tests only. Do not launch Android builds,
+emulators, devices, Capacitor checks, APK/AAB checks, or native Android tests as
+part of Playwright validation unless the user explicitly requests Android work.
+
 ## Context efficiency
 
 When running Playwright from Claude Code, keep output minimal.

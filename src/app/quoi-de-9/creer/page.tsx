@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
 import { PageShell } from "@/games/quoi-de-9/components/page-shell";
 import { SetupForm } from "@/games/quoi-de-9/features/setup/setup-form";

@@ -1,9 +1,9 @@
-# Options de packaging natif — comparatif, non implémenté
+# Packaging natif — décision et état
 
-Dernière vérification des exigences stores : 2026-08-20. Ce document
-compare des options sans en implémenter aucune — AntaVerse reste aujourd'hui
-un export statique Next.js (`output: "export"` dans `next.config.ts`),
-servi comme PWA sur Vercel.
+Dernière mise à jour : 2026-08-24. La décision Android est prise : Capacitor
+8 est intégré et le build statique est embarqué dans le projet `android/`.
+La PWA Vercel continue d'exister en parallèle. iOS n'est pas traité dans ce
+chantier.
 
 ## Point de départ technique réel
 
@@ -42,15 +42,15 @@ servi comme PWA sur Vercel.
 
 ## Comparatif synthétique
 
-| Critère | Wrapper natif (Capacitor) | TWA (Android uniquement) |
-|---|---|---|
-| Effort de mise en place | Modéré | Faible |
-| Accès API natives | Oui, extensible | Limité à ce que le Web expose |
-| Fonctionnement hors ligne | Hérité du Service Worker existant | Hérité du Service Worker existant |
-| Maintenance | Continue (mise à jour wrapper, stores) | Plus faible |
-| Compatibilité avec la PWA actuelle | Totale, aucune réécriture requise | Totale, aucune réécriture requise |
-| Couvre iOS + Android | Oui | Non — Android seulement |
-| Revue store | Soumise aux deux revues (Apple + Google) | Soumise à la revue Google uniquement |
+| Critère                            | Wrapper natif (Capacitor)                | TWA (Android uniquement)             |
+| ---------------------------------- | ---------------------------------------- | ------------------------------------ |
+| Effort de mise en place            | Modéré                                   | Faible                               |
+| Accès API natives                  | Oui, extensible                          | Limité à ce que le Web expose        |
+| Fonctionnement hors ligne          | Hérité du Service Worker existant        | Hérité du Service Worker existant    |
+| Maintenance                        | Continue (mise à jour wrapper, stores)   | Plus faible                          |
+| Compatibilité avec la PWA actuelle | Totale, aucune réécriture requise        | Totale, aucune réécriture requise    |
+| Couvre iOS + Android               | Oui                                      | Non — Android seulement              |
+| Revue store                        | Soumise aux deux revues (Apple + Google) | Soumise à la revue Google uniquement |
 
 ## Règle Apple "minimum functionality"
 
@@ -63,9 +63,9 @@ et une expérience pensée mobile-first plutôt qu'un site desktop redimensionn�
 Cela dit, **seule la revue Apple elle-même tranchera** au moment de la
 soumission — ce document ne peut pas garantir une acceptation.
 
-## Ce que ce chantier ne fait pas
+## État d'implémentation
 
-Aucune migration, aucun projet Xcode, aucun projet Android, aucune
-dépendance Capacitor n'est ajoutée ici. Ce document sert uniquement à
-préparer la décision technique le jour où la publication native est
-engagée.
+Le projet Android, les assets, la signature externalisée, les tests Windows
+et le pipeline AAB sont maintenant implémentés. Voir
+`docs/store/ANDROID_BUILD_AND_RELEASE.md`. Aucun projet Xcode/iOS n'a été
+créé.

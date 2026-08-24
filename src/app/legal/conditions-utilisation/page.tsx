@@ -13,7 +13,11 @@ export default function TermsOfUsePage() {
     <LegalPageShell title="Conditions générales d’utilisation d’AntaVerse">
       <p className="legal-meta">
         Version {legalConfig.policyVersion} —{" "}
-        <TodoValue value={legalConfig.policyEffectiveDate} label="date à renseigner avant publication" />.
+        <TodoValue
+          value={legalConfig.policyEffectiveDate}
+          label="date à renseigner avant publication"
+        />
+        .
       </p>
 
       <h2>Objet</h2>
@@ -31,25 +35,26 @@ export default function TermsOfUsePage() {
       <ul>
         <li>détourner l’application de son usage prévu de façon abusive ;</li>
         <li>tenter de compromettre la sécurité ou le fonctionnement de l’application ;</li>
-        <li>porter atteinte aux droits de propriété intellectuelle décrits dans les mentions légales.</li>
+        <li>
+          porter atteinte aux droits de propriété intellectuelle décrits dans les mentions légales.
+        </li>
       </ul>
 
       <h2>Jeu et responsabilité</h2>
       <p>
         Les utilisateurs restent seuls responsables de leurs décisions et du contexte dans lequel
-        ils utilisent les jeux — y compris du choix de qui joue, où, et dans quelles
-        circonstances.
+        ils utilisent les jeux — y compris du choix de qui joue, où, et dans quelles circonstances.
       </p>
 
       <h2>Consommation d’alcool</h2>
       <p>
-        Certains jeux d’AntaVerse utilisent des « gorgées » comme mécanique ludique, au même
-        titre que des points ou des gages. Aucune règle du jeu n’oblige à consommer réellement de
-        l’alcool : une gorgée peut toujours être remplacée par une boisson sans alcool ou un
-        autre gage librement choisi par le groupe. AntaVerse n’encourage ni l’ivresse, ni la
-        consommation excessive, ni une quelconque compétition de consommation, et n’est destinée
-        à aucune personne n’ayant pas l’âge légal de consommer de l’alcool dans son pays. Voir la
-        page dédiée : <a href="/legal/jeu-responsable">Jeu responsable</a>.
+        Certains jeux d’AntaVerse utilisent des « gorgées » comme mécanique ludique, au même titre
+        que des points ou des gages. Aucune règle du jeu n’oblige à consommer réellement de l’alcool
+        : une gorgée peut toujours être remplacée par une boisson sans alcool ou un autre gage
+        librement choisi par le groupe. Chaque personne reste libre de refuser, d’arrêter de jouer
+        ou de remplacer une gorgée par une alternative sans alcool. AntaVerse n’est destinée à
+        aucune personne n’ayant pas l’âge légal de consommer de l’alcool dans son pays. Voir la page
+        dédiée : <a href="/legal/jeu-responsable">Jeu responsable</a>.
       </p>
 
       <h2>Disponibilité</h2>
@@ -61,17 +66,17 @@ export default function TermsOfUsePage() {
 
       <h2>Propriété intellectuelle</h2>
       <p>
-        La marque, les logos, l’interface, les textes et les contenus des jeux restent la
-        propriété de l’éditeur ou de ses ayants droit, comme précisé dans les{" "}
-        <a href="/legal/mentions-legales">mentions légales</a>. AntaVerse ne revendique aucun
-        droit sur des éléments tiers qu’elle ne détient pas.
+        La marque, les logos, l’interface, les textes et les contenus des jeux restent la propriété
+        de l’éditeur ou de ses ayants droit, comme précisé dans les{" "}
+        <a href="/legal/mentions-legales">mentions légales</a>. AntaVerse ne revendique aucun droit
+        sur des éléments tiers qu’elle ne détient pas.
       </p>
 
       <h2>Responsabilité</h2>
       <p>
-        Dans la mesure permise par la loi applicable, l’éditeur ne saurait être tenu responsable
-        des dommages indirects résultant de l’utilisation de l’application, ni des conséquences
-        d’un usage des jeux contraire aux recommandations de la page{" "}
+        Dans la mesure permise par la loi applicable, l’éditeur ne saurait être tenu responsable des
+        dommages indirects résultant de l’utilisation de l’application, ni des conséquences d’un
+        usage des jeux contraire aux recommandations de la page{" "}
         <a href="/legal/jeu-responsable">Jeu responsable</a>. Rien dans ces conditions n’a pour
         effet d’exclure une responsabilité que la loi rendrait impossible à écarter.
       </p>
@@ -86,8 +91,11 @@ export default function TermsOfUsePage() {
       <h2>Contact</h2>
       <p>
         Pour toute question sur ces conditions :{" "}
-        <TodoValue value={legalConfig.supportEmail} label="adresse de support à renseigner avant publication" />, ou
-        via la page <a href="/support">Support</a>.
+        <TodoValue
+          value={legalConfig.supportEmail}
+          label="adresse de support à renseigner avant publication"
+        />
+        , ou via la page <a href="/support">Support</a>.
       </p>
     </LegalPageShell>
   );

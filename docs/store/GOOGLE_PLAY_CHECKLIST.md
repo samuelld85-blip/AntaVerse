@@ -1,6 +1,10 @@
 # Checklist Google Play
 
-Dernière vérification des exigences stores : 2026-08-20 — **à revalider sur
+> Cette checklist concerne uniquement une préparation ou une publication
+> Android explicitement demandée. Les tests et vérifications Android cochés ou
+> listés ici ne doivent pas être relancés dans le travail courant par défaut.
+
+Dernière vérification des exigences stores : 2026-08-24 — **à revalider sur
 la Play Console Help et les Google Play Developer Program Policies juste
 avant toute soumission réelle**, notamment les exigences de vérification
 d'identité développeur et le target API level, qui évoluent régulièrement.
@@ -16,16 +20,20 @@ d'identité développeur et le target API level, qui évoluent régulièrement.
 
 ## Build
 
-- [ ] Choisir et mettre en œuvre une stratégie de packaging natif (voir
-      `docs/store/NATIVE_PACKAGING_OPTIONS.md`) — non fait dans ce
-      chantier
-- [ ] Produire un Android App Bundle (`.aab`)
-- [ ] Définir le package name
-- [ ] Définir `versionCode` / `versionName`, et une stratégie
-      d'incrémentation cohérente
-- [ ] Mettre en place la signature — Play App Signing recommandé
-- [ ] Vérifier le target API level exigé par Google au moment de la
-      soumission (change chaque année)
+- [x] Packaging Capacitor Android intégré, avec export statique embarqué
+      et fonctionnement hors connexion
+- [x] Pipeline Android App Bundle (`.aab`) compilé et signé avec une clé de
+      test éphémère ; voir `docs/store/ANDROID_BUILD_AND_RELEASE.md`
+- [x] Package name défini dans le code : `com.antaverse.app`
+- [ ] Confirmer que `com.antaverse.app` est le choix définitif et disponible
+      dans la Play Console avant le premier upload
+- [x] `versionCode` / `versionName` définis et stratégie documentée
+- [x] Configuration de signature externe au dépôt et contrôle des secrets
+- [ ] Créer et sauvegarder la vraie clé d'upload, puis activer Play App
+      Signing dans la console
+- [x] Target/compile API 36, exigence applicable aux nouvelles apps à partir
+      du 31 août 2026 d'après la documentation Google vérifiée ce jour
+- [x] Test émulateur API 36 sans réseau + test instrumenté Android
 - [ ] Tester sur un échantillon d'appareils réels avant publication
 
 ## Store listing
@@ -34,8 +42,9 @@ d'identité développeur et le target API level, qui évoluent régulièrement.
       `docs/store/STORE_METADATA_DRAFT.md`, à finaliser
 - [ ] Captures d'écran, icône, feature graphic
 - [ ] Catégorie
-- [ ] Contact support → `/support`
-- [ ] Privacy URL → `/legal/confidentialite`
+- [ ] Publier une URL HTTPS absolue pour le support (`/support`)
+- [ ] Publier une URL HTTPS absolue pour la confidentialité
+      (`/legal/confidentialite`)
 
 ## App Content
 
@@ -56,10 +65,8 @@ d'identité développeur et le target API level, qui évoluent régulièrement.
       d'origine) — si des comptes sont introduits plus tard, prévoir un
       chemin de suppression in-app et une ressource web publique
       équivalente
-- [ ] Déclarations de permissions : sans objet aujourd'hui au-delà des
-      permissions par défaut d'une WebView (voir
-      `docs/compliance/PERMISSIONS_INVENTORY.md`) — à revoir précisément
-      selon le wrapper natif choisi
+- [x] Audit du manifeste natif : permission `INTERNET` seulement côté
+      AntaVerse ; voir `docs/compliance/PERMISSIONS_INVENTORY.md`
 
 ## Alcool
 

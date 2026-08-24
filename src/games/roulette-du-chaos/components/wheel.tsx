@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { CATEGORIES } from "@/games/roulette-du-chaos/lib/game/wheel";
 import type { CategoryId } from "@/games/roulette-du-chaos/lib/game/types";
 import Image from "next/image";
@@ -23,6 +22,12 @@ function sectorCenterAngle(id: CategoryId): number {
   return index * SEGMENT_ANGLE + POINTER_OFFSET_DEG;
 }
 
+function targetRotation(id: CategoryId): number {
+  const base = (360 - sectorCenterAngle(id)) % 360;
+  const delta = base === 0 ? 360 : base;
+  return SPIN_TURNS * 360 + delta;
+}
+
 export function Wheel({
   targetCategory,
   spinning,
@@ -32,25 +37,7 @@ export function Wheel({
   spinning: boolean;
   onSpinEnd?: () => void;
 }) {
-  const [rotation, setRotation] = useState(0);
-  const rotationRef = useRef(0);
-
-  useEffect(() => {
-    if (!spinning || !targetCategory) return;
-
-    // Reset rotation to 0 at the start of each spin
-    rotationRef.current = 0;
-
-    const base = (360 - sectorCenterAngle(targetCategory)) % 360;
-    // Since we reset to 0, currentMod is always 0
-    const currentMod = 0;
-    let delta = base - currentMod;
-    delta = ((delta % 360) + 360) % 360;
-    if (delta === 0) delta = 360;
-    const next = SPIN_TURNS * 360 + delta;
-    rotationRef.current = next;
-    setRotation(next);
-  }, [spinning, targetCategory]);
+  const rotation = targetCategory ? targetRotation(targetCategory) : 0;
 
   return (
     <div className="wheel-wrap">

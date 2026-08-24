@@ -1,7 +1,7 @@
 import { shuffle } from "@/lib/random";
 import { createGameId } from "@/games/shared/lib/two-team-setup";
 import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
-import type { Card, CreateGameInput, GameState, PlayMode, Team } from "./types";
+import type { Card, CreateGameInput, GameState, Team } from "./types";
 
 export const STANDARD_ROUNDS = 8;
 const STANDARD_DURATION_MS = 45_000;

@@ -321,7 +321,7 @@ function RoundResult({
             <p className="last-card-label">
               Dernier mot : <strong>{lastCard.word}</strong>
             </p>
-            <p className="last-card-hint">L'avez-vous trouvé à temps ?</p>
+            <p className="last-card-hint">L’avez-vous trouvé à temps ?</p>
             <button className="action-found last-card-yes" type="button" onClick={onClaimLast}>
               Oui, +1 point
             </button>

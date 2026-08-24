@@ -49,8 +49,8 @@ test("creates a local game and reaches theme selection", async ({ page }) => {
   await expect(page).toHaveURL(/\/partie\/?$/u, { timeout: 15_000 });
   await expect(page.getByRole("heading", { name: /répond/i })).toBeVisible();
   await page.getByRole("button", { name: /j’ai le téléphone/i }).click();
-  await expect(page.getByRole("button", { name: /choisir le thème adverse/i })).toBeEnabled();
-  await expect(page.getByRole("button", { name: /au hasard/i })).toBeEnabled();
+  await expect(page.getByRole("button", { name: /classique/i })).toBeEnabled();
+  await expect(page.getByRole("button", { name: /challenge/i })).toBeEnabled();
 });
 
 test("keeps typographic apostrophes in team names", async ({ page }) => {
@@ -78,9 +78,7 @@ test("shows the original French question on results and after refresh", async ({
   await page.getByRole("button", { name: /lancer la partie/i }).click();
   await expect(page).toHaveURL(/\/partie\/?$/u, { timeout: 15_000 });
   await page.getByRole("button", { name: /j’ai le téléphone/i }).click();
-  await page.getByRole("button", { name: /au hasard/i }).click();
-  await page.getByRole("button", { name: /facile/i }).click();
-  await page.getByRole("button", { name: /afficher la question/i }).click();
+  await page.getByRole("button", { name: /classique/i }).click();
 
   const question = page.locator("h1");
   const questionText = (await question.textContent())?.trim();
@@ -92,10 +90,7 @@ test("shows the original French question on results and after refresh", async ({
 
   await expect(page.getByRole("heading", { name: questionText! })).toBeVisible();
   await expect(page.getByText(/0\/9 trouvées/i)).toBeVisible();
-  await page.getByRole("button", { name: /^corriger$/i }).click();
-  await expect(page.getByText(/score sera recalculé/i)).toBeVisible();
-  await page.locator(".answer-choice").first().click();
-  await page.getByRole("button", { name: /mettre à jour/i }).click();
+  await page.getByRole("button", { name: /— manquée$/i }).first().click();
   await expect(page.getByText(/1\/9 trouvées/i)).toBeVisible();
   await page.reload();
   await expect(page.getByRole("heading", { name: questionText! })).toBeVisible();
@@ -172,15 +167,13 @@ test("third team persists when game is launched", async ({ page }) => {
 
   await expect(page).toHaveURL(/\/partie\/?$/u, { timeout: 15_000 });
   await page.getByRole("button", { name: /j[‘’]ai le téléphone/i }).click();
-  await page.getByRole("button", { name: /au hasard/i }).click();
+  await page.getByRole("button", { name: /classique/i }).click();
   await expect(page.getByText("Équipe C", { exact: true })).toBeVisible();
 });
 
 async function openQuestion(page: import("@playwright/test").Page) {
   await page.getByRole("button", { name: /j[‘’]ai le téléphone/i }).click();
-  await page.getByRole("button", { name: /au hasard/i }).click();
-  await page.getByRole("button", { name: /facile/i }).click();
-  await page.getByRole("button", { name: /afficher la question/i }).click();
+  await page.getByRole("button", { name: /classique/i }).click();
 }
 
 test("keeps the published app shell available offline", async ({ page, context, browserName }) => {

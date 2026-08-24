@@ -1,6 +1,6 @@
 # Classification d'âge — éléments à déclarer
 
-Dernière vérification des exigences stores : 2026-08-20. À revalider juste
+Dernière vérification des exigences stores : 2026-08-24. À revalider juste
 avant soumission (questionnaires Apple App Store Connect et Google Play
 IARC changent occasionnellement de formulation).
 
@@ -12,16 +12,16 @@ contenu de Roulette du Chaos.
 
 ## Thèmes présents, par catégorie de questionnaire
 
-| Thème | Présent ? | Où | Détail |
-|---|---|---|---|
-| Références à l'alcool | **Oui** | Purple, Triman, Roulette du Chaos, Palmier, Fuck, mode Fun de Quoi de 9 et Sans le dire | Mécanique de "gorgées" centrale à 5 jeux sur 8 ; voir `ALCOHOL_STORE_AUDIT.md` |
-| Références aux drogues | **Oui, en tant que sujet évoqué** | `roulette-du-chaos/data/content/extreme-questions.ts`, `never-have-i-ever.ts` | Questions du type "qui a testé le plus de substances différentes", "je n'ai jamais consommé une drogue en festival" — évoquées comme sujet de discussion entre adultes, aucune mécanique n'implique de consommation réelle de drogue, ni n'en fait la promotion |
-| Contenu sexuel suggestif ou explicite en texte | **Oui** | `extreme-questions.ts`, `never-have-i-ever.ts` | Questions explicites ("partenaires sexuels", "nude", "rapport sexuel") ; texte uniquement, aucune image |
-| Langage adulte / grossier | **Oui** | Nom du jeu **Fuck** (`src/lib/games.ts`) | Le titre du jeu est explicitement grossier/adulte, même si son contenu de cartes reste neutre |
-| Violence | Non | — | Aucun contenu violent identifié |
-| Gambling / simulated gambling | Non | — | Purple et Triman utilisent des mécaniques de hasard (cartes, dés) mais sans mise d'argent réelle ou virtuelle, ni gain/perte monétaire — ce n'est pas un jeu d'argent simulé au sens des politiques stores |
-| Contenu généré par les utilisateurs (UGC) | Non applicable aujourd'hui | — | Aucune fonctionnalité de ce type n'existe dans le code ; voir `FUTURE_SOCIAL_REQUIREMENTS.md` |
-| Chat / messagerie | Non applicable aujourd'hui | — | Aucune fonctionnalité de ce type n'existe |
+| Thème                                          | Présent ?                            | Où                                                                                                         | Détail                                                                                                                                                                                                                                                                                            |
+| ---------------------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Références à l'alcool                          | **Oui**                              | Purple, Triman, Roulette du Chaos, Palmier, Fuck, La Traversée, PMU, mode Fun de Quoi de 9 et Sans le dire | Mécanique de "gorgées" centrale à 7 jeux sur 10 ; voir `ALCOHOL_STORE_AUDIT.md`                                                                                                                                                                                                                   |
+| Références aux drogues                         | **Oui, en tant que sujet évoqué**    | `roulette-du-chaos/data/content/extreme-questions.ts`, `never-have-i-ever.ts`                              | Questions du type "qui a testé le plus de substances différentes", "je n'ai jamais consommé une drogue en festival" — évoquées comme sujet de discussion entre adultes, aucune mécanique n'implique de consommation réelle de drogue, ni n'en fait la promotion                                   |
+| Contenu sexuel suggestif ou explicite en texte | **Oui**                              | `extreme-questions.ts`, `never-have-i-ever.ts`                                                             | Questions explicites ("partenaires sexuels", "nude", "rapport sexuel") ; texte uniquement, aucune image                                                                                                                                                                                           |
+| Langage adulte / grossier                      | **Oui**                              | Nom du jeu **Fuck** (`src/lib/games.ts`)                                                                   | Le titre du jeu est explicitement grossier/adulte, même si son contenu de cartes reste neutre                                                                                                                                                                                                     |
+| Violence                                       | Non                                  | —                                                                                                          | Aucun contenu violent identifié                                                                                                                                                                                                                                                                   |
+| Gambling / simulated gambling                  | **Oui, à déclarer comme simulation** | PMU (`src/games/pmu/`)                                                                                     | Le jeu reprend explicitement les codes du pari hippique : mise en gorgées, choix d'une couleur, course et résultat des paris. Aucune somme ni monnaie virtuelle n'est en jeu, mais le questionnaire Apple et le questionnaire IARC Google doivent être remplis honnêtement pour cette simulation. |
+| Contenu généré par les utilisateurs (UGC)      | Non applicable aujourd'hui           | —                                                                                                          | Aucune fonctionnalité de ce type n'existe dans le code ; voir `FUTURE_SOCIAL_REQUIREMENTS.md`                                                                                                                                                                                                     |
+| Chat / messagerie                              | Non applicable aujourd'hui           | —                                                                                                          | Aucune fonctionnalité de ce type n'existe                                                                                                                                                                                                                                                         |
 
 ## Lecture honnête de la classification probable
 
@@ -52,9 +52,9 @@ base de l'audit :
   de cette paraphrase.
 - Contenu sexuel / nudité : présence de texte suggestif/explicite sans
   image — à déclarer, catégorie exacte à choisir dans le formulaire réel.
-- Le reste des catégories (violence, horreur, jeux d'argent simulés,
-  contenu généré par les utilisateurs) : "Aucun" sur la base du contenu
-  actuel.
+- Jeux d'argent simulés : à déclarer pour PMU, avec la fréquence correspondant
+  au jeu effectivement distribué. Violence, horreur et contenu généré par les
+  utilisateurs : "Aucun" sur la base du contenu actuel.
 
 ## Google Play — préparation du questionnaire IARC
 
@@ -64,11 +64,12 @@ et la fréquence de chaque thème, puis calcule une classification. Préparer
 les réponses sur les mêmes bases que ci-dessus : alcool (oui, usage
 simulé/évoqué en mécanique de jeu), drogues (oui, évoquées sans usage
 simulé), contenu sexuel (oui, texte suggestif/explicite), le reste "non" sur
-la base du contenu actuel.
+la base du contenu actuel, à l'exception du pari simulé de PMU qui doit être
+déclaré.
 
 ## Ce qui changerait cette classification
 
 Toute nouvelle fonctionnalité touchant ces thèmes (nouveaux bancs de
-questions, nouveau jeu à contenu mature, UGC, chat) doit déclencher une
+questions, nouveau jeu à contenu mature, UGC, chat, pari simulé) doit déclencher une
 relecture de ce document avant publication d'une mise à jour, pas seulement
 avant la première soumission.

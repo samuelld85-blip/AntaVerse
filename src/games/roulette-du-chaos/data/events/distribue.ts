@@ -55,10 +55,16 @@ export const distribueEvents: EventDefinition[] = [
     resolve(input) {
       if (!input.neighborSide) return needNeighbor();
       const side = input.neighborSide === "left" ? "gauche" : "droite";
+      const index = activeIndex(input);
+      const neighborIndex =
+        input.neighborSide === "left"
+          ? previousPlayerIndex(index, input.players.length)
+          : nextPlayerIndex(index, input.players.length);
+      const neighbor = input.players[neighborIndex]!;
       return done(
         outcome("Voisinage", [
-          `Tu as choisi ton voisin de ${side}.`,
-          "Il ou elle boit 3 gorgées.",
+          `${neighbor.name} est ton voisin de ${side}.`,
+          receives(neighbor.name, 3),
         ]),
       );
     },
