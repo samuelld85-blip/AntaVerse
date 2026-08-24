@@ -28,17 +28,17 @@ test("sets up Fuck, reveals cards, records the result, and hands off the role", 
       ),
     )
     .toBe(true);
-  await page.getByRole("button", { name: /le maître a gagné/i }).click();
+  await page.getByRole("button", { name: /le dealer a gagné/i }).click();
   await expect(page.getByRole("heading", { name: /à chloé de deviner/i })).toBeVisible();
   await expect(page.getByText("1 / 52")).toBeVisible();
 
   for (let index = 0; index < 2; index += 1) {
     await page.getByRole("button", { name: /voir la carte/i }).click();
-    await page.getByRole("button", { name: /le maître a gagné/i }).click();
+    await page.getByRole("button", { name: /le dealer a gagné/i }).click();
   }
-  await expect(page.getByRole("heading", { name: /alice choisit le prochain maître/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /alice choisit le prochain dealer/i })).toBeVisible();
   await page.getByRole("button", { name: /chloé/i }).click();
-  await expect(page.getByText(/maître du jeu : chloé/i)).toBeVisible();
+  await expect(page.getByText(/dealer : chloé/i)).toBeVisible();
 });
 
 test("keeps the Fuck setup usable at 320px without horizontal scrolling", async ({ page }) => {
