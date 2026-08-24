@@ -243,7 +243,7 @@ export const tousEvents: EventDefinition[] = [
         ESTIMATION_QUESTIONS[
           pickIndexFromSlot(input.randomSlots.question!, ESTIMATION_QUESTIONS.length)
         ]!;
-      if (!input.revealConfirmed) return needReveal("Révéler la réponse");
+      if (!input.revealConfirmed) return needReveal("Révéler la réponse", item.question);
       const answer = item.unit ? `${item.answer} ${item.unit}` : `${item.answer}`;
       return done(
         outcome("Estimation collective", [

@@ -116,8 +116,8 @@ export function needMystery(count: number): ResolveResult {
   return { status: "needsInput", next: { kind: "mysteryPick", count } };
 }
 
-export function needReveal(label: string): ResolveResult {
-  return { status: "needsInput", next: { kind: "reveal", label } };
+export function needReveal(label: string, detail: string | null = null): ResolveResult {
+  return { status: "needsInput", next: { kind: "reveal", label, detail } };
 }
 
 export function needMiniGame(

@@ -131,7 +131,7 @@ describe("evaluateGuess", () => {
   it("LOWER succeeds when drawn card < reference card", () => {
     const ref = card("9", "hearts");
     expect(evaluateGuess("lower", [card("8", "diamonds")], ref)).toBe("success");
-    expect(evaluateGuess("lower", [card("A", "spades")], ref)).toBe("success");
+    expect(evaluateGuess("lower", [card("2", "spades")], ref)).toBe("success");
   });
 
   it("LOWER fails when drawn card >= reference card", () => {

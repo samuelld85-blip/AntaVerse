@@ -17,7 +17,7 @@ describe("moteur de Sans le dire", () => {
   it("enchaîne A → B → A → B (2 équipes) avec scores, passes et cartes uniques", () => {
     let game = createGame({ teamNames: ["A", "B"], playMode: "competition" }, cards, seededRandom(1), 1_000);
     const seen = new Set<string>();
-    for (let round = 0; round < 4; round += 1) {
+    for (let round = 0; round < 8; round += 1) {
       expect(game.status).toBe("preparation");
       expect(game.activeTeamIndex).toBe(round % 2);
       game = startRound(game, 2_000 + round * 100_000);
@@ -34,7 +34,7 @@ describe("moteur de Sans le dire", () => {
       game = endRound(game, 48_000 + round * 100_000);
       game = continueGame(game, 48_001 + round * 100_000);
     }
-    expect(seen.size).toBe(12);
+    expect(seen.size).toBe(24);
     expect(game.teams.map((team) => team.score)).toEqual([0, 0]);
     expect(game.roundMode).toBe("tiebreak");
     expect(game.activeTeamIndex).toBe(0);
@@ -82,7 +82,7 @@ describe("moteur de Sans le dire", () => {
 
   it("recommence le départage en cas d’égalité", () => {
     let game = createGame({ teamNames: ["A", "B"], playMode: "competition" }, cards, seededRandom(3), 0);
-    game = { ...game, status: "roundResult", roundIndex: 3 };
+    game = { ...game, status: "roundResult", roundIndex: 7 };
     game = continueGame(game, 1);
     expect(game.roundMode).toBe("tiebreak");
     game = endRound(startRound(game, 2), 32_002);

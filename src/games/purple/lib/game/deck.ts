@@ -7,7 +7,6 @@ import type { Card, CardColor, Rank, Suit } from "./types";
 
 export const SUITS: readonly Suit[] = ["hearts", "diamonds", "clubs", "spades"];
 export const RANKS: readonly Rank[] = [
-  "A",
   "2",
   "3",
   "4",
@@ -20,6 +19,7 @@ export const RANKS: readonly Rank[] = [
   "J",
   "Q",
   "K",
+  "A",
 ];
 
 export function cardColor(suit: Suit): CardColor {

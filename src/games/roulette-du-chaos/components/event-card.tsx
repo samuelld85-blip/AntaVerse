@@ -142,10 +142,16 @@ export function EventCard({
       ) : null}
       {!outcome && resolution.pending?.kind === "reveal" ? (
         <div className="reveal-picker">
-          <div className="reveal-card" aria-label="Nombre maudit masqué">
-            <span aria-hidden="true">?</span>
-          </div>
-          <p className="reveal-picker-label">Tout le monde a choisi ?</p>
+          {resolution.pending.detail ? (
+            <p className="estimation-question">{resolution.pending.detail}</p>
+          ) : (
+            <>
+              <div className="reveal-card" aria-label="Nombre maudit masqué">
+                <span aria-hidden="true">?</span>
+              </div>
+              <p className="reveal-picker-label">Tout le monde a choisi ?</p>
+            </>
+          )}
           <Button type="button" onClick={onReveal}>
             {resolution.pending.label}
           </Button>

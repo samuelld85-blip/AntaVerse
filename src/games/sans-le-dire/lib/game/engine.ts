@@ -3,7 +3,7 @@ import { createGameId } from "@/games/shared/lib/two-team-setup";
 import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import type { Card, CreateGameInput, GameState, PlayMode, Team } from "./types";
 
-export const STANDARD_ROUNDS = 7;
+export const STANDARD_ROUNDS = 8;
 const STANDARD_DURATION_MS = 45_000;
 const TIEBREAK_DURATION_MS = 30_000;
 const STANDARD_PASSES = 2;

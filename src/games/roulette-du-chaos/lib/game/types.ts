@@ -70,6 +70,8 @@ export interface MysteryPickRequest {
 export interface RevealRequest {
   kind: "reveal";
   label: string;
+  /** Optional dynamic content (e.g. a drawn question) shown above the reveal button, before the answer. */
+  detail: string | null;
 }
 
 export interface EngineRandomRequest {
