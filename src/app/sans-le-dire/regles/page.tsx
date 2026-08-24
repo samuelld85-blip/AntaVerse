@@ -26,7 +26,7 @@ export default function RulesPage() {
         ))}
       </ol>
       <div className="rules-cta">
-        <ButtonLink href="/sans-le-dire/equipes">Lancer une partie</ButtonLink>
+        <ButtonLink href="/sans-le-dire/jouer">Lancer une partie</ButtonLink>
       </div>
     </PageShell>
   );

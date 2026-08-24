@@ -1,5 +1,5 @@
 import { Brand } from "@/games/sans-le-dire/components/brand";
-import { ResumeGameCard } from "@/games/sans-le-dire/components/resume-game-card";
+import { ResumeGameCard, SoloResumeGameCard } from "@/games/sans-le-dire/components/resume-game-card";
 import { ThemeSelector } from "@/games/shared/components/theme-selector";
 import { ButtonLink } from "@/games/shared/components/ui";
 import { GameHomeNav } from "@/components/game-home-nav";
@@ -26,7 +26,8 @@ export default function HomePage() {
       </section>
       <section className="home-actions">
         <ResumeGameCard />
-        <ButtonLink href="/sans-le-dire/equipes">
+        <SoloResumeGameCard />
+        <ButtonLink href="/sans-le-dire/jouer">
           Jouer <span aria-hidden="true">→</span>
         </ButtonLink>
         <ThemeSelector />

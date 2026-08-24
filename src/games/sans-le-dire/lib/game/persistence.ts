@@ -1,7 +1,8 @@
 import { readJson, removeJson, writeJson } from "@/lib/local-storage-json";
-import type { GameState } from "./types";
+import type { GameState, SoloGameState } from "./types";
 const STORAGE_KEY = "sans-le-dire:current-game";
 const TEAM_NAMES_KEY = "sans-le-dire:team-names";
+const SOLO_STORAGE_KEY = "sans-le-dire:solo-current-game";
 
 export function loadCurrentGame(): GameState | null {
   return readJson(STORAGE_KEY, isGameState);
@@ -32,6 +33,41 @@ export function loadTeamNames(): [string, string] | [string, string, string] {
   } catch {
     return ["Les Antagonistes", "Les Sanglieeers"];
   }
+}
+
+export function loadSoloGame(): SoloGameState | null {
+  return readJson(SOLO_STORAGE_KEY, isSoloGameState);
+}
+
+export function saveSoloGame(game: SoloGameState): void {
+  writeJson(SOLO_STORAGE_KEY, game);
+}
+
+export function clearSoloGame(): void {
+  removeJson(SOLO_STORAGE_KEY);
+}
+
+function isSoloGameState(value: unknown): value is SoloGameState {
+  if (!value || typeof value !== "object") return false;
+  const game = value as Partial<SoloGameState>;
+  return (
+    game.schemaVersion === 1 &&
+    game.mode === "solo" &&
+    ["handoff", "playing", "finished"].includes(game.status ?? "") &&
+    Array.isArray(game.players) &&
+    game.players.length >= 3 &&
+    Array.isArray(game.deck) &&
+    game.deck.length >= game.players.length * 8 &&
+    new Set(game.deck).size === game.deck.length &&
+    typeof game.deckPosition === "number" &&
+    game.deckPosition >= 0 &&
+    game.deckPosition <= game.deck.length &&
+    typeof game.masterIndex === "number" &&
+    game.masterIndex >= 0 &&
+    game.masterIndex < game.players.length &&
+    typeof game.wordIndex === "number" &&
+    game.wordIndex >= 0
+  );
 }
 
 function isGameState(value: unknown): value is GameState {

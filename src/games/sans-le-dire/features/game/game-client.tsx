@@ -5,6 +5,9 @@ import { useRouter } from "next/navigation";
 import { Brand, LogoMark } from "@/games/sans-le-dire/components/brand";
 import { Button, ButtonLink } from "@/games/shared/components/ui";
 import { cards } from "@/games/sans-le-dire/data/cards";
+import { WordCard } from "./word-card";
+import { feedback } from "./feedback";
+import { SoloGameClient } from "./solo-game-client";
 import {
   claimLastCard,
   continueGame,
@@ -22,11 +25,43 @@ import {
 import {
   clearCurrentGame,
   loadCurrentGame,
+  loadSoloGame,
   saveCurrentGame,
 } from "@/games/sans-le-dire/lib/game/persistence";
 import type { GameState } from "@/games/sans-le-dire/lib/game/types";
 
+/** `/sans-le-dire/partie` is shared by both modes: only one mode's game can
+ * be "current" at a time (starting a new game of one mode clears the
+ * other's storage), so whichever store holds a game decides which client
+ * mounts. Neither mode's own client needs to know the other exists. */
 export function GameClient() {
+  const router = useRouter();
+  const [mode, setMode] = useState<"teams" | "solo" | "none" | null>(null);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      if (loadCurrentGame()) setMode("teams");
+      else if (loadSoloGame()) setMode("solo");
+      else setMode("none");
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (mode === "none") router.replace("/sans-le-dire/jouer");
+  }, [mode, router]);
+
+  if (mode === "solo") return <SoloGameClient />;
+  if (mode === "teams") return <TeamsGameClient />;
+  return (
+    <main className="game-shell safe-shell game-loading" aria-busy="true">
+      <LogoMark />
+      <p>Préparation des cartes…</p>
+    </main>
+  );
+}
+
+function TeamsGameClient() {
   const router = useRouter();
   const [game, setGame] = useState<GameState | null>(null);
   const [ready, setReady] = useState(false);
@@ -39,7 +74,7 @@ export function GameClient() {
       const ids = new Set(cards.map((card) => card.id));
       if (!stored || stored.deck.some((id) => !ids.has(id))) {
         if (stored) clearCurrentGame();
-        router.replace("/sans-le-dire/equipes");
+        router.replace("/sans-le-dire/jouer");
         return;
       }
       setGame(stored.status === "playing" ? endRound(stored) : stored);
@@ -147,17 +182,7 @@ export function GameClient() {
           00:{String(seconds).padStart(2, "0")}
         </time>
       </header>
-      <section className="word-card" key={card.id} aria-live="polite">
-        <h1>{card.word}</h1>
-        <p>Mots interdits</p>
-        <ul>
-          {card.forbidden.map((word) => (
-            <li key={word}>
-              <span aria-hidden="true">💣</span> {word}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <WordCard card={card} aria-live="polite" />
       <section className="play-actions" aria-label="Actions de la carte">
         <button className="action-found" type="button" onClick={() => act("found")}>
           Trouvé <span>+1</span>
@@ -203,17 +228,7 @@ function Preparation({ game, onReady }: { game: GameState; onReady: () => void }
           00:{String(duration).padStart(2, "0")}
         </time>
       </header>
-      <section className="word-card" aria-label="Premier mot">
-        <h1>{card.word}</h1>
-        <p>Mots interdits</p>
-        <ul>
-          {card.forbidden.map((word) => (
-            <li key={word}>
-              <span aria-hidden="true">💣</span> {word}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <WordCard card={card} aria-label="Premier mot" />
       <section className="ready-action">
         <Button onClick={onReady}>
           Je suis prêt <span aria-hidden="true">→</span>
@@ -398,26 +413,4 @@ function FinishedGame({
       </section>
     </main>
   );
-}
-
-function feedback(kind: "found" | "pass" | "fault" | "violation" | "end") {
-  if (typeof navigator !== "undefined" && "vibrate" in navigator)
-    navigator.vibrate(kind === "end" ? [80, 50, 120] : kind === "found" ? 35 : 20);
-  try {
-    const AudioContextClass =
-      window.AudioContext ??
-      (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-    if (!AudioContextClass) return;
-    const context = new AudioContextClass();
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    oscillator.frequency.value = kind === "found" ? 660 : kind === "end" ? 220 : 330;
-    gain.gain.setValueAtTime(0.04, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 0.12);
-    oscillator.connect(gain).connect(context.destination);
-    oscillator.start();
-    oscillator.stop(context.currentTime + 0.12);
-  } catch {
-    /* Le jeu reste entièrement utilisable sans audio. */
-  }
 }

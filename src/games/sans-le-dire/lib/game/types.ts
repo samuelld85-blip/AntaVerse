@@ -38,3 +38,28 @@ export interface CreateGameInput {
   teamNames: [string, string] | [string, string, string];
   playMode: PlayMode;
 }
+
+export interface SoloPlayer {
+  id: string;
+  name: string;
+  score: number;
+}
+export type SoloStatus = "handoff" | "playing" | "finished";
+export interface SoloGameState {
+  schemaVersion: 1;
+  id: string;
+  mode: "solo";
+  status: SoloStatus;
+  players: SoloPlayer[];
+  /** Index into `players` of the current game master — advances once per full turn, never resets or repeats. */
+  masterIndex: number;
+  /** Words already resolved during the current master's turn (0..SOLO_WORDS_PER_MASTER). */
+  wordIndex: number;
+  deck: string[];
+  deckPosition: number;
+  createdAt: string;
+  updatedAt: string;
+}
+export interface CreateSoloGameInput {
+  playerNames: string[];
+}

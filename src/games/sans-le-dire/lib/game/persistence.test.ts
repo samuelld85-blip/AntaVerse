@@ -1,5 +1,16 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { saveTeamNames, loadTeamNames, saveCurrentGame, loadCurrentGame, clearCurrentGame } from "./persistence";
+import { cards } from "@/games/sans-le-dire/data/cards";
+import { createSoloGame } from "./solo-engine";
+import {
+  saveTeamNames,
+  loadTeamNames,
+  saveCurrentGame,
+  loadCurrentGame,
+  clearCurrentGame,
+  saveSoloGame,
+  loadSoloGame,
+  clearSoloGame,
+} from "./persistence";
 
 describe("Sans le dire - Persistance des équipes", () => {
   beforeEach(() => {
@@ -67,5 +78,44 @@ describe("Sans le dire - Persistance des équipes", () => {
     saveTeamNames(["Équipe 1 & Co.", "Équipe 2 (édition)"] as any);
     const names = loadTeamNames();
     expect(names).toEqual(["Équipe 1 & Co.", "Équipe 2 (édition)"]);
+  });
+});
+
+describe("Sans le dire - Persistance de la partie individuelle", () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it("ne trouve aucune partie individuelle par défaut", () => {
+    expect(loadSoloGame()).toBeNull();
+  });
+
+  it("persiste puis recharge une partie individuelle", () => {
+    const game = createSoloGame({ playerNames: ["Alice", "Bob", "Chloé"] }, cards);
+    saveSoloGame(game);
+    expect(loadSoloGame()).toEqual(game);
+  });
+
+  it("efface une partie individuelle", () => {
+    const game = createSoloGame({ playerNames: ["Alice", "Bob", "Chloé"] }, cards);
+    saveSoloGame(game);
+    clearSoloGame();
+    expect(loadSoloGame()).toBeNull();
+  });
+
+  it("rejette une partie individuelle corrompue", () => {
+    localStorage.setItem("sans-le-dire:solo-current-game", JSON.stringify({ foo: "bar" }));
+    expect(loadSoloGame()).toBeNull();
+  });
+
+  it("garde équipes et individuel dans des emplacements distincts", () => {
+    const solo = createSoloGame({ playerNames: ["Alice", "Bob", "Chloé"] }, cards);
+    saveSoloGame(solo);
+    expect(loadCurrentGame()).toBeNull();
+    expect(loadSoloGame()).not.toBeNull();
   });
 });

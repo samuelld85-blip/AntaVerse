@@ -9,6 +9,7 @@ import { TEAM_PALETTE } from "@/games/shared/lib/team-palette";
 import { cards } from "@/games/sans-le-dire/data/cards";
 import { createGame } from "@/games/sans-le-dire/lib/game/engine";
 import {
+  clearSoloGame,
   loadTeamNames,
   saveCurrentGame,
   saveTeamNames,
@@ -74,6 +75,7 @@ export function SetupForm({ playMode }: { playMode: PlayMode }) {
         { teamNames, playMode },
         cards,
       );
+      clearSoloGame();
       saveCurrentGame(game);
       saveTeamNames(teamNames);
       router.push("/sans-le-dire/partie");

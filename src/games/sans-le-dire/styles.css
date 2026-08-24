@@ -293,6 +293,62 @@ html[data-theme="light"] .mode-selection-button--fun:hover {
     inset 0 0 16px color-mix(in srgb, var(--pink) 34%, transparent),
     0 0 12px color-mix(in srgb, var(--pink) 12%, transparent);
 }
+
+.mode-selection-button--teams {
+  color: var(--sld-accent);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--sld-accent) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--sld-accent) 8%, transparent);
+}
+
+.mode-selection-button--teams:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--sld-accent) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--sld-accent) 12%, transparent);
+}
+
+.mode-selection-button--solo {
+  color: var(--lime);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--lime) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--lime) 8%, transparent);
+}
+
+.mode-selection-button--solo:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--lime) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--lime) 12%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--teams {
+  color: var(--sld-accent);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--sld-accent) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--sld-accent) 8%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--teams:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--sld-accent) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--sld-accent) 12%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--solo {
+  color: var(--lime);
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--lime) 28%, transparent),
+    0 0 8px color-mix(in srgb, var(--lime) 8%, transparent);
+}
+
+html[data-theme="light"] .mode-selection-button--solo:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 0 16px color-mix(in srgb, var(--lime) 34%, transparent),
+    0 0 12px color-mix(in srgb, var(--lime) 12%, transparent);
+}
 .play-actions > div {
   display: grid;
   grid-template-columns: 1.35fr 1fr;
@@ -479,4 +535,77 @@ html[data-theme="light"] .mode-selection-button--fun:hover {
 .last-card-yes {
   min-height: 2.8rem !important;
   font-size: 0.95rem !important;
+}
+
+/* Individual mode — tap-to-award grid. Capped height + scroll so a large
+   roster never pushes the word card off screen (mirrors La Relance's solo
+   winner grid). */
+.solo-award-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.55rem;
+  max-height: 34dvh;
+  min-height: 0;
+  overflow-y: auto;
+}
+.solo-award-button {
+  min-height: 3.6rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 80ms ease,
+    background 120ms ease;
+}
+.solo-award-button:active {
+  background: color-mix(in srgb, var(--sld-accent) 22%, var(--surface-raised));
+  transform: scale(0.96);
+}
+
+.solo-leaderboard {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 26rem;
+  margin: 1.4rem 0;
+  padding: 0;
+  list-style: none;
+}
+.solo-leaderboard-row {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--surface);
+  text-align: left;
+}
+.solo-leaderboard-row--1 {
+  border-color: color-mix(in srgb, var(--sld-accent) 55%, transparent);
+  background: color-mix(in srgb, var(--sld-accent) 12%, var(--surface));
+}
+.solo-leaderboard-rank {
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-align: center;
+}
+.solo-leaderboard-name {
+  overflow: hidden;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.solo-leaderboard-score {
+  color: var(--sld-accent);
+  font-size: 1.05rem;
+  white-space: nowrap;
 }
