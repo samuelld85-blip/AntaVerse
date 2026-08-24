@@ -50,3 +50,26 @@ test("launcher remains usable at 320px without horizontal scrolling", async ({ p
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth))
     .toBe(true);
 });
+
+test("opens a game after the network is disabled", async ({ page, context, browserName }) => {
+  test.skip(
+    browserName === "webkit",
+    "L’émulation hors ligne de Playwright WebKit ne transmet pas les requêtes au service worker.",
+  );
+
+  await page.goto("/");
+  await page.waitForFunction(() => navigator.serviceWorker?.controller !== null, undefined, {
+    timeout: 20_000,
+  });
+
+  await context.setOffline(true);
+  try {
+    await page.getByRole("link", { name: "Jouer à Triman" }).click();
+    await expect(page).toHaveURL(/\/triman\/?$/u);
+    await page.getByRole("link", { name: /^jouer/i }).click();
+    await expect(page).toHaveURL(/\/triman\/joueurs\/?$/u);
+    await expect(page.getByRole("heading", { name: /ajoutez/i })).toBeVisible();
+  } finally {
+    await context.setOffline(false);
+  }
+});

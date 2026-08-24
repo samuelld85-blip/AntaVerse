@@ -36,19 +36,26 @@ function isVersionDefining(request, url) {
 }
 
 // `cache.addAll` est atomique : une seule ressource manquante ferait échouer l'installation et
-// laisserait indéfiniment la génération précédente active. On précache donc entrée par entrée.
+// laisserait indéfiniment la génération précédente active. On précache donc entrée par entrée,
+// mais l'installation ne doit être validée que si toutes les ressources ont bien été récupérées.
 async function precache() {
   const cache = await caches.open(CACHE);
-  await Promise.all(
+  const results = await Promise.all(
     APP_SHELL.map(async (url) => {
       try {
         const response = await fetch(new Request(url, { cache: "reload" }));
-        if (response.ok) await cache.put(url, response);
+        if (!response.ok) return { url, ok: false };
+        await cache.put(url, response);
+        return { url, ok: true };
       } catch {
-        // Une ressource indisponible ne doit pas bloquer la mise à jour.
+        return { url, ok: false };
       }
     }),
   );
+  const failed = results.filter((result) => !result.ok).map((result) => result.url);
+  if (failed.length) {
+    throw new Error(`Précache incomplet (${failed.length} ressource(s))`);
+  }
 }
 
 async function notifyStaleDocument() {
@@ -63,12 +70,7 @@ async function networkFirst(request) {
     if (response.ok) cache.put(request, response.clone());
     return response;
   } catch {
-    const exact = await cache.match(request, { ignoreSearch: true });
-    if (exact) return exact;
-    const url = new URL(request.url);
-    if (request.mode !== "navigate") return Response.error();
-    const normalizedPath = url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
-    return (await cache.match(normalizedPath)) ?? (await cache.match(OFFLINE_URL));
+    return (await matchCachedRoute(cache, request)) ?? (await cache.match(OFFLINE_URL));
   }
 }
 
@@ -84,7 +86,7 @@ async function cacheFirst(request) {
 
 async function staleWhileRevalidate(request) {
   const cache = await caches.open(CACHE);
-  const cached = await cache.match(request, { ignoreSearch: true });
+  const cached = await matchCachedRoute(cache, request);
   const network = fetch(request)
     .then((response) => {
       if (response.ok) cache.put(request, response.clone());
@@ -95,7 +97,40 @@ async function staleWhileRevalidate(request) {
     void network;
     return cached;
   }
-  return (await network) ?? Response.error();
+  const response = await network;
+  if (response) return response;
+
+  // Next peut demander un segment RSC optionnel qui n'existe pas dans l'export statique.
+  // Une vraie réponse 404 permet au routeur de poursuivre avec le payload index.txt mis en
+  // cache, alors que Response.error() fait basculer toute la navigation dans l'écran hors ligne.
+  if (request.headers.get("RSC") === "1") return new Response(null, { status: 404 });
+  return Response.error();
+}
+
+async function matchCachedRoute(cache, request) {
+  const exact = await cache.match(request, { ignoreSearch: true });
+  if (exact) return exact;
+
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+  const candidates = new Set([pathname]);
+  if (pathname !== "/") {
+    candidates.add(pathname.endsWith("/") ? pathname.slice(0, -1) : `${pathname}/`);
+  }
+
+  // Une navigation RSC peut demander la route sans son index.txt explicite. Le payload
+  // précaché est la représentation offline fiable de cette navigation client.
+  if (request.headers.get("RSC") === "1" && !pathname.endsWith(".txt")) {
+    candidates.add(`${pathname.endsWith("/") ? pathname : `${pathname}/`}index.txt`);
+  }
+
+  for (const candidate of candidates) {
+    const response = await cache.match(new URL(candidate, url.origin).toString(), {
+      ignoreSearch: true,
+    });
+    if (response) return response;
+  }
+  return undefined;
 }
 
 self.addEventListener("install", (event) => {
