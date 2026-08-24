@@ -65,7 +65,7 @@ export function drawCard(game: GameState, now = Date.now()): GameState {
   const revealedCheckpoints = [...game.revealedCheckpoints];
   const reveals: CheckpointReveal[] = [];
   let nextCheckpoint = revealedCheckpoints.findIndex((revealed) => !revealed);
-  while (nextCheckpoint >= 0 && allHorsesAtOrPast(positions, nextCheckpoint + 1)) {
+  while (nextCheckpoint >= 0 && allHorsesHaveReached(positions, nextCheckpoint + 1)) {
     const checkpointCard = game.checkpointCards[nextCheckpoint];
     if (!checkpointCard) break;
     revealedCheckpoints[nextCheckpoint] = true;
@@ -124,7 +124,7 @@ function emptyPositions(): Record<Suit, number> {
   return { "♥": 0, "♦": 0, "♣": 0, "♠": 0 };
 }
 
-function allHorsesAtOrPast(positions: Record<Suit, number>, position: number): boolean {
+function allHorsesHaveReached(positions: Record<Suit, number>, position: number): boolean {
   return SUIT_ORDER.every((suit) => positions[suit] >= position);
 }
 

@@ -40,6 +40,14 @@ describe("PMU engine", () => {
     expect(next.winnerSuit).toBe("♥");
   });
 
+  it("does not wait for every palier to be revealed before declaring a winner", () => {
+    const game = raceGame({ horsePositions: { "♥": FINISH_POSITION - 1, "♦": 0, "♣": 0, "♠": 0 }, remainingDeck: [card("finish-early", "♥")] });
+    const next = drawCard(game);
+    expect(next.phase).toBe("end");
+    expect(next.winnerSuit).toBe("♥");
+    expect(next.revealedCheckpoints.every((revealed) => !revealed)).toBe(true);
+  });
+
   it("splits winning and losing units for the final settlement", () => {
     const game = raceGame({ phase: "end", winnerSuit: "♥", bets: { "player-1": { amount: 3, suit: "♥" }, "player-2": { amount: 5, suit: "♣" } } });
     expect(getSettlement(game)).toEqual([

@@ -5,8 +5,8 @@ const steps = [
   ["Les quatre chevaux", "Retrouvez les As de cœur, carreau, trèfle et pique : chacun avance dans sa propre couleur."],
   ["Les paris", "Chaque joueur choisit entre 1 et 5 gorgées, puis les pose sur un seul cheval. Le pari est validé dès que les deux choix sont faits."],
   ["La course", "Le croupier tire les cartes une par une. La couleur fait avancer le cheval correspondant d’une case ; la valeur ne compte pas."],
-  ["Les checkpoints", "Quand les quatre chevaux ont franchi une étape, sa carte cachée est retournée. Le cheval de sa couleur recule immédiatement d’une case."],
-  ["La victoire", "Le premier cheval à franchir les 6 étapes gagne. Les gorgées posées sur lui sont gagnantes ; les autres sont perdantes."],
+  ["Les paliers", "Les cartes cachées ne sont pas des tours à terminer. Dès que les quatre chevaux ont atteint un même palier, la carte de ce palier est retournée ; le cheval de sa couleur recule immédiatement d’une case."],
+  ["La victoire", "Le premier cheval à franchir la ligne d’arrivée gagne. La course peut donc se terminer avant que tous les paliers aient été révélés."],
 ];
 
 export default function RulesPage() {

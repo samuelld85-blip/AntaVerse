@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 90" role="img">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs>
-  <rect width="220" height="90" rx="22" fill="#111923"/>
-  <path d="M22 57c9-22 29-28 50-17 18 9 33 8 48-4 16-12 36-13 55 0" fill="none" stroke="url(#g)" stroke-linecap="round" stroke-width="7"/>
-  <circle cx="36" cy="57" r="10" fill="#fff"/><path d="M31 57h10M36 52v10" stroke="#ef4444" stroke-width="2"/>
-  <text x="82" y="54" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="900" letter-spacing="3">PMU</text>
-  <text x="84" y="72" fill="#f59e0b" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2">LA COURSE</text>
-</svg>

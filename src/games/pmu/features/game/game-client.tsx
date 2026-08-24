@@ -42,7 +42,7 @@ function BetForm({ player, onSubmit }: { player: Player; onSubmit: (bet: Bet) =>
 }
 
 function CheckpointTrack({ game }: { game: GameState }) {
-  return <div className="pmu-checkpoint-row" aria-label="Six checkpoints de la course"><span className="pmu-track-side">DÉPART</span><div className="pmu-checkpoint-track">{Array.from({ length: CHECKPOINT_COUNT }, (_, index) => { const revealed = game.revealedCheckpoints[index]; const card = game.checkpointCards[index]; return <div key={index} className={`pmu-checkpoint ${revealed ? "is-revealed" : ""}`} aria-label={revealed && card ? `Étape ${index + 1}, ${cardValueLabel(card.value)} de ${suitName(card.suit)}` : `Étape ${index + 1}, cachée`}>{revealed && card ? <><strong>{card.suit}</strong><small>{index + 1}</small></> : <small>{index + 1}</small>}</div>; })}</div><span className="pmu-track-side pmu-track-side--finish">ARRIVÉE</span></div>;
+  return <div className="pmu-checkpoint-row" aria-label="Paliers de révélation de la course"><span className="pmu-track-side">DÉPART</span><div className="pmu-checkpoint-track">{Array.from({ length: CHECKPOINT_COUNT }, (_, index) => { const revealed = game.revealedCheckpoints[index]; const card = game.checkpointCards[index]; return <div key={index} className={`pmu-checkpoint ${revealed ? "is-revealed" : ""}`} aria-label={revealed && card ? `Palier ${index + 1}, ${cardValueLabel(card.value)} de ${suitName(card.suit)}` : `Palier ${index + 1}, caché`}>{revealed && card ? <><strong>{card.suit}</strong><small>{index + 1}</small></> : <small>{index + 1}</small>}</div>; })}</div><span className="pmu-track-side pmu-track-side--finish">ARRIVÉE</span></div>;
 }
 
 function RaceTrack({ game }: { game: GameState }) {
@@ -52,7 +52,16 @@ function RaceTrack({ game }: { game: GameState }) {
 function LastDrawMessage({ game }: { game: GameState }) {
   const draw = game.lastDraw;
   if (!draw) return <p className="pmu-empty-event">La piste est prête. Le croupier peut tirer la première carte.</p>;
-  return <div className="pmu-event" role="status" aria-live="polite"><CardView card={draw.card} label={`Le ${suitName(draw.movedSuit)} avance`} /><div><p className="eyebrow">Dernier tirage</p><h2>{suitName(draw.movedSuit)} avance d&apos;une case.</h2>{draw.revealedCheckpoints.length > 0 ? <ul>{draw.revealedCheckpoints.map((reveal) => <li key={reveal.index}>Étape {reveal.index + 1} retournée : {suitName(reveal.penalizedSuit)} recule d&apos;une case.</li>)}</ul> : <p>La couleur de la carte fait foi, sa valeur ne compte pas.</p>}</div></div>;
+  const reveals = draw.revealedCheckpoints;
+  const revealTitle = reveals.length === 0
+    ? null
+    : reveals.length === 1
+      ? `Étape ${reveals[0]!.index + 1} franchie`
+      : `Étapes ${reveals[0]!.index + 1}–${reveals[reveals.length - 1]!.index + 1} franchies`;
+  return <div className="pmu-event-stack" role="status" aria-live="polite">
+    <div className="pmu-event pmu-event--draw"><CardView card={draw.card} label={`Le ${suitName(draw.movedSuit)} avance`} /><div><p className="eyebrow">Dernier tirage</p><h2>{suitName(draw.movedSuit)} avance d&apos;une case.</h2><p>La couleur de la carte fait foi, sa valeur ne compte pas.</p></div></div>
+    {reveals.length > 0 ? <div className="pmu-event pmu-event--setback"><div className="pmu-reveal-cards">{reveals.map((reveal) => <CardView key={reveal.index} card={reveal.card} label={`Étape ${reveal.index + 1}`} />)}</div><div><p className="eyebrow">{revealTitle}</p><h2>{reveals.map((reveal) => `${suitName(reveal.penalizedSuit)} recule d’une case`).join(" · ")}.</h2><p>La carte retournée impose le recul de la couleur indiquée.</p></div></div> : null}
+  </div>;
 }
 
 function SettlementPanel({ game }: { game: GameState }) {
@@ -88,6 +97,5 @@ export function GameClient() {
 
   if (game.phase === "end") return <main className="game-shell safe-shell pmu-shell"><header className="game-header"><Brand compact /><QuitGameButton homeHref="/pmu" /></header><div className="pmu-status"><span>COURSE TERMINÉE</span><strong>{game.lastDraw ? `${game.lastDraw.card.value}${game.lastDraw.card.suit}` : "PMU"}</strong></div><RaceTrack game={game} /><SettlementPanel game={game} /></main>;
 
-  const currentPlayer = game.players[game.currentPlayerIndex];
-  return <main className="game-shell safe-shell pmu-shell"><header className="game-header"><Brand compact /><QuitGameButton homeHref="/pmu" /></header><div className="pmu-status"><span>COURSE EN DIRECT · {CHECKPOINT_COUNT} ÉTAPES</span><strong>{game.remainingDeck.length} CARTES</strong></div><section className="pmu-race-stage"><div className="pmu-race-copy"><p className="eyebrow">Les paris sont verrouillés</p><h1>Tirez la carte.</h1><p>{currentPlayer ? `C’est ${currentPlayer.name} qui tient le rôle de croupier.` : "Le croupier choisit quand tirer."}</p></div><RaceTrack game={game} /><LastDrawMessage game={game} /><Button className="pmu-draw-button" onClick={() => commit(drawCard(game))}>Tirer la carte <span aria-hidden="true">↗</span></Button></section></main>;
+  return <main className="game-shell safe-shell pmu-shell pmu-shell--race"><header className="game-header"><Brand compact /><QuitGameButton homeHref="/pmu" /></header><section className="pmu-race-stage"><div className="pmu-race-copy"><p className="eyebrow">Les paris sont verrouillés</p><h1>Tirez la carte.</h1></div><RaceTrack game={game} /><LastDrawMessage game={game} /><Button className="pmu-draw-button" onClick={() => commit(drawCard(game))}>Tirer la carte <span aria-hidden="true">↗</span></Button></section></main>;
 }

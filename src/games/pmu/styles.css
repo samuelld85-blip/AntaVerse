@@ -18,6 +18,7 @@
 html[data-theme="light"]:has(.brand-mark--pmu) { --game-accent-ink: #241303; }
 .brand-mark--pmu { width: 8.2rem; height: auto; }
 .brand-mark--pmu.brand-mark--small { width: 5.8rem; }
+html[data-theme="light"] .brand-mark--pmu { content: url("/brand/games/pmu-light.png"); }
 
 .pmu-home .home-hero h1 { color: var(--pmu-accent-light); font-size: clamp(4.4rem, 22vw, 7rem); letter-spacing: -0.08em; }
 .pmu-home .home-tagline strong { color: var(--pmu-accent-light); }
@@ -27,6 +28,7 @@ html[data-theme="light"]:has(.brand-mark--pmu) { --game-accent-ink: #241303; }
 .player-list { display: grid; gap: 0.75rem; }
 
 .pmu-shell { grid-template-rows: auto auto minmax(0, 1fr); }
+.pmu-shell--race { grid-template-rows: auto minmax(0, 1fr); }
 .pmu-loading { display: grid; place-items: center; text-align: center; }
 .pmu-loading p { color: var(--muted); font-size: 0.8rem; font-weight: 700; }
 .pmu-status { display: flex; justify-content: space-between; gap: 0.7rem; color: var(--muted); font-size: 0.62rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -51,7 +53,7 @@ html[data-theme="light"]:has(.brand-mark--pmu) { --game-accent-ink: #241303; }
 
 .pmu-race-stage { display: grid; min-height: 0; grid-template-rows: auto auto minmax(0, 1fr) auto; gap: clamp(0.55rem, 1.8dvh, 1rem); padding-top: clamp(0.7rem, 2dvh, 1.1rem); }
 .pmu-race-copy { text-align: center; }
-.pmu-race-copy h1 { margin: 0.25rem 0 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(2rem, 9vw, 3.5rem); letter-spacing: -0.06em; line-height: 0.9; text-transform: uppercase; }
+.pmu-race-copy h1 { margin: 0.25rem 0 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(1.7rem, 7.65vw, 3rem); letter-spacing: -0.06em; line-height: 0.9; text-transform: uppercase; }
 .pmu-race-copy p:last-child { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.76rem; }
 .pmu-race-board { display: grid; align-content: center; gap: 0.55rem; min-height: 0; }
 .pmu-checkpoint-row, .pmu-horse-row { display: grid; grid-template-columns: minmax(3.6rem, 4.6rem) minmax(0, 1fr); gap: 0.55rem; align-items: center; }
@@ -80,13 +82,19 @@ html[data-theme="light"]:has(.brand-mark--pmu) { --game-accent-ink: #241303; }
 .pmu-track-cell.is-finish { border-right: 2px solid var(--pmu-accent); border-left: 0; }
 .pmu-horse-token { display: grid; width: 2.05rem; height: 2.05rem; place-items: center; border: 2px solid var(--pmu-accent-light); border-radius: 50%; background: var(--pmu-track); color: var(--text); font-size: 1.15rem; font-weight: 950; box-shadow: 0 0 0 0.22rem rgba(245, 158, 11, 0.14), 0 0.35rem 0.8rem rgba(0, 0, 0, 0.32); animation: pmu-token-enter 220ms ease-out; }
 .pmu-horse-row[data-suit="♥"] .pmu-horse-token, .pmu-horse-row[data-suit="♦"] .pmu-horse-token { border-color: #f87171; }
+.pmu-event-stack { display: grid; min-height: 0; gap: 0.55rem; overflow: hidden; }
 .pmu-event { display: flex; min-height: 0; align-items: center; gap: 0.8rem; border-top: 1px solid var(--line); padding-top: 0.65rem; }
 .pmu-event h2 { margin: 0.15rem 0 0; font-size: 0.85rem; }
 .pmu-event p:last-child, .pmu-event ul { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.67rem; line-height: 1.35; }
 .pmu-event ul { padding-left: 1rem; }
+.pmu-event--setback { border: 1px solid color-mix(in srgb, #f87171 48%, var(--line)); border-radius: 0.95rem; padding: 0.7rem; background: linear-gradient(135deg, rgba(248, 113, 113, 0.15), rgba(245, 158, 11, 0.08)); }
+.pmu-event--setback h2 { color: #fca5a5; font-size: 0.98rem; }
+.pmu-event--setback .eyebrow { color: #fbbf24; }
+.pmu-reveal-cards { display: flex; flex: 0 0 auto; gap: 0.45rem; }
+.pmu-event--setback .pmu-card { width: 3.105rem; border-color: #fbbf24; box-shadow: 0 0 0 0.16rem rgba(245, 158, 11, 0.16), 0 0.45rem 0.9rem rgba(0, 0, 0, 0.25); }
 .pmu-empty-event { margin: auto 0 0; color: var(--muted); font-size: 0.74rem; text-align: center; }
 .pmu-card-wrap { display: grid; flex: 0 0 auto; justify-items: center; gap: 0.25rem; }
-.pmu-card { position: relative; display: grid; width: 3.2rem; aspect-ratio: 2.5 / 3.5; place-items: center; border: 2px solid rgba(0, 0, 0, 0.18); border-radius: 0.58rem; background: #fff; color: var(--pmu-card-ink); box-shadow: 0 0.45rem 0.9rem rgba(0, 0, 0, 0.25); }
+.pmu-card { position: relative; display: grid; width: 2.88rem; aspect-ratio: 2.5 / 3.5; place-items: center; border: 2px solid rgba(0, 0, 0, 0.18); border-radius: 0.58rem; background: #fff; color: var(--pmu-card-ink); box-shadow: 0 0.45rem 0.9rem rgba(0, 0, 0, 0.25); }
 .pmu-card[data-red="true"] { color: #dc2626; }
 .pmu-card-corner { position: absolute; top: 0.24rem; left: 0.28rem; display: flex; flex-direction: column; align-items: center; font-size: 0.58rem; font-weight: 950; line-height: 1; }
 .pmu-card-corner small { font-size: 0.75em; }
@@ -121,7 +129,7 @@ html[data-theme="light"]:has(.brand-mark--pmu) { --game-accent-ink: #241303; }
   .pmu-track-cell, .pmu-track-line { min-height: 2.3rem; }
   .pmu-horse-token { width: 1.7rem; height: 1.7rem; }
   .pmu-checkpoint { min-height: 1.7rem; }
-  .pmu-race-copy h1 { font-size: 2rem; }
+  .pmu-race-copy h1 { font-size: 1.7rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

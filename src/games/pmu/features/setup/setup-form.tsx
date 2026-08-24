@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { AddParticipantButton } from "@/games/shared/components/add-participant-button";
 import { ParticipantCard } from "@/games/shared/components/participant-card";
@@ -8,15 +8,25 @@ import { Button } from "@/games/shared/components/ui";
 import { hasEmptyName } from "@/games/shared/lib/participant-list";
 import { usePlayerFields } from "@/games/shared/lib/use-player-fields";
 import { createGame, MAX_PLAYERS, MIN_PLAYERS } from "@/games/pmu/lib/game/engine";
-import { saveCurrentGame } from "@/games/pmu/lib/game/persistence";
+import { loadCurrentGame, saveCurrentGame } from "@/games/pmu/lib/game/persistence";
 
 const DEFAULT_PLAYER_COUNT = 3;
 const ACCENT = "var(--pmu-accent)";
 
 export function SetupForm() {
   const router = useRouter();
-  const { fields, updateName, addPlayer, removePlayer, isRemovable, canAddMore } = usePlayerFields({ minPlayers: MIN_PLAYERS, maxPlayers: MAX_PLAYERS, defaultCount: DEFAULT_PLAYER_COUNT });
+  const { fields, updateName, addPlayer, removePlayer, replacePlayers, isRemovable, canAddMore } = usePlayerFields({ minPlayers: MIN_PLAYERS, maxPlayers: MAX_PLAYERS, defaultCount: DEFAULT_PLAYER_COUNT });
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      const previousGame = loadCurrentGame();
+      if (previousGame) replacePlayers(previousGame.players.map((player) => player.name));
+    }, 0);
+    return () => window.clearTimeout(timer);
+    // The previous player list is intentionally read once when a new setup screen opens.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

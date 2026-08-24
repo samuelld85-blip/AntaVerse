@@ -38,6 +38,13 @@ export function usePlayerFields({ minPlayers, maxPlayers, defaultCount }: UsePla
     setFields((current) => removeField(current, id, minPlayers));
   }
 
+  function replacePlayers(names: readonly string[]) {
+    const nextNames = names.slice(0, maxPlayers);
+    if (nextNames.length < minPlayers) return;
+    setFields(nextNames.map((value, index) => ({ id: index, value })));
+    nextId.current = nextNames.length;
+  }
+
   function isRemovable(index: number) {
     return isFieldRemovable(index, fields.length, minPlayers);
   }
@@ -47,6 +54,7 @@ export function usePlayerFields({ minPlayers, maxPlayers, defaultCount }: UsePla
     updateName,
     addPlayer,
     removePlayer,
+    replacePlayers,
     isRemovable,
     canAddMore: fields.length < maxPlayers,
   };
