@@ -81,7 +81,7 @@ html[data-theme="light"] .brand-mark--pmu { content: url("/brand/games/pmu-light
 .pmu-track-cell { position: relative; z-index: 1; display: grid; min-width: 0; min-height: 2.85rem; place-items: center; border-left: 1px solid rgba(245, 158, 11, 0.12); }
 .pmu-track-cell.is-finish { border-right: 2px solid var(--pmu-accent); border-left: 0; }
 .pmu-horse-token { display: grid; width: 2.05rem; height: 2.05rem; place-items: center; border: 2px solid var(--pmu-accent-light); border-radius: 50%; background: var(--pmu-track); color: var(--text); font-size: 1.15rem; font-weight: 950; box-shadow: 0 0 0 0.22rem rgba(245, 158, 11, 0.14), 0 0.35rem 0.8rem rgba(0, 0, 0, 0.32); animation: pmu-token-enter 220ms ease-out; }
-html[data-theme="light"] .pmu-horse-token { background: transparent; }
+html[data-theme="light"] .pmu-horse-token { background: #fff; }
 .pmu-horse-row[data-suit="♥"] .pmu-horse-token, .pmu-horse-row[data-suit="♦"] .pmu-horse-token { border-color: #f87171; }
 .pmu-event-stack { display: grid; min-height: 0; gap: 0.55rem; overflow: hidden; }
 .pmu-event { display: flex; min-height: 0; align-items: center; gap: 0.8rem; border-top: 1px solid var(--line); padding-top: 0.65rem; }
