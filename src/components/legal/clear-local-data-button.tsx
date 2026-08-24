@@ -15,6 +15,7 @@ const LOCAL_STORAGE_KEYS = [
   "purple:current-game",
   "purple:reveal-mode",
   "roulette-du-chaos:current-game",
+  "fuck:current-game",
   "qui-des-9:current-game",
 ] as const;
 

@@ -1,10 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-test("lists the seven games vertically and opens each game", async ({ page }) => {
+test("lists the eight games vertically and opens each game", async ({ page }) => {
   await page.goto("/");
 
   const cards = page.getByRole("link", { name: /^jouer à /i });
-  await expect(cards).toHaveCount(7);
+  await expect(cards).toHaveCount(8);
   await expect(cards.nth(0)).toContainText("Quoi de 9 ?");
   await expect(cards.nth(1)).toContainText("La Relance");
   await expect(cards.nth(2)).toContainText("Sans le dire");
@@ -12,6 +12,7 @@ test("lists the seven games vertically and opens each game", async ({ page }) =>
   await expect(cards.nth(4)).toContainText("Triman");
   await expect(cards.nth(5)).toContainText("Roulette du Chaos");
   await expect(cards.nth(6)).toContainText("Palmier");
+  await expect(cards.nth(7)).toContainText("Fuck");
 
   const boxes = await cards.evaluateAll((elements) =>
     elements.map((element) => element.getBoundingClientRect().top),
@@ -22,6 +23,7 @@ test("lists the seven games vertically and opens each game", async ({ page }) =>
   expect(boxes[3]).toBeLessThan(boxes[4]!);
   expect(boxes[4]).toBeLessThan(boxes[5]!);
   expect(boxes[5]).toBeLessThan(boxes[6]!);
+  expect(boxes[6]).toBeLessThan(boxes[7]!);
 
   for (const [name, route] of [
     ["Quoi de 9 ?", "/quoi-de-9/"],
@@ -31,6 +33,7 @@ test("lists the seven games vertically and opens each game", async ({ page }) =>
     ["Triman", "/triman/"],
     ["Roulette du Chaos", "/roulette-du-chaos/"],
     ["Palmier", "/palmier/"],
+    ["Fuck", "/fuck/"],
   ] as const) {
     await page.goto("/");
     await page.getByRole("link", { name: `Jouer à ${name}` }).click();

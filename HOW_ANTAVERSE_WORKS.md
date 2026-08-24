@@ -53,7 +53,7 @@ dans une seule application mobile-first, installable comme une app (PWA), et
 sans backend : tout tourne dans le navigateur du téléphone, rien n'est envoyé
 à un serveur pendant une partie.
 
-Aujourd'hui, sept jeux sont enregistrés dans l'app (voir
+Aujourd'hui, huit jeux sont enregistrés dans l'app (voir
 [`src/lib/games.ts`](src/lib/games.ts)) :
 
 - **Quoi de 9 ?** — jeu de questions/thèmes par équipes, avec système de
@@ -61,6 +61,8 @@ Aujourd'hui, sept jeux sont enregistrés dans l'app (voir
 - **La Relance**, **Sans le dire** — jeux à deux équipes.
 - **Purple**, **Triman**, **Roulette du Chaos**, **Palmier** — jeux à liste de
   joueurs (pas d'équipes fixes).
+- **Fuck** — jeu de cartes à maître du jeu, avec rotation du rôle après trois
+  victoires consécutives.
 
 ### Architecture générale, en une image
 
@@ -196,7 +198,7 @@ traditionnels — tu composes le style directement dans le JSX.
   `postcss.config.mjs`) — on le voit dans ses composants,
   ex. `className="safe-shell grid min-h-[100dvh] place-items-center"` dans
   `src/games/quoi-de-9/features/game/game-client.tsx`.
-- **Les six autres jeux** écrivent leur CSS à la main, dans un fichier
+- **Les sept autres jeux** écrivent leur CSS à la main, dans un fichier
   `styles.css` par jeu (ex. `src/games/palmier/styles.css`), qui définit des
   variables CSS (§8) et des classes classiques.
 - `src/app/globals.css`, le point d'entrée CSS global, commence par
@@ -256,7 +258,7 @@ localStorage. Voir §7.
 tant que l'utilisateur ne vide pas les données du site, limité à environ
 5 Mo, et **synchrone** (donc simple à utiliser, mais bloquant si abusé).
 
-**Dans AntaVerse** : c'est le mécanisme de persistance de six des sept jeux
+**Dans AntaVerse** : c'est le mécanisme de persistance de sept des huit jeux
 (tous sauf Quoi de 9), via le helper partagé `readJson`/`writeJson`/
 `removeJson` de [`src/lib/local-storage-json.ts`](src/lib/local-storage-json.ts).
 Chaque jeu écrit sous **sa propre clé namespacée** (ex.
@@ -305,12 +307,10 @@ serveur de fichiers statiques, avec des règles de cache HTTP dédiées pour
 - **`sharp`** — traitement d'image côté build, utilisé uniquement par
   `scripts/generate-pwa-icons.mjs` pour générer les icônes PWA à partir du
   logo (§9).
-- **`react-hook-form`** est une dépendance déclarée mais **très peu utilisée**
-  en pratique — un seul point d'usage a été trouvé
-  (`src/games/shared/components/participant-card.tsx`). Ce n'est pas la
-  colonne vertébrale des formulaires de setup, qui reposent surtout sur du
-  `useState` React classique (`use-player-fields.ts`, §8) — à noter pour ne
-  pas surestimer son rôle.
+- Les formulaires de setup reposent principalement sur du `useState` React
+  classique, avec la gestion partagée des listes de joueurs dans
+  `src/games/shared/lib/use-player-fields.ts` (§8). `react-hook-form` n'est
+  pas une dépendance du projet actuel.
 
 ---
 
@@ -338,7 +338,7 @@ contenir que ce qui est *prouvé* dupliqué à l'identique par au moins deux
 jeux, et chaque jeu (`src/games/<slug>`) reste libre d'avoir ses propres
 choix (modèle de données, persistance, style) sans avoir à s'accorder avec
 les autres. C'est ce qui permet à Quoi de 9 d'être structurellement différent
-(Tailwind + IndexedDB) sans que ça "pollue" les six autres jeux.
+(Tailwind + IndexedDB) sans que ça "pollue" les sept autres jeux.
 
 - **`src/app/`** — uniquement du routage : `page.tsx`, `layout.tsx`,
   `error.tsx` par route. Aucune règle de jeu n'y vit.
@@ -617,7 +617,7 @@ pas explicitement sauvegardé.
 
 Deux mécanismes coexistent, selon le jeu.
 
-**localStorage — six jeux sur sept.** Le helper partagé
+**localStorage — sept jeux sur huit.** Le helper partagé
 [`src/lib/local-storage-json.ts`](src/lib/local-storage-json.ts) expose
 `readJson`/`writeJson`/`removeJson` : lire-parser-valider (ou effacer si
 invalide), écrire, supprimer — autour d'une seule clé JSON. Chaque jeu
@@ -670,7 +670,7 @@ ci-dessus.
 ## 8. UI et design system
 
 C'est la partie de l'app la plus récemment consolidée. L'idée centrale :
-**un seul système visuel partagé, paramétré par jeu**, plutôt que sept
+**un seul système visuel partagé, paramétré par jeu**, plutôt que huit
 implémentations séparées d'un même écran de setup ou d'une même carte
 joueur.
 
@@ -1103,7 +1103,7 @@ plus — jamais par anticipation ("un futur jeu en aura peut-être besoin").
 - **La persistance de Quoi de 9** (IndexedDB + migration) — pas généralisée
   aux autres jeux, parce qu'aucun autre n'en a besoin.
 - **Le style de Quoi de 9** (Tailwind, pas de `game-base.css`) — laissé
-  différent plutôt que forcé dans le système visuel des six autres.
+  différent plutôt que forcé dans le système visuel des sept autres.
 - **`brand.tsx`** de chaque jeu — même structure JSX, mais logo/alt/lien
   différents ; jugé "pas assez économique à factoriser" (`ARCHITECTURE.md`).
 - **Retour haptique/audio** — trois comportements différents (aucun, simple
@@ -1239,7 +1239,7 @@ Une version orale, courte, de tout ce qui précède.
 > contrat de couleurs d'accent — est extrait dans un dossier partagé, mais
 > seulement une fois prouvé dupliqué, jamais par anticipation. Ça permet à
 > un jeu comme Quoi de 9 (Tailwind, IndexedDB, machine à états à 15
-> statuts) d'être structurellement différent des six autres sans que ça
+> statuts) d'être structurellement différent des sept autres sans que ça
 > pose problème.
 >
 > **Côté UX/UI**, l'app est mobile-first, avec un système de variables CSS

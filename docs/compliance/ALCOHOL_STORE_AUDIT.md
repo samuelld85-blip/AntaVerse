@@ -28,8 +28,8 @@ le point le plus important de cet audit.
 
 ## Jeux inventoriés
 
-Registre réel (`src/lib/games.ts`) : 7 jeux, dont 4 marqués
-`drinkingGame: true` (Purple, Triman, Roulette du Chaos, Palmier) et 2 avec
+Registre réel (`src/lib/games.ts`) : 8 jeux, dont 5 marqués
+`drinkingGame: true` (Purple, Triman, Roulette du Chaos, Palmier, Fuck) et 2 avec
 un mode "Fun" optionnel à gorgées (Quoi de 9, Sans le dire) en plus de leur
 mode Compétition sans alcool. La Relance n'a aucun contenu alcool.
 

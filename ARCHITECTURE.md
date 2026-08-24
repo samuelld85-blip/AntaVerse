@@ -2,10 +2,10 @@
 
 AntaVerse is a small collection of party games — **Quoi de 9 ?**, **La
 Relance**, **Sans le dire**, **Purple**, **Triman**, **Roulette du Chaos**,
-**Palmier** — served from one Next.js app and exported statically. This
+**Palmier**, **Fuck** — served from one Next.js app and exported statically. This
 document describes the layers that exist today, the boundaries between them,
 and the rules a future contributor (human or AI) should follow when adding or
-changing code. It reflects the current scale of the app (seven games, a
+changing code. It reflects the current scale of the app (eight games, a
 handful of contributors) — it is deliberately not an attempt to future-proof
 for a scale AntaVerse doesn't have yet.
 
@@ -30,7 +30,8 @@ src/
     purple/               ├─ one folder per game, self-contained
     triman/               │
     roulette-du-chaos/   │
-    palmier/              ┘
+    palmier/              │
+    fuck/                 ┘
 ```
 
 ### `src/app` — routing shell

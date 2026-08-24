@@ -45,6 +45,7 @@ ni importé dans le code.
 | Partie en cours — Purple | `localStorage["purple:current-game"]` | Reprendre une partie | Non | localStorage | Idem | Idem | Idem |
 | Préférence de révélation — Purple | `localStorage["purple:reveal-mode"]` | Mémoriser une préférence d'animation | Non | localStorage | Idem | Idem | Idem |
 | Partie en cours — Roulette du Chaos | `localStorage["roulette-du-chaos:current-game"]` | Reprendre une partie | Non | localStorage | Idem | Idem | Idem |
+| Partie en cours — Fuck | `localStorage["fuck:current-game"]` | Reprendre une partie | Non | localStorage | Idem | Idem | Idem |
 | Partie en cours — Quoi de 9 (principal) | IndexedDB, base `qui-des-9`, store `games`, clé `current` (`src/games/quoi-de-9/lib/game/persistence.ts`) | Reprendre une partie, avec migration de schéma legacy | Non | IndexedDB | Idem | Idem | Idem |
 | Partie en cours — Quoi de 9 (repli) | `localStorage["qui-des-9:current-game"]` | Repli si IndexedDB indisponible | Non | localStorage | Idem | Idem | Idem |
 | Partie en cours — Quoi de 9 (dernier repli) | `window.name`, préfixe `qui-des-9-game:` | Dernier repli si IndexedDB et localStorage sont tous deux indisponibles (certains modes de navigation privée WebKit) | Non | `window.name` (survit aux rechargements, pas à la fermeture de l'onglet) | Session du navigateur | Exécution du service demandé | Se vide automatiquement à la fermeture de l'onglet, ou via le bouton d'effacement |

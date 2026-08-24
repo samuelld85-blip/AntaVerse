@@ -1,0 +1,158 @@
+:root {
+  --fuck-accent: #10b981;
+  --fuck-accent-dark: #047857;
+  --fuck-accent-light: #6ee7b7;
+  --fuck-accent-glow: rgba(16, 185, 129, 0.2);
+  --fuck-red: #dc2626;
+  --fuck-card-ink: #15251f;
+}
+
+:root:has(.brand-mark--fuck) {
+  --game-accent: var(--fuck-accent);
+  --game-accent-dark: var(--fuck-accent-dark);
+  --game-accent-light: var(--fuck-accent-light);
+  --game-accent-glow: var(--fuck-accent-glow);
+  --game-accent-ink: #062d20;
+}
+
+html[data-theme="light"]:has(.brand-mark--fuck) {
+  --game-accent-ink: #062d20;
+}
+
+.brand-mark--fuck { width: 8rem; }
+.brand-mark--fuck.brand-mark--small { width: 5.6rem; }
+html[data-theme="light"] .brand-mark--fuck { content: url("/brand/games/fuck-light.png"); }
+
+.fuck-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.fuck-loading { display: grid; place-items: center; text-align: center; }
+.fuck-status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.fuck-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: clamp(0.65rem, 2vh, 1.35rem) 0;
+  text-align: center;
+}
+.fuck-panel h1,
+.fuck-end-card h1 {
+  max-width: 100%;
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(2rem, 9vw, 3.2rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-wrap: balance;
+  text-transform: uppercase;
+}
+.fuck-instruction,
+.fuck-end-card > p:not(.eyebrow) {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.fuck-outcome {
+  width: 100%;
+  margin: 0;
+  border-radius: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  font-weight: 800;
+}
+.fuck-outcome.is-win { background: color-mix(in srgb, var(--fuck-accent) 14%, transparent); color: var(--fuck-accent-light); }
+.fuck-outcome.is-fail { background: color-mix(in srgb, var(--fuck-red) 14%, transparent); color: #fca5a5; }
+
+.fuck-card {
+  position: relative;
+  display: grid;
+  width: min(48vw, 11rem);
+  aspect-ratio: 2.5 / 3.5;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25);
+  color: var(--fuck-card-ink);
+  animation: fuck-card-enter 220ms ease-out;
+}
+.fuck-card[data-red="true"] { color: var(--fuck-red); }
+.fuck-card-corner {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.fuck-card-corner small { font-size: 0.9rem; }
+.fuck-card-corner--bottom { inset: auto 0.65rem 0.55rem auto; transform: rotate(180deg); }
+.fuck-card-center { font-size: clamp(3rem, 18vw, 5rem); line-height: 1; }
+.fuck-card--compact { width: 2.3rem; border-width: 1px; border-radius: 0.35rem; box-shadow: 0 2px 5px rgba(0,0,0,0.22); animation: none; }
+.fuck-card--compact .fuck-card-corner { top: 0.18rem; left: 0.22rem; font-size: 0.45rem; }
+.fuck-card--compact .fuck-card-corner small { font-size: 0.38rem; }
+.fuck-card--compact .fuck-card-corner--bottom { inset: auto 0.22rem 0.18rem auto; }
+.fuck-card--compact .fuck-card-center { font-size: 1.05rem; }
+
+.fuck-outcome-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; width: 100%; }
+.fuck-result-button,
+.fuck-player-choice {
+  min-height: 3.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 0.8rem 0.9rem;
+  cursor: pointer;
+  font-weight: 850;
+}
+.fuck-result-button--win { background: color-mix(in srgb, var(--fuck-accent) 16%, transparent); color: var(--fuck-accent-light); }
+.fuck-result-button--fail { background: color-mix(in srgb, var(--fuck-red) 14%, transparent); color: #fca5a5; }
+.fuck-result-button:hover,
+.fuck-player-choice:hover { filter: brightness(1.1); }
+.fuck-handoff-panel { align-items: stretch; }
+.fuck-handoff-panel h1,
+.fuck-handoff-panel p { align-self: center; text-align: center; }
+.fuck-player-choices { display: grid; gap: 0.55rem; margin-top: 0.35rem; }
+.fuck-player-choice { display: flex; align-items: center; justify-content: space-between; background: color-mix(in srgb, var(--fuck-accent) 12%, transparent); color: var(--text); text-align: left; }
+.fuck-history { margin-top: auto; padding-top: 0.35rem; }
+.fuck-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.45rem; }
+.fuck-section-heading h2 { margin: 0; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.fuck-section-heading span { color: var(--muted); font-size: 0.72rem; font-weight: 800; }
+.fuck-history-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.4rem; }
+.fuck-history-stack { min-width: 0; text-align: center; }
+.fuck-history-cards { position: relative; display: flex; justify-content: center; min-height: 3.8rem; }
+.fuck-history-card { position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
+.fuck-history-card:nth-child(2) { transform: translate(-50%, 0.16rem); }
+.fuck-history-card:nth-child(3) { transform: translate(-50%, 0.32rem); }
+.fuck-history-card:nth-child(4) { transform: translate(-50%, 0.48rem); }
+.fuck-history-label { display: block; overflow: hidden; margin-top: 0.18rem; color: var(--muted); font-size: 0.55rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.fuck-end-card { display: flex; flex-direction: column; align-items: center; gap: 0.85rem; padding: 1rem 0; text-align: center; }
+.fuck-end-card .fuck-history { width: 100%; margin-top: 0.4rem; text-align: left; }
+
+@keyframes fuck-card-enter { from { transform: translateY(-0.8rem) rotate(-3deg); opacity: 0; } to { transform: translateY(0) rotate(0); opacity: 1; } }
+
+@media (min-width: 520px) {
+  .fuck-history-grid { grid-template-columns: repeat(13, minmax(0, 1fr)); }
+}
+
+@media (max-width: 380px) {
+  .fuck-outcome-actions { grid-template-columns: 1fr; }
+  .fuck-status-bar { font-size: 0.61rem; }
+}

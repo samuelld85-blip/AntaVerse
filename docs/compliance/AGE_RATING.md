@@ -14,10 +14,10 @@ contenu de Roulette du Chaos.
 
 | Thème | Présent ? | Où | Détail |
 |---|---|---|---|
-| Références à l'alcool | **Oui** | Purple, Triman, Roulette du Chaos, Palmier, mode Fun de Quoi de 9 et Sans le dire | Mécanique de "gorgées" centrale à 4 jeux sur 7 ; voir `ALCOHOL_STORE_AUDIT.md` |
+| Références à l'alcool | **Oui** | Purple, Triman, Roulette du Chaos, Palmier, Fuck, mode Fun de Quoi de 9 et Sans le dire | Mécanique de "gorgées" centrale à 5 jeux sur 8 ; voir `ALCOHOL_STORE_AUDIT.md` |
 | Références aux drogues | **Oui, en tant que sujet évoqué** | `roulette-du-chaos/data/content/extreme-questions.ts`, `never-have-i-ever.ts` | Questions du type "qui a testé le plus de substances différentes", "je n'ai jamais consommé une drogue en festival" — évoquées comme sujet de discussion entre adultes, aucune mécanique n'implique de consommation réelle de drogue, ni n'en fait la promotion |
 | Contenu sexuel suggestif ou explicite en texte | **Oui** | `extreme-questions.ts`, `never-have-i-ever.ts` | Questions explicites ("partenaires sexuels", "nude", "rapport sexuel") ; texte uniquement, aucune image |
-| Langage adulte / grossier | Non identifié comme tel | — | Pas de grossièretés récurrentes identifiées dans les bancs audités |
+| Langage adulte / grossier | **Oui** | Nom du jeu **Fuck** (`src/lib/games.ts`) | Le titre du jeu est explicitement grossier/adulte, même si son contenu de cartes reste neutre |
 | Violence | Non | — | Aucun contenu violent identifié |
 | Gambling / simulated gambling | Non | — | Purple et Triman utilisent des mécaniques de hasard (cartes, dés) mais sans mise d'argent réelle ou virtuelle, ni gain/perte monétaire — ce n'est pas un jeu d'argent simulé au sens des politiques stores |
 | Contenu généré par les utilisateurs (UGC) | Non applicable aujourd'hui | — | Aucune fonctionnalité de ce type n'existe dans le code ; voir `FUTURE_SOCIAL_REQUIREMENTS.md` |

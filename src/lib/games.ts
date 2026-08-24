@@ -7,6 +7,7 @@ import {
   ROULETTE_DU_CHAOS_ACCENT,
   SANS_LE_DIRE_ACCENT,
   TRIMAN_ACCENT,
+  FUCK_ACCENT,
 } from "@/games/shared/lib/launcher-accents";
 
 export type GameId =
@@ -16,7 +17,8 @@ export type GameId =
   | "purple"
   | "triman"
   | "roulette-du-chaos"
-  | "palmier";
+  | "palmier"
+  | "fuck";
 
 export interface GameDefinition {
   id: GameId;
@@ -109,6 +111,17 @@ export const games: readonly GameDefinition[] = [
     iconLight: "/brand/games/palmier-light.png",
     accent: PALMIER_ACCENT,
     iconBackground: "#0B1118",
+    drinkingGame: true,
+  },
+  {
+    id: "fuck",
+    name: "Fuck",
+    description: "Devinez la carte, tenez trois manches et ne vous faites pas voler le rôle de dealer",
+    route: "/fuck",
+    icon: "/brand/games/fuck-dark.png",
+    iconLight: "/brand/games/fuck-light.png",
+    accent: FUCK_ACCENT,
+    iconBackground: "#062d20",
     drinkingGame: true,
   },
 ] as const;
