@@ -125,7 +125,7 @@ export const games: readonly GameDefinition[] = [
     icon: "/brand/games/fuck-dark.png",
     iconLight: "/brand/games/fuck-light.png",
     accent: FUCK_ACCENT,
-    iconBackground: "#062d20",
+    iconBackground: "#0B1118",
     drinkingGame: true,
   },
   {
@@ -136,7 +136,7 @@ export const games: readonly GameDefinition[] = [
     icon: "/brand/games/la-traversee-dark.png",
     iconLight: "/brand/games/la-traversee-light.png",
     accent: LA_TRAVERSEE_ACCENT,
-    iconBackground: "#061a33",
+    iconBackground: "#0B1118",
     drinkingGame: true,
   },
   {

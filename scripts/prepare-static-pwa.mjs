@@ -1,41 +1,20 @@
 import { createHash } from "node:crypto";
 import { access, readFile, readdir, rm, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 
 const outputDirectory = resolve("out");
-const routes = [
-  "/",
-  "/installer/",
-  "/quoi-de-9/",
-  "/quoi-de-9/creer/",
-  "/quoi-de-9/partie/",
-  "/quoi-de-9/regles/",
-  "/quoi-de-9/installer/",
-  "/la-relance/",
-  "/la-relance/equipes/",
-  "/la-relance/partie/",
-  "/sans-le-dire/",
-  "/sans-le-dire/equipes/",
-  "/sans-le-dire/partie/",
-  "/purple/",
-  "/purple/joueurs/",
-  "/purple/partie/",
-  "/purple/regles/",
-  "/triman/",
-  "/triman/joueurs/",
-  "/triman/partie/",
-  "/triman/regles/",
-  "/roulette-du-chaos/",
-  "/roulette-du-chaos/joueurs/",
-  "/roulette-du-chaos/partie/",
-  "/roulette-du-chaos/regles/",
-  "/palmier/",
-  "/palmier/joueurs/",
-  "/palmier/partie/",
-  "/palmier/regles/",
-];
+const excludedRoutePrefixes = ["/404/", "/_not-found/", "/quoi-de-9/admin/"];
+const outputFiles = await readdir(outputDirectory, { recursive: true });
+const publicOutputFiles = outputFiles
+  .map((relativePath) => relativePath.replaceAll("\\", "/"))
+  .filter((relativePath) => !isExcluded(`/${relativePath}`));
+const routes = publicOutputFiles
+  .filter((relativePath) => relativePath === "index.html" || relativePath.endsWith("/index.html"))
+  .map(routeForIndexFile)
+  .sort();
 const assets = new Set([
   ...routes,
+  ...publicOutputFiles.filter((relativePath) => relativePath.endsWith(".txt")).map((relativePath) => `/${relativePath}`),
   "/offline.html",
   "/manifest.webmanifest",
   "/icons/app/icon-192.png",
@@ -53,10 +32,16 @@ for (const route of routes) {
   const html = await readFile(htmlPath, "utf8");
   for (const match of html.matchAll(/(?:src|href)="([^"#]+)"/gu)) {
     const url = match[1]?.replaceAll("\\", "").split("?")[0];
-    if (url?.startsWith("/") && !url.startsWith("/admin/")) assets.add(url);
+    if (url?.startsWith("/") && !url.startsWith("/admin/")) assets.add(normalizeStaticUrl(url));
   }
-  for (const entry of await readdir(routeDirectory, { withFileTypes: true })) {
-    if (entry.isFile() && entry.name.endsWith(".txt")) assets.add(`${route}${entry.name}`);
+}
+
+for (const asset of [...assets]) {
+  if (!asset.endsWith(".css")) continue;
+  const stylesheet = await readFile(filePathForUrl(asset), "utf8");
+  for (const match of stylesheet.matchAll(/url\((?:"|')?([^"')?#]+)(?:"|')?\)/gu)) {
+    const url = match[1];
+    if (url?.startsWith("/")) assets.add(url);
   }
 }
 
@@ -129,4 +114,18 @@ function filePathForUrl(url) {
   if (url === "/") return resolve(outputDirectory, "index.html");
   if (url.endsWith("/")) return resolve(outputDirectory, url.slice(1), "index.html");
   return resolve(outputDirectory, url.slice(1));
+}
+
+function isExcluded(pathname) {
+  return excludedRoutePrefixes.some((prefix) => pathname === prefix.slice(0, -1) || pathname.startsWith(prefix));
+}
+
+function routeForIndexFile(relativePath) {
+  const directory = dirname(relativePath).replaceAll("\\", "/");
+  return directory === "." ? "/" : `/${directory}/`;
+}
+
+function normalizeStaticUrl(url) {
+  if (url === "/" || url.endsWith("/") || url.split("/").at(-1)?.includes(".")) return url;
+  return `${url}/`;
 }
