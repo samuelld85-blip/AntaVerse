@@ -61,7 +61,7 @@ export function SetupForm() {
       </div>
       <div>
         <p className="setup-note">
-          {fields.length} joueurs · {fields[0]?.value || "le premier joueur"} sera le dealer
+          {fields.length} joueurs · {fields[0]?.value || "le premier joueur"} sera le Dealer
         </p>
         {error ? <p className="form-error" role="alert">{error}</p> : null}
         <Button type="submit">

@@ -10,7 +10,7 @@ export default function PlayersPage() {
       <section className="setup-heading">
         <p className="eyebrow">Qui prend le paquet ?</p>
         <h1>Ajoutez<br />les joueurs.</h1>
-        <p>Le premier joueur de la liste commence comme dealer.</p>
+        <p>Le premier joueur de la liste commence comme Dealer.</p>
       </section>
       <SetupForm />
     </PageShell>

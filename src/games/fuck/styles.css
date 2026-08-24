@@ -25,8 +25,11 @@ html[data-theme="light"] .brand-mark--fuck { content: url("/brand/games/fuck-lig
 
 .fuck-shell {
   display: flex;
+  height: 100dvh;
+  min-height: 0;
   flex-direction: column;
   gap: 0.85rem;
+  overflow: hidden;
 }
 .fuck-loading { display: grid; place-items: center; text-align: center; }
 .fuck-status-bar {
@@ -44,7 +47,9 @@ html[data-theme="light"] .brand-mark--fuck { content: url("/brand/games/fuck-lig
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 0;
   gap: 0.9rem;
+  justify-content: center;
   padding: clamp(0.65rem, 2vh, 1.35rem) 0;
   text-align: center;
 }
@@ -106,6 +111,18 @@ html[data-theme="light"] .brand-mark--fuck { content: url("/brand/games/fuck-lig
 .fuck-card-corner small { font-size: 0.9rem; }
 .fuck-card-corner--bottom { inset: auto 0.65rem 0.55rem auto; transform: rotate(180deg); }
 .fuck-card-center { font-size: clamp(3rem, 18vw, 5rem); line-height: 1; }
+.fuck-judging-panel {
+  gap: clamp(0.4rem, 1.2dvh, 0.75rem);
+  padding-block: clamp(0.25rem, 1dvh, 0.75rem);
+}
+.fuck-judging-panel h1 { font-size: clamp(1.7rem, 7.5vw, 2.8rem); }
+.fuck-judging-panel .fuck-card { width: min(42vw, 10rem, 20dvh); }
+.fuck-judging-panel .fuck-card-center { font-size: clamp(2.5rem, 14vw, 4rem); }
+.fuck-judging-panel .fuck-instruction {
+  max-width: 28rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
 .fuck-card--compact { width: 2.3rem; border-width: 1px; border-radius: 0.35rem; box-shadow: 0 2px 5px rgba(0,0,0,0.22); animation: none; }
 .fuck-card--compact .fuck-card-corner { top: 0.18rem; left: 0.22rem; font-size: 0.45rem; }
 .fuck-card--compact .fuck-card-corner small { font-size: 0.38rem; }

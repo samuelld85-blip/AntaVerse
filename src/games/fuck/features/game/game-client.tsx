@@ -65,7 +65,7 @@ function OutcomeMessage({ game }: { game: GameState }) {
     <p className={`fuck-outcome ${game.lastOutcome.outcome === "master-won" ? "is-win" : "is-fail"}`} role="status">
       {game.lastOutcome.outcome === "master-won"
         ? `${master} remporte la manche face à ${target}.`
-        : `${target} a trouvé la carte : le dealer échoue.`}
+        : `${target} a trouvé la carte : le Dealer échoue.`}
     </p>
   );
 }
@@ -125,14 +125,14 @@ export function GameClient() {
       <section className="fuck-status-bar" aria-label="État de la partie">
         <span>Manche {game.roundsPlayed}</span>
         <span>{game.remainingDeck.length} cartes restantes</span>
-        <span>Série du dealer : {game.masterStreak} / 3</span>
+        <span>Série du Dealer : {game.masterStreak} / 3</span>
       </section>
 
       {game.phase === "handoff" ? (
         <section className="fuck-panel fuck-handoff-panel">
           <p className="eyebrow">Trois victoires d’affilée</p>
-          <h1>{master.name} choisit le prochain dealer.</h1>
-          <p>Le dealer actuel désigne la personne qui prendra sa place.</p>
+          <h1>{master.name} choisit le prochain Dealer.</h1>
+          <p>Le Dealer actuel désigne la personne qui prendra sa place.</p>
           <div className="fuck-player-choices">
             {game.players.filter((player) => player.id !== master.id).map((player) => (
               <button type="button" className="fuck-player-choice" key={player.id} onClick={() => commit(chooseNewMaster(game, player.id))}>
@@ -146,7 +146,7 @@ export function GameClient() {
             <p className="eyebrow">Dealer : {master.name}</p>
           <h1>À {target.name} de deviner.</h1>
           <p className="fuck-instruction">
-            Passez le téléphone au dealer. Lui seul regarde la carte, puis donne les indices à voix haute.
+            Passez le téléphone au Dealer. Lui seul regarde la carte, puis donne les indices à voix haute.
           </p>
           <OutcomeMessage game={game} />
           <Button onClick={() => commit(startRound(game))}>
@@ -155,18 +155,18 @@ export function GameClient() {
         </section>
       ) : (
         <section className="fuck-panel fuck-judging-panel">
-          <p className="eyebrow">Carte réservée au dealer</p>
+          <p className="eyebrow">Carte réservée au Dealer</p>
           <h1>{target.name} propose deux fois.</h1>
           {game.currentCard ? <PlayingCard card={game.currentCard} /> : null}
           <p className="fuck-instruction">
-            Le dealer annonce « plus » ou « moins » après la première proposition. L’écart entre la deuxième proposition et la carte donne les gorgées.
+            Le Dealer annonce « plus » ou « moins » après la première proposition. L’écart entre la deuxième proposition et la carte donne les gorgées.
           </p>
           <div className="fuck-outcome-actions">
             <button type="button" className="fuck-result-button fuck-result-button--win" onClick={() => commit(resolveRound(game, "master-won"))}>
-              Le dealer a gagné
+              Le Dealer a gagné
             </button>
             <button type="button" className="fuck-result-button fuck-result-button--fail" onClick={() => commit(resolveRound(game, "master-failed"))}>
-              Le dealer a échoué
+              Le Dealer a échoué
             </button>
           </div>
         </section>

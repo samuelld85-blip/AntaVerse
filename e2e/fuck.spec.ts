@@ -13,6 +13,21 @@ test("sets up Fuck, reveals cards, records the result, and hands off the role", 
   await expect(page.getByRole("heading", { name: /à bob de deviner/i })).toBeVisible();
   await page.getByRole("button", { name: /voir la carte/i }).click();
   await expect(page.locator(".fuck-card").first()).toBeVisible();
+  await expect
+    .poll(() => page.evaluate(() => document.documentElement.scrollHeight <= window.innerHeight))
+    .toBe(true);
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        [".fuck-outcome-actions", ".fuck-history"].every((selector) => {
+          const element = document.querySelector<HTMLElement>(selector);
+          if (!element) return false;
+          const rect = element.getBoundingClientRect();
+          return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        }),
+      ),
+    )
+    .toBe(true);
   await page.getByRole("button", { name: /le maître a gagné/i }).click();
   await expect(page.getByRole("heading", { name: /à chloé de deviner/i })).toBeVisible();
   await expect(page.getByText("1 / 52")).toBeVisible();

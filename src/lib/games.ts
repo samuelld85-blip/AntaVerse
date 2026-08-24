@@ -116,7 +116,7 @@ export const games: readonly GameDefinition[] = [
   {
     id: "fuck",
     name: "Fuck",
-    description: "Devinez la carte, tenez trois manches et ne vous faites pas voler le rôle de dealer",
+    description: "Devinez la carte, tenez trois manches et ne vous faites pas voler le rôle de Dealer",
     route: "/fuck",
     icon: "/brand/games/fuck-dark.png",
     iconLight: "/brand/games/fuck-light.png",

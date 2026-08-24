@@ -10,7 +10,7 @@ export default function HomePage() {
     <main className="home-shell safe-shell">
       <header className="game-home-header"><Brand /><GameHomeNav rulesHref="/fuck/regles" /></header>
       <section className="home-hero">
-        <p className="eyebrow">Le jeu du dealer et du hasard</p>
+        <p className="eyebrow">Le jeu du Dealer et du hasard</p>
         <h1>Fuck</h1>
         <p className="home-tagline">Devine la carte.<br /><strong>Évite le mauvais écart.</strong></p>
       </section>
