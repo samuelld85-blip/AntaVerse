@@ -1,25 +1,21 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 export function RouteThemeSync() {
-  const pathname = usePathname();
-
   useEffect(() => {
-    const key = "antaverse:theme";
-    let theme = "dark";
+    // The theme is deliberately not persisted: every fresh app load starts
+    // in dark mode, regardless of a previous choice or browser.
+    document.documentElement.dataset.theme = "dark";
     try {
-      const storedTheme = window.localStorage.getItem(key);
-      theme = storedTheme === "dark" ? "dark" : storedTheme === "light" ? "light" : theme;
+      // Remove the legacy key so an older installation cannot retain a stale
+      // preference, even though current code no longer reads it.
+      window.localStorage.removeItem("antaverse:theme");
     } catch {
-      // Le thème clair reste le repli lorsque le stockage est indisponible.
+      // Le thème sombre reste actif si le stockage est indisponible.
     }
-    document.documentElement.dataset.theme = theme;
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "light" ? "#F7F7F4" : "#0B1118");
-  }, [pathname]);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#0B1118");
+  }, []);
 
   return null;
 }

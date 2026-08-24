@@ -1,0 +1,104 @@
+:root {
+  --traversee-accent: #60a5fa;
+  --traversee-accent-dark: #2563eb;
+  --traversee-accent-light: #60a5fa;
+  --traversee-accent-glow: rgba(96, 165, 250, 0.34);
+  --traversee-card-ink: #0a2442;
+  --traversee-card-back: #082f5b;
+}
+
+:root:has(.brand-mark--traversee) {
+  --game-accent: var(--traversee-accent);
+  --game-accent-dark: var(--traversee-accent-dark);
+  --game-accent-light: var(--traversee-accent-light);
+  --game-accent-glow: var(--traversee-accent-glow);
+  --game-accent-ink: #061a33;
+}
+
+html[data-theme="light"]:has(.brand-mark--traversee) { --game-accent-ink: #061a33; }
+html[data-theme="light"] .brand-mark--traversee { content: url("/brand/games/la-traversee-light.png"); }
+.brand-mark--traversee { width: 8rem; }
+.brand-mark--traversee.brand-mark--small { width: 5.6rem; }
+
+.traversee-home .home-hero h1 { font-size: clamp(3.5rem, 16vw, 6rem); line-height: 0.82; }
+.traversee-shell { display: grid; height: 100dvh; min-height: 0; grid-template-rows: auto minmax(0, 1fr); gap: clamp(0.45rem, 1.2dvh, 0.85rem); overflow: hidden; }
+.traversee-loading { display: grid; place-items: center; text-align: center; }
+.traversee-status { display: flex; justify-content: space-between; gap: 0.5rem; color: var(--muted); font-size: 0.65rem; font-weight: 850; letter-spacing: 0.06em; text-transform: uppercase; }
+.traversee-status span:first-child { color: var(--traversee-accent-light); }
+.traversee-stage { display: grid; min-height: 0; grid-template-rows: auto minmax(0, 1fr) auto; gap: clamp(0.9rem, 2.5dvh, 1.4rem); padding-top: clamp(0.9rem, 2.5dvh, 1.5rem); }
+.traversee-stage.is-feedback { grid-template-rows: auto minmax(0, 1fr); }
+.traversee-board-wrap { display: grid; min-height: 0; grid-template-rows: minmax(0, 1fr) auto; gap: clamp(1rem, 2.5dvh, 1.5rem); }
+.traversee-copy { text-align: center; }
+.traversee-copy .eyebrow { color: var(--traversee-accent-light); font-weight: 800; letter-spacing: 0.14em; }
+.traversee-copy .eyebrow { margin-bottom: 0.25rem; }
+.traversee-copy h1 { margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(1.7rem, 7vw, 2.7rem); letter-spacing: -0.04em; line-height: 0.95; text-transform: uppercase; }
+.traversee-copy.is-continuation h1 { font-size: clamp(1.15rem, 5vw, 1.65rem); line-height: 1; }
+.traversee-copy p:last-child { max-width: 31rem; margin: 0.3rem auto 0; color: var(--muted); font-size: 0.78rem; line-height: 1.25; }
+
+.traversee-board { display: grid; width: 100%; max-width: 34rem; min-height: 0; margin: auto; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(4rem, 1fr)); gap: clamp(0.25rem, 1vw, 0.45rem); align-items: center; }
+.traversee-endpoint { grid-row: 1 / -1; display: flex; align-items: center; justify-content: center; }
+.traversee-endpoint:first-child { grid-column: 1; }
+.traversee-endpoint:last-child { grid-column: 6; }
+.traversee-lane { display: grid; grid-column: 2 / 6; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: inherit; min-width: 0; align-items: center; }
+.traversee-lane--top { grid-row: 1; }
+.traversee-lane--middle { grid-row: 2; grid-column: 2 / 6; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-inline: 12.5%; }
+.traversee-lane--bottom { grid-row: 3; }
+.traversee-lane.is-muted { opacity: 0.25; filter: saturate(0.45); }
+.traversee-card { position: relative; display: grid; width: min(90%, 3.78rem); min-width: 0; aspect-ratio: 2.5 / 3.5; justify-self: center; place-items: center; overflow: hidden; border: 2px solid rgba(0, 0, 0, 0.16); border-radius: 0.65rem; background: #fff; box-shadow: 0 0.55rem 1.2rem rgba(0, 0, 0, 0.22); color: var(--traversee-card-ink); cursor: pointer; transition: opacity 160ms ease, transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease; }
+.traversee-card[data-red="true"] { color: #dc2626; }
+.traversee-card:disabled { cursor: default; }
+.traversee-card:not(:disabled):active { transform: translateY(0.12rem) scale(0.98); }
+.traversee-card.is-active { border-color: var(--traversee-accent-light); box-shadow: 0 0 0 0.18rem var(--traversee-accent-glow), 0 0.7rem 1.4rem rgba(0, 0, 0, 0.28); transform: translateY(-0.15rem); }
+.traversee-card.is-selected { border-color: var(--traversee-accent); box-shadow: 0 0 0 0.2rem var(--traversee-accent-glow), 0 0.7rem 1.4rem rgba(0, 0, 0, 0.28); }
+.traversee-card-corner { position: absolute; top: 0.28rem; left: 0.32rem; display: flex; flex-direction: column; align-items: center; font-size: clamp(0.52rem, 2.4vw, 0.82rem); font-weight: 900; line-height: 1; }
+.traversee-card-corner small { font-size: 0.75em; }
+.traversee-card-corner--bottom { inset: auto 0.32rem 0.28rem auto; transform: rotate(180deg); }
+.traversee-card-center { font-size: clamp(1.1rem, 6vw, 2.3rem); line-height: 1; }
+.traversee-card-back { display: grid; width: 75%; height: 82%; place-items: center; border: 1px solid rgba(96, 165, 250, 0.72); border-radius: 0.35rem; background: repeating-linear-gradient(135deg, rgba(96, 165, 250, 0.12) 0 0.18rem, transparent 0.18rem 0.38rem), var(--traversee-card-back); color: var(--traversee-accent-light); font-size: 1.3rem; }
+.traversee-draw-pile { display: flex; flex-direction: column; align-items: center; justify-self: center; gap: 0.35rem; color: var(--muted); font-size: 0.58rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+.traversee-draw-label { display: flex; align-items: baseline; gap: 0.4rem; }
+.traversee-draw-label strong { color: var(--traversee-accent-light); font-size: 0.9rem; }
+.traversee-draw-stack { position: relative; width: 3.78rem; height: 5.3rem; perspective: 28rem; }
+.traversee-draw-card { position: absolute; inset: 0; display: grid; width: 3.78rem; height: 5.3rem; place-items: center; border: 2px solid var(--traversee-accent-light); border-radius: 0.65rem; background: repeating-linear-gradient(135deg, rgba(96, 165, 250, 0.12) 0 0.18rem, transparent 0.18rem 0.38rem), var(--traversee-card-back); color: var(--traversee-accent-light); box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.32); font-size: 1.2rem; transform-origin: 50% 100%; }
+.traversee-draw-card--back-one { transform: translate(-0.4rem, 0.45rem) rotate(-5deg); opacity: 0.52; }
+.traversee-draw-card--back-two { transform: translate(-0.2rem, 0.22rem) rotate(-2deg); opacity: 0.78; }
+.traversee-draw-card--top { z-index: 1; }
+.traversee-draw-card--top.is-dealing { animation: traversee-draw-to-board 900ms cubic-bezier(.2,.8,.2,1) both; }
+
+.traversee-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; min-height: 3.1rem; }
+.traversee-guess { min-height: 3.1rem; border: 1px solid var(--line); border-radius: 0.85rem; font-size: 1rem; font-weight: 900; }
+.traversee-guess--higher { background: color-mix(in srgb, var(--traversee-accent) 18%, transparent); color: var(--traversee-accent-light); }
+.traversee-guess--lower { background: color-mix(in srgb, #dc2626 13%, transparent); color: #fca5a5; }
+.traversee-progress { display: flex; align-items: center; gap: 0.35rem; min-height: 1.75rem; color: var(--muted); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.traversee-progress strong { color: var(--traversee-accent-light); font-size: 1rem; }
+.traversee-next { margin-left: auto; }
+.traversee-feedback { display: grid; min-height: 0; place-content: center; justify-items: center; gap: 0.65rem; text-align: center; }
+.traversee-feedback h1 { margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); letter-spacing: -0.06em; line-height: 0.9; text-transform: uppercase; }
+.traversee-feedback > p:last-child { margin: 0; color: var(--muted); }
+.traversee-feedback.is-success h1 { color: var(--traversee-accent-light); }
+.traversee-feedback.is-failure h1 { color: #fca5a5; }
+.traversee-feedback-cards { display: flex; align-items: center; gap: 0.65rem; }
+.traversee-feedback-cards > span { color: var(--traversee-accent-light); font-size: 1.5rem; font-weight: 900; }
+.traversee-feedback-cards .traversee-card { width: 4rem; cursor: default; }
+.traversee-end { display: grid; place-content: center; justify-items: center; gap: 0.8rem; text-align: center; }
+.traversee-end h1 { margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(2.5rem, 12vw, 4rem); text-transform: uppercase; }
+.traversee-end p { max-width: 28rem; margin: 0; color: var(--muted); line-height: 1.5; }
+
+@keyframes traversee-draw-to-board { 0% { opacity: 1; transform: translate(0, 0) rotate(0) rotateY(0) scale(1); } 32% { opacity: 1; transform: translate(-2rem, -1.1rem) rotate(-7deg) rotateY(90deg) scale(1.05); } 100% { opacity: 0; transform: translate(var(--deal-x), var(--deal-y)) rotate(4deg) rotateY(180deg) scale(0.82); } }
+
+@media (max-width: 380px) {
+  .traversee-status { font-size: 0.58rem; }
+  .traversee-board { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .traversee-card-corner { top: 0.2rem; left: 0.2rem; }
+  .traversee-card-corner--bottom { inset: auto 0.2rem 0.2rem auto; }
+  .traversee-copy h1 { font-size: 1.55rem; }
+}
+
+@media (max-height: 700px) {
+  .traversee-shell { gap: 0.35rem; }
+  .traversee-stage { gap: 0.25rem; }
+  .traversee-copy p:last-child { margin-top: 0.15rem; font-size: 0.7rem; }
+  .traversee-board { grid-template-rows: repeat(3, minmax(3.35rem, 1fr)); }
+  .traversee-actions { min-height: 2.8rem; }
+  .traversee-guess { min-height: 2.8rem; }
+}

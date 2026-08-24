@@ -8,6 +8,7 @@ import {
   SANS_LE_DIRE_ACCENT,
   TRIMAN_ACCENT,
   FUCK_ACCENT,
+  LA_TRAVERSEE_ACCENT,
 } from "@/games/shared/lib/launcher-accents";
 
 export type GameId =
@@ -18,7 +19,8 @@ export type GameId =
   | "triman"
   | "roulette-du-chaos"
   | "palmier"
-  | "fuck";
+  | "fuck"
+  | "la-traversee";
 
 export interface GameDefinition {
   id: GameId;
@@ -122,6 +124,17 @@ export const games: readonly GameDefinition[] = [
     iconLight: "/brand/games/fuck-light.png",
     accent: FUCK_ACCENT,
     iconBackground: "#062d20",
+    drinkingGame: true,
+  },
+  {
+    id: "la-traversee",
+    name: "La Traversée",
+    description: "Choisissez votre ligne, annoncez plus ou moins et tentez d’atteindre l’autre côté",
+    route: "/la-traversee",
+    icon: "/brand/games/la-traversee-dark.png",
+    iconLight: "/brand/games/la-traversee-light.png",
+    accent: LA_TRAVERSEE_ACCENT,
+    iconBackground: "#061a33",
     drinkingGame: true,
   },
 ] as const;

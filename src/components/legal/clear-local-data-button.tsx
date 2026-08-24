@@ -4,9 +4,8 @@ import { useState } from "react";
 
 // Namespace complet des données locales AntaVerse (voir docs/compliance/DATA_INVENTORY.md).
 // Cette liste doit rester synchronisée avec les clés réellement utilisées par
-// src/lib/use-theme-mode.ts et chaque src/games/<jeu>/lib/game/persistence.ts.
+// chaque src/games/<jeu>/lib/game/persistence.ts.
 const LOCAL_STORAGE_KEYS = [
-  "antaverse:theme",
   "la-relance:current-game",
   "sans-le-dire:current-game",
   "sans-le-dire:team-names",
@@ -53,9 +52,9 @@ export function ClearLocalDataButton() {
     return (
       <div className="legal-clear-confirm">
         <p>
-          Cette action efface, uniquement sur cet appareil : le thème choisi, les parties en
-          cours ou terminées de chaque jeu, et les noms d’équipes mémorisés par Sans le dire.
-          Elle n’efface aucune autre donnée du navigateur. Elle est irréversible.
+          Cette action efface, uniquement sur cet appareil : les parties en cours ou terminées de
+          chaque jeu, et les noms d’équipes mémorisés par Sans le dire. Elle n’efface aucune autre
+          donnée du navigateur. Elle est irréversible.
         </p>
         <div className="legal-clear-actions">
           <button type="button" onClick={() => setStatus("idle")}>

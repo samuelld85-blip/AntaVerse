@@ -399,8 +399,9 @@ suppressHydronWarning>`, déclare les métadonnées PWA (`manifest`, icônes,
 
 1. un script (dev uniquement) qui désenregistre le Service Worker pour ne
    jamais servir de version en cache pendant que tu développes ;
-2. un script qui relit `localStorage.getItem("antaverse:theme")` **avant**
-   que React ne s'hydrate, pour éviter un flash de mauvais thème ;
+2. un script qui force le thème sombre **avant** que React ne s'hydrate et
+   supprime l'ancienne clé de préférence, afin que chaque ouverture reparte
+   en sombre sans flash de mauvais thème ;
 3. `CACHE_RECOVERY_SCRIPT` (prod uniquement) — si les feuilles de style ne se
    chargent pas (signe d'un déploiement périmé en cache), il vide les caches
    et désenregistre le Service Worker. Voir §10.
@@ -660,10 +661,10 @@ cours" quand une sauvegarde existe.
 
 ### Le thème (dark/light), à part
 
-Le thème visuel choisi par l'utilisateur est stocké séparément, dans
-`localStorage["antaverse:theme"]`, via `use-theme-mode.ts` (§2, §8) — ce
-n'est pas une donnée de jeu, donc ça ne vit dans aucun des schémas
-ci-dessus.
+Le thème visuel est une préférence de session, gérée par
+`use-theme-mode.ts` (§2, §8) : l'application démarre toujours en sombre et un
+clic explicite peut passer en clair jusqu'à la prochaine ouverture. Il n'est
+pas stocké et ne vit donc dans aucun des schémas ci-dessus.
 
 ---
 
@@ -738,7 +739,7 @@ par jeu".
 
 `src/lib/use-theme-mode.ts` — un hook basé sur `useSyncExternalStore` (une
 API React pour se synchroniser avec une source de vérité externe au state
-React, ici `localStorage` + `document.documentElement.dataset.theme`).
+React, ici `document.documentElement.dataset.theme`).
 Chaque sélecteur de thème de l'app (accueil, en jeu) appelle ce même hook ;
 c'était trois implémentations dupliquées avant extraction (voir
 `ARCHITECTURE.md`, "Coupling found"). `game-base.css` définit les deux jeux

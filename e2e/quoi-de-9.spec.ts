@@ -1,6 +1,22 @@
 import { expect, test } from "@playwright/test";
 
-test("defaults to dark mode and persists the selected appearance", async ({ page }) => {
+test("defaults to dark mode and does not persist the selected appearance", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("antaverse:theme", "light");
+  });
+
+  await page.goto("/");
+
+  const homeLightMode = page.getByRole("button", { name: /mode clair/i });
+  const homeDarkMode = page.getByRole("button", { name: /mode sombre/i });
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(homeDarkMode).toHaveAttribute("aria-pressed", "true");
+  await homeLightMode.click();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  expect(await page.evaluate(() => localStorage.getItem("antaverse:theme"))).toBeNull();
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+
   await page.goto("/quoi-de-9");
 
   const lightMode = page.getByRole("button", { name: /mode clair/i });
@@ -16,8 +32,8 @@ test("defaults to dark mode and persists the selected appearance", async ({ page
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(lightMode).toHaveAttribute("aria-pressed", "true");
   await page.reload();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
-  await expect(page.getByRole("button", { name: /mode clair/i })).toHaveAttribute(
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.getByRole("button", { name: /mode sombre/i })).toHaveAttribute(
     "aria-pressed",
     "true",
   );

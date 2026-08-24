@@ -2,16 +2,14 @@
 
 import { useSyncExternalStore } from "react";
 
-// Theme (light/dark) is an AntaVerse-wide setting, not a per-game concern:
-// it lives in one localStorage key ("antaverse:theme") shared by the launcher
-// and every game. This hook is the single source of truth for that state;
-// each screen keeps its own presentational selector component (they render
-// very differently — Tailwind vs hand-written CSS — but all read/write the
-// same theme through this hook instead of re-implementing the sync logic.
+// Theme (light/dark) is an AntaVerse-wide, session-only setting, not a
+// per-game concern. The app starts dark on every load; this hook is the single
+// source of truth for the theme while the app is open. Each screen keeps its
+// own presentational selector component, but all read/write the same theme
+// through this hook instead of re-implementing the sync logic.
 
 export type ThemeMode = "dark" | "light";
 
-const THEME_STORAGE_KEY = "antaverse:theme";
 const THEME_CHANGE_EVENT = "antaverse:theme-change";
 
 function applyTheme(theme: ThemeMode) {
@@ -19,11 +17,6 @@ function applyTheme(theme: ThemeMode) {
   document
     .querySelector('meta[name="theme-color"]')
     ?.setAttribute("content", theme === "light" ? "#F7F7F4" : "#0B1118");
-  try {
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-  } catch {
-    // Le thème reste actif pour la session si le stockage est indisponible.
-  }
 }
 
 function subscribeToTheme(onStoreChange: () => void) {
@@ -36,9 +29,8 @@ function getThemeSnapshot(): ThemeMode {
 }
 
 /**
- * @param serverSnapshot value to render before hydration (must match what each
- * screen already renders server-side to avoid a hydration mismatch — the
- * launcher defaults to "dark", game screens default to "light").
+ * @param serverSnapshot value to render before hydration. Every app screen
+ * defaults to dark; the light theme is only activated by an explicit click.
  */
 export function useThemeMode(serverSnapshot: ThemeMode) {
   const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, () => serverSnapshot);

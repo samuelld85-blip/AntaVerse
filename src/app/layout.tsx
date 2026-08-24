@@ -29,7 +29,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: "#0B1118",
-  colorScheme: "light dark",
+  colorScheme: "dark",
 };
 
 // Filet de sécurité inscrit dans le document lui-même, donc actif même si les chunks React
@@ -77,7 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         ) : null}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var s=localStorage.getItem("antaverse:theme");document.documentElement.dataset.theme=s==="light"?"light":"dark"}catch(e){}`,
+            __html: `document.documentElement.dataset.theme="dark";try{localStorage.removeItem("antaverse:theme")}catch(e){}`,
           }}
         />
         {process.env.NODE_ENV === "production" ? (

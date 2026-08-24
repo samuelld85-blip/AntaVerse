@@ -4,7 +4,7 @@ import { useThemeMode } from "@/lib/use-theme-mode";
 import "./theme-selector.css";
 
 export function ThemeSelector() {
-  const { theme, selectTheme } = useThemeMode("light");
+  const { theme, selectTheme } = useThemeMode("dark");
 
   return (
     <div className="theme-selector" role="group" aria-label="Apparence du jeu">

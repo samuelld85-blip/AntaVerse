@@ -36,7 +36,6 @@ ni importé dans le code.
 
 | Donnée | Où elle existe | Finalité | Transmise au développeur ? | Stockage | Durée | Base/justification | Suppression |
 |---|---|---|---|---|---|---|---|
-| Thème choisi (clair/sombre) | `localStorage["antaverse:theme"]` (`src/lib/use-theme-mode.ts`) | Mémoriser la préférence d'affichage | Non — uniquement local | localStorage | Jusqu'à suppression | Exécution du service demandé | Bouton "Effacer mes données locales" ou réglages navigateur |
 | Partie en cours — La Relance | `localStorage["la-relance:current-game"]` | Reprendre une partie interrompue | Non | localStorage | Jusqu'à fin de partie / suppression | Exécution du service demandé | Idem |
 | Partie en cours — Sans le dire | `localStorage["sans-le-dire:current-game"]` | Idem | Non | localStorage | Idem | Idem | Idem |
 | Noms d'équipes — Sans le dire | `localStorage["sans-le-dire:team-names"]` | Pré-remplir les noms d'équipes à la partie suivante | Non | localStorage | Idem | Idem | Idem |

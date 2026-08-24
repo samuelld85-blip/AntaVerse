@@ -1,6 +1,6 @@
 # AntaVerse
 
-AntaVerse regroupe huit jeux d’ambiance mobiles dans une seule application Next.js :
+AntaVerse regroupe neuf jeux d’ambiance mobiles dans une seule application Next.js :
 
 ```text
 AntaVerse
@@ -12,7 +12,8 @@ AntaVerse
 ├── Triman
 ├── Roulette du Chaos
 ├── Palmier
-└── Fuck
+├── Fuck
+└── La Traversée
 ```
 
 ## Lancer le projet
@@ -34,12 +35,12 @@ Les contrôles complets sont disponibles avec `npm run verify` et `npm run test:
 ## Architecture
 
 - `src/app/` contient le lanceur, le shell global et les routes préfixées de chaque jeu.
-- `src/games/<identifiant>/` contient le moteur, les données, les composants et les styles propres à chaque jeu ; les huit modules actuels sont `quoi-de-9`, `la-relance`, `sans-le-dire`, `purple`, `triman`, `roulette-du-chaos`, `palmier` et `fuck`.
+- `src/games/<identifiant>/` contient le moteur, les données, les composants et les styles propres à chaque jeu ; les neuf modules actuels sont `quoi-de-9`, `la-relance`, `sans-le-dire`, `purple`, `triman`, `roulette-du-chaos`, `palmier`, `fuck` et `la-traversee`.
 - `src/components/` et `src/lib/` contiennent les éléments produit partagés.
 - `src/lib/games.ts` est le registre affiché par le lanceur.
 - `public/brand/games/` contient les logos des jeux utilisés par le lanceur et les écrans de jeu ; `public/brand/` contient les assets de marque AntaVerse ; `public/icons/` et la PWA appartiennent à l’application.
 
-Les données persistantes restent isolées par jeu : localStorage pour les sept jeux concernés, IndexedDB pour Quoi de 9, avec une clé namespacée par partie (`fuck:current-game`, par exemple).
+Les données persistantes restent isolées par jeu : localStorage pour les huit jeux concernés, IndexedDB pour Quoi de 9, avec une clé namespacée par partie (`fuck:current-game` ou `la-traversee:current-game`, par exemple).
 
 ## Ajouter un jeu
 
