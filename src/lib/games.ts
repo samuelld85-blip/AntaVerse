@@ -9,6 +9,7 @@ import {
   TRIMAN_ACCENT,
   FUCK_ACCENT,
   LA_TRAVERSEE_ACCENT,
+  PMU_ACCENT,
 } from "@/games/shared/lib/launcher-accents";
 
 export type GameId =
@@ -20,7 +21,8 @@ export type GameId =
   | "roulette-du-chaos"
   | "palmier"
   | "fuck"
-  | "la-traversee";
+  | "la-traversee"
+  | "pmu";
 
 export interface GameDefinition {
   id: GameId;
@@ -135,6 +137,17 @@ export const games: readonly GameDefinition[] = [
     iconLight: "/brand/games/la-traversee-light.png",
     accent: LA_TRAVERSEE_ACCENT,
     iconBackground: "#061a33",
+    drinkingGame: true,
+  },
+  {
+    id: "pmu",
+    name: "PMU",
+    description: "Misez sur votre cheval, retournez les checkpoints et vivez une course pleine de rebondissements",
+    route: "/pmu",
+    icon: "/brand/games/pmu.svg",
+    iconLight: "/brand/games/pmu.svg",
+    accent: PMU_ACCENT,
+    iconBackground: "#111923",
     drinkingGame: true,
   },
 ] as const;
