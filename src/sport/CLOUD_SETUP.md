@@ -20,11 +20,16 @@ RPC de sauvegarde atomique, versions et file de notifications.
 
 Dans Authentication > URL Configuration :
 
-- Site URL : l’origine Vercel de production, avec un domaine stable.
-- Redirect URLs : `https://VOTRE-DOMAINE/sport/compte/` et
-  `https://VOTRE-DOMAINE/sport/compte/?recovery=1`.
-- Ajouter les URL localhost correspondantes si nécessaire. Éviter les jokers
-  autorisant n’importe quel domaine de prévisualisation.
+- Site URL : `https://antaverse.vercel.app`
+- Redirect URLs :
+  - `https://antaverse.vercel.app/sport/compte/`
+  - `https://antaverse.vercel.app/sport/compte/?recovery=1`
+  - `http://localhost:3000/sport/compte/`
+  - `http://localhost:3000/sport/compte/?recovery=1`
+- Éviter les jokers autorisant n’importe quel domaine de prévisualisation. En
+  conséquence, la connexion ne fonctionne que sur l’URL de production et en
+  local : les déploiements de prévisualisation Vercel
+  (`antaverse-git-…vercel.app`) ont une origine différente et sont refusés.
 
 Dans Authentication > Providers > Email : activer Email et les inscriptions,
 **désactiver Confirm email**, mot de passe minimum 8 caractères. Vérifier que
@@ -39,7 +44,8 @@ récupérer un mot de passe perdu.
 ## 2. Google et Apple uniquement
 
 Google : créer un client OAuth **Application web** dans Google Cloud, configurer
-le consentement, ajouter les origines Vercel autorisées et l’URL de callback
+le consentement, ajouter les origines JavaScript autorisées
+(`https://antaverse.vercel.app` et `http://localhost:3000`) et l’URL de callback
 indiquée dans Supabase (`https://REF.supabase.co/auth/v1/callback`). Saisir le
 client ID et son secret dans Supabase > Google, activer le fournisseur. Les
 restrictions utilisateurs test du consentement doivent être levées/configurées
