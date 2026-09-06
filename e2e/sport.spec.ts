@@ -9,7 +9,7 @@ async function startFreeSession(page: Page, format = "Full body") {
   await page.getByRole("button", { name: "Commencer ma séance", exact: true }).click();
 }
 
-test("sport: optional rest, discard, history editing and deletion", async ({ page }, testInfo) => {
+test("sport: automatic rest, discard, history editing and deletion", async ({ page }, testInfo) => {
   await page.goto("/sport/");
   await startFreeSession(page);
   await page.getByRole("button", { name: "Développé couché", exact: true }).click();
@@ -18,14 +18,16 @@ test("sport: optional rest, discard, history editing and deletion", async ({ pag
   await page.getByLabel("Secondes de repos", { exact: true }).selectOption("30");
   await page.getByRole("button", { name: "Valider l’exercice" }).click();
   await expect(page.getByRole("timer")).toHaveText("1:30");
-  await page.getByLabel("Lancer le repos après chaque série").uncheck();
-  await page.getByRole("button", { name: "Série terminée", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Série terminée · démarrer le repos", exact: true })
+    .click();
   await expect(page.getByLabel("1 séries sur 2 effectuées")).toBeVisible();
-  await expect(page.getByRole("button", { name: "Passer le repos" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Passer le repos" })).toBeVisible();
+  await page.getByRole("button", { name: "Passer le repos" }).click();
   await page.getByRole("button", { name: "Dernière série terminée" }).click();
   await page.getByRole("button", { name: "Terminer ma séance", exact: true }).click();
   await page.getByRole("button", { name: "Quitter sans enregistrer" }).click();
-  await page.getByRole("button", { name: "Historique", exact: true }).click();
+  await page.getByRole("button", { name: /^Historique/ }).click();
   await expect(page.getByRole("heading", { name: "Le début de votre carnet" })).toBeVisible();
   await page.getByRole("button", { name: "Commencer une séance", exact: true }).click();
   await page.getByRole("button", { name: "Full body", exact: true }).click();
@@ -132,7 +134,9 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
   await expect(page.getByLabel("0 séries sur 3 effectuées")).toBeVisible();
 });
 
-test("sport: recommended sessions are preconfigured and advance automatically", async ({ page }) => {
+test("sport: recommended sessions are preconfigured and advance automatically", async ({
+  page,
+}) => {
   await page.goto("/sport/");
   await page.getByRole("button", { name: /^Séances/ }).click();
   await page.getByRole("button", { name: "Push Pull Legs", exact: true }).click();
@@ -146,16 +150,28 @@ test("sport: recommended sessions are preconfigured and advance automatically", 
   await expect(page.getByRole("button", { name: "Full body équilibré A" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Full body équilibré B" })).toBeVisible();
   await page.getByRole("button", { name: "Full body équilibré A" }).click();
-  await expect(page.getByRole("heading", { name: "Full body équilibré A", exact: true })).toBeVisible();
-  await expect(page.getByText("Programme de la séance · 7 exercices", { exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Full body équilibré A", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Programme de la séance · 7 exercices", { exact: true }),
+  ).toBeVisible();
   await expect(page.getByText("Développé couché", { exact: true })).toHaveCount(1);
+  await page.getByLabel("Charge pour Squat", { exact: true }).fill("80");
   await page.getByRole("button", { name: "Terminer ma séance", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "Quitter cette séance vide ?", exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Quitter cette séance vide ?", exact: true }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Continuer ma séance", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Squat", exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "Série terminée · démarrer le repos", exact: true }).click();
+  await expect(page.getByLabel("Charge pour Squat", { exact: true })).toHaveValue("80");
+  await page
+    .getByRole("button", { name: "Série terminée · démarrer le repos", exact: true })
+    .click();
   await page.getByRole("button", { name: "Passer le repos", exact: true }).click();
-  await page.getByRole("button", { name: "Série terminée · démarrer le repos", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Série terminée · démarrer le repos", exact: true })
+    .click();
   await page.getByRole("button", { name: "Passer le repos", exact: true }).click();
   await page.getByRole("button", { name: "Dernière série terminée ✓", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Développé couché", exact: true })).toBeVisible();

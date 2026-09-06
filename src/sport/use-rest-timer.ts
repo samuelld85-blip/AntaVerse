@@ -4,23 +4,14 @@ import { useEffect, useRef, useState } from "react";
 // Runtime only: neither countdowns nor rest events belong in the training log.
 export function useRestTimer() {
   const [remaining, setRemaining] = useState<number | null>(null);
-  const [sound, setSound] = useState(true);
-  const [audioUnavailable, setAudioUnavailable] = useState(false);
   const deadline = useRef<number | null>(null);
   const warned = useRef(false);
   const audio = useRef<AudioContext | null>(null);
-  const soundRef = useRef(sound);
-  useEffect(() => {
-    soundRef.current = sound;
-  }, [sound]);
   function prepareAudio() {
-    if (!sound) return;
     try {
       audio.current ??= new AudioContext();
-      void audio.current.resume().catch(() => setAudioUnavailable(true));
-    } catch {
-      setAudioUnavailable(true);
-    }
+      void audio.current.resume();
+    } catch {}
   }
   function start(seconds: number) {
     prepareAudio();
@@ -35,7 +26,7 @@ export function useRestTimer() {
   useEffect(() => {
     function beep(final: boolean) {
       const context = audio.current;
-      if (!soundRef.current || !context || context.state !== "running") return;
+      if (!context || context.state !== "running") return;
       const oscillator = context.createOscillator();
       const gain = context.createGain();
       oscillator.connect(gain);
@@ -67,5 +58,5 @@ export function useRestTimer() {
       audio.current = null;
     };
   }, []);
-  return { remaining, sound, setSound, audioUnavailable, start, stop };
+  return { remaining, start, stop };
 }

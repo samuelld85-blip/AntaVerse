@@ -120,19 +120,6 @@
   font-size: 16px;
   line-height: 1;
 }
-.autoRest {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  font-size: 12px;
-  color: var(--sport-muted);
-}
-.autoRest input {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--sport-accent);
-}
 @media (min-width: 480px) {
   .exerciseGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -722,6 +709,34 @@
   color: var(--sport-muted);
   font-size: 13px;
 }
+.quickProgress {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 9px 0 4px;
+}
+.quickLoad {
+  display: grid;
+  gap: 7px;
+  width: 90px;
+  justify-items: end;
+  color: var(--sport-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+.quickLoad input {
+  width: 90px;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid var(--sport-accent);
+  border-radius: 8px;
+  background: var(--sport-field);
+  color: var(--sport-ink);
+  font-size: 16px;
+  text-align: center;
+}
 .star {
   display: flex;
   flex-shrink: 0;
@@ -744,6 +759,14 @@
   flex-wrap: wrap;
   gap: 8px;
   margin: 16px 0 4px;
+}
+.quickSets {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: 0 0 5px;
+}
+.quickProgress + .timer {
+  padding-top: 3px;
 }
 .sets span {
   width: 34px;
@@ -768,7 +791,7 @@
 }
 .timer {
   text-align: center;
-  padding: 14px 0 18px;
+  padding: 6px 0 14px;
 }
 .clock {
   font-size: clamp(56px, 15vw, 72px);
@@ -777,10 +800,6 @@
   letter-spacing: -4px;
   line-height: 1.35;
   color: var(--sport-accent);
-}
-.timer > p:last-child {
-  color: var(--sport-muted);
-  font-size: 12px;
 }
 .actions {
   display: flex;
@@ -795,28 +814,10 @@
 .actions .secondary {
   min-width: 100px;
 }
-.options {
-  margin-top: 18px;
-  border-top: 1px solid var(--sport-line);
-  color: var(--sport-muted);
-  font-size: 12px;
-}
-.options summary,
 .recap summary {
   cursor: pointer;
   padding: 15px 0;
   min-height: 48px;
-}
-.options label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-}
-.options input {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--sport-accent);
 }
 .recap {
   margin: 20px 0;

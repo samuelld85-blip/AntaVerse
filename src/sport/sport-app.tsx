@@ -62,6 +62,12 @@ const loadLabel = (c: ExerciseConfig) =>
       ? `+${c.loadKg} kg de lest`
       : "Poids du corps"
     : `${c.loadKg} kg${c.equipment === "dumbbell" ? " / haltère" : ""}`;
+const loadInputLabel = (equipment: Equipment) =>
+  equipment === "bodyweight"
+    ? "Lest (kg)"
+    : equipment === "dumbbell"
+      ? "Kg par haltère"
+      : "Charge (kg)";
 function ConfigSummary({ config }: { config: ExerciseConfig }) {
   return (
     <span>
@@ -196,11 +202,7 @@ function ConfigForm({
             </div>
           </div>
           <label className={styles.field}>
-            {equipment === "bodyweight"
-              ? "Lest (kg)"
-              : equipment === "dumbbell"
-                ? "Kg par haltère"
-                : "Charge (kg)"}
+            {loadInputLabel(equipment)}
             <input
               name="load"
               type="number"
@@ -500,7 +502,6 @@ export function SportApp() {
     "home" | "training" | "history" | "stats" | "favorites" | "social"
   >("home");
   const { theme, selectTheme } = useThemeMode("dark");
-  const [autoRest, setAutoRest] = useState(true);
   const [kind, setKind] = useState<Extract<SessionKind, "full" | "half" | "ppl">>("full");
   const [workoutType, setWorkoutType] = useState<"recommended" | "free" | null>(null);
   const [workoutDuration, setWorkoutDuration] = useState<WorkoutDuration>("medium");
@@ -560,7 +561,14 @@ export function SportApp() {
         const items = (sessions ?? []).flatMap((row) => {
           const parsed = storeSchema.shape.history.element.safeParse(row.payload);
           return parsed.success
-            ? [{ session: parsed.data, ownerId: row.user_id, username: usernames[row.user_id] ?? "joueur", isFriend: true }]
+            ? [
+                {
+                  session: parsed.data,
+                  ownerId: row.user_id,
+                  username: usernames[row.user_id] ?? "joueur",
+                  isFriend: true,
+                },
+              ]
             : [];
         });
         if (live) setFriendHistory(items);
@@ -839,7 +847,7 @@ export function SportApp() {
                     >
                       {label}
                     </button>
-                    ))}
+                  ))}
                 </div>
                 <h2>Construction de séance</h2>
                 <div className={styles.segment} aria-label="Type d’entraînement">
@@ -862,19 +870,22 @@ export function SportApp() {
                   <div className={styles.recommendedSetup}>
                     <h3>Durée disponible</h3>
                     <div className={styles.segment} aria-label="Durée de l’entraînement">
-                      {(Object.entries(workoutDurations) as [WorkoutDuration, (typeof workoutDurations)[WorkoutDuration]][]).map(
-                        ([id, duration]) => (
-                          <button
-                            key={id}
-                            aria-pressed={workoutDuration === id}
-                            onClick={() => setWorkoutDuration(id)}
-                          >
-                            {duration.label}
-                            <br />
-                            <small>{duration.minutes} min</small>
-                          </button>
-                        ),
-                      )}
+                      {(
+                        Object.entries(workoutDurations) as [
+                          WorkoutDuration,
+                          (typeof workoutDurations)[WorkoutDuration],
+                        ][]
+                      ).map(([id, duration]) => (
+                        <button
+                          key={id}
+                          aria-pressed={workoutDuration === id}
+                          onClick={() => setWorkoutDuration(id)}
+                        >
+                          {duration.label}
+                          <br />
+                          <small>{duration.minutes} min</small>
+                        </button>
+                      ))}
                     </div>
                     <div className={styles.recommendedList}>
                       {recommendedWorkoutsFor(kind, workoutDuration).map((workout) => (
@@ -892,7 +903,10 @@ export function SportApp() {
                         >
                           <span>
                             <strong>{workout.name}</strong>
-                            <em>{workout.exercises.length} exercices · {workoutDurations[workout.duration].minutes} min environ</em>
+                            <em>
+                              {workout.exercises.length} exercices ·{" "}
+                              {workoutDurations[workout.duration].minutes} min environ
+                            </em>
                           </span>
                           <span aria-hidden="true">→</span>
                         </button>
@@ -925,7 +939,9 @@ export function SportApp() {
                 <div>
                   <p className={styles.eyebrow}>Séance en cours · {dateLabel(active.startedAt)}</p>
                   <h1>{active.name || sessionLabels[active.kind]}</h1>
-                  {active.name && <p className={styles.sessionFormat}>{sessionLabels[active.kind]}</p>}
+                  {active.name && (
+                    <p className={styles.sessionFormat}>{sessionLabels[active.kind]}</p>
+                  )}
                 </div>
                 <button
                   className={styles.secondary}
@@ -938,30 +954,6 @@ export function SportApp() {
                   Terminer
                 </button>
               </div>
-              {active.source === "recommended" && (
-                <details className={`${styles.recap} ${styles.programRecap}`} open>
-                  <summary>Programme de la séance · {active.exercises.length} exercices</summary>
-                  <ol className={styles.programList}>
-                    {active.exercises.map((entry, index) => {
-                      const status = entry.finished
-                        ? "Terminé"
-                        : entry.id === current?.id
-                          ? "En cours"
-                          : "À venir";
-                      return (
-                        <li key={entry.id} data-status={status}>
-                          <span>{index + 1}</span>
-                          <div>
-                            <strong>{exerciseName(entry.config.exerciseId)}</strong>
-                            <small>{entry.config.sets} séries × {entry.config.reps ?? "—"} rép. · repos {timeLabel(entry.config.restSeconds)}</small>
-                          </div>
-                          <em>{status}</em>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </details>
-              )}
               {confirmFinish ? null : editing ? (
                 <ConfigForm
                   key={`${editing.entryId ?? "new"}-${configKey(editing.config)}`}
@@ -1008,44 +1000,56 @@ export function SportApp() {
                     <ConfigSummary config={current.config} />
                   </p>
                   <div
-                    className={styles.sets}
-                    aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
+                    className={active.source === "recommended" ? styles.quickProgress : undefined}
                   >
-                    {Array.from({ length: current.config.sets }, (_, i) => (
-                      <span
-                        key={i}
-                        className={
-                          i < current.completedSets.length
-                            ? styles.setDone
-                            : i === current.completedSets.length
-                              ? styles.setCurrent
-                              : ""
-                        }
-                      >
-                        {i < current.completedSets.length ? "✓" : i + 1}
-                      </span>
-                    ))}
+                    <div
+                      className={`${styles.sets} ${active.source === "recommended" ? styles.quickSets : ""}`}
+                      aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
+                    >
+                      {Array.from({ length: current.config.sets }, (_, i) => (
+                        <span
+                          key={i}
+                          className={
+                            i < current.completedSets.length
+                              ? styles.setDone
+                              : i === current.completedSets.length
+                                ? styles.setCurrent
+                                : ""
+                          }
+                        >
+                          {i < current.completedSets.length ? "✓" : i + 1}
+                        </span>
+                      ))}
+                    </div>
+                    {active.source === "recommended" && (
+                      <label className={styles.quickLoad}>
+                        <span>{loadInputLabel(current.config.equipment)}</span>
+                        <input
+                          aria-label={`Charge pour ${exerciseName(current.config.exerciseId)}`}
+                          type="number"
+                          inputMode="decimal"
+                          min={0}
+                          max={2000}
+                          step={0.25}
+                          value={current.config.loadKg}
+                          onChange={(event) => {
+                            const loadKg = Number(event.target.value);
+                            if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000) return;
+                            updateEntry(current.id, (entry) => ({
+                              ...entry,
+                              config: { ...entry.config, loadKg },
+                            }));
+                          }}
+                        />
+                      </label>
+                    )}
                   </div>
                   <div className={styles.timer}>
-                    <p className={styles.eyebrow}>
-                      {timer.remaining === null
-                        ? `Série ${current.completedSets.length + 1} sur ${current.config.sets}`
-                        : timer.remaining > 0
-                          ? "Repos en cours"
-                          : "Repos terminé"}
-                    </p>
                     <div className={styles.clock} role="timer" aria-label="Temps de repos restant">
                       {timer.remaining === null
                         ? timeLabel(current.config.restSeconds)
                         : timeLabel(timer.remaining)}
                     </div>
-                    <p role="status">
-                      {timer.remaining === null
-                        ? "Validez votre série quand elle est terminée."
-                        : timer.remaining > 0
-                          ? "Soufflez. La prochaine série vous attend."
-                          : "À vous pour la prochaine série."}
-                    </p>
                   </div>
                   {timer.remaining !== null && timer.remaining > 0 ? (
                     <button className={styles.primary} onClick={timer.stop}>
@@ -1066,15 +1070,12 @@ export function SportApp() {
                           setNotice(
                             `${exerciseName(current.config.exerciseId)} terminé. Choisissez la suite.`,
                           );
-                        } else if (autoRest) timer.start(current.config.restSeconds);
-                        else timer.stop();
+                        } else timer.start(current.config.restSeconds);
                       }}
                     >
                       {current.completedSets.length + 1 === current.config.sets
                         ? "Dernière série terminée ✓"
-                        : autoRest
-                          ? "Série terminée · démarrer le repos"
-                          : "Série terminée"}
+                        : "Série terminée · démarrer le repos"}
                     </button>
                   )}
                   <div className={styles.actions}>
@@ -1092,60 +1093,32 @@ export function SportApp() {
                     >
                       Modifier les réglages
                     </button>
-                  </div>
-                  <label className={styles.autoRest}>
-                    <input
-                      type="checkbox"
-                      checked={autoRest}
-                      onChange={(e) => setAutoRest(e.target.checked)}
-                    />
-                    Lancer le repos après chaque série
-                  </label>
-                  <details className={styles.options}>
-                    <summary>Options de l’exercice</summary>
-                    <label>
-                      <input
-                        type="checkbox"
-                        checked={timer.sound}
-                        onChange={(e) => timer.setSound(e.target.checked)}
-                      />{" "}
-                      Signal sonore à 5 s et à la fin
-                    </label>
-                    <p className={styles.hint}>
-                      {timer.audioUnavailable
-                        ? "Son indisponible dans ce navigateur. Le compte à rebours reste visible."
-                        : "Gardez cette page ouverte et l’écran allumé pour entendre le signal. Le repos est recalculé au retour ; il n’est pas conservé après rechargement."}
-                    </p>
-                    <div className={styles.actions}>
-                      {current.completedSets.length > 0 && (
-                        <button
-                          className={styles.secondary}
-                          onClick={() => {
-                            timer.stop();
-                            updateEntry(current.id, (e) => ({
-                              ...e,
-                              completedSets: e.completedSets.slice(0, -1),
-                              finished: false,
-                            }));
-                          }}
-                        >
-                          Annuler la dernière série
-                        </button>
-                      )}
+                    {current.completedSets.length > 0 && (
                       <button
                         className={styles.secondary}
                         onClick={() => {
                           timer.stop();
-                          updateEntry(current.id, (e) => ({ ...e, finished: true }));
-                          setNotice(
-                            "Exercice arrêté. Seules les séries validées seront conservées.",
-                          );
+                          updateEntry(current.id, (e) => ({
+                            ...e,
+                            completedSets: e.completedSets.slice(0, -1),
+                            finished: false,
+                          }));
                         }}
                       >
-                        Arrêter cet exercice
+                        Annuler la dernière série
                       </button>
-                    </div>
-                  </details>
+                    )}
+                    <button
+                      className={styles.secondary}
+                      onClick={() => {
+                        timer.stop();
+                        updateEntry(current.id, (e) => ({ ...e, finished: true }));
+                        setNotice("Exercice arrêté. Seules les séries validées seront conservées.");
+                      }}
+                    >
+                      Arrêter cet exercice
+                    </button>
+                  </div>
                 </section>
               ) : !confirmFinish ? (
                 <Catalog
@@ -1154,6 +1127,33 @@ export function SportApp() {
                   onChoose={(config) => setEditing({ config })}
                 />
               ) : null}
+              {active.source === "recommended" && (
+                <details className={`${styles.recap} ${styles.programRecap}`} open>
+                  <summary>Programme de la séance · {active.exercises.length} exercices</summary>
+                  <ol className={styles.programList}>
+                    {active.exercises.map((entry, index) => {
+                      const status = entry.finished
+                        ? "Terminé"
+                        : entry.id === current?.id
+                          ? "En cours"
+                          : "À venir";
+                      return (
+                        <li key={entry.id} data-status={status}>
+                          <span>{index + 1}</span>
+                          <div>
+                            <strong>{exerciseName(entry.config.exerciseId)}</strong>
+                            <small>
+                              {entry.config.sets} séries × {entry.config.reps ?? "—"} rép. · repos{" "}
+                              {timeLabel(entry.config.restSeconds)}
+                            </small>
+                          </div>
+                          <em>{status}</em>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </details>
+              )}
               {active.exercises.some((e) => e.finished) && (
                 <details className={styles.recap}>
                   <summary>
@@ -1196,63 +1196,61 @@ export function SportApp() {
                 </details>
               )}
               {confirmFinish ? (
-                  <section className={styles.confirm} aria-label="Terminer la séance">
-                    <h2>
-                      {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
-                    </h2>
-                    <p>
-                      {totalSets
-                        ? `${totalSets} série(s) validée(s) seront conservées. Les séries non effectuées ne seront pas comptées.`
-                        : "Aucune série n’a été validée. Rien ne sera ajouté à l’historique."}
-                    </p>
-                    <div className={styles.actions}>
+                <section className={styles.confirm} aria-label="Terminer la séance">
+                  <h2>
+                    {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
+                  </h2>
+                  <p>
+                    {totalSets
+                      ? `${totalSets} série(s) validée(s) seront conservées. Les séries non effectuées ne seront pas comptées.`
+                      : "Aucune série n’a été validée. Rien ne sera ajouté à l’historique."}
+                  </p>
+                  <div className={styles.actions}>
+                    <button
+                      className={styles.primary}
+                      onClick={() => {
+                        const finished = finishSession(active);
+                        update((s) => ({
+                          ...s,
+                          active: null,
+                          history: finished.exercises.length ? [finished, ...s.history] : s.history,
+                        }));
+                        timer.stop();
+                        setConfirmFinish(false);
+                        setEditing(null);
+                        setNotice(
+                          finished.exercises.length
+                            ? "Séance enregistrée. Bien joué !"
+                            : "Séance vide fermée.",
+                        );
+                        if (finished.exercises.length) {
+                          setTab("history");
+                          setDetailId(finished.id);
+                        }
+                      }}
+                    >
+                      {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
+                    </button>
+                    <button className={styles.secondary} onClick={() => setConfirmFinish(false)}>
+                      Continuer ma séance
+                    </button>
+                    {totalSets > 0 && (
                       <button
-                        className={styles.primary}
+                        className={styles.secondary}
                         onClick={() => {
-                          const finished = finishSession(active);
-                          update((s) => ({
-                            ...s,
-                            active: null,
-                            history: finished.exercises.length
-                              ? [finished, ...s.history]
-                              : s.history,
-                          }));
+                          update((s) => ({ ...s, active: null }));
                           timer.stop();
                           setConfirmFinish(false);
                           setEditing(null);
-                          setNotice(
-                            finished.exercises.length
-                              ? "Séance enregistrée. Bien joué !"
-                              : "Séance vide fermée.",
-                          );
-                          if (finished.exercises.length) {
-                            setTab("history");
-                            setDetailId(finished.id);
-                          }
+                          setNotice("Séance quittée sans ajout à l’historique.");
                         }}
                       >
-                        {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
+                        Quitter sans enregistrer
                       </button>
-                      <button className={styles.secondary} onClick={() => setConfirmFinish(false)}>
-                        Continuer ma séance
-                      </button>
-                      {totalSets > 0 && (
-                        <button
-                          className={styles.secondary}
-                          onClick={() => {
-                            update((s) => ({ ...s, active: null }));
-                            timer.stop();
-                            setConfirmFinish(false);
-                            setEditing(null);
-                            setNotice("Séance quittée sans ajout à l’historique.");
-                          }}
-                        >
-                          Quitter sans enregistrer
-                        </button>
-                      )}
-                    </div>
-                  </section>
-                ) : null}
+                    )}
+                  </div>
+                </section>
+              ) : null}
             </>
           )}
           {tab === "history" && (
@@ -1289,7 +1287,11 @@ export function SportApp() {
                     <div className={styles.sectionHeading}>
                       <div>
                         <p className={styles.eyebrow}>{dateLabel(detail.startedAt)}</p>
-                        <p className={detailIsFriend ? styles.friendHistoryOwner : styles.historyOwner}>
+                        <p
+                          className={
+                            detailIsFriend ? styles.friendHistoryOwner : styles.historyOwner
+                          }
+                        >
                           @{detailItem?.username}
                         </p>
                         <h2>{detail.name || sessionLabels[detail.kind]}</h2>
@@ -1362,7 +1364,10 @@ export function SportApp() {
                           >
                             Modifier cette séance
                           </button>
-                          <button className={styles.textButton} onClick={() => setDeleteHistory(true)}>
+                          <button
+                            className={styles.textButton}
+                            onClick={() => setDeleteHistory(true)}
+                          >
                             Supprimer cette séance
                           </button>
                         </div>
@@ -1408,13 +1413,20 @@ export function SportApp() {
                     >
                       <span>
                         <span>{dateLabel(item.session.startedAt)}</span>
-                        <span className={item.isFriend ? styles.friendHistoryOwner : styles.historyOwner}>
+                        <span
+                          className={
+                            item.isFriend ? styles.friendHistoryOwner : styles.historyOwner
+                          }
+                        >
                           @{item.username}
                         </span>
                         <strong>{item.session.name || sessionLabels[item.session.kind]}</strong>
                         <span>
                           {item.session.exercises.length} exercices ·{" "}
-                          {item.session.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)}{" "}
+                          {item.session.exercises.reduce(
+                            (sum, e) => sum + e.completedSets.length,
+                            0,
+                          )}{" "}
                           séries
                         </span>
                       </span>
