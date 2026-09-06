@@ -96,6 +96,22 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     const client = getCloud();
     if (!client) return;
     let live = true;
+
+    // Ask the browser to keep our storage (the refresh token lives there).
+    // Without this, Chrome/Firefox may evict it under storage pressure and
+    // some engines drop script-writable storage after ~7 idle days.
+    void navigator.storage?.persist?.().catch(() => {});
+
+    // supabase-js only refreshes the token while the tab is active. When the
+    // app returns to the foreground after a long idle period (or a reboot),
+    // resume the refresh loop and revalidate the session immediately.
+    const onVisible = () => {
+      if (document.visibilityState !== "visible") return;
+      client.auth.startAutoRefresh();
+      void client.auth.getSession();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+
     const { data } = client.auth.onAuthStateChange((event, next) => {
       if (!live) return;
       sessionRef.current = next;
@@ -120,6 +136,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       });
     return () => {
       live = false;
+      document.removeEventListener("visibilitychange", onVisible);
       data.subscription.unsubscribe();
     };
   }, []);

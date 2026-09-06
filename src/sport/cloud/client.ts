@@ -9,7 +9,16 @@ export function getCloud(): SupabaseClient | null {
   client ??= createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
-    { auth: { flowType: "pkce", persistSession: true, detectSessionInUrl: true } },
+    {
+      auth: {
+        flowType: "pkce",
+        persistSession: true,
+        detectSessionInUrl: true,
+        // Keep the access token fresh for as long as the app is running so a
+        // long-idle session recovers silently instead of forcing a re-login.
+        autoRefreshToken: true,
+      },
+    },
   );
   return client;
 }
