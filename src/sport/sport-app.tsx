@@ -11,6 +11,12 @@ import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
 import { StatsDashboard } from "./stats-dashboard";
 import {
+  configsForRecommendedWorkout,
+  recommendedWorkoutsFor,
+  workoutDurations,
+  type WorkoutDuration,
+} from "./recommended-workouts";
+import {
   equipmentLabels,
   exercises,
   muscleLabels,
@@ -495,7 +501,9 @@ export function SportApp() {
   >("home");
   const { theme, selectTheme } = useThemeMode("dark");
   const [autoRest, setAutoRest] = useState(true);
-  const [kind, setKind] = useState<SessionKind>("full");
+  const [kind, setKind] = useState<Extract<SessionKind, "full" | "half" | "ppl">>("full");
+  const [workoutType, setWorkoutType] = useState<"recommended" | "free" | null>(null);
+  const [workoutDuration, setWorkoutDuration] = useState<WorkoutDuration>("medium");
   const [editing, setEditing] = useState<{ config: ExerciseConfig; entryId?: string } | null>(null);
   const [detailId, setDetailId] = useState<string | null>(null);
   const [editHistory, setEditHistory] = useState(false);
@@ -618,13 +626,18 @@ export function SportApp() {
         : [...s.favorites, { ...config }],
     }));
   }
-  function start(kind: SessionKind, configs: ExerciseConfig[] = []) {
+  function start(
+    kind: SessionKind,
+    configs: ExerciseConfig[] = [],
+    name?: string,
+    source: "free" | "recommended" = "free",
+  ) {
     if (storeRef.current?.active) {
       setTab("training");
       setNotice("Votre séance en cours vous attend. Terminez-la avant d’en commencer une autre.");
       return;
     }
-    update((s) => ({ ...s, active: createSession(kind, configs) }));
+    update((s) => ({ ...s, active: createSession(kind, configs, name, source) }));
     timer.stop();
     setEditing(null);
     setTab("training");
@@ -723,6 +736,7 @@ export function SportApp() {
             aria-current={tab === id ? "page" : undefined}
             onClick={() => {
               setTab(id);
+              if (id === "training" && !active) setWorkoutType(null);
               setDetailId(null);
               setEditHistory(false);
               setDeleteHistory(false);
@@ -770,6 +784,7 @@ export function SportApp() {
                     className={styles.homeButton}
                     onClick={() => {
                       setTab(id);
+                      if (id === "training" && !active) setWorkoutType(null);
                       setDetailId(null);
                       setEditing(null);
                       setEditHistory(false);
@@ -818,18 +833,77 @@ export function SportApp() {
                   ).map(([id, label]) => (
                     <button
                       key={id}
+                      aria-label={label}
                       aria-pressed={kind === id}
-                      onClick={() => {
-                        setKind(id);
-                      }}
+                      onClick={() => setKind(id)}
                     >
                       {label}
                     </button>
-                  ))}
+                    ))}
                 </div>
-                <button className={styles.primary} onClick={() => start(kind)}>
-                  Démarrer ma séance <span aria-hidden="true">→</span>
-                </button>
+                <h2>Construction de séance</h2>
+                <div className={styles.segment} aria-label="Type d’entraînement">
+                  <button
+                    aria-label="Séances recommandées"
+                    aria-pressed={workoutType === "recommended"}
+                    onClick={() => setWorkoutType("recommended")}
+                  >
+                    Séances recommandées
+                  </button>
+                  <button
+                    aria-label="Entraînement libre"
+                    aria-pressed={workoutType === "free"}
+                    onClick={() => setWorkoutType("free")}
+                  >
+                    Entraînement libre
+                  </button>
+                </div>
+                {workoutType === "recommended" ? (
+                  <div className={styles.recommendedSetup}>
+                    <h3>Durée disponible</h3>
+                    <div className={styles.segment} aria-label="Durée de l’entraînement">
+                      {(Object.entries(workoutDurations) as [WorkoutDuration, (typeof workoutDurations)[WorkoutDuration]][]).map(
+                        ([id, duration]) => (
+                          <button
+                            key={id}
+                            aria-pressed={workoutDuration === id}
+                            onClick={() => setWorkoutDuration(id)}
+                          >
+                            {duration.label}
+                            <br />
+                            <small>{duration.minutes} min</small>
+                          </button>
+                        ),
+                      )}
+                    </div>
+                    <div className={styles.recommendedList}>
+                      {recommendedWorkoutsFor(kind, workoutDuration).map((workout) => (
+                        <button
+                          className={styles.recommendedWorkout}
+                          key={workout.id}
+                          onClick={() =>
+                            start(
+                              workout.kind,
+                              configsForRecommendedWorkout(workout),
+                              workout.name,
+                              "recommended",
+                            )
+                          }
+                        >
+                          <span>
+                            <strong>{workout.name}</strong>
+                            <em>{workout.exercises.length} exercices · {workoutDurations[workout.duration].minutes} min environ</em>
+                          </span>
+                          <span aria-hidden="true">→</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : workoutType === "free" ? (
+                  <button className={styles.primary} onClick={() => start(kind)}>
+                    Commencer ma séance <span aria-hidden="true">→</span>
+                  </button>
+                ) : null}
               </section>
               {!cloud.profile && (
                 <section className={styles.panel} aria-labelledby="social-invite">
@@ -850,23 +924,45 @@ export function SportApp() {
               <div className={styles.sessionHeading}>
                 <div>
                   <p className={styles.eyebrow}>Séance en cours · {dateLabel(active.startedAt)}</p>
-                  <h1>{sessionLabels[active.kind]}</h1>
+                  <h1>{active.name || sessionLabels[active.kind]}</h1>
+                  {active.name && <p className={styles.sessionFormat}>{sessionLabels[active.kind]}</p>}
                 </div>
-                {!current && !editing && !confirmFinish ? (
-                  <button
-                    className={styles.secondary}
-                    aria-label="Terminer ma séance"
-                    onClick={() => setConfirmFinish(true)}
-                  >
-                    Terminer
-                  </button>
-                ) : (
-                  <span className={styles.badge}>
-                    {totalSets} série{totalSets > 1 ? "s" : ""}
-                  </span>
-                )}
+                <button
+                  className={styles.secondary}
+                  aria-label="Terminer ma séance"
+                  onClick={() => {
+                    timer.stop();
+                    setConfirmFinish(true);
+                  }}
+                >
+                  Terminer
+                </button>
               </div>
-              {editing ? (
+              {active.source === "recommended" && (
+                <details className={`${styles.recap} ${styles.programRecap}`} open>
+                  <summary>Programme de la séance · {active.exercises.length} exercices</summary>
+                  <ol className={styles.programList}>
+                    {active.exercises.map((entry, index) => {
+                      const status = entry.finished
+                        ? "Terminé"
+                        : entry.id === current?.id
+                          ? "En cours"
+                          : "À venir";
+                      return (
+                        <li key={entry.id} data-status={status}>
+                          <span>{index + 1}</span>
+                          <div>
+                            <strong>{exerciseName(entry.config.exerciseId)}</strong>
+                            <small>{entry.config.sets} séries × {entry.config.reps ?? "—"} rép. · repos {timeLabel(entry.config.restSeconds)}</small>
+                          </div>
+                          <em>{status}</em>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </details>
+              )}
+              {confirmFinish ? null : editing ? (
                 <ConfigForm
                   key={`${editing.entryId ?? "new"}-${configKey(editing.config)}`}
                   initial={editing.config}
@@ -1099,9 +1195,7 @@ export function SportApp() {
                     ))}
                 </details>
               )}
-              {!current &&
-                !editing &&
-                (confirmFinish ? (
+              {confirmFinish ? (
                   <section className={styles.confirm} aria-label="Terminer la séance">
                     <h2>
                       {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
@@ -1158,7 +1252,7 @@ export function SportApp() {
                       )}
                     </div>
                   </section>
-                ) : null)}
+                ) : null}
             </>
           )}
           {tab === "history" && (

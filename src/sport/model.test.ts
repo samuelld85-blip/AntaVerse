@@ -1,6 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { exercises, searchExercises } from "./catalog";
 import {
+  configsForRecommendedWorkout,
+  recommendedWorkouts,
+  recommendedWorkoutsFor,
+  workoutDurations,
+} from "./recommended-workouts";
+import {
   completeSet,
   configKey,
   createEntry,
@@ -111,5 +117,26 @@ describe("exercise discovery", () => {
       expect(
         storeSchema.safeParse({ ...emptyStore(), favorites: [defaultConfig(exercise.id)] }).success,
       ).toBe(true);
+  });
+});
+
+describe("recommended workouts", () => {
+  it("covers every format and duration with the right editable workout options", () => {
+    expect(recommendedWorkouts).toHaveLength(21);
+    for (const kind of ["full", "half", "ppl"] as const) {
+      for (const duration of Object.keys(workoutDurations) as Array<keyof typeof workoutDurations>) {
+        expect(recommendedWorkoutsFor(kind, duration)).toHaveLength(kind === "ppl" ? 3 : 2);
+      }
+    }
+  });
+  it("builds valid independent configurations for every recommended workout", () => {
+    for (const workout of recommendedWorkouts) {
+      const configs = configsForRecommendedWorkout(workout);
+      expect(configs).toHaveLength(workout.exercises.length);
+      expect(
+        storeSchema.safeParse({ ...emptyStore(), favorites: configs }).success,
+      ).toBe(true);
+      expect(configs.every((config) => config.loadKg === 0)).toBe(true);
+    }
   });
 });

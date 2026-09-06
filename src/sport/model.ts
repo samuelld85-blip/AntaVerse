@@ -34,6 +34,7 @@ const kindSchema = z.enum(["full", "half", "ppl", "upper", "lower", "push", "pul
 const sessionSchema = z.object({
   id: z.string(),
   name: z.string().max(100).optional(),
+  source: z.enum(["free", "recommended"]).optional(),
   kind: kindSchema,
   startedAt: z.string().datetime(),
   endedAt: z.string().datetime().nullable(),
@@ -79,8 +80,15 @@ export const createEntry = (config: ExerciseConfig): ExerciseEntry => ({
   completedSets: [],
   finished: false,
 });
-export const createSession = (kind: SessionKind, configs: ExerciseConfig[] = []): Session => ({
+export const createSession = (
+  kind: SessionKind,
+  configs: ExerciseConfig[] = [],
+  name?: string,
+  source?: "free" | "recommended",
+): Session => ({
   id: crypto.randomUUID(),
+  ...(name ? { name } : {}),
+  ...(source ? { source } : {}),
   kind,
   startedAt: new Date().toISOString(),
   endedAt: null,

@@ -413,6 +413,72 @@
 .panel h2 {
   margin-bottom: 18px;
 }
+.setupChoices,
+.recommendedList {
+  display: grid;
+  gap: 10px;
+}
+.setupChoice,
+.recommendedWorkout,
+.setupMode button {
+  width: 100%;
+  border: 1px solid var(--sport-line);
+  border-radius: 12px;
+  color: var(--sport-ink);
+  background: var(--sport-surface);
+  text-align: left;
+}
+.setupChoice,
+.recommendedWorkout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 74px;
+  padding: 14px;
+}
+.setupChoice:hover,
+.recommendedWorkout:hover {
+  border-color: var(--sport-accent-line);
+  background: var(--sport-raised);
+}
+.setupChoice > span:first-child,
+.recommendedWorkout > span:first-child,
+.setupMode button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.setupChoice strong,
+.recommendedWorkout strong,
+.setupMode strong {
+  font-size: 15px;
+}
+.setupChoice small,
+.recommendedWorkout small,
+.setupMode span,
+.recommendedWorkout em {
+  color: var(--sport-muted);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.45;
+}
+.recommendedWorkout em {
+  color: var(--sport-cool);
+  margin-top: 2px;
+}
+.setupChoice > span:last-child,
+.recommendedWorkout > span:last-child {
+  flex-shrink: 0;
+  color: var(--sport-accent);
+  font-size: 20px;
+}
+.recommendedSetup {
+  margin-top: 20px;
+}
+.recommendedSetup h3 {
+  margin-bottom: 10px;
+}
 .segment {
   display: flex;
   padding: 4px;
@@ -495,6 +561,11 @@
 .sessionHeading .eyebrow {
   font-size: 9px;
   letter-spacing: 1px;
+}
+.sessionFormat {
+  margin-top: 5px !important;
+  color: var(--sport-muted);
+  font-size: 12px;
 }
 .badge {
   flex-shrink: 0;
@@ -764,6 +835,64 @@
 .recapRow p {
   font-size: 12px;
   color: var(--sport-muted);
+}
+.programRecap {
+  margin-top: 0;
+}
+.programList {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--sport-line);
+}
+.programList li {
+  display: grid;
+  grid-template-columns: 25px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--sport-line);
+}
+.programList li > span {
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  color: var(--sport-muted);
+  background: var(--sport-field);
+  font-size: 10px;
+  font-weight: 700;
+}
+.programList li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.programList strong,
+.programList small,
+.programList em {
+  overflow-wrap: anywhere;
+}
+.programList strong {
+  font-size: 13px;
+}
+.programList small,
+.programList em {
+  color: var(--sport-muted);
+  font-size: 10px;
+  font-style: normal;
+}
+.programList li[data-status="En cours"] > span,
+.programList li[data-status="En cours"] em {
+  color: var(--sport-accent);
+}
+.programList li[data-status="Terminé"] > span {
+  color: var(--sport-on-accent);
+  background: var(--sport-button);
 }
 .finish {
   margin: 28px auto 0;
