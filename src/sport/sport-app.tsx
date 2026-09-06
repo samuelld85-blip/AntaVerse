@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SportSocial } from "./cloud/social";
 import { useSportCloud } from "./cloud/provider";
+import { getCloud, friendlyError } from "./cloud/client";
 import { useEffect, useRef, useState } from "react";
 import { SportIcon } from "@/components/sport-icon";
 import { useThemeMode } from "@/lib/use-theme-mode";
@@ -27,6 +28,7 @@ import {
   finishSession,
   loadStore,
   saveStore,
+  storeSchema,
   timeLabel,
   type ExerciseConfig,
   type ExerciseEntry,
@@ -35,6 +37,13 @@ import {
 } from "./model";
 import { useRestTimer } from "./use-rest-timer";
 import styles from "./sport.module.css";
+
+type HistoryItem = {
+  session: Session;
+  ownerId: string;
+  username: string;
+  isFriend: boolean;
+};
 
 const dateLabel = (date: string) =>
   new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(
@@ -493,8 +502,73 @@ export function SportApp() {
   const [deleteHistory, setDeleteHistory] = useState(false);
   const [confirmFinish, setConfirmFinish] = useState(false);
   const [notice, setNotice] = useState("");
+  const [friendHistory, setFriendHistory] = useState<HistoryItem[]>([]);
+  const [friendHistoryLoading, setFriendHistoryLoading] = useState(false);
   const timer = useRestTimer();
   const cloud = useSportCloud();
+  useEffect(() => {
+    const client = getCloud();
+    const id = cloud.session?.user.id;
+    if (tab !== "history" || !client || !id || !cloud.profile) {
+      setFriendHistory([]);
+      return;
+    }
+    let live = true;
+    setFriendHistoryLoading(true);
+    void (async () => {
+      try {
+        const { data: relations, error: relationsError } = await client
+          .from("friendships")
+          .select("requester,recipient,accepted_at")
+          .or(`requester.eq.${id},recipient.eq.${id}`)
+          .not("accepted_at", "is", null);
+        if (relationsError) throw relationsError;
+        const friendIds = [
+          ...new Set(
+            ((relations ?? []) as { requester: string; recipient: string }[]).map((friend) =>
+              friend.requester === id ? friend.recipient : friend.requester,
+            ),
+          ),
+        ];
+        if (!friendIds.length) {
+          if (live) setFriendHistory([]);
+          return;
+        }
+        const [{ data: profiles, error: profilesError }, { data: sessions, error: sessionsError }] =
+          await Promise.all([
+            client.from("profiles").select("id,username").in("id", friendIds),
+            client
+              .from("sport_sessions")
+              .select("user_id,payload")
+              .in("user_id", friendIds)
+              .order("ended_at", { ascending: false })
+              .limit(100),
+          ]);
+        if (profilesError) throw profilesError;
+        if (sessionsError) throw sessionsError;
+        const usernames = Object.fromEntries(
+          (profiles ?? []).map((profile) => [profile.id, profile.username]),
+        );
+        const items = (sessions ?? []).flatMap((row) => {
+          const parsed = storeSchema.shape.history.element.safeParse(row.payload);
+          return parsed.success
+            ? [{ session: parsed.data, ownerId: row.user_id, username: usernames[row.user_id] ?? "joueur", isFriend: true }]
+            : [];
+        });
+        if (live) setFriendHistory(items);
+      } catch (error) {
+        if (live) {
+          setFriendHistory([]);
+          setNotice(friendlyError(error));
+        }
+      } finally {
+        if (live) setFriendHistoryLoading(false);
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [cloud.profile, cloud.session, tab]);
   useEffect(() => {
     // Defer hydration so server and initial browser markup agree.
     let mounted = true;
@@ -581,7 +655,20 @@ export function SportApp() {
     );
   const active = store.active;
   const current = active?.exercises.find((e) => !e.finished);
-  const detail = store.history.find((s) => s.id === detailId);
+  const historyItems: HistoryItem[] = [
+    ...store.history.map((session) => ({
+      session,
+      ownerId: cloud.session?.user.id ?? "local",
+      username: cloud.profile?.username ?? "moi",
+      isFriend: false,
+    })),
+    ...friendHistory,
+  ].sort(
+    (a, b) => new Date(b.session.startedAt).getTime() - new Date(a.session.startedAt).getTime(),
+  );
+  const detailItem = historyItems.find((item) => item.session.id === detailId);
+  const detail = detailItem?.session;
+  const detailIsFriend = detailItem?.isFriend ?? false;
   const totalSets = active?.exercises.reduce((sum, e) => sum + e.completedSets.length, 0) ?? 0;
   const isFavorite = (c: ExerciseConfig) =>
     store.favorites.some((f) => configKey(f) === configKey(c));
@@ -1108,13 +1195,18 @@ export function SportApp() {
                     <div className={styles.sectionHeading}>
                       <div>
                         <p className={styles.eyebrow}>{dateLabel(detail.startedAt)}</p>
+                        <p className={detailIsFriend ? styles.friendHistoryOwner : styles.historyOwner}>
+                          @{detailItem?.username}
+                        </p>
                         <h2>{detail.name || sessionLabels[detail.kind]}</h2>
                       </div>
-                      <Star
-                        selected={store.templates.some((t) => t.id === detail.id)}
-                        label="Séance favorite"
-                        onClick={() => toggleTemplate(detail)}
-                      />
+                      {!detailIsFriend && (
+                        <Star
+                          selected={store.templates.some((t) => t.id === detail.id)}
+                          label="Séance favorite"
+                          onClick={() => toggleTemplate(detail)}
+                        />
+                      )}
                     </div>
                     <p className={styles.hint}>
                       {detail.exercises.length} exercices ·{" "}
@@ -1153,32 +1245,36 @@ export function SportApp() {
                         </ol>
                       </div>
                     ))}
-                    <button
-                      className={styles.primary}
-                      onClick={() =>
-                        start(
-                          detail.kind,
-                          detail.exercises.map((e) => e.config),
-                        )
-                      }
-                    >
-                      Refaire cette séance
-                    </button>
-                    <div className={styles.actions}>
-                      <button
-                        className={styles.textButton}
-                        onClick={() => {
-                          setEditHistory(true);
-                          setDeleteHistory(false);
-                        }}
-                      >
-                        Modifier cette séance
-                      </button>
-                      <button className={styles.textButton} onClick={() => setDeleteHistory(true)}>
-                        Supprimer cette séance
-                      </button>
-                    </div>
-                    {deleteHistory && (
+                    {!detailIsFriend && (
+                      <>
+                        <button
+                          className={styles.primary}
+                          onClick={() =>
+                            start(
+                              detail.kind,
+                              detail.exercises.map((e) => e.config),
+                            )
+                          }
+                        >
+                          Refaire cette séance
+                        </button>
+                        <div className={styles.actions}>
+                          <button
+                            className={styles.textButton}
+                            onClick={() => {
+                              setEditHistory(true);
+                              setDeleteHistory(false);
+                            }}
+                          >
+                            Modifier cette séance
+                          </button>
+                          <button className={styles.textButton} onClick={() => setDeleteHistory(true)}>
+                            Supprimer cette séance
+                          </button>
+                        </div>
+                      </>
+                    )}
+                    {!detailIsFriend && deleteHistory && (
                       <div className={styles.confirm}>
                         <h3>Supprimer de l’historique ?</h3>
                         <p>Cette séance sera supprimée définitivement.</p>
@@ -1208,20 +1304,23 @@ export function SportApp() {
                     )}
                   </section>
                 </>
-              ) : store.history.length ? (
+              ) : historyItems.length ? (
                 <div className={styles.exerciseList}>
-                  {store.history.map((session) => (
+                  {historyItems.map((item) => (
                     <button
-                      className={styles.exerciseRow}
-                      key={session.id}
-                      onClick={() => setDetailId(session.id)}
+                      className={`${styles.exerciseRow} ${item.isFriend ? styles.friendHistoryRow : ""}`}
+                      key={`${item.ownerId}:${item.session.id}`}
+                      onClick={() => setDetailId(item.session.id)}
                     >
                       <span>
-                        <span>{dateLabel(session.startedAt)}</span>
-                        <strong>{session.name || sessionLabels[session.kind]}</strong>
+                        <span>{dateLabel(item.session.startedAt)}</span>
+                        <span className={item.isFriend ? styles.friendHistoryOwner : styles.historyOwner}>
+                          @{item.username}
+                        </span>
+                        <strong>{item.session.name || sessionLabels[item.session.kind]}</strong>
                         <span>
-                          {session.exercises.length} exercices ·{" "}
-                          {session.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)}{" "}
+                          {item.session.exercises.length} exercices ·{" "}
+                          {item.session.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)}{" "}
                           séries
                         </span>
                       </span>
@@ -1229,6 +1328,10 @@ export function SportApp() {
                     </button>
                   ))}
                 </div>
+              ) : friendHistoryLoading ? (
+                <p role="status" className={styles.emptySmall}>
+                  Chargement des séances de vos amis…
+                </p>
               ) : (
                 <div className={styles.empty}>
                   <SportIcon />
@@ -1250,7 +1353,14 @@ export function SportApp() {
               <div className={styles.pageHeading}>
                 <h1>Social</h1>
               </div>
-              <SportSocial />
+              <SportSocial
+                onOpenHistory={(sessionId) => {
+                  setDetailId(sessionId);
+                  setEditHistory(false);
+                  setDeleteHistory(false);
+                  setTab("history");
+                }}
+              />
             </>
           )}
           {tab === "favorites" && (

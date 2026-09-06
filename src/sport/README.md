@@ -3,7 +3,7 @@
 Route `/sport/`, entrée dans l’en-tête du lanceur. Module indépendant des jeux,
 avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
 
-- `catalog.ts` : source manuelle des 32 exercices, IDs stables, muscles principaux
+- `catalog.ts` : source manuelle des 37 exercices, IDs stables, muscles principaux
   et secondaires, zones, matériel et mouvement. Full body, Half body et Push Pull
   Legs sont les trois formats. Haut/bas et push/pull/legs sont des filtres facultatifs
   du catalogue, sans écran intermédiaire. Les abdominaux sont accessibles

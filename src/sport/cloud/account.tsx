@@ -282,7 +282,7 @@ export function SportAccount() {
                       ? "Créer mon compte"
                       : mode === "reset"
                         ? "Recevoir un lien de récupération"
-                        : "Me connecter"}
+                        : "Me connecter / Créer mon compte"}
               </button>
             </fieldset>
           </form>

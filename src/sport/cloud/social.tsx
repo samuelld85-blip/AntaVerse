@@ -5,7 +5,6 @@ import { getCloud, friendlyError } from "./client";
 import { useSportCloud } from "./provider";
 import { enableSportPush, disableSportPush } from "./push";
 import { storeSchema, type Session } from "../model";
-import { exercises } from "../catalog";
 import styles from "./cloud.module.css";
 
 type Person = { id: string; username: string };
@@ -17,7 +16,7 @@ type Comment = {
   body: string;
   created_at: string;
 };
-export function SportSocial() {
+export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: string) => void }) {
   const { session, profile } = useSportCloud();
   const [people, setPeople] = useState<Person[]>([]);
   const [friends, setFriends] = useState<Friendship[]>([]);
@@ -337,30 +336,19 @@ export function SportSocial() {
           ) : history.length === 0 ? (
             <p>Aucune séance partagée disponible.</p>
           ) : (
-            <ul className={styles.list}>
+            <ul className={styles.historyCarousel}>
               {history.map((s) => (
                 <li key={s.id}>
-                  <details>
-                    <summary>
-                      {s.name || "Séance"} · {new Date(s.startedAt).toLocaleDateString("fr-FR")} ·{" "}
+                  <div className={styles.sessionSummary}>
+                    <strong>{s.name || "Séance"}</strong>
+                    <span>
+                      {new Date(s.startedAt).toLocaleDateString("fr-FR")} ·{" "}
                       {s.exercises.reduce((n, e) => n + e.completedSets.length, 0)} séries
-                    </summary>
-                    {s.exercises.map((e) => (
-                      <div key={e.id}>
-                        <strong>
-                          {exercises.find((x) => x.id === e.config.exerciseId)?.name ??
-                            e.config.exerciseId}
-                        </strong>
-                        <ul>
-                          {e.completedSets.map((set, i) => (
-                            <li key={i}>
-                              {set.loadKg} kg{set.reps !== null ? ` × ${set.reps} répétitions` : ""}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </details>
+                    </span>
+                    <button type="button" onClick={() => onOpenHistory(s.id)}>
+                      Voir le détail dans Historique
+                    </button>
+                  </div>
                   {(() => {
                     const sessionLikes = likes[s.id] ?? [];
                     const liked = sessionLikes.includes(id!);

@@ -116,6 +116,33 @@
 .social .list {
   margin: 0;
 }
+.historyCarousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  list-style: none;
+  padding: 0 2px 8px;
+  margin: 12px 0;
+  scroll-snap-type: x proximity;
+}
+.historyCarousel > li {
+  flex: 0 0 min(86%, 360px);
+  scroll-snap-align: start;
+  padding: 14px;
+  border: 1px solid #415369;
+  border-radius: 14px;
+}
+.sessionSummary {
+  display: grid;
+  gap: 8px;
+}
+.sessionSummary > span {
+  color: #bcc8d6;
+  font-size: 0.9rem;
+}
+.sessionSummary > button {
+  margin-top: 4px;
+}
 .socialGroup {
   display: grid;
   gap: 10px;

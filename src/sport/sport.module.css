@@ -623,6 +623,15 @@
   color: var(--sport-muted);
   line-height: 1.6;
 }
+.historyOwner {
+  color: var(--sport-muted) !important;
+}
+.friendHistoryOwner {
+  color: var(--sport-cool) !important;
+}
+.friendHistoryRow {
+  background: color-mix(in srgb, var(--sport-cool) 5%, transparent);
+}
 .exerciseRow > span:last-child {
   color: var(--sport-accent);
   font-size: 22px;
