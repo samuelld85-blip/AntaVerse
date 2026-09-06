@@ -600,23 +600,13 @@ export function SportApp() {
           {tab === "training" && !active && (
             <>
               <section className={styles.hero}>
-                <p className={styles.eyebrow}>Votre carnet d’entraînement</p>
-                <h1>
-                  Votre séance.
-                  <br />
-                  <span>À votre rythme.</span>
-                </h1>
-                <p>
-                  Choisissez vos exercices, suivez vos séries.
-                  <br />
-                  On s’occupe du repos.
-                </p>
+                <h1>Nouvelle séance</h1>
                 <div className={styles.heroMark} aria-hidden="true">
                   <SportIcon />
                 </div>
               </section>
               <section className={styles.panel}>
-                <h2>On travaille quoi ?</h2>
+                <h2>Format de séance</h2>
                 <div className={styles.segment} aria-label="Format d’entraînement">
                   {(
                     [
@@ -636,16 +626,10 @@ export function SportApp() {
                     </button>
                   ))}
                 </div>
-                <p className={styles.hint}>
-                  {kind === "full"
-                    ? "Tous les groupes musculaires dans une même séance."
-                    : "Retrouvez tous les exercices, puis filtrez selon vos envies."}
-                </p>
                 <button className={styles.primary} onClick={() => start(kind)}>
                   Démarrer ma séance <span aria-hidden="true">→</span>
                 </button>
               </section>
-              <p className={styles.localNote}>Enregistré sur cet appareil · Sans compte</p>
             </>
           )}
           {tab === "training" && active && (
@@ -967,7 +951,6 @@ export function SportApp() {
           {tab === "history" && (
             <>
               <div className={styles.pageHeading}>
-                <p className={styles.eyebrow}>Votre carnet</p>
                 <h1>Historique</h1>
               </div>
               {detail && editHistory ? (
@@ -1138,9 +1121,7 @@ export function SportApp() {
           {tab === "favorites" && (
             <>
               <div className={styles.pageHeading}>
-                <p className={styles.eyebrow}>Prêt pour la prochaine fois</p>
                 <h1>Vos favoris</h1>
-                <p>Vos exercices, avec vos réglages.</p>
               </div>
               <h2 className={styles.subheading}>
                 Exercices <span>{store.favorites.length}</span>

@@ -1,32 +1,52 @@
 .shell {
-  --sport-bg: #111112;
-  --sport-surface: #1b1b1d;
-  --sport-raised: #29292c;
-  --sport-ink: #f4f4f5;
-  --sport-muted: #ababaf;
-  --sport-line: #3e3e43;
-  --sport-accent: #f0f0f2;
-  --sport-on-accent: #171719;
+  /* Midnight / copper: warm actions, cool supporting surfaces. */
+  --sport-bg: #101923;
+  --sport-surface: #192635;
+  --sport-raised: #24364a;
+  --sport-ink: #f5f1eb;
+  --sport-muted: #adb9c7;
+  --sport-line: #35485d;
+  --sport-accent: #eabb99;
+  --sport-on-accent: #2b1c15;
+  --sport-accent-soft: #342e2d;
+  --sport-accent-line: #80634f;
+  --sport-cool: #a4bfde;
+  --sport-field: #121e2b;
+  --sport-page-wash: rgba(128, 161, 200, 0.07);
+  --sport-panel: linear-gradient(145deg, #223346 0%, #192635 62%, #1e2b3a 100%);
+  --sport-button: linear-gradient(115deg, #f1ccaa 0%, #e5b38e 55%, #dba484 100%);
+  --sport-shadow: 0 8px 24px rgba(3, 10, 19, 0.16), inset 0 1px 0 rgba(207, 225, 247, 0.035);
+  --sport-button-shadow: 0 4px 12px rgba(9, 13, 20, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.26);
   width: 100%;
   max-width: 680px;
   min-height: 100dvh;
   margin: 0 auto;
   padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
     max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-  background: var(--sport-bg);
+  background: linear-gradient(160deg, var(--sport-page-wash), transparent 420px), var(--sport-bg);
   color: var(--sport-ink);
   font-family: var(--launcher-font);
   color-scheme: dark;
 }
 .shell[data-theme="light"] {
-  --sport-bg: #fafafa;
-  --sport-surface: #ffffff;
-  --sport-raised: #ededee;
-  --sport-ink: #18181b;
-  --sport-muted: #626269;
-  --sport-line: #d5d5d9;
-  --sport-accent: #202024;
-  --sport-on-accent: #ffffff;
+  --sport-bg: #f7f4ef;
+  --sport-surface: #fffdf9;
+  --sport-raised: #e9edf1;
+  --sport-ink: #213247;
+  --sport-muted: #626e7b;
+  --sport-line: #cdd3db;
+  --sport-accent: #8d4c31;
+  --sport-on-accent: #fffaf4;
+  --sport-accent-soft: #f3e5d8;
+  --sport-accent-line: #bf9376;
+  --sport-cool: #46678d;
+  --sport-field: #faf8f4;
+  --sport-page-wash: rgba(193, 148, 112, 0.1);
+  --sport-panel: linear-gradient(145deg, #fffdf9 0%, #fffdf9 62%, #f0f2f5 100%);
+  --sport-button: linear-gradient(115deg, #975b3c 0%, #88462f 55%, #793d2c 100%);
+  --sport-shadow: 0 8px 24px rgba(48, 63, 82, 0.055), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  --sport-button-shadow:
+    0 4px 12px rgba(125, 69, 45, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.14);
   color-scheme: light;
 }
 .themeButton {
@@ -36,8 +56,8 @@
   height: 44px;
   border: 1px solid var(--sport-line);
   border-radius: 10px;
-  color: var(--sport-ink);
-  background: var(--sport-surface);
+  color: var(--sport-cool);
+  background: var(--sport-panel);
   font-size: 22px !important;
 }
 .header .wordmark {
@@ -59,7 +79,8 @@
   border: 1px solid var(--sport-line);
   border-radius: 10px;
   color: var(--sport-ink);
-  background: var(--sport-surface);
+  background: var(--sport-panel);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--sport-cool) 6%, transparent);
   text-align: center;
 }
 .exerciseTile strong {
@@ -70,10 +91,11 @@
 }
 .exerciseTile svg {
   flex-shrink: 0;
-  color: var(--sport-muted);
+  color: var(--sport-cool);
 }
 .exerciseTile:hover {
   background: var(--sport-raised);
+  border-color: var(--sport-accent-line);
 }
 .restField {
   border: 0;
@@ -111,7 +133,7 @@
   padding: 8px 4px;
   border: 1px solid var(--sport-line);
   border-radius: 8px;
-  background: var(--sport-bg);
+  background: var(--sport-field);
   color: var(--sport-ink);
   font-size: 16px;
   text-align: center;
@@ -180,6 +202,8 @@
 }
 .shell button {
   cursor: pointer;
+  /* Keep foreground and background in sync when switching themes. */
+  transition: filter 160ms ease;
 }
 .shell button:focus-visible,
 .shell a:focus-visible,
@@ -265,6 +289,11 @@
   border-bottom-color: var(--sport-accent);
   color: var(--sport-accent);
   font-weight: 700;
+  background: linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--sport-accent) 7%, transparent),
+    transparent 80%
+  );
 }
 .dot {
   width: 6px;
@@ -278,7 +307,7 @@
 .notice:not(:empty) {
   margin: 18px 0;
   padding: 12px 16px;
-  background: var(--sport-raised);
+  background: var(--sport-accent-soft);
   color: var(--sport-ink);
   border-radius: 10px;
   font-size: 14px;
@@ -298,23 +327,16 @@
 }
 .hero h1 {
   font-size: clamp(30px, 7vw, 40px);
-  margin-bottom: 18px;
+  margin-bottom: 0;
   position: relative;
   z-index: 1;
-}
-.hero h1 span {
-  color: var(--sport-accent);
-}
-.hero > p:last-of-type {
-  font-size: 14px;
-  color: var(--sport-muted);
 }
 .heroMark {
   position: absolute;
   right: -15px;
   top: 35px;
   color: var(--sport-accent);
-  opacity: 0.07;
+  opacity: 0.12;
   transform: rotate(-12deg);
 }
 .heroMark svg {
@@ -324,9 +346,10 @@
 .panel,
 .workout {
   padding: 18px;
-  background: var(--sport-surface);
+  background: var(--sport-panel);
   border: 1px solid var(--sport-line);
   border-radius: 16px;
+  box-shadow: var(--sport-shadow);
 }
 .panel h2 {
   margin-bottom: 18px;
@@ -335,7 +358,7 @@
   display: flex;
   padding: 4px;
   gap: 4px;
-  background: var(--sport-bg);
+  background: var(--sport-field);
   border-radius: 10px;
   margin: 14px 0;
 }
@@ -351,9 +374,9 @@
   line-height: 1.3;
 }
 .segment button[aria-pressed="true"] {
-  background: var(--sport-raised);
-  color: var(--sport-ink);
-  box-shadow: inset 0 0 0 1px var(--sport-line);
+  background: var(--sport-accent-soft);
+  color: var(--sport-accent);
+  box-shadow: inset 0 0 0 1px var(--sport-accent-line);
   font-weight: 700;
 }
 .shell .hint {
@@ -378,27 +401,27 @@
 }
 .primary {
   width: 100%;
-  border: 1px solid var(--sport-accent);
-  background: var(--sport-accent);
+  border: 1px solid var(--sport-accent-line);
+  background: var(--sport-button);
   color: var(--sport-on-accent);
+  box-shadow: var(--sport-button-shadow);
 }
 .primary:hover {
-  opacity: 0.85;
+  filter: brightness(1.06);
+}
+.primary:active {
+  filter: brightness(0.96);
+  box-shadow: inset 0 1px 3px rgba(30, 20, 16, 0.16);
 }
 .secondary {
   border: 1px solid var(--sport-line);
-  color: var(--sport-ink);
-  background: var(--sport-raised);
+  color: var(--sport-cool);
+  background: var(--sport-surface);
 }
 .secondary:hover,
 .exerciseRow:hover {
   background: var(--sport-raised);
-}
-.localNote {
-  text-align: center;
-  color: var(--sport-muted);
-  font-size: 11px;
-  margin-top: 20px !important;
+  border-color: var(--sport-cool);
 }
 .sessionHeading,
 .sectionHeading {
@@ -417,8 +440,9 @@
 .badge {
   flex-shrink: 0;
   padding: 6px 10px;
-  border: 1px solid var(--sport-line);
-  color: var(--sport-muted);
+  border: 1px solid var(--sport-accent-line);
+  color: var(--sport-accent);
+  background: var(--sport-accent-soft);
   font-size: 11px;
   border-radius: 6px;
 }
@@ -436,7 +460,7 @@
 }
 .search svg {
   flex-shrink: 0;
-  color: var(--sport-muted);
+  color: var(--sport-cool);
 }
 .search input {
   border: 0;
@@ -473,7 +497,7 @@
   border-radius: 8px;
   border: 1px solid var(--sport-line);
   color: var(--sport-ink);
-  background: var(--sport-bg);
+  background: var(--sport-field);
   font-size: 16px;
 }
 .field select {
@@ -573,7 +597,8 @@
 }
 .starred {
   color: var(--sport-accent);
-  border-color: var(--sport-accent);
+  border-color: var(--sport-accent-line);
+  background: var(--sport-accent-soft);
 }
 .sets {
   display: flex;
@@ -593,13 +618,14 @@
   font-size: 12px;
 }
 .sets .setDone {
-  background: var(--sport-accent);
+  background: var(--sport-button);
   color: var(--sport-on-accent);
   border-color: var(--sport-accent);
 }
 .sets .setCurrent {
   border-color: var(--sport-accent);
   color: var(--sport-accent);
+  background: var(--sport-accent-soft);
 }
 .timer {
   text-align: center;
@@ -611,6 +637,7 @@
   font-variant-numeric: tabular-nums;
   letter-spacing: -4px;
   line-height: 1.35;
+  color: var(--sport-accent);
 }
 .timer > p:last-child {
   color: var(--sport-muted);
@@ -702,11 +729,6 @@
 .pageHeading {
   padding: 32px 0 26px;
 }
-.pageHeading > p:last-child:not(.eyebrow) {
-  color: var(--sport-muted);
-  margin-top: 12px;
-  font-size: 14px;
-}
 .empty {
   padding: 40px 12px;
   text-align: center;
@@ -750,7 +772,8 @@
   gap: 14px;
   padding: 20px;
   border: 1px solid var(--sport-line);
-  background: var(--sport-surface);
+  background: var(--sport-panel);
+  box-shadow: var(--sport-shadow);
   border-radius: 12px;
   margin-bottom: 12px;
 }
@@ -791,6 +814,11 @@
 }
 .historyExercise li span {
   color: var(--sport-muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .shell button {
+    transition: none;
+  }
 }
 @media (max-width: 360px) {
   .shell {

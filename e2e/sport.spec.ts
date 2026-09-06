@@ -54,7 +54,7 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
 }, testInfo) => {
   await page.goto("/");
   await page.getByRole("link", { name: "Ouvrir Sport" }).click();
-  await expect(page.getByRole("heading", { name: "Votre séance. À votre rythme." })).toBeVisible({
+  await expect(page.getByRole("heading", { name: "Nouvelle séance", exact: true })).toBeVisible({
     timeout: 15000,
   });
   await page.screenshot({ path: testInfo.outputPath("sport-home.png"), fullPage: true });

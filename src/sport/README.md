@@ -17,7 +17,9 @@ sans backend, dépendance supplémentaire ou analytics.
   dans une nouvelle séance, sans réutiliser les séries, dates ou IDs historiques.
   La grille utilise trois colonnes sur téléphone, quatre à partir de 480 px.
   Les thèmes clair et sombre suivent le réglage de session AntaVerse, avec un
-  bouton dans l’en-tête Sport et une palette neutre propre au module.
+  bouton dans l’en-tête Sport. La palette du module associe bleu nuit, cuivre et
+  champagne en sombre ; ivoire, bleu ardoise et terre cuite en clair. Les tokens
+  de `sport.module.css` portent les surfaces, dégradés, contrastes et états.
 - `history-editor.tsx` : correction du titre, de la date, du format et des séries,
   ajout/retrait d’exercices. Les favoris restent des copies indépendantes. Une
   suppression d’historique demande confirmation. La sortie de séance entre deux
