@@ -1,3 +1,4 @@
+import { useId } from "react";
 import type { Exercise } from "./catalog";
 
 // Solid movement pictograms; names remain the authoritative exercise labels.
@@ -5,522 +6,1257 @@ import type { Exercise } from "./catalog";
 // --sport-cool, which is light blue on the dark theme and deep blue on the
 // light one — so one drawing covers both variants.
 //
-// Convention: the athlete is drawn in side profile (one thick rounded-stroke
-// path for head/torso/limbs) while equipment facing the viewer — a barbell,
-// a dumbbell pair, a machine stack — is drawn frontally in solid fill. This
-// mirrors standard gym pictograms and keeps 30+ icons visually consistent
-// without hand-tuning a bespoke illustration per exercise.
+// Art direction (set by the bench-press drawing, which every other icon
+// follows):
+//   * one 96x74 canvas for all icons, rendered at 44x34, so a stroke width
+//     means the same on-screen thickness everywhere;
+//   * the athlete is a thick rounded-stroke skeleton — torso 14, upper/fore
+//     arm 6, thigh 10, shin 8, foot 5.4 — with disc joints and a r6.5 head;
+//   * equipment is solid fill seen from the side: plates are vertical
+//     ellipses, bars/pads/posts are rounded rects, stacks are stacked slabs;
+//   * where two body parts or a limb and a bar overlap, a mask punches a
+//     1.6px transparent channel between them so the silhouette stays
+//     readable on any background.
 
-const BODY = {
+const LIMB = {
   fill: "none",
   stroke: "currentColor",
-  strokeWidth: 7,
   strokeLinecap: "round",
   strokeLinejoin: "round",
 } as const;
 
-function Icon({ viewBox = "0 0 64 50", children }: { viewBox?: string; children: React.ReactNode }) {
+// Limb thicknesses, taken from the bench-press reference.
+const TORSO = 14;
+const ARM = 6;
+const THIGH = 10;
+const SHIN = 8;
+const FOOT = 5.4;
+
+// The 1.6px channels punched between overlapping parts.
+const SEPARATOR = {
+  fill: "none",
+  stroke: "#000",
+  strokeWidth: 1.6,
+  strokeLinecap: "round",
+} as const;
+
+/**
+ * The shared canvas. `cut` holds the separation channels: any path listed
+ * there is erased from the drawing, keeping overlapping limbs distinct.
+ */
+function Scene({ cut, children }: { cut?: React.ReactNode; children: React.ReactNode }) {
+  // useId can contain characters that are invalid inside url(#…).
+  const maskId = `ic${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
   return (
-    <svg width="44" height="34" viewBox={viewBox} fill="currentColor" aria-hidden="true">
-      {children}
+    <svg width="44" height="34" viewBox="0 0 96 74" fill="currentColor" aria-hidden="true">
+      {cut ? (
+        <>
+          <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="74">
+            <rect width="96" height="74" fill="#fff" />
+            <g {...SEPARATOR}>{cut}</g>
+          </mask>
+          <g mask={`url(#${maskId})`}>{children}</g>
+        </>
+      ) : (
+        children
+      )}
     </svg>
   );
 }
-function Body({ d, strokeWidth }: { d: string; strokeWidth?: number }) {
-  return <path d={d} {...BODY} strokeWidth={strokeWidth ?? BODY.strokeWidth} />;
+
+// --- Body primitives -------------------------------------------------------
+
+function Limb({ d, w }: { d: string; w: number }) {
+  return <path d={d} {...LIMB} strokeWidth={w} />;
 }
-function Head({ cx, cy, r = 6 }: { cx: number; cy: number; r?: number }) {
-  return <circle cx={cx} cy={cy} r={r} />;
+function Head({ x, y, r = 6.5 }: { x: number; y: number; r?: number }) {
+  return <circle cx={x} cy={y} r={r} />;
 }
-// A weighted bar: barbell when wide, dumbbell when short.
-function Bar({
+function Joint({ x, y, r = 4.3 }: { x: number; y: number; r?: number }) {
+  return <circle cx={x} cy={y} r={r} />;
+}
+
+// --- Equipment primitives --------------------------------------------------
+
+/** A loaded barbell seen from the side; x1/x2 are the outer plate centres. */
+function Barbell({
   x1,
-  y1,
   x2,
-  y2,
-  r = 5,
+  y,
+  rx = 4.6,
+  ry = 11,
 }: {
   x1: number;
-  y1: number;
   x2: number;
-  y2: number;
-  r?: number;
+  y: number;
+  rx?: number;
+  ry?: number;
 }) {
   return (
     <>
-      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" strokeWidth={3.2} strokeLinecap="round" />
-      <circle cx={x1} cy={y1} r={r} />
-      <circle cx={x2} cy={y2} r={r} />
+      <rect x={x1 - 9.6} y={y - 2} width={7} height={4} rx={2} />
+      <ellipse cx={x1} cy={y} rx={rx} ry={ry} />
+      <ellipse cx={x1 + 6.8} cy={y} rx={rx} ry={ry} />
+      <rect x={x1 + 6.4} y={y - 1.9} width={x2 - 6.8 - (x1 + 6.4)} height={3.8} rx={1.9} />
+      <ellipse cx={x2 - 6.8} cy={y} rx={rx} ry={ry} />
+      <ellipse cx={x2} cy={y} rx={rx} ry={ry} />
+      <rect x={x2 + 2.6} y={y - 2} width={7} height={4} rx={2} />
     </>
   );
-}
-function Ground({ y = 45, x = 4, w = 56 }: { y?: number; x?: number; w?: number }) {
-  return <rect x={x} y={y} width={w} height={2.6} rx={1.3} />;
-}
-function Bench({ x = 8, y = 33, w = 34 }: { x?: number; y?: number; w?: number }) {
-  return (
-    <>
-      <rect x={x} y={y} width={w} height={5.4} rx={2.6} />
-      <rect x={x + 3} y={y + 5} width={4} height={9} rx={1.4} />
-      <rect x={x + w - 7} y={y + 5} width={4} height={9} rx={1.4} />
-    </>
-  );
-}
-function Stack({ x, y }: { x: number; y: number }) {
-  return (
-    <>
-      <rect x={x} y={y} width={11} height={3} rx={1} />
-      <rect x={x} y={y + 4.5} width={11} height={3} rx={1} />
-      <rect x={x} y={y + 9} width={11} height={3} rx={1} />
-    </>
-  );
-}
-function Cable({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: number }) {
-  return (
-    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-  );
-}
-function Pulley({ cx, cy }: { cx: number; cy: number }) {
-  return <circle cx={cx} cy={cy} r={3.2} fill="none" stroke="currentColor" strokeWidth={2} />;
 }
 
-// Overlapping body parts are separated by transparent channels punched with a
-// mask, which keeps the silhouette readable on any background. Reserved for
-// the flagship drawing below; the rest use the lighter stroke system above.
+/** A dumbbell centred on (x,y); `a` rotates it (90 = held neutral grip). */
+function Dumbbell({
+  x,
+  y,
+  a = 0,
+  len = 14,
+  rx = 3.2,
+  ry = 7,
+}: {
+  x: number;
+  y: number;
+  a?: number;
+  len?: number;
+  rx?: number;
+  ry?: number;
+}) {
+  return (
+    <g transform={a ? `rotate(${a} ${x} ${y})` : undefined}>
+      <rect x={x - len / 2} y={y - 1.7} width={len} height={3.4} rx={1.7} />
+      <ellipse cx={x - len / 2 + rx} cy={y} rx={rx} ry={ry} />
+      <ellipse cx={x + len / 2 - rx} cy={y} rx={rx} ry={ry} />
+    </g>
+  );
+}
+
+/** A padded surface: bench, seat, backrest, shoulder pad. */
+function Pad({
+  x,
+  y,
+  w,
+  h = 6,
+  a = 0,
+}: {
+  x: number;
+  y: number;
+  w: number;
+  h?: number;
+  a?: number;
+}) {
+  return (
+    <rect
+      x={x}
+      y={y}
+      width={w}
+      height={h}
+      rx={h / 2}
+      transform={a ? `rotate(${a} ${x + w / 2} ${y + h / 2})` : undefined}
+    />
+  );
+}
+
+/** A frame member: upright, rail, bench leg. */
+function Post({
+  x,
+  y,
+  h,
+  w = 5,
+  a = 0,
+}: {
+  x: number;
+  y: number;
+  h: number;
+  w?: number;
+  a?: number;
+}) {
+  return (
+    <rect
+      x={x}
+      y={y}
+      width={w}
+      height={h}
+      rx={1.4}
+      transform={a ? `rotate(${a} ${x + w / 2} ${y + h / 2})` : undefined}
+    />
+  );
+}
+
+/** A machine weight stack. */
+function Stack({ x, y, n = 4 }: { x: number; y: number; n?: number }) {
+  return (
+    <>
+      {Array.from({ length: n }, (_, i) => (
+        <rect key={i} x={x} y={y + i * 6} width={14} height={4} rx={1.4} />
+      ))}
+    </>
+  );
+}
+
+function Pulley({ x, y, r = 4 }: { x: number; y: number; r?: number }) {
+  return <circle cx={x} cy={y} r={r} fill="none" stroke="currentColor" strokeWidth={2.6} />;
+}
+function Cable({ d }: { d: string }) {
+  return <path d={d} fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" />;
+}
+/** A machine roller: ankle pad, thigh pad. */
+function Roller({ x, y, r = 5 }: { x: number; y: number; r?: number }) {
+  return <circle cx={x} cy={y} r={r} />;
+}
+function Floor({ x = 6, y = 68.2, w = 84 }: { x?: number; y?: number; w?: number }) {
+  return <rect x={x} y={y} width={w} height={4.4} rx={1.2} />;
+}
+
+// --- Chest -----------------------------------------------------------------
+
+// The reference drawing: every icon below matches its weight and detail.
 function BenchPress() {
   return (
-    <svg width="44" height="34" viewBox="0 0 96 74" fill="currentColor" aria-hidden="true">
-      <mask id="ic-bench-press" maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="74">
-        <rect width="96" height="74" fill="#fff" />
-        <g fill="none" stroke="#000" strokeWidth="1.6" strokeLinecap="round">
+    <Scene
+      cut={
+        <>
           <path d="M9.6 1A4.6 12.4 0 0 1 9.6 25" />
           <path d="M86.4 1A4.6 12.4 0 0 0 86.4 25" />
           <path d="M37.4 35.8C40.6 41 41 47 35.6 51.4" />
           <path d="M57.6 35.4C60.6 37.4 61.6 39.6 62 42" />
           <path d="m61.4 38 3.5 12.8" />
-        </g>
-      </mask>
-      <g mask="url(#ic-bench-press)">
-        <rect x="0" y="11" width="7" height="4" rx="2" />
-        <rect x="89" y="11" width="7" height="4" rx="2" />
-        <ellipse cx="9.6" cy="13" rx="4.6" ry="12.4" />
-        <ellipse cx="16.4" cy="13" rx="4.6" ry="12.4" />
-        <ellipse cx="86.4" cy="13" rx="4.6" ry="12.4" />
-        <ellipse cx="79.6" cy="13" rx="4.6" ry="12.4" />
-        <rect x="16" y="11.1" width="64" height="3.8" rx="1.9" />
-        <circle cx="30" cy="13" r="3.4" />
-        <circle cx="66" cy="13" r="3.4" />
-        <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M29.8 13c1 9 1.8 19 5 29.4" strokeWidth="6" />
-          <path d="M66 13c-.4 9-1.4 18-4 25.4" strokeWidth="6" />
-          <path d="m67 43.6 18 6.8" strokeWidth="10" />
-          <path d="M85 50.6l-.6 13" strokeWidth="8" />
-          <path d="m83.6 69 9 2.4" strokeWidth="5.4" />
-          <path d="M41 45l17.5-2" strokeWidth="14" />
-        </g>
-        <circle cx="35.4" cy="46.8" r="4.3" />
-        <circle cx="24.8" cy="45.6" r="6.5" />
-        <rect x="15.5" y="51.8" width="63" height="5.4" rx="2.6" />
-        <rect x="9.2" y="28.8" width="4.8" height="45" rx="1.2" />
-        <path
-          d="m13.6 35.4 3.8-2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        <rect x="71.6" y="55" width="5" height="19" rx="1" />
-        <rect x="7.4" y="68.2" width="69.4" height="4.4" rx="1.2" />
-      </g>
-    </svg>
+        </>
+      }
+    >
+      <rect x="0" y="11" width="7" height="4" rx="2" />
+      <rect x="89" y="11" width="7" height="4" rx="2" />
+      <ellipse cx="9.6" cy="13" rx="4.6" ry="12.4" />
+      <ellipse cx="16.4" cy="13" rx="4.6" ry="12.4" />
+      <ellipse cx="86.4" cy="13" rx="4.6" ry="12.4" />
+      <ellipse cx="79.6" cy="13" rx="4.6" ry="12.4" />
+      <rect x="16" y="11.1" width="64" height="3.8" rx="1.9" />
+      <circle cx="30" cy="13" r="3.4" />
+      <circle cx="66" cy="13" r="3.4" />
+      <Limb d="M29.8 13c1 9 1.8 19 5 29.4" w={6} />
+      <Limb d="M66 13c-.4 9-1.4 18-4 25.4" w={6} />
+      <Limb d="m67 43.6 18 6.8" w={10} />
+      <Limb d="M85 50.6l-.6 13" w={8} />
+      <Limb d="m83.6 69 9 2.4" w={5.4} />
+      <Limb d="M41 45l17.5-2" w={14} />
+      <circle cx="35.4" cy="46.8" r="4.3" />
+      <circle cx="24.8" cy="45.6" r="6.5" />
+      <rect x="15.5" y="51.8" width="63" height="5.4" rx="2.6" />
+      <rect x="9.2" y="28.8" width="4.8" height="45" rx="1.2" />
+      <path d="m13.6 35.4 3.8-2" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <rect x="71.6" y="55" width="5" height="19" rx="1" />
+      <rect x="7.4" y="68.2" width="69.4" height="4.4" rx="1.2" />
+    </Scene>
   );
 }
 
-// --- Chest ---------------------------------------------------------------
-
+// Reclined on an incline bench, pressing the bar up and slightly back.
 function InclinePress() {
   return (
-    <Icon>
-      <g transform="rotate(-14 25 36)">
-        <Bench />
-      </g>
-      <Head cx={9} cy={29} r={5.6} />
-      <Body d="M15 33 30 34 36 44M30 34 42 44M15 33 14 18M15 33 22 15" />
-      <Bar x1={11} y1={10} x2={25} y2={10} r={4.6} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M14 2A4.6 11 0 0 1 14 24" />
+          <path d="M82 2A4.6 11 0 0 0 82 24" />
+          <path d="M50 32c4 5 5 11 3 16" />
+          <path d="m36 54-9 9" />
+        </>
+      }
+    >
+      <Barbell x1={14} x2={82} y={13} />
+      <circle cx="34" cy="13" r="3.4" />
+      <circle cx="62" cy="13" r="3.4" />
+      <Limb d="M35 14c8 7 15 13 20 20" w={ARM} />
+      <Limb d="M62 15c-2 8-4 13-6 19" w={ARM} />
+      <Post x={30} y={56} h={14} />
+      <Pad x={25} y={39.5} w={44} a={-45} />
+      <Pad x={22} y={51} w={20} />
+      <Limb d="M40 52 57 35" w={TORSO} />
+      <Limb d="m38 53-12 8" w={THIGH} />
+      <Limb d="M26 61 20 68" w={SHIN} />
+      <Limb d="M17 70h9" w={FOOT} />
+      <Joint x={56} y={34} />
+      <Head x={63} y={26} />
+      <Floor x={12} w={56} />
+    </Scene>
   );
 }
 
+// Head low on a decline bench, ankles hooked under the rollers.
 function DeclinePress() {
   return (
-    <Icon>
-      <g transform="rotate(10 25 36)">
-        <Bench />
-      </g>
-      <Head cx={9} cy={29} r={5.6} />
-      <Body d="M15 33 30 34 36 44M30 34 42 44M15 33 14 18M15 33 22 15" />
-      <Bar x1={11} y1={10} x2={25} y2={10} r={4.6} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M14 4A4.6 10 0 0 1 14 24" />
+          <path d="M78 4A4.6 10 0 0 0 78 24" />
+          <path d="M31 40c-4 3-6 6-6 9" />
+          <path d="M57 43c4 2 6 5 6 8" />
+        </>
+      }
+    >
+      <Barbell x1={12} x2={68} y={18} ry={10} />
+      <circle cx="24" cy="18" r="3.4" />
+      <Limb d="M25 20 26 34" w={ARM} />
+      <Limb d="m26 34 3 13" w={ARM} />
+      <Joint x={26} y={34} r={3.4} />
+      <Post x={58} y={38} h={30} />
+      <Post x={22} y={56} h={14} />
+      <Pad x={17} y={41.5} w={44} a={-30} />
+      <Limb d="M29 49 52 37" w={TORSO} />
+      <Limb d="m53 37 13 7" w={THIGH} />
+      <Limb d="M66 44 68 31" w={SHIN} />
+      <Roller x={70} y={28} r={4.8} />
+      <Joint x={29} y={48} />
+      <Head x={19} y={53} />
+      <Floor x={12} w={62} />
+    </Scene>
   );
 }
 
+// Pec deck, seen from the front: forearms vertical against the pads, which
+// reads unambiguously where a side-view fly would look like two antennae.
 function ChestFly() {
   return (
-    <Icon>
-      <Bench />
-      <Head cx={9} cy={29} r={5.6} />
-      <Body d="M15 33 30 34 36 44M30 34 42 44M15 33 18 18M15 33 8 14" />
-      <Bar x1={14} y1={15} x2={20} y2={19} r={4} />
-      <Bar x1={3} y1={11} x2={9} y2={15} r={4} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M40 22c-3 3-4 6-4 8" />
+          <path d="M56 22c3 3 4 6 4 8" />
+        </>
+      }
+    >
+      <Post x={12} y={20} h={44} />
+      <Post x={79} y={20} h={44} />
+      <Pad x={23} y={14} w={7} h={18} />
+      <Pad x={66} y={14} w={7} h={18} />
+      <Limb d="M42 28 32 30" w={ARM} />
+      <Limb d="m32 30-2-9" w={ARM} />
+      <Limb d="m54 28 10 2" w={ARM} />
+      <Limb d="m64 30 2-9" w={ARM} />
+      <Joint x={32} y={30} r={3.6} />
+      <Joint x={64} y={30} r={3.6} />
+      <Limb d="M48 25v22" w={TORSO} />
+      <Limb d="M45 49 42 66" w={9} />
+      <Limb d="m51 49 3 17" w={9} />
+      <Head x={48} y={15} />
+      <Pad x={36} y={50} w={24} h={6} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Plank position, arms locked under the shoulders.
 function PushUp() {
   return (
-    <Icon>
-      <Head cx={14} cy={29} r={5.6} />
-      <Body d="M18 33 46 30M18 33 16 44M46 30 50 44" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M30 30c-4 3-6 6-6 10" />
+          <path d="M58 40c3 3 4 6 4 9" />
+        </>
+      }
+    >
+      <Limb d="M31 36 59 45" w={TORSO} />
+      <Limb d="m60 46 17 7" w={THIGH} />
+      <Limb d="M77 53 87 59" w={SHIN} />
+      <Limb d="m87 61 4 3" w={FOOT} />
+      <Limb d="M31 37 29 60" w={ARM} />
+      <Joint x={30} y={36} />
+      <circle cx="29" cy="61" r="3.6" />
+      <Head x={20} y={31} />
+      <Floor x={8} y={63} w={80} />
+    </Scene>
   );
 }
 
+// Suspended between parallel bars, elbows behind, knees tucked back.
 function Dips() {
   return (
-    <Icon>
-      <rect x="10" y="10" width="4" height="30" rx="1.6" />
-      <rect x="38" y="10" width="4" height="30" rx="1.6" />
-      <rect x="6" y="8" width="12" height="3.4" rx="1.6" />
-      <rect x="34" y="8" width="12" height="3.4" rx="1.6" />
-      <Head cx={27} cy={16} r={5.6} />
-      <Body d="M27 22 24 34 30 44M24 34 20 44M27 22 12 27M27 22 40 30" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M44 27c-5 3-8 7-9 11" />
+          <path d="M56 45c4 3 6 6 6 9" />
+        </>
+      }
+    >
+      <Post x={14} y={32} h={36} />
+      <Post x={76} y={32} h={36} />
+      <Pad x={10} y={29} w={28} h={4.4} />
+      <Pad x={58} y={29} w={28} h={4.4} />
+      <Limb d="M48 22 47 44" w={TORSO} />
+      <Limb d="m47 45 12 7" w={THIGH} />
+      <Limb d="M59 52 55 62" w={SHIN} />
+      <Limb d="M48 23 33 31" w={ARM} />
+      <Joint x={48} y={22} />
+      <circle cx="32" cy="31" r="3.6" />
+      <Head x={49} y={11} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
 // --- Shoulders -------------------------------------------------------------
 
+// Front view, bar locked out overhead.
 function ShoulderPress() {
   return (
-    <Icon>
-      <Head cx={32} cy={9} r={6} />
-      <Body d="M32 15 32 29 26 44M32 29 38 44M32 17 24 8M32 17 40 8" />
-      <Bar x1={19} y1={6} x2={45} y2={6} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M18 3A4.6 10 0 0 1 18 23" />
+          <path d="M78 3A4.6 10 0 0 0 78 23" />
+          <path d="M42 30c-3 3-4 6-4 9" />
+          <path d="M54 30c3 3 4 6 4 9" />
+        </>
+      }
+    >
+      <Barbell x1={18} x2={78} y={13} ry={10} />
+      <circle cx="38" cy="13" r="3.4" />
+      <circle cx="58" cy="13" r="3.4" />
+      <Limb d="M41 33 38 15" w={ARM} />
+      <Limb d="m55 33 3-18" w={ARM} />
+      <Limb d="M48 32v20" w={TORSO} />
+      <Limb d="M45 52 42 66" w={9} />
+      <Limb d="m51 52 3 14" w={9} />
+      <Limb d="M39 69h8" w={FOOT} />
+      <Limb d="M49 69h8" w={FOOT} />
+      <Head x={48} y={24} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Front view, arms out level with the shoulders.
 function LateralRaise() {
   return (
-    <Icon>
-      <Head cx={32} cy={9} r={6} />
-      <Body d="M32 15 32 29 26 44M32 29 38 44M32 18 16 15M32 18 48 15" />
-      <Bar x1={10} y1={14} x2={16} y2={15} r={4} />
-      <Bar x1={48} y1={15} x2={54} y2={14} r={4} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M40 20c-3 2-4 4-4 7" />
+          <path d="M56 20c3 2 4 4 4 7" />
+        </>
+      }
+    >
+      <Dumbbell x={17} y={25} a={90} />
+      <Dumbbell x={79} y={25} a={90} />
+      <Limb d="M42 26 24 25" w={ARM} />
+      <Limb d="m54 26 18-1" w={ARM} />
+      <Limb d="M48 24v24" w={TORSO} />
+      <Limb d="M45 48 42 66" w={9} />
+      <Limb d="m51 48 3 18" w={9} />
+      <Limb d="M39 69h8" w={FOOT} />
+      <Limb d="M49 69h8" w={FOOT} />
+      <Head x={48} y={15} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Hinged forward, both arms fanning out and back.
 function ReverseFly() {
   return (
-    <Icon>
-      <Head cx={13} cy={8} r={5.4} />
-      <Body d="M18 13 36 22 30 44M36 22 42 44M18 13 6 15M18 13 32 8" />
-      <Bar x1={3} y1={13} x2={9} y2={17} r={3.6} />
-      <Bar x1={29} y1={6} x2={35} y2={10} r={3.6} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M28 24c-4 3-6 6-7 10" />
+          <path d="M40 30c2 4 3 8 3 12" />
+          <path d="M52 34c4 3 5 6 5 10" />
+        </>
+      }
+    >
+      <Limb d="M34 33 21 45" w={ARM} />
+      <Limb d="m34 33 13 16" w={ARM} />
+      <Dumbbell x={18} y={48} a={90} len={13} rx={3} ry={6.4} />
+      <Dumbbell x={50} y={52} a={90} len={13} rx={3} ry={6.4} />
+      <Limb d="M32 30 58 37" w={TORSO} />
+      <Limb d="m58 38 3 15" w={THIGH} />
+      <Limb d="M61 53 60 66" w={SHIN} />
+      <Limb d="M55 69h12" w={FOOT} />
+      <Joint x={34} y={32} />
+      <Head x={23} y={26} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Cable pulled to the face, elbows kept high.
 function FacePull() {
   return (
-    <Icon>
-      <Pulley cx={48} cy={8} />
-      <Cable x1={48} y1={11} x2={33} y2={19} />
-      <Head cx={26} cy={12} r={6} />
-      <Body d="M26 18 26 29 20 44M26 29 32 44M26 20 33 19M26 20 20 26" />
-      <circle cx="33" cy="19" r="3" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M44 28c4-2 8-2 11 0" />
+          <path d="M40 34c-3 4-4 8-4 13" />
+        </>
+      }
+    >
+      <Post x={82} y={4} h={64} />
+      <Pulley x={79} y={12} />
+      <Cable d="M79 16 57 26" />
+      <Limb d="M42 31 54 23l1 4" w={ARM} />
+      <Limb d="M40 30v22" w={TORSO} />
+      <Limb d="m40 53 4 13" w={THIGH} />
+      <Limb d="M35 69h12" w={FOOT} />
+      <Limb d="M38 53 34 66" w={SHIN} />
+      <Joint x={42} y={30} />
+      <circle cx="56" cy="26" r="3.8" />
+      <Head x={33} y={22} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
-// --- Triceps -----------------------------------------------------------
+// --- Triceps ---------------------------------------------------------------
 
+// Pushdown: elbows pinned to the ribs, forearms driven down.
 function TricepsExtension() {
   return (
-    <Icon>
-      <Pulley cx={20} cy={6} />
-      <Cable x1={20} y1={9} x2={20} y2={26} />
-      <Head cx={32} cy={9} r={6} />
-      <Body d="M32 15 32 29 26 44M32 29 38 44M32 18 22 22 20 30" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M45 30c-4 3-6 7-6 11" />
+          <path d="M52 34c3 4 4 9 4 14" />
+        </>
+      }
+    >
+      <Post x={11} y={4} h={64} />
+      <Pulley x={14} y={12} />
+      <Cable d="M14 16 33 40" />
+      <Pad x={24} y={40} w={20} h={4} />
+      <Limb d="M47 31 43 42l-9 1" w={ARM} />
+      <Limb d="M50 30v22" w={TORSO} />
+      <Limb d="m50 53 3 13" w={THIGH} />
+      <Limb d="M45 69h12" w={FOOT} />
+      <Joint x={47} y={30} />
+      <Head x={53} y={21} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Lying with the upper arms vertical, bar lowered toward the forehead.
 function SkullCrusher() {
   return (
-    <Icon>
-      <Bench />
-      <Head cx={13} cy={28} r={5.6} />
-      <Body d="M18 32 34 33 27 44M34 33 41 44M18 32 24 20 21 12" />
-      <Bar x1={13} y1={10} x2={29} y2={10} r={4.4} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M24 24A4 8 0 0 1 24 40" />
+          <path d="M40 32c-3 4-4 8-4 12" />
+          <path d="M57 42c4 3 6 6 6 9" />
+        </>
+      }
+    >
+      <Limb d="M40 44 39 29" w={ARM} />
+      <Limb d="m39 29-8-4" w={ARM} />
+      <Joint x={39} y={29} r={3.6} />
+      <Barbell x1={20} x2={44} y={24} rx={3.4} ry={8} />
+      <Limb d="M41 45 60 43" w={TORSO} />
+      <Limb d="m61 44 15 6" w={THIGH} />
+      <Limb d="M76 50 77 62" w={SHIN} />
+      <Limb d="M75 69h11" w={FOOT} />
+      <Joint x={40} y={44} />
+      <Head x={27} y={45} />
+      <Pad x={14} y={52} w={64} h={5.4} />
+      <Post x={20} y={57} h={12} />
+      <Post x={68} y={57} h={12} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
-// --- Back ----------------------------------------------------------------
+// --- Back ------------------------------------------------------------------
 
+// Hanging from a fixed bar, knees folded back.
 function PullUp() {
   return (
-    <Icon>
-      <rect x="6" y="6" width="52" height="3.6" rx="1.8" />
-      <Head cx={30} cy={16} r={5.8} />
-      <Body d="M30 22 33 34 28 45M33 34 39 44M30 22 22 10M30 22 38 10" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M42 32c-3 3-4 6-4 9" />
+          <path d="M54 32c3 3 4 6 4 9" />
+          <path d="M45 54c-3 4-4 7-4 10" />
+        </>
+      }
+    >
+      <Post x={8} y={0} h={13} />
+      <Post x={83} y={0} h={13} />
+      <Pad x={8} y={8} w={80} h={4.4} />
+      <circle cx="36" cy="12" r="3.6" />
+      <circle cx="60" cy="12" r="3.6" />
+      <Limb d="M42 34 36 13" w={ARM} />
+      <Limb d="m54 34 6-21" w={ARM} />
+      <Limb d="M48 33v20" w={TORSO} />
+      <Limb d="M45 53 39 64" w={9} />
+      <Limb d="m51 53 6 11" w={9} />
+      <Head x={48} y={24} />
+    </Scene>
   );
 }
 
+// Seated under the machine, bar pulled down past the chin.
 function LatPulldown() {
   return (
-    <Icon>
-      <Pulley cx={25} cy={6} />
-      <Cable x1={25} y1={6} x2={25} y2={16} />
-      <Bar x1={14} y1={16} x2={36} y2={16} r={3.6} />
-      <Head cx={24} cy={20} r={5.8} />
-      <Body d="M24 27 26 38 34 42M24 27 16 17M24 27 34 17" />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M42 38c-3 3-4 6-4 9" />
+          <path d="M54 38c3 3 4 6 4 9" />
+        </>
+      }
+    >
+      <Post x={44} y={0} h={8} w={8} />
+      <Cable d="M48 6v13" />
+      <Pad x={24} y={17} w={48} h={4.4} />
+      <Post x={22} y={13} h={4} w={6} a={-28} />
+      <Post x={68} y={13} h={4} w={6} a={28} />
+      <circle cx="35" cy="20" r="3.6" />
+      <circle cx="61" cy="20" r="3.6" />
+      <Limb d="M42 41 35 21" w={ARM} />
+      <Limb d="m54 41 7-20" w={ARM} />
+      <Limb d="M48 40v16" w={TORSO} />
+      <Limb d="M44 57 42 66" w={9} />
+      <Limb d="m52 57 2 9" w={9} />
+      <Head x={48} y={32} />
+      <Pad x={32} y={53} w={32} h={5} />
+      <Pad x={36} y={59} w={26} h={6} />
+      <Post x={45} y={64} h={6} />
+      <Floor x={26} w={44} />
+    </Scene>
   );
 }
 
+// Bent-over row: back flat, bar pulled to the waist.
 function Row() {
   return (
-    <Icon>
-      <Head cx={28} cy={9} r={6} />
-      <Body d="M22 16 36 22 30 44M36 22 42 44M22 16 14 22 20 27" />
-      <Bar x1={16} y1={29} x2={24} y2={29} r={4.2} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M30 26c-3 4-4 8-4 12" />
+          <path d="M14 36A4.6 10 0 0 1 14 56" />
+          <path d="M52 34c4 4 5 8 5 12" />
+        </>
+      }
+    >
+      <Limb d="M31 29 34 42l-4 3" w={ARM} />
+      <Limb d="M30 27 58 34" w={TORSO} />
+      <Limb d="m58 35 4 15" w={THIGH} />
+      <Limb d="M62 50 60 66" w={SHIN} />
+      <Limb d="M55 69h13" w={FOOT} />
+      <Joint x={31} y={29} />
+      <Head x={21} y={23} />
+      <Barbell x1={14} x2={48} y={46} ry={10} />
+      <circle cx="30" cy="46" r="3.4" />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Seated cable row: legs braced forward, handle drawn to the navel.
 function CableRow() {
   return (
-    <Icon>
-      <rect x="47" y="12" width="4" height="22" rx="1.4" />
-      <Cable x1={36} y1={26} x2={47} y2={26} />
-      <line x1="36" y1="20" x2="36" y2="32" stroke="currentColor" strokeWidth={3.4} strokeLinecap="round" />
-      <Head cx={16} cy={17} r={5.8} />
-      <Body d="M16 24 16 38 28 40M16 38 40 40M16 24 34 26" />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M31 36c4 3 6 6 7 10" />
+          <path d="M30 52c4 3 6 6 6 9" />
+        </>
+      }
+    >
+      <Post x={82} y={14} h={54} />
+      <Stack x={66} y={22} n={4} />
+      <Cable d="M80 44 56 44" />
+      <Pad x={51} y={37} w={5} h={14} />
+      <Limb d="M28 36 41 42l12 2" w={ARM} />
+      <Limb d="M25 34v18" w={TORSO} />
+      <Limb d="m26 53 22 2" w={THIGH} />
+      <Limb d="M48 55 65 52" w={SHIN} />
+      <Limb d="M68 46v10" w={FOOT} />
+      <Joint x={28} y={36} />
+      <Head x={25} y={25} />
+      <Pad x={10} y={58} w={58} h={5} />
+      <Post x={16} y={62} h={8} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Shrug: shoulders driven up toward the ears, arms hanging loaded.
 function Shrug() {
   return (
-    <Icon>
-      <Head cx={32} cy={9} r={6} />
-      <Body d="M32 16 32 29 26 44M32 29 38 44M32 17 25 30M32 17 39 30" />
-      <Bar x1={21} y1={30} x2={27} y2={30} r={4} />
-      <Bar x1={37} y1={30} x2={43} y2={30} r={4} />
-      <path d="M26 13h4M34 13h4" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M41 20c-2 3-3 6-3 9" />
+          <path d="M55 20c2 3 3 6 3 9" />
+          <path d="M42 21a6.5 6.5 0 0 0 12 0" />
+        </>
+      }
+    >
+      <Dumbbell x={34} y={50} a={90} />
+      <Dumbbell x={62} y={50} a={90} />
+      <Limb d="M38 27 36 45" w={ARM} />
+      <Limb d="m58 27 2 18" w={ARM} />
+      <Limb d="M48 28v20" w={TORSO} />
+      <Limb d="M38 27 48 22 58 27" w={9} />
+      <Limb d="M45 48 42 66" w={9} />
+      <Limb d="m51 48 3 18" w={9} />
+      <Limb d="M39 69h8" w={FOOT} />
+      <Limb d="M49 69h8" w={FOOT} />
+      <Head x={48} y={15} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
 // --- Arms ------------------------------------------------------------------
 
+// Barbell curl, front view: elbows fixed, bar swept up to the chest.
 function Curl() {
   return (
-    <Icon>
-      <Head cx={32} cy={9} r={6} />
-      <Body d="M32 16 32 29 26 44M32 29 38 44M32 18 26 26 30 32" />
-      <Bar x1={26} y1={30} x2={34} y2={32} r={4.2} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M40 22c-3 3-4 6-4 9" />
+          <path d="M56 22c3 3 4 6 4 9" />
+          <path d="M20 20A4 9 0 0 1 20 38" />
+          <path d="M76 20A4 9 0 0 0 76 38" />
+        </>
+      }
+    >
+      <Limb d="M42 28 40 43" w={ARM} />
+      <Limb d="m40 43 4-10" w={ARM} />
+      <Limb d="m54 28 2 15" w={ARM} />
+      <Limb d="m56 43-4-10" w={ARM} />
+      <Joint x={40} y={43} r={3.4} />
+      <Joint x={56} y={43} r={3.4} />
+      <Limb d="M48 25v24" w={TORSO} />
+      <Limb d="M45 49 42 66" w={9} />
+      <Limb d="m51 49 3 17" w={9} />
+      <Limb d="M39 69h8" w={FOOT} />
+      <Limb d="M49 69h8" w={FOOT} />
+      <Head x={48} y={15} />
+      <Barbell x1={22} x2={74} y={32} rx={4} ry={9} />
+      <circle cx="44" cy="32" r="3.4" />
+      <circle cx="52" cy="32" r="3.4" />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Incline curl: back on the incline bench, arms hanging behind the torso.
+function InclineCurl() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M50 32c4 5 5 11 3 16" />
+          <path d="m36 54-9 9" />
+          <path d="M55 44c3 2 5 4 6 7" />
+        </>
+      }
+    >
+      <Post x={30} y={56} h={14} />
+      <Pad x={25} y={39.5} w={44} a={-45} />
+      <Pad x={22} y={51} w={20} />
+      <Limb d="M40 52 57 35" w={TORSO} />
+      <Limb d="m38 53-12 8" w={THIGH} />
+      <Limb d="M26 61 20 68" w={SHIN} />
+      <Limb d="M17 70h9" w={FOOT} />
+      <Limb d="M57 36 59 52" w={ARM} />
+      <Joint x={56} y={34} />
+      <Head x={63} y={26} />
+      <Dumbbell x={60} y={58} a={90} />
+      <Floor x={12} w={56} />
+    </Scene>
+  );
+}
+
+// Preacher curl: upper arms locked down the pad, forearms swept up.
+function PreacherCurl() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M32 28c-4 4-6 8-6 12" />
+          <path d="M46 26A3.4 8 0 0 1 46 42" />
+          <path d="M34 54c5 1 9 3 12 6" />
+        </>
+      }
+    >
+      <Post x={44} y={50} h={20} />
+      <Pad x={25.5} y={38.5} w={27} h={7} a={36} />
+      <Limb d="M28 35 49 50" w={ARM} />
+      <Limb d="m49 50 5-14" w={ARM} />
+      <Limb d="M26 32 29 51" w={TORSO} />
+      <Limb d="m29 52 15 3" w={THIGH} />
+      <Limb d="M44 55 42 66" w={SHIN} />
+      <Limb d="M37 69h12" w={FOOT} />
+      <Joint x={28} y={34} />
+      <Head x={22} y={23} />
+      <Barbell x1={46} x2={66} y={34} rx={3.4} ry={8} />
+      <Pad x={14} y={54} w={22} h={6} />
+      <Post x={18} y={59} h={11} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
+// Hammer curl: same hinge, dumbbells kept in a neutral grip.
 function HammerCurl() {
   return (
-    <Icon>
-      <Head cx={32} cy={9} r={6} />
-      <Body d="M32 16 32 29 26 44M32 29 38 44M32 18 26 26 27 34" />
-      <line x1="23" y1="30" x2="31" y2="38" stroke="currentColor" strokeWidth={4} strokeLinecap="round" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M40 22c-3 3-4 6-4 9" />
+          <path d="M56 22c3 3 4 6 4 9" />
+        </>
+      }
+    >
+      <Limb d="M42 28 39 43" w={ARM} />
+      <Limb d="m39 43-3-9" w={ARM} />
+      <Limb d="m54 28 3 15" w={ARM} />
+      <Limb d="m57 43 3-9" w={ARM} />
+      <Joint x={39} y={43} r={3.4} />
+      <Joint x={57} y={43} r={3.4} />
+      <Limb d="M48 25v24" w={TORSO} />
+      <Limb d="M45 49 42 66" w={9} />
+      <Limb d="m51 49 3 17" w={9} />
+      <Limb d="M39 69h8" w={FOOT} />
+      <Limb d="M49 69h8" w={FOOT} />
+      <Head x={48} y={15} />
+      <Dumbbell x={34} y={32} a={90} len={13} rx={3} ry={6.4} />
+      <Dumbbell x={62} y={32} a={90} len={13} rx={3} ry={6.4} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
 // --- Legs ------------------------------------------------------------------
 
+// Back squat at depth, bar racked across the traps.
 function Squat() {
   return (
-    <Icon>
-      <Head cx={30} cy={9} r={6} />
-      <Body d="M30 15 30 25 20 34 24 44M30 25 40 34 38 44M30 17 22 16M30 17 38 16" />
-      <Bar x1={13} y1={15} x2={47} y2={15} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M12 14A4.6 12 0 0 1 12 38" />
+          <path d="M76 14A4.6 12 0 0 0 76 38" />
+          <path d="M44 30c-3 4-4 8-4 12" />
+          <path d="m60 42 3 12" />
+        </>
+      }
+    >
+      <Limb d="M41 25 46 42" w={TORSO} />
+      <Limb d="m46 43 16 5" w={THIGH} />
+      <Limb d="M62 48 60 66" w={SHIN} />
+      <Limb d="M55 69h13" w={FOOT} />
+      <Head x={39} y={12} />
+      <Barbell x1={12} x2={76} y={25} ry={12} />
+      <Limb d="M42 26 37 33" w={ARM} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Front squat: bar racked on the front delts, torso upright, elbows driven up.
+function FrontSquat() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M14 12A4.6 12 0 0 1 14 36" />
+          <path d="M78 12A4.6 12 0 0 0 78 36" />
+          <path d="M44 30c-2 4-2 8-1 12" />
+          <path d="m60 43 3 12" />
+        </>
+      }
+    >
+      <Limb d="M43 25 46 43" w={TORSO} />
+      <Limb d="m46 44 16 5" w={THIGH} />
+      <Limb d="M62 49 60 66" w={SHIN} />
+      <Limb d="M55 69h13" w={FOOT} />
+      <Head x={40} y={12} />
+      <Barbell x1={14} x2={78} y={24} ry={12} />
+      <Limb d="M44 28 57 23" w={ARM} />
+      <Joint x={44} y={27} r={3.8} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
+// Hack squat: back on the angled sled, feet planted on the footplate.
+function HackSquat() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M40 30c4 4 6 8 6 13" />
+          <path d="M56 44c4 1 7 3 9 6" />
+        </>
+      }
+    >
+      <Post x={12} y={56} h={5} w={72} a={-30} />
+      <ellipse cx="20" cy="34" rx="4.6" ry="10" />
+      <Pad x={26} y={36.5} w={29} h={7} a={56} />
+      <Pad x={22} y={20} w={16} h={6} a={-30} />
+      <Limb d="M36 32 45 49" w={TORSO} />
+      <Limb d="m46 49 18-2" w={THIGH} />
+      <Limb d="M64 47 66 60" w={SHIN} />
+      <Limb d="M62 64h12" w={FOOT} />
+      <Limb d="M37 33 30 26" w={ARM} />
+      <Joint x={36} y={32} />
+      <Head x={33} y={22} />
+      <Pad x={58} y={62} w={28} h={6} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
+// Reclined in the sled, legs driving the platform up the rail.
 function LegPress() {
   return (
-    <Icon>
-      <rect x="2" y="30" width="14" height="6" rx="3" />
-      <rect x="36" y="8" width="6" height="18" rx="2" />
-      <line x1="16" y1="30" x2="36" y2="18" stroke="currentColor" strokeWidth={3} strokeLinecap="round" />
-      <Head cx={10} cy={26} r={5.6} />
-      <Body d="M14 29 20 33 28 26 36 18" />
-      <Ground y={43} />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M36 42c4 3 6 7 6 11" />
+          <path d="M58 32c3 3 4 6 4 9" />
+        </>
+      }
+    >
+      <Post x={24} y={56} h={5} w={62} a={-24} />
+      <Post x={74} y={10} h={30} w={6} a={-38} />
+      <Pad x={68} y={12} w={7} h={26} a={-38} />
+      <ellipse cx="88" cy="18" rx="4.6" ry="10" />
+      <Limb d="M23 44 41 50" w={TORSO} />
+      <Limb d="m42 50 17-12" w={THIGH} />
+      <Limb d="M59 38 70 28" w={SHIN} />
+      <Limb d="m71 25 5 4" w={FOOT} />
+      <Joint x={23} y={44} />
+      <Head x={14} y={40} />
+      <Pad x={8} y={44} w={20} h={7} a={16} />
+      <Post x={12} y={50} h={16} />
+      <Floor x={8} y={64} w={80} />
+    </Scene>
   );
 }
 
+// Split stance, back knee dropped toward the floor.
 function Lunge() {
   return (
-    <Icon>
-      <Head cx={26} cy={9} r={6} />
-      <Body d="M26 15 27 28 18 33 14 44M27 28 39 34 42 44M26 17 20 24M26 17 33 22" />
-      <Bar x1={13} y1={23} x2={19} y2={24} r={4} />
-      <Bar x1={32} y1={21} x2={38} y2={23} r={4} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M36 26c-3 4-4 8-4 12" />
+          <path d="M44 42c-6 3-9 7-11 11" />
+          <path d="M56 46c3 4 4 8 4 12" />
+        </>
+      }
+    >
+      <Dumbbell x={29} y={49} a={90} />
+      <Dumbbell x={53} y={45} a={90} />
+      <Limb d="M40 24v17" w={TORSO} />
+      <Limb d="m41 42 16 5" w={THIGH} />
+      <Limb d="M57 47 57 65" w={SHIN} />
+      <Limb d="M51 69h14" w={FOOT} />
+      <Limb d="M39 42 26 53" w={THIGH} />
+      <Limb d="m26 54 8 11" w={SHIN} />
+      <Limb d="M32 68h9" w={FOOT} />
+      <Limb d="M37 26 31 44" w={ARM} />
+      <Limb d="m43 26 8 16" w={ARM} />
+      <Head x={40} y={13} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Bulgarian split squat: rear foot parked on a bench.
 function BulgarianSquat() {
   return (
-    <Icon>
-      <rect x="38" y="30" width="14" height="4" rx="1.6" />
-      <rect x="43" y="34" width="4" height="10" rx="1.4" />
-      <Head cx={20} cy={9} r={6} />
-      <Body d="M20 15 21 28 14 34 12 44M21 28 34 32 40 30M20 17 16 25M20 17 26 22" />
-      <Bar x1={10} y1={24} x2={16} y2={25} r={4} />
-      <Bar x1={24} y1={20} x2={30} y2={22} r={4} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M44 26c-3 4-4 8-4 12" />
+          <path d="M52 42c-5 3-8 7-9 11" />
+          <path d="M64 46c3 4 4 8 4 12" />
+        </>
+      }
+    >
+      <Pad x={8} y={48} w={30} h={5.4} />
+      <Post x={13} y={53} h={16} />
+      <Post x={30} y={53} h={16} />
+      <Dumbbell x={37} y={49} a={90} />
+      <Dumbbell x={61} y={45} a={90} />
+      <Limb d="M48 24v17" w={TORSO} />
+      <Limb d="m49 42 16 5" w={THIGH} />
+      <Limb d="M65 47 65 65" w={SHIN} />
+      <Limb d="M59 69h14" w={FOOT} />
+      <Limb d="M47 42 35 51" w={THIGH} />
+      <Limb d="M35 51 27 47" w={SHIN} />
+      <Limb d="M45 26 39 44" w={ARM} />
+      <Limb d="m51 26 8 16" w={ARM} />
+      <Head x={48} y={13} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Seated machine, shins swung up against the ankle roller.
 function LegExtension() {
   return (
-    <Icon>
-      <rect x="6" y="18" width="10" height="20" rx="2.4" />
-      <Stack x={4} y={12} />
-      <Head cx={24} cy={16} r={5.6} />
-      <Body d="M24 22 27 34 27 34M27 34 27 34" />
-      <Body d="M24 22 27 34 42 30" />
-      <Body d="M27 34 22 44" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M30 40c4 3 6 6 6 10" />
+          <path d="M48 46c3 2 4 5 4 8" />
+        </>
+      }
+    >
+      <Post x={12} y={26} h={30} w={7} />
+      <Post x={54} y={44} h={24} />
+      <Stack x={74} y={20} n={4} />
+      <Cable d="M58 46 74 26" />
+      <Limb d="M28 36v16" w={TORSO} />
+      <Limb d="m29 53 19-1" w={THIGH} />
+      <Limb d="M48 52 67 43" w={SHIN} />
+      <Limb d="m70 40 5-3" w={FOOT} />
+      <Roller x={69} y={41} r={4.8} />
+      <Head x={28} y={26} />
+      <Pad x={16} y={57} w={36} h={6} />
+      <Floor x={10} w={76} />
+    </Scene>
   );
 }
 
-function RomanianDeadlift() {
+// Deadlift: hips loaded behind, flat back, bar pulled off the floor.
+function Deadlift() {
   return (
-    <Icon>
-      <Body d="M22 16 36 22 30 44M36 22 42 44M22 16 16 24M22 16 28 10" />
-      <Head cx={28} cy={9} r={6} />
-      <Bar x1={20} y1={33} x2={38} y2={33} r={4.6} />
-      <Body d="M20 25 20 33" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M28 24c-3 4-4 8-4 12" />
+          <path d="M16 46A4.6 11 0 0 1 16 68" />
+          <path d="M52 34c4 4 5 8 5 12" />
+        </>
+      }
+    >
+      <Limb d="M31 28 30 52" w={ARM} />
+      <Limb d="M30 26 56 34" w={TORSO} />
+      <Limb d="m57 35 5 13" w={THIGH} />
+      <Limb d="M62 48 58 66" w={SHIN} />
+      <Limb d="M53 69h13" w={FOOT} />
+      <Joint x={31} y={28} />
+      <Head x={21} y={21} />
+      <Barbell x1={16} x2={46} y={56} />
+      <circle cx="30" cy="56" r="3.4" />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Pull-over: lying across the bench, arms swept back over the head.
+function Pullover() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M34 34c3 4 4 8 4 12" />
+          <path d="M62 47c4 4 5 8 5 12" />
+        </>
+      }
+    >
+      <Dumbbell x={16} y={22} a={-52} len={13} rx={3.2} ry={7} />
+      <Limb d="M42 45 20 26" w={ARM} />
+      <Limb d="M42 46 62 44" w={TORSO} />
+      <Limb d="m63 45 15 6" w={THIGH} />
+      <Limb d="M78 51 79 63" w={SHIN} />
+      <Limb d="M77 69h11" w={FOOT} />
+      <Joint x={42} y={45} />
+      <Head x={31} y={48} />
+      <Pad x={14} y={53} w={64} h={5.4} />
+      <Post x={20} y={58} h={11} />
+      <Post x={68} y={58} h={11} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
+// Prone on the machine, heels curled up against the roller.
 function LegCurl() {
   return (
-    <Icon>
-      <Bench x={6} y={34} w={32} />
-      <Head cx={10} cy={30} r={5.6} />
-      <Body d="M15 33 32 33 32 20M15 33 10 30" />
-      <Stack x={40} y={16} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M28 34c4 2 6 5 6 8" />
+          <path d="M56 38c3 2 4 5 4 8" />
+        </>
+      }
+    >
+      <Post x={70} y={22} h={42} />
+      <Stack x={76} y={30} n={4} />
+      <Limb d="M23 40 47 42" w={TORSO} />
+      <Limb d="m48 43 14 2" w={THIGH} />
+      <Limb d="M63 44 65 28" w={SHIN} />
+      <Roller x={66} y={25} r={4.8} />
+      <Joint x={23} y={40} />
+      <Head x={14} y={37} />
+      <Pad x={10} y={45} w={52} h={6} />
+      <Post x={16} y={50} h={16} />
+      <Post x={50} y={50} h={16} />
+      <Floor x={8} y={64} w={80} />
+    </Scene>
   );
 }
 
+// Shoulders on the bench, bar loaded across the hips, knees at 90.
 function HipThrust() {
   return (
-    <Icon>
-      <rect x="2" y="27" width="12" height="13" rx="2.2" />
-      <Head cx={9} cy={23} r={5.4} />
-      <Body d="M14 26 28 18 36 28 36 44" />
-      <Bar x1={24} y1={15} x2={34} y2={15} r={4.4} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M30 22A4.6 11 0 0 1 30 44" />
+          <path d="M70 22A4.6 11 0 0 0 70 44" />
+          <path d="M52 44c4 3 6 6 6 9" />
+        </>
+      }
+    >
+      <Pad x={6} y={32} w={32} h={6} />
+      <Post x={11} y={37} h={31} />
+      <Limb d="M22 37 50 39" w={TORSO} />
+      <Limb d="m51 40 17 6" w={THIGH} />
+      <Limb d="M68 46 66 64" w={SHIN} />
+      <Limb d="M61 69h13" w={FOOT} />
+      <Joint x={22} y={37} />
+      <Head x={13} y={29} />
+      <Barbell x1={30} x2={70} y={31} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Seated abduction machine, knees driving out against the pads.
 function HipAbduction() {
   return (
-    <Icon>
-      <rect x="6" y="10" width="9" height="26" rx="2" />
-      <rect x="45" y="10" width="9" height="26" rx="2" />
-      <Head cx={30} cy={13} r={5.6} />
-      <Body d="M30 19 30 30 16 27M30 30 48 27M30 21 24 28M30 21 36 28" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M40 42c-5 3-8 6-10 10" />
+          <path d="M56 42c5 3 8 6 10 10" />
+        </>
+      }
+    >
+      <Post x={12} y={40} h={28} />
+      <Post x={79} y={40} h={28} />
+      <Pad x={19} y={45} w={6} h={17} />
+      <Pad x={71} y={45} w={6} h={17} />
+      <Limb d="M48 26v18" w={TORSO} />
+      <Limb d="m45 45-17 9" w={THIGH} />
+      <Limb d="M28 54 24 66" w={SHIN} />
+      <Limb d="m51 45 17 9" w={THIGH} />
+      <Limb d="M68 54 72 66" w={SHIN} />
+      <Limb d="M41 43 34 34" w={ARM} />
+      <Limb d="m55 43 7-9" w={ARM} />
+      <Head x={48} y={16} />
+      <Pad x={34} y={50} w={28} h={6} />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
+// Standing on the step, heels driven above the edge.
 function CalfRaise() {
   return (
-    <Icon>
-      <rect x="16" y="40" width="32" height="4.4" rx="1.6" />
-      <Head cx={32} cy={12} r={6} />
-      <Body d="M32 18 32 30 27 40M32 30 37 40" />
-      <path d="M27 40 25 44M37 40 39 44" stroke="currentColor" strokeWidth={3.4} strokeLinecap="round" />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M42 22c-2 3-3 6-3 9" />
+          <path d="M54 22c2 3 3 6 3 9" />
+        </>
+      }
+    >
+      <Limb d="M48 26v20" w={TORSO} />
+      <Limb d="M45 46 44 57" w={9} />
+      <Limb d="m51 46 1 11" w={9} />
+      <Limb d="m43 58 8 3.6" w={FOOT} />
+      <Limb d="m53 58 4 3.6" w={FOOT} />
+      <Limb d="M42 28 38 47" w={ARM} />
+      <Dumbbell x={36} y={51} a={90} />
+      <Head x={48} y={15} />
+      <rect x="46" y="60" width="24" height="6" rx="2" />
+      <Floor x={8} y={69} w={80} />
+    </Scene>
   );
 }
 
-// --- Core --------------------------------------------------------------
+// --- Core ------------------------------------------------------------------
 
+// Knees folded, shoulders curled off the mat, hands at the temples.
 function Crunch() {
   return (
-    <Icon>
-      <Body d="M10 42 26 42 34 32 30 22" strokeWidth={7} />
-      <Head cx={17} cy={35} r={5.6} />
-      <Body d="M18 40 26 42" />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M46 44c-3 3-5 6-6 10" />
+          <path d="M70 46c3 3 4 7 4 10" />
+        </>
+      }
+    >
+      <Limb d="M58 57 45 46" w={TORSO} />
+      <Limb d="m59 57 15-9" w={THIGH} />
+      <Limb d="M75 48 78 62" w={SHIN} />
+      <Limb d="M74 69h12" w={FOOT} />
+      <Limb d="M46 45 39 41" w={ARM} />
+      <Joint x={45} y={46} />
+      <Head x={35} y={40} />
+      <Floor x={8} y={64} w={80} />
+    </Scene>
   );
 }
 
+// Flat on the mat, legs stacked straight over the hips.
 function LegRaise() {
   return (
-    <Icon>
-      <Body d="M10 42 30 42 42 16" strokeWidth={7} />
-      <Head cx={17} cy={36} r={5.6} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M28 50c3 3 4 6 4 10" />
+          <path d="M60 48c4 1 7 3 9 6" />
+        </>
+      }
+    >
+      <Limb d="M27 58 52 60" w={TORSO} />
+      <Limb d="m53 60 11-21" w={THIGH} />
+      <Limb d="M64 39 72 21" w={SHIN} />
+      <Limb d="m74 19 6-3" w={FOOT} />
+      <Limb d="M28 58 21 62" w={ARM} />
+      <Joint x={27} y={58} />
+      <Head x={18} y={55} />
+      <Floor x={8} y={64} w={80} />
+    </Scene>
   );
 }
 
+// Balanced on the seat bones, torso rotated with a plate across the body.
 function RussianTwist() {
   return (
-    <Icon>
-      <Body d="M22 40 34 33 28 20M34 33 44 40" strokeWidth={7} />
-      <Head cx={26} cy={14} r={5.6} />
-      <circle cx="46" cy="41" r="4.4" />
-      <Body d="M14 44 30 44" strokeWidth={5} />
-      <Ground />
-    </Icon>
+    <Scene
+      cut={
+        <>
+          <path d="M38 42c-2 5-2 9 0 13" />
+          <path d="M52 52c4 2 6 5 7 8" />
+        </>
+      }
+    >
+      <Limb d="M44 58 39 38" w={TORSO} />
+      <Limb d="m45 58 17-7" w={THIGH} />
+      <Limb d="M62 51 75 57" w={SHIN} />
+      <Limb d="m77 59 6 2" w={FOOT} />
+      <Limb d="M40 40 52 46" w={ARM} />
+      <Joint x={39} y={39} />
+      <Head x={35} y={28} />
+      <circle cx="58" cy="48" r="7" />
+      <Floor x={8} w={80} />
+    </Scene>
   );
 }
 
@@ -546,13 +1282,18 @@ const iconById: Record<string, () => React.ReactElement> = {
   "cable-row": CableRow,
   shrug: Shrug,
   curl: Curl,
+  "incline-curl": InclineCurl,
+  "preacher-curl": PreacherCurl,
   "hammer-curl": HammerCurl,
   squat: Squat,
+  "front-squat": FrontSquat,
+  "hack-squat": HackSquat,
   "leg-press": LegPress,
   lunge: Lunge,
   "bulgarian-squat": BulgarianSquat,
   "leg-extension": LegExtension,
-  "romanian-deadlift": RomanianDeadlift,
+  "romanian-deadlift": Deadlift,
+  pullover: Pullover,
   "leg-curl": LegCurl,
   "hip-thrust": HipThrust,
   "hip-abduction": HipAbduction,
@@ -562,45 +1303,82 @@ const iconById: Record<string, () => React.ReactElement> = {
   "russian-twist": RussianTwist,
 };
 
+// Fallback for an exercise added to the catalog before it gets a drawing:
+// one generic figure per movement pattern, in the same visual system.
+function PatternIcon({ pattern }: { pattern: Exercise["pattern"] }) {
+  if (pattern === "legs") {
+    return (
+      <Scene cut={<path d="M44 30c-3 4-4 8-4 12" />}>
+        <Limb d="M41 25 46 42" w={TORSO} />
+        <Limb d="m46 43 16 5" w={THIGH} />
+        <Limb d="M62 48 60 66" w={SHIN} />
+        <Limb d="M55 69h13" w={FOOT} />
+        <Limb d="M42 26 37 33" w={ARM} />
+        <Head x={39} y={12} />
+        <Barbell x1={12} x2={76} y={25} ry={12} />
+        <Floor x={8} w={80} />
+      </Scene>
+    );
+  }
+  if (pattern === "core") {
+    return (
+      <Scene cut={<path d="M46 44c-3 3-5 6-6 10" />}>
+        <Limb d="M58 57 45 46" w={TORSO} />
+        <Limb d="m59 57 15-9" w={THIGH} />
+        <Limb d="M75 48 78 62" w={SHIN} />
+        <Limb d="M74 69h12" w={FOOT} />
+        <Limb d="M46 45 39 41" w={ARM} />
+        <Joint x={45} y={46} />
+        <Head x={35} y={40} />
+        <Floor x={8} y={64} w={80} />
+      </Scene>
+    );
+  }
+  if (pattern === "pull") {
+    return (
+      <Scene
+        cut={
+          <>
+            <path d="M42 32c-3 3-4 6-4 9" />
+            <path d="M54 32c3 3 4 6 4 9" />
+          </>
+        }
+      >
+        <Pad x={8} y={8} w={80} h={4.4} />
+        <Limb d="M42 34 36 13" w={ARM} />
+        <Limb d="m54 34 6-21" w={ARM} />
+        <Limb d="M48 33v20" w={TORSO} />
+        <Limb d="M45 53 39 64" w={9} />
+        <Limb d="m51 53 6 11" w={9} />
+        <Head x={48} y={24} />
+      </Scene>
+    );
+  }
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M42 30c-3 3-4 6-4 9" />
+          <path d="M54 30c3 3 4 6 4 9" />
+        </>
+      }
+    >
+      <Barbell x1={18} x2={78} y={13} ry={10} />
+      <Limb d="M41 33 38 15" w={ARM} />
+      <Limb d="m55 33 3-18" w={ARM} />
+      <Limb d="M48 32v20" w={TORSO} />
+      <Limb d="M45 52 42 66" w={9} />
+      <Limb d="m51 52 3 14" w={9} />
+      <Limb d="M39 69h8" w={FOOT} />
+      <Limb d="M49 69h8" w={FOOT} />
+      <Head x={48} y={24} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
 export function ExerciseIcon({ exercise }: { exercise: Exercise }) {
   const Specific = iconById[exercise.id];
   if (Specific) return <Specific />;
-  const legs = exercise.pattern === "legs";
-  const core = exercise.pattern === "core";
-  const pull = exercise.pattern === "pull";
-  return (
-    <svg
-      width="42"
-      height="36"
-      viewBox="0 0 48 40"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      {legs ? (
-        <>
-          <circle cx="22" cy="7" r="3" />
-          <path d="m22 11-5 11 13 5-6 9h11M18 21 9 28l-4 8h9M17 17h17M14 13v8M34 13v8" />
-        </>
-      ) : core ? (
-        <>
-          <circle cx="11" cy="19" r="3" />
-          <path d="m15 23 11 8 9-13 8 8M8 35h35M17 24l3-9" />
-        </>
-      ) : pull ? (
-        <>
-          <circle cx="24" cy="12" r="3" />
-          <path d="M24 16v11l-7 9M24 27l7 9M24 20 13 9V5M24 20 35 9V5M7 5h34" />
-        </>
-      ) : (
-        <>
-          <circle cx="24" cy="12" r="3" />
-          <path d="M24 16v11l-7 9M24 27l7 9M24 19l-11-3V8M24 19l11-3V8M8 8h10M30 8h10M10 5v6M38 5v6" />
-        </>
-      )}
-    </svg>
-  );
+  return <PatternIcon pattern={exercise.pattern} />;
 }
