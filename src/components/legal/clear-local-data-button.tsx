@@ -29,7 +29,22 @@ const LOCAL_STORAGE_KEYS = [
 const INDEXED_DB_NAME = "qui-des-9";
 const WINDOW_NAME_PREFIX = "qui-des-9-game:";
 
-function clearAntaVerseLocalData(): void {
+async function clearAntaVerseLocalData(): Promise<void> {
+  // Local erasure must not become an empty cloud backup on the next Sport visit.
+  const { getCloud } = await import("@/sport/cloud/client");
+  const client = getCloud();
+  if (client) {
+    const { error } = await client.auth.signOut({ scope: "local" });
+    if (error) throw error;
+  }
+  if ("serviceWorker" in navigator) {
+    const registration = await navigator.serviceWorker.getRegistration();
+    const subscription = await registration?.pushManager?.getSubscription();
+    await subscription?.unsubscribe();
+  }
+  for (const key of Object.keys(window.localStorage)) {
+    if (key.startsWith("antaverse:sport:")) window.localStorage.removeItem(key);
+  }
   for (const key of LOCAL_STORAGE_KEYS) {
     try {
       window.localStorage.removeItem(key);
@@ -52,6 +67,8 @@ function clearAntaVerseLocalData(): void {
 
 export function ClearLocalDataButton() {
   const [status, setStatus] = useState<"idle" | "confirm" | "done">("idle");
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
 
   if (status === "done") {
     return (
@@ -64,6 +81,7 @@ export function ClearLocalDataButton() {
   if (status === "confirm") {
     return (
       <div className="legal-clear-confirm">
+        {error && <p role="alert">{error}</p>}
         <p>
           Cette action efface, uniquement sur cet appareil : les parties en cours ou terminées de
           chaque jeu, le carnet Sport (séance en cours, historique et favoris), et les noms
@@ -77,9 +95,19 @@ export function ClearLocalDataButton() {
           <button
             type="button"
             className="legal-clear-confirm-button"
-            onClick={() => {
-              clearAntaVerseLocalData();
-              setStatus("done");
+            disabled={busy}
+            onClick={async () => {
+              setBusy(true);
+              try {
+                await clearAntaVerseLocalData();
+                setStatus("done");
+              } catch {
+                setError(
+                  "Effacement incomplet. Vérifiez votre connexion et réessayez, ou utilisez les réglages du navigateur.",
+                );
+              } finally {
+                setBusy(false);
+              }
             }}
           >
             Confirmer l’effacement

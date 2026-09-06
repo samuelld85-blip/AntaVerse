@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { notifySaveChanged } from "./cloud/changed";
 import { exercises, type SessionKind } from "./catalog";
 
 const configSchema = z
@@ -125,6 +126,7 @@ export function loadStore(): { store: SportStore; error: string } {
 export function saveStore(store: SportStore): boolean {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    notifySaveChanged();
     return true;
   } catch {
     return false;

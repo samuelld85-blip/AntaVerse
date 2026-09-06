@@ -268,7 +268,7 @@
 }
 .nav {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-bottom: 1px solid var(--sport-line);
   margin: 8px 0 0;
 }
@@ -815,6 +815,263 @@
 .historyExercise li span {
   color: var(--sport-muted);
 }
+.stats {
+  padding-bottom: 20px;
+}
+.stats .pageHeading {
+  padding-bottom: 16px;
+}
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 8px;
+}
+.statCard,
+.statsPanel {
+  border: 1px solid var(--sport-line);
+  background: var(--sport-panel);
+  box-shadow: var(--sport-shadow);
+}
+.statCard {
+  min-height: 106px;
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+.statCard span,
+.progressSummary span {
+  color: var(--sport-muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+.statCard strong {
+  font-size: clamp(22px, 7vw, 30px);
+  line-height: 1;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+.statCard:last-child strong {
+  font-size: clamp(19px, 6vw, 26px);
+}
+.statsNote {
+  color: var(--sport-muted);
+  font-size: 11px;
+  line-height: 1.5 !important;
+  margin: 10px 2px 24px !important;
+}
+.statsPanel {
+  border-radius: 16px;
+  padding: 18px;
+  margin: 16px 0;
+}
+.statsHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.statsHeading h2 {
+  margin: 0;
+}
+.miniBars {
+  height: 154px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+  border-bottom: 1px solid var(--sport-line);
+  padding: 0 2px 7px;
+}
+.miniBar {
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+  color: var(--sport-muted);
+  font-size: 9px;
+  text-align: center;
+}
+.barColumn {
+  width: min(28px, 100%);
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, var(--sport-cool), var(--sport-accent));
+  min-height: 3px;
+}
+.barValue {
+  height: 14px;
+  color: var(--sport-ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+.splitRows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.splitRows span {
+  padding: 7px 9px;
+  border: 1px solid var(--sport-line);
+  border-radius: 7px;
+  color: var(--sport-muted);
+  font-size: 11px;
+}
+.splitRows strong {
+  color: var(--sport-ink);
+  margin-left: 4px;
+}
+.exerciseRankings {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--sport-line);
+}
+.exerciseRankings li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--sport-line);
+}
+.rank {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: var(--sport-accent);
+  background: var(--sport-accent-soft);
+  font-size: 11px;
+  font-weight: 750;
+}
+.exerciseRankings strong,
+.exerciseRankings small {
+  display: block;
+}
+.exerciseRankings strong {
+  font-size: 13px;
+}
+.exerciseRankings small {
+  margin-top: 3px;
+  color: var(--sport-muted);
+  font-size: 11px;
+}
+.exerciseLoad {
+  color: var(--sport-cool);
+  font-size: 12px;
+  font-weight: 700;
+}
+.muscleSection {
+  padding-top: 21px;
+}
+.muscleSection h3 {
+  margin: 0 0 5px;
+}
+.muscleSection > p {
+  color: var(--sport-muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0 0 15px;
+}
+.muscleRows {
+  display: grid;
+  gap: 11px;
+}
+.muscleRow {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+.muscleRow > span:first-child {
+  color: var(--sport-muted);
+}
+.muscleRow strong {
+  color: var(--sport-cool);
+  text-align: right;
+}
+.progressTrack {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--sport-field);
+}
+.progressTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--sport-cool), var(--sport-accent));
+}
+.progressSummary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 17px 0 4px;
+}
+.progressSummary > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 95px;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--sport-line);
+  border-radius: 10px;
+  background: var(--sport-field);
+}
+.progressSummary strong {
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.progressSummary small {
+  color: var(--sport-muted);
+  font-size: 10px;
+  line-height: 1.35;
+}
+.trendChart {
+  margin: 18px 0 0;
+}
+.trendChart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.chartGuide {
+  stroke: var(--sport-line);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+}
+.chartLine {
+  fill: none;
+  stroke: var(--sport-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.chartPoint {
+  fill: var(--sport-bg);
+  stroke: var(--sport-cool);
+  stroke-width: 3;
+}
+.trendChart figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 7px;
+  color: var(--sport-muted);
+  font-size: 10px;
+}
 @media (prefers-reduced-motion: reduce) {
   .shell button {
     transition: none;
@@ -835,6 +1092,12 @@
   }
   .segment button {
     font-size: 12px;
+  }
+  .nav button {
+    font-size: 11px;
+  }
+  .statsPanel {
+    padding: 15px;
   }
   .workout h2 {
     font-size: 24px;

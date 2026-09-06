@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { SportSocial } from "./cloud/social";
 import { useEffect, useRef, useState } from "react";
 import { SportIcon } from "@/components/sport-icon";
 import { useThemeMode } from "@/lib/use-theme-mode";
 import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
+import { StatsDashboard } from "./stats-dashboard";
 import {
   equipmentLabels,
   exercises,
@@ -435,7 +437,7 @@ export function SportApp() {
   const storeRef = useRef<SportStore | null>(null);
   const [error, setError] = useState("");
   const [readBlocked, setReadBlocked] = useState(false);
-  const [tab, setTab] = useState<"training" | "history" | "favorites">("training");
+  const [tab, setTab] = useState<"training" | "history" | "stats" | "favorites">("training");
   const { theme, selectTheme } = useThemeMode("dark");
   const [autoRest, setAutoRest] = useState(true);
   const [kind, setKind] = useState<SessionKind>("full");
@@ -456,6 +458,7 @@ export function SportApp() {
       setStore(loaded.store);
       setError(loaded.error);
       setReadBlocked(Boolean(loaded.error));
+      if (new URLSearchParams(window.location.search).get("social") === "1") setTab("history");
     });
     return () => {
       mounted = false;
@@ -558,6 +561,7 @@ export function SportApp() {
           [
             ["training", "Séance"],
             ["history", "Historique"],
+            ["stats", "Statistiques"],
             ["favorites", "Favoris"],
           ] as const
         ).map(([id, label]) => (
@@ -953,6 +957,7 @@ export function SportApp() {
               <div className={styles.pageHeading}>
                 <h1>Historique</h1>
               </div>
+              <SportSocial />
               {detail && editHistory ? (
                 <HistoryEditor
                   key={detail.id}
@@ -1118,6 +1123,7 @@ export function SportApp() {
               )}
             </>
           )}
+          {tab === "stats" && <StatsDashboard history={store.history} />}
           {tab === "favorites" && (
             <>
               <div className={styles.pageHeading}>

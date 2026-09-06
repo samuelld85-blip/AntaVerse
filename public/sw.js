@@ -153,6 +153,27 @@ self.addEventListener("message", (event) => {
   event.waitUntil(caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key)))));
 });
 
+self.addEventListener("push", (event) => {
+  let data = {};
+  try { data = event.data?.json() ?? {}; } catch { /* Always display a visible notification. */ }
+  event.waitUntil(self.registration.showNotification("AntaVerse Sport", {
+    body: typeof data.body === "string" ? data.body : "Un ami a terminé une séance.",
+    icon: "/icons/web/icon-192.png",
+    tag: typeof data.tag === "string" ? data.tag : "sport-session",
+    data: { url: "/sport/?social=1" },
+  }));
+});
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  event.waitUntil((async () => {
+    const url = new URL("/sport/?social=1", self.location.origin).href;
+    const windows = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+    const existing = windows.find(client => new URL(client.url).pathname.startsWith("/sport"));
+    if (existing) { await existing.navigate(url); await existing.focus(); }
+    else await self.clients.openWindow(url);
+  })());
+});
+
 // Toute lecture est volontairement limitée au cache de la génération courante : un
 // `caches.match` global pourrait servir une ressource issue d'un déploiement précédent.
 self.addEventListener("fetch", (event) => {

@@ -1,7 +1,7 @@
 # Sport — carnet V1
 
 Route `/sport/`, entrée dans l’en-tête du lanceur. Module indépendant des jeux,
-sans backend, dépendance supplémentaire ou analytics.
+avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
 
 - `catalog.ts` : source manuelle des 32 exercices, IDs stables, muscles principaux
   et secondaires, zones, matériel et mouvement. Full body, Half body et Push Pull
@@ -34,8 +34,19 @@ sans backend, dépendance supplémentaire ou analytics.
 Stockage : `antaverse:sport:v1` dans localStorage. Aucun compteur de repos n’est
 persisté. Une erreur de lecture préserve les données brutes ; une erreur d’écriture
 est visible et permet de réessayer. Les données restent sur cet appareil jusqu’à
-effacement via les informations de confidentialité ou le navigateur. Pas de
-synchronisation entre appareils ni d’édition concurrente entre plusieurs onglets.
+effacement via les informations de confidentialité ou le navigateur.
+
+`cloud/` ajoute les comptes e-mail/mot de passe sans confirmation, Google et Apple
+via le navigateur, la sauvegarde Supabase versionnée, les pseudos et les amis.
+Le layout `/sport` est le seul à charger ce système : aucune donnée des jeux
+d’ambiance n’est synchronisée. La page `/sport/compte` propose récupération de
+mot de passe, export/import et suppression du compte. Dans Historique, Social
+permet les demandes d’amis et la consultation des séances des amis acceptés.
+Les push Web sont facultatifs par appareil. Une seule page Sport est éditable
+à la fois dans un navigateur ; un conflit entre appareils nécessite un choix
+explicite, avec export des données avant remplacement.
+
+Configuration et validation en ligne : [CLOUD_SETUP.md](CLOUD_SETUP.md).
 
 Repères de classification consultés :
 [ACE Exercise Library](https://www.acefitness.org/resources/everyone/exercise-library/)

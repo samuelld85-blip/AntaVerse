@@ -156,3 +156,62 @@ test("sport: small screen filters, empty session and invalid storage", async ({
   ).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem("antaverse:sport:v1"))).toBe("{bad");
 });
+
+test("sport: statistics turns stored sessions into concise progress insights", async ({ page }) => {
+  await page.goto("/sport/");
+  await page.evaluate(() => {
+    const set = (date: string, loadKg: number) => ({
+      completedAt: date,
+      equipment: "barbell",
+      loadKg,
+      reps: 8,
+    });
+    const workout = (id: string, date: string, loadKg: number) => ({
+      id,
+      kind: "push",
+      startedAt: date,
+      endedAt: date,
+      exercises: [
+        {
+          id: `${id}-bench`,
+          config: {
+            exerciseId: "bench-press",
+            equipment: "barbell",
+            sets: 3,
+            restSeconds: 120,
+            loadKg,
+            reps: 8,
+          },
+          completedSets: [set(date, loadKg), set(date, loadKg), set(date, loadKg)],
+          finished: true,
+        },
+      ],
+    });
+    localStorage.setItem(
+      "antaverse:sport:v1",
+      JSON.stringify({
+        version: 1,
+        active: null,
+        history: [
+          workout("bench-70", "2026-09-03T10:00:00.000Z", 70),
+          workout("bench-50", "2026-08-03T10:00:00.000Z", 50),
+        ],
+        favorites: [],
+        templates: [],
+      }),
+    );
+  });
+  await page.reload();
+  await page.getByRole("button", { name: "Statistiques", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Statistiques", exact: true })).toBeVisible();
+  await expect(page.getByText("Exercices les plus pratiqués", { exact: true })).toBeVisible();
+  await expect(
+    page.getByLabel("Exercices les plus pratiqués").getByText("Développé couché", { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("+40 % depuis le départ", { exact: true })).toHaveCount(2);
+  await page.getByRole("button", { name: "Volume", exact: true }).click();
+  await expect(page.getByRole("img", { name: /Volume chargé par séance :/ })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
+});

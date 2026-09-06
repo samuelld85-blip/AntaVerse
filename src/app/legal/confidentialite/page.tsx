@@ -6,256 +6,159 @@ import { legalConfig } from "@/lib/legal/legal-config";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
-  description: "Ce qu’AntaVerse stocke, où, pourquoi, et vos droits sur ces informations.",
+  description: "Ce qu’AntaVerse stocke, où, pourquoi, et vos droits.",
 };
-
 export default function PrivacyPolicyPage() {
   return (
     <LegalPageShell title="Politique de confidentialité">
       <p className="legal-meta">
-        Version {legalConfig.policyVersion} — en vigueur depuis{" "}
+        Version {legalConfig.policyVersion} —{" "}
         <TodoValue
           value={legalConfig.policyEffectiveDate}
           label="date à renseigner avant publication"
         />
-        . Ce document n’est pas un avis juridique et devra être revalidé avant toute soumission
-        Apple App Store / Google Play (voir <a href="#evolution">§ Évolution</a>).
+        .
       </p>
-
       <div className="legal-callout">
         <p>
-          <strong>En résumé :</strong> AntaVerse fonctionne principalement sur votre appareil. Les
-          prénoms de joueurs, noms d’équipes et parties en cours sont stockés localement sur votre
-          téléphone et ne sont jamais envoyés à l’éditeur d’AntaVerse. Aujourd’hui, AntaVerse
-          n’intègre aucun outil d’analyse d’audience ni SDK tiers qui communiquerait avec un
-          serveur.
+          Les jeux d’ambiance fonctionnent localement. Dans Sport uniquement, un compte facultatif
+          permet de sauvegarder le carnet en ligne, de retrouver des amis et de recevoir des
+          notifications. AntaVerse n’intègre pas de publicité ni d’analyse d’audience.
         </p>
       </div>
-
-      <h2>1. Qui est responsable de ce traitement</h2>
+      <h2>1. Responsable et contact</h2>
       <p>
         AntaVerse est éditée par{" "}
         <TodoValue
           value={legalConfig.legalPublisherName}
           label="identité de l’éditeur à renseigner avant publication"
         />
-        . Pour toute question relative à la protection de vos données :{" "}
+        . Pour vos données :{" "}
         <TodoValue
           value={legalConfig.privacyEmail}
-          label="adresse de contact « vie privée » à renseigner avant publication"
+          label="adresse de contact vie privée à renseigner avant publication"
         />
         .
       </p>
-
-      <h2>2. Les données qu’AntaVerse utilise</h2>
+      <h2>2. Données utilisées</h2>
       <p>
-        Un inventaire technique détaillé est tenu à jour dans le dépôt du projet (
-        <code>docs/compliance/DATA_INVENTORY.md</code>). Voici sa traduction en langage clair.
+        Les jeux conservent les prénoms, équipes, réponses, scores et parties nécessaires à leur
+        fonctionnement. Ces données ne sont pas envoyées à la sauvegarde Sport.
       </p>
-
-      <h3>2.1 Informations saisies par vous</h3>
+      <p>
+        Sport conserve les séances datées, exercices, séries, matériel, charges, répétitions et
+        favoris. Sans compte, ce carnet reste sur votre appareil. Avec un compte, il est aussi
+        sauvegardé chez Supabase.
+      </p>
+      <p>
+        Le compte Sport utilise un e-mail et un mot de passe, ou Google ou Apple, et un pseudo
+        choisi par vous. Supabase gère l’authentification ; le mot de passe n’est jamais inclus dans
+        les sauvegardes. Le pseudo et l’identifiant public sont visibles dans la liste des joueurs
+        Sport connectés, sans e-mail.
+      </p>
+      <p>
+        Les demandes d’amis et amitiés sont enregistrées en ligne. Seuls les amis acceptés peuvent
+        consulter vos séances terminées : titre, date, exercices, charges et répétitions. La séance
+        active et les favoris restent privés. Retirer un ami révoque son accès serveur.
+      </p>
+      <h2 id="stockage-local">3. Stockage local</h2>
       <ul>
-        <li>Prénoms des joueurs et joueuses que vous saisissez pour jouer.</li>
-        <li>Noms d’équipes, dans les jeux qui en utilisent.</li>
         <li>
-          Carnet Sport : séances datées, exercices, séries, matériel, charges, répétitions
-          facultatives et favoris. Ces informations restent sur votre appareil.
+          localStorage : parties des jeux concernés, carnet Sport, session de connexion et copies du
+          carnet par compte.
         </li>
+        <li>IndexedDB : partie Quoi de 9, avec repli local si nécessaire.</li>
+        <li>sessionStorage : noms d’équipes Sans le dire pendant la session.</li>
         <li>
-          Vos réponses et choix pendant une partie (ex. réponses à Quoi de 9, cartes de Purple).
+          Cache du service worker : fichiers de l’application pour le fonctionnement hors ligne.
         </li>
       </ul>
       <p>
-        Ces informations sont fournies volontairement pour permettre une partie entre vous et vos
-        proches. Elles ne sont ni des comptes, ni des identités vérifiées : rien n’empêche de jouer
-        sous un pseudonyme.
-      </p>
-
-      <h3>2.2 Données de fonctionnement stockées localement</h3>
-      <ul>
-        <li>
-          La partie en cours de chaque jeu, pour pouvoir la reprendre si vous quittez l’application.
-        </li>
-        <li>
-          Les noms d’équipes de Sans le dire, uniquement le temps d’enchaîner une nouvelle partie
-          dans ce jeu ; ils sont effacés au retour à son accueil ou à la fermeture de l’onglet.
-        </li>
-      </ul>
-
-      <h3>2.3 Ce qu’AntaVerse ne fait pas aujourd’hui</h3>
-      <ul>
-        <li>Pas de compte utilisateur, pas d’inscription, pas de mot de passe.</li>
-        <li>
-          Pas d’outil d’analyse d’audience (analytics), pas de publicité, pas de traceur tiers.
-        </li>
-        <li>
-          Pas de serveur applicatif : AntaVerse est un site statique, aucune requête réseau n’est
-          envoyée vers un serveur d’AntaVerse pendant que vous jouez.
-        </li>
-        <li>
-          Aucune donnée saisie en jeu (prénoms, réponses, scores) n’est transmise à l’éditeur : elle
-          reste sur votre appareil.
-        </li>
-      </ul>
-      <p>
-        Cette section sera mise à jour dès qu’une de ces affirmations changerait — par exemple si un
-        outil de mesure d’audience ou un compte utilisateur était ajouté un jour.
-      </p>
-
-      <h2 id="stockage-local">3. Stockage local : le détail technique</h2>
-      <p>
-        AntaVerse est une application web progressive (PWA). Elle utilise trois mécanismes de
-        stockage propres à votre navigateur, jamais un serveur distant :
-      </p>
-      <ul>
-        <li>
-          <strong>localStorage</strong> — une petite quantité de texte par jeu (partie en cours,
-          thème, noms d’équipes). Le carnet Sport et ses favoris sont également conservés dans ce
-          stockage local.
-        </li>
-        <li>
-          <strong>IndexedDB</strong> — utilisé uniquement par Quoi de 9 pour sauvegarder sa partie
-          en cours, avec repli automatique sur localStorage si IndexedDB est indisponible.
-        </li>
-        <li>
-          <strong>Cache du Service Worker</strong> — les fichiers de l’application (code, images,
-          règles des jeux) sont mis en cache pour fonctionner hors connexion. Ce cache ne contient
-          aucune donnée personnelle, seulement les fichiers de l’application elle-même.
-        </li>
-      </ul>
-      <p>
-        Toutes ces données restent sur votre appareil. Vous pouvez les supprimer à tout moment :
+        Effacer les données locales ne supprime pas le compte Sport ni sa sauvegarde en ligne,
+        récupérable après reconnexion.
       </p>
       <ClearLocalDataButton />
-      <p className="legal-note">
-        Vous pouvez aussi supprimer ces données depuis les réglages de votre navigateur (« Effacer
-        les données de site » pour AntaVerse), ou en désinstallant l’application si vous l’avez
-        installée sur votre écran d’accueil.
-      </p>
-
-      <h2>4. Pourquoi ces données sont utilisées</h2>
-      <ul>
-        <li>Faire fonctionner les jeux (afficher les cartes, les tours, les scores).</li>
-        <li>Reprendre une partie interrompue sans tout ressaisir.</li>
-        <li>
-          Enchaîner une nouvelle partie de Sans le dire avec les mêmes équipes pendant la session en
-          cours.
-        </li>
-        <li>Permettre de jouer sans connexion Internet.</li>
-      </ul>
-
-      <h2>5. Base légale de chaque traitement</h2>
       <p>
-        Le stockage local nécessaire au fonctionnement du jeu (notamment la sauvegarde d’une partie
-        en cours) relève de l’exécution du service que vous demandez en ouvrant l’application. Le
-        mode de révélation Purple n’est pas mémorisé entre deux ouvertures et les noms d’équipes de
-        Sans le dire ne sont conservés que pendant la session de jeu. Aujourd’hui, l’éditeur
-        d’AntaVerse ne reçoit et ne traite lui-même aucune donnée personnelle : il n’y a donc pas de
-        traitement supplémentaire à justifier par un consentement ou un intérêt légitime distinct.
+        Vous pouvez aussi effacer les données du site depuis les réglages du navigateur. Pour
+        supprimer le compte et ses données en ligne, utilisez{" "}
+        <a href="/sport/compte/">Mon compte Sport</a>.
       </p>
-
-      <h2>6. Qui reçoit ces informations</h2>
-      <p>Personne d’autre que vous, à une exception technique près : l’hébergement.</p>
-      <ul>
-        <li>
-          <strong>{legalConfig.hostName}</strong>, hébergeur du site statique AntaVerse, traite
-          nécessairement les journaux techniques de connexion (adresse IP, date/heure, page
-          demandée) pour livrer les pages — comme tout hébergeur web. AntaVerse ne configure ni ne
-          consulte ces journaux ; ils relèvent du fonctionnement standard de l’infrastructure
-          d’hébergement, hors du contrôle direct de l’éditeur.
-        </li>
-      </ul>
+      <h2>4. Finalités</h2>
       <p>
-        Aucun autre prestataire, SDK ou service tiers ne reçoit de données aujourd’hui (voir{" "}
-        <code>docs/compliance/THIRD_PARTY_SERVICES.md</code>).
+        Ces données permettent de jouer, reprendre une partie ou une séance, conserver le carnet et
+        fonctionner hors ligne. Le compte Sport permet la sauvegarde et la récupération sur un autre
+        appareil. Les amitiés servent au partage de séances demandé par les utilisateurs.
       </p>
-
-      <h2>7. Transferts hors Union européenne</h2>
+      <h2>5. Notifications</h2>
       <p>
-        L’hébergeur de la version statique d’AntaVerse peut opérer une infrastructure
-        internationale. Les garanties applicables (clauses contractuelles types ou équivalent)
-        dépendent des conditions contractuelles en vigueur au moment de la publication : à vérifier
-        auprès de {legalConfig.hostName} avant mise en production commerciale.
+        Les notifications sont facultatives et nécessitent l’autorisation du navigateur sur chaque
+        appareil. Elles indiquent le pseudo d’un ami et la fin d’une séance, sans détail des
+        exercices. Un abonnement push technique est enregistré pour l’appareil. Vous pouvez le
+        désactiver dans Social ou dans les réglages du navigateur. La déconnexion retire
+        l’abonnement de cet appareil lorsqu’il est accessible.
       </p>
-
-      <h2>8. Durées de conservation</h2>
-      <ul>
-        <li>
-          Données locales (parties, préférences) : conservées sur votre appareil jusqu’à ce que vous
-          les supprimiez, ou jusqu’à ce que votre navigateur les efface (ex. nettoyage automatique,
-          réinstallation).
-        </li>
-        <li>
-          Journaux techniques d’hébergement : selon la politique de rétention propre à{" "}
-          {legalConfig.hostName}.
-        </li>
-      </ul>
-
-      <h2>9. Vos droits</h2>
+      <h2>6. Destinataires</h2>
       <p>
-        Le règlement général sur la protection des données vous reconnaît un droit d’accès, de
-        rectification, d’effacement, de limitation, d’opposition et de portabilité sur vos données
-        personnelles, ainsi que le droit de retirer un consentement à tout moment.
+        {legalConfig.hostName} héberge le site et peut traiter les journaux techniques nécessaires à
+        sa distribution. Supabase fournit les comptes et la base Sport. Google ou Apple
+        interviennent si vous choisissez leur connexion. Les services push du navigateur acheminent
+        les notifications autorisées. Vos amis acceptés reçoivent les informations décrites
+        ci-dessus.
+      </p>
+      <h2>7. Hébergement et transferts</h2>
+      <p>
+        La région de la base Sport est choisie à la création du projet Supabase. L’hébergement web,
+        les connexions sociales et les push peuvent utiliser des infrastructures internationales.
+        L’éditeur doit renseigner la région retenue et vérifier les garanties contractuelles des
+        prestataires avant activation du service en production.
+      </p>
+      <h2>8. Conservation</h2>
+      <p>
+        Les données locales restent jusqu’à effacement. Le compte Sport et ses données en ligne
+        restent jusqu’à suppression du compte. Les dix versions précédentes du carnet permettent une
+        restauration. Les tâches push sont purgées après sept jours par le service d’envoi ; les
+        identifiants des séances déjà annoncées restent pour éviter les doublons. Les journaux
+        d’infrastructure suivent les politiques des prestataires.
+      </p>
+      <h2>9. Vos droits et contrôles</h2>
+      <p>
+        Mon compte Sport permet d’exporter le carnet, modifier le pseudo et supprimer le compte, ses
+        sauvegardes, amitiés et abonnements. L’historique permet de corriger ou supprimer une séance
+        ; ces changements sont transmis lors de la synchronisation.
       </p>
       <p>
-        <strong>Particularité d’AntaVerse :</strong> les données de jeu (prénoms, parties,
-        préférences) ne sont jamais transmises à l’éditeur — elles restent uniquement sur votre
-        appareil. L’éditeur ne peut donc ni vous les communiquer, ni les rectifier ou les supprimer
-        pour vous : il ne les détient pas. C’est vous qui en gardez la maîtrise complète, via le
-        bouton d’effacement ci-dessus ou les réglages de votre navigateur.
+        Contactez l’éditeur pour les demandes d’accès, rectification, effacement, limitation,
+        opposition et portabilité prévues par la réglementation applicable. Les données des jeux
+        d’ambiance restées sur votre appareil ne sont pas détenues par l’éditeur.
       </p>
-      <p>
-        Pour toute autre question sur vos droits :{" "}
-        <TodoValue
-          value={legalConfig.privacyEmail}
-          label="adresse de contact « vie privée » à renseigner avant publication"
-        />
-        .
-      </p>
-
       <h2>10. Réclamation</h2>
       <p>
-        Vous pouvez introduire une réclamation auprès de l’autorité de contrôle compétente,
-        notamment la Commission nationale de l’informatique et des libertés (CNIL) si l’éditeur
-        relève de la France — <a href="https://www.cnil.fr">www.cnil.fr</a>.
+        Vous pouvez saisir l’autorité de contrôle compétente, notamment la{" "}
+        <a href="https://www.cnil.fr">CNIL</a>
+        si l’éditeur relève de la France.
       </p>
-
-      <h2>11. Mineurs</h2>
+      <h2>11. Public</h2>
       <p>
-        AntaVerse n’est pas conçue pour être utilisée par de jeunes enfants : c’est une application
-        de jeux d’ambiance pour adultes et jeunes adultes, dont certains modes font référence à la
-        consommation d’alcool (voir <a href="/legal/jeu-responsable">Jeu responsable</a>). Elle ne
-        collecte pas intentionnellement de données auprès de mineurs et ne propose aucun mécanisme
-        d’inscription qui permettrait de le faire.
+        Les jeux d’ambiance s’adressent aux adultes et jeunes adultes ; certains font référence à
+        l’alcool. Le compte Sport est distinct de ces jeux. AntaVerse ne collecte pas
+        intentionnellement de données auprès de jeunes enfants.
       </p>
-
       <h2>12. Sécurité</h2>
       <p>
-        AntaVerse est servie exclusivement en HTTPS et ne contient aucun secret ni clé d’API côté
-        client. N’étant reliée à aucun compte ni base de données serveur, la surface d’attaque
-        applicative est limitée à votre propre appareil. Aucune mesure de sécurité ne peut garantir
-        une protection absolue ; voir <code>docs/compliance/SECURITY_OVERVIEW.md</code> pour le
-        détail technique.
+        Le site utilise HTTPS. Les secrets serveur restent hors du navigateur. Les règles de base
+        isolent les comptes et contrôlent les amitiés avant de partager les séances. Aucune mesure
+        ne garantit une protection absolue.
       </p>
-
-      <h2>13. Stockage terminal, cookies et traceurs</h2>
+      <h2>13. Traceurs</h2>
       <p>
-        AntaVerse n’utilise pas de cookies. Elle utilise le stockage local du navigateur
-        (localStorage, IndexedDB, sessionStorage, cache du Service Worker) décrit au § 3 uniquement
-        pour garder une partie en cours, enchaîner une partie de Sans le dire pendant la session ou
-        rendre l’application disponible hors connexion — pas à des fins de mesure d’audience, de
-        publicité ou de traçage. Le mode de révélation Purple n’est pas conservé entre deux
-        sessions. Sur cette base, aucun bandeau de consentement n’est affiché aujourd’hui. Si un
-        stockage facultatif ou un traceur non essentiel était ajouté (mesure d’audience, publicité,
-        personnalisation persistante), AntaVerse demanderait un consentement préalable adapté avant
-        son activation.
+        Le stockage sert au fonctionnement, à la connexion et à la reprise du carnet, sans mesure
+        d’audience ni publicité. Les connexions Google et Apple suivent aussi les politiques de ces
+        fournisseurs.
       </p>
-
-      <h2 id="evolution">14. Évolution de cette politique</h2>
+      <h2 id="evolution">14. Évolution</h2>
       <p>
-        Cette politique peut évoluer, notamment si de nouvelles fonctionnalités impliquent de
-        nouveaux traitements de données. La version et la date en vigueur sont indiquées en haut de
-        cette page.
+        Cette politique doit être complétée avec les informations de l’éditeur et des prestataires
+        réellement configurés avant activation du service en ligne.
       </p>
     </LegalPageShell>
   );
