@@ -21,9 +21,6 @@ export function SportAccount() {
   });
   const [restore, setRestore] = useState<ReturnType<typeof snapshotSchema.parse> | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
-  const [versions, setVersions] = useState<
-    { revision: number; updated_at: string; payload: unknown }[]
-  >([]);
   const client = getCloud();
   useEffect(() => {
     if (!client) return;
@@ -181,51 +178,11 @@ export function SportAccount() {
           {!cloud.profile && (
             <p>Choisissez votre pseudo pour activer la sauvegarde et rejoindre vos amis.</p>
           )}
-          <p role="status">{cloud.status}</p>
           <div className={styles.actions}>
-            <button disabled={busy || !cloud.profile} onClick={() => void run(cloud.sync)}>
-              Sauvegarder maintenant
-            </button>
             <button disabled={busy} onClick={() => void run(cloud.signOut)}>
               Me déconnecter
             </button>
           </div>
-          <button
-            disabled={busy}
-            onClick={() =>
-              void run(async () => {
-                const { data, error } = await client
-                  .from("backup_versions")
-                  .select("revision, updated_at, payload")
-                  .eq("user_id", cloud.session!.user.id)
-                  .order("revision", { ascending: false })
-                  .limit(10);
-                if (error) throw error;
-                setVersions(data ?? []);
-                if (!data?.length) setMessage("Aucune version précédente pour le moment.");
-              })
-            }
-          >
-            Voir les sauvegardes précédentes
-          </button>
-          <ul className={styles.list}>
-            {versions.map((v) => (
-              <li key={v.revision}>
-                {new Date(v.updated_at).toLocaleString("fr-FR")}
-                <button
-                  onClick={() => {
-                    try {
-                      setRestore(snapshotSchema.parse(v.payload));
-                    } catch {
-                      setMessage("Cette sauvegarde est incompatible avec cette version de Sport.");
-                    }
-                  }}
-                >
-                  Restaurer cette version
-                </button>
-              </li>
-            ))}
-          </ul>
           <details>
             <summary>Supprimer mon compte Sport</summary>
             <p>

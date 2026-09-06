@@ -397,10 +397,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         </div>
       ) : (
         <>
-          <div className={styles.bar}>
-            <Link href="/sport/compte">{profile ? `@${profile.username}` : "Mon compte"}</Link>
-            <span role="status">{status}</span>
-          </div>
           {conflict ? (
             <section className={styles.panel} aria-labelledby="conflict-title">
               <h1 id="conflict-title">Quel carnet souhaitez-vous conserver ?</h1>

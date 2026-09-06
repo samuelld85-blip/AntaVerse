@@ -141,14 +141,12 @@ function BenchPress() {
 function InclinePress() {
   return (
     <Icon>
-      <g transform="rotate(-16 27 34)">
-        <rect x="8" y="31" width="34" height="5.4" rx="2.6" />
-        <rect x="11" y="36.4" width="4" height="9" rx="1.4" />
-        <rect x="35" y="36.4" width="4" height="9" rx="1.4" />
+      <g transform="rotate(-14 25 36)">
+        <Bench />
       </g>
-      <Head cx={13} cy={20} r={5.6} />
-      <Body d="M18 24 30 33 25 45M30 33 39 45M18 24 27 11M18 24 12 33" />
-      <Bar x1={17} y1={9} x2={37} y2={9} />
+      <Head cx={9} cy={29} r={5.6} />
+      <Body d="M15 33 30 34 36 44M30 34 42 44M15 33 14 18M15 33 22 15" />
+      <Bar x1={11} y1={10} x2={25} y2={10} r={4.6} />
       <Ground />
     </Icon>
   );
@@ -157,14 +155,12 @@ function InclinePress() {
 function DeclinePress() {
   return (
     <Icon>
-      <g transform="rotate(12 32 30)">
-        <rect x="14" y="30" width="34" height="5.4" rx="2.6" />
-        <rect x="17" y="35.4" width="4" height="9" rx="1.4" />
-        <rect x="41" y="35.4" width="4" height="9" rx="1.4" />
+      <g transform="rotate(10 25 36)">
+        <Bench />
       </g>
-      <Head cx={20} cy={31} r={5.6} />
-      <Body d="M25 30 37 24 33 12M37 24 44 13M25 30 33 39M20 37 26 30" />
-      <Bar x1={23} y1={11} x2={43} y2={11} />
+      <Head cx={9} cy={29} r={5.6} />
+      <Body d="M15 33 30 34 36 44M30 34 42 44M15 33 14 18M15 33 22 15" />
+      <Bar x1={11} y1={10} x2={25} y2={10} r={4.6} />
       <Ground />
     </Icon>
   );
@@ -174,10 +170,10 @@ function ChestFly() {
   return (
     <Icon>
       <Bench />
-      <Head cx={13} cy={28} r={5.6} />
-      <Body d="M18 32 34 33 27 44M34 33 41 44M18 32 10 21M18 32 27 20" />
-      <Bar x1={4} y1={19} x2={12} y2={22} r={4.4} />
-      <Bar x1={26} y1={18} x2={34} y2={21} r={4.4} />
+      <Head cx={9} cy={29} r={5.6} />
+      <Body d="M15 33 30 34 36 44M30 34 42 44M15 33 18 18M15 33 8 14" />
+      <Bar x1={14} y1={15} x2={20} y2={19} r={4} />
+      <Bar x1={3} y1={11} x2={9} y2={15} r={4} />
       <Ground />
     </Icon>
   );
@@ -186,8 +182,8 @@ function ChestFly() {
 function PushUp() {
   return (
     <Icon>
-      <Body d="M9 40 22 34 44 32M22 34 26 42M9 40 6 33M44 32 50 40" />
-      <Head cx={15} cy={29} r={5.6} />
+      <Head cx={14} cy={29} r={5.6} />
+      <Body d="M18 33 46 30M18 33 16 44M46 30 50 44" />
       <Ground />
     </Icon>
   );
@@ -235,10 +231,10 @@ function LateralRaise() {
 function ReverseFly() {
   return (
     <Icon>
-      <Body d="M18 20 34 26 27 44M34 26 41 44M18 20 12 30M18 20 26 12" />
-      <Head cx={12} cy={13} r={5.6} />
-      <Bar x1={30} y1={11} x2={36} y2={16} r={4} />
-      <Bar x1={38} y1={30} x2={44} y2={35} r={4} />
+      <Head cx={13} cy={8} r={5.4} />
+      <Body d="M18 13 36 22 30 44M36 22 42 44M18 13 6 15M18 13 32 8" />
+      <Bar x1={3} y1={13} x2={9} y2={17} r={3.6} />
+      <Bar x1={29} y1={6} x2={35} y2={10} r={3.6} />
       <Ground />
     </Icon>
   );
@@ -299,11 +295,11 @@ function PullUp() {
 function LatPulldown() {
   return (
     <Icon>
-      <Pulley cx={32} cy={6} />
-      <Cable x1={32} y1={9} x2={32} y2={16} />
-      <Bar x1={20} y1={16} x2={44} y2={16} r={3.6} />
-      <Head cx={24} cy={22} r={5.8} />
-      <Body d="M24 28 27 40 22 46M27 40 33 46M24 30 32 22M24 30 17 34" />
+      <Pulley cx={25} cy={6} />
+      <Cable x1={25} y1={6} x2={25} y2={16} />
+      <Bar x1={14} y1={16} x2={36} y2={16} r={3.6} />
+      <Head cx={24} cy={20} r={5.8} />
+      <Body d="M24 27 26 38 34 42M24 27 16 17M24 27 34 17" />
     </Icon>
   );
 }
@@ -311,10 +307,9 @@ function LatPulldown() {
 function Row() {
   return (
     <Icon>
-      <Body d="M14 18 34 26 30 44M34 26 41 44M14 18 8 27M14 18 22 12" />
-      <Head cx={8} cy={12} r={5.6} />
-      <Bar x1={20} y1={40} x2={34} y2={40} r={4.4} />
-      <Body d="M28 30 25 40" />
+      <Head cx={28} cy={9} r={6} />
+      <Body d="M22 16 36 22 30 44M36 22 42 44M22 16 14 22 20 27" />
+      <Bar x1={16} y1={29} x2={24} y2={29} r={4.2} />
       <Ground />
     </Icon>
   );
@@ -323,11 +318,11 @@ function Row() {
 function CableRow() {
   return (
     <Icon>
-      <rect x="46" y="18" width="4" height="16" rx="1.4" />
-      <Cable x1={46} y1={26} x2={30} y2={26} />
-      <Head cx={16} cy={20} r={5.8} />
-      <Body d="M16 26 22 38 16 46M22 38 30 44M16 28 30 26M16 28 8 34" />
-      <Body d="M8 42 22 42" strokeWidth={5} />
+      <rect x="47" y="12" width="4" height="22" rx="1.4" />
+      <Cable x1={36} y1={26} x2={47} y2={26} />
+      <line x1="36" y1="20" x2="36" y2="32" stroke="currentColor" strokeWidth={3.4} strokeLinecap="round" />
+      <Head cx={16} cy={17} r={5.8} />
+      <Body d="M16 24 16 38 28 40M16 38 40 40M16 24 34 26" />
     </Icon>
   );
 }
@@ -385,11 +380,12 @@ function Squat() {
 function LegPress() {
   return (
     <Icon>
-      <rect x="6" y="10" width="6" height="30" rx="2" transform="rotate(20 9 25)" />
-      <Head cx={14} cy={30} r={5.6} />
-      <Body d="M18 33 30 33 40 22M30 33 26 46M18 33 12 40" />
-      <rect x="36" y="14" width="6" height="16" rx="2" transform="rotate(20 39 22)" />
-      <Ground />
+      <rect x="2" y="30" width="14" height="6" rx="3" />
+      <rect x="36" y="8" width="6" height="18" rx="2" />
+      <line x1="16" y1="30" x2="36" y2="18" stroke="currentColor" strokeWidth={3} strokeLinecap="round" />
+      <Head cx={10} cy={26} r={5.6} />
+      <Body d="M14 29 20 33 28 26 36 18" />
+      <Ground y={43} />
     </Icon>
   );
 }
@@ -461,10 +457,10 @@ function LegCurl() {
 function HipThrust() {
   return (
     <Icon>
-      <rect x="4" y="30" width="12" height="12" rx="2.4" />
-      <Head cx={14} cy={26} r={5.4} />
-      <Body d="M18 28 32 22 40 34M32 22 26 34M40 34 40 44M26 34 26 44" />
-      <Bar x1={26} y1={20} x2={38} y2={20} r={4.4} />
+      <rect x="2" y="27" width="12" height="13" rx="2.2" />
+      <Head cx={9} cy={23} r={5.4} />
+      <Body d="M14 26 28 18 36 28 36 44" />
+      <Bar x1={24} y1={15} x2={34} y2={15} r={4.4} />
       <Ground />
     </Icon>
   );
