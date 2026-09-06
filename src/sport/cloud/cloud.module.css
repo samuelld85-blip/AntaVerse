@@ -74,6 +74,21 @@
   color: #17202c;
   border-color: #e3b68e;
 }
+/* Overrides the underlined `.panel a` treatment for links that act as buttons. */
+.panel .linkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border: 1px solid #64758b;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #23364c;
+  color: #fff;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+}
 .actions {
   display: flex;
   flex-wrap: wrap;

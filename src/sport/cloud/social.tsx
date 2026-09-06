@@ -155,7 +155,7 @@ export function SportSocial() {
       <section className={styles.panel}>
         <h2>Social</h2>
         <p>Retrouvez vos amis, consultez leurs séances et encouragez-les après un entraînement.</p>
-        <Link href="/sport/compte">
+        <Link className={styles.linkButton} href="/sport/compte">
           {session ? "Choisir mon pseudo" : "Me connecter pour retrouver mes amis"}
         </Link>
       </section>

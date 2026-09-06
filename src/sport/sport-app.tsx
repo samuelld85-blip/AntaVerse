@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { SportSocial } from "./cloud/social";
+import { useSportCloud } from "./cloud/provider";
 import { useEffect, useRef, useState } from "react";
 import { SportIcon } from "@/components/sport-icon";
 import { useThemeMode } from "@/lib/use-theme-mode";
@@ -448,6 +449,7 @@ export function SportApp() {
   const [confirmFinish, setConfirmFinish] = useState(false);
   const [notice, setNotice] = useState("");
   const timer = useRestTimer();
+  const cloud = useSportCloud();
   useEffect(() => {
     // Defer hydration so server and initial browser markup agree.
     let mounted = true;
@@ -634,6 +636,18 @@ export function SportApp() {
                   Démarrer ma séance <span aria-hidden="true">→</span>
                 </button>
               </section>
+              {!cloud.profile && (
+                <section className={styles.panel} aria-labelledby="social-invite">
+                  <h2 id="social-invite">Social</h2>
+                  <p className={styles.hint}>
+                    Retrouvez vos amis, consultez leurs séances et encouragez-les après un
+                    entraînement.
+                  </p>
+                  <Link className={styles.secondary} href="/sport/compte">
+                    {cloud.session ? "Choisir mon pseudo" : "Me connecter pour retrouver mes amis"}
+                  </Link>
+                </section>
+              )}
             </>
           )}
           {tab === "training" && active && (
