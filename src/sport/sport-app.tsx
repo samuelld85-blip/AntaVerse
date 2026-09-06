@@ -152,43 +152,34 @@ function ConfigForm({
               required
             />
           </label>
-          <fieldset className={styles.restField}>
-            <legend>Repos</legend>
+          <div className={styles.field}>
+            Repos (minutes)
             <div className={styles.restInputs}>
-              <label>
-                Minutes
-                <input
-                  aria-label="Minutes de repos"
-                  name="restMinutes"
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  max={30}
-                  step={1}
-                  defaultValue={Math.floor(initial.restSeconds / 60)}
-                  required
-                />
-              </label>
+              <select
+                aria-label="Minutes de repos"
+                name="restMinutes"
+                defaultValue={Math.min(5, Math.floor(initial.restSeconds / 60))}
+              >
+                {[0, 1, 2, 3, 4, 5].map((m) => (
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
+                ))}
+              </select>
               <span aria-hidden="true">:</span>
-              <label>
-                Secondes
-                <input
-                  aria-label="Secondes de repos"
-                  name="restSeconds"
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  max={59}
-                  step={1}
-                  defaultValue={String(initial.restSeconds % 60).padStart(2, "0")}
-                  onBlur={(e) => {
-                    if (e.target.value !== "") e.target.value = e.target.value.padStart(2, "0");
-                  }}
-                  required
-                />
-              </label>
+              <select
+                aria-label="Secondes de repos"
+                name="restSeconds"
+                defaultValue={(Math.round((initial.restSeconds % 60) / 5) * 5) % 60}
+              >
+                {Array.from({ length: 12 }, (_, i) => i * 5).map((s) => (
+                  <option key={s} value={s}>
+                    {String(s).padStart(2, "0")}
+                  </option>
+                ))}
+              </select>
             </div>
-          </fieldset>
+          </div>
           <label className={styles.field}>
             {equipment === "bodyweight"
               ? "Lest (kg)"
@@ -433,14 +424,66 @@ function Catalog({
   );
 }
 
+const homeMenu = [
+  ["training", "Séances", "Démarrer ou reprendre une séance"],
+  ["history", "Historique", "Vos séances passées, exercice par exercice"],
+  ["stats", "Statistiques", "Volume, progression et muscles travaillés"],
+  ["favorites", "Favoris", "Exercices et séances enregistrés"],
+  ["social", "Social", "Vos amis et leurs entraînements"],
+] as const;
+
+function HomeIcon({ id }: { id: (typeof homeMenu)[number][0] }) {
+  const common = {
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.7,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  if (id === "training")
+    return (
+      <svg {...common}>
+        <path d="M4 9v6M20 9v6M7 6v12M17 6v12M7 12h10M2 11h2M22 11h-2" />
+      </svg>
+    );
+  if (id === "history")
+    return (
+      <svg {...common}>
+        <path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4M12 8v4l3 2" />
+      </svg>
+    );
+  if (id === "stats")
+    return (
+      <svg {...common}>
+        <path d="M5 21V10M12 21V4M19 21v-7M3 21h18" />
+      </svg>
+    );
+  if (id === "favorites")
+    return (
+      <svg {...common}>
+        <path d="m12 3 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2L3 9.6l6.2-.9Z" />
+      </svg>
+    );
+  return (
+    <svg {...common}>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 6a3 3 0 0 1 0 6M17 14.5a5.5 5.5 0 0 1 3.5 5.1" />
+    </svg>
+  );
+}
+
 export function SportApp() {
   const [store, setStore] = useState<SportStore | null>(null);
   const storeRef = useRef<SportStore | null>(null);
   const [error, setError] = useState("");
   const [readBlocked, setReadBlocked] = useState(false);
-  const [tab, setTab] = useState<"training" | "history" | "stats" | "favorites" | "social">(
-    "training",
-  );
+  const [tab, setTab] = useState<
+    "home" | "training" | "history" | "stats" | "favorites" | "social"
+  >("home");
   const { theme, selectTheme } = useThemeMode("dark");
   const [autoRest, setAutoRest] = useState(true);
   const [kind, setKind] = useState<SessionKind>("full");
@@ -546,9 +589,27 @@ export function SportApp() {
   return (
     <main className={styles.shell} data-theme={theme}>
       <header className={styles.header}>
-        <Link href="/" className={styles.back} aria-label="Retour aux jeux AntaVerse">
-          ← <span>AntaVerse</span>
-        </Link>
+        {tab === "home" ? (
+          <Link href="/" className={styles.back} aria-label="Retour aux jeux AntaVerse">
+            ← <span>AntaVerse</span>
+          </Link>
+        ) : (
+          <button
+            type="button"
+            className={styles.back}
+            onClick={() => {
+              setTab("home");
+              setDetailId(null);
+              setEditing(null);
+              setEditHistory(false);
+              setDeleteHistory(false);
+              setConfirmFinish(false);
+              setNotice("");
+            }}
+          >
+            ← <span>Accueil</span>
+          </button>
+        )}
         <span className={styles.wordmark}>
           <SportIcon /> SPORT
         </span>
@@ -560,7 +621,7 @@ export function SportApp() {
           {theme === "dark" ? "☀" : "◐"}
         </button>
       </header>
-      <nav className={styles.nav} aria-label="Carnet de sport">
+      <nav className={styles.nav} aria-label="Carnet de sport" hidden={tab === "home"}>
         {(
           [
             ["training", "Séance"],
@@ -606,6 +667,50 @@ export function SportApp() {
         </div>
       ) : (
         <>
+          {tab === "home" && (
+            <section className={styles.home}>
+              <div className={styles.homeHero}>
+                <div className={styles.homeMark} aria-hidden="true">
+                  <SportIcon />
+                </div>
+                <h1>Carnet de sport</h1>
+              </div>
+              <div className={styles.homeMenu}>
+                {homeMenu.map(([id, label, desc]) => (
+                  <button
+                    key={id}
+                    type="button"
+                    className={styles.homeButton}
+                    onClick={() => {
+                      setTab(id);
+                      setDetailId(null);
+                      setEditing(null);
+                      setEditHistory(false);
+                      setDeleteHistory(false);
+                      setConfirmFinish(false);
+                      setNotice("");
+                    }}
+                  >
+                    <span className={styles.homeButtonIcon}>
+                      <HomeIcon id={id} />
+                    </span>
+                    <span className={styles.homeButtonText}>
+                      <strong>
+                        {label}
+                        {id === "training" && active && (
+                          <span className={styles.dot} aria-label="séance en cours" />
+                        )}
+                      </strong>
+                      <span>{desc}</span>
+                    </span>
+                    <span className={styles.homeButtonChevron} aria-hidden="true">
+                      →
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
           {tab === "training" && !active && (
             <>
               <section className={styles.hero}>

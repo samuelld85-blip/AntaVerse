@@ -204,7 +204,7 @@ export function SportSocial() {
     return (
       <section className={styles.panel} aria-label="Social">
         <p>Retrouvez vos amis, consultez leurs séances et encouragez-les après un entraînement.</p>
-        <Link className={styles.linkButton} href="/sport/compte">
+        <Link className={styles.linkButton} href="/sport/compte" style={{ marginTop: 8 }}>
           {session ? "Choisir mon pseudo" : "Me connecter pour retrouver mes amis"}
         </Link>
       </section>
