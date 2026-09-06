@@ -268,7 +268,7 @@
 }
 .nav {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-bottom: 1px solid var(--sport-line);
   margin: 8px 0 0;
 }
@@ -277,12 +277,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   min-height: 44px;
+  padding: 0 2px;
   border: 0;
   border-bottom: 3px solid transparent;
   color: var(--sport-muted);
-  font-size: 14px;
+  /* Five tabs must stay on one line down to the narrowest phones. */
+  font-size: clamp(10px, 2.9vw, 14px);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
   background: transparent;
 }
 .nav button[aria-current] {

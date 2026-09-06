@@ -15,8 +15,6 @@ export function SportSocial() {
   const [people, setPeople] = useState<Person[]>([]);
   const [friends, setFriends] = useState<Friendship[]>([]);
   const [names, setNames] = useState<Record<string, string>>({});
-  const [search, setSearch] = useState("");
-  const [page, setPage] = useState(0);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -81,31 +79,29 @@ export function SportSocial() {
   useEffect(() => {
     if (!client || !id || !profile) return;
     let live = true;
-    const timer = setTimeout(async () => {
+    void (async () => {
       setLoading(true);
-      let query = client
-        .from("profiles")
-        .select("id,username")
-        .neq("id", id)
-        .order("username")
-        .range(page * 20, page * 20 + 19);
-      const term = search.replace(/[^A-Za-z0-9_]/g, "").replace(/_/g, "\\_");
-      if (term) query = query.ilike("username", `%${term}%`);
       try {
-        const { data, error } = await query;
+        const { data, error } = await client
+          .from("profiles")
+          .select("id,username")
+          .neq("id", id)
+          // Hide the reserved test accounts (any pseudo containing "test", any case).
+          .not("username", "ilike", "%test%")
+          .order("username")
+          .limit(200);
         if (error) throw error;
-        if (live) setPeople(data ?? []);
+        if (live) setPeople((data ?? []).filter((p) => !/test/i.test(p.username)));
       } catch (error) {
         if (live) setMessage(friendlyError(error));
       } finally {
         if (live) setLoading(false);
       }
-    }, 250);
+    })();
     return () => {
       live = false;
-      clearTimeout(timer);
     };
-  }, [client, id, profile, search, page]);
+  }, [client, id, profile]);
   useEffect(() => {
     if (!client || !viewing) return;
     let live = true;
@@ -152,8 +148,7 @@ export function SportSocial() {
   }
   if (!id || !profile)
     return (
-      <section className={styles.panel}>
-        <h2>Social</h2>
+      <section className={styles.panel} aria-label="Social">
         <p>Retrouvez vos amis, consultez leurs séances et encouragez-les après un entraînement.</p>
         <Link className={styles.linkButton} href="/sport/compte">
           {session ? "Choisir mon pseudo" : "Me connecter pour retrouver mes amis"}
@@ -170,41 +165,42 @@ export function SportSocial() {
     setViewing(person);
   }
   return (
-    <section className={styles.panel} aria-labelledby="social-title">
-      <h2 id="social-title">Social</h2>
-      <p className={styles.muted}>
-        Seuls vos amis acceptés peuvent consulter vos séances terminées. Votre séance en cours et
-        vos favoris restent privés.
-      </p>
+    <section className={`${styles.panel} ${styles.social}`} aria-label="Social">
       {message && (
         <p className={styles.notice} role="status">
           {message}
         </p>
       )}
-      <button
-        disabled={busy}
-        onClick={async () => {
-          setBusy(true);
-          setMessage("");
-          try {
-            if (push) await disableSportPush();
-            else await enableSportPush(id);
-            setPush(!push);
-          } catch (error) {
-            setMessage(error instanceof Error ? error.message : friendlyError(error));
-          } finally {
-            setBusy(false);
-          }
-        }}
-      >
-        {push
-          ? "Désactiver les notifications sur cet appareil"
-          : "Activer les notifications de mes amis"}
-      </button>
       <p className={styles.muted}>
-        Un push lorsqu’un ami termine une séance. Sur iPhone, ouvrez l’application depuis l’écran
-        d’accueil.
+        Seuls vos amis acceptés voient vos séances terminées. Votre séance en cours et vos favoris
+        restent privés.
       </p>
+      <div className={styles.socialGroup}>
+        <button
+          disabled={busy}
+          onClick={async () => {
+            setBusy(true);
+            setMessage("");
+            try {
+              if (push) await disableSportPush();
+              else await enableSportPush(id);
+              setPush(!push);
+            } catch (error) {
+              setMessage(error instanceof Error ? error.message : friendlyError(error));
+            } finally {
+              setBusy(false);
+            }
+          }}
+        >
+          {push
+            ? "Désactiver les notifications sur cet appareil"
+            : "Activer les notifications de mes amis"}
+        </button>
+        <p className={styles.muted}>
+          Un push quand un ami termine une séance. Sur iPhone, installez l’app depuis l’écran
+          d’accueil.
+        </p>
+      </div>
       {viewing ? (
         <div className={styles.card}>
           <button onClick={() => setViewing(null)}>← Mes amis</button>
@@ -260,7 +256,11 @@ export function SportSocial() {
       ) : (
         <>
           <h2>Mes amis</h2>
-          {!friends.length && <p>Votre liste d’amis est vide. Retrouvez un pseudo ci-dessous.</p>}
+          {!friends.length && (
+            <p className={styles.muted}>
+              Votre liste d’amis est vide. Ajoutez quelqu’un depuis la liste ci-dessous.
+            </p>
+          )}
           <ul className={styles.list}>
             {friends.map((f) => {
               const other = personId(f);
@@ -326,63 +326,47 @@ export function SportSocial() {
         </>
       )}
       <h2>Ajouter un ami</h2>
-      <label>
-        Rechercher un pseudo
-        <input
-          type="search"
-          autoComplete="off"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setPage(0);
-          }}
-        />
-      </label>
       {loading ? (
-        <p role="status">Recherche des joueurs…</p>
+        <p role="status">Chargement des comptes…</p>
+      ) : !people.length ? (
+        <p className={styles.muted}>Aucun autre compte pour le moment.</p>
       ) : (
-        <>
-          {!people.length && <p>Aucun joueur trouvé.</p>}
-          <ul className={styles.list}>
-            {people.map((p) => {
-              const relation = friends.find((f) => personId(f) === p.id);
-              return (
-                <li key={p.id}>
-                  <strong>@{p.username}</strong>
-                  <div className={styles.actions}>
-                    <button
-                      disabled={busy || Boolean(relation)}
-                      onClick={() =>
-                        void run(async () => {
-                          const { error } = await client!
-                            .from("friendships")
-                            .insert({ requester: id, recipient: p.id });
-                          if (error) throw error;
-                          setMessage(`Demande envoyée à @${p.username}.`);
-                        })
-                      }
-                    >
-                      {relation
-                        ? relation.accepted_at
-                          ? "Déjà amis"
-                          : "Demande en cours"
-                        : "Ajouter"}
-                    </button>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </>
+        <ul className={styles.list}>
+          {people.map((p) => {
+            const relation = friends.find((f) => personId(f) === p.id);
+            return (
+              <li key={p.id}>
+                <strong>@{p.username}</strong>
+                <div className={styles.actions}>
+                  <button
+                    disabled={busy || Boolean(relation)}
+                    onClick={() =>
+                      void run(async () => {
+                        const { error } = await client!
+                          .from("friendships")
+                          .insert({ requester: id, recipient: p.id });
+                        if (error) throw error;
+                        setMessage(`Demande envoyée à @${p.username}.`);
+                      })
+                    }
+                  >
+                    {relation
+                      ? relation.accepted_at
+                        ? "Déjà amis"
+                        : "Demande en cours"
+                      : "Ajouter"}
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       )}
-      <div className={styles.actions}>
-        <button disabled={page === 0 || loading} onClick={() => setPage((p) => p - 1)}>
-          Page précédente
-        </button>
-        <button disabled={people.length < 20 || loading} onClick={() => setPage((p) => p + 1)}>
-          Page suivante
-        </button>
-      </div>
+      <hr className={styles.socialRule} />
+      <Link className={styles.linkButton} href="/sport/compte">
+        Mon compte
+      </Link>
+      <p className={styles.muted}>Changez votre pseudo ou déconnectez-vous depuis votre compte.</p>
     </section>
   );
 }

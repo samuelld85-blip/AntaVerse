@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { useEffect, useState, type FormEvent } from "react";
 import { accountUrl, friendlyError, getCloud } from "./client";
-import { exportSport, useSportCloud } from "./provider";
-import { readSnapshot, snapshotSchema, writeSnapshot } from "./snapshot";
+import { useSportCloud } from "./provider";
+import { snapshotSchema, writeSnapshot } from "./snapshot";
 import { notifySaveChanged } from "./changed";
 import styles from "./cloud.module.css";
 
@@ -15,12 +15,11 @@ export function SportAccount() {
   const [username, setUsername] = useState("");
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [providers, setProviders] = useState<{ google: boolean; apple: boolean }>({
     google: false,
     apple: false,
   });
-  const [restore, setRestore] = useState<ReturnType<typeof readSnapshot> | null>(null);
+  const [restore, setRestore] = useState<ReturnType<typeof snapshotSchema.parse> | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [versions, setVersions] = useState<
     { revision: number; updated_at: string; payload: unknown }[]
@@ -103,7 +102,16 @@ export function SportAccount() {
         setPassword("");
       } else {
         const { error } = await client.auth.signInWithPassword({ email: email.trim(), password });
-        if (error) throw error;
+        if (error) {
+          if (/invalid login credentials/i.test(error.message)) {
+            setMode("signup");
+            setMessage(
+              "Aucun compte ne correspond à cet e-mail et ce mot de passe. Choisissez un pseudo pour créer votre compte.",
+            );
+            return;
+          }
+          throw error;
+        }
         setPassword("");
       }
     });
@@ -121,9 +129,6 @@ export function SportAccount() {
       <p className={styles.muted}>
         Séances, favoris et historique sauvegardés en ligne. Le carnet reste utilisable hors
         connexion.
-      </p>
-      <p className={styles.muted}>
-        <Link href="/legal/confidentialite">Confidentialité et gestion de vos données</Link>
       </p>
       {message && (
         <p className={styles.notice} role="status">
@@ -298,7 +303,7 @@ export function SportAccount() {
                   <label>
                     Mot de passe
                     <input
-                      type={showPassword ? "text" : "password"}
+                      type="password"
                       autoComplete={
                         cloud.recovery || mode === "signup" ? "new-password" : "current-password"
                       }
@@ -308,13 +313,6 @@ export function SportAccount() {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </label>
-                  <button
-                    type="button"
-                    aria-pressed={showPassword}
-                    onClick={() => setShowPassword((s) => !s)}
-                  >
-                    {showPassword ? "Masquer" : "Afficher"} le mot de passe
-                  </button>
                   {(mode === "signup" || cloud.recovery) && <small>Au moins 8 caractères.</small>}
                 </>
               )}
@@ -331,64 +329,34 @@ export function SportAccount() {
               </button>
             </fieldset>
           </form>
-          {!cloud.recovery && (
-            <div className={styles.actions}>
-              <button
-                disabled={busy}
-                onClick={() => {
-                  setMode(mode === "signup" ? "login" : "signup");
-                  setMessage("");
-                }}
-              >
-                {mode === "signup" ? "J’ai déjà un compte" : "Créer un compte"}
-              </button>
-              <button
-                disabled={busy}
-                onClick={() => {
-                  setMode(mode === "reset" ? "login" : "reset");
-                  setMessage("");
-                }}
-              >
-                {mode === "reset" ? "Retour à la connexion" : "Mot de passe oublié"}
-              </button>
-            </div>
+          {!cloud.recovery && mode === "signup" && (
+            <button
+              type="button"
+              className={styles.quiet}
+              disabled={busy}
+              onClick={() => {
+                setMode("login");
+                setMessage("");
+              }}
+            >
+              J’ai déjà un compte
+            </button>
+          )}
+          {!cloud.recovery && mode !== "signup" && (
+            <button
+              type="button"
+              className={styles.quiet}
+              disabled={busy}
+              onClick={() => {
+                setMode(mode === "reset" ? "login" : "reset");
+                setMessage("");
+              }}
+            >
+              {mode === "reset" ? "Retour à la connexion" : "Mot de passe oublié ?"}
+            </button>
           )}
         </>
       )}
-      <h2>Une copie à garder</h2>
-      <p>
-        Le fichier contient votre carnet complet. Conservez-le dans vos fichiers ou votre espace
-        personnel Drive/iCloud.
-      </p>
-      <button
-        onClick={() => {
-          try {
-            exportSport(readSnapshot());
-          } catch {
-            setMessage("Impossible de lire le carnet local. Les données brutes sont conservées.");
-          }
-        }}
-      >
-        Exporter mon carnet
-      </button>
-      <label>
-        Importer une sauvegarde
-        <input
-          type="file"
-          accept="application/json,.json"
-          onChange={async (e) => {
-            const file = e.target.files?.[0];
-            if (!file) return;
-            try {
-              if (file.size > 5000000) throw new Error();
-              setRestore(snapshotSchema.parse(JSON.parse(await file.text())));
-            } catch {
-              setMessage("Fichier invalide, incompatible ou trop volumineux (5 Mo maximum).");
-            }
-            e.target.value = "";
-          }}
-        />
-      </label>
       {restore && (
         <div className={styles.notice}>
           <p>
@@ -414,6 +382,9 @@ export function SportAccount() {
           </div>
         </div>
       )}
+      <p className={styles.muted}>
+        <Link href="/legal/confidentialite">Confidentialité et gestion de vos données</Link>
+      </p>
     </main>
   );
 }

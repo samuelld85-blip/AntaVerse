@@ -115,12 +115,14 @@ it("logs in using the entered email and password", async () => {
   await submit();
   expect(mock.login).toHaveBeenCalledWith({ email: "ami@example.com", password: "long-password" });
 });
-it("creates an account, reserves its nickname and starts its backup", async () => {
+it("offers to create an account when the sign-in email is unknown, then reserves the nickname", async () => {
+  mock.login.mockResolvedValue({ error: { message: "Invalid login credentials" } });
   await mount();
-  await click("Créer un compte");
   await fill('input[type="email"]', "ami@example.com");
-  await fill('input[autocomplete="nickname"]', "Ami_1");
   await fill('input[type="password"]', "long-password");
+  await submit();
+  expect(host.textContent).toContain("Aucun compte ne correspond");
+  await fill('input[autocomplete="nickname"]', "Ami_1");
   await submit();
   expect(mock.signup.mock.calls[0]?.[0]).toMatchObject({
     email: "ami@example.com",
@@ -130,16 +132,20 @@ it("creates an account, reserves its nickname and starts its backup", async () =
   expect(mock.sync).toHaveBeenCalled();
 });
 it("does not pretend signup succeeded when email confirmation is still enabled on the server", async () => {
+  mock.login.mockResolvedValue({ error: { message: "Invalid login credentials" } });
   mock.signup.mockResolvedValue({ data: { session: null }, error: null });
   await mount();
-  await click("Créer un compte");
+  await fill('input[type="email"]', "ami@example.com");
+  await fill('input[type="password"]', "long-password");
+  await submit();
+  await fill('input[autocomplete="nickname"]', "Ami_1");
   await submit();
   expect(host.textContent).toContain("connexion immédiate n’est pas encore activée");
   expect(mock.insert).not.toHaveBeenCalled();
 });
 it("sends password recovery back to the web account page", async () => {
   await mount();
-  await click("Mot de passe oublié");
+  await click("Mot de passe oublié ?");
   await fill('input[type="email"]', "ami@example.com");
   await submit();
   expect(mock.reset).toHaveBeenCalledWith("ami@example.com", {

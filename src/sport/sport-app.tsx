@@ -438,7 +438,9 @@ export function SportApp() {
   const storeRef = useRef<SportStore | null>(null);
   const [error, setError] = useState("");
   const [readBlocked, setReadBlocked] = useState(false);
-  const [tab, setTab] = useState<"training" | "history" | "stats" | "favorites">("training");
+  const [tab, setTab] = useState<"training" | "history" | "stats" | "favorites" | "social">(
+    "training",
+  );
   const { theme, selectTheme } = useThemeMode("dark");
   const [autoRest, setAutoRest] = useState(true);
   const [kind, setKind] = useState<SessionKind>("full");
@@ -460,7 +462,7 @@ export function SportApp() {
       setStore(loaded.store);
       setError(loaded.error);
       setReadBlocked(Boolean(loaded.error));
-      if (new URLSearchParams(window.location.search).get("social") === "1") setTab("history");
+      if (new URLSearchParams(window.location.search).get("social") === "1") setTab("social");
     });
     return () => {
       mounted = false;
@@ -565,6 +567,7 @@ export function SportApp() {
             ["history", "Historique"],
             ["stats", "Statistiques"],
             ["favorites", "Favoris"],
+            ["social", "Social"],
           ] as const
         ).map(([id, label]) => (
           <button
@@ -971,7 +974,6 @@ export function SportApp() {
               <div className={styles.pageHeading}>
                 <h1>Historique</h1>
               </div>
-              <SportSocial />
               {detail && editHistory ? (
                 <HistoryEditor
                   key={detail.id}
@@ -1138,6 +1140,14 @@ export function SportApp() {
             </>
           )}
           {tab === "stats" && <StatsDashboard history={store.history} />}
+          {tab === "social" && (
+            <>
+              <div className={styles.pageHeading}>
+                <h1>Social</h1>
+              </div>
+              <SportSocial />
+            </>
+          )}
           {tab === "favorites" && (
             <>
               <div className={styles.pageHeading}>
