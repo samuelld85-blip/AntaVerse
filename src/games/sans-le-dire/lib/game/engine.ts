@@ -29,6 +29,10 @@ export function createGame(
     };
   });
 
+  // Filter out cards that were already played in previous game(s)
+  const excludeSet = new Set(input.excludeCardIds || []);
+  const availableCards = cards.filter((card) => !excludeSet.has(card.id));
+
   return {
     schemaVersion: 3,
     id: createGameId(now, random),
@@ -43,8 +47,9 @@ export function createGame(
     tiebreakScores: new Array(teamCount).fill(0),
     tiebreakCycle: 1,
     forbiddenViolations: 0,
-    deck: shuffle(cards, random).map((card) => card.id),
+    deck: shuffle(availableCards, random).map((card) => card.id),
     deckPosition: 0,
+    playedCardIds: [],
     roundEndsAt: null,
     createdAt: timestamp,
     updatedAt: timestamp,
@@ -72,6 +77,9 @@ export function foundCard(game: GameState, cardId: string, now = Date.now()): Ga
   const tiebreakScores = game.tiebreakScores.map((s, i) =>
     i === game.activeTeamIndex ? s + 1 : s,
   );
+  const playedCardIds = game.playedCardIds.includes(cardId)
+    ? game.playedCardIds
+    : [...game.playedCardIds, cardId];
   return touch(
     {
       ...game,
@@ -79,6 +87,7 @@ export function foundCard(game: GameState, cardId: string, now = Date.now()): Ga
       tiebreakScores: game.roundMode === "standard" ? game.tiebreakScores : tiebreakScores,
       roundScore: game.roundScore + 1,
       deckPosition: game.deckPosition + 1,
+      playedCardIds,
     },
     now,
   );
@@ -87,8 +96,11 @@ export function foundCard(game: GameState, cardId: string, now = Date.now()): Ga
 export function passCard(game: GameState, cardId: string, now = Date.now()): GameState {
   assertPlayableCard(game, cardId, now);
   if (game.passesRemaining <= 0) throw new Error("Aucune passe restante.");
+  const playedCardIds = game.playedCardIds.includes(cardId)
+    ? game.playedCardIds
+    : [...game.playedCardIds, cardId];
   return touch(
-    { ...game, passesRemaining: game.passesRemaining - 1, deckPosition: game.deckPosition + 1 },
+    { ...game, passesRemaining: game.passesRemaining - 1, deckPosition: game.deckPosition + 1, playedCardIds },
     now,
   );
 }
@@ -99,6 +111,9 @@ export function faultCard(game: GameState, cardId: string, now = Date.now()): Ga
   const tiebreakScores = game.tiebreakScores.map((s, i) =>
     i === game.activeTeamIndex ? s - 1 : s,
   );
+  const playedCardIds = game.playedCardIds.includes(cardId)
+    ? game.playedCardIds
+    : [...game.playedCardIds, cardId];
   return touch(
     {
       ...game,
@@ -106,6 +121,7 @@ export function faultCard(game: GameState, cardId: string, now = Date.now()): Ga
       tiebreakScores: game.roundMode === "standard" ? game.tiebreakScores : tiebreakScores,
       roundScore: game.roundScore - 1,
       deckPosition: game.deckPosition + 1,
+      playedCardIds,
     },
     now,
   );
@@ -113,8 +129,11 @@ export function faultCard(game: GameState, cardId: string, now = Date.now()): Ga
 
 export function recordForbiddenViolation(game: GameState, cardId: string, now = Date.now()): GameState {
   assertPlayableCard(game, cardId, now);
+  const playedCardIds = game.playedCardIds.includes(cardId)
+    ? game.playedCardIds
+    : [...game.playedCardIds, cardId];
   return touch(
-    { ...game, forbiddenViolations: game.forbiddenViolations + 1, deckPosition: game.deckPosition + 1 },
+    { ...game, forbiddenViolations: game.forbiddenViolations + 1, deckPosition: game.deckPosition + 1, playedCardIds },
     now,
   );
 }
@@ -123,7 +142,14 @@ export function endRound(game: GameState, now = Date.now()): GameState {
   if (game.status !== "playing") return game;
   const lastCardId = game.deck[game.deckPosition];
   const deckPosition = Math.min(game.deckPosition + 1, game.deck.length - 1);
-  return touch({ ...game, status: "roundResult", roundEndsAt: null, lastCardId, deckPosition }, now);
+  const playedCardIds =
+    lastCardId && !game.playedCardIds.includes(lastCardId)
+      ? [...game.playedCardIds, lastCardId]
+      : game.playedCardIds;
+  return touch(
+    { ...game, status: "roundResult", roundEndsAt: null, lastCardId, deckPosition, playedCardIds },
+    now,
+  );
 }
 
 export function claimLastCard(game: GameState, now = Date.now()): GameState {
@@ -190,7 +216,7 @@ export function replayGame(
 ): GameState {
   const teamNames = game.teams.map((t) => t.name) as [string, string] | [string, string, string];
   return createGame(
-    { teamNames, playMode: game.playMode },
+    { teamNames, playMode: game.playMode, excludeCardIds: game.playedCardIds },
     cards,
     random,
     now,

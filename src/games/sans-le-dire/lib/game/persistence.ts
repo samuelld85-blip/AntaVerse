@@ -104,6 +104,8 @@ function isGameState(value: unknown): value is GameState {
     Array.isArray(game.deck) &&
     game.deck.length >= 500 &&
     new Set(game.deck).size === game.deck.length &&
+    Array.isArray(game.playedCardIds) &&
+    game.playedCardIds.every((id) => typeof id === "string") &&
     typeof game.deckPosition === "number" &&
     game.deckPosition >= 0 &&
     game.deckPosition < game.deck.length &&

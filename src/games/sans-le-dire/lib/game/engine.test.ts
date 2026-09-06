@@ -14,6 +14,33 @@ import {
 } from "./engine";
 
 describe("moteur de Sans le dire", () => {
+  it("expose un seul exemplaire de chaque mot à deviner", () => {
+    expect(new Set(cards.map((card) => card.id)).size).toBe(cards.length);
+    expect(
+      new Set(
+        cards.map((card) =>
+          card.word
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/gu, "")
+            .toLowerCase(),
+        ),
+      ).size,
+    ).toBe(cards.length);
+  });
+
+  it("exclut la carte affichée quand le temps expire", () => {
+    let game = startRound(
+      createGame({ teamNames: ["A", "B"], playMode: "competition" }, cards, seededRandom(11), 0),
+      1_000,
+    );
+    const expiredCardId = getCurrentCard(game, cards).id;
+    game = endRound(game, 46_000);
+
+    expect(game.playedCardIds).toContain(expiredCardId);
+    const replay = replayGame(game, cards, seededRandom(12), 46_001);
+    expect(replay.deck).not.toContain(expiredCardId);
+  });
+
   it("enchaîne A → B → A → B (2 équipes) avec scores, passes et cartes uniques", () => {
     let game = createGame({ teamNames: ["A", "B"], playMode: "competition" }, cards, seededRandom(1), 1_000);
     const seen = new Set<string>();

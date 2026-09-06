@@ -29,6 +29,7 @@ export interface GameState {
   forbiddenViolations: number;
   deck: string[];
   deckPosition: number;
+  playedCardIds: string[];
   roundEndsAt: number | null;
   lastCardId?: string;
   createdAt: string;
@@ -37,6 +38,7 @@ export interface GameState {
 export interface CreateGameInput {
   teamNames: [string, string] | [string, string, string];
   playMode: PlayMode;
+  excludeCardIds?: string[];
 }
 
 export interface SoloPlayer {
