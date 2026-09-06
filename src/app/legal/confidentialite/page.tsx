@@ -58,6 +58,10 @@ export default function PrivacyPolicyPage() {
         <li>Prénoms des joueurs et joueuses que vous saisissez pour jouer.</li>
         <li>Noms d’équipes, dans les jeux qui en utilisent.</li>
         <li>
+          Carnet Sport : séances datées, exercices, séries, matériel, charges, répétitions
+          facultatives et favoris. Ces informations restent sur votre appareil.
+        </li>
+        <li>
           Vos réponses et choix pendant une partie (ex. réponses à Quoi de 9, cartes de Purple).
         </li>
       </ul>
@@ -106,7 +110,8 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>
           <strong>localStorage</strong> — une petite quantité de texte par jeu (partie en cours,
-          thème, noms d’équipes).
+          thème, noms d’équipes). Le carnet Sport et ses favoris sont également conservés dans ce
+          stockage local.
         </li>
         <li>
           <strong>IndexedDB</strong> — utilisé uniquement par Quoi de 9 pour sauvegarder sa partie

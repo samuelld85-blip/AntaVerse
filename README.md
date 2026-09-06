@@ -52,6 +52,11 @@ et AAB Google Play.
 
 ## Architecture
 
+L’icône Sport en haut du lanceur ouvre un carnet d’entraînement indépendant des
+jeux : séances, repos, configurations favorites et historique local. Son code
+se trouve dans `src/sport/`, avec la route `src/app/sport/`. Voir
+[`src/sport/README.md`](src/sport/README.md) pour le catalogue et le stockage.
+
 - `src/app/` contient le lanceur, le shell global et les routes préfixées de chaque jeu.
 - `src/games/<identifiant>/` contient le moteur, les données, les composants et les styles propres à chaque jeu ; le registre complet et à jour se trouve dans `src/lib/games.ts`.
 - `src/components/` et `src/lib/` contiennent les éléments produit partagés.

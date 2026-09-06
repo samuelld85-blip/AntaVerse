@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+.launcher-sport-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--launcher-line);
+  border-radius: 12px;
+  color: var(--launcher-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+.launcher-sport-link:hover {
+  background: var(--launcher-surface-hover);
+}
+.launcher-sport-link:focus-visible {
+  outline: 2px solid var(--launcher-accent);
+  outline-offset: 4px;
+}
+
 :root {
   --antaverse-cyan: #16c7e8;
   --antaverse-pink: #e83dff;

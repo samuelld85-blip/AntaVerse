@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GameCard } from "@/components/game-card";
 import { HomeThemeSelector } from "@/components/home-theme-selector";
 import { games } from "@/lib/games";
+import { SportIcon } from "@/components/sport-icon";
 
 export default function HomePage() {
   return (
@@ -23,6 +24,15 @@ export default function HomePage() {
             <span>SANGLIEEEERS !</span>
           </p>
           <HomeThemeSelector />
+          <Link
+            href="/sport"
+            className="launcher-sport-link"
+            aria-label="Ouvrir Sport"
+            title="Carnet d’entraînement"
+          >
+            <SportIcon />
+            <span>Sport</span>
+          </Link>
         </div>
       </header>
 

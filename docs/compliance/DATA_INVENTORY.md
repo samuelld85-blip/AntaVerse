@@ -41,6 +41,13 @@ manifeste et ses règles d'extraction.
 
 ## Tableau des données
 
+Ajout Sport — 2026-09-06 : `localStorage["antaverse:sport:v1"]` contient la séance
+en cours, les séances terminées datées, les séries validées (matériel, charge,
+répétitions facultatives) et les configurations/séances favorites. Ces données
+restent sur l’appareil, sans transmission, jusqu’à effacement par le bouton des
+informations de confidentialité ou le navigateur. Le compteur de repos et le
+réglage sonore restent en mémoire et ne sont pas persistés.
+
 | Donnée                                                           | Où elle existe                                                                                            | Finalité                                                                                                             | Transmise au développeur ?                       | Stockage                                                                 | Durée                                                                             | Base/justification                                    | Suppression                                                                                      |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | Partie en cours — La Relance                                     | `localStorage["la-relance:current-game"]`                                                                 | Reprendre une partie interrompue                                                                                     | Non                                              | localStorage                                                             | Jusqu'à fin de partie / suppression                                               | Exécution du service demandé                          | Idem                                                                                             |
