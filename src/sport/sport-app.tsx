@@ -985,70 +985,83 @@ export function SportApp() {
                 />
               ) : current ? (
                 <section className={styles.workout} aria-label="Exercice en cours">
-                  <div className={styles.sectionHeading}>
-                    <p className={styles.eyebrow}>
-                      {exercises.find((ex) => ex.id === current.config.exerciseId)!.region}
-                    </p>
-                    <Star
-                      selected={isFavorite(current.config)}
-                      label="Configuration favorite"
-                      onClick={() => toggleFavorite(current.config)}
-                    />
-                  </div>
-                  <h2>{exerciseName(current.config.exerciseId)}</h2>
-                  <p className={styles.configLine}>
-                    <ConfigSummary config={current.config} />
-                  </p>
-                  <div
-                    className={active.source === "recommended" ? styles.quickProgress : undefined}
-                  >
-                    <div
-                      className={`${styles.sets} ${active.source === "recommended" ? styles.quickSets : ""}`}
-                      aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
-                    >
-                      {Array.from({ length: current.config.sets }, (_, i) => (
-                        <span
-                          key={i}
-                          className={
-                            i < current.completedSets.length
-                              ? styles.setDone
-                              : i === current.completedSets.length
-                                ? styles.setCurrent
-                                : ""
-                          }
-                        >
-                          {i < current.completedSets.length ? "✓" : i + 1}
-                        </span>
-                      ))}
+                  <header className={styles.workoutHeader}>
+                    <div className={styles.workoutIdentity}>
+                      <p className={styles.eyebrow}>
+                        {exercises.find((ex) => ex.id === current.config.exerciseId)!.region}
+                      </p>
+                      <h2>{exerciseName(current.config.exerciseId)}</h2>
+                      <p className={styles.configLine}>
+                        <ConfigSummary config={current.config} />
+                      </p>
                     </div>
-                    {active.source === "recommended" && (
-                      <label className={styles.quickLoad}>
-                        <span>{loadInputLabel(current.config.equipment)}</span>
-                        <input
-                          aria-label={`Charge pour ${exerciseName(current.config.exerciseId)}`}
-                          type="number"
-                          inputMode="decimal"
-                          min={0}
-                          max={2000}
-                          step={0.25}
-                          value={current.config.loadKg}
-                          onChange={(event) => {
-                            const loadKg = Number(event.target.value);
-                            if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000) return;
-                            updateEntry(current.id, (entry) => ({
-                              ...entry,
-                              config: { ...entry.config, loadKg },
-                            }));
-                          }}
-                        />
-                      </label>
-                    )}
-                  </div>
-                  <div className={styles.timer}>
-                    <div className={styles.clock} role="timer" aria-label="Temps de repos restant">
-                      {timer.remaining === null
-                        ? timeLabel(current.config.restSeconds)
-                        : timeLabel(timer.remaining)}
+                    <div className={styles.workoutTools}>
+                      <Star
+                        selected={isFavorite(current.config)}
+                        label="Configuration favorite"
+                        onClick={() => toggleFavorite(current.config)}
+                      />
+                    </div>
+                  </header>
+                  <div className={styles.workoutFocus}>
+                    <div
+                      className={active.source === "recommended" ? styles.quickProgress : undefined}
+                    >
+                      <div
+                        className={`${styles.sets} ${active.source === "recommended" ? styles.quickSets : ""}`}
+                        aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
+                      >
+                        {Array.from({ length: current.config.sets }, (_, i) => (
+                          <span
+                            key={i}
+                            className={
+                              i < current.completedSets.length
+                                ? styles.setDone
+                                : i === current.completedSets.length
+                                  ? styles.setCurrent
+                                  : ""
+                            }
+                          >
+                            {i < current.completedSets.length ? "✓" : i + 1}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className={active.source === "recommended" ? styles.timerRow : undefined}>
+                      {active.source === "recommended" && (
+                        <label className={styles.quickLoad}>
+                          <span>{loadInputLabel(current.config.equipment)}</span>
+                          <input
+                            aria-label={`Charge pour ${exerciseName(current.config.exerciseId)}`}
+                            type="number"
+                            inputMode="decimal"
+                            min={0}
+                            max={2000}
+                            step={0.25}
+                            value={current.config.loadKg}
+                            onChange={(event) => {
+                              const loadKg = Number(event.target.value);
+                              if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000) return;
+                              updateEntry(current.id, (entry) => ({
+                                ...entry,
+                                config: { ...entry.config, loadKg },
+                              }));
+                            }}
+                          />
+                        </label>
+                      )}
+                      <div className={styles.timer}>
+                        <div
+                          className={styles.clock}
+                          role="timer"
+                          aria-label="Temps de repos restant"
+                        >
+                          {timer.remaining === null
+                            ? timeLabel(current.config.restSeconds)
+                            : timeLabel(timer.remaining)}
+                        </div>
+                      </div>
+                      {active.source === "recommended" && <span aria-hidden="true" />}
                     </div>
                   </div>
                   {timer.remaining !== null && timer.remaining > 0 ? (

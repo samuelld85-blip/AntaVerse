@@ -397,6 +397,9 @@
   border-radius: 16px;
   box-shadow: var(--sport-shadow);
 }
+.workout {
+  position: relative;
+}
 .panel h2 {
   margin-bottom: 18px;
 }
@@ -697,37 +700,57 @@
 }
 .workout h2 {
   font-size: 23px;
-  margin-bottom: 12px;
+  margin: 4px 0;
 }
 .workout .eyebrow {
   margin: 0;
 }
-.workout > .sectionHeading {
-  margin-bottom: 8px;
+.workoutHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+}
+.workoutIdentity {
+  min-width: 0;
 }
 .configLine {
+  margin: 0;
   color: var(--sport-muted);
   font-size: 13px;
 }
+.workoutTools {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.workoutFocus {
+  margin-top: 0;
+}
 .quickProgress {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: end;
-  justify-content: space-between;
-  gap: 14px;
-  margin: 9px 0 4px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  transform: translateX(-50%);
 }
 .quickLoad {
   display: grid;
-  gap: 7px;
-  width: 90px;
+  gap: 4px;
+  width: 80px;
   justify-items: end;
   color: var(--sport-ink);
   font-size: 13px;
   font-weight: 700;
 }
 .quickLoad input {
-  width: 90px;
+  width: 80px;
   min-height: 44px;
   padding: 10px;
   border: 1px solid var(--sport-accent);
@@ -762,11 +785,22 @@
 }
 .quickSets {
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  margin: 0 0 5px;
+  justify-content: center;
+  margin: 0;
 }
 .quickProgress + .timer {
-  padding-top: 3px;
+  padding-top: 0;
+}
+.timerRow {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) 80px;
+  align-items: center;
+}
+.timerRow .quickLoad {
+  justify-items: start;
+}
+.timerRow .timer {
+  grid-column: 2;
 }
 .sets span {
   width: 34px;
@@ -791,14 +825,14 @@
 }
 .timer {
   text-align: center;
-  padding: 6px 0 14px;
+  padding: 0 0 16px;
 }
 .clock {
   font-size: clamp(56px, 15vw, 72px);
   font-weight: 650;
   font-variant-numeric: tabular-nums;
   letter-spacing: -4px;
-  line-height: 1.35;
+  line-height: 1.1;
   color: var(--sport-accent);
 }
 .actions {
