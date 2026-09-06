@@ -10,6 +10,13 @@ import styles from "./cloud.module.css";
 
 type Person = { id: string; username: string };
 type Friendship = { requester: string; recipient: string; accepted_at: string | null };
+type Comment = {
+  id: number;
+  session_id: string;
+  actor: string;
+  body: string;
+  created_at: string;
+};
 export function SportSocial() {
   const { session, profile } = useSportCloud();
   const [people, setPeople] = useState<Person[]>([]);
@@ -23,6 +30,10 @@ export function SportSocial() {
   const [historyPage, setHistoryPage] = useState(0);
   const [historyLoading, setHistoryLoading] = useState(false);
   const [historyMore, setHistoryMore] = useState(false);
+  const [likes, setLikes] = useState<Record<string, string[]>>({});
+  const [comments, setComments] = useState<Record<string, Comment[]>>({});
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
+  const [feedbackBusy, setFeedbackBusy] = useState<string | null>(null);
   const [push, setPush] = useState(false);
   const id = session?.user.id;
   const client = getCloud();
@@ -120,6 +131,49 @@ export function SportSocial() {
           setHistory(parsed);
           setHistoryMore(parsed.length === 20);
         }
+        const sessionIds = parsed.map((s) => s.id);
+        try {
+          if (!sessionIds.length) throw null;
+          const [likeRes, commentRes] = await Promise.all([
+            client
+              .from("session_likes")
+              .select("session_id,actor")
+              .eq("owner", viewing.id)
+              .in("session_id", sessionIds),
+            client
+              .from("session_comments")
+              .select("id,session_id,actor,body,created_at")
+              .eq("owner", viewing.id)
+              .in("session_id", sessionIds)
+              .order("created_at"),
+          ]);
+          const likeRows = (likeRes.data ?? []) as { session_id: string; actor: string }[];
+          const commentRows = (commentRes.data ?? []) as Comment[];
+          const likeMap: Record<string, string[]> = {};
+          for (const row of likeRows) (likeMap[row.session_id] ??= []).push(row.actor);
+          const commentMap: Record<string, Comment[]> = {};
+          for (const row of commentRows) (commentMap[row.session_id] ??= []).push(row);
+          const unknown = [
+            ...new Set([...likeRows, ...commentRows].map((r) => r.actor)),
+          ].filter((a) => a !== id && a !== viewing.id);
+          if (unknown.length) {
+            const { data: extra } = await client
+              .from("profiles")
+              .select("id,username")
+              .in("id", unknown);
+            if (extra?.length && live)
+              setNames((n) => ({
+                ...n,
+                ...Object.fromEntries(extra.map((p) => [p.id, p.username])),
+              }));
+          }
+          if (live) {
+            setLikes(likeMap);
+            setComments(commentMap);
+          }
+        } catch {
+          /* Feedback is non-critical: keep the sessions list even if it fails. */
+        }
       } catch (error) {
         if (live) {
           setHistory([]);
@@ -133,7 +187,7 @@ export function SportSocial() {
       live = false;
       clearTimeout(timer);
     };
-  }, [client, viewing, historyPage]);
+  }, [client, viewing, historyPage, id]);
   async function run(action: () => Promise<void>) {
     setBusy(true);
     setMessage("");
@@ -160,9 +214,82 @@ export function SportSocial() {
   }
   function openHistory(person: Person) {
     setHistory([]);
+    setLikes({});
+    setComments({});
+    setDrafts({});
     setHistoryLoading(true);
     setHistoryPage(0);
     setViewing(person);
+  }
+  function nameOf(actor: string) {
+    if (actor === id) return profile!.username;
+    if (viewing && actor === viewing.id) return viewing.username;
+    return names[actor] ?? "joueur";
+  }
+  async function toggleLike(sessionId: string) {
+    if (!client || !viewing || feedbackBusy) return;
+    const mine = (likes[sessionId] ?? []).includes(id!);
+    setFeedbackBusy(sessionId);
+    setMessage("");
+    try {
+      if (mine) {
+        const { error } = await client
+          .from("session_likes")
+          .delete()
+          .eq("owner", viewing.id)
+          .eq("session_id", sessionId)
+          .eq("actor", id!);
+        if (error) throw error;
+        setLikes((l) => ({ ...l, [sessionId]: (l[sessionId] ?? []).filter((a) => a !== id) }));
+      } else {
+        const { error } = await client
+          .from("session_likes")
+          .insert({ owner: viewing.id, session_id: sessionId, actor: id! });
+        if (error) throw error;
+        setLikes((l) => ({ ...l, [sessionId]: [...(l[sessionId] ?? []), id!] }));
+      }
+    } catch (error) {
+      setMessage(friendlyError(error));
+    } finally {
+      setFeedbackBusy(null);
+    }
+  }
+  async function postComment(sessionId: string) {
+    const body = (drafts[sessionId] ?? "").trim();
+    if (!client || !viewing || !body || feedbackBusy) return;
+    setFeedbackBusy(sessionId);
+    setMessage("");
+    try {
+      const { data, error } = await client
+        .from("session_comments")
+        .insert({ owner: viewing.id, session_id: sessionId, actor: id!, body })
+        .select("id,session_id,actor,body,created_at")
+        .single();
+      if (error) throw error;
+      setComments((c) => ({ ...c, [sessionId]: [...(c[sessionId] ?? []), data as Comment] }));
+      setDrafts((d) => ({ ...d, [sessionId]: "" }));
+    } catch (error) {
+      setMessage(friendlyError(error));
+    } finally {
+      setFeedbackBusy(null);
+    }
+  }
+  async function deleteComment(sessionId: string, commentId: number) {
+    if (!client || feedbackBusy) return;
+    setFeedbackBusy(sessionId);
+    setMessage("");
+    try {
+      const { error } = await client.from("session_comments").delete().eq("id", commentId);
+      if (error) throw error;
+      setComments((c) => ({
+        ...c,
+        [sessionId]: (c[sessionId] ?? []).filter((x) => x.id !== commentId),
+      }));
+    } catch (error) {
+      setMessage(friendlyError(error));
+    } finally {
+      setFeedbackBusy(null);
+    }
   }
   return (
     <section className={`${styles.panel} ${styles.social}`} aria-label="Social">
@@ -234,6 +361,71 @@ export function SportSocial() {
                       </div>
                     ))}
                   </details>
+                  {(() => {
+                    const sessionLikes = likes[s.id] ?? [];
+                    const liked = sessionLikes.includes(id!);
+                    const thread = comments[s.id] ?? [];
+                    return (
+                      <div className={styles.feedback}>
+                        <div className={styles.actions}>
+                          <button
+                            aria-pressed={liked}
+                            disabled={feedbackBusy === s.id}
+                            onClick={() => void toggleLike(s.id)}
+                          >
+                            {liked ? "❤️ Aimé" : "🤍 J’aime"}
+                            {sessionLikes.length ? ` · ${sessionLikes.length}` : ""}
+                          </button>
+                        </div>
+                        {sessionLikes.length > 0 && (
+                          <p className={styles.muted}>
+                            Aimé par {sessionLikes.map(nameOf).map((n) => `@${n}`).join(", ")}
+                          </p>
+                        )}
+                        {thread.length > 0 && (
+                          <ul className={styles.commentList}>
+                            {thread.map((c) => (
+                              <li key={c.id}>
+                                <strong>@{nameOf(c.actor)}</strong> {c.body}
+                                {c.actor === id && (
+                                  <button
+                                    className={styles.quiet}
+                                    disabled={feedbackBusy === s.id}
+                                    onClick={() => void deleteComment(s.id, c.id)}
+                                  >
+                                    Supprimer
+                                  </button>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        <form
+                          className={styles.commentForm}
+                          onSubmit={(e) => {
+                            e.preventDefault();
+                            void postComment(s.id);
+                          }}
+                        >
+                          <input
+                            aria-label={`Commenter la séance ${s.name || ""}`.trim()}
+                            maxLength={500}
+                            placeholder="Écrire un commentaire…"
+                            value={drafts[s.id] ?? ""}
+                            onChange={(e) =>
+                              setDrafts((d) => ({ ...d, [s.id]: e.target.value }))
+                            }
+                          />
+                          <button
+                            disabled={feedbackBusy === s.id || !(drafts[s.id] ?? "").trim()}
+                            type="submit"
+                          >
+                            Publier
+                          </button>
+                        </form>
+                      </div>
+                    );
+                  })()}
                 </li>
               ))}
             </ul>

@@ -40,6 +40,15 @@ export default function TermsOfUsePage() {
         </li>
       </ul>
 
+      <h2>Commentaires et réactions</h2>
+      <p>
+        Le compte Sport permet d’aimer et de commenter les séances de vos amis. Vous êtes
+        responsable du contenu que vous publiez et vous vous engagez à rester respectueux. L’auteur
+        d’un commentaire peut le supprimer à tout moment ; le propriétaire de la séance peut retirer
+        un commentaire laissé sur ses séances. L’éditeur peut supprimer un contenu manifestement
+        abusif.
+      </p>
+
       <h2>Jeu et responsabilité</h2>
       <p>
         Les utilisateurs restent seuls responsables de leurs décisions et du contexte dans lequel

@@ -178,6 +178,45 @@
   color: #bcc8d6;
   font-size: 0.9rem;
 }
+/* Like + comment area under a friend's session. */
+.feedback {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #33465c;
+}
+.feedback .actions {
+  margin: 0;
+}
+.feedback .actions > * {
+  flex: 0 1 auto;
+}
+.commentList {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.commentList li {
+  padding: 0;
+  border: 0;
+}
+.commentForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.commentForm input {
+  flex: 1 1 160px;
+  min-height: 44px;
+}
+.commentForm button {
+  flex: 0 0 auto;
+}
 .panel fieldset {
   border: 0;
   padding: 0;

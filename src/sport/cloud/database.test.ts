@@ -35,6 +35,7 @@ beforeAll(async () => {
     grant execute on function auth.uid() to authenticated;
     insert into auth.users values('${alice}'),('${bob}'),('${eve}');`);
   await db.exec(await readFile("supabase/migrations/202609060001_accounts_social.sql", "utf8"));
+  await db.exec(await readFile("supabase/migrations/202609060002_session_feedback.sql", "utf8"));
   for (const [id, username] of [
     [alice, "Alice"],
     [bob, "Bob"],
@@ -100,6 +101,33 @@ describe.sequential("actual PostgreSQL migration and RLS", () => {
     expect((await db.query("select * from push_jobs")).rows).toHaveLength(1);
     expect((await db.query("select * from claim_push_jobs()")).rows).toHaveLength(1);
     expect((await db.query("select * from claim_push_jobs()")).rows).toHaveLength(0);
+  });
+  it("lets accepted friends like and comment, and hides feedback from others", async () => {
+    await asUser(bob);
+    await db.query("insert into session_likes(owner,session_id,actor) values($1,'first',$2)", [
+      alice,
+      bob,
+    ]);
+    await db.query(
+      "insert into session_comments(owner,session_id,actor,body) values($1,'first',$2,'Bien joué')",
+      [alice, bob],
+    );
+    await expect(
+      db.query("insert into session_likes(owner,session_id,actor) values($1,'first',$2)", [
+        alice,
+        eve,
+      ]),
+    ).rejects.toThrow();
+    await asUser(eve);
+    expect((await db.query("select * from session_likes")).rows).toHaveLength(0);
+    expect((await db.query("select * from session_comments")).rows).toHaveLength(0);
+    await asUser(alice);
+    expect((await db.query("select * from session_likes")).rows).toHaveLength(1);
+    // The session owner can moderate a comment on their own session.
+    await db.query("delete from session_comments where owner=$1", [alice]);
+    await asUser(bob);
+    expect((await db.query("select * from session_comments")).rows).toHaveLength(0);
+    await db.query("delete from session_likes where actor=$1", [bob]);
   });
   it("revokes access on removing a friend", async () => {
     await asUser(bob);

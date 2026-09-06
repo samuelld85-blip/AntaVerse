@@ -6,17 +6,19 @@ utilisent OAuth web et reviennent à `/sport/compte/`.
 
 Le dépôt ne contient pas d’identifiants Supabase ni de comptes fournisseurs.
 Un build sans configuration fonctionne localement et indique que les comptes
-ne sont pas encore disponibles. Les boutons OAuth ne sont affichés que lorsque
+ne sont pas encore disponibles. Exécuter les migrations `supabase/migrations/`
+dans l’ordre (numérique). Les boutons OAuth ne sont affichés que lorsque
 le fournisseur est activé dans les paramètres publics du serveur Supabase.
 
 ## 1. Créer le projet Supabase
 
 Créer un projet sur Supabase, choisir sa région (préférer une région UE pour ce
 public), conserver son mot de passe de base de données dans un gestionnaire de
-mots de passe. Exécuter `supabase/migrations/202609060001_accounts_social.sql`
+mots de passe. Exécuter les fichiers `supabase/migrations/*.sql` dans l’ordre numérique
 dans SQL Editor, ou `supabase link` puis `supabase db push` depuis le CLI.
-La migration ne contient aucun secret. Elle crée les tables, politiques RLS,
-RPC de sauvegarde atomique, versions et file de notifications.
+Les migrations ne contiennent aucun secret. Elles créent les tables, politiques
+RLS, RPC de sauvegarde atomique, versions, file de notifications, ainsi que les
+mentions « j’aime » et commentaires sur les séances partagées.
 
 Dans Authentication > URL Configuration :
 

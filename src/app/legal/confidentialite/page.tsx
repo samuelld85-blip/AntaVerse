@@ -61,6 +61,13 @@ export default function PrivacyPolicyPage() {
         consulter vos séances terminées : titre, date, exercices, charges et répétitions. La séance
         active et les favoris restent privés. Retirer un ami révoque son accès serveur.
       </p>
+      <p>
+        Un ami accepté peut aimer une séance ou y laisser un commentaire. Ces réactions et
+        commentaires, ainsi que le pseudo de leur auteur, sont enregistrés en ligne et visibles par
+        vous et vos amis communs. L’auteur peut supprimer son commentaire ; le propriétaire de la
+        séance peut retirer tout commentaire laissé sur ses séances. Supprimer une séance ou un
+        compte efface les réactions et commentaires associés.
+      </p>
       <h2 id="stockage-local">3. Stockage local</h2>
       <ul>
         <li>
