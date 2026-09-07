@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { getCloud, friendlyError } from "./client";
 import { useSportCloud } from "./provider";
 import { enableSportPush, disableSportPush } from "./push";
@@ -16,6 +16,204 @@ type Comment = {
   body: string;
   created_at: string;
 };
+
+export function SessionReactions({
+  ownerId,
+  ownerName,
+  sessionId,
+}: {
+  ownerId: string;
+  ownerName: string;
+  sessionId: string;
+}) {
+  const { session, profile } = useSportCloud();
+  const client = getCloud();
+  const [likes, setLikes] = useState<string[]>([]);
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [names, setNames] = useState<Record<string, string>>({});
+  const [draft, setDraft] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState("");
+  const id = session?.user.id;
+
+  useEffect(() => {
+    if (!client || !id || !profile) {
+      return;
+    }
+    let live = true;
+    void (async () => {
+      setLoading(true);
+      try {
+        const [likeRes, commentRes] = await Promise.all([
+          client
+            .from("session_likes")
+            .select("actor")
+            .eq("owner", ownerId)
+            .eq("session_id", sessionId),
+          client
+            .from("session_comments")
+            .select("id,session_id,actor,body,created_at")
+            .eq("owner", ownerId)
+            .eq("session_id", sessionId)
+            .order("created_at"),
+        ]);
+        if (likeRes.error) throw likeRes.error;
+        if (commentRes.error) throw commentRes.error;
+        const likeActors = ((likeRes.data ?? []) as { actor: string }[]).map((row) => row.actor);
+        const thread = (commentRes.data ?? []) as Comment[];
+        const actors = [...new Set([...likeActors, ...thread.map((comment) => comment.actor)])].filter(
+          (actor) => actor !== id && actor !== ownerId,
+        );
+        let extraNames: Record<string, string> = {};
+        if (actors.length) {
+          const { data: profiles } = await client.from("profiles").select("id,username").in("id", actors);
+          extraNames = Object.fromEntries((profiles ?? []).map((person) => [person.id, person.username]));
+        }
+        if (live) {
+          setLikes(likeActors);
+          setComments(thread);
+          setNames(extraNames);
+          setMessage("");
+        }
+      } catch (error) {
+        if (live) setMessage(friendlyError(error));
+      } finally {
+        if (live) setLoading(false);
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [client, id, ownerId, profile, sessionId]);
+
+  if (!id || !profile || !client) return null;
+  const cloudClient = client;
+  const currentId = id;
+  const nameOf = (actor: string) =>
+    actor === id ? profile.username : actor === ownerId ? ownerName : names[actor] ?? "joueur";
+  const liked = likes.includes(id);
+
+  async function toggleLike() {
+    if (busy) return;
+    setBusy(true);
+    setMessage("");
+    try {
+      if (liked) {
+        const { error } = await cloudClient
+          .from("session_likes")
+          .delete()
+          .eq("owner", ownerId)
+          .eq("session_id", sessionId)
+          .eq("actor", currentId);
+        if (error) throw error;
+        setLikes((items) => items.filter((actor) => actor !== id));
+      } else {
+        const { error } = await cloudClient
+          .from("session_likes")
+          .insert({ owner: ownerId, session_id: sessionId, actor: currentId });
+        if (error) throw error;
+        setLikes((items) => [...items, currentId]);
+      }
+    } catch (error) {
+      setMessage(friendlyError(error));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function postComment(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const body = draft.trim();
+    if (!body || busy) return;
+    setBusy(true);
+    setMessage("");
+    try {
+      const { data, error } = await cloudClient
+        .from("session_comments")
+        .insert({ owner: ownerId, session_id: sessionId, actor: currentId, body })
+        .select("id,session_id,actor,body,created_at")
+        .single();
+      if (error) throw error;
+      setComments((items) => [...items, data as Comment]);
+      setDraft("");
+    } catch (error) {
+      setMessage(friendlyError(error));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function deleteComment(commentId: number) {
+    if (busy) return;
+    setBusy(true);
+    setMessage("");
+    try {
+      const { error } = await cloudClient.from("session_comments").delete().eq("id", commentId);
+      if (error) throw error;
+      setComments((items) => items.filter((comment) => comment.id !== commentId));
+    } catch (error) {
+      setMessage(friendlyError(error));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div className={styles.feedback} aria-label="Réactions à la séance">
+      {loading ? (
+        <p role="status">Chargement des réactions…</p>
+      ) : (
+        <>
+          <div className={styles.actions}>
+            <button type="button" aria-pressed={liked} disabled={busy} onClick={() => void toggleLike()}>
+              {liked ? "❤️ Aimé" : "🤍 J’aime"}
+              {likes.length ? ` · ${likes.length}` : ""}
+            </button>
+          </div>
+          {likes.length > 0 && (
+            <p className={styles.muted}>Aimé par {likes.map(nameOf).map((name) => `@${name}`).join(", ")}</p>
+          )}
+          {comments.length > 0 && (
+            <ul className={styles.commentList}>
+              {comments.map((comment) => (
+                <li key={comment.id}>
+                  <span className={styles.commentBody}>
+                    <strong>@{nameOf(comment.actor)}</strong> {comment.body}
+                  </span>
+                  {comment.actor === id && (
+                    <button
+                      className={styles.quiet}
+                      type="button"
+                      disabled={busy}
+                      onClick={() => void deleteComment(comment.id)}
+                    >
+                      Supprimer
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+          <form className={styles.commentForm} onSubmit={(event) => void postComment(event)}>
+            <input
+              aria-label="Commenter cette séance"
+              maxLength={500}
+              placeholder="Écrire un commentaire…"
+              value={draft}
+              onChange={(event) => setDraft(event.target.value)}
+            />
+            <button disabled={busy || !draft.trim()} type="submit">
+              Publier
+            </button>
+          </form>
+        </>
+      )}
+      {message && <p className={styles.notice} role="alert">{message}</p>}
+    </div>
+  );
+}
+
 export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: string) => void }) {
   const { session, profile } = useSportCloud();
   const [people, setPeople] = useState<Person[]>([]);
@@ -225,6 +423,10 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
     if (viewing && actor === viewing.id) return viewing.username;
     return names[actor] ?? "joueur";
   }
+  const acceptedFriendIds = new Set(
+    friends.filter((friendship) => friendship.accepted_at).map(personId),
+  );
+  const peopleToAdd = people.filter((person) => !acceptedFriendIds.has(person.id));
   async function toggleLike(sessionId: string) {
     if (!client || !viewing || feedbackBusy) return;
     const mine = (likes[sessionId] ?? []).includes(id!);
@@ -297,39 +499,45 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
           {message}
         </p>
       )}
-      <p className={styles.muted}>
-        Seuls vos amis acceptés voient vos séances terminées. Votre séance en cours et vos favoris
-        restent privés.
-      </p>
-      <div className={styles.socialGroup}>
-        <button
-          disabled={busy}
-          onClick={async () => {
-            setBusy(true);
-            setMessage("");
-            try {
-              if (push) await disableSportPush();
-              else await enableSportPush(id);
-              setPush(!push);
-            } catch (error) {
-              setMessage(error instanceof Error ? error.message : friendlyError(error));
-            } finally {
-              setBusy(false);
-            }
-          }}
-        >
-          {push
-            ? "Désactiver les notifications sur cet appareil"
-            : "Activer les notifications de mes amis"}
-        </button>
-        <p className={styles.muted}>
-          Un push quand un ami termine une séance. Sur iPhone, installez l’app depuis l’écran
-          d’accueil.
-        </p>
-      </div>
+      {!viewing && (
+        <>
+          <p className={styles.muted}>
+            Seuls vos amis acceptés voient vos séances terminées. Votre séance en cours et vos favoris
+            restent privés.
+          </p>
+          <div className={styles.socialGroup}>
+            <button
+              disabled={busy}
+              onClick={async () => {
+                setBusy(true);
+                setMessage("");
+                try {
+                  if (push) await disableSportPush();
+                  else await enableSportPush(id);
+                  setPush(!push);
+                } catch (error) {
+                  setMessage(error instanceof Error ? error.message : friendlyError(error));
+                } finally {
+                  setBusy(false);
+                }
+              }}
+            >
+              {push
+                ? "Désactiver les notifications sur cet appareil"
+                : "Activer les notifications de mes amis"}
+            </button>
+            <p className={styles.muted}>
+              Un push quand un ami termine une séance. Sur iPhone, installez l’app depuis l’écran
+              d’accueil.
+            </p>
+          </div>
+        </>
+      )}
       {viewing ? (
-        <div className={styles.card}>
-          <button onClick={() => setViewing(null)}>← Mes amis</button>
+        <div className={styles.friendSessions}>
+          <button className={styles.backButton} onClick={() => setViewing(null)} type="button">
+            ← Mes amis
+          </button>
           <h2>Séances de @{viewing.username}</h2>
           {historyLoading ? (
             <p role="status">Chargement des séances…</p>
@@ -346,7 +554,7 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                       {s.exercises.reduce((n, e) => n + e.completedSets.length, 0)} séries
                     </span>
                     <button type="button" onClick={() => onOpenHistory(s.id)}>
-                      Voir le détail dans Historique
+                      Ouvrir dans l’historique
                     </button>
                   </div>
                   {(() => {
@@ -374,7 +582,9 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                           <ul className={styles.commentList}>
                             {thread.map((c) => (
                               <li key={c.id}>
-                                <strong>@{nameOf(c.actor)}</strong> {c.body}
+                                <span className={styles.commentBody}>
+                                  <strong>@{nameOf(c.actor)}</strong> {c.body}
+                                </span>
                                 {c.actor === id && (
                                   <button
                                     className={styles.quiet}
@@ -418,20 +628,22 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
               ))}
             </ul>
           )}
-          <div className={styles.actions}>
-            <button
-              disabled={historyPage === 0 || historyLoading}
-              onClick={() => setHistoryPage((p) => p - 1)}
-            >
-              Séances précédentes
-            </button>
-            <button
-              disabled={!historyMore || historyLoading}
-              onClick={() => setHistoryPage((p) => p + 1)}
-            >
-              Séances suivantes
-            </button>
-          </div>
+          {history.length > 0 && (
+            <div className={styles.sessionPagination}>
+              <button
+                disabled={historyPage === 0 || historyLoading}
+                onClick={() => setHistoryPage((p) => p - 1)}
+              >
+                Séances précédentes
+              </button>
+              <button
+                disabled={!historyMore || historyLoading}
+                onClick={() => setHistoryPage((p) => p + 1)}
+              >
+                Séances suivantes
+              </button>
+            </div>
+          )}
         </div>
       ) : (
         <>
@@ -441,25 +653,47 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
               Votre liste d’amis est vide. Ajoutez quelqu’un depuis la liste ci-dessous.
             </p>
           )}
-          <ul className={styles.list}>
+          <ul className={`${styles.list} ${styles.friendList}`}>
             {friends.map((f) => {
               const other = personId(f);
+              const username = names[other] ?? "joueur";
               return (
-                <li key={other}>
-                  <strong>@{names[other] ?? "joueur"}</strong>
-                  <p>
-                    {f.accepted_at
-                      ? "Ami"
-                      : f.recipient === id
-                        ? "Vous a envoyé une demande"
-                        : "Demande envoyée"}
-                  </p>
-                  <div className={styles.actions}>
+                <li className={f.accepted_at ? styles.friendItem : undefined} key={other}>
+                  <div className={styles.friendHeader}>
+                    <strong>@{username}</strong>
                     {f.accepted_at && (
                       <button
+                        aria-label={`Retirer @${username}`}
+                        className={styles.iconButton}
+                        disabled={busy}
                         onClick={() =>
-                          openHistory({ id: other, username: names[other] ?? "joueur" })
+                          void run(async () => {
+                            const { error } = await client!
+                              .from("friendships")
+                              .delete()
+                              .eq("requester", f.requester)
+                              .eq("recipient", f.recipient);
+                            if (error) throw error;
+                          })
                         }
+                        title={`Retirer @${username}`}
+                        type="button"
+                      >
+                        <span aria-hidden="true">−</span>
+                      </button>
+                    )}
+                  </div>
+                  {!f.accepted_at && (
+                    <p>
+                      {f.recipient === id ? "Vous a envoyé une demande" : "Demande envoyée"}
+                    </p>
+                  )}
+                  <div className={f.accepted_at ? styles.friendActions : styles.actions}>
+                    {f.accepted_at && (
+                      <button
+                        className={styles.friendPrimaryAction}
+                        onClick={() => openHistory({ id: other, username })}
+                        type="button"
                       >
                         Voir ses séances
                       </button>
@@ -479,25 +713,23 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                         Accepter
                       </button>
                     )}
-                    <button
-                      disabled={busy}
-                      onClick={() =>
-                        void run(async () => {
-                          const { error } = await client!
-                            .from("friendships")
-                            .delete()
-                            .eq("requester", f.requester)
-                            .eq("recipient", f.recipient);
-                          if (error) throw error;
-                        })
-                      }
-                    >
-                      {f.accepted_at
-                        ? "Retirer cet ami"
-                        : f.recipient === id
-                          ? "Refuser"
-                          : "Annuler la demande"}
-                    </button>
+                    {!f.accepted_at && (
+                      <button
+                        disabled={busy}
+                        onClick={() =>
+                          void run(async () => {
+                            const { error } = await client!
+                              .from("friendships")
+                              .delete()
+                              .eq("requester", f.requester)
+                              .eq("recipient", f.recipient);
+                            if (error) throw error;
+                          })
+                        }
+                      >
+                        {f.recipient === id ? "Refuser" : "Annuler la demande"}
+                      </button>
+                    )}
                   </div>
                 </li>
               );
@@ -505,48 +737,52 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
           </ul>
         </>
       )}
-      <h2>Ajouter un ami</h2>
-      {loading ? (
-        <p role="status">Chargement des comptes…</p>
-      ) : !people.length ? (
-        <p className={styles.muted}>Aucun autre compte pour le moment.</p>
-      ) : (
-        <ul className={styles.list}>
-          {people.map((p) => {
-            const relation = friends.find((f) => personId(f) === p.id);
-            return (
-              <li key={p.id}>
-                <strong>@{p.username}</strong>
-                <div className={styles.actions}>
-                  <button
-                    disabled={busy || Boolean(relation)}
-                    onClick={() =>
-                      void run(async () => {
-                        const { error } = await client!
-                          .from("friendships")
-                          .insert({ requester: id, recipient: p.id });
-                        if (error) throw error;
-                        setMessage(`Demande envoyée à @${p.username}.`);
-                      })
-                    }
-                  >
-                    {relation
-                      ? relation.accepted_at
-                        ? "Déjà amis"
-                        : "Demande en cours"
-                      : "Ajouter"}
-                  </button>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+      {!viewing && (
+        <>
+          <h2>Ajouter un ami</h2>
+          {loading ? (
+            <p role="status">Chargement des comptes…</p>
+          ) : !peopleToAdd.length ? (
+            <p className={styles.muted}>Aucun compte à ajouter pour le moment.</p>
+          ) : (
+            <ul className={styles.list}>
+              {peopleToAdd.map((p) => {
+                const relation = friends.find((f) => personId(f) === p.id);
+                return (
+                  <li key={p.id}>
+                    <strong>@{p.username}</strong>
+                    <div className={styles.actions}>
+                      <button
+                        disabled={busy || Boolean(relation)}
+                        onClick={() =>
+                          void run(async () => {
+                            const { error } = await client!
+                              .from("friendships")
+                              .insert({ requester: id, recipient: p.id });
+                            if (error) throw error;
+                            setMessage(`Demande envoyée à @${p.username}.`);
+                          })
+                        }
+                      >
+                        {relation
+                          ? relation.accepted_at
+                            ? "Déjà amis"
+                            : "Demande en cours"
+                          : "Ajouter"}
+                      </button>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+          <hr className={styles.socialRule} />
+          <Link className={styles.linkButton} href="/sport/compte">
+            Mon compte
+          </Link>
+          <p className={styles.muted}>Changez votre pseudo ou déconnectez-vous depuis votre compte.</p>
+        </>
       )}
-      <hr className={styles.socialRule} />
-      <Link className={styles.linkButton} href="/sport/compte">
-        Mon compte
-      </Link>
-      <p className={styles.muted}>Changez votre pseudo ou déconnectez-vous depuis votre compte.</p>
     </section>
   );
 }

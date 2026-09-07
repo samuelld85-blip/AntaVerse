@@ -140,6 +140,25 @@
   font-weight: 700;
   padding-right: 10px;
 }
+.editFeedback {
+  min-width: 0;
+  margin: 22px 0;
+  padding: 14px 0 0;
+  border: 0;
+  border-top: 1px solid var(--sport-line);
+}
+.editFeedback legend {
+  padding-right: 10px;
+  color: var(--sport-ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+.editFeedback .feedbackOptions {
+  margin-top: 14px;
+}
+.editFeedback .feedbackOption {
+  min-height: 82px;
+}
 .editSet {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -500,6 +519,9 @@
   box-shadow: inset 0 0 0 1px var(--sport-accent-line);
   font-weight: 700;
 }
+.historyFilters {
+  margin: 0 0 24px;
+}
 .shell .hint {
   font-size: 12px;
   color: var(--sport-muted);
@@ -615,7 +637,8 @@
   min-width: 0;
 }
 .field input,
-.field select {
+.field select,
+.field textarea {
   width: 100%;
   min-width: 0;
   min-height: 44px;
@@ -625,6 +648,11 @@
   color: var(--sport-ink);
   background: var(--sport-field);
   font-size: 16px;
+}
+.field textarea {
+  min-height: 108px;
+  resize: vertical;
+  line-height: 1.45;
 }
 .field select {
   font-size: 14px;
@@ -636,6 +664,156 @@
 .optional {
   font-size: 10px;
   margin-top: -7px;
+}
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.feedbackPanel {
+  margin-top: 24px;
+}
+.feedbackChoices {
+  min-width: 0;
+  padding: 0;
+  margin: 20px 0 20px;
+  border: 0;
+}
+.feedbackOptions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.feedbackGood {
+  --feedback-color: #4fca7b;
+}
+.feedbackOkay {
+  --feedback-color: #f2a23a;
+}
+.feedbackBad {
+  --feedback-color: #ed6262;
+}
+.feedbackOption {
+  display: flex;
+  min-height: 96px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 4px;
+  border: 1px solid var(--sport-line);
+  border-radius: 12px;
+  color: var(--sport-ink);
+  background: var(--sport-surface);
+  font-size: 12px;
+  font-weight: 700;
+}
+.feedbackOption:hover,
+.feedbackOption[aria-pressed="true"] {
+  border-color: var(--feedback-color);
+  background: color-mix(in srgb, var(--feedback-color) 13%, var(--sport-surface));
+  color: var(--feedback-color);
+}
+.feedbackOption[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 1px var(--feedback-color);
+}
+.feedbackEmoji {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--feedback-color);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--feedback-color) 18%, transparent);
+  font-size: 36px;
+  line-height: 1;
+}
+.feedbackOptional {
+  color: var(--sport-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+.feedbackComment {
+  margin-bottom: 18px;
+}
+.photoSection {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.photoLabel {
+  color: var(--sport-muted);
+  font-size: 12px;
+}
+.photoPicker {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--sport-line);
+  border-radius: 9px;
+  color: var(--sport-cool);
+  background: var(--sport-surface);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 650;
+}
+.photoPicker:hover {
+  border-color: var(--sport-accent-line);
+  background: var(--sport-raised);
+}
+.photoPicker > span {
+  color: var(--sport-accent);
+  font-size: 20px;
+  line-height: 1;
+}
+.photoCount {
+  color: var(--sport-muted);
+  font-size: 11px;
+}
+.photoError {
+  color: #ed8b8b;
+  font-size: 12px;
+}
+.photoPreviewList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.photoPreview {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border: 1px solid var(--sport-line);
+  border-radius: 9px;
+  background: var(--sport-field);
+}
+.photoPreview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photoRemove {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  min-height: 0;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: rgba(16, 25, 35, 0.78);
+  font-size: 10px !important;
 }
 .listMeta {
   display: flex;
@@ -689,6 +867,25 @@
   font-size: 11px;
   color: var(--sport-muted);
   line-height: 1.6;
+}
+.exerciseRow .historySummaryComment {
+  color: var(--sport-ink);
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+.exerciseRow .historyThumbnails {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+.historyThumbnails img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--sport-line);
+  border-radius: 7px;
+  object-fit: cover;
 }
 .historyOwner {
   color: var(--sport-muted) !important;
@@ -1076,10 +1273,117 @@
   margin-top: 20px;
   padding: 18px 0;
 }
+.historyExercise + .historyExercise {
+  border-top: 0;
+  margin-top: 0;
+}
 .historyExercise p {
   color: var(--sport-muted);
   font-size: 12px;
   margin: 4px 0 14px;
+}
+.historyExercise .historyComment {
+  color: var(--sport-ink);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px 0 14px;
+  white-space: pre-wrap;
+}
+.historyPhotoGallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0 4px;
+}
+.historyPhotoGallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--sport-line);
+  border-radius: 10px;
+  object-fit: cover;
+}
+.historyPhotoButton {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  overflow: hidden;
+}
+.historyPhotoButton:hover {
+  outline: 2px solid var(--sport-accent);
+  outline-offset: 2px;
+}
+.photoLightbox {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 56px 12px 44px;
+  background: rgba(5, 10, 16, 0.9);
+}
+.photoLightboxContent {
+  display: flex;
+  width: min(100%, 760px);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.photoLightboxImage {
+  display: block;
+  max-width: min(82vw, 680px);
+  max-height: 78dvh;
+  border: 1px solid var(--sport-line);
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.42);
+}
+.photoLightboxClose,
+.photoLightboxNav {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: rgba(15, 25, 36, 0.82);
+}
+.photoLightboxClose {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 28px !important;
+  line-height: 1;
+}
+.photoLightboxNav {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 52px;
+  border-radius: 9px;
+  font-size: 32px !important;
+  line-height: 1;
+}
+.photoLightboxCounter {
+  position: absolute;
+  right: 0;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  left: 0;
+  color: #dce5ef;
+  font-size: 12px;
+  text-align: center;
+}
+.historyFeedback {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 4px;
+  border: 1px solid var(--feedback-color);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--feedback-color) 18%, transparent);
+  font-size: 20px;
+  vertical-align: 1px;
 }
 .historyExercise ol {
   padding: 0;

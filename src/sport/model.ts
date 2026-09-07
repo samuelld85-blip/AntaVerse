@@ -21,12 +21,22 @@ const setSchema = z.object({
   loadKg: z.number().min(0).max(2000),
   reps: z.number().int().min(1).max(200).nullable(),
 });
+const exerciseFeedbackSchema = z.object({
+  mood: z.enum(["good", "okay", "bad"]),
+  comment: z.string().max(1000),
+});
+export type ExerciseFeedback = z.infer<typeof exerciseFeedbackSchema>;
+const sessionFeedbackSchema = exerciseFeedbackSchema.extend({
+  photos: z.array(z.string().startsWith("data:image/").max(1_500_000)).max(3).optional(),
+});
+export type SessionFeedback = z.infer<typeof sessionFeedbackSchema>;
 const entrySchema = z
   .object({
     id: z.string(),
     config: configSchema,
     completedSets: z.array(setSchema),
     finished: z.boolean(),
+    feedback: exerciseFeedbackSchema.optional(),
   })
   .refine((e) => e.completedSets.length <= e.config.sets);
 export type ExerciseEntry = z.infer<typeof entrySchema>;
@@ -39,6 +49,7 @@ const sessionSchema = z.object({
   startedAt: z.string().datetime(),
   endedAt: z.string().datetime().nullable(),
   exercises: z.array(entrySchema),
+  feedback: sessionFeedbackSchema.optional(),
 });
 export type Session = z.infer<typeof sessionSchema>;
 export const storeSchema = z.object({

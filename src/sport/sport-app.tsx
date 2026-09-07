@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { SportSocial } from "./cloud/social";
+import { SessionReactions, SportSocial } from "./cloud/social";
 import { useSportCloud } from "./cloud/provider";
 import { getCloud, friendlyError } from "./cloud/client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { SportIcon } from "@/components/sport-icon";
 import { useThemeMode } from "@/lib/use-theme-mode";
 import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
+import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
 import { StatsDashboard } from "./stats-dashboard";
 import {
   configsForRecommendedWorkout,
@@ -38,6 +39,7 @@ import {
   timeLabel,
   type ExerciseConfig,
   type ExerciseEntry,
+  type ExerciseFeedback,
   type Session,
   type SportStore,
 } from "./model";
@@ -50,6 +52,8 @@ type HistoryItem = {
   username: string;
   isFriend: boolean;
 };
+
+type HistoryFilter = "all" | "mine" | "friends";
 
 const dateLabel = (date: string) =>
   new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(
@@ -107,6 +111,169 @@ function Star({
         <path d="m12 3 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2L3 9.6l6.2-.9Z" />
       </svg>
     </button>
+  );
+}
+
+const feedbackOptions: ReadonlyArray<{
+  mood: ExerciseFeedback["mood"];
+  emoji: string;
+  label: string;
+}> = [
+  { mood: "good", emoji: "🙂", label: "Content" },
+  { mood: "okay", emoji: "😐", label: "Moyen" },
+  { mood: "bad", emoji: "🙁", label: "Pas content" },
+];
+const feedbackEmojiByMood: Record<ExerciseFeedback["mood"], string> = {
+  good: "🙂",
+  okay: "😐",
+  bad: "🙁",
+};
+const feedbackColorClass = (mood: ExerciseFeedback["mood"]) =>
+  mood === "good"
+    ? styles.feedbackGood
+    : mood === "okay"
+      ? styles.feedbackOkay
+      : styles.feedbackBad;
+
+type FeedbackFormValue = ExerciseFeedback & { photos?: string[] };
+
+function FeedbackForm({
+  eyebrow,
+  title,
+  commentPlaceholder,
+  allowPhotos = false,
+  nextLabel,
+  onSubmit,
+}: {
+  eyebrow: string;
+  title: string;
+  commentPlaceholder: string;
+  allowPhotos?: boolean;
+  nextLabel: string;
+  onSubmit: (feedback: FeedbackFormValue) => void;
+}) {
+  const [mood, setMood] = useState<ExerciseFeedback["mood"] | null>(null);
+  const [comment, setComment] = useState("");
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [photoError, setPhotoError] = useState("");
+  const [photoBusy, setPhotoBusy] = useState(false);
+
+  async function handlePhotoFiles(event: ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(event.currentTarget.files ?? []);
+    event.currentTarget.value = "";
+    if (!files.length) return;
+    const available = MAX_SESSION_PHOTOS - photos.length;
+    if (available <= 0) {
+      setPhotoError(`Vous pouvez ajouter au maximum ${MAX_SESSION_PHOTOS} photos.`);
+      return;
+    }
+    const selected = files.slice(0, available);
+    setPhotoError(
+      files.length > available
+        ? `Seules ${MAX_SESSION_PHOTOS} photos peuvent être ajoutées à une séance.`
+        : "",
+    );
+    setPhotoBusy(true);
+    try {
+      const compressed = await Promise.all(selected.map(compressPhoto));
+      setPhotos((current) => [...current, ...compressed].slice(0, MAX_SESSION_PHOTOS));
+    } catch {
+      setPhotoError("Impossible de charger une photo. Essayez une autre image.");
+    } finally {
+      setPhotoBusy(false);
+    }
+  }
+
+  return (
+    <section className={`${styles.panel} ${styles.feedbackPanel}`} aria-labelledby="feedback-title">
+      <p className={styles.eyebrow}>{eyebrow}</p>
+      <h2 id="feedback-title">{title}</h2>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          if (!mood) return;
+          onSubmit({ mood, comment: comment.trim(), ...(allowPhotos ? { photos } : {}) });
+        }}
+      >
+        <fieldset className={styles.feedbackChoices}>
+          <legend className={styles.visuallyHidden}>Votre ressenti</legend>
+          <div className={styles.feedbackOptions}>
+            {feedbackOptions.map((option) => (
+              <button
+                key={option.mood}
+                type="button"
+                className={`${styles.feedbackOption} ${feedbackColorClass(option.mood)}`}
+                aria-pressed={mood === option.mood}
+                onClick={() => setMood(option.mood)}
+              >
+                <span className={styles.feedbackEmoji} aria-hidden="true">
+                  {option.emoji}
+                </span>
+                <span>{option.label}</span>
+              </button>
+            ))}
+          </div>
+        </fieldset>
+        <label className={`${styles.field} ${styles.feedbackComment}`}>
+          <span>
+            Commentaire <span className={styles.feedbackOptional}>(facultatif)</span>
+          </span>
+          <textarea
+            value={comment}
+            onChange={(event) => setComment(event.target.value)}
+            maxLength={1000}
+            rows={4}
+            placeholder={commentPlaceholder}
+          />
+        </label>
+        {allowPhotos && (
+          <div className={styles.photoSection}>
+            <span className={styles.photoLabel}>
+              Photos <span className={styles.feedbackOptional}>(facultatif)</span>
+            </span>
+            <label className={styles.photoPicker}>
+              <input
+                className={styles.visuallyHidden}
+                type="file"
+                accept="image/*"
+                multiple
+                disabled={photoBusy || photos.length >= MAX_SESSION_PHOTOS}
+                onChange={(event) => void handlePhotoFiles(event)}
+              />
+              <span aria-hidden="true">＋</span>
+              {photoBusy ? "Chargement…" : "Ajouter une ou des photos"}
+            </label>
+            <span className={styles.photoCount}>
+              {photos.length}/{MAX_SESSION_PHOTOS} photo{photos.length > 1 ? "s" : ""}
+            </span>
+            {photoError && (
+              <span className={styles.photoError} role="alert">
+                {photoError}
+              </span>
+            )}
+            {photos.length > 0 && (
+              <div className={styles.photoPreviewList}>
+                {photos.map((photo, index) => (
+                  <div className={styles.photoPreview} key={photo}>
+                    <img src={photo} alt={`Photo ${index + 1} ajoutée`} />
+                    <button
+                      type="button"
+                      className={styles.photoRemove}
+                      onClick={() => setPhotos((current) => current.filter((_, i) => i !== index))}
+                    >
+                      Retirer
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+        <button className={styles.primary} type="submit" disabled={!mood || photoBusy}>
+          {nextLabel}
+        </button>
+      </form>
+    </section>
   );
 }
 
@@ -509,7 +676,11 @@ export function SportApp() {
   const [detailId, setDetailId] = useState<string | null>(null);
   const [editHistory, setEditHistory] = useState(false);
   const [deleteHistory, setDeleteHistory] = useState(false);
+  const [historyFilter, setHistoryFilter] = useState<HistoryFilter>("all");
   const [confirmFinish, setConfirmFinish] = useState(false);
+  const [feedbackEntryId, setFeedbackEntryId] = useState<string | null>(null);
+  const [sessionFeedbackOpen, setSessionFeedbackOpen] = useState(false);
+  const [photoViewer, setPhotoViewer] = useState<{ photos: string[]; index: number } | null>(null);
   const [notice, setNotice] = useState("");
   const [friendHistory, setFriendHistory] = useState<HistoryItem[]>([]);
   const [friendHistoryLoading, setFriendHistoryLoading] = useState(false);
@@ -601,6 +772,19 @@ export function SportApp() {
       mounted = false;
     };
   }, []);
+  useEffect(() => {
+    if (!photoViewer) return;
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setPhotoViewer(null);
+    };
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [photoViewer]);
   function update(transform: (current: SportStore) => SportStore) {
     if (!storeRef.current || readBlocked) return;
     const next = transform(storeRef.current);
@@ -648,6 +832,8 @@ export function SportApp() {
     update((s) => ({ ...s, active: createSession(kind, configs, name, source) }));
     timer.stop();
     setEditing(null);
+    setFeedbackEntryId(null);
+    setSessionFeedbackOpen(false);
     setTab("training");
     setNotice("");
     setDetailId(null);
@@ -676,7 +862,12 @@ export function SportApp() {
     );
   const active = store.active;
   const current = active?.exercises.find((e) => !e.finished);
-  const historyItems: HistoryItem[] = [
+  const feedbackEntry =
+    active?.exercises.find((e) => e.id === feedbackEntryId) ??
+    active?.exercises.find(
+      (e) => e.finished && e.completedSets.length === e.config.sets && !e.feedback,
+    );
+  const allHistoryItems: HistoryItem[] = [
     ...store.history.map((session) => ({
       session,
       ownerId: cloud.session?.user.id ?? "local",
@@ -687,12 +878,35 @@ export function SportApp() {
   ].sort(
     (a, b) => new Date(b.session.startedAt).getTime() - new Date(a.session.startedAt).getTime(),
   );
+  const historyItems = allHistoryItems.filter((item) =>
+    historyFilter === "all" ? true : historyFilter === "friends" ? item.isFriend : !item.isFriend,
+  );
   const detailItem = historyItems.find((item) => item.session.id === detailId);
   const detail = detailItem?.session;
   const detailIsFriend = detailItem?.isFriend ?? false;
   const totalSets = active?.exercises.reduce((sum, e) => sum + e.completedSets.length, 0) ?? 0;
   const isFavorite = (c: ExerciseConfig) =>
     store.favorites.some((f) => configKey(f) === configKey(c));
+  function saveActiveSession(feedback?: FeedbackFormValue) {
+    if (!active) return;
+    const finished = finishSession(feedback ? { ...active, feedback } : active);
+    update((s) => ({
+      ...s,
+      active: null,
+      history: finished.exercises.length ? [finished, ...s.history] : s.history,
+    }));
+    timer.stop();
+    setConfirmFinish(false);
+    setSessionFeedbackOpen(false);
+    setEditing(null);
+    setNotice(
+      finished.exercises.length ? "Séance enregistrée. Bien joué !" : "Séance vide fermée.",
+    );
+    if (finished.exercises.length) {
+      setTab("history");
+      setDetailId(finished.id);
+    }
+  }
 
   return (
     <main className={styles.shell} data-theme={theme}>
@@ -946,6 +1160,7 @@ export function SportApp() {
                 <button
                   className={styles.secondary}
                   aria-label="Terminer ma séance"
+                  disabled={Boolean(feedbackEntry) || sessionFeedbackOpen}
                   onClick={() => {
                     timer.stop();
                     setConfirmFinish(true);
@@ -954,7 +1169,23 @@ export function SportApp() {
                   Terminer
                 </button>
               </div>
-              {confirmFinish ? null : editing ? (
+              {confirmFinish ? null : feedbackEntry ? (
+                <FeedbackForm
+                  eyebrow="Exercice terminé"
+                  title={`Comment s’est passé ${exerciseName(feedbackEntry.config.exerciseId)} ?`}
+                  commentPlaceholder="Une remarque sur l’exercice ?"
+                  nextLabel={
+                    active.exercises.some((entry) => !entry.finished && entry.id !== feedbackEntry.id)
+                      ? "Passer à l’exercice suivant"
+                      : "Retourner à la liste des exercices"
+                  }
+                  onSubmit={(feedback) => {
+                    updateEntry(feedbackEntry.id, (entry) => ({ ...entry, feedback }));
+                    setFeedbackEntryId(null);
+                    setNotice("Ressenti enregistré.");
+                  }}
+                />
+              ) : editing ? (
                 <ConfigForm
                   key={`${editing.entryId ?? "new"}-${configKey(editing.config)}`}
                   initial={editing.config}
@@ -1077,9 +1308,8 @@ export function SportApp() {
                         updateEntry(current.id, () => next);
                         if (next.finished) {
                           timer.stop();
-                          setNotice(
-                            `${exerciseName(current.config.exerciseId)} terminé. Choisissez la suite.`,
-                          );
+                          setFeedbackEntryId(current.id);
+                          setNotice("");
                         } else timer.start(current.config.restSeconds);
                       }}
                     >
@@ -1137,7 +1367,7 @@ export function SportApp() {
                   onChoose={(config) => setEditing({ config })}
                 />
               ) : null}
-              {active.source === "recommended" && (
+              {!feedbackEntryId && active.source === "recommended" && (
                 <details className={`${styles.recap} ${styles.programRecap}`} open>
                   <summary>Programme de la séance · {active.exercises.length} exercices</summary>
                   <ol className={styles.programList}>
@@ -1164,7 +1394,7 @@ export function SportApp() {
                   </ol>
                 </details>
               )}
-              {active.exercises.some((e) => e.finished) && (
+              {!feedbackEntryId && active.exercises.some((e) => e.finished) && (
                 <details className={styles.recap}>
                   <summary>
                     Dans cette séance · {active.exercises.filter((e) => e.finished).length}{" "}
@@ -1207,58 +1437,56 @@ export function SportApp() {
               )}
               {confirmFinish ? (
                 <section className={styles.confirm} aria-label="Terminer la séance">
-                  <h2>
-                    {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
-                  </h2>
-                  <p>
-                    {totalSets
-                      ? `${totalSets} série(s) validée(s) seront conservées. Les séries non effectuées ne seront pas comptées.`
-                      : "Aucune série n’a été validée. Rien ne sera ajouté à l’historique."}
-                  </p>
-                  <div className={styles.actions}>
-                    <button
-                      className={styles.primary}
-                      onClick={() => {
-                        const finished = finishSession(active);
-                        update((s) => ({
-                          ...s,
-                          active: null,
-                          history: finished.exercises.length ? [finished, ...s.history] : s.history,
-                        }));
-                        timer.stop();
-                        setConfirmFinish(false);
-                        setEditing(null);
-                        setNotice(
-                          finished.exercises.length
-                            ? "Séance enregistrée. Bien joué !"
-                            : "Séance vide fermée.",
-                        );
-                        if (finished.exercises.length) {
-                          setTab("history");
-                          setDetailId(finished.id);
-                        }
-                      }}
-                    >
-                      {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
-                    </button>
-                    <button className={styles.secondary} onClick={() => setConfirmFinish(false)}>
-                      Continuer ma séance
-                    </button>
-                    {totalSets > 0 && (
-                      <button
-                        className={styles.secondary}
-                        onClick={() => {
-                          update((s) => ({ ...s, active: null }));
-                          timer.stop();
-                          setConfirmFinish(false);
-                          setEditing(null);
-                          setNotice("Séance quittée sans ajout à l’historique.");
-                        }}
-                      >
-                        Quitter sans enregistrer
-                      </button>
-                    )}
-                  </div>
+                  {sessionFeedbackOpen ? (
+                  <FeedbackForm
+                    eyebrow="Séance terminée"
+                    title="Comment s’est passée votre séance ?"
+                    commentPlaceholder="Une remarque sur la séance ?"
+                    allowPhotos
+                      nextLabel="Enregistrer la séance"
+                      onSubmit={saveActiveSession}
+                    />
+                  ) : (
+                    <>
+                      <h2>
+                        {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
+                      </h2>
+                      <p>
+                        {totalSets
+                          ? `${totalSets} série(s) validée(s) seront conservées. Les séries non effectuées ne seront pas comptées.`
+                          : "Aucune série n’a été validée. Rien ne sera ajouté à l’historique."}
+                      </p>
+                      <div className={styles.actions}>
+                        <button
+                          className={styles.primary}
+                          onClick={() => {
+                            if (totalSets) setSessionFeedbackOpen(true);
+                            else saveActiveSession();
+                          }}
+                        >
+                          {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
+                        </button>
+                        <button className={styles.secondary} onClick={() => setConfirmFinish(false)}>
+                          Continuer ma séance
+                        </button>
+                        {totalSets > 0 && (
+                          <button
+                            className={styles.secondary}
+                            onClick={() => {
+                              update((s) => ({ ...s, active: null }));
+                              timer.stop();
+                              setConfirmFinish(false);
+                              setEditing(null);
+                              setSessionFeedbackOpen(false);
+                              setNotice("Séance quittée sans ajout à l’historique.");
+                            }}
+                          >
+                            Quitter sans enregistrer
+                          </button>
+                        )}
+                      </div>
+                    </>
+                  )}
                 </section>
               ) : null}
             </>
@@ -1267,6 +1495,28 @@ export function SportApp() {
             <>
               <div className={styles.pageHeading}>
                 <h1>Historique</h1>
+              </div>
+              <div
+                className={`${styles.segment} ${styles.historyFilters}`}
+                role="group"
+                aria-label="Filtrer les séances"
+              >
+                {(
+                  [
+                    ["all", "Tout"],
+                    ["mine", "Moi uniquement"],
+                    ["friends", "Mes amis"],
+                  ] as const
+                ).map(([filter, label]) => (
+                  <button
+                    key={filter}
+                    type="button"
+                    aria-pressed={historyFilter === filter}
+                    onClick={() => setHistoryFilter(filter)}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
               {detail && editHistory ? (
                 <HistoryEditor
@@ -1319,10 +1569,45 @@ export function SportApp() {
                       {detail.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)} séries
                       effectuées
                     </p>
+                    {detail.feedback?.photos && detail.feedback.photos.length > 0 && (
+                      <div className={styles.historyPhotoGallery} aria-label="Photos de la séance">
+                        {detail.feedback.photos.map((photo, index) => (
+                          <button
+                            key={photo}
+                            type="button"
+                            className={styles.historyPhotoButton}
+                            aria-label={`Agrandir la photo ${index + 1}`}
+                            onClick={() =>
+                              setPhotoViewer({ photos: detail.feedback?.photos ?? [], index })
+                            }
+                          >
+                            <img src={photo} alt={`Photo de la séance ${index + 1}`} />
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    {detailIsFriend && detailItem && (
+                      <SessionReactions
+                        ownerId={detailItem.ownerId}
+                        ownerName={detailItem.username}
+                        sessionId={detail.id}
+                      />
+                    )}
                     {detail.exercises.map((e) => (
                       <div className={styles.historyExercise} key={e.id}>
                         <div className={styles.sectionHeading}>
-                          <h3>{exerciseName(e.config.exerciseId)}</h3>
+                          <h3>
+                            {exerciseName(e.config.exerciseId)}
+                            {e.feedback && (
+                              <span
+                                className={`${styles.historyFeedback} ${feedbackColorClass(e.feedback.mood)}`}
+                                title={`Ressenti : ${e.feedback.mood}`}
+                                aria-label={`Ressenti : ${e.feedback.mood}`}
+                              >
+                                {feedbackEmojiByMood[e.feedback.mood]}
+                              </span>
+                            )}
+                          </h3>
                           <Star
                             selected={isFavorite(e.config)}
                             label={`Favori : ${exerciseName(e.config.exerciseId)}`}
@@ -1333,6 +1618,9 @@ export function SportApp() {
                           {equipmentLabels[e.config.equipment]} · repos prévu{" "}
                           {timeLabel(e.config.restSeconds)}
                         </p>
+                        {e.feedback?.comment.trim() && (
+                          <p className={styles.historyComment}>{e.feedback.comment}</p>
+                        )}
                         <ol>
                           {e.completedSets.map((set, i) => (
                             <li key={i}>
@@ -1430,7 +1718,23 @@ export function SportApp() {
                         >
                           @{item.username}
                         </span>
-                        <strong>{item.session.name || sessionLabels[item.session.kind]}</strong>
+                        <strong>
+                          {item.session.name || sessionLabels[item.session.kind]}
+                          {item.session.feedback && (
+                            <span
+                              className={`${styles.historyFeedback} ${feedbackColorClass(item.session.feedback.mood)}`}
+                              title={`Ressenti : ${item.session.feedback.mood}`}
+                              aria-label={`Ressenti : ${item.session.feedback.mood}`}
+                            >
+                              {feedbackEmojiByMood[item.session.feedback.mood]}
+                            </span>
+                          )}
+                        </strong>
+                        {item.session.feedback?.comment.trim() && (
+                          <span className={styles.historySummaryComment}>
+                            {item.session.feedback.comment}
+                          </span>
+                        )}
                         <span>
                           {item.session.exercises.length} exercices ·{" "}
                           {item.session.exercises.reduce(
@@ -1439,26 +1743,49 @@ export function SportApp() {
                           )}{" "}
                           séries
                         </span>
+                        {item.session.feedback?.photos && item.session.feedback.photos.length > 0 && (
+                          <span className={styles.historyThumbnails} aria-label="Photos de la séance">
+                            {item.session.feedback.photos.map((photo, index) => (
+                              <img
+                                key={photo}
+                                src={photo}
+                                alt={`Photo ${index + 1} de la séance`}
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  setPhotoViewer({
+                                    photos: item.session.feedback?.photos ?? [],
+                                    index,
+                                  });
+                                }}
+                              />
+                            ))}
+                          </span>
+                        )}
                       </span>
                       <span aria-hidden="true">→</span>
                     </button>
                   ))}
                 </div>
-              ) : friendHistoryLoading ? (
+              ) : friendHistoryLoading && historyFilter !== "mine" ? (
                 <p role="status" className={styles.emptySmall}>
                   Chargement des séances de vos amis…
                 </p>
               ) : (
                 <div className={styles.empty}>
                   <SportIcon />
-                  <h2>Le début de votre carnet</h2>
+                  <h2>
+                    {historyFilter === "friends" ? "Aucune séance d’ami" : "Le début de votre carnet"}
+                  </h2>
                   <p>
-                    Vos séances terminées apparaîtront ici, avec les exercices, les charges et les
-                    séries effectuées.
+                    {historyFilter === "friends"
+                      ? "Les séances de vos amis apparaîtront ici lorsqu’ils auront partagé un entraînement."
+                      : "Vos séances terminées apparaîtront ici, avec les exercices, les charges et les séries effectuées."}
                   </p>
-                  <button className={styles.primary} onClick={() => setTab("training")}>
-                    Commencer une séance
-                  </button>
+                  {historyFilter !== "friends" && (
+                    <button className={styles.primary} onClick={() => setTab("training")}>
+                      Commencer une séance
+                    </button>
+                  )}
                 </div>
               )}
             </>
@@ -1556,6 +1883,71 @@ export function SportApp() {
                 </p>
               )}
             </>
+          )}
+          {photoViewer && (
+            <div
+              className={styles.photoLightbox}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Photo agrandie"
+              onClick={() => setPhotoViewer(null)}
+            >
+              <button
+                type="button"
+                className={styles.photoLightboxClose}
+                aria-label="Fermer la photo"
+                autoFocus
+                onClick={() => setPhotoViewer(null)}
+              >
+                ×
+              </button>
+              <div className={styles.photoLightboxContent} onClick={(event) => event.stopPropagation()}>
+                {photoViewer.photos.length > 1 && (
+                  <button
+                    type="button"
+                    className={styles.photoLightboxNav}
+                    aria-label="Photo précédente"
+                    onClick={() =>
+                      setPhotoViewer((current) =>
+                        current
+                          ? {
+                              ...current,
+                              index:
+                                (current.index - 1 + current.photos.length) % current.photos.length,
+                            }
+                          : null,
+                      )
+                    }
+                  >
+                    ‹
+                  </button>
+                )}
+                <img
+                  className={styles.photoLightboxImage}
+                  src={photoViewer.photos[photoViewer.index]}
+                  alt={`Photo agrandie ${photoViewer.index + 1}`}
+                />
+                {photoViewer.photos.length > 1 && (
+                  <button
+                    type="button"
+                    className={styles.photoLightboxNav}
+                    aria-label="Photo suivante"
+                    onClick={() =>
+                      setPhotoViewer((current) =>
+                        current
+                          ? { ...current, index: (current.index + 1) % current.photos.length }
+                          : null,
+                      )
+                    }
+                  >
+                    ›
+                  </button>
+                )}
+              </div>
+              <p className={styles.photoLightboxCounter}>
+                {photoViewer.index + 1} / {photoViewer.photos.length}
+              </p>
+            </div>
           )}
         </>
       )}

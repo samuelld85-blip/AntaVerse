@@ -25,6 +25,10 @@ test("sport: automatic rest, discard, history editing and deletion", async ({ pa
   await expect(page.getByRole("button", { name: "Passer le repos" })).toBeVisible();
   await page.getByRole("button", { name: "Passer le repos" }).click();
   await page.getByRole("button", { name: "Dernière série terminée" }).click();
+  await expect(page.getByRole("heading", { name: /Comment s’est passé Développé couché/ })).toBeVisible();
+  await page.getByRole("button", { name: "Content", exact: true }).click();
+  await page.locator("textarea").fill("Bonne sensation sur la dernière série.");
+  await page.getByRole("button", { name: "Retourner à la liste des exercices", exact: true }).click();
   await page.getByRole("button", { name: "Terminer ma séance", exact: true }).click();
   await page.getByRole("button", { name: "Quitter sans enregistrer" }).click();
   await page.getByRole("button", { name: /^Historique/ }).click();
@@ -37,20 +41,53 @@ test("sport: automatic rest, discard, history editing and deletion", async ({ pa
   await page.getByLabel("Séries", { exact: true }).fill("1");
   await page.getByRole("button", { name: "Valider l’exercice" }).click();
   await page.getByRole("button", { name: "Dernière série terminée" }).click();
+  await page.getByRole("button", { name: "Content", exact: true }).click();
+  await page.getByRole("button", { name: "Retourner à la liste des exercices", exact: true }).click();
   await page.getByRole("button", { name: "Terminer ma séance", exact: true }).click();
   await page.getByRole("button", { name: "Enregistrer et terminer" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Comment s’est passée votre séance ?", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Content", exact: true }).click();
+  await page.locator('input[type="file"]').setInputFiles({
+    name: "session.png",
+    mimeType: "image/png",
+    buffer: Buffer.from(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+      "base64",
+    ),
+  });
+  await expect(page.getByAltText("Photo 1 ajoutée")).toBeVisible();
+  await page.getByRole("button", { name: "Enregistrer la séance", exact: true }).click();
+  await expect(page.getByAltText("Photo de la séance 1")).toBeVisible();
+  await page.getByRole("button", { name: "Agrandir la photo 1", exact: true }).click();
+  await expect(page.getByRole("dialog", { name: "Photo agrandie" })).toBeVisible();
+  await expect(page.getByRole("img", { name: "Photo agrandie 1", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Fermer la photo", exact: true }).click();
   await page.getByRole("button", { name: "Modifier cette séance" }).click();
   await page.getByLabel("Titre", { exact: true }).fill("Jambes du dimanche");
   await page.getByLabel(/^Charge série 1 /).fill("60");
   await page.getByLabel(/^Répétitions série 1 /).fill("8");
+  await expect(
+    page
+      .locator('fieldset')
+      .filter({ hasText: "Ressenti de la séance" })
+      .getByRole("button", { name: "Content", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page.locator("textarea").nth(0).fill("Séance bien enregistrée après coup.");
+  await page.locator("textarea").nth(1).fill("Bon contrôle sur le squat.");
   await page.getByRole("button", { name: "Enregistrer les modifications" }).click();
   await expect(
     page.getByRole("heading", { name: "Jambes du dimanche", exact: true }),
   ).toBeVisible();
   await expect(page.getByText("Barre · 60 kg · 8 rép.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Bon contrôle sur le squat.", { exact: true })).toBeVisible();
+  await expect(page.getByAltText("Photo de la séance 1")).toBeVisible();
+  await page.getByRole("button", { name: "Historique", exact: true }).click();
+  await expect(page.getByText("Séance bien enregistrée après coup.", { exact: true })).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("sport-edited-history.png"), fullPage: true });
   await page.reload();
-  await page.getByRole("button", { name: "Historique", exact: true }).click();
+  await page.getByRole("button", { name: /^Historique/ }).click();
   await page.getByRole("button", { name: /Jambes du dimanche/ }).click();
   await page.getByRole("button", { name: "Supprimer cette séance" }).click();
   await page.getByRole("button", { name: "Annuler", exact: true }).click();
@@ -109,6 +146,8 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
     .click();
   await page.getByRole("button", { name: "Passer le repos" }).click();
   await page.getByRole("button", { name: "Dernière série terminée" }).click();
+  await page.getByRole("button", { name: "Content", exact: true }).click();
+  await page.getByRole("button", { name: "Retourner à la liste des exercices", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Prochain exercice" })).toBeVisible();
   await page.getByRole("searchbox").fill("incliné");
   await page.getByRole("button", { name: "Développé incliné", exact: true }).click();
@@ -120,6 +159,8 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
   await page.getByRole("button", { name: "Arrêter cet exercice" }).click();
   await page.getByRole("button", { name: "Terminer ma séance", exact: true }).click();
   await page.getByRole("button", { name: "Enregistrer et terminer" }).click();
+  await page.getByRole("button", { name: "Moyen", exact: true }).click();
+  await page.getByRole("button", { name: "Enregistrer la séance", exact: true }).click();
   await expect(page.getByText("1 exercices · 3 séries effectuées")).toBeVisible();
   await expect(page.getByText("Barre · 40 kg", { exact: true })).toBeVisible();
   await expect(page.getByText("Barre · 45 kg", { exact: true })).toHaveCount(2);
@@ -174,6 +215,8 @@ test("sport: recommended sessions are preconfigured and advance automatically", 
     .click();
   await page.getByRole("button", { name: "Passer le repos", exact: true }).click();
   await page.getByRole("button", { name: "Dernière série terminée ✓", exact: true }).click();
+  await page.getByRole("button", { name: "Moyen", exact: true }).click();
+  await page.getByRole("button", { name: "Passer à l’exercice suivant", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Développé couché", exact: true })).toBeVisible();
   await expect(page.getByText("En cours", { exact: true })).toBeVisible();
 });
