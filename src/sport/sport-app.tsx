@@ -1323,6 +1323,21 @@ export function SportApp() {
                       )}
                     </div>
                     <div className={styles.workoutTools}>
+                      {!current.superset && (
+                        <button
+                          type="button"
+                          className={`${styles.pyramidToggle} ${current.pyramid ? styles.pyramidActive : ""}`}
+                          aria-pressed={current.pyramid}
+                          onClick={() =>
+                            updateEntry(current.id, (entry) => ({
+                              ...entry,
+                              pyramid: !entry.pyramid,
+                            }))
+                          }
+                        >
+                          Pyramidal
+                        </button>
+                      )}
                       <Star
                         selected={isFavorite(current.config)}
                         label="Configuration favorite"
@@ -1376,6 +1391,69 @@ export function SportApp() {
                         </label>
                       )}
                     </div>
+                    {current.pyramid && (
+                      <div
+                        className={styles.pyramidPanel}
+                        aria-label="Réglages de la prochaine série"
+                      >
+                        <p className={styles.eyebrow}>
+                          Pyramidal · série {completedRoundCount(current) + 1}
+                        </p>
+                        <div className={styles.pyramidFields}>
+                          <label className={styles.quickLoad}>
+                            <span>{loadInputLabel(current.config.equipment)}</span>
+                            <input
+                              aria-label={`Charge de la série ${completedRoundCount(current) + 1}`}
+                              type="number"
+                              inputMode="decimal"
+                              min={0}
+                              max={2000}
+                              step={0.25}
+                              value={current.config.loadKg}
+                              onChange={(event) => {
+                                const loadKg = Number(event.target.value);
+                                if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000) return;
+                                updateEntry(current.id, (entry) => ({
+                                  ...entry,
+                                  config: { ...entry.config, loadKg },
+                                }));
+                              }}
+                            />
+                          </label>
+                          <label className={styles.quickLoad}>
+                            <span>
+                              Répétitions <span className={styles.optional}>facultatif</span>
+                            </span>
+                            <input
+                              aria-label={`Répétitions de la série ${completedRoundCount(current) + 1}`}
+                              type="number"
+                              inputMode="numeric"
+                              min={1}
+                              max={200}
+                              step={1}
+                              placeholder="—"
+                              value={current.config.reps ?? ""}
+                              onChange={(event) => {
+                                const reps = event.target.value ? Number(event.target.value) : null;
+                                if (
+                                  reps !== null &&
+                                  (!Number.isInteger(reps) || reps < 1 || reps > 200)
+                                )
+                                  return;
+                                updateEntry(current.id, (entry) => ({
+                                  ...entry,
+                                  config: { ...entry.config, reps },
+                                }));
+                              }}
+                            />
+                          </label>
+                        </div>
+                        <p className={styles.hint}>
+                          Ces valeurs seront enregistrées sur la prochaine série. Ajustez-les avant
+                          chaque validation.
+                        </p>
+                      </div>
+                    )}
                     <div className={styles.timerRow}>
                       <div className={styles.timer}>
                         <span className={styles.timerLabel}>
@@ -1747,9 +1825,8 @@ export function SportApp() {
                           <div className={styles.sectionHeading}>
                             <h3>
                               {exerciseCountLabel(e)}
-                              {e.superset && (
-                                <span className={styles.historyFeedback}>Superset</span>
-                              )}
+                              {e.superset && <span className={styles.historyMode}>Superset</span>}
+                              {e.pyramid && <span className={styles.historyMode}>Pyramidal</span>}
                               {e.feedback && (
                                 <span
                                   className={`${styles.historyFeedback} ${feedbackColorClass(e.feedback.mood)}`}

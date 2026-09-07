@@ -930,6 +930,22 @@
   justify-content: flex-end;
   gap: 8px;
 }
+.pyramidToggle {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--sport-line);
+  border-radius: 10px;
+  color: var(--sport-cool);
+  background: var(--sport-surface);
+  font-size: 12px;
+  font-weight: 700;
+}
+.pyramidToggle:hover,
+.pyramidActive {
+  border-color: var(--sport-accent-line);
+  color: var(--sport-accent);
+  background: var(--sport-accent-soft);
+}
 .workoutFocus {
   margin-top: 18px;
 }
@@ -965,6 +981,24 @@
   color: var(--sport-ink);
   font-size: 16px;
   text-align: center;
+}
+.pyramidPanel {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid var(--sport-accent-line);
+  border-radius: 10px;
+  background: var(--sport-accent-soft);
+}
+.pyramidPanel .eyebrow {
+  margin: 0 0 10px;
+}
+.pyramidFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.pyramidPanel .hint {
+  margin-bottom: 0;
 }
 .star {
   display: flex;
@@ -1392,6 +1426,18 @@
   background: color-mix(in srgb, var(--feedback-color) 18%, transparent);
   font-size: 20px;
   vertical-align: 1px;
+}
+.historyMode {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 6px;
+  border: 1px solid var(--sport-accent-line);
+  border-radius: 5px;
+  color: var(--sport-accent);
+  background: var(--sport-accent-soft);
+  font-size: 11px;
+  font-weight: 700;
+  vertical-align: 3px;
 }
 .historyExercise ol {
   padding: 0;

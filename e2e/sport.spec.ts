@@ -42,6 +42,42 @@ test("sport: free sessions can record a superset as one exercise", async ({ page
   await expect(page.getByRole("heading", { name: /^Leg curl \+ Leg extension/ })).toBeVisible();
 });
 
+test("sport: pyramid mode keeps per-set load and repetitions", async ({ page }) => {
+  await page.goto("/sport/");
+  await startFreeSession(page);
+  await page.getByRole("button", { name: "Développé couché", exact: true }).click();
+  await page.getByLabel("Séries", { exact: true }).fill("3");
+  await page.getByLabel("Charge (kg)", { exact: true }).fill("50");
+  await page.getByLabel("Répétitions facultatif", { exact: true }).fill("12");
+  await page.getByRole("button", { name: "Valider l’exercice", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Série terminée · démarrer le repos", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Passer le repos", exact: true }).click();
+  await page.getByRole("button", { name: "Pyramidal", exact: true }).click();
+  await expect(page.locator('[aria-label="Réglages de la prochaine série"]')).toBeVisible();
+  await page.getByLabel("Charge de la série 2", { exact: true }).fill("55");
+  await page.getByLabel("Répétitions de la série 2", { exact: true }).fill("10");
+  await page
+    .getByRole("button", { name: "Série terminée · démarrer le repos", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Passer le repos", exact: true }).click();
+  await page.getByLabel("Charge de la série 3", { exact: true }).fill("55");
+  await page.getByLabel("Répétitions de la série 3", { exact: true }).fill("10");
+  await page.getByRole("button", { name: "Dernière série terminée ✓", exact: true }).click();
+  await page.getByRole("button", { name: "Content", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Retourner à la liste des exercices", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Terminer ma séance", exact: true }).click();
+  await page.getByRole("button", { name: "Enregistrer et terminer", exact: true }).click();
+  await page.getByRole("button", { name: "Content", exact: true }).click();
+  await page.getByRole("button", { name: "Enregistrer la séance", exact: true }).click();
+  await expect(page.getByText("Pyramidal", { exact: true })).toBeVisible();
+  await expect(page.getByText("Barre · 50 kg · 12 rép.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Barre · 55 kg · 10 rép.", { exact: true })).toHaveCount(2);
+});
+
 test("sport: automatic rest, discard, history editing and deletion", async ({ page }, testInfo) => {
   await page.goto("/sport/");
   await startFreeSession(page);

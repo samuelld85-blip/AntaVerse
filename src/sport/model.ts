@@ -39,6 +39,7 @@ const entrySchema = z
     id: z.string(),
     config: configSchema,
     superset: configSchema.optional(),
+    pyramid: z.boolean().default(false),
     completedSets: z.array(setSchema),
     completedRounds: z.number().int().min(0).max(30).default(0),
     finished: z.boolean(),
@@ -46,7 +47,8 @@ const entrySchema = z
   })
   .refine((e) => e.completedRounds <= e.config.sets)
   .refine((e) => e.completedSets.length <= e.config.sets * (e.superset ? 2 : 1))
-  .refine((e) => !e.superset || e.completedSets.length === e.completedRounds * 2);
+  .refine((e) => !e.superset || e.completedSets.length === e.completedRounds * 2)
+  .refine((e) => !e.superset || !e.pyramid);
 export type ExerciseEntry = z.infer<typeof entrySchema>;
 export type SessionTemplateExercise = {
   config: ExerciseConfig;
@@ -105,6 +107,7 @@ export const createEntry = (config: ExerciseConfig, superset?: ExerciseConfig): 
   id: crypto.randomUUID(),
   config: { ...config },
   ...(superset ? { superset: { ...superset } } : {}),
+  pyramid: false,
   completedSets: [],
   completedRounds: 0,
   finished: false,

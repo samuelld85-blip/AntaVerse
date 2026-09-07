@@ -53,6 +53,26 @@ describe("sport training log", () => {
     expect(entry.completedSets).toHaveLength(4);
     expect(entry.finished).toBe(true);
   });
+  it("keeps pyramid load and repetition changes on each completed set", () => {
+    let entry = createEntry({
+      ...defaultConfig("bench-press"),
+      sets: 4,
+      loadKg: 50,
+      reps: 12,
+    });
+    entry = completeSet(entry, "2026-09-07T10:00:00.000Z");
+    entry = {
+      ...entry,
+      pyramid: true,
+      config: { ...entry.config, loadKg: 55, reps: 10 },
+    };
+    entry = completeSet(entry, "2026-09-07T10:03:00.000Z");
+    expect(entry.completedSets.map((set) => [set.loadKg, set.reps])).toEqual([
+      [50, 12],
+      [55, 10],
+    ]);
+    expect(entry.completedRounds).toBe(2);
+  });
   it("finishes a partial session with only performed work and leaves the source untouched", () => {
     const session = createSession("push", [
       defaultConfig("bench-press"),

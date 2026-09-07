@@ -319,6 +319,7 @@ export function HistoryEditor({
                   .map((config) => exercises.find((ex) => ex.id === config.exerciseId)!.name)
                   .join(" + ")}
                 {entry.superset ? " · Superset" : ""}
+                {entry.pyramid ? " · Pyramidal" : ""}
               </legend>
               <div className={styles.restInputs}>
                 <label>
