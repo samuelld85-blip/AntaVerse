@@ -9,6 +9,7 @@ import {
 } from "./catalog";
 import {
   completeSet,
+  setExerciseId,
   createEntry,
   defaultConfig,
   type ExerciseFeedback,
@@ -59,8 +60,8 @@ export function HistoryEditor({
   const [sessionPhotos, setSessionPhotos] = useState<string[]>(session.feedback?.photos ?? []);
   const [photoError, setPhotoError] = useState("");
   const [photoBusy, setPhotoBusy] = useState(false);
-  const [entryMoods, setEntryMoods] = useState<Record<string, ExerciseFeedback["mood"] | "">>(
-    () => Object.fromEntries(session.exercises.map((entry) => [entry.id, entry.feedback?.mood ?? ""])),
+  const [entryMoods, setEntryMoods] = useState<Record<string, ExerciseFeedback["mood"] | "">>(() =>
+    Object.fromEntries(session.exercises.map((entry) => [entry.id, entry.feedback?.mood ?? ""])),
   );
   const [entryComments, setEntryComments] = useState<Record<string, string>>(() =>
     Object.fromEntries(session.exercises.map((entry) => [entry.id, entry.feedback?.comment ?? ""])),
@@ -104,7 +105,9 @@ export function HistoryEditor({
           setError("");
           const trimmedSessionComment = sessionComment.trim();
           if (!sessionMood && (trimmedSessionComment || sessionPhotos.length)) {
-            setError("Sélectionnez un ressenti pour enregistrer le commentaire ou les photos de la séance.");
+            setError(
+              "Sélectionnez un ressenti pour enregistrer le commentaire ou les photos de la séance.",
+            );
             return;
           }
           const exerciseFeedback = entries.map((entry) => {
@@ -148,22 +151,46 @@ export function HistoryEditor({
                   ? Number(form.get(`${entry.id}-${i}-reps`))
                   : null,
               }));
-              const last = completedSets.at(-1)!;
+              const lastFor = (config: typeof entry.config) =>
+                [...completedSets]
+                  .reverse()
+                  .find((set) => setExerciseId(entry, set) === config.exerciseId) ??
+                completedSets.at(-1)!;
+              const configWithLastSet = (config: typeof entry.config) => {
+                const last = lastFor(config);
+                return {
+                  ...config,
+                  equipment: last.equipment,
+                  loadKg: last.loadKg,
+                  reps: last.reps,
+                };
+              };
+              const rounds = entry.superset
+                ? Math.floor(completedSets.length / 2)
+                : completedSets.length;
+              const restSeconds =
+                Number(form.get(`${entry.id}-minutes`)) * 60 +
+                Number(form.get(`${entry.id}-seconds`));
               return {
                 ...entry,
                 feedback,
                 completedSets,
+                completedRounds: rounds,
                 finished: true,
                 config: {
-                  ...entry.config,
-                  equipment: last.equipment,
-                  loadKg: last.loadKg,
-                  reps: last.reps,
-                  sets: completedSets.length,
-                  restSeconds:
-                    Number(form.get(`${entry.id}-minutes`)) * 60 +
-                    Number(form.get(`${entry.id}-seconds`)),
+                  ...configWithLastSet(entry.config),
+                  sets: rounds,
+                  restSeconds,
                 },
+                ...(entry.superset
+                  ? {
+                      superset: {
+                        ...configWithLastSet(entry.superset),
+                        sets: rounds,
+                        restSeconds,
+                      },
+                    }
+                  : {}),
               };
             }),
           };
@@ -216,7 +243,9 @@ export function HistoryEditor({
                 type="button"
                 className={`${styles.feedbackOption} ${feedbackColorClass(option.mood)}`}
                 aria-pressed={sessionMood === option.mood}
-                onClick={() => setSessionMood((current) => (current === option.mood ? "" : option.mood))}
+                onClick={() =>
+                  setSessionMood((current) => (current === option.mood ? "" : option.mood))
+                }
               >
                 <span className={styles.feedbackEmoji} aria-hidden="true">
                   {option.emoji}
@@ -269,7 +298,9 @@ export function HistoryEditor({
                     <button
                       type="button"
                       className={styles.photoRemove}
-                      onClick={() => setSessionPhotos((current) => current.filter((_, i) => i !== index))}
+                      onClick={() =>
+                        setSessionPhotos((current) => current.filter((_, i) => i !== index))
+                      }
                     >
                       Retirer
                     </button>
@@ -279,175 +310,218 @@ export function HistoryEditor({
             )}
           </div>
         </fieldset>
-        {entries.map((entry) => (
-          <fieldset key={entry.id} className={styles.editExercise}>
-            <legend>{exercises.find((ex) => ex.id === entry.config.exerciseId)!.name}</legend>
-            <div className={styles.restInputs}>
-              <label>
-                Minutes de repos
-                <input
-                  aria-label={`Minutes de repos ${entry.id}`}
-                  name={`${entry.id}-minutes`}
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  max={30}
-                  defaultValue={Math.floor(entry.config.restSeconds / 60)}
-                  required
-                />
-              </label>
-              <label>
-                Secondes de repos
-                <input
-                  aria-label={`Secondes de repos ${entry.id}`}
-                  name={`${entry.id}-seconds`}
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  max={59}
-                  defaultValue={String(entry.config.restSeconds % 60).padStart(2, "0")}
-                  required
-                />
-              </label>
-            </div>
-            {entry.completedSets.map((set, i) => (
-              <div className={styles.editSet} key={i}>
-                <span>Série {i + 1}</span>
-                <label className={styles.field}>
-                  Matériel
-                  <select
-                    aria-label={`Matériel série ${i + 1} ${entry.id}`}
-                    name={`${entry.id}-${i}-equipment`}
-                    defaultValue={set.equipment}
-                  >
-                    {exercises
-                      .find((ex) => ex.id === entry.config.exerciseId)!
-                      .equipment.map((e) => (
-                        <option key={e} value={e}>
-                          {equipmentLabels[e]}
-                        </option>
-                      ))}
-                  </select>
-                </label>
-                <label className={styles.field}>
-                  Charge (kg)
+        {entries.map((entry) => {
+          const entryConfigs = [entry.config, ...(entry.superset ? [entry.superset] : [])];
+          return (
+            <fieldset key={entry.id} className={styles.editExercise}>
+              <legend>
+                {entryConfigs
+                  .map((config) => exercises.find((ex) => ex.id === config.exerciseId)!.name)
+                  .join(" + ")}
+                {entry.superset ? " · Superset" : ""}
+              </legend>
+              <div className={styles.restInputs}>
+                <label>
+                  Minutes de repos
                   <input
-                    aria-label={`Charge série ${i + 1} ${entry.id}`}
-                    name={`${entry.id}-${i}-load`}
+                    aria-label={`Minutes de repos ${entry.id}`}
+                    name={`${entry.id}-minutes`}
                     type="number"
-                    inputMode="decimal"
+                    inputMode="numeric"
                     min={0}
-                    max={2000}
-                    step={0.25}
-                    defaultValue={set.loadKg}
+                    max={30}
+                    defaultValue={Math.floor(entry.config.restSeconds / 60)}
                     required
                   />
                 </label>
-                <label className={styles.field}>
-                  Rép. (facultatif)
+                <label>
+                  Secondes de repos
                   <input
-                    aria-label={`Répétitions série ${i + 1} ${entry.id}`}
-                    name={`${entry.id}-${i}-reps`}
+                    aria-label={`Secondes de repos ${entry.id}`}
+                    name={`${entry.id}-seconds`}
                     type="number"
                     inputMode="numeric"
-                    min={1}
-                    max={200}
-                    defaultValue={set.reps ?? ""}
+                    min={0}
+                    max={59}
+                    defaultValue={String(entry.config.restSeconds % 60).padStart(2, "0")}
+                    required
                   />
                 </label>
               </div>
-            ))}
-            <p className={styles.hint}>
-              Haltères : kg par haltère. Poids du corps : kg de lest ajouté.
-            </p>
-            <fieldset className={styles.editFeedback}>
-              <legend>Ressenti de l’exercice</legend>
-              <div className={styles.feedbackOptions}>
-                {feedbackOptions.map((option) => (
-                  <button
-                    key={option.mood}
-                    type="button"
-                    className={`${styles.feedbackOption} ${feedbackColorClass(option.mood)}`}
-                    aria-pressed={(entryMoods[entry.id] ?? entry.feedback?.mood ?? "") === option.mood}
-                    onClick={() =>
-                      setEntryMoods((current) => ({
+              {entry.completedSets.map((set, i) => {
+                const setConfig =
+                  entryConfigs.find((config) => config.exerciseId === setExerciseId(entry, set)) ??
+                  entry.config;
+                const setLabel = entry.superset
+                  ? `${exercises.find((ex) => ex.id === setConfig.exerciseId)!.name} · tour ${Math.floor(i / 2) + 1}`
+                  : `Série ${i + 1}`;
+                return (
+                  <div className={styles.editSet} key={i}>
+                    <span>{setLabel}</span>
+                    <label className={styles.field}>
+                      Matériel
+                      <select
+                        aria-label={`Matériel série ${i + 1} ${entry.id}`}
+                        name={`${entry.id}-${i}-equipment`}
+                        defaultValue={set.equipment}
+                      >
+                        {exercises
+                          .find((ex) => ex.id === setConfig.exerciseId)!
+                          .equipment.map((e) => (
+                            <option key={e} value={e}>
+                              {equipmentLabels[e]}
+                            </option>
+                          ))}
+                      </select>
+                    </label>
+                    <label className={styles.field}>
+                      Charge (kg)
+                      <input
+                        aria-label={`Charge série ${i + 1} ${entry.id}`}
+                        name={`${entry.id}-${i}-load`}
+                        type="number"
+                        inputMode="decimal"
+                        min={0}
+                        max={2000}
+                        step={0.25}
+                        defaultValue={set.loadKg}
+                        required
+                      />
+                    </label>
+                    <label className={styles.field}>
+                      Rép. (facultatif)
+                      <input
+                        aria-label={`Répétitions série ${i + 1} ${entry.id}`}
+                        name={`${entry.id}-${i}-reps`}
+                        type="number"
+                        inputMode="numeric"
+                        min={1}
+                        max={200}
+                        defaultValue={set.reps ?? ""}
+                      />
+                    </label>
+                  </div>
+                );
+              })}
+              <p className={styles.hint}>
+                Haltères : kg par haltère. Poids du corps : kg de lest ajouté.
+              </p>
+              <fieldset className={styles.editFeedback}>
+                <legend>Ressenti de l’exercice</legend>
+                <div className={styles.feedbackOptions}>
+                  {feedbackOptions.map((option) => (
+                    <button
+                      key={option.mood}
+                      type="button"
+                      className={`${styles.feedbackOption} ${feedbackColorClass(option.mood)}`}
+                      aria-pressed={
+                        (entryMoods[entry.id] ?? entry.feedback?.mood ?? "") === option.mood
+                      }
+                      onClick={() =>
+                        setEntryMoods((current) => ({
+                          ...current,
+                          [entry.id]: current[entry.id] === option.mood ? "" : option.mood,
+                        }))
+                      }
+                    >
+                      <span className={styles.feedbackEmoji} aria-hidden="true">
+                        {option.emoji}
+                      </span>
+                      <span>{option.label}</span>
+                    </button>
+                  ))}
+                </div>
+                <label className={`${styles.field} ${styles.feedbackComment}`}>
+                  <span>
+                    Commentaire <span className={styles.feedbackOptional}>(facultatif)</span>
+                  </span>
+                  <textarea
+                    value={entryComments[entry.id] ?? entry.feedback?.comment ?? ""}
+                    onChange={(event) =>
+                      setEntryComments((current) => ({
                         ...current,
-                        [entry.id]: current[entry.id] === option.mood ? "" : option.mood,
+                        [entry.id]: event.target.value,
                       }))
                     }
-                  >
-                    <span className={styles.feedbackEmoji} aria-hidden="true">
-                      {option.emoji}
-                    </span>
-                    <span>{option.label}</span>
-                  </button>
-                ))}
-              </div>
-              <label className={`${styles.field} ${styles.feedbackComment}`}>
-                <span>
-                  Commentaire <span className={styles.feedbackOptional}>(facultatif)</span>
-                </span>
-                <textarea
-                  value={entryComments[entry.id] ?? entry.feedback?.comment ?? ""}
-                  onChange={(event) =>
-                    setEntryComments((current) => ({ ...current, [entry.id]: event.target.value }))
-                  }
-                  maxLength={1000}
-                  rows={3}
-                  placeholder="Une remarque sur l’exercice ?"
-                />
-              </label>
-            </fieldset>
-            <div className={styles.actions}>
-              <button
-                type="button"
-                className={styles.textButton}
-                disabled={entry.completedSets.length >= 30}
-                onClick={() =>
-                  setEntries((items) =>
-                    items.map((item) =>
-                      item.id === entry.id
-                        ? {
-                            ...item,
-                            completedSets: [
-                              ...item.completedSets,
-                              { ...item.completedSets.at(-1)! },
-                            ],
-                          }
-                        : item,
-                    ),
-                  )
-                }
-              >
-                Ajouter une série
-              </button>
-              {entry.completedSets.length > 1 && (
+                    maxLength={1000}
+                    rows={3}
+                    placeholder="Une remarque sur l’exercice ?"
+                  />
+                </label>
+              </fieldset>
+              <div className={styles.actions}>
                 <button
                   type="button"
                   className={styles.textButton}
+                  disabled={
+                    entry.completedSets.length >= entry.config.sets * (entry.superset ? 2 : 1)
+                  }
                   onClick={() =>
                     setEntries((items) =>
                       items.map((item) =>
                         item.id === entry.id
-                          ? { ...item, completedSets: item.completedSets.slice(0, -1) }
+                          ? {
+                              ...item,
+                              completedSets: item.superset
+                                ? [
+                                    ...item.completedSets,
+                                    ...[item.config, item.superset].map((config) => ({
+                                      ...([...item.completedSets]
+                                        .reverse()
+                                        .find(
+                                          (set) => setExerciseId(item, set) === config.exerciseId,
+                                        ) ?? item.completedSets.at(-1)!),
+                                      exerciseId: config.exerciseId,
+                                    })),
+                                  ]
+                                : [...item.completedSets, { ...item.completedSets.at(-1)! }],
+                              completedRounds: item.superset
+                                ? item.completedRounds + 1
+                                : item.completedSets.length + 1,
+                            }
                           : item,
                       ),
                     )
                   }
                 >
-                  Retirer la dernière série
+                  Ajouter une série
                 </button>
-              )}
-              <button
-                type="button"
-                className={styles.textButton}
-                onClick={() => setEntries((items) => items.filter((item) => item.id !== entry.id))}
-              >
-                Retirer l’exercice
-              </button>
-            </div>
-          </fieldset>
-        ))}
+                {entry.completedSets.length > (entry.superset ? 2 : 1) && (
+                  <button
+                    type="button"
+                    className={styles.textButton}
+                    onClick={() =>
+                      setEntries((items) =>
+                        items.map((item) =>
+                          item.id === entry.id
+                            ? {
+                                ...item,
+                                completedSets: item.completedSets.slice(0, item.superset ? -2 : -1),
+                                completedRounds: item.superset
+                                  ? Math.max(0, item.completedRounds - 1)
+                                  : item.completedSets.length - 1,
+                              }
+                            : item,
+                        ),
+                      )
+                    }
+                  >
+                    Retirer la dernière série
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className={styles.textButton}
+                  onClick={() =>
+                    setEntries((items) => items.filter((item) => item.id !== entry.id))
+                  }
+                >
+                  Retirer l’exercice
+                </button>
+              </div>
+            </fieldset>
+          );
+        })}
         <label className={styles.field}>
           Ajouter un exercice effectué
           <select value={addId} onChange={(e) => setAddId(e.target.value)}>

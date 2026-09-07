@@ -17,6 +17,10 @@ const configSchema = z
 export type ExerciseConfig = z.infer<typeof configSchema>;
 const setSchema = z.object({
   completedAt: z.string().datetime(),
+  exerciseId: z
+    .string()
+    .refine((id) => exercises.some((ex) => ex.id === id))
+    .optional(),
   equipment: z.enum(["barbell", "dumbbell", "machine", "cable", "bodyweight"]),
   loadKg: z.number().min(0).max(2000),
   reps: z.number().int().min(1).max(200).nullable(),
@@ -34,12 +38,24 @@ const entrySchema = z
   .object({
     id: z.string(),
     config: configSchema,
+    superset: configSchema.optional(),
     completedSets: z.array(setSchema),
+    completedRounds: z.number().int().min(0).max(30).default(0),
     finished: z.boolean(),
     feedback: exerciseFeedbackSchema.optional(),
   })
-  .refine((e) => e.completedSets.length <= e.config.sets);
+  .refine((e) => e.completedRounds <= e.config.sets)
+  .refine((e) => e.completedSets.length <= e.config.sets * (e.superset ? 2 : 1))
+  .refine((e) => !e.superset || e.completedSets.length === e.completedRounds * 2);
 export type ExerciseEntry = z.infer<typeof entrySchema>;
+export type SessionTemplateExercise = {
+  config: ExerciseConfig;
+  superset?: ExerciseConfig;
+};
+const templateExerciseSchema = z.union([
+  configSchema.transform((config): SessionTemplateExercise => ({ config })),
+  z.object({ config: configSchema, superset: configSchema.optional() }),
+]);
 const kindSchema = z.enum(["full", "half", "ppl", "upper", "lower", "push", "pull", "legs"]);
 const sessionSchema = z.object({
   id: z.string(),
@@ -62,7 +78,7 @@ export const storeSchema = z.object({
       id: z.string(),
       name: z.string(),
       kind: kindSchema,
-      exercises: z.array(configSchema),
+      exercises: z.array(templateExerciseSchema),
     }),
   ),
 });
@@ -85,10 +101,12 @@ export const defaultConfig = (id: string): ExerciseConfig => ({
   loadKg: 0,
   reps: null,
 });
-export const createEntry = (config: ExerciseConfig): ExerciseEntry => ({
+export const createEntry = (config: ExerciseConfig, superset?: ExerciseConfig): ExerciseEntry => ({
   id: crypto.randomUUID(),
   config: { ...config },
+  ...(superset ? { superset: { ...superset } } : {}),
   completedSets: [],
+  completedRounds: 0,
   finished: false,
 });
 export const createSession = (
@@ -103,21 +121,35 @@ export const createSession = (
   kind,
   startedAt: new Date().toISOString(),
   endedAt: null,
-  exercises: configs.map(createEntry),
+  exercises: configs.map((config) => createEntry(config)),
 });
 export function completeSet(entry: ExerciseEntry, now = new Date().toISOString()): ExerciseEntry {
-  if (entry.finished || entry.completedSets.length >= entry.config.sets) return entry;
+  const completedRounds = entry.superset ? entry.completedRounds : entry.completedSets.length;
+  if (entry.finished || completedRounds >= entry.config.sets) return entry;
+  const snapshot = (config: ExerciseConfig) => ({
+    completedAt: now,
+    exerciseId: config.exerciseId,
+    equipment: config.equipment,
+    loadKg: config.loadKg,
+    reps: config.reps,
+  });
   const completedSets = [
     ...entry.completedSets,
-    {
-      completedAt: now,
-      equipment: entry.config.equipment,
-      loadKg: entry.config.loadKg,
-      reps: entry.config.reps,
-    },
+    snapshot(entry.config),
+    ...(entry.superset ? [snapshot(entry.superset)] : []),
   ];
-  return { ...entry, completedSets, finished: completedSets.length === entry.config.sets };
+  const nextRounds = completedRounds + 1;
+  return {
+    ...entry,
+    completedSets,
+    completedRounds: nextRounds,
+    finished: nextRounds === entry.config.sets,
+  };
 }
+export const completedRoundCount = (entry: ExerciseEntry) =>
+  entry.superset ? entry.completedRounds : entry.completedSets.length;
+export const setExerciseId = (entry: ExerciseEntry, set: ExerciseEntry["completedSets"][number]) =>
+  set.exerciseId ?? entry.config.exerciseId;
 export function finishSession(session: Session): Session {
   return {
     ...session,

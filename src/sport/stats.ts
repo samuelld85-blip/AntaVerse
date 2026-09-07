@@ -1,5 +1,5 @@
 import { exercises, muscleLabels, sessionLabels, type Muscle } from "./catalog";
-import type { Session } from "./model";
+import { setExerciseId, type Session } from "./model";
 
 export type StatsRange = "30d" | "90d" | "all";
 
@@ -71,11 +71,7 @@ export function formatVolume(volume: number) {
   return `${formatStatNumber(volume)} kg`;
 }
 
-export function getSportStats(
-  history: Session[],
-  range: StatsRange,
-  now = new Date(),
-): SportStats {
+export function getSportStats(history: Session[], range: StatsRange, now = new Date()): SportStats {
   const sessions = history
     .filter((session) => inRange(session, range, now))
     .sort((a, b) => new Date(a.startedAt).getTime() - new Date(b.startedAt).getTime());
@@ -88,35 +84,44 @@ export function getSportStats(
   for (const session of sessions) {
     kindMap.set(session.kind, (kindMap.get(session.kind) ?? 0) + 1);
     for (const entry of session.exercises) {
-      const exercise = exercises.find((item) => item.id === entry.config.exerciseId);
-      if (!exercise || !entry.completedSets.length) continue;
-      const existing = exerciseMap.get(exercise.id) ?? {
-        exerciseId: exercise.id,
-        name: exercise.name,
-        sessions: 0,
-        sets: 0,
-        volume: 0,
-        bestLoad: 0,
-        bestEstimated1Rm: null,
-        equipment: new Set<string>(),
-      };
-      existing.sessions += 1;
+      const setsByExercise = new Map<string, typeof entry.completedSets>();
       for (const set of entry.completedSets) {
-        setCount += 1;
-        existing.sets += 1;
-        existing.bestLoad = Math.max(existing.bestLoad, set.loadKg);
-        existing.equipment.add(set.equipment);
-        const setVolume = set.reps ? set.loadKg * set.reps : 0;
-        volume += setVolume;
-        existing.volume += setVolume;
-        const oneRm = estimated1Rm(set.loadKg, set.reps);
-        if (oneRm !== null)
-          existing.bestEstimated1Rm = Math.max(existing.bestEstimated1Rm ?? 0, oneRm);
-        muscleMap.set(exercise.primary, (muscleMap.get(exercise.primary) ?? 0) + 1);
-        for (const muscle of exercise.secondary)
-          muscleMap.set(muscle, (muscleMap.get(muscle) ?? 0) + 0.5);
+        const exerciseId = setExerciseId(entry, set);
+        const exerciseSets = setsByExercise.get(exerciseId) ?? [];
+        exerciseSets.push(set);
+        setsByExercise.set(exerciseId, exerciseSets);
       }
-      exerciseMap.set(exercise.id, existing);
+      for (const [exerciseId, exerciseSets] of setsByExercise) {
+        const exercise = exercises.find((item) => item.id === exerciseId);
+        if (!exercise) continue;
+        const existing = exerciseMap.get(exercise.id) ?? {
+          exerciseId: exercise.id,
+          name: exercise.name,
+          sessions: 0,
+          sets: 0,
+          volume: 0,
+          bestLoad: 0,
+          bestEstimated1Rm: null,
+          equipment: new Set<string>(),
+        };
+        existing.sessions += 1;
+        for (const set of exerciseSets) {
+          setCount += 1;
+          existing.sets += 1;
+          existing.bestLoad = Math.max(existing.bestLoad, set.loadKg);
+          existing.equipment.add(set.equipment);
+          const setVolume = set.reps ? set.loadKg * set.reps : 0;
+          volume += setVolume;
+          existing.volume += setVolume;
+          const oneRm = estimated1Rm(set.loadKg, set.reps);
+          if (oneRm !== null)
+            existing.bestEstimated1Rm = Math.max(existing.bestEstimated1Rm ?? 0, oneRm);
+          muscleMap.set(exercise.primary, (muscleMap.get(exercise.primary) ?? 0) + 1);
+          for (const muscle of exercise.secondary)
+            muscleMap.set(muscle, (muscleMap.get(muscle) ?? 0) + 0.5);
+        }
+        exerciseMap.set(exercise.id, existing);
+      }
     }
   }
 
@@ -141,14 +146,16 @@ export function getSportStats(
     volume,
     exerciseCount: exerciseMap.size,
     sessionsByKind: Array.from(kindMap, ([kind, count]) => ({ kind, count })).sort(
-      (a, b) => b.count - a.count || sessionLabels[a.kind].localeCompare(sessionLabels[b.kind], "fr"),
+      (a, b) =>
+        b.count - a.count || sessionLabels[a.kind].localeCompare(sessionLabels[b.kind], "fr"),
     ),
     weeklySessions,
     topExercises: Array.from(exerciseMap.values()).sort(
       (a, b) => b.sessions - a.sessions || b.sets - a.sets || a.name.localeCompare(b.name, "fr"),
     ),
     muscles: Array.from(muscleMap, ([muscle, sets]) => ({ muscle, sets })).sort(
-      (a, b) => b.sets - a.sets || muscleLabels[a.muscle].localeCompare(muscleLabels[b.muscle], "fr"),
+      (a, b) =>
+        b.sets - a.sets || muscleLabels[a.muscle].localeCompare(muscleLabels[b.muscle], "fr"),
     ),
   };
 }
@@ -156,9 +163,9 @@ export function getSportStats(
 export function getExerciseProgress(history: Session[], exerciseId: string): ProgressPoint[] {
   return history
     .map((session) => {
-      const entries = session.exercises.filter((entry) => entry.config.exerciseId === exerciseId);
-      if (!entries.length) return null;
-      const sets = entries.flatMap((entry) => entry.completedSets);
+      const sets = session.exercises.flatMap((entry) =>
+        entry.completedSets.filter((set) => setExerciseId(entry, set) === exerciseId),
+      );
       if (!sets.length) return null;
       const estimated = sets
         .map((set) => estimated1Rm(set.loadKg, set.reps))

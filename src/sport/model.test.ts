@@ -37,6 +37,22 @@ describe("sport training log", () => {
     ]);
     expect(completeSet(entry)).toBe(entry);
   });
+  it("records a superset as one entry with two sets per completed round", () => {
+    let entry = createEntry(
+      { ...defaultConfig("leg-curl"), sets: 2, loadKg: 30, reps: 10 },
+      { ...defaultConfig("leg-extension"), sets: 2, loadKg: 25, reps: 12 },
+    );
+    entry = completeSet(entry, "2026-09-07T10:00:00.000Z");
+    expect(entry.completedRounds).toBe(1);
+    expect(entry.completedSets.map((set) => [set.exerciseId, set.loadKg])).toEqual([
+      ["leg-curl", 30],
+      ["leg-extension", 25],
+    ]);
+    entry = completeSet(entry, "2026-09-07T10:03:00.000Z");
+    expect(entry.completedRounds).toBe(2);
+    expect(entry.completedSets).toHaveLength(4);
+    expect(entry.finished).toBe(true);
+  });
   it("finishes a partial session with only performed work and leaves the source untouched", () => {
     const session = createSession("push", [
       defaultConfig("bench-press"),
@@ -124,7 +140,9 @@ describe("recommended workouts", () => {
   it("covers every format and duration with the right editable workout options", () => {
     expect(recommendedWorkouts).toHaveLength(21);
     for (const kind of ["full", "half", "ppl"] as const) {
-      for (const duration of Object.keys(workoutDurations) as Array<keyof typeof workoutDurations>) {
+      for (const duration of Object.keys(workoutDurations) as Array<
+        keyof typeof workoutDurations
+      >) {
         expect(recommendedWorkoutsFor(kind, duration)).toHaveLength(kind === "ppl" ? 3 : 2);
       }
     }
@@ -133,9 +151,7 @@ describe("recommended workouts", () => {
     for (const workout of recommendedWorkouts) {
       const configs = configsForRecommendedWorkout(workout);
       expect(configs).toHaveLength(workout.exercises.length);
-      expect(
-        storeSchema.safeParse({ ...emptyStore(), favorites: configs }).success,
-      ).toBe(true);
+      expect(storeSchema.safeParse({ ...emptyStore(), favorites: configs }).success).toBe(true);
       expect(configs.every((config) => config.loadKg === 0)).toBe(true);
     }
   });

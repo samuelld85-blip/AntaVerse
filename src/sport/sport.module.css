@@ -1069,6 +1069,14 @@
 .actions > * {
   flex: 1;
 }
+.configActions {
+  flex-direction: column;
+  align-items: stretch;
+}
+.configActions > * {
+  width: 100%;
+  flex: none;
+}
 .actions .secondary {
   min-width: 100px;
 }

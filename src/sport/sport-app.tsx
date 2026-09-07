@@ -28,6 +28,7 @@ import {
 } from "./catalog";
 import {
   completeSet,
+  completedRoundCount,
   configKey,
   createEntry,
   createSession,
@@ -37,6 +38,8 @@ import {
   saveStore,
   storeSchema,
   timeLabel,
+  type SessionTemplateExercise,
+  setExerciseId,
   type ExerciseConfig,
   type ExerciseEntry,
   type ExerciseFeedback,
@@ -282,11 +285,15 @@ function ConfigForm({
   minimumSets = 1,
   onSubmit,
   onCancel,
+  onAddSuperset,
+  heading,
 }: {
   initial: ExerciseConfig;
   minimumSets?: number;
   onSubmit: (config: ExerciseConfig) => void;
   onCancel: () => void;
+  onAddSuperset?: (config: ExerciseConfig) => void;
+  heading?: string;
 }) {
   const [equipment, setEquipment] = useState(initial.equipment);
   const [formError, setFormError] = useState("");
@@ -294,11 +301,13 @@ function ConfigForm({
   return (
     <section className={styles.panel} aria-label="Configuration de l’exercice">
       <p className={styles.eyebrow}>{exercise.region}</p>
-      <h2>{exercise.name}</h2>
+      <h2>{heading ?? exercise.name}</h2>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          const values = new FormData(event.currentTarget);
+          const form = event.currentTarget;
+          if (!form.reportValidity()) return;
+          const values = new FormData(form);
           const restSeconds =
             Number(values.get("restMinutes")) * 60 + Number(values.get("restSeconds"));
           if (restSeconds < 5 || restSeconds > 1800) {
@@ -404,18 +413,50 @@ function ConfigForm({
                 ? "Indiquez le poids d’un seul haltère."
                 : "Indiquez la charge affichée sur la machine ou la poulie."}
         </p>
+        {heading && (
+          <p className={styles.hint}>
+            Le nombre de séries et le repos seront partagés avec le premier exercice.
+          </p>
+        )}
         {formError && (
           <p className={styles.error} role="alert">
             {formError}
           </p>
         )}
-        <div className={styles.actions}>
+        <div className={`${styles.actions} ${styles.configActions}`}>
           <button className={styles.primary} type="submit">
             {minimumSets > 1 ? "Appliquer aux prochaines séries" : "Valider l’exercice"}
           </button>
           <button className={styles.secondary} type="button" onClick={onCancel}>
             Annuler
           </button>
+          {onAddSuperset && (
+            <button
+              className={styles.secondary}
+              type="button"
+              onClick={(event) => {
+                const form = event.currentTarget.form;
+                if (!form?.reportValidity()) return;
+                const values = new FormData(form);
+                const restSeconds =
+                  Number(values.get("restMinutes")) * 60 + Number(values.get("restSeconds"));
+                if (restSeconds < 5 || restSeconds > 1800) {
+                  setFormError("Choisissez un repos entre 0:05 et 30:00.");
+                  return;
+                }
+                onAddSuperset({
+                  exerciseId: initial.exerciseId,
+                  equipment,
+                  sets: Number(values.get("sets")),
+                  restSeconds,
+                  loadKg: Number(values.get("load")),
+                  reps: values.get("reps") ? Number(values.get("reps")) : null,
+                });
+              }}
+            >
+              Ajouter un superset
+            </button>
+          )}
         </div>
       </form>
     </section>
@@ -672,7 +713,12 @@ export function SportApp() {
   const [kind, setKind] = useState<Extract<SessionKind, "full" | "half" | "ppl">>("full");
   const [workoutType, setWorkoutType] = useState<"recommended" | "free">("recommended");
   const [workoutDuration, setWorkoutDuration] = useState<WorkoutDuration>("medium");
-  const [editing, setEditing] = useState<{ config: ExerciseConfig; entryId?: string } | null>(null);
+  const [editing, setEditing] = useState<{
+    config: ExerciseConfig;
+    entryId?: string;
+    superset?: ExerciseConfig;
+  } | null>(null);
+  const [supersetDraft, setSupersetDraft] = useState<ExerciseConfig | null>(null);
   const [detailId, setDetailId] = useState<string | null>(null);
   const [editHistory, setEditHistory] = useState(false);
   const [deleteHistory, setDeleteHistory] = useState(false);
@@ -820,7 +866,7 @@ export function SportApp() {
   }
   function start(
     kind: SessionKind,
-    configs: ExerciseConfig[] = [],
+    configs: Array<ExerciseConfig | SessionTemplateExercise> = [],
     name?: string,
     source: "free" | "recommended" = "free",
   ) {
@@ -829,9 +875,14 @@ export function SportApp() {
       setNotice("Votre séance en cours vous attend. Terminez-la avant d’en commencer une autre.");
       return;
     }
-    update((s) => ({ ...s, active: createSession(kind, configs, name, source) }));
+    const session = createSession(kind, [], name, source);
+    session.exercises = configs.map((preset) =>
+      "config" in preset ? createEntry(preset.config, preset.superset) : createEntry(preset),
+    );
+    update((s) => ({ ...s, active: session }));
     timer.stop();
     setEditing(null);
+    setSupersetDraft(null);
     setFeedbackEntryId(null);
     setSessionFeedbackOpen(false);
     setTab("training");
@@ -849,7 +900,10 @@ export function SportApp() {
               id: session.id,
               name: `${session.name || sessionLabels[session.kind]} · ${dateLabel(session.startedAt)}`,
               kind: session.kind,
-              exercises: session.exercises.map((e) => ({ ...e.config })),
+              exercises: session.exercises.map((e) => ({
+                config: { ...e.config },
+                ...(e.superset ? { superset: { ...e.superset } } : {}),
+              })),
             },
           ],
     }));
@@ -865,7 +919,7 @@ export function SportApp() {
   const feedbackEntry =
     active?.exercises.find((e) => e.id === feedbackEntryId) ??
     active?.exercises.find(
-      (e) => e.finished && e.completedSets.length === e.config.sets && !e.feedback,
+      (e) => e.finished && completedRoundCount(e) === e.config.sets && !e.feedback,
     );
   const allHistoryItems: HistoryItem[] = [
     ...store.history.map((session) => ({
@@ -885,6 +939,10 @@ export function SportApp() {
   const detail = detailItem?.session;
   const detailIsFriend = detailItem?.isFriend ?? false;
   const totalSets = active?.exercises.reduce((sum, e) => sum + e.completedSets.length, 0) ?? 0;
+  const exerciseCountLabel = (entry: ExerciseEntry) =>
+    entry.superset
+      ? `${exerciseName(entry.config.exerciseId)} + ${exerciseName(entry.superset.exerciseId)}`
+      : exerciseName(entry.config.exerciseId);
   const isFavorite = (c: ExerciseConfig) =>
     store.favorites.some((f) => configKey(f) === configKey(c));
   function saveActiveSession(feedback?: FeedbackFormValue) {
@@ -899,6 +957,7 @@ export function SportApp() {
     setConfirmFinish(false);
     setSessionFeedbackOpen(false);
     setEditing(null);
+    setSupersetDraft(null);
     setNotice(
       finished.exercises.length ? "Séance enregistrée. Bien joué !" : "Séance vide fermée.",
     );
@@ -923,6 +982,7 @@ export function SportApp() {
               setTab("home");
               setDetailId(null);
               setEditing(null);
+              setSupersetDraft(null);
               setEditHistory(false);
               setDeleteHistory(false);
               setConfirmFinish(false);
@@ -1009,6 +1069,7 @@ export function SportApp() {
                       if (id === "training" && !active) setWorkoutType("recommended");
                       setDetailId(null);
                       setEditing(null);
+                      setSupersetDraft(null);
                       setEditHistory(false);
                       setDeleteHistory(false);
                       setConfirmFinish(false);
@@ -1172,10 +1233,12 @@ export function SportApp() {
               {confirmFinish ? null : feedbackEntry ? (
                 <FeedbackForm
                   eyebrow="Exercice terminé"
-                  title={`Comment s’est passé ${exerciseName(feedbackEntry.config.exerciseId)} ?`}
+                  title={`Comment s’est passé ${feedbackEntry.superset ? "le superset" : exerciseName(feedbackEntry.config.exerciseId)} ?`}
                   commentPlaceholder="Une remarque sur l’exercice ?"
                   nextLabel={
-                    active.exercises.some((entry) => !entry.finished && entry.id !== feedbackEntry.id)
+                    active.exercises.some(
+                      (entry) => !entry.finished && entry.id !== feedbackEntry.id,
+                    )
                       ? "Passer à l’exercice suivant"
                       : "Retourner à la liste des exercices"
                   }
@@ -1195,9 +1258,25 @@ export function SportApp() {
                           .length ?? 0) + 1
                       : 1
                   }
-                  onCancel={() => setEditing(null)}
+                  onCancel={() => {
+                    setEditing(null);
+                    setSupersetDraft(null);
+                  }}
                   onSubmit={(config) => {
-                    if (editing.entryId) updateEntry(editing.entryId, (e) => ({ ...e, config }));
+                    const alignedConfig =
+                      editing.superset && !editing.entryId
+                        ? {
+                            ...config,
+                            sets: editing.superset.sets,
+                            restSeconds: editing.superset.restSeconds,
+                          }
+                        : config;
+                    if (editing.entryId)
+                      updateEntry(editing.entryId, (e) => ({
+                        ...e,
+                        config: alignedConfig,
+                        ...(editing.superset ? { superset: editing.superset } : {}),
+                      }));
                     else
                       update((s) =>
                         s.active
@@ -1205,14 +1284,31 @@ export function SportApp() {
                               ...s,
                               active: {
                                 ...s.active,
-                                exercises: [...s.active.exercises, createEntry(config)],
+                                exercises: [
+                                  ...s.active.exercises,
+                                  createEntry(
+                                    editing.superset ?? alignedConfig,
+                                    editing.superset ? alignedConfig : undefined,
+                                  ),
+                                ],
                               },
                             }
                           : s,
                       );
                     setEditing(null);
+                    setSupersetDraft(null);
                     setNotice("");
                   }}
+                  onAddSuperset={
+                    active.source !== "recommended" && !editing.entryId && !editing.superset
+                      ? (config) => {
+                          setSupersetDraft(config);
+                          setEditing(null);
+                          setNotice("Choisissez le deuxième exercice du superset.");
+                        }
+                      : undefined
+                  }
+                  heading={editing.superset ? "Deuxième exercice du superset" : undefined}
                 />
               ) : current ? (
                 <section
@@ -1221,7 +1317,10 @@ export function SportApp() {
                 >
                   <header className={styles.workoutHeader}>
                     <div className={styles.workoutIdentity}>
-                      <h2>{exerciseName(current.config.exerciseId)}</h2>
+                      <h2>{exerciseCountLabel(current)}</h2>
+                      {current.superset && (
+                        <p className={styles.sessionFormat}>Superset · 2 exercices</p>
+                      )}
                     </div>
                     <div className={styles.workoutTools}>
                       <Star
@@ -1236,20 +1335,20 @@ export function SportApp() {
                       <div className={styles.quickProgress}>
                         <div
                           className={`${styles.sets} ${styles.quickSets}`}
-                          aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
+                          aria-label={`${completedRoundCount(current)} ${current.superset ? "tours sur" : "séries sur"} ${current.config.sets} ${current.superset ? "effectués" : "effectuées"}`}
                         >
                           {Array.from({ length: current.config.sets }, (_, i) => (
                             <span
                               key={i}
                               className={
-                                i < current.completedSets.length
+                                i < completedRoundCount(current)
                                   ? styles.setDone
-                                  : i === current.completedSets.length
+                                  : i === completedRoundCount(current)
                                     ? styles.setCurrent
                                     : ""
                               }
                             >
-                              {i < current.completedSets.length ? "✓" : i + 1}
+                              {i < completedRoundCount(current) ? "✓" : i + 1}
                             </span>
                           ))}
                         </div>
@@ -1279,7 +1378,9 @@ export function SportApp() {
                     </div>
                     <div className={styles.timerRow}>
                       <div className={styles.timer}>
-                        <span className={styles.timerLabel}>Repos</span>
+                        <span className={styles.timerLabel}>
+                          {current.superset ? "Repos après le superset" : "Repos"}
+                        </span>
                         <div
                           className={styles.clock}
                           role="timer"
@@ -1313,9 +1414,13 @@ export function SportApp() {
                         } else timer.start(current.config.restSeconds);
                       }}
                     >
-                      {current.completedSets.length + 1 === current.config.sets
-                        ? "Dernière série terminée ✓"
-                        : "Série terminée · démarrer le repos"}
+                      {completedRoundCount(current) + 1 === current.config.sets
+                        ? current.superset
+                          ? "Dernier superset terminé ✓"
+                          : "Dernière série terminée ✓"
+                        : current.superset
+                          ? "Superset terminé · démarrer le repos"
+                          : "Série terminée · démarrer le repos"}
                     </button>
                   )}
                   <div className={`${styles.actions} ${styles.workoutActions}`}>
@@ -1329,7 +1434,13 @@ export function SportApp() {
                     </button>
                     <button
                       className={styles.textButton}
-                      onClick={() => setEditing({ config: current.config, entryId: current.id })}
+                      onClick={() =>
+                        setEditing({
+                          config: current.config,
+                          entryId: current.id,
+                          ...(current.superset ? { superset: current.superset } : {}),
+                        })
+                      }
                     >
                       Modifier les réglages
                     </button>
@@ -1340,7 +1451,10 @@ export function SportApp() {
                           timer.stop();
                           updateEntry(current.id, (e) => ({
                             ...e,
-                            completedSets: e.completedSets.slice(0, -1),
+                            completedSets: e.completedSets.slice(0, e.superset ? -2 : -1),
+                            completedRounds: e.superset
+                              ? Math.max(0, e.completedRounds - 1)
+                              : e.completedSets.length - 1,
                             finished: false,
                           }));
                         }}
@@ -1361,11 +1475,25 @@ export function SportApp() {
                   </div>
                 </section>
               ) : !confirmFinish ? (
-                <Catalog
-                  kind={active.kind}
-                  favorites={store.favorites}
-                  onChoose={(config) => setEditing({ config })}
-                />
+                <>
+                  {supersetDraft && (
+                    <section className={styles.panel} aria-label="Premier exercice du superset">
+                      <p className={styles.eyebrow}>Superset · premier exercice</p>
+                      <h2>{exerciseName(supersetDraft.exerciseId)}</h2>
+                      <p className={styles.hint}>
+                        {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos unique entre
+                        les tours
+                      </p>
+                    </section>
+                  )}
+                  <Catalog
+                    kind={active.kind}
+                    favorites={store.favorites}
+                    onChoose={(config) =>
+                      setEditing({ config, ...(supersetDraft ? { superset: supersetDraft } : {}) })
+                    }
+                  />
+                </>
               ) : null}
               {!feedbackEntryId && active.source === "recommended" && (
                 <details className={`${styles.recap} ${styles.programRecap}`} open>
@@ -1381,9 +1509,9 @@ export function SportApp() {
                         <li key={entry.id} data-status={status}>
                           <span>{index + 1}</span>
                           <div>
-                            <strong>{exerciseName(entry.config.exerciseId)}</strong>
+                            <strong>{exerciseCountLabel(entry)}</strong>
                             <small>
-                              {entry.config.sets} séries × {entry.config.reps ?? "—"} rép. · repos{" "}
+                              {entry.config.sets} {entry.superset ? "tours" : "séries"} · repos{" "}
                               {timeLabel(entry.config.restSeconds)}
                             </small>
                           </div>
@@ -1405,9 +1533,11 @@ export function SportApp() {
                     .map((e) => (
                       <div key={e.id} className={styles.recapRow}>
                         <div>
-                          <strong>{exerciseName(e.config.exerciseId)}</strong>
+                          <strong>{exerciseCountLabel(e)}</strong>
                           <p>
-                            {e.completedSets.length}/{e.config.sets} séries · {loadLabel(e.config)}
+                            {completedRoundCount(e)}/{e.config.sets}{" "}
+                            {e.superset ? "tours" : "séries"} · {loadLabel(e.config)}
+                            {e.superset && ` · ${loadLabel(e.superset)}`}
                           </p>
                         </div>
                         <Star
@@ -1423,7 +1553,13 @@ export function SportApp() {
                               updateEntry(e.id, (entry) => ({
                                 ...entry,
                                 finished: false,
-                                completedSets: entry.completedSets.slice(0, -1),
+                                completedSets: entry.completedSets.slice(
+                                  0,
+                                  entry.superset ? -2 : -1,
+                                ),
+                                completedRounds: entry.superset
+                                  ? Math.max(0, entry.completedRounds - 1)
+                                  : entry.completedSets.length - 1,
                               }));
                               setNotice("Dernière série annulée.");
                             }}
@@ -1438,11 +1574,11 @@ export function SportApp() {
               {confirmFinish ? (
                 <section className={styles.confirm} aria-label="Terminer la séance">
                   {sessionFeedbackOpen ? (
-                  <FeedbackForm
-                    eyebrow="Séance terminée"
-                    title="Comment s’est passée votre séance ?"
-                    commentPlaceholder="Une remarque sur la séance ?"
-                    allowPhotos
+                    <FeedbackForm
+                      eyebrow="Séance terminée"
+                      title="Comment s’est passée votre séance ?"
+                      commentPlaceholder="Une remarque sur la séance ?"
+                      allowPhotos
                       nextLabel="Enregistrer la séance"
                       onSubmit={saveActiveSession}
                     />
@@ -1466,7 +1602,10 @@ export function SportApp() {
                         >
                           {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
                         </button>
-                        <button className={styles.secondary} onClick={() => setConfirmFinish(false)}>
+                        <button
+                          className={styles.secondary}
+                          onClick={() => setConfirmFinish(false)}
+                        >
                           Continuer ma séance
                         </button>
                         {totalSets > 0 && (
@@ -1477,6 +1616,7 @@ export function SportApp() {
                               timer.stop();
                               setConfirmFinish(false);
                               setEditing(null);
+                              setSupersetDraft(null);
                               setSessionFeedbackOpen(false);
                               setNotice("Séance quittée sans ajout à l’historique.");
                             }}
@@ -1593,52 +1733,72 @@ export function SportApp() {
                         sessionId={detail.id}
                       />
                     )}
-                    {detail.exercises.map((e) => (
-                      <div className={styles.historyExercise} key={e.id}>
-                        <div className={styles.sectionHeading}>
-                          <h3>
-                            {exerciseName(e.config.exerciseId)}
-                            {e.feedback && (
-                              <span
-                                className={`${styles.historyFeedback} ${feedbackColorClass(e.feedback.mood)}`}
-                                title={`Ressenti : ${e.feedback.mood}`}
-                                aria-label={`Ressenti : ${e.feedback.mood}`}
-                              >
-                                {feedbackEmojiByMood[e.feedback.mood]}
-                              </span>
+                    {detail.exercises.map((e) => {
+                      const groups = [e.config, ...(e.superset ? [e.superset] : [])].map(
+                        (config) => ({
+                          config,
+                          sets: e.completedSets.filter(
+                            (set) => setExerciseId(e, set) === config.exerciseId,
+                          ),
+                        }),
+                      );
+                      return (
+                        <div className={styles.historyExercise} key={e.id}>
+                          <div className={styles.sectionHeading}>
+                            <h3>
+                              {exerciseCountLabel(e)}
+                              {e.superset && (
+                                <span className={styles.historyFeedback}>Superset</span>
+                              )}
+                              {e.feedback && (
+                                <span
+                                  className={`${styles.historyFeedback} ${feedbackColorClass(e.feedback.mood)}`}
+                                  title={`Ressenti : ${e.feedback.mood}`}
+                                  aria-label={`Ressenti : ${e.feedback.mood}`}
+                                >
+                                  {feedbackEmojiByMood[e.feedback.mood]}
+                                </span>
+                              )}
+                            </h3>
+                            <Star
+                              selected={isFavorite(e.config)}
+                              label={`Favori : ${exerciseName(e.config.exerciseId)}`}
+                              onClick={() => toggleFavorite(e.config)}
+                            />
+                          </div>
+                          <p>
+                            {e.superset
+                              ? `${equipmentLabels[e.config.equipment]} + ${equipmentLabels[e.superset.equipment]} · repos prévu `
+                              : `${equipmentLabels[e.config.equipment]} · repos prévu `}
+                            {timeLabel(e.config.restSeconds)}
+                          </p>
+                          {e.feedback?.comment.trim() && (
+                            <p className={styles.historyComment}>{e.feedback.comment}</p>
+                          )}
+                          <ol>
+                            {groups.flatMap(({ config, sets }) =>
+                              sets.map((set, index) => (
+                                <li key={`${config.exerciseId}-${index}`}>
+                                  <span>
+                                    {e.superset ? `${exerciseName(config.exerciseId)} · ` : ""}Série{" "}
+                                    {index + 1}
+                                  </span>
+                                  <strong>
+                                    {equipmentLabels[set.equipment]} ·{" "}
+                                    {loadLabel({
+                                      ...config,
+                                      equipment: set.equipment,
+                                      loadKg: set.loadKg,
+                                    })}
+                                    {set.reps ? ` · ${set.reps} rép.` : ""}
+                                  </strong>
+                                </li>
+                              )),
                             )}
-                          </h3>
-                          <Star
-                            selected={isFavorite(e.config)}
-                            label={`Favori : ${exerciseName(e.config.exerciseId)}`}
-                            onClick={() => toggleFavorite(e.config)}
-                          />
+                          </ol>
                         </div>
-                        <p>
-                          {equipmentLabels[e.config.equipment]} · repos prévu{" "}
-                          {timeLabel(e.config.restSeconds)}
-                        </p>
-                        {e.feedback?.comment.trim() && (
-                          <p className={styles.historyComment}>{e.feedback.comment}</p>
-                        )}
-                        <ol>
-                          {e.completedSets.map((set, i) => (
-                            <li key={i}>
-                              <span>Série {i + 1}</span>
-                              <strong>
-                                {equipmentLabels[set.equipment]} ·{" "}
-                                {loadLabel({
-                                  ...e.config,
-                                  equipment: set.equipment,
-                                  loadKg: set.loadKg,
-                                })}
-                                {set.reps ? ` · ${set.reps} rép.` : ""}
-                              </strong>
-                            </li>
-                          ))}
-                        </ol>
-                      </div>
-                    ))}
+                      );
+                    })}
                     {!detailIsFriend && (
                       <>
                         <button
@@ -1646,7 +1806,10 @@ export function SportApp() {
                           onClick={() =>
                             start(
                               detail.kind,
-                              detail.exercises.map((e) => e.config),
+                              detail.exercises.map((e) => ({
+                                config: e.config,
+                                ...(e.superset ? { superset: e.superset } : {}),
+                              })),
                             )
                           }
                         >
@@ -1743,24 +1906,28 @@ export function SportApp() {
                           )}{" "}
                           séries
                         </span>
-                        {item.session.feedback?.photos && item.session.feedback.photos.length > 0 && (
-                          <span className={styles.historyThumbnails} aria-label="Photos de la séance">
-                            {item.session.feedback.photos.map((photo, index) => (
-                              <img
-                                key={photo}
-                                src={photo}
-                                alt={`Photo ${index + 1} de la séance`}
-                                onClick={(event) => {
-                                  event.stopPropagation();
-                                  setPhotoViewer({
-                                    photos: item.session.feedback?.photos ?? [],
-                                    index,
-                                  });
-                                }}
-                              />
-                            ))}
-                          </span>
-                        )}
+                        {item.session.feedback?.photos &&
+                          item.session.feedback.photos.length > 0 && (
+                            <span
+                              className={styles.historyThumbnails}
+                              aria-label="Photos de la séance"
+                            >
+                              {item.session.feedback.photos.map((photo, index) => (
+                                <img
+                                  key={photo}
+                                  src={photo}
+                                  alt={`Photo ${index + 1} de la séance`}
+                                  onClick={(event) => {
+                                    event.stopPropagation();
+                                    setPhotoViewer({
+                                      photos: item.session.feedback?.photos ?? [],
+                                      index,
+                                    });
+                                  }}
+                                />
+                              ))}
+                            </span>
+                          )}
                       </span>
                       <span aria-hidden="true">→</span>
                     </button>
@@ -1774,7 +1941,9 @@ export function SportApp() {
                 <div className={styles.empty}>
                   <SportIcon />
                   <h2>
-                    {historyFilter === "friends" ? "Aucune séance d’ami" : "Le début de votre carnet"}
+                    {historyFilter === "friends"
+                      ? "Aucune séance d’ami"
+                      : "Le début de votre carnet"}
                   </h2>
                   <p>
                     {historyFilter === "friends"
@@ -1901,7 +2070,10 @@ export function SportApp() {
               >
                 ×
               </button>
-              <div className={styles.photoLightboxContent} onClick={(event) => event.stopPropagation()}>
+              <div
+                className={styles.photoLightboxContent}
+                onClick={(event) => event.stopPropagation()}
+              >
                 {photoViewer.photos.length > 1 && (
                   <button
                     type="button"

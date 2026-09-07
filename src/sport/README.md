@@ -11,8 +11,12 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
 - `model.ts` : schéma versionné, configurations, séries datées avec matériel,
   charge en kg et répétitions facultatives. Une charge d’haltère désigne **un seul
   haltère**, une barre inclut la barre, le poids du corps utilise le lest ajouté.
-  Ces unités et IDs permettent de futures statistiques sans en afficher en V1.
-- `sport-app.tsx` : séance, catalogue, réglages, historique et favoris. Un favori
+  Un superset reste une entrée d’exercice unique, avec deux configurations et un
+  tour validé pour chaque mouvement ; les séries restent identifiables par exercice
+  pour les statistiques. Ces unités et IDs permettent de futures statistiques sans
+  en afficher en V1.
+- `sport-app.tsx` : séance, catalogue, réglages, historique et favoris. Les séances
+  libres peuvent chaîner deux exercices en superset avec un seul repos par tour. Un favori
   d’exercice distingue chaque configuration. Une séance favorite copie les réglages
   dans une nouvelle séance, sans réutiliser les séries, dates ou IDs historiques.
   La grille utilise trois colonnes sur téléphone, quatre à partir de 480 px.

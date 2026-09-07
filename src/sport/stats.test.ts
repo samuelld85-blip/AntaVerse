@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { createEntry, createSession, defaultConfig } from "./model";
+import { completeSet, createEntry, createSession, defaultConfig } from "./model";
 import { getExerciseProgress, getSportStats, percentageChange } from "./stats";
 
 function session(date: string, kind: "push" | "legs", loadKg: number, reps = 8) {
-  const workout = createSession(kind, [{ ...defaultConfig(kind === "push" ? "bench-press" : "squat"), loadKg, reps }]);
+  const workout = createSession(kind, [
+    { ...defaultConfig(kind === "push" ? "bench-press" : "squat"), loadKg, reps },
+  ]);
   workout.startedAt = date;
   workout.endedAt = date;
   const entry = createEntry({ ...workout.exercises[0]!.config, sets: 2 });
@@ -42,5 +44,26 @@ describe("sport statistics", () => {
     expect(points.map((point) => point.load)).toEqual([50, 60]);
     expect(points[1]!.estimated1Rm).toBe(80);
     expect(percentageChange(points[0]!.load, points[1]!.load)).toBe(20);
+  });
+
+  it("splits superset sets by movement while keeping one session entry", () => {
+    const workout = createSession("legs", []);
+    let entry = createEntry(
+      { ...defaultConfig("leg-curl"), sets: 2, loadKg: 30, reps: 10 },
+      { ...defaultConfig("leg-extension"), sets: 2, loadKg: 25, reps: 12 },
+    );
+    entry = completeSet(entry, "2026-09-02T10:00:00.000Z");
+    entry = completeSet(entry, "2026-09-02T10:03:00.000Z");
+    workout.startedAt = "2026-09-02T10:00:00.000Z";
+    workout.endedAt = workout.startedAt;
+    workout.exercises = [entry];
+    const stats = getSportStats([workout], "all");
+    expect(stats.exerciseCount).toBe(2);
+    expect(stats.setCount).toBe(4);
+    expect(stats.topExercises.map((item) => [item.exerciseId, item.sets])).toEqual([
+      ["leg-curl", 2],
+      ["leg-extension", 2],
+    ]);
+    expect(getExerciseProgress([workout], "leg-extension")[0]?.volume).toBe(600);
   });
 });
