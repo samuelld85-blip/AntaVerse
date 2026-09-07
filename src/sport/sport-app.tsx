@@ -503,7 +503,7 @@ export function SportApp() {
   >("home");
   const { theme, selectTheme } = useThemeMode("dark");
   const [kind, setKind] = useState<Extract<SessionKind, "full" | "half" | "ppl">>("full");
-  const [workoutType, setWorkoutType] = useState<"recommended" | "free" | null>(null);
+  const [workoutType, setWorkoutType] = useState<"recommended" | "free">("recommended");
   const [workoutDuration, setWorkoutDuration] = useState<WorkoutDuration>("medium");
   const [editing, setEditing] = useState<{ config: ExerciseConfig; entryId?: string } | null>(null);
   const [detailId, setDetailId] = useState<string | null>(null);
@@ -744,7 +744,7 @@ export function SportApp() {
             aria-current={tab === id ? "page" : undefined}
             onClick={() => {
               setTab(id);
-              if (id === "training" && !active) setWorkoutType(null);
+              if (id === "training" && !active) setWorkoutType("recommended");
               setDetailId(null);
               setEditHistory(false);
               setDeleteHistory(false);
@@ -792,7 +792,7 @@ export function SportApp() {
                     className={styles.homeButton}
                     onClick={() => {
                       setTab(id);
-                      if (id === "training" && !active) setWorkoutType(null);
+                      if (id === "training" && !active) setWorkoutType("recommended");
                       setDetailId(null);
                       setEditing(null);
                       setEditHistory(false);
@@ -984,16 +984,13 @@ export function SportApp() {
                   }}
                 />
               ) : current ? (
-                <section className={styles.workout} aria-label="Exercice en cours">
+                <section
+                  className={`${styles.workout} ${styles.guidedWorkout}`}
+                  aria-label="Exercice en cours"
+                >
                   <header className={styles.workoutHeader}>
                     <div className={styles.workoutIdentity}>
-                      <p className={styles.eyebrow}>
-                        {exercises.find((ex) => ex.id === current.config.exerciseId)!.region}
-                      </p>
                       <h2>{exerciseName(current.config.exerciseId)}</h2>
-                      <p className={styles.configLine}>
-                        <ConfigSummary config={current.config} />
-                      </p>
                     </div>
                     <div className={styles.workoutTools}>
                       <Star
@@ -1004,30 +1001,28 @@ export function SportApp() {
                     </div>
                   </header>
                   <div className={styles.workoutFocus}>
-                    <div
-                      className={active.source === "recommended" ? styles.quickProgress : undefined}
-                    >
-                      <div
-                        className={`${styles.sets} ${active.source === "recommended" ? styles.quickSets : ""}`}
-                        aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
-                      >
-                        {Array.from({ length: current.config.sets }, (_, i) => (
-                          <span
-                            key={i}
-                            className={
-                              i < current.completedSets.length
-                                ? styles.setDone
-                                : i === current.completedSets.length
-                                  ? styles.setCurrent
-                                  : ""
-                            }
-                          >
-                            {i < current.completedSets.length ? "✓" : i + 1}
-                          </span>
-                        ))}
+                    <div className={styles.guidedFocusTop}>
+                      <div className={styles.quickProgress}>
+                        <div
+                          className={`${styles.sets} ${styles.quickSets}`}
+                          aria-label={`${current.completedSets.length} séries sur ${current.config.sets} effectuées`}
+                        >
+                          {Array.from({ length: current.config.sets }, (_, i) => (
+                            <span
+                              key={i}
+                              className={
+                                i < current.completedSets.length
+                                  ? styles.setDone
+                                  : i === current.completedSets.length
+                                    ? styles.setCurrent
+                                    : ""
+                              }
+                            >
+                              {i < current.completedSets.length ? "✓" : i + 1}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <div className={active.source === "recommended" ? styles.timerRow : undefined}>
                       {active.source === "recommended" && (
                         <label className={styles.quickLoad}>
                           <span>{loadInputLabel(current.config.equipment)}</span>
@@ -1050,7 +1045,10 @@ export function SportApp() {
                           />
                         </label>
                       )}
+                    </div>
+                    <div className={styles.timerRow}>
                       <div className={styles.timer}>
+                        <span className={styles.timerLabel}>Repos</span>
                         <div
                           className={styles.clock}
                           role="timer"
@@ -1061,7 +1059,6 @@ export function SportApp() {
                             : timeLabel(timer.remaining)}
                         </div>
                       </div>
-                      {active.source === "recommended" && <span aria-hidden="true" />}
                     </div>
                   </div>
                   {timer.remaining !== null && timer.remaining > 0 ? (
@@ -1091,7 +1088,7 @@ export function SportApp() {
                         : "Série terminée · démarrer le repos"}
                     </button>
                   )}
-                  <div className={styles.actions}>
+                  <div className={`${styles.actions} ${styles.workoutActions}`}>
                     <button
                       className={styles.textButton}
                       onClick={() => timer.start(current.config.restSeconds)}

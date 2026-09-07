@@ -400,6 +400,12 @@
 .workout {
   position: relative;
 }
+.guidedWorkout {
+  display: flex;
+  flex-direction: column;
+  min-height: 396px;
+  padding: 16px;
+}
 .panel h2 {
   margin-bottom: 18px;
 }
@@ -728,29 +734,32 @@
   gap: 8px;
 }
 .workoutFocus {
-  margin-top: 0;
+  margin-top: 18px;
+}
+.guidedWorkout .workoutFocus {
+  margin-top: 16px;
+}
+.guidedFocusTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 84px;
+  gap: 16px;
+  align-items: center;
 }
 .quickProgress {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  z-index: 1;
   display: flex;
-  justify-content: center;
-  margin: 0;
-  transform: translateX(-50%);
+  justify-content: flex-start;
 }
 .quickLoad {
   display: grid;
-  gap: 4px;
-  width: 80px;
-  justify-items: end;
+  gap: 7px;
+  width: 100%;
+  justify-items: stretch;
   color: var(--sport-ink);
   font-size: 13px;
   font-weight: 700;
 }
 .quickLoad input {
-  width: 80px;
+  width: 100%;
   min-height: 44px;
   padding: 10px;
   border: 1px solid var(--sport-accent);
@@ -785,16 +794,25 @@
 }
 .quickSets {
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0;
-}
-.quickProgress + .timer {
-  padding-top: 0;
 }
 .timerRow {
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr) 80px;
-  align-items: center;
+  grid-template-columns: minmax(104px, 0.85fr) minmax(0, 1.15fr);
+  gap: 20px;
+  align-items: end;
+  margin-top: 18px;
+}
+.guidedWorkout .timerRow {
+  display: block;
+  margin-top: 16px;
+}
+.guidedWorkout .timerRow .timer {
+  grid-column: auto;
+}
+.guidedWorkout .quickLoad {
+  width: 84px;
 }
 .timerRow .quickLoad {
   justify-items: start;
@@ -825,10 +843,19 @@
 }
 .timer {
   text-align: center;
-  padding: 0 0 16px;
+  padding: 0;
+}
+.timerLabel {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--sport-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .clock {
-  font-size: clamp(56px, 15vw, 72px);
+  font-size: clamp(52px, 15vw, 72px);
   font-weight: 650;
   font-variant-numeric: tabular-nums;
   letter-spacing: -4px;
@@ -847,6 +874,30 @@
 }
 .actions .secondary {
   min-width: 100px;
+}
+.workoutActions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+.guidedWorkout > .primary {
+  margin-top: 14px;
+}
+.guidedWorkout .workoutActions {
+  margin-top: 12px;
+  padding-top: 0;
+}
+.guidedWorkout .clock {
+  font-size: clamp(48px, 13vw, 64px);
+}
+.workoutActions > * {
+  width: 100%;
+}
+.workoutActions .secondary {
+  min-width: 0;
+}
+.workoutActions .secondary:last-child {
+  grid-column: 1 / -1;
 }
 .recap summary {
   cursor: pointer;
