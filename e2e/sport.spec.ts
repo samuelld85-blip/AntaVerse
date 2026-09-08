@@ -2,10 +2,11 @@ import { expect, test, type Page } from "@playwright/test";
 
 test.use({ serviceWorkers: "block" });
 
-async function startFreeSession(page: Page, format = "Full body") {
+async function startFreeSession(page: Page, format = "Full body", bodyPart?: string) {
   await page.getByRole("button", { name: /^Séances/ }).click();
   await page.getByRole("button", { name: format, exact: true }).click();
   await page.getByRole("button", { name: "Entraînement libre", exact: true }).click();
+  if (bodyPart) await page.getByRole("button", { name: bodyPart, exact: true }).click();
   await page.getByRole("button", { name: "Commencer ma séance", exact: true }).click();
 }
 
@@ -31,18 +32,179 @@ test("sport: sections keep a Sport home step and confirm exit", async ({ page })
   await expect(page.getByRole("heading", { name: "Choisissez votre jeu.", exact: true })).toBeVisible();
 });
 
+test("sport: an exercise reuses its latest performed configuration", async ({ page }) => {
+  await page.goto("/sport/");
+  await page.evaluate(() => {
+    localStorage.setItem(
+      "antaverse:sport:v1",
+      JSON.stringify({
+        version: 1,
+        active: null,
+        history: [
+          {
+            id: "session-1",
+            kind: "push",
+            startedAt: "2026-09-08T10:00:00.000Z",
+            endedAt: "2026-09-08T10:30:00.000Z",
+            exercises: [
+              {
+                id: "entry-1",
+                config: {
+                  exerciseId: "bench-press",
+                  equipment: "barbell",
+                  sets: 3,
+                  restSeconds: 120,
+                  loadKg: 60,
+                  reps: 12,
+                },
+                pyramid: false,
+                completedSets: [
+                  {
+                    completedAt: "2026-09-08T10:10:00.000Z",
+                    exerciseId: "bench-press",
+                    equipment: "barbell",
+                    loadKg: 60,
+                    reps: 12,
+                  },
+                ],
+                completedRounds: 1,
+                finished: true,
+              },
+            ],
+          },
+        ],
+        favorites: [],
+        templates: [],
+      }),
+    );
+  });
+  await page.reload();
+  await page.getByRole("button", { name: /^Séances/ }).click();
+  await page.getByRole("button", { name: "Entraînement libre", exact: true }).click();
+  await page.getByRole("button", { name: "Commencer ma séance", exact: true }).click();
+  await page.getByRole("button", { name: "Développé couché", exact: true }).click();
+  await expect(page.getByLabel("Séries", { exact: true })).toHaveValue("3");
+  await expect(page.getByLabel("Charge (kg)", { exact: true })).toHaveValue("60");
+  await expect(page.getByLabel("Répétitions facultatif", { exact: true })).toHaveValue("12");
+  await expect(page.getByLabel("Minutes de repos", { exact: true })).toHaveValue("2");
+  await expect(page.getByLabel("Secondes de repos", { exact: true })).toHaveValue("0");
+
+  await page.getByRole("button", { name: "Annuler", exact: true }).click();
+  await page.getByRole("button", { name: "Écartés pectoraux", exact: true }).click();
+  await expect(page.getByLabel("Séries", { exact: true })).toHaveValue("10");
+  await expect(page.getByLabel("Charge (kg)", { exact: true })).toHaveValue("0");
+  await expect(page.getByLabel("Minutes de repos", { exact: true })).toHaveValue("1");
+  await expect(page.getByLabel("Secondes de repos", { exact: true })).toHaveValue("30");
+  await expect(page.getByLabel("Répétitions facultatif", { exact: true })).toHaveValue("");
+
+  await page.getByRole("button", { name: "Annuler", exact: true }).click();
+  await page.getByRole("button", { name: "Squat", exact: true }).click();
+  await expect(page.getByLabel("Séries", { exact: true })).toHaveValue("10");
+  await expect(page.getByLabel("Charge (kg)", { exact: true })).toHaveValue("0");
+  await expect(page.getByLabel("Répétitions facultatif", { exact: true })).toHaveValue("");
+  await expect(page.getByLabel("Minutes de repos", { exact: true })).toHaveValue("2");
+  await expect(page.getByLabel("Secondes de repos", { exact: true })).toHaveValue("0");
+});
+
+test("sport: history compacts repeated non-pyramid sets", async ({ page }) => {
+  await page.goto("/sport/");
+  await page.evaluate(() => {
+    const repeatedSets = Array.from({ length: 4 }, (_, index) => ({
+      completedAt: `2026-09-08T10:0${index}:00.000Z`,
+      exerciseId: "leg-press",
+      equipment: "machine",
+      loadKg: 120,
+      reps: 10,
+    }));
+    localStorage.setItem(
+      "antaverse:sport:v1",
+      JSON.stringify({
+        version: 1,
+        active: null,
+        history: [
+          {
+            id: "session-compact",
+            kind: "legs",
+            startedAt: "2026-09-08T10:00:00.000Z",
+            endedAt: "2026-09-08T10:30:00.000Z",
+            exercises: [
+              {
+                id: "entry-compact",
+                config: {
+                  exerciseId: "leg-press",
+                  equipment: "machine",
+                  sets: 4,
+                  restSeconds: 120,
+                  loadKg: 120,
+                  reps: 10,
+                },
+                pyramid: false,
+                completedSets: repeatedSets,
+                completedRounds: 4,
+                finished: true,
+              },
+              {
+                id: "entry-pyramid",
+                config: {
+                  exerciseId: "bench-press",
+                  equipment: "barbell",
+                  sets: 2,
+                  restSeconds: 120,
+                  loadKg: 40,
+                  reps: 10,
+                },
+                pyramid: true,
+                completedSets: [
+                  {
+                    completedAt: "2026-09-08T10:05:00.000Z",
+                    exerciseId: "bench-press",
+                    equipment: "barbell",
+                    loadKg: 40,
+                    reps: 10,
+                  },
+                  {
+                    completedAt: "2026-09-08T10:10:00.000Z",
+                    exerciseId: "bench-press",
+                    equipment: "barbell",
+                    loadKg: 45,
+                    reps: 8,
+                  },
+                ],
+                completedRounds: 2,
+                finished: true,
+              },
+            ],
+          },
+        ],
+        favorites: [],
+        templates: [],
+      }),
+    );
+  });
+  await page.reload();
+  await page.getByRole("button", { name: /^Historique/ }).click();
+  await page.getByRole("button", { name: /Push|Leg/ }).click();
+  await expect(page.getByText("4 séries", { exact: true })).toBeVisible();
+  await expect(page.getByText("Série 1", { exact: true })).toHaveCount(1);
+  await expect(page.getByText("Série 2", { exact: true })).toHaveCount(1);
+});
+
 test("sport: free sessions can record a superset as one exercise", async ({ page }) => {
   await page.goto("/sport/");
   await startFreeSession(page);
   await page.getByRole("searchbox").fill("leg curl");
   await page.getByRole("button", { name: "Leg curl", exact: true }).click();
   await page.getByLabel("Séries", { exact: true }).fill("2");
+  await page.getByLabel("Minutes de repos", { exact: true }).selectOption("1");
+  await page.getByLabel("Secondes de repos", { exact: true }).selectOption("30");
   await page.getByLabel("Charge (kg)", { exact: true }).fill("30");
   await page.getByRole("button", { name: "Ajouter un superset", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Leg curl", exact: true })).toBeVisible();
   await page.getByRole("searchbox").fill("leg extension");
   await page.getByRole("button", { name: "Leg extension", exact: true }).click();
   await page.getByLabel("Séries", { exact: true }).fill("2");
+  await page.getByLabel("Minutes de repos", { exact: true }).selectOption("1");
+  await page.getByLabel("Secondes de repos", { exact: true }).selectOption("30");
   await page.getByLabel("Charge (kg)", { exact: true }).fill("25");
   await page.getByRole("button", { name: "Valider l’exercice", exact: true }).click();
   await expect(page.getByRole("heading", { name: /^Leg curl \+ Leg extension/ })).toBeVisible();
@@ -69,6 +231,8 @@ test("sport: pyramid mode keeps per-set load and repetitions", async ({ page }) 
   await startFreeSession(page);
   await page.getByRole("button", { name: "Développé couché", exact: true }).click();
   await page.getByLabel("Séries", { exact: true }).fill("3");
+  await page.getByLabel("Minutes de repos", { exact: true }).selectOption("2");
+  await page.getByLabel("Secondes de repos", { exact: true }).selectOption("0");
   await page.getByLabel("Charge (kg)", { exact: true }).fill("50");
   await page.getByLabel("Répétitions facultatif", { exact: true }).fill("12");
   await page.getByRole("button", { name: "Valider l’exercice", exact: true }).click();
@@ -107,6 +271,7 @@ test("sport: automatic rest, discard, history editing and deletion", async ({ pa
   await page.getByLabel("Séries", { exact: true }).fill("2");
   await page.getByLabel("Minutes de repos", { exact: true }).selectOption("1");
   await page.getByLabel("Secondes de repos", { exact: true }).selectOption("30");
+  await page.getByLabel("Charge (kg)", { exact: true }).fill("40");
   await page.getByRole("button", { name: "Valider l’exercice" }).click();
   await expect(page.getByRole("timer")).toHaveText("1:30");
   await page
@@ -134,6 +299,9 @@ test("sport: automatic rest, discard, history editing and deletion", async ({ pa
   await page.getByRole("button", { name: "Commencer ma séance", exact: true }).click();
   await page.getByRole("button", { name: "Squat", exact: true }).click();
   await page.getByLabel("Séries", { exact: true }).fill("1");
+  await page.getByLabel("Minutes de repos", { exact: true }).selectOption("2");
+  await page.getByLabel("Secondes de repos", { exact: true }).selectOption("0");
+  await page.getByLabel("Charge (kg)", { exact: true }).fill("0");
   await page.getByRole("button", { name: "Valider l’exercice" }).click();
   await page.getByRole("button", { name: "Dernière série terminée" }).click();
   await page.getByRole("button", { name: "Content", exact: true }).click();
@@ -208,15 +376,16 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
   await page.getByRole("button", { name: "Mode clair", exact: true }).click();
   await page.screenshot({ path: testInfo.outputPath("sport-home-light.png"), fullPage: true });
   await page.getByRole("button", { name: "Mode sombre", exact: true }).click();
-  await startFreeSession(page, "Push Pull Legs");
-  await expect(page.getByRole("heading", { name: "Push Pull Legs", exact: true })).toBeVisible();
+  await startFreeSession(page, "Push Pull Legs", "Push");
+  await expect(page.getByRole("heading", { name: "Push", exact: true })).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("sport-grid.png"), fullPage: true });
   await page.getByRole("button", { name: "Push", exact: true }).click();
   await page.getByRole("searchbox").fill("developpe couche");
   await page.getByRole("button", { name: "Développé couché", exact: true }).click();
+  await page.getByLabel("Séries", { exact: true }).fill("3");
+  await page.getByLabel("Minutes de repos", { exact: true }).selectOption("2");
+  await page.getByLabel("Secondes de repos", { exact: true }).selectOption("0");
   await page.getByLabel("Charge (kg)", { exact: true }).fill("40");
-  await expect(page.getByLabel("Minutes de repos", { exact: true })).toHaveValue("2");
-  await expect(page.getByLabel("Secondes de repos", { exact: true })).toHaveValue("0");
   await page.getByRole("button", { name: "Valider l’exercice" }).click();
   await page.getByRole("button", { name: "Configuration favorite", exact: true }).click();
   await page.clock.install();
@@ -252,6 +421,10 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
   await expect(page.getByRole("heading", { name: "Prochain exercice" })).toBeVisible();
   await page.getByRole("searchbox").fill("incliné");
   await page.getByRole("button", { name: "Développé incliné", exact: true }).click();
+  await page.getByLabel("Séries", { exact: true }).fill("3");
+  await page.getByLabel("Minutes de repos", { exact: true }).selectOption("2");
+  await page.getByLabel("Secondes de repos", { exact: true }).selectOption("0");
+  await page.getByLabel("Charge (kg)", { exact: true }).fill("0");
   await page.getByRole("button", { name: "Valider l’exercice" }).click();
   await expect(page.getByRole("button", { name: "Terminer ma séance", exact: true })).toHaveCount(
     0,
@@ -327,8 +500,7 @@ test("sport: small screen filters, empty session and invalid storage", async ({
 }, testInfo) => {
   await page.setViewportSize({ width: 320, height: 740 });
   await page.goto("/sport/");
-  await startFreeSession(page, "Half body");
-  await page.getByRole("button", { name: "Bas du corps", exact: true }).click();
+  await startFreeSession(page, "Half body", "Lower body");
   await page.getByLabel("Muscle", { exact: true }).selectOption("quads");
   await page.getByLabel("Matériel", { exact: true }).selectOption("barbell");
   await expect(page.getByRole("button", { name: "Squat", exact: true })).toBeVisible();

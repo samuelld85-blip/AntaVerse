@@ -34,7 +34,9 @@ import {
   createEntry,
   createSession,
   defaultConfig,
+  defaultFreeConfig,
   finishSession,
+  lastConfigForExercise,
   loadStore,
   saveStore,
   storeSchema,
@@ -59,6 +61,10 @@ type HistoryItem = {
 
 type HistoryFilter = "all" | "mine" | "friends";
 type SportTab = "home" | "training" | "history" | "stats" | "favorites" | "social";
+type CustomSessionKind = Extract<
+  SessionKind,
+  "full" | "upper" | "lower" | "push" | "pull" | "legs"
+>;
 
 const sportTabs: Exclude<SportTab, "home">[] = [
   "training",
@@ -323,7 +329,7 @@ function ConfigForm({
   onAddSuperset?: (config: ExerciseConfig) => void;
   heading?: string;
 }) {
-  const [equipment, setEquipment] = useState(initial.equipment);
+  const [equipment, setEquipment] = useState<Equipment>(initial.equipment);
   const [formError, setFormError] = useState("");
   const exercise = exercises.find((ex) => ex.id === initial.exerciseId)!;
   return (
@@ -354,7 +360,10 @@ function ConfigForm({
       >
         <label className={styles.field}>
           Matériel
-          <select value={equipment} onChange={(e) => setEquipment(e.target.value as Equipment)}>
+          <select
+            value={equipment}
+            onChange={(e) => setEquipment(e.target.value as Equipment)}
+          >
             {exercise.equipment.map((item) => (
               <option key={item} value={item}>
                 {equipmentLabels[item]}
@@ -384,7 +393,11 @@ function ConfigForm({
                 aria-label="Minutes de repos"
                 name="restMinutes"
                 defaultValue={Math.min(5, Math.floor(initial.restSeconds / 60))}
+                required
               >
+                <option value="" disabled>
+                  —
+                </option>
                 {[0, 1, 2, 3, 4, 5].map((m) => (
                   <option key={m} value={m}>
                     {m}
@@ -396,7 +409,11 @@ function ConfigForm({
                 aria-label="Secondes de repos"
                 name="restSeconds"
                 defaultValue={(Math.round((initial.restSeconds % 60) / 5) * 5) % 60}
+                required
               >
+                <option value="" disabled>
+                  —
+                </option>
                 {Array.from({ length: 12 }, (_, i) => i * 5).map((s) => (
                   <option key={s} value={s}>
                     {String(s).padStart(2, "0")}
@@ -494,10 +511,14 @@ function ConfigForm({
 function Catalog({
   kind,
   favorites,
+  freeSession,
+  lastConfigFor,
   onChoose,
 }: {
   kind: SessionKind;
   favorites: ExerciseConfig[];
+  freeSession: boolean;
+  lastConfigFor: (exerciseId: string) => ExerciseConfig | null;
   onChoose: (c: ExerciseConfig) => void;
 }) {
   const [query, setQuery] = useState("");
@@ -506,6 +527,16 @@ function Catalog({
   const [equipment, setEquipment] = useState("");
   const [onlyFavorites, setOnlyFavorites] = useState(false);
   const [sessionFilter, setSessionFilter] = useState<SessionKind>(kind);
+  const filterOptions =
+    kind === "half"
+      ? (["half", "upper", "lower"] as const)
+      : kind === "ppl"
+        ? (["ppl", "push", "pull", "legs"] as const)
+        : kind === "upper" || kind === "lower"
+          ? (["full", "upper", "lower"] as const)
+          : kind === "push" || kind === "pull" || kind === "legs"
+            ? (["full", "push", "pull", "legs"] as const)
+            : null;
   const base = searchExercises(sessionFilter);
   const availableMuscles = Object.entries(muscleLabels).filter(([id]) =>
     base.some((ex) => ex.primary === id || ex.secondary.some((m) => m === id)),
@@ -523,14 +554,9 @@ function Catalog({
           <h2 id="exercise-list-title">Prochain exercice</h2>
         </div>
       </div>
-      {(kind === "half" || kind === "ppl") && (
+      {filterOptions && (
         <div className={styles.segment} aria-label="Filtrer les exercices par séance">
-          {[
-            kind,
-            ...(kind === "half"
-              ? (["upper", "lower"] as const)
-              : (["push", "pull", "legs"] as const)),
-          ].map((id) => (
+          {filterOptions.map((id) => (
             <button
               key={id}
               aria-pressed={sessionFilter === id}
@@ -540,7 +566,9 @@ function Catalog({
                 setRegion("");
               }}
             >
-              {id === kind ? "Tout" : sessionLabels[id as SessionKind]}
+              {id === "full" || ((kind === "half" || kind === "ppl") && id === kind)
+                ? "Tout"
+                : sessionLabels[id]}
             </button>
           ))}
         </div>
@@ -625,7 +653,11 @@ function Catalog({
       <div className={onlyFavorites ? styles.exerciseList : styles.exerciseGrid}>
         {onlyFavorites
           ? matchingFavorites.map((c) => (
-              <button key={configKey(c)} className={styles.exerciseRow} onClick={() => onChoose(c)}>
+              <button
+                key={configKey(c)}
+                className={styles.exerciseRow}
+                onClick={() => onChoose(c)}
+              >
                 <span>
                   <strong>{exerciseName(c.exerciseId)}</strong>
                   <ConfigSummary config={c} />
@@ -638,12 +670,15 @@ function Catalog({
                 key={ex.id}
                 className={styles.exerciseTile}
                 aria-label={ex.name}
-                onClick={() =>
-                  onChoose({
-                    ...defaultConfig(ex.id),
-                    ...(equipment ? { equipment: equipment as Equipment } : {}),
-                  })
-                }
+                onClick={() => {
+                  const previous = lastConfigFor(ex.id);
+                  onChoose(
+                    {
+                      ...(previous ?? (freeSession ? defaultFreeConfig(ex.id) : defaultConfig(ex.id))),
+                      ...(equipment ? { equipment: equipment as Equipment } : {}),
+                    },
+                  );
+                }}
               >
                 <ExerciseIcon exercise={ex} />
                 <strong>{ex.name}</strong>
@@ -740,6 +775,7 @@ export function SportApp() {
   const router = useRouter();
   const { theme, selectTheme } = useThemeMode("dark");
   const [kind, setKind] = useState<Extract<SessionKind, "full" | "half" | "ppl">>("full");
+  const [customKind, setCustomKind] = useState<CustomSessionKind | null>("full");
   const [workoutType, setWorkoutType] = useState<"recommended" | "free">("recommended");
   const [workoutDuration, setWorkoutDuration] = useState<WorkoutDuration>("medium");
   const [editing, setEditing] = useState<{
@@ -972,6 +1008,10 @@ export function SportApp() {
         ? s.favorites.filter((c) => configKey(c) !== configKey(config))
         : [...s.favorites, { ...config }],
     }));
+  }
+  function selectedCustomSessionKind(): CustomSessionKind {
+    if (customKind) return customKind;
+    return kind === "half" ? "upper" : kind === "ppl" ? "push" : "full";
   }
   function start(
     kind: SessionKind,
@@ -1226,7 +1266,10 @@ export function SportApp() {
                       key={id}
                       aria-label={label}
                       aria-pressed={kind === id}
-                      onClick={() => setKind(id)}
+                      onClick={() => {
+                        setKind(id);
+                        setCustomKind(id === "full" ? "full" : null);
+                      }}
                     >
                       {label}
                     </button>
@@ -1249,6 +1292,38 @@ export function SportApp() {
                     Entraînement libre
                   </button>
                 </div>
+                {workoutType === "free" && kind === "half" && (
+                  <>
+                    <h2>Partie du corps</h2>
+                    <div className={styles.segment} aria-label="Partie du corps travaillée">
+                      {(["upper", "lower"] as const).map((id) => (
+                        <button
+                          key={id}
+                          aria-pressed={customKind === id}
+                          onClick={() => setCustomKind(id)}
+                        >
+                          {sessionLabels[id]}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+                {workoutType === "free" && kind === "ppl" && (
+                  <>
+                    <h2>Partie du corps</h2>
+                    <div className={styles.segment} aria-label="Partie du corps travaillée">
+                      {(["push", "pull", "legs"] as const).map((id) => (
+                        <button
+                          key={id}
+                          aria-pressed={customKind === id}
+                          onClick={() => setCustomKind(id)}
+                        >
+                          {sessionLabels[id]}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
                 {workoutType === "recommended" ? (
                   <div className={styles.recommendedSetup}>
                     <h3>Durée disponible</h3>
@@ -1277,7 +1352,7 @@ export function SportApp() {
                           key={workout.id}
                           onClick={() =>
                             start(
-                              workout.kind,
+                              workout.sessionKind,
                               configsForRecommendedWorkout(workout),
                               workout.name,
                               "recommended",
@@ -1297,7 +1372,13 @@ export function SportApp() {
                     </div>
                   </div>
                 ) : workoutType === "free" ? (
-                  <button className={styles.primary} onClick={() => start(kind)}>
+                  <button
+                    className={styles.primary}
+                    disabled={!customKind}
+                    onClick={() => {
+                      if (customKind) start(customKind);
+                    }}
+                  >
                     Commencer ma séance <span aria-hidden="true">→</span>
                   </button>
                 ) : null}
@@ -1667,16 +1748,27 @@ export function SportApp() {
                       <p className={styles.eyebrow}>Superset · premier exercice</p>
                       <h2>{exerciseName(supersetDraft.exerciseId)}</h2>
                       <p className={styles.hint}>
-                        {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos unique entre
-                        les tours
+                        {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos
+                        unique entre les tours
                       </p>
                     </section>
                   )}
                   <Catalog
                     kind={active.kind}
                     favorites={store.favorites}
+                    freeSession={active.source !== "recommended"}
+                    lastConfigFor={(exerciseId) =>
+                      lastConfigForExercise(store.history, exerciseId)
+                    }
                     onChoose={(config) =>
-                      setEditing({ config, ...(supersetDraft ? { superset: supersetDraft } : {}) })
+                      setEditing({
+                        config,
+                        ...(supersetDraft
+                          ? {
+                              superset: supersetDraft,
+                            }
+                          : {}),
+                      })
                     }
                   />
                 </>
@@ -1961,8 +2053,36 @@ export function SportApp() {
                             <p className={styles.historyComment}>{e.feedback.comment}</p>
                           )}
                           <ol>
-                            {groups.flatMap(({ config, sets }) =>
-                              sets.map((set, index) => (
+                            {groups.flatMap(({ config, sets }) => {
+                              const first = sets[0];
+                              const canCompact =
+                                !e.pyramid &&
+                                !e.superset &&
+                                sets.length > 1 &&
+                                Boolean(first) &&
+                                sets.every(
+                                  (set) =>
+                                    set.equipment === first!.equipment &&
+                                    set.loadKg === first!.loadKg &&
+                                    set.reps === first!.reps,
+                                );
+                              if (canCompact) {
+                                return [
+                                  <li key={`${config.exerciseId}-compact`}>
+                                    <span>{sets.length} séries</span>
+                                    <strong>
+                                      {equipmentLabels[first!.equipment]} ·{" "}
+                                      {loadLabel({
+                                        ...config,
+                                        equipment: first!.equipment,
+                                        loadKg: first!.loadKg,
+                                      })}
+                                      {first!.reps ? ` · ${first!.reps} rép.` : ""}
+                                    </strong>
+                                  </li>,
+                                ];
+                              }
+                              return sets.map((set, index) => (
                                 <li key={`${config.exerciseId}-${index}`}>
                                   <span>
                                     {e.superset ? `${exerciseName(config.exerciseId)} · ` : ""}Série{" "}
@@ -1978,8 +2098,8 @@ export function SportApp() {
                                     {set.reps ? ` · ${set.reps} rép.` : ""}
                                   </strong>
                                 </li>
-                              )),
-                            )}
+                              ));
+                            })}
                           </ol>
                         </div>
                       );
@@ -2192,7 +2312,7 @@ export function SportApp() {
                           setEditing({ config: c });
                           navigateToTab("training");
                         } else {
-                          start(kind);
+                          start(selectedCustomSessionKind());
                           setEditing({ config: c });
                         }
                       }}

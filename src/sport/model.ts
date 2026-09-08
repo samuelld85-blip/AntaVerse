@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { notifySaveChanged } from "./cloud/changed";
-import { exercises, type SessionKind } from "./catalog";
+import { defaultFreeRestSeconds, exercises, type SessionKind } from "./catalog";
 
 const configSchema = z
   .object({
@@ -95,6 +95,28 @@ export const emptyStore = (): SportStore => ({
 });
 export const configKey = (c: ExerciseConfig) =>
   JSON.stringify([c.exerciseId, c.equipment, c.sets, c.restSeconds, c.loadKg, c.reps]);
+export function lastConfigForExercise(
+  history: Session[],
+  exerciseId: string,
+): ExerciseConfig | null {
+  let latest: { config: ExerciseConfig; timestamp: number } | null = null;
+  for (const session of history) {
+    const timestamp = Date.parse(session.endedAt ?? session.startedAt);
+    for (const entry of session.exercises) {
+      if (!entry.completedSets.length) continue;
+      const config =
+        entry.config.exerciseId === exerciseId
+          ? entry.config
+          : entry.superset?.exerciseId === exerciseId
+            ? entry.superset
+            : null;
+      if (config && (!latest || timestamp >= latest.timestamp)) {
+        latest = { config: { ...config }, timestamp };
+      }
+    }
+  }
+  return latest?.config ?? null;
+}
 export const defaultConfig = (id: string): ExerciseConfig => ({
   exerciseId: id,
   equipment: exercises.find((ex) => ex.id === id)!.equipment[0]!,
@@ -102,6 +124,11 @@ export const defaultConfig = (id: string): ExerciseConfig => ({
   restSeconds: 120,
   loadKg: 0,
   reps: null,
+});
+export const defaultFreeConfig = (id: string): ExerciseConfig => ({
+  ...defaultConfig(id),
+  sets: 10,
+  restSeconds: defaultFreeRestSeconds(id),
 });
 export const createEntry = (config: ExerciseConfig, superset?: ExerciseConfig): ExerciseEntry => ({
   id: crypto.randomUUID(),

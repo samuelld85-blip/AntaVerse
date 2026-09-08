@@ -23,11 +23,11 @@ export const sessionLabels = {
   full: "Full body",
   half: "Half body",
   ppl: "Push Pull Legs",
-  upper: "Haut du corps",
-  lower: "Bas du corps",
+  upper: "Upper body",
+  lower: "Lower body",
   push: "Push",
   pull: "Pull",
-  legs: "Legs",
+  legs: "Leg",
 } as const;
 export type SessionKind = keyof typeof sessionLabels;
 export type Split = "full" | "half" | "ppl";
@@ -41,6 +41,31 @@ export type Exercise = {
   pattern: "push" | "pull" | "legs" | "core";
   aliases?: string;
 };
+
+const compoundExerciseIds = new Set([
+  "bench-press",
+  "incline-press",
+  "decline-press",
+  "push-up",
+  "dips",
+  "shoulder-press",
+  "pull-up",
+  "lat-pulldown",
+  "row",
+  "cable-row",
+  "squat",
+  "front-squat",
+  "hack-squat",
+  "leg-press",
+  "lunge",
+  "bulgarian-squat",
+  "romanian-deadlift",
+  "hip-thrust",
+]);
+
+export function defaultFreeRestSeconds(exerciseId: string): number {
+  return compoundExerciseIds.has(exerciseId) ? 120 : 90;
+}
 
 // Hand-authored source of truth. IDs are permanent: history refers to them.
 export const exercises: Exercise[] = [

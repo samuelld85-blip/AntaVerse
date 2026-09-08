@@ -17,6 +17,7 @@ type WorkoutExercise = Omit<ExerciseConfig, "loadKg"> & { loadKg?: number };
 export type RecommendedWorkout = {
   id: string;
   kind: Extract<SessionKind, "full" | "half" | "ppl">;
+  sessionKind: Extract<SessionKind, "full" | "upper" | "lower" | "push" | "pull" | "legs">;
   duration: WorkoutDuration;
   name: string;
   description: string;
@@ -49,6 +50,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "full-short-a",
     kind: "full",
+    sessionKind: "full",
     duration: "short",
     name: "Full body express A",
     description: "Les grands mouvements, sans détour.",
@@ -63,6 +65,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "full-short-b",
     kind: "full",
+    sessionKind: "full",
     duration: "short",
     name: "Full body express B",
     description: "Machines et haltères pour aller droit au but.",
@@ -77,6 +80,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "full-medium-a",
     kind: "full",
+    sessionKind: "full",
     duration: "medium",
     name: "Full body équilibré A",
     description: "Une base complète pour progresser régulièrement.",
@@ -93,6 +97,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "full-medium-b",
     kind: "full",
+    sessionKind: "full",
     duration: "medium",
     name: "Full body équilibré B",
     description: "Variante axée machines et contrôle.",
@@ -109,6 +114,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "full-long-a",
     kind: "full",
+    sessionKind: "full",
     duration: "long",
     name: "Full body complet A",
     description: "Plus de volume sur les mouvements fondamentaux.",
@@ -126,6 +132,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "full-long-b",
     kind: "full",
+    sessionKind: "full",
     duration: "long",
     name: "Full body complet B",
     description: "Une alternative complète pour varier la semaine.",
@@ -143,6 +150,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "half-short-upper",
     kind: "half",
+    sessionKind: "upper",
     duration: "short",
     name: "Haut du corps express",
     description: "Pousser, tirer, épaules et bras en 45 minutes.",
@@ -158,6 +166,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "half-short-lower",
     kind: "half",
+    sessionKind: "lower",
     duration: "short",
     name: "Bas du corps express",
     description: "Jambes, chaîne postérieure et gainage sans rallonger la séance.",
@@ -173,6 +182,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "half-medium-upper",
     kind: "half",
+    sessionKind: "upper",
     duration: "medium",
     name: "Haut du corps complet",
     description: "Une séance haut équilibrée, à alterner avec le bas.",
@@ -189,6 +199,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "half-medium-lower",
     kind: "half",
+    sessionKind: "lower",
     duration: "medium",
     name: "Bas du corps complet",
     description: "Quadriceps, ischios et fessiers avec du volume régulier.",
@@ -205,6 +216,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "half-long-upper",
     kind: "half",
+    sessionKind: "upper",
     duration: "long",
     name: "Haut du corps volume",
     description: "Le format long pour développer chaque groupe du haut.",
@@ -222,6 +234,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "half-long-lower",
     kind: "half",
+    sessionKind: "lower",
     duration: "long",
     name: "Bas du corps volume",
     description: "Une séance jambes complète, en gardant des repos réalistes.",
@@ -239,6 +252,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-short-push",
     kind: "ppl",
+    sessionKind: "push",
     duration: "short",
     name: "Push express",
     description: "Pectoraux, épaules et triceps sans dépasser 45 minutes.",
@@ -252,6 +266,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-short-pull",
     kind: "ppl",
+    sessionKind: "pull",
     duration: "short",
     name: "Pull express",
     description: "Dos, arrière d’épaule et biceps en format court.",
@@ -265,6 +280,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-short-legs",
     kind: "ppl",
+    sessionKind: "legs",
     duration: "short",
     name: "Legs express",
     description: "Quadriceps, ischios et mollets en format court.",
@@ -278,6 +294,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-medium-legs",
     kind: "ppl",
+    sessionKind: "legs",
     duration: "medium",
     name: "Legs régulier",
     description: "Une séance jambes solide et efficace.",
@@ -293,6 +310,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-medium-push",
     kind: "ppl",
+    sessionKind: "push",
     duration: "medium",
     name: "Push régulier",
     description: "Une base PPL avec un peu plus de volume.",
@@ -308,6 +326,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-medium-pull",
     kind: "ppl",
+    sessionKind: "pull",
     duration: "medium",
     name: "Pull régulier",
     description: "Dos, biceps et arrière d’épaule avec un volume régulier.",
@@ -323,6 +342,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-long-pull",
     kind: "ppl",
+    sessionKind: "pull",
     duration: "long",
     name: "Pull volume",
     description: "Un tirage complet avec du travail de bras.",
@@ -340,6 +360,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-long-legs",
     kind: "ppl",
+    sessionKind: "legs",
     duration: "long",
     name: "Legs volume",
     description: "Le format long pour une séance jambes PPL complète.",
@@ -357,6 +378,7 @@ export const recommendedWorkouts: readonly RecommendedWorkout[] = [
   {
     id: "ppl-long-push",
     kind: "ppl",
+    sessionKind: "push",
     duration: "long",
     name: "Push volume",
     description: "Le format long pour développer pectoraux, épaules et triceps.",

@@ -5,8 +5,9 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
 
 - `catalog.ts` : source manuelle des 37 exercices, IDs stables, muscles principaux
   et secondaires, zones, matériel et mouvement. Full body, Half body et Push Pull
-  Legs sont les trois formats. Haut/bas et push/pull/legs sont des filtres facultatifs
-  du catalogue, sans écran intermédiaire. Les abdominaux sont accessibles
+  Legs sont les trois formats parents. Une séance libre choisit ensuite Upper body /
+  Lower body ou Push / Pull / Leg ; ce type réel préfiltre le catalogue, avec une
+  option Tout pour ajouter un exercice hors split. Les abdominaux restent accessibles
   dans chaque séance. Les zones expriment un accent principal, pas une isolation.
 - `model.ts` : schéma versionné, configurations, séries datées avec matériel,
   charge en kg et répétitions facultatives. Une charge d’haltère désigne **un seul

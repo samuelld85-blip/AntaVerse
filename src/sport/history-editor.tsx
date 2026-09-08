@@ -225,7 +225,13 @@ export function HistoryEditor({
             Format
             <select name="kind" defaultValue={session.kind}>
               {Object.entries(sessionLabels)
-                .filter(([id]) => ["full", "half", "ppl", session.kind].includes(id))
+                .filter(([id]) =>
+                  session.kind === "half" || session.kind === "ppl"
+                    ? ["full", "upper", "lower", "push", "pull", "legs", session.kind].includes(
+                        id,
+                      )
+                    : ["full", "upper", "lower", "push", "pull", "legs"].includes(id),
+                )
                 .map(([id, label]) => (
                   <option key={id} value={id}>
                     {label}

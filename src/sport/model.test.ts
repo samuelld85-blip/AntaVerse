@@ -12,8 +12,10 @@ import {
   createEntry,
   createSession,
   defaultConfig,
+  defaultFreeConfig,
   emptyStore,
   finishSession,
+  lastConfigForExercise,
   loadStore,
   saveStore,
   STORAGE_KEY,
@@ -85,6 +87,52 @@ describe("sport training log", () => {
     expect(finished.endedAt).not.toBeNull();
     expect(session.endedAt).toBeNull();
     expect(session.exercises).toHaveLength(2);
+  });
+  it("returns the latest performed configuration and ignores unperformed exercises", () => {
+    const older = createSession("push", []);
+    older.startedAt = "2026-09-01T10:00:00.000Z";
+    const olderEntry = createEntry({
+      ...defaultConfig("bench-press"),
+      loadKg: 50,
+      reps: 10,
+    });
+    older.exercises = [completeSet(olderEntry, "2026-09-01T10:05:00.000Z")];
+    const olderFinished = { ...finishSession(older), endedAt: "2026-09-01T10:10:00.000Z" };
+
+    const latest = createSession("push", []);
+    latest.startedAt = "2026-09-08T10:00:00.000Z";
+    const latestEntry = createEntry({
+      ...defaultConfig("bench-press"),
+      loadKg: 60,
+      reps: 12,
+    });
+    latest.exercises = [completeSet(latestEntry, "2026-09-08T10:05:00.000Z")];
+    const latestFinished = { ...finishSession(latest), endedAt: "2026-09-08T10:10:00.000Z" };
+
+    expect(lastConfigForExercise([olderFinished, latestFinished], "bench-press")).toMatchObject({
+      equipment: "barbell",
+      sets: 3,
+      loadKg: 60,
+      reps: 12,
+    });
+    const unperformed = createSession("push", [defaultConfig("bench-press")]);
+    expect(lastConfigForExercise([unperformed], "bench-press")).toBeNull();
+  });
+  it("provides useful defaults for a new free-session exercise", () => {
+    expect(defaultFreeConfig("bench-press")).toMatchObject({
+      sets: 10,
+      restSeconds: 120,
+      loadKg: 0,
+      reps: null,
+    });
+    expect(defaultFreeConfig("row").restSeconds).toBe(120);
+    expect(defaultFreeConfig("chest-fly")).toMatchObject({
+      sets: 10,
+      restSeconds: 90,
+      loadKg: 0,
+      reps: null,
+    });
+    expect(defaultFreeConfig("curl").restSeconds).toBe(90);
   });
   it("roundtrips the active session, history and separate configurations without timers", () => {
     const a = defaultConfig("bench-press"),
