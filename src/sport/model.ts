@@ -123,11 +123,10 @@ export const defaultConfig = (id: string): ExerciseConfig => ({
   sets: 3,
   restSeconds: 120,
   loadKg: 0,
-  reps: null,
+  reps: 10,
 });
 export const defaultFreeConfig = (id: string): ExerciseConfig => ({
   ...defaultConfig(id),
-  sets: 10,
   restSeconds: defaultFreeRestSeconds(id),
 });
 export const createEntry = (config: ExerciseConfig, superset?: ExerciseConfig): ExerciseEntry => ({

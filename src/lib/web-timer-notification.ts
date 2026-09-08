@@ -3,6 +3,22 @@ import type { AntaverseTimerPlugin, TimerStartOptions } from "./native-timer";
 const TIMER_TAG = "antaverse-rest-timer";
 const TIMER_URL = "/sport/?section=training";
 
+type TimerNotificationOptions = NotificationOptions & { renotify?: boolean };
+
+let updateInterval: number | undefined;
+let currentEndsAt: number | null = null;
+let updateInFlight = false;
+
+function formatRemaining(endsAt: number) {
+  const seconds = Math.max(0, Math.ceil((endsAt - Date.now()) / 1000));
+  const minutes = Math.floor(seconds / 60);
+  return `${String(minutes).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+}
+
+function isAndroidWeb() {
+  return typeof navigator !== "undefined" && /Android/i.test(navigator.userAgent);
+}
+
 async function closeNotifications() {
   if (!("serviceWorker" in navigator)) return;
   try {
@@ -15,28 +31,44 @@ async function closeNotifications() {
   }
 }
 
-async function showNotification(title: string) {
+async function showNotification(endsAt: number | null, title: string) {
   if (typeof Notification === "undefined" || Notification.permission !== "granted") return;
   if (!("serviceWorker" in navigator)) return;
 
   try {
     const registration = await navigator.serviceWorker.getRegistration();
     if (!registration) return;
-    await registration.showNotification(title, {
-      body: "Repos en cours · touchez pour revenir à AntaVerse",
+    const options: TimerNotificationOptions = {
+      body:
+        endsAt === null
+          ? "Repos en cours · touchez pour revenir à AntaVerse"
+          : `Repos en cours · ${formatRemaining(endsAt)} restantes`,
       tag: TIMER_TAG,
       icon: "/icons/web/icon-192.png",
       badge: "/icons/web/icon-192.png",
       requireInteraction: true,
+      // Android replaces the existing tagged card without alerting again. iOS
+      // does not reliably honor this behavior, so it never enters the refresh loop.
+      renotify: false,
       silent: true,
       data: { url: TIMER_URL },
-    });
+    };
+    await registration.showNotification(title, options);
   } catch {
     // Notifications are an enhancement; the in-app timer remains authoritative.
   }
 }
 
+function stopUpdating() {
+  if (updateInterval !== undefined) window.clearInterval(updateInterval);
+  updateInterval = undefined;
+  currentEndsAt = null;
+  updateInFlight = false;
+}
+
 async function start(options: TimerStartOptions) {
+  stopUpdating();
+
   if (typeof Notification !== "undefined" && Notification.permission === "default") {
     try {
       await Notification.requestPermission();
@@ -46,11 +78,31 @@ async function start(options: TimerStartOptions) {
   }
 
   // Browsers cannot update a notification in place reliably (especially on iOS).
-  // Keep one stable, clickable notification instead of recreating it every second.
-  await showNotification(options.title);
+  await closeNotifications();
+  currentEndsAt = options.endsAt;
+  await showNotification(isAndroidWeb() ? options.endsAt : null, options.title);
+
+  // Android Chrome can replace one tagged notification without re-alerting the
+  // user. This gives Android PWAs a visible countdown in the notification shade.
+  // iOS WebKit is intentionally excluded because it can turn replacements into
+  // a notification burst.
+  if (!isAndroidWeb()) return;
+  updateInterval = window.setInterval(() => {
+    if (currentEndsAt === null || updateInFlight) return;
+    if (Date.now() >= currentEndsAt) {
+      stopUpdating();
+      void closeNotifications();
+      return;
+    }
+    updateInFlight = true;
+    void showNotification(currentEndsAt, options.title).finally(() => {
+      updateInFlight = false;
+    });
+  }, 1000);
 }
 
 async function stop() {
+  stopUpdating();
   await closeNotifications();
 }
 

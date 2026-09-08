@@ -2019,7 +2019,18 @@ export function SportApp() {
                         >
                           @{detailItem?.username}
                         </p>
-                        <h2>{detail.name || sessionLabels[detail.kind]}</h2>
+                        <h2>
+                          {detail.name || sessionLabels[detail.kind]}
+                          {detail.feedback && (
+                            <span
+                              className={`${styles.historyFeedback} ${feedbackColorClass(detail.feedback.mood)}`}
+                              title={`Ressenti : ${detail.feedback.mood}`}
+                              aria-label={`Ressenti : ${detail.feedback.mood}`}
+                            >
+                              {feedbackEmojiByMood[detail.feedback.mood]}
+                            </span>
+                          )}
+                        </h2>
                       </div>
                       {!detailIsFriend && (
                         <Star
@@ -2029,6 +2040,9 @@ export function SportApp() {
                         />
                       )}
                     </div>
+                    {detail.feedback?.comment.trim() && (
+                      <p className={styles.historySessionComment}>{detail.feedback.comment}</p>
+                    )}
                     <p className={styles.hint}>
                       {detail.exercises.length} exercices ·{" "}
                       {detail.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)} séries

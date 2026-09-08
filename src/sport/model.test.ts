@@ -34,7 +34,7 @@ describe("sport training log", () => {
     entry = completeSet(entry);
     expect(entry.finished).toBe(true);
     expect(entry.completedSets.map((s) => [s.loadKg, s.reps, s.equipment])).toEqual([
-      [40, null, "barbell"],
+      [40, 10, "barbell"],
       [20, 10, "dumbbell"],
     ]);
     expect(completeSet(entry)).toBe(entry);
@@ -120,17 +120,17 @@ describe("sport training log", () => {
   });
   it("provides useful defaults for a new free-session exercise", () => {
     expect(defaultFreeConfig("bench-press")).toMatchObject({
-      sets: 10,
+      sets: 3,
       restSeconds: 120,
       loadKg: 0,
-      reps: null,
+      reps: 10,
     });
     expect(defaultFreeConfig("row").restSeconds).toBe(120);
     expect(defaultFreeConfig("chest-fly")).toMatchObject({
-      sets: 10,
+      sets: 3,
       restSeconds: 90,
       loadKg: 0,
-      reps: null,
+      reps: 10,
     });
     expect(defaultFreeConfig("curl").restSeconds).toBe(90);
   });

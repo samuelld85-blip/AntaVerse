@@ -172,8 +172,16 @@ self.addEventListener("notificationclick", (event) => {
     const url = new URL(target, self.location.origin).href;
     const windows = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
     const existing = windows.find(client => new URL(client.url).origin === self.location.origin);
-    if (existing) { await existing.navigate(url); await existing.focus(); }
-    else await self.clients.openWindow(url);
+    if (existing) {
+      try {
+        await existing.navigate(url);
+        await existing.focus();
+        return;
+      } catch {
+        // If the background PWA window is no longer navigable, open its scoped URL.
+      }
+    }
+    await self.clients.openWindow(url);
   })());
 });
 

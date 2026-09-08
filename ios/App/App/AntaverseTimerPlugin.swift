@@ -11,6 +11,8 @@ public class AntaverseTimerPlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "stop", returnType: CAPPluginReturnPromise),
     ]
 
+    private let legacyNotificationIdentifier = "antaverse-rest-timer"
+
     @objc func start(_ call: CAPPluginCall) {
         guard let milliseconds = call.getDouble("endsAt"), milliseconds > Date().timeIntervalSince1970 * 1000 else {
             call.reject("Le chronomètre doit se terminer dans le futur.")
@@ -22,6 +24,11 @@ public class AntaverseTimerPlugin: CAPPlugin, CAPBridgedPlugin {
 
         if #available(iOS 16.1, *) {
             Task {
+                guard ActivityAuthorizationInfo().areActivitiesEnabled else {
+                    call.resolve(["supported": false])
+                    return
+                }
+
                 await endAllActivities()
                 do {
                     let attributes = RestTimerAttributes(title: title)
@@ -40,7 +47,8 @@ public class AntaverseTimerPlugin: CAPPlugin, CAPBridgedPlugin {
             return
         }
 
-        scheduleFallbackNotification(title: title, endsAt: endsAt)
+        // iOS 15 has no Live Activities. Do not replace the system surface with
+        // a regular alert: the product behavior is a quiet, persistent timer.
         call.resolve(["supported": false])
     }
 
@@ -48,7 +56,9 @@ public class AntaverseTimerPlugin: CAPPlugin, CAPBridgedPlugin {
         if #available(iOS 16.1, *) {
             Task { await endAllActivities() }
         }
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["antaverse-rest-timer"])
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [legacyNotificationIdentifier])
+        center.removeDeliveredNotifications(withIdentifiers: [legacyNotificationIdentifier])
         call.resolve()
     }
 
@@ -59,18 +69,4 @@ public class AntaverseTimerPlugin: CAPPlugin, CAPBridgedPlugin {
         }
     }
 
-    private func scheduleFallbackNotification(title: String, endsAt: Date) {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
-            guard granted else { return }
-            let content = UNMutableNotificationContent()
-            content.title = title
-            content.body = "Votre repos est terminé."
-            content.sound = .default
-            let seconds = max(1, endsAt.timeIntervalSinceNow)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
-            let request = UNNotificationRequest(identifier: "antaverse-rest-timer", content: content, trigger: trigger)
-            center.add(request)
-        }
-    }
 }

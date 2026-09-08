@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { muscleLabels, sessionLabels, type Muscle } from "./catalog";
 import type { Session } from "./model";
 import {
@@ -158,6 +158,158 @@ function TrendChart({
   );
 }
 
+type AlbumPhoto = {
+  src: string;
+  sessionName: string;
+  date: string;
+};
+
+function PhotoAlbum({ history, username }: { history: Session[]; username?: string }) {
+  const [open, setOpen] = useState(false);
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null);
+  const photos = useMemo<AlbumPhoto[]>(
+    () =>
+      history.flatMap((session) =>
+        (session.feedback?.photos ?? []).map((src) => ({
+          src,
+          sessionName: session.name || "Séance",
+          date: session.startedAt,
+        })),
+      ),
+    [history],
+  );
+  const ownerLabel = username ? `@${username}` : "ce profil";
+
+  useEffect(() => {
+    if (viewerIndex === null) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setViewerIndex(null);
+      if (event.key === "ArrowLeft") {
+        setViewerIndex((current) =>
+          current === null ? null : (current - 1 + photos.length) % photos.length,
+        );
+      }
+      if (event.key === "ArrowRight") {
+        setViewerIndex((current) => (current === null ? null : (current + 1) % photos.length));
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [photos.length, viewerIndex]);
+
+  return (
+    <section className={styles.profileAlbum} aria-labelledby="profile-album-title">
+      <div className={styles.profileAlbumHeading}>
+        <div>
+          <p className={styles.eyebrow}>Souvenirs de séances</p>
+          <h2 id="profile-album-title">{username ? `Album de ${ownerLabel}` : "Votre album"}</h2>
+        </div>
+        <button
+          type="button"
+          className={styles.secondary}
+          aria-expanded={open}
+          onClick={() => setOpen((current) => !current)}
+        >
+          {open ? "Fermer l’album" : "Ouvrir l’album"}
+          <span
+            className={styles.albumCount}
+            aria-label={`${photos.length} photo${photos.length > 1 ? "s" : ""}`}
+          >
+            {photos.length}
+          </span>
+        </button>
+      </div>
+      {open &&
+        (photos.length ? (
+          <div className={styles.albumGrid}>
+            {photos.map((photo, index) => (
+              <figure className={styles.albumItem} key={`${photo.src}-${index}`}>
+                <button
+                  type="button"
+                  className={styles.albumPhotoButton}
+                  aria-label={`Ouvrir la photo ${index + 1} de ${ownerLabel}`}
+                  onClick={() => setViewerIndex(index)}
+                >
+                  <img
+                    src={photo.src}
+                    alt={`${photo.sessionName}, ${shortDate(photo.date)}`}
+                    loading="lazy"
+                  />
+                </button>
+                <figcaption>
+                  <strong>{photo.sessionName}</strong>
+                  <span>{shortDate(photo.date)}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        ) : (
+          <div className={styles.emptySmall}>
+            <strong>Aucune photo dans l’album</strong>
+            <p>Les photos ajoutées aux séances de {ownerLabel} apparaîtront ici.</p>
+          </div>
+        ))}
+      {viewerIndex !== null && photos[viewerIndex] && (
+        <div
+          className={styles.photoLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Photo de l’album de ${ownerLabel}`}
+          onClick={() => setViewerIndex(null)}
+        >
+          <button
+            type="button"
+            className={styles.photoLightboxClose}
+            aria-label="Fermer la photo"
+            autoFocus
+            onClick={() => setViewerIndex(null)}
+          >
+            ×
+          </button>
+          <div className={styles.photoLightboxContent} onClick={(event) => event.stopPropagation()}>
+            {photos.length > 1 && (
+              <button
+                type="button"
+                className={styles.photoLightboxNav}
+                aria-label="Photo précédente"
+                onClick={() =>
+                  setViewerIndex((current) =>
+                    current === null ? null : (current - 1 + photos.length) % photos.length,
+                  )
+                }
+              >
+                ‹
+              </button>
+            )}
+            <img
+              className={styles.photoLightboxImage}
+              src={photos[viewerIndex].src}
+              alt={`${photos[viewerIndex].sessionName}, ${shortDate(photos[viewerIndex].date)}`}
+            />
+            {photos.length > 1 && (
+              <button
+                type="button"
+                className={styles.photoLightboxNav}
+                aria-label="Photo suivante"
+                onClick={() =>
+                  setViewerIndex((current) =>
+                    current === null ? null : (current + 1) % photos.length,
+                  )
+                }
+              >
+                ›
+              </button>
+            )}
+          </div>
+          <p className={styles.photoLightboxCounter}>
+            {viewerIndex + 1} / {photos.length}
+          </p>
+        </div>
+      )}
+    </section>
+  );
+}
+
 export function StatsDashboard({
   history,
   username,
@@ -200,6 +352,7 @@ export function StatsDashboard({
             <h1 id="profile-title">{username ? `Profil de ${username}` : "Mon profil"}</h1>
           </div>
         )}
+        <PhotoAlbum history={history} username={username} />
         <div className={styles.empty}>
           <h2>Votre profil se construit ici</h2>
           <p>Terminez une première séance pour voir votre rythme, vos exercices et vos progrès.</p>
@@ -215,6 +368,7 @@ export function StatsDashboard({
           <h1 id="profile-title">{username ? `Profil de ${username}` : "Mon profil"}</h1>
         </div>
       )}
+      <PhotoAlbum history={history} username={username} />
       <div className={styles.segment} aria-label="Période des statistiques">
         {(Object.keys(rangeLabels) as StatsRange[]).map((item) => (
           <button

@@ -42,7 +42,13 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   repos seul ne compte aucune série. Le chronomètre reprend exactement après
   suspension, navigation ou rechargement ; Android affiche un chronomètre dans la
   notification persistante et iOS 16.1+ dans une Live Activity. Sur navigateur,
-  une notification PWA cliquable est proposée quand l’API est disponible.
+  une notification PWA silencieuse et cliquable est proposée quand l’API est
+  disponible : Android Chromium tente de remplacer la même carte pour afficher
+  le temps restant, tandis qu’iOS conserve une seule carte statique pour éviter
+  toute rafale de notifications. Une PWA peut être suspendue par le navigateur
+  ou le système en arrière-plan ; seule l’intégration native garantit un
+  chronomètre mis à jour pendant cette suspension. Le navigateur ne peut pas
+  ajouter du texte à côté de l’heure ou des icônes système.
   Saisie séparée minutes/secondes et affichage m:ss. Le lancement automatique
   après une série est facultatif ; le bouton de chrono seul est toujours accessible.
 
