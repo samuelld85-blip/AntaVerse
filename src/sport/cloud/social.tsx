@@ -241,6 +241,10 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
   const [feedbackBusy, setFeedbackBusy] = useState<string | null>(null);
   const [push, setPush] = useState(false);
   const [friendPhotos, setFriendPhotos] = useState<Record<string, string>>({});
+  const [friendToRemove, setFriendToRemove] = useState<{
+    friendship: Friendship;
+    username: string;
+  } | null>(null);
   const id = session?.user.id;
   const client = getCloud();
   const refresh = useCallback(async () => {
@@ -607,6 +611,19 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
       setFeedbackBusy(null);
     }
   }
+  async function confirmRemoveFriend() {
+    if (!client || !friendToRemove || busy) return;
+    const { friendship } = friendToRemove;
+    await run(async () => {
+      const { error } = await client
+        .from("friendships")
+        .delete()
+        .eq("requester", friendship.requester)
+        .eq("recipient", friendship.recipient);
+      if (error) throw error;
+      setFriendToRemove(null);
+    });
+  }
   return (
     <section className={`${styles.panel} ${styles.social}`} aria-label="Social">
       {message && (
@@ -796,16 +813,7 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                         aria-label={`Retirer @${username}`}
                         className={styles.iconButton}
                         disabled={busy}
-                        onClick={() =>
-                          void run(async () => {
-                            const { error } = await client!
-                              .from("friendships")
-                              .delete()
-                              .eq("requester", f.requester)
-                              .eq("recipient", f.recipient);
-                            if (error) throw error;
-                          })
-                        }
+                        onClick={() => setFriendToRemove({ friendship: f, username })}
                         title={`Retirer @${username}`}
                         type="button"
                       >
@@ -875,6 +883,40 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
             })}
           </ul>
         </>
+      )}
+      {friendToRemove && (
+        <div className={styles.confirmationOverlay} role="presentation">
+          <div
+            aria-describedby="remove-friend-description"
+            aria-labelledby="remove-friend-title"
+            aria-modal="true"
+            className={styles.confirmationDialog}
+            role="dialog"
+          >
+            <h2 id="remove-friend-title">Supprimer cet ami&nbsp;?</h2>
+            <p id="remove-friend-description">
+              Êtes-vous certain de vouloir supprimer @{friendToRemove.username}&nbsp;?
+            </p>
+            <div className={styles.confirmationActions}>
+              <button
+                autoFocus
+                disabled={busy}
+                onClick={() => void confirmRemoveFriend()}
+                type="button"
+              >
+                Confirmer la suppression
+              </button>
+              <button
+                className={styles.confirmationCancel}
+                disabled={busy}
+                onClick={() => setFriendToRemove(null)}
+                type="button"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
       )}
       {!viewing && (
         <>
