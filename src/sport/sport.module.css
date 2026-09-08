@@ -1544,6 +1544,11 @@
   color: var(--sport-muted);
   font-size: 11px;
 }
+.profileHeroMetric small {
+  color: var(--sport-accent);
+  font-size: 10px;
+  font-weight: 700;
+}
 .profileHeroMetric strong,
 .profileHeroCount {
   color: var(--sport-ink);

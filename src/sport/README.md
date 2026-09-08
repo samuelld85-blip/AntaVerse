@@ -30,6 +30,9 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   bouton dans l’en-tête Sport. La palette du module associe bleu nuit, cuivre et
   champagne en sombre ; ivoire, bleu ardoise et terre cuite en clair. Les tokens
   de `sport.module.css` portent les surfaces, dégradés, contrastes et états.
+- `progression.ts`, `progression-badge.tsx` et `stats-dashboard.tsx` : progression personnelle
+  Sport avec XP linéaire par séance, statuts globaux, niveaux par exercice, badges et statistiques
+  de charge, volume et muscles. Le profil ami reprend ces mêmes informations depuis Social.
 - `history-editor.tsx` : correction du titre, de la date, du format et des séries,
   ajout/retrait d’exercices. Les favoris restent des copies indépendantes. Une
   suppression d’historique demande confirmation. La sortie de séance entre deux

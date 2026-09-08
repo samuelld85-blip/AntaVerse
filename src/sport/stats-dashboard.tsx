@@ -189,6 +189,7 @@ export function StatsDashboard({
           <div className={styles.profileHeroMetric}>
             <strong>{globalProgression.sessions}</strong>
             <span>séance{globalProgression.sessions > 1 ? "s" : ""}</span>
+            <small>{globalProgression.xp} XP cumulée</small>
           </div>
         </div>
         {globalProgression.nextStatus ? (

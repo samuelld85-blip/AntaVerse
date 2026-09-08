@@ -572,7 +572,7 @@ test("sport: profile brings progression and statistics together", async ({ page 
   });
   await page.reload();
   await expect(page.getByText(/Votre dernière séance Push était/)).toBeVisible();
-  await page.getByRole("button", { name: "Profil", exact: true }).click();
+  await page.getByRole("button", { name: /^Profil/ }).click();
   await expect(page.getByRole("heading", { name: "Mon profil", exact: true })).toBeVisible();
   await expect(page.getByText("Explorateur", { exact: true })).toBeVisible();
   await expect(page.getByText("Niveau 1", { exact: true })).toBeVisible();
