@@ -13,8 +13,14 @@ continue d'exister en parallèle.
   maskable, `display: "standalone"`), Service Worker fonctionnel
   (`public/sw.js`) avec cache applicatif et repli hors ligne
   (`offline.html`).
-- Aucune dépendance à une API serveur, ce qui simplifie n'importe quelle
-  option de packaging (pas de backend à répliquer ou exposer différemment).
+- Les jeux n'ont aucune dépendance à une API serveur. Le module Sport a une
+  couche compte **optionnelle** sur Supabase (`src/sport/cloud/`), active
+  seulement si la build embarque `NEXT_PUBLIC_SUPABASE_*`. Elle utilise
+  Supabase directement depuis le client via HTTPS — rien à répliquer, mais
+  toute build native qui embarque cette configuration hérite d'un backend
+  tiers à déclarer (voir `docs/store/APPLE_PRIVACY_DECLARATION.md`,
+  `GOOGLE_DATA_SAFETY.md`) et son Web Push ne fonctionne pas dans la
+  coquille Capacitor (`src/sport/cloud/push.ts` le refuse volontairement).
 
 ## Options pour iOS
 

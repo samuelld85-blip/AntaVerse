@@ -1,6 +1,6 @@
 # Prestataires et SDK tiers
 
-Dernière vérification technique : 2026-08-24.
+Dernière vérification technique : 2026-09-08.
 
 ## Méthode
 
@@ -19,19 +19,68 @@ réseau) et **SDK** (communique avec un serveur).
 | `idb`                                    | Enveloppe utilitaire autour de l'API IndexedDB native du navigateur                | Non — 100 % local                                             | Non                                                         |
 | `zod`                                    | Validation de schémas de données                                                   | Non — 100 % local                                             | Non                                                         |
 | `@capacitor/core` / `@capacitor/android` / `@capacitor/ios` | Pont et conteneur natif Android/iOS ; sert les fichiers statiques et expose le chronomètre système local | Non — aucun service distant Capacitor n'est configuré | Non |
+| `@supabase/supabase-js` | **SDK** du backend Sport : Auth (e-mail/mot de passe, OAuth Google/Apple), base PostgreSQL (carnet, amis, likes/commentaires), abonnements Web Push | **Oui** — mais uniquement importé par `src/sport/cloud/`, uniquement si Supabase est configuré au build, uniquement sur `/sport`, et sans effet tant qu'aucun compte n'est créé | **Oui** dès que la couche compte est activée en production — voir `docs/store/APPLE_PRIVACY_DECLARATION.md` et `GOOGLE_DATA_SAFETY.md` |
 
-**Aucune de ces dépendances n'est un SDK de collecte au sens où l'entend cet
-audit** : ce sont des bibliothèques exécutées entièrement dans le
-navigateur/l'appareil de l'utilisateur, sans appel réseau vers un serveur
-tiers. Aucune n'a donc à être déclarée comme "collecte de données par un
-tiers" dans les formulaires Apple ou Google.
+À l'exception de `@supabase/supabase-js`, **aucune de ces dépendances n'est
+un SDK de collecte** : ce sont des bibliothèques exécutées entièrement dans
+le navigateur/l'appareil, sans appel réseau vers un serveur tiers.
+
+## Supabase — le backend du module Sport
+
+Prestataire : **Supabase** (base PostgreSQL managée, service
+d'authentification, Edge Functions Deno). Utilisé **uniquement** par la
+couche compte optionnelle du module Sport (`src/sport/cloud/`, `supabase/`).
+
+- **Activation** : conditionnée à `NEXT_PUBLIC_SUPABASE_URL` +
+  `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` au build, à la route `/sport`, et à
+  la création d'un compte par l'utilisateur. Un build sans ces variables
+  n'initialise jamais le client Supabase.
+- **Ce qui transite** : voir le tableau détaillé dans
+  `docs/compliance/DATA_INVENTORY.md` § "Compte Sport cloud". En résumé :
+  identité de connexion (e-mail ou identité Google/Apple), pseudo, carnet
+  Sport et ses 10 dernières révisions, relations d'amitié, likes/commentaires
+  d'amis sur des séances terminées, abonnements Web Push.
+- **Région** : choisie à la création du projet Supabase (préférer l'UE pour
+  ce public). L'éditeur doit renseigner la région retenue et vérifier les
+  garanties de transfert avant activation en production —
+  `/legal/confidentialite` § 7.
+- **Sous-traitance / e-mails** : les e-mails de récupération de mot de passe
+  passent par le SMTP de production configuré par l'éditeur dans Supabase.
+- **Edge Function `send-session-push`** : s'exécute côté Supabase avec la
+  clé service-role, authentifiée par un secret de worker, jamais appelée
+  depuis le navigateur. Elle relaie les notifications vers les services push
+  des navigateurs (voir ci-dessous).
+- **Secrets** : le client ne reçoit que l'URL Supabase, la clé *publiable*
+  et la clé VAPID *publique*. Clé service-role, secrets OAuth, mot de passe
+  de base et clé VAPID privée restent côté serveur — jamais dans
+  `NEXT_PUBLIC_*` ni `src/`.
+
+## Connexions sociales — Google et Apple
+
+Si l'utilisateur choisit « Continuer avec Google » ou « Continuer avec
+Apple », une authentification OAuth web (PKCE) a lieu avec le fournisseur
+choisi, qui renvoie un identifiant et une adresse e-mail à Supabase Auth.
+Ces boutons n'apparaissent que si le fournisseur est configuré côté
+Supabase. Aucun SDK Google/Apple n'est embarqué dans l'app ; il s'agit d'une
+redirection navigateur. Les politiques de Google et d'Apple s'appliquent à
+ce traitement.
+
+## Services de push des navigateurs
+
+Un abonnement Web Push est acheminé par le service push du navigateur de
+l'utilisateur (`fcm.googleapis.com`, `updates.push.services.mozilla.com`,
+`*.push.apple.com`, `*.notify.windows.com`). L'edge function n'envoie que
+vers cette liste blanche. Ce sont des relais techniques, pas des SDK
+intégrés.
 
 ## Analytics, mesure d'audience, publicité, monitoring
 
 **Aucun.** Recherche explicite (imports, `package.json`) de : `@vercel/analytics`,
 `@vercel/speed-insights`, Google Analytics/`gtag`, Meta Pixel, PostHog,
-Mixpanel, Sentry, Amplitude, Hotjar, Segment — aucun résultat. Confirmé
-également par l'absence totale d'appel `fetch`/`axios`/XHR dans `src/`
+Mixpanel, Sentry, Amplitude, Hotjar, Segment — aucun résultat. Le seul appel
+réseau applicatif du dépôt est le client Supabase, confiné à
+`src/sport/cloud/` (voir plus haut) ; il ne fait ni mesure d'audience ni
+suivi. Aucun `fetch`/`axios`/XHR ailleurs dans `src/`
 (voir `docs/compliance/DATA_INVENTORY.md`).
 
 ## Hébergement
@@ -58,10 +107,15 @@ de polices déclarée (`"Space Grotesk", Inter, sans-serif` dans
 `src/app/globals.css`) retombe sur les polices système si elles ne sont pas
 installées — aucune requête réseau associée.
 
-## Ce qui déclencherait une mise à jour de ce document
+## Historique et déclencheurs
 
-L'ajout de tout SDK, script tiers, ou appel réseau vers un domaine externe
-doit déclencher une mise à jour immédiate de ce fichier, de
-`docs/compliance/DATA_INVENTORY.md`, de `docs/store/APPLE_PRIVACY_DECLARATION.md`
-et de `docs/store/GOOGLE_DATA_SAFETY.md` — voir la règle ajoutée dans
-CLAUDE.md.
+**2026-09** : ajout de Supabase (Auth + PostgreSQL + Edge Functions) comme
+backend du module Sport, avec connexions OAuth Google/Apple optionnelles et
+relais Web Push. Répercuté dans `docs/compliance/DATA_INVENTORY.md`,
+`PERMISSIONS_INVENTORY.md`, `SECURITY_OVERVIEW.md`,
+`FUTURE_SOCIAL_REQUIREMENTS.md`, `docs/store/APPLE_PRIVACY_DECLARATION.md`,
+`docs/store/GOOGLE_DATA_SAFETY.md` et `/legal/confidentialite`.
+
+L'ajout de tout SDK, script tiers, prestataire, ou appel réseau vers un
+domaine externe supplémentaire doit déclencher une mise à jour immédiate de
+ce fichier et des documents ci-dessus — voir la règle dans CLAUDE.md.

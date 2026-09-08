@@ -1,74 +1,82 @@
 # Préparation — App Privacy (App Store Connect)
 
-Dernière vérification des exigences stores : 2026-08-24. Document
+Dernière vérification des exigences stores : 2026-09-08. Document
 préparatoire pour remplir le questionnaire "App Privacy" d'App Store
-Connect, basé exclusivement sur l'audit réel du code
-(`docs/compliance/DATA_INVENTORY.md`, `docs/compliance/THIRD_PARTY_SERVICES.md`).
-**À revalider obligatoirement à chaque ajout de SDK ou plugin natif.** Les
-wrappers Capacitor Android et iOS embarquent l'export statique, sans analytics,
-crash reporting, identifiant transmis ni service Capacitor distant configuré.
-Le chronomètre iOS utilise localement ActivityKit/Live Activities et le
-chronomètre Android une notification locale ; aucun de ces affichages ne
-transmet de donnée à l’éditeur. Voir
-`docs/compliance/THIRD_PARTY_SERVICES.md` et
-`docs/compliance/PERMISSIONS_INVENTORY.md`.
+Connect, basé sur l'audit réel du code (`docs/compliance/DATA_INVENTORY.md`,
+`docs/compliance/THIRD_PARTY_SERVICES.md`,
+`docs/compliance/PERMISSIONS_INVENTORY.md`). **À revalider à chaque ajout de
+SDK, de plugin natif, ou de champ synchronisé.**
 
-## Conclusion de l'audit actuel
+Rappel cible : AntaVerse est utilisée comme PWA installée. Cette déclaration
+n'a d'objet que si une build native est un jour soumise. Elle doit alors
+décrire le comportement **de la build soumise** — en particulier si celle-ci
+embarque une configuration Supabase (couche compte Sport active) ou non.
 
-**Aucune donnée n'est collectée par l'éditeur d'AntaVerse aujourd'hui**, au
-sens où l'entend le formulaire Apple : rien n'est transmis depuis
-l'appareil de l'utilisateur vers un serveur contrôlé par l'éditeur ou par
-un tiers intégré au code. Le raisonnement complet :
+## Deux cas selon la build
 
-- Aucune requête réseau applicative (`fetch`/`axios`/XHR) n'existe dans le
-  code source, vérifié par recherche exhaustive.
-- Aucun SDK (analytics, publicité, crash reporting, etc.) n'est intégré.
-- Toutes les données de jeu (prénoms, parties, préférences) restent dans le
-  stockage local du navigateur, jamais transmises.
-- Pour la PWA, le seul flux de données existant est le trafic HTTP standard
-  entre le navigateur de l'utilisateur et l'hébergeur (Vercel), pour livrer
-  les pages. Dans l'AAB Android, l'interface et les jeux sont chargés depuis
-  les assets embarqués. Aucun de ces flux ne correspond à une collecte de
-  données utilisateur par AntaVerse au sens du formulaire Apple.
+### Cas A — build sans configuration Supabase
 
-## Réponses préparatoires, catégorie par catégorie
+`NEXT_PUBLIC_SUPABASE_URL` absent au build : le client Supabase ne
+s'initialise jamais, la couche compte Sport est inerte.
 
-| Catégorie Apple                               | Collecte ? | Liée à l'utilisateur ? | Utilisée pour le tracking ? | Justification                                                                                   |
-| --------------------------------------------- | ---------- | ---------------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
-| Contact Info (nom, email, téléphone, adresse) | Non        | —                      | —                           | Aucun champ de ce type n'existe dans l'app                                                      |
-| Health & Fitness                              | Non        | —                      | —                           | Sans objet                                                                                      |
-| Financial Info                                | Non        | —                      | —                           | Sans objet, aucun paiement                                                                      |
-| Location                                      | Non        | —                      | —                           | `navigator.geolocation` non utilisé (voir `PERMISSIONS_INVENTORY.md`)                           |
-| Sensitive Info                                | Non        | —                      | —                           | Sans objet                                                                                      |
-| Contacts                                      | Non        | —                      | —                           | Sans objet                                                                                      |
-| User Content (photos, vidéos, contenu généré) | Non        | —                      | —                           | Aucun UGC (voir `FUTURE_SOCIAL_REQUIREMENTS.md`)                                                |
-| Browsing History                              | Non        | —                      | —                           | Sans objet                                                                                      |
-| Search History                                | Non        | —                      | —                           | Sans objet                                                                                      |
-| Identifiers (User ID, Device ID)              | Non        | —                      | —                           | Aucun identifiant généré ou transmis ; les clés de stockage local ne quittent jamais l'appareil |
-| Purchases                                     | Non        | —                      | —                           | Aucune monétisation aujourd'hui                                                                 |
-| Usage Data (interactions, temps passé)        | Non        | —                      | —                           | Aucun outil de mesure d'usage intégré                                                           |
-| Diagnostics (crash logs, performance)         | Non        | —                      | —                           | Aucun SDK de crash reporting                                                                    |
-| Other Data                                    | Non        | —                      | —                           | Sans objet                                                                                      |
+**Aucune donnée n'est collectée par l'éditeur ni par un tiers intégré.**
+Aucune requête réseau applicative, aucun SDK de collecte, tout reste dans le
+stockage local. Répondre "Non" à toutes les catégories, ATT non applicable.
 
-## Tracking (ATT — App Tracking Transparency)
+### Cas B — build avec configuration Supabase (couche compte Sport active)
 
-**Non applicable.** Aucun tracking cross-app ou cross-site n'existe :
-aucune donnée n'est partagée avec un tiers à des fins de publicité ou de
-mesure cross-app. Le prompt ATT n'a donc pas lieu d'être affiché.
+C'est le cas de l'app web de production. Les jeux et le carnet Sport utilisé
+**sans compte** ne collectent toujours rien. Mais un utilisateur qui **crée
+un compte Sport** transmet des données à Supabase (sous-traitant) et, s'il
+choisit une connexion sociale, à Google ou Apple. Détail exhaustif :
+`docs/compliance/DATA_INVENTORY.md` § "Compte Sport cloud".
 
-## Pourquoi cette conclusion est raisonnable
+| Catégorie Apple | Collecte ? | Liée à l'utilisateur ? | Tracking ? | Détail |
+| --- | --- | --- | --- | --- |
+| Contact Info — Email | **Oui** (si compte e-mail) | Oui | Non | E-mail du compte, géré par Supabase Auth ; sert à la connexion et à la récupération de mot de passe |
+| Health & Fitness | **Oui** | Oui | Non | Le carnet Sport synchronisé : séances, exercices, séries, charges, répétitions. Uniquement avec un compte |
+| User Content — Autre contenu | **Oui** | Oui | Non | Commentaires laissés par l'utilisateur sur les séances d'amis ; séances terminées partagées avec les amis acceptés |
+| Identifiers — User ID | **Oui** | Oui | Non | Identifiant de compte (UUID Supabase) ; pseudo choisi visible des autres utilisateurs connectés |
+| Contacts | Non | — | — | Aucun accès au carnet d'adresses ; les "amis" sont des comptes AntaVerse ajoutés manuellement par pseudo |
+| Location | Non | — | — | `navigator.geolocation` non utilisé |
+| Financial Info | Non | — | — | Aucun paiement |
+| Sensitive Info | Non | — | — | Sans objet |
+| Browsing / Search History | Non | — | — | Sans objet |
+| Purchases | Non | — | — | Aucune monétisation |
+| Usage Data | Non | — | — | Aucun outil de mesure d'usage |
+| Diagnostics | Non | — | — | Aucun SDK de crash/perf |
+| Other Data | **Oui** | Oui | Non | Graphe d'amitié (qui est ami avec qui) ; abonnement Web Push technique par appareil |
 
-Cette conclusion ne repose pas sur une hypothèse mais sur trois vérifications
-de code convergentes : (1) absence de toute requête réseau applicative,
-(2) absence de tout SDK tiers dans les dépendances de production, (3)
-architecture "export statique sans backend" qui rend une collecte serveur
-structurellement impossible avec le code actuel. Les trois sont documentées
-en détail dans `docs/compliance/DATA_INVENTORY.md`.
+Finalité pour toutes les lignes "Oui" : **App Functionality** (sauvegarde et
+restauration du carnet, fonctionnalités sociales explicitement demandées par
+l'utilisateur, notifications opt-in). Ni publicité, ni analytics, ni
+partage à des fins de tracking.
+
+## Tracking (ATT)
+
+**Non applicable** dans les deux cas. Aucune donnée n'est partagée avec un
+courtier ou un réseau publicitaire ; aucun suivi cross-app ou cross-site.
+Le graphe d'amitié sert uniquement la fonctionnalité de partage interne. Le
+prompt ATT n'a pas lieu d'être.
+
+## Connexions sociales
+
+Si l'utilisateur choisit Google ou Apple, l'authentification OAuth renvoie
+un identifiant et un e-mail au projet Supabase. Aucun SDK Google/Apple n'est
+embarqué (redirection navigateur). "Sign in with Apple" est proposé dès
+qu'une autre connexion sociale (Google) l'est — exigence Apple à vérifier
+si une build native est soumise.
+
+## Cohérence
+
+Ces réponses doivent correspondre à `docs/store/GOOGLE_DATA_SAFETY.md` et au
+contenu de `/legal/confidentialite`. Toute divergence signale un document
+non mis à jour.
 
 ## Ce qui déclenche une réévaluation obligatoire
 
-- L'ajout ou l'activation de tout plugin Capacitor, SDK natif ou fichier de
-  configuration associé (par exemple analytics, crash reporting, push ou
-  `google-services.json`).
-- L'ajout d'analytics, de publicité, ou d'un backend applicatif.
-- L'ajout d'un compte utilisateur.
+- Nouveau champ synchronisé vers Supabase, extension du partage social,
+  passage d'un push Web à un push natif (APNs).
+- Ajout d'analytics, de publicité, d'un paiement, ou d'un SDK natif.
+- Changement de la build de production quant à la présence de la
+  configuration Supabase (cas A ↔ cas B).

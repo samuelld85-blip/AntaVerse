@@ -11,19 +11,36 @@ Stack:
 * Vitest + Playwright
 * IndexedDB / localStorage
 * Static export deployed on Vercel as a PWA
+* Optional Supabase backend for the Sport module only (accounts, cloud
+  backup, friends, web push) — see "Sport module and cloud" below
 * Node 22
 
 Structure:
 
 * `src/app/` — routes and application shell
 * `src/games/<slug>/` — self-contained game modules
+* `src/sport/` — the Sport training-log module (independent of the games),
+  with `src/sport/cloud/` for the optional Supabase layer
 * `src/components/` / `src/lib/` — genuinely shared product code
 * `src/lib/games.ts` — game registry used by the launcher
+* `supabase/` — Sport cloud migrations and the `send-session-push` edge function
 * `public/games/` — game assets
 * `public/brand/v1/` — AntaVerse branding
 * `scripts/` — content and build tooling
 
 Game persistence must remain namespaced per game.
+
+## Deployment target — installed PWA first
+
+The one and primary way AntaVerse is used today is the **PWA served from
+Vercel and installed to the home screen**, on both Android and iOS. Build,
+test, and design for that installed-PWA experience.
+
+Capacitor Android and iOS scaffolding exists and its configuration has been
+*started*, but the native app-store builds are **not** the current target.
+When implementing a change, do not bend the solution to satisfy the real
+Apple / Google native apps — target the installed PWA. Native packaging is
+maintenance-only and opt-in (see "Native validation is opt-in").
 
 ## Product mindset
 
@@ -217,6 +234,43 @@ When adding a new game:
 3. add assets in `public/games/<slug>/`;
 4. register it in `src/lib/games.ts`.
 
+## Sport module and cloud
+
+`src/sport/` is the training-log module (route `/sport`), independent of the
+games. Local play is `localStorage["antaverse:sport:v1"]` (+ a rest-timer
+key), namespaced like a game.
+
+`src/sport/cloud/` adds an **optional** account layer on top:
+email/password (no confirmation) or Google/Apple OAuth, versioned cloud
+backup of the Sport carnet, pseudos, friends, friend likes/comments on
+completed sessions, and per-device web push. It is backed by Supabase
+(`supabase/migrations/` + the `send-session-push` edge function).
+
+Rules:
+
+* The cloud layer is **deployment-conditional and opt-in**: it only
+  initialises when `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+  are set at build time, only on the `/sport` layout, and only does anything
+  once a user creates an account. A build with no Supabase config runs fine
+  and simply shows accounts as unavailable.
+* **No game and no shared launcher code may import from `src/sport/cloud/`
+  or initialise Supabase.** Only Sport touches the cloud.
+* Only the Sport carnet is ever synced. Games never leave the device.
+* Never put a Supabase service-role key, OAuth secret, DB password, or the
+  VAPID private key in `NEXT_PUBLIC_*` or any client file.
+* When you change what the cloud layer stores, sends, or exposes, update
+  `src/sport/README.md`, `src/sport/CLOUD_SETUP.md`, the compliance docs
+  (`docs/compliance/DATA_INVENTORY.md`, `THIRD_PARTY_SERVICES.md`,
+  `PERMISSIONS_INVENTORY.md`, `SECURITY_OVERVIEW.md`,
+  `FUTURE_SOCIAL_REQUIREMENTS.md`), the store declarations
+  (`docs/store/APPLE_PRIVACY_DECLARATION.md`, `GOOGLE_DATA_SAFETY.md`), and
+  the `/legal/confidentialite` page.
+* Cloud tests are not in `npm run verify`. Run them explicitly when touching
+  `src/sport/cloud/` or `supabase/`:
+  `npx vitest run src/sport/cloud` (runs the real SQL migration in PGlite),
+  the deno test for the edge function, and
+  `npx playwright test --config=playwright.sport-cloud.config.ts`.
+
 ## UI
 
 AntaVerse is primarily used on phones.
@@ -250,14 +304,16 @@ The phone should support the game, not force players to record every real-world 
 
 ## Validation
 
-### Android validation is opt-in
+### Native (Capacitor Android + iOS) validation is opt-in
 
-The Capacitor/Android package is currently maintenance-only. Do not run Android
-build, verification, emulator/device, native, instrumented, APK, or AAB tests
-by default, and do not include them in routine validation or `npm run verify`.
-Run commands such as `android:check`, `android:test:*`, `android:apk:debug`, or
-`android:bundle` only when the user explicitly requests Android work or an
-Android release check.
+The Capacitor Android and iOS packages are maintenance-only — the installed
+PWA is the real target (see "Deployment target" above). Do not run native
+build, verification, emulator/device/simulator, instrumented, APK, AAB, or
+Xcode tests by default, and do not include them in routine validation or
+`npm run verify`. Run commands such as `android:check`, `android:test:*`,
+`android:apk:debug`, `android:bundle`, or any iOS/Xcode build only when the
+user explicitly requests native work or a store-release check. A normal UI
+or gameplay change is validated against the PWA, not the native shells.
 
 Validate proportionally to the change.
 
@@ -346,6 +402,7 @@ changes something it explains, for example:
 * a new shared architecture or cross-game pattern;
 * a significant structural refactor;
 * a major change to persistence (localStorage/IndexedDB strategy);
+* a new backend, account, or sync layer (e.g. the Sport Supabase cloud);
 * a change to how the PWA/service worker/cache works;
 * a new testing infrastructure;
 * a significant change to the deployment workflow;
@@ -374,6 +431,19 @@ new third-party service entry). Never claim AntaVerse "collects" or "does
 not collect", "shares" or "does not share" a given piece of data without
 re-checking the actual code — the existing docs describe what was true at
 their last verification date, not a permanent guarantee.
+
+Current baseline (verified 2026-09-08): there are **two data regimes**.
+(1) The **base app** — every game plus the Sport carnet used without an
+account — makes no application network request and stores everything
+locally; nothing reaches the editor or a third party. (2) The **optional
+Sport cloud account** (`src/sport/cloud/`, active only when Supabase is
+configured at build *and* the user signs up) does collect a defined set on
+Supabase: account email or Google/Apple identity, chosen pseudo, the Sport
+carnet and its last 10 revisions, friend relationships, friend
+likes/comments on completed sessions (UGC), and per-device web-push
+subscriptions. Keep statements precise about *which* regime you mean; do not
+say "AntaVerse collects nothing" without the "without a Sport account"
+qualifier.
 
 For a small CSS or gameplay-rule change with no compliance implication,
 leave these files alone.

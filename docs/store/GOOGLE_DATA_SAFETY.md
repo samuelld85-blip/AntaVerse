@@ -1,71 +1,75 @@
 # Préparation — Data Safety (Google Play Console)
 
-Dernière vérification des exigences stores : 2026-08-24. Basé sur le même
+Dernière vérification des exigences stores : 2026-09-08. Basé sur le même
 audit que `docs/store/APPLE_PRIVACY_DECLARATION.md` — les deux déclarations
-doivent rester cohérentes entre elles et avec
-`/legal/confidentialite`.
+et `/legal/confidentialite` doivent rester cohérentes.
 
-## Réponses préparatoires
+Rappel cible : AntaVerse est utilisée comme PWA installée. Cette déclaration
+n'a d'objet que si une build native est soumise à Google Play, et doit
+décrire le comportement **de la build soumise**.
 
-- **Votre application collecte-t-elle ou partage-t-elle des types de
-  données utilisateur requis ?** Non, sur la base de l'audit actuel :
-  aucune requête réseau applicative, aucun SDK de collecte, aucune donnée
-  transmise à l'éditeur (voir `docs/compliance/DATA_INVENTORY.md`).
-- **Toutes les données utilisateur collectées par votre application
-  sont-elles chiffrées en transit ?** Sans objet : aucune donnée
-  utilisateur n'est transmise par l'application elle-même. Le trafic de
-  livraison des pages (hébergement) est en HTTPS.
-- **Proposez-vous aux utilisateurs un moyen de demander la suppression de
-  leurs données ?** Oui, mais localement : le bouton "Effacer mes données
-  locales" sur `/legal/confidentialite` supprime les données stockées sur
-  l'appareil. Il n'existe pas de suppression "côté serveur" à proposer,
-  puisque l'éditeur ne détient aucune donnée utilisateur — voir la section
-  "Compte utilisateur" ci-dessous.
-- **Compte utilisateur ?** Non — aucun système de compte n'existe dans le
-  code (voir CLAUDE.md § 13 de la demande d'origine). Les questions du
-  formulaire relatives à la suppression de compte sont sans objet.
+## Deux cas selon la build
 
-## Tableau par catégorie Google Play
+### Cas A — build sans configuration Supabase
 
-| Catégorie                                                       | Collectée ?                                                                              | Partagée avec un tiers ? | Optionnelle ? | Finalité déclarée                                                   |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------ | ------------- | ------------------------------------------------------------------- |
-| Localisation                                                    | Non                                                                                      | —                        | —             | —                                                                   |
-| Informations personnelles                                       | Non                                                                                      | —                        | —             | —                                                                   |
-| Informations financières                                        | Non                                                                                      | —                        | —             | —                                                                   |
-| Santé et fitness                                                | Non                                                                                      | —                        | —             | —                                                                   |
-| Messages                                                        | Non                                                                                      | —                        | —             | —                                                                   |
-| Photos et vidéos                                                | Non                                                                                      | —                        | —             | —                                                                   |
-| Fichiers audio                                                  | Non                                                                                      | —                        | —             | —                                                                   |
-| Stockage                                                        | Non (au sens "transmis à un tiers") — le stockage local existe mais reste sur l'appareil | Non                      | —             | Fonctionnement de l'application (parties sauvegardées, préférences) |
-| Activité dans l'application                                     | Non                                                                                      | —                        | —             | —                                                                   |
-| Informations sur l'application et les performances (crash logs) | Non                                                                                      | —                        | —             | Aucun SDK de diagnostic intégré                                     |
-| Identifiants de l'appareil ou autres identifiants               | Non                                                                                      | —                        | —             | Aucun identifiant généré ou transmis                                |
+Le client Supabase ne s'initialise jamais. **L'application ne collecte ni ne
+partage aucune donnée utilisateur.** Répondre "Non" à la question générale.
+Suppression de données : bouton "Effacer mes données locales" sur
+`/legal/confidentialite`. Pas de compte.
 
-## Chiffrement en transit
+### Cas B — build avec configuration Supabase (app web de production)
 
-Le site est servi exclusivement en HTTPS (géré par l'hébergeur). Aucune
-donnée applicative n'est de toute façon transmise à un serveur (voir
-ci-dessus), donc la question du chiffrement en transit de données
-utilisateur est en grande partie sans objet pour l'usage réel qu'en fait
-AntaVerse.
+Les jeux et le carnet Sport **sans compte** ne collectent rien. Un
+utilisateur qui **crée un compte Sport** transmet des données à Supabase
+(sous-traitant). Détail : `docs/compliance/DATA_INVENTORY.md` § "Compte
+Sport cloud".
+
+- **L'application collecte-t-elle ou partage-t-elle des données ?** Oui
+  (collecte), pour les utilisateurs disposant d'un compte Sport. Pas de
+  partage à des fins publicitaires ou d'analyse.
+- **Chiffrement en transit ?** Oui — HTTPS/TLS pour toutes les requêtes
+  Supabase et OAuth.
+- **Moyen de demander la suppression ?** Oui — `/sport/compte` supprime le
+  compte et, en cascade, sauvegardes, révisions, séances, amitiés, likes,
+  commentaires et abonnements push. Le bouton local efface la copie
+  appareil.
+- **Compte utilisateur ?** Oui, pour le module Sport uniquement, optionnel.
+
+| Catégorie Google Play | Collectée ? | Partagée ? | Optionnelle ? | Finalité |
+| --- | --- | --- | --- | --- |
+| Informations personnelles — Adresse e-mail | Oui (compte e-mail) | Non | Oui (le compte est optionnel) | Gestion du compte, connexion, récupération |
+| Informations personnelles — Noms d'utilisateur | Oui (pseudo) | Non | Oui | Identification auprès des amis ; liste des joueurs connectés |
+| Informations personnelles — ID utilisateur | Oui (UUID de compte) | Non | Oui | Fonctionnement du compte et du partage |
+| Santé et fitness | Oui (carnet Sport synchronisé) | Non | Oui | Sauvegarde/restauration ; partage des séances terminées avec les amis acceptés |
+| Messages — Autres messages en jeu | Oui (commentaires d'amis sur les séances) | Non | Oui | Fonctionnalité sociale demandée par l'utilisateur |
+| Contacts | Non | — | — | Aucun accès au carnet d'adresses |
+| Localisation | Non | — | — | — |
+| Informations financières | Non | — | — | — |
+| Photos et vidéos / Fichiers audio | Non | — | — | — |
+| Activité dans l'application | Non | — | — | Aucun analytics |
+| Informations sur l'app et les performances | Non | — | — | Aucun SDK de diagnostic |
+| Identifiants de l'appareil | Non | — | — | Aucun identifiant d'appareil publicitaire. L'abonnement Web Push est un jeton technique par appareil, non un identifiant de suivi |
+
+Toutes les collectes "Oui" ont pour finalité **le fonctionnement de
+l'application** (fonctionnalité de compte et fonctionnalités sociales) ;
+aucune n'est destinée à la publicité, au marketing, ou à l'analyse d'usage.
 
 ## Cohérence à vérifier avant soumission
 
-Ces réponses doivent correspondre exactement à celles saisies dans
-`docs/store/APPLE_PRIVACY_DECLARATION.md` et au contenu de
-`/legal/confidentialite` — les trois documents partagent la même
-conclusion d'audit, il ne devrait donc jamais y avoir de divergence
-factuelle entre eux. Toute divergence future signale que l'un des trois
-documents n'a pas été mis à jour après un changement de code.
+Ces réponses doivent correspondre exactement à
+`docs/store/APPLE_PRIVACY_DECLARATION.md` et à `/legal/confidentialite`.
+Toute divergence signale qu'un des trois documents n'a pas été mis à jour
+après un changement de code.
 
-L'intégration Capacitor Android ne change pas les réponses : elle embarque
-l'export statique localement, n'ajoute ni analytics ni backend, et ne transmet
-aucune partie ou préférence. Les permissions Android `INTERNET` et
-`POST_NOTIFICATIONS` servent respectivement à la WebView et à l’affichage local
-du chronomètre ; elles ne constituent pas une collecte. La déclaration doit
-décrire le comportement effectif du code et être réauditée avant chaque release.
+L'intégration Capacitor Android n'ajoute ni analytics ni SDK : elle embarque
+l'export statique. Les permissions `INTERNET` et `POST_NOTIFICATIONS`
+servent respectivement à la WebView (et, en cas B, aux requêtes Supabase) et
+au chronomètre local. `push.ts` n'active pas le Web Push dans la coquille
+native.
 
 ## Ce qui déclenche une réévaluation obligatoire
 
-Identique à `docs/store/APPLE_PRIVACY_DECLARATION.md` : ajout d'un SDK
-natif, d'analytics, de publicité, d'un backend, ou d'un compte utilisateur.
+Identique à `docs/store/APPLE_PRIVACY_DECLARATION.md` : nouveau champ
+synchronisé, extension du social, push natif (FCM), analytics, publicité,
+paiement, SDK natif, ou changement de la build de production quant à la
+présence de la configuration Supabase.

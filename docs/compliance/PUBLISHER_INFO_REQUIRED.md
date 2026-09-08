@@ -66,6 +66,26 @@ s'affichent visiblement comme tels sur les pages légales publiées
       le pays du développeur vérifié ; l'email de support de l'app peut être
       distinct.
 
+## Module Sport cloud — à renseigner avant d'activer les comptes en production
+
+(Sans objet si la build de production n'embarque pas la configuration
+Supabase. Détail opérationnel : `src/sport/CLOUD_SETUP.md`.)
+
+- [ ] Région du projet Supabase retenue (préférer l'UE pour ce public) — à
+      inscrire dans `/legal/confidentialite` § 7
+- [ ] Garanties de transfert hors UE des sous-traitants réellement
+      configurés (Supabase, SMTP, Google/Apple si connexion sociale, services
+      push des navigateurs) — vérifiées avant activation
+- [ ] Adresse de contact utilisée comme `WEB_PUSH_SUBJECT` (`mailto:`) pour
+      les notifications — cohérente avec l'email vie privée
+- [ ] SMTP de production configuré dans Supabase pour les e-mails de
+      récupération de mot de passe (le service de test Supabase ne suffit pas)
+- [ ] Décision sur l'âge minimum du compte Sport et son contrôle (voir
+      `FUTURE_SOCIAL_REQUIREMENTS.md`)
+- [ ] Mécanismes de signalement / blocage / modération des commentaires
+      d'amis en place (bloquant pour une soumission store à couche compte
+      active)
+
 ## Dates et versions
 
 - [ ] Date d'effet de la politique de confidentialité et des CGU

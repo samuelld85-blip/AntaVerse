@@ -1,6 +1,6 @@
 # Propriété intellectuelle et marque — checklist
 
-Dernière vérification : 2026-08-20. Ce document liste ce qu'il faut vérifier
+Dernière vérification : 2026-09-08. Ce document liste ce qu'il faut vérifier
 avant commercialisation ; il ne lance aucune procédure de dépôt et ne
 constitue pas un avis juridique.
 
@@ -46,6 +46,13 @@ constitue pas un avis juridique.
       marques, films, produits) : usage descriptif généralement admis en
       droit des marques, mais à confirmer au cas par cas si une marque
       revient de façon promotionnelle plutôt que descriptive.
+- [ ] **Contenu généré par les utilisateurs (commentaires d'amis Sport)** —
+      un utilisateur peut y coller du texte protégé. Prévoir, dans les CGU
+      et de futures règles communautaires, une clause de responsabilité de
+      l'auteur et une procédure de retrait sur notification — voir
+      `docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md`. Le pseudo choisi par
+      l'utilisateur peut aussi recouper une marque tierce : pas de
+      vérification automatique en place.
 
 ## Ne pas faire dans ce chantier
 

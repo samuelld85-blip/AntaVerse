@@ -1,6 +1,6 @@
 # Inventaire des permissions
 
-Dernière vérification technique : 2026-08-24.
+Dernière vérification technique : 2026-09-08.
 
 ## Constat pour la PWA actuelle
 
@@ -13,14 +13,29 @@ Recherche exhaustive de `navigator.geolocation`, `getUserMedia`,
 | `navigator.vibrate`              | **Oui**    | `triman/features/game/game-client.tsx`, `purple/features/game/game-client.tsx`, `sans-le-dire/features/game/game-client.tsx`, `quoi-de-9/features/game/game-client.tsx` | Non — API de retour haptique sans prompt de permission sur les navigateurs qui la supportent (non disponible sur Safari iOS, appel silencieusement ignoré) |
 | `navigator.geolocation`          | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
 | `getUserMedia` / caméra / micro  | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
-| `Notification.requestPermission` | **Oui** | `src/lib/web-timer-notification.ts` | Oui — demandée au toucher sur « Démarrer le chrono », uniquement pour afficher le repos actif hors de l’application |
+| `Notification.requestPermission` | **Oui** | `src/lib/web-timer-notification.ts` (chrono de repos, local) **et** `src/sport/cloud/push.ts` (notifications d'amis Sport, via Web Push) | Oui — deux usages distincts, chacun demandé à un geste explicite : (1) au toucher sur « Démarrer le chrono » pour afficher le repos actif localement ; (2) au toucher sur le bouton d'activation dans Social, pour recevoir « un ami a terminé une séance » |
+| `PushManager.subscribe` / `pushManager` | **Oui** | `src/sport/cloud/push.ts` | Oui — hérite de la permission Notifications ci-dessus. Crée un abonnement Web Push (endpoint + clés) enregistré dans Supabase pour la couche compte Sport. Refusé volontairement dans la coquille native Capacitor |
 | `navigator.share`                | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
 | `navigator.clipboard`            | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
 
-La permission de notification n’est demandée qu’au toucher sur « Démarrer le
-chrono », pour rendre le repos actif visible hors de l’application. Le seul
-autre usage d'API sensible (`navigator.vibrate`) est un retour haptique pur,
-sans permission associée dans les navigateurs actuels.
+La permission de notification a **deux usages**, chacun déclenché par un
+geste explicite de l'utilisateur, jamais au lancement :
+
+1. **Chrono de repos (local, tous les usages Sport)** — au toucher sur
+   « Démarrer le chrono », pour rendre le repos actif visible hors de
+   l'application. Aucun serveur, aucun abonnement.
+2. **Notifications d'amis (couche compte Sport, optionnelle)** — au toucher
+   sur le bouton d'activation dans Social. Crée un abonnement Web Push
+   (`PushManager.subscribe`) dont l'endpoint et les clés sont enregistrés
+   dans `public.push_subscriptions` (Supabase). L'edge function
+   `send-session-push` envoie ensuite une notification quand un ami termine
+   une séance (pseudo + « séance terminée », sans détail d'exercice).
+   Désactivable dans Social, à la déconnexion, ou dans les réglages du
+   navigateur. `push.ts` refuse cette activation dans la coquille native
+   Capacitor (Web Push = PWA installée uniquement).
+
+L'autre usage d'API sensible (`navigator.vibrate`) est un retour haptique
+pur, sans permission associée dans les navigateurs actuels.
 
 ## Manifeste PWA (`public/manifest.webmanifest`)
 
@@ -43,10 +58,12 @@ pour sécuriser ses receivers non exportés. Ce n'est pas une permission sensibl
 demandée à l'utilisateur ni un accès aux données de l'appareil.
 
 Le manifeste ne demande ni caméra, ni micro, ni localisation, ni contacts,
-ni photos/fichiers. Les notifications sont demandées uniquement au premier
-démarrage d’un chronomètre. Le trafic HTTP non chiffré est interdit,
-la sauvegarde cloud/transfert des données locales est désactivée et la WebView
-de production n'est pas débogable.
+ni photos/fichiers. Dans la coquille native, `POST_NOTIFICATIONS` ne sert
+qu’au chronomètre local : `src/sport/cloud/push.ts` refuse d’activer les
+notifications d’amis dans Capacitor, donc aucun abonnement Web Push n’y est
+créé. Le trafic HTTP non chiffré est interdit, la sauvegarde cloud/transfert
+des données locales est désactivée et la WebView de production n'est pas
+débogable.
 
 ## Principe pour les futures capacités natives
 

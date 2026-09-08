@@ -58,13 +58,19 @@ d'identité développeur et le target API level, qui évoluent régulièrement.
       contenu justifie
 - [ ] Déclaration publicité : "Non" sur la base du code actuel (aucun SDK
       publicitaire — voir `docs/compliance/THIRD_PARTY_SERVICES.md`)
-- [ ] App access : confirmer qu'aucune fonctionnalité n'est restreinte
-      derrière un compte (pas de compte de test nécessaire)
-- [ ] Suppression de compte : sans objet aujourd'hui, aucun compte
-      n'existe (voir CLAUDE.md § comptes utilisateurs de la demande
-      d'origine) — si des comptes sont introduits plus tard, prévoir un
-      chemin de suppression in-app et une ressource web publique
-      équivalente
+- [ ] App access : les jeux et le carnet Sport local sont accessibles sans
+      compte. La sauvegarde cloud, les amis et les notifications Sport sont
+      derrière un compte **optionnel** (Supabase). Si la build embarque la
+      configuration Supabase, fournir des identifiants de test (deux comptes
+      amis pour la partie sociale)
+- [ ] Suppression de compte : **implémentée** — `/sport/compte` supprime le
+      compte et cascade (sauvegardes, révisions, séances, amitiés, likes,
+      commentaires, abonnements push). Fournir aussi l'URL web publique
+      `/sport/compte/` comme ressource de suppression équivalente
+- [ ] Contenu généré par les utilisateurs (commentaires d'amis Sport) :
+      Google exige modération/signalement — vérifier
+      `docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md` avant de soumettre une
+      build à couche compte active
 - [x] Audit du manifeste natif : permissions `INTERNET` et
       `POST_NOTIFICATIONS` côté
       AntaVerse ; voir `docs/compliance/PERMISSIONS_INVENTORY.md`

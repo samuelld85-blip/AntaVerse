@@ -59,8 +59,16 @@ réelle**, les exigences (versions Xcode minimum, formulaires, libellés)
 - [ ] Rédiger des notes de revue expliquant honnêtement le contenu lié à
       l'alcool (voir brouillon dans `docs/store/STORE_METADATA_DRAFT.md`)
       et le fonctionnement hors ligne
-- [ ] Confirmer qu'aucun compte de test n'est nécessaire (pas de système
-      de compte)
+- [ ] Comptes : les jeux ne demandent aucun compte. Le module Sport a un
+      compte **optionnel** (Supabase). Si la build soumise embarque la
+      configuration Supabase, fournir un compte de test (e-mail + mot de
+      passe) et un second compte ami pour la revue des fonctionnalités
+      sociales ; sinon, indiquer que la couche compte est désactivée
+- [ ] Fonctions sociales (commentaires d'amis Sport) : vérifier que
+      signalement, blocage et modération existent AVANT de soumettre une
+      build où la couche compte est active — voir
+      `docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md` (actuellement
+      incomplet)
 - [ ] Vérifier le comportement hors ligne du wrapper natif final avant
       soumission (hérité du Service Worker existant, mais à re-tester dans
       le contexte du wrapper)
@@ -75,8 +83,11 @@ réelle**, les exigences (versions Xcode minimum, formulaires, libellés)
       `docs/store/APPLE_PRIVACY_DECLARATION.md`
 - [ ] Vérifier les permissions natives réellement demandées par le
       wrapper final par rapport à `docs/compliance/PERMISSIONS_INVENTORY.md`
-- [ ] Confirmer l'absence de tracking (ATT non applicable aujourd'hui, à
-      revérifier si un SDK est ajouté)
+- [ ] Confirmer l'absence de tracking (ATT non applicable : le compte Sport
+      et son graphe d'amitié servent la seule fonctionnalité interne, aucun
+      partage publicitaire — à revérifier si un SDK est ajouté)
+- [ ] "Sign in with Apple" : requis par Apple dès que "Se connecter avec
+      Google" est proposé — vérifier qu'il est bien activé côté Supabase
 - [ ] Si le wrapper natif utilise des "Required Reason APIs", produire le
       Privacy Manifest requis par Apple (obligation introduite après la
       version PWA actuelle — à vérifier au moment du packaging natif)

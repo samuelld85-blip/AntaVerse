@@ -59,8 +59,14 @@ catégories exactes disponibles au moment de la soumission.
 Brouillon à inclure lors de la soumission : expliquer honnêtement la
 présence de contenu lié à l'alcool ("certains jeux utilisent une mécanique
 de gorgées, toujours remplaçable par une alternative sans alcool, voir la
-page Jeu responsable intégrée à l'app"), le fonctionnement hors ligne, et
-l'absence de compte utilisateur (donc pas de compte de test à fournir).
+page Jeu responsable intégrée à l'app") et le fonctionnement hors ligne.
+Pour les comptes : les jeux n'en demandent aucun ; le module Sport propose
+un compte **optionnel** pour sauvegarder le carnet et suivre des amis. Si la
+build soumise embarque la configuration Supabase, fournir un compte de test
+(et un compte ami pour les fonctionnalités sociales) et confirmer que
+signalement/blocage/modération des commentaires sont en place
+(`docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md`). Sinon, préciser que la
+couche compte est désactivée dans la build.
 
 ## Captures d'écran
 

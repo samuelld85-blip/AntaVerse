@@ -41,6 +41,7 @@
 16. [Lexique](#16-lexique)
 17. [« Comment j'ai construit AntaVerse »](#17-comment-jai-construit-antaverse)
 18. [Légal, support et publication sur les stores](#18-légal-support-et-publication-sur-les-stores)
+19. [Le module Sport et la sauvegarde cloud](#19-le-module-sport-et-la-sauvegarde-cloud)
 
 ---
 
@@ -49,11 +50,13 @@
 ### Qu'est-ce qu'AntaVerse
 
 AntaVerse est une **collection de jeux de soirée** ("party games"), regroupés
-dans une seule application mobile-first, installable comme une app (PWA), et
-sans backend : tout tourne dans le navigateur du téléphone, rien n'est envoyé
-à un serveur pendant une partie.
+dans une seule application mobile-first, installée comme une app (PWA) sur
+l'écran d'accueil. Pour les jeux, il n'y a **pas de backend** : tout tourne
+dans le navigateur du téléphone, rien n'est envoyé à un serveur pendant une
+partie. La seule exception est le module **Sport** (voir plus bas et §19),
+qui propose une sauvegarde cloud *optionnelle*.
 
-Aujourd'hui, huit jeux sont enregistrés dans l'app (voir
+Aujourd'hui, dix jeux sont enregistrés dans l'app (voir
 [`src/lib/games.ts`](src/lib/games.ts)) :
 
 - **Quoi de 9 ?** — jeu de questions/thèmes par équipes, avec système de
@@ -63,6 +66,11 @@ Aujourd'hui, huit jeux sont enregistrés dans l'app (voir
   joueurs (pas d'équipes fixes).
 - **Fuck** — jeu de cartes à maître du jeu, avec rotation du rôle après trois
   victoires consécutives.
+- **La Traversée**, **PMU** — les deux ajouts les plus récents.
+
+À côté des jeux, l'icône **Sport** dans l'en-tête du lanceur ouvre un carnet
+d'entraînement indépendant (`src/sport/`, route `/sport`), avec une couche
+compte cloud optionnelle sur Supabase — détaillée en §19.
 
 ### Architecture générale, en une image
 
@@ -86,10 +94,13 @@ flowchart TB
     Next -- "produit des fichiers HTML/JS/CSS statiques" --> Browser
 ```
 
-Il n'y a pas de serveur applicatif en production : Next.js est utilisé comme
-**générateur de site statique** (voir §4), et tout ce que fait l'app côté
-"backend" (sauvegarde de partie, calcul de score, tirage aléatoire) se passe
-dans le navigateur, en JavaScript, avec le stockage local du téléphone.
+Il n'y a pas de serveur applicatif AntaVerse en production : Next.js est
+utilisé comme **générateur de site statique** (voir §4), et tout ce que fait
+l'app côté "backend" pour les jeux (sauvegarde de partie, calcul de score,
+tirage aléatoire) se passe dans le navigateur, en JavaScript, avec le
+stockage local du téléphone. Le module Sport peut, si l'utilisateur crée un
+compte, synchroniser son carnet vers un projet **Supabase** — c'est la seule
+communication serveur du projet, isolée dans `src/sport/cloud/` (§19).
 
 ### Schéma mental simple
 
@@ -307,6 +318,11 @@ serveur de fichiers statiques, avec des règles de cache HTTP dédiées pour
 - **`sharp`** — traitement d'image côté build, utilisé uniquement par
   `scripts/generate-pwa-icons.mjs` pour générer les icônes PWA à partir du
   logo (§9).
+- **`@supabase/supabase-js`** — client du **seul** backend du projet, et
+  seulement pour le module Sport : comptes optionnels, sauvegarde cloud du
+  carnet, amis, notifications. Rien dans les jeux ne l'importe. Détail en
+  §19. Sans variables d'environnement Supabase au build, ce client ne
+  s'initialise pas et l'app fonctionne exactement comme avant.
 - Les formulaires de setup reposent principalement sur du `useState` React
   classique, avec la gestion partagée des listes de joueurs dans
   `src/games/shared/lib/use-player-fields.ts` (§8). `react-hook-form` n'est
@@ -321,10 +337,13 @@ src/
   app/            → coquille de routage (pages Next.js)
   components/     → UI au niveau "app entière" (accueil, PWA)
   lib/            → utilitaires partagés, sans connaissance d'un jeu précis
+  sport/          → le module Sport (carnet d'entraînement), indépendant des jeux
+    cloud/        → couche compte Supabase optionnelle, chargée seulement par /sport
   games/
     shared/       → infrastructure utilisée par 2+ jeux
     <slug>/       → un dossier par jeu, autonome
 content/          → source de vérité du contenu de Quoi de 9 (questions, thèmes)
+supabase/         → migrations SQL du cloud Sport + edge function send-session-push
 public/           → fichiers statiques servis tels quels (brand, manifest, sw.js)
 scripts/          → outillage de build et de contenu (Node, hors app)
 e2e/              → tests Playwright
@@ -349,6 +368,14 @@ les autres. C'est ce qui permet à Quoi de 9 d'être structurellement différent
   (le registre), `random.ts` (`shuffle`), `local-storage-json.ts`,
   `use-theme-mode.ts`. Rien ici ne connaît la forme des données d'un jeu.
 - **`src/games/shared/`** — détaillé en §8 et §14.
+- **`src/sport/`** — le carnet d'entraînement Sport, un module à part entière
+  qui n'est pas un jeu (route `/sport`, icône dans l'en-tête du lanceur).
+  `src/sport/cloud/` y ajoute une couche compte Supabase **optionnelle**,
+  importée uniquement par le layout `/sport`. Voir §19.
+- **`supabase/`** — la source de vérité du backend Sport : `migrations/*.sql`
+  (tables, règles RLS, RPC) et `functions/send-session-push/` (l'edge
+  function Deno qui envoie les notifications push). Rien de tout cela n'est
+  nécessaire pour lancer l'app en local. Voir §19 et `src/sport/CLOUD_SETUP.md`.
 - **`content/`** — les questions/thèmes de Quoi de 9, écrits à la main sous
   forme de modules `.mjs` (`content/packs/*.mjs`) et de JSON par thème
   (`content/themes/<slug>/{theme.json, questions.easy.json, ...}`). C'est la
@@ -356,7 +383,8 @@ les autres. C'est ce qui permet à Quoi de 9 d'être structurellement différent
 - **`scripts/`** — de l'outillage Node exécuté à la build ou à la demande, pas
   du code applicatif : pipeline de contenu, préparation PWA, génération
   d'icônes. Voir §12.
-- **`e2e/`** — un fichier de test Playwright par jeu, plus un pour l'accueil.
+- **`e2e/`** — un fichier de test Playwright par jeu, plus un pour l'accueil,
+  un pour le module Sport et un pour les comptes Sport.
 
 ---
 
@@ -642,6 +670,17 @@ de schéma (1 à 5), reconstruisant les anciens tours de jeu vers la forme
 actuelle. Toutes les données passent aussi par `normalizeUnicodeDeep()` (pour
 éviter les problèmes d'encodage de texte, cf. le test dédié
 `quoi-de-9/lib/text/encoding.test.ts`).
+
+**Le carnet Sport suit la même règle locale.** `src/sport/` écrit sous
+`"antaverse:sport:v1"` (le carnet) et `"antaverse:sport:rest-timer"`
+(l'échéance du repos actif) — namespacé comme un jeu, listé dans le bouton
+« Effacer mes données locales ». Sans compte, le carnet Sport ne quitte
+jamais l'appareil, exactement comme une partie de jeu.
+
+**La seule persistance non locale du projet** est la sauvegarde cloud
+*optionnelle* du carnet Sport, quand l'utilisateur crée un compte et que
+Supabase est configuré au build. Elle ne concerne que Sport, jamais les
+jeux — voir §19.
 
 ### Namespaces par jeu
 
@@ -1308,10 +1347,96 @@ Apple/Google). Ce n'est pas une preuve de conformité — juste une
 préparation, à revalider à chaque changement significatif (voir la règle
 correspondante dans `CLAUDE.md`).
 
-**PWA aujourd'hui, app native plus tard** : AntaVerse reste, à ce stade, un
-export statique servi comme PWA — rien de ce chantier n'introduit de
-wrapper natif, de projet Xcode ou Android. `docs/store/NATIVE_PACKAGING_OPTIONS.md`
-compare les options pour le jour où cette étape sera engagée (un wrapper de
-type Capacitor, ou une Trusted Web Activity côté Android), sans trancher à
-l'avance — et sans que ce choix change quoi que ce soit à l'architecture
-décrite dans les sections précédentes de ce document.
+**PWA installée, aujourd'hui et principalement** : AntaVerse est utilisée
+comme un export statique servi par Vercel et **installé sur l'écran
+d'accueil** (Android et iOS), pas comme une application des stores. Des
+projets Capacitor existent bien dans `android/` et `ios/` et leur
+configuration a été commencée, mais ils ne font qu'emballer le même export
+et restent en mode maintenance : quand on demande une modification, la cible
+est la PWA installée, pas les apps natives Apple/Google.
+`docs/store/NATIVE_PACKAGING_OPTIONS.md` garde la comparaison des options
+pour le jour où une vraie soumission store sera engagée, sans que ce choix
+change l'architecture décrite dans les sections précédentes.
+
+---
+
+## 19. Le module Sport et la sauvegarde cloud
+
+Le Sport est le seul morceau d'AntaVerse qui n'est **pas un jeu** et le seul
+qui peut parler à un serveur. Deux couches nettement séparées.
+
+### La couche locale (toujours active)
+
+`src/sport/` est un carnet d'entraînement : un catalogue d'exercices
+(`catalog.ts`), un modèle versionné (`model.ts`), l'écran principal
+(`sport-app.tsx`) et ses sections (séance, catalogue, historique, favoris,
+réglages), une progression/XP personnelle, un éditeur d'historique et un
+minuteur de repos persistant (`use-rest-timer.ts`). Tout vit dans
+`localStorage["antaverse:sport:v1"]` (+ `antaverse:sport:rest-timer`),
+exactement comme la partie en cours d'un jeu (§7). Sans rien configurer, le
+Sport fonctionne entièrement hors ligne et rien ne sort de l'appareil.
+
+### La couche cloud (`src/sport/cloud/`, optionnelle)
+
+Elle n'existe que si **trois conditions** sont réunies :
+
+1. `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` sont
+   présents **au moment du build** (`cloud/client.ts` → `cloudConfigured`) ;
+2. le code tourne sous le layout `/sport` — aucun jeu, ni le lanceur, ni
+   `src/components`, ni `src/lib` n'importe `src/sport/cloud/` ;
+3. l'utilisateur crée réellement un compte.
+
+Un build sans configuration Supabase compile, tourne, et affiche simplement
+« comptes indisponibles ».
+
+Ce que la couche cloud ajoute, une fois un compte créé :
+
+- **Connexion** : e-mail/mot de passe sans confirmation, ou Google / Apple
+  (OAuth web, PKCE, retour sur `/sport/compte/`). Supabase Auth gère
+  l'authentification ; le mot de passe n'est jamais dans les sauvegardes.
+- **Sauvegarde du carnet** : `snapshot.ts` / `changed.ts` calculent ce qui a
+  changé, la RPC serveur `save_backup` écrit la nouvelle révision en
+  comparant à une révision attendue (anti-écrasement concurrent) et garde
+  les **10 versions précédentes**. `provider.tsx` (contexte React monté par
+  le layout `/sport`) pilote la réconciliation ; un conflit entre appareils
+  demande un choix explicite, avec export possible avant remplacement.
+- **Pseudo + amis** : un pseudo public, des demandes d'amis à accepter, et
+  la lecture des **séances terminées** d'un ami accepté (jamais la séance
+  active ni les favoris). Retirer un ami coupe l'accès serveur immédiatement.
+- **J'aime / commentaires** : un ami accepté peut aimer ou commenter une
+  séance terminée (`session_likes`, `session_comments`). C'est du contenu
+  généré par les utilisateurs — voir `docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md`.
+- **Notifications** : un push web *par appareil* (`push.ts`), proposé après
+  le bouton Social. Quand un ami termine une séance, la RPC met une tâche en
+  file ; l'edge function `supabase/functions/send-session-push/` la draine
+  chaque minute et envoie un push VAPID (« @pseudo vient de terminer une
+  séance ! », sans détail d'exercice). `push.ts` **refuse volontairement**
+  de s'activer dans la coquille native Capacitor : c'est du Web Push,
+  PWA installée uniquement.
+
+### `supabase/` — la source de vérité du backend
+
+- `migrations/*.sql` : les tables (`profiles`, `backups`, `backup_versions`,
+  `friendships`, `sport_sessions`, `push_subscriptions`, `session_likes`,
+  `session_comments`, files internes), **toutes protégées par RLS**, et les
+  RPC `security definer` (`save_backup`, `accept_friend`,
+  `delete_my_account`, `claim_push_jobs`).
+- `functions/send-session-push/` : l'edge function Deno, authentifiée par
+  son propre secret de worker (jamais appelable depuis le navigateur), avec
+  une liste blanche stricte des hôtes de push.
+- `config.toml` ne configure que la stack Supabase locale de dev.
+
+Le client ne voit jamais que l'URL Supabase + la clé publiable + la clé
+VAPID **publique**. Clé service-role, secrets OAuth, mot de passe de base,
+clé VAPID privée : uniquement côté serveur Supabase / environnement de
+l'edge function. La mise en service réelle et les scénarios de validation
+sont dans `src/sport/CLOUD_SETUP.md`.
+
+### Tests
+
+Hors de `npm run verify`. `npx vitest run src/sport/cloud` exécute **la vraie
+migration SQL dans PostgreSQL PGlite** avec des rôles distincts (RLS,
+versions, amitiés, file push) ; un test Deno couvre l'edge function ;
+`npx playwright test --config=playwright.sport-cloud.config.ts` couvre les
+écrans mobiles et l'export/import. Ces tests ne valident pas à eux seuls un
+Supabase hébergé (SMTP, OAuth, livraison push réelle).

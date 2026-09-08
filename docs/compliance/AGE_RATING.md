@@ -1,6 +1,6 @@
 # Classification d'âge — éléments à déclarer
 
-Dernière vérification des exigences stores : 2026-08-24. À revalider juste
+Dernière vérification des exigences stores : 2026-09-08. À revalider juste
 avant soumission (questionnaires Apple App Store Connect et Google Play
 IARC changent occasionnellement de formulation).
 
@@ -20,8 +20,8 @@ contenu de Roulette du Chaos.
 | Langage adulte / grossier                      | **Oui**                              | Nom du jeu **Fuck** (`src/lib/games.ts`)                                                                   | Le titre du jeu est explicitement grossier/adulte, même si son contenu de cartes reste neutre                                                                                                                                                                                                     |
 | Violence                                       | Non                                  | —                                                                                                          | Aucun contenu violent identifié                                                                                                                                                                                                                                                                   |
 | Gambling / simulated gambling                  | **Oui, à déclarer comme simulation** | PMU (`src/games/pmu/`)                                                                                     | Le jeu reprend explicitement les codes du pari hippique : mise en gorgées, choix d'une couleur, course et résultat des paris. Aucune somme ni monnaie virtuelle n'est en jeu, mais le questionnaire Apple et le questionnaire IARC Google doivent être remplis honnêtement pour cette simulation. |
-| Contenu généré par les utilisateurs (UGC)      | Non applicable aujourd'hui           | —                                                                                                          | Aucune fonctionnalité de ce type n'existe dans le code ; voir `FUTURE_SOCIAL_REQUIREMENTS.md`                                                                                                                                                                                                     |
-| Chat / messagerie                              | Non applicable aujourd'hui           | —                                                                                                          | Aucune fonctionnalité de ce type n'existe                                                                                                                                                                                                                                                         |
+| Contenu généré par les utilisateurs (UGC)      | **Oui, limité** (uniquement si la build embarque la config Supabase et l'utilisateur a un compte Sport) | `src/sport/cloud/social.tsx`, `public.session_comments` | Commentaires (1–500 car.) et « j'aime » d'amis **acceptés** sur des séances Sport terminées. Pas de contenu public, pas de photo. À déclarer comme interaction sociale non modérée tant que signalement/blocage manquent — voir `FUTURE_SOCIAL_REQUIREMENTS.md` |
+| Chat / messagerie                              | Partiel — commentaires asynchrones entre amis, pas de messagerie directe | `public.session_comments`                                                    | Fil de commentaires par séance, visible des amis communs. Pas de DM, pas de temps réel. Répondre au questionnaire selon la formulation exacte (« les utilisateurs peuvent-ils interagir / échanger des messages »)                                              |
 
 ## Lecture honnête de la classification probable
 
@@ -65,11 +65,15 @@ les réponses sur les mêmes bases que ci-dessus : alcool (oui, usage
 simulé/évoqué en mécanique de jeu), drogues (oui, évoquées sans usage
 simulé), contenu sexuel (oui, texte suggestif/explicite), le reste "non" sur
 la base du contenu actuel, à l'exception du pari simulé de PMU qui doit être
-déclaré.
+déclaré, et de l'interaction sociale du module Sport (voir les lignes UGC /
+chat ci-dessus) si la build embarque la couche compte.
 
 ## Ce qui changerait cette classification
 
 Toute nouvelle fonctionnalité touchant ces thèmes (nouveaux bancs de
-questions, nouveau jeu à contenu mature, UGC, chat, pari simulé) doit déclencher une
-relecture de ce document avant publication d'une mise à jour, pas seulement
-avant la première soumission.
+questions, nouveau jeu à contenu mature, extension de l'UGC/chat Sport,
+contenu public, pari simulé) doit déclencher une relecture de ce document
+avant publication d'une mise à jour, pas seulement avant la première
+soumission. L'ajout de signalement/blocage/modération pour les commentaires
+Sport peut au contraire permettre une réponse plus favorable au volet
+« interaction sociale ».

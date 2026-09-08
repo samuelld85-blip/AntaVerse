@@ -8,20 +8,32 @@ AntaVerse is an early-stage, mobile-first Next.js party-game app.
 - Vitest and Playwright
 - IndexedDB/localStorage persistence
 - Static PWA export for Vercel
+- Optional Supabase backend for the Sport module only (accounts, cloud
+  backup, friends, web push)
 - Node 22
 
 Key locations:
 
 - `src/app/` — routes and application shell
 - `src/games/<slug>/` — self-contained game modules
+- `src/sport/` — Sport training-log module (independent of the games);
+  `src/sport/cloud/` is the optional Supabase account layer
 - `src/components/` and `src/lib/` — genuinely shared product code
 - `src/lib/games.ts` — launcher game registry
+- `supabase/` — Sport cloud migrations and the `send-session-push` edge function
 - `public/games/` and `public/brand/v1/` — game and brand assets
 - `scripts/` — build and content tooling
 
 Read `README.md` for setup and repository orientation. Read `ARCHITECTURE.md` only for architectural or cross-cutting work; do not load it for trivial changes.
 
 Persistence must stay namespaced per game.
+
+**Deployment target: the installed PWA.** AntaVerse is used today as the
+Vercel-served PWA installed to the home screen on Android and iOS. Build,
+test, and design for that. Capacitor Android and iOS scaffolding exists and
+its setup has been started, but the native app-store builds are not the
+current target — do not bend a change to satisfy the real Apple/Google
+native apps. Native packaging is maintenance-only and opt-in.
 
 ## Product and implementation mindset
 
@@ -50,6 +62,17 @@ Keep each game primarily inside `src/games/<slug>/` and its routes inside `src/a
 
 Do not inspect or modify other games unless the task requires it.
 
+The Sport module (`src/sport/`, route `/sport`) is separate from the games.
+Its optional cloud layer (`src/sport/cloud/`, Supabase) only initialises when
+`NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` are set at
+build and only on the `/sport` layout. No game or shared launcher code may
+import from `src/sport/cloud/` or initialise Supabase; only the Sport carnet
+is ever synced. Never place a service-role key, OAuth secret, DB password, or
+VAPID private key in `NEXT_PUBLIC_*` or client code. Changes to what the cloud
+stores/sends/exposes must be reflected in `src/sport/README.md`,
+`src/sport/CLOUD_SETUP.md`, `docs/compliance/*`, `docs/store/*`, and
+`/legal/confidentialite`.
+
 ## UI
 
 AntaVerse is mobile-first. Preserve touch usability, readable text, responsive layout, sensible overflow, safe areas, and each game's existing visual identity. Prefer existing tokens and components. Design the phone experience for real party play and avoid forcing unnecessary data entry.
@@ -58,14 +81,22 @@ Use UX/design tooling only when the task actually needs design reasoning. For UI
 
 ## Validation
 
-### Android validation is opt-in
+### Native (Capacitor Android + iOS) validation is opt-in
 
-The Capacitor/Android package is currently maintenance-only. Do not run Android
-build, verification, emulator/device, native, instrumented, APK, or AAB tests
-by default, and do not include them in routine validation or `npm run verify`.
-Run commands such as `android:check`, `android:test:*`, `android:apk:debug`, or
-`android:bundle` only when the user explicitly requests Android work or an
-Android release check.
+The Capacitor Android and iOS packages are maintenance-only; the installed PWA
+is the real target. Do not run native build, verification,
+emulator/device/simulator, instrumented, APK, AAB, or Xcode tests by default,
+and do not include them in routine validation or `npm run verify`. Run
+`android:check`, `android:test:*`, `android:apk:debug`, `android:bundle`, or
+any iOS build only when native work or a store-release check is explicitly
+requested. Normal UI/gameplay changes are validated against the PWA.
+
+### Sport cloud validation is opt-in
+
+Cloud tests are not in `npm run verify`. When touching `src/sport/cloud/` or
+`supabase/`, run `npx vitest run src/sport/cloud` (executes the real SQL
+migration in PGlite), the deno test for `send-session-push`, and
+`npx playwright test --config=playwright.sport-cloud.config.ts`.
 
 Validation must match risk:
 

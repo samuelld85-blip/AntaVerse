@@ -2,12 +2,19 @@
 
 AntaVerse is a small collection of party games — **Quoi de 9 ?**, **La
 Relance**, **Sans le dire**, **Purple**, **Triman**, **Roulette du Chaos**,
-**Palmier**, **Fuck** — served from one Next.js app and exported statically. This
+**Palmier**, **Fuck**, **La Traversée**, **PMU** — plus a separate **Sport**
+training-log module, served from one Next.js app and exported statically. This
 document describes the layers that exist today, the boundaries between them,
 and the rules a future contributor (human or AI) should follow when adding or
-changing code. It reflects the current scale of the app (eight games, a
-handful of contributors) — it is deliberately not an attempt to future-proof
-for a scale AntaVerse doesn't have yet.
+changing code. It reflects the current scale of the app (ten games, one Sport
+module, a handful of contributors) — it is deliberately not an attempt to
+future-proof for a scale AntaVerse doesn't have yet.
+
+The whole app ships as a static export served from Vercel and installed as a
+**PWA** on the home screen — that installed PWA is the product. Capacitor
+Android and iOS projects exist in `android/` and `ios/` and their setup has
+been started, but they are maintenance-only wrappers around the same export,
+not the current delivery target.
 
 For a longer, pedagogical walkthrough of how the app actually works end to
 end (stack, routing, a game's full lifecycle, persistence, PWA, deployment),
@@ -22,16 +29,21 @@ src/
   app/            → routing shell (Next.js App Router pages)
   components/      → app-shell UI (home page, cross-game chrome)
   lib/             → app-wide, game-agnostic utilities
+  sport/           → the Sport training-log module (independent of the games)
+    cloud/               → optional Supabase account layer (loaded only by /sport)
   games/
     shared/             → infrastructure used by 2+ games, never by only one
     la-relance/          ┐
     quoi-de-9/           │
     sans-le-dire/        │
-    purple/               ├─ one folder per game, self-contained
-    triman/               │
+    purple/              │
+    triman/               ├─ one folder per game, self-contained
     roulette-du-chaos/   │
-    palmier/              │
-    fuck/                 ┘
+    palmier/             │
+    fuck/                │
+    la-traversee/        │
+    pmu/                 ┘
+supabase/          → Sport cloud DB migrations + send-session-push edge function
 ```
 
 ### `src/app` — routing shell
@@ -232,6 +244,66 @@ launcher's existing tokens (`--launcher-*`, `--text-*`) rather than
 introducing a second design-token set — these pages are meant to look like
 part of AntaVerse, not a bolted-on document viewer.
 
+### `src/sport` — the Sport training-log module
+
+Not a game and not under `games/`: a separate module reached from the Sport
+icon in the launcher header, route `src/app/sport/`. It has its own catalog
+(`catalog.ts`, ~38 exercises), versioned model (`model.ts`), UI
+(`sport-app.tsx` and the section components), personal progression/stats, a
+history editor, and a persisted rest timer (`use-rest-timer.ts`). Local
+persistence is `localStorage["antaverse:sport:v1"]` plus
+`localStorage["antaverse:sport:rest-timer"]` — namespaced exactly like a
+game's storage key, and listed in `clear-local-data-button.tsx`. Nothing in
+`games/` imports from `src/sport/` and nothing in `src/sport/` imports a
+game. See `src/sport/README.md` for the module's own detail.
+
+### `src/sport/cloud` — the optional Supabase account layer
+
+An **optional, deployment-conditional** layer that sits on top of the local
+Sport carnet. It is the app's only backend integration.
+
+- **Gated three ways.** `cloud/client.ts` exports `cloudConfigured`, true
+  only when `NEXT_PUBLIC_SUPABASE_URL` and
+  `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` are present in the static build.
+  The layer is imported **only by the `/sport` layout** — no game route, no
+  launcher code, no shared component touches it. And even when configured, it
+  does nothing until a user creates an account; local-only Sport is
+  unchanged. A build with no Supabase config compiles and runs, showing
+  accounts as "not yet available".
+- **What it adds:** email/password sign-up with no email confirmation, or
+  Google / Apple OAuth (PKCE, web flow, returns to `/sport/compte/`); a
+  chosen pseudo; a versioned cloud backup of the Sport carnet (current row +
+  last 10 revisions) reconciled against a server revision to prevent
+  concurrent overwrite; friend requests/acceptance; friend likes and
+  comments on *completed* sessions only; and per-device Web Push.
+- **What it never syncs:** anything outside the Sport carnet. Games stay
+  entirely on-device. The active session and favourites are never shared
+  with friends — only finished history is.
+- `provider.tsx` is the React context (session + reconciliation), mounted by
+  the `/sport` layout; `snapshot.ts` / `changed.ts` compute what to push;
+  `account.tsx` backs `/sport/compte` (recovery, export/import, delete);
+  `social.tsx` is the friends/likes/comments UI in the history section;
+  `push.ts` manages the browser push subscription (and deliberately refuses
+  to activate inside the Capacitor native shell — Web Push, installed-PWA
+  only).
+- **`supabase/`** holds the source of truth for the backend:
+  `migrations/*.sql` (tables, RLS policies, the `save_backup` /
+  `accept_friend` / `delete_my_account` / `claim_push_jobs` RPCs) and
+  `functions/send-session-push/` (the Deno edge function that drains the
+  push-job queue via VAPID, authenticated by its own worker secret, with an
+  allow-list on push endpoints). `supabase/config.toml` only configures a
+  local dev stack. Setup and real-world verification steps live in
+  `src/sport/CLOUD_SETUP.md`.
+- **Secrets rule:** the client only ever sees the Supabase URL + publishable
+  key and the VAPID *public* key. Service-role key, OAuth secrets, DB
+  password and the VAPID *private* key live in Supabase / the edge function
+  environment and must never appear in `NEXT_PUBLIC_*` or `src/`.
+- Compliance impact of this layer is tracked in `docs/compliance/`
+  (`DATA_INVENTORY.md`, `THIRD_PARTY_SERVICES.md`, `PERMISSIONS_INVENTORY.md`,
+  `SECURITY_OVERVIEW.md`, `FUTURE_SOCIAL_REQUIREMENTS.md`), the store
+  declarations in `docs/store/`, and the `/legal/confidentialite` page —
+  keep them in step with any change here.
+
 ## Coupling found, and what was done about it
 
 This section records the actual audit findings — both the ones that were
@@ -363,8 +435,14 @@ considered and rejected.
    import from any game's `lib/game/` at all — those directions of
    dependency would mean generic code has started encoding one game's
    rules.
+6. **`src/sport/` is a peer of `games/`, not a game.** Games and Sport do
+   not import each other. `src/sport/cloud/` (Supabase) is loaded only by
+   the `/sport` layout — never from a game, the launcher, `src/components/`,
+   or `src/lib/`. Do not promote anything from `src/sport/` into a shared
+   layer to "reuse" it for a game, and do not add a Supabase call anywhere
+   outside `src/sport/cloud/`. Only the Sport carnet is ever synced.
 
-## Adding a fourth game
+## Adding another game
 
 1. Create `src/games/<name>/` with the same internal shape as an existing
    game (`components/`, `data/`, `features/`, `lib/game/`).
