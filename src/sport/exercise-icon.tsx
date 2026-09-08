@@ -345,6 +345,37 @@ function ChestFly() {
   );
 }
 
+// Seated on a vertical chest-press machine, handles pushed straight ahead.
+function VerticalChestPress() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M40 27c-3 3-4 6-4 10" />
+          <path d="M52 27c3 3 4 6 4 10" />
+          <path d="M46 47c-3 4-4 8-4 12" />
+        </>
+      }
+    >
+      <Post x={75} y={5} h={63} />
+      <Stack x={79} y={25} n={4} />
+      <Pad x={62} y={25} w={8} h={29} />
+      <Pad x={25} y={52} w={43} h={6} />
+      <Post x={38} y={57} h={13} />
+      <Limb d="M42 29 29 28" w={ARM} />
+      <Limb d="M54 29 67 28" w={ARM} />
+      <Pad x={20} y={25} w={10} h={5} />
+      <Pad x={66} y={25} w={10} h={5} />
+      <Limb d="M48 28v21" w={TORSO} />
+      <Limb d="M45 49 39 61" w={THIGH} />
+      <Limb d="m39 61-2 8" w={SHIN} />
+      <Limb d="M34 71h11" w={FOOT} />
+      <Head x={48} y={18} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
 // Plank position, arms locked under the shoulders.
 function PushUp() {
   return (
@@ -1265,6 +1296,7 @@ function RussianTwist() {
 // until it gets one here.
 const iconById: Record<string, () => React.ReactElement> = {
   "bench-press": BenchPress,
+  "vertical-chest-press": VerticalChestPress,
   "incline-press": InclinePress,
   "decline-press": DeclinePress,
   "chest-fly": ChestFly,

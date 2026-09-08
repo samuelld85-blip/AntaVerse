@@ -12,6 +12,8 @@ import {
   type ProgressPoint,
   type StatsRange,
 } from "./stats";
+import { getExerciseProgressions, getGlobalProgression } from "./progression";
+import { ProgressionBadge } from "./progression-badge";
 import styles from "./sport.module.css";
 
 const rangeLabels: Record<StatsRange, string> = {
@@ -114,9 +116,19 @@ function TrendChart({
   );
 }
 
-export function StatsDashboard({ history }: { history: Session[] }) {
+export function StatsDashboard({
+  history,
+  username,
+  compact = false,
+}: {
+  history: Session[];
+  username?: string;
+  compact?: boolean;
+}) {
   const [range, setRange] = useState<StatsRange>("all");
   const stats = useMemo(() => getSportStats(history, range), [history, range]);
+  const globalProgression = useMemo(() => getGlobalProgression(history), [history]);
+  const exerciseProgressions = useMemo(() => getExerciseProgressions(history), [history]);
   const [selectedExercise, setSelectedExercise] = useState("");
   const [progressMetric, setProgressMetric] = useState<"load" | "estimated1Rm" | "volume">(
     "load",
@@ -136,18 +148,63 @@ export function StatsDashboard({ history }: { history: Session[] }) {
 
   if (!history.length)
     return (
-      <div className={styles.empty}>
-        <h1>Statistiques</h1>
-        <p>Terminez une première séance pour voir votre rythme, vos exercices et vos progrès.</p>
-      </div>
+      <section className={styles.profile} aria-labelledby="profile-title">
+        {!compact && (
+          <div className={styles.pageHeading}>
+            <p className={styles.eyebrow}>Votre espace Sport</p>
+            <h1 id="profile-title">{username ? `Profil de ${username}` : "Mon profil"}</h1>
+          </div>
+        )}
+        {!compact && <section className={styles.profileHero} aria-label="Progression globale">
+          <div>
+            <p className={styles.eyebrow}>Statut actuel</p>
+            <ProgressionBadge kind="status" status={globalProgression.status} />
+          </div>
+          <strong className={styles.profileHeroCount}>0 séance</strong>
+          <p className={styles.profileLead}>
+            Votre première séance débloquera votre statut Explorateur et lancera votre progression.
+          </p>
+        </section>}
+        <div className={styles.empty}>
+          <h2>Votre profil se construit ici</h2>
+          <p>Terminez une première séance pour voir votre rythme, vos exercices et vos progrès.</p>
+        </div>
+      </section>
     );
 
   return (
-    <section className={styles.stats} aria-labelledby="stats-title">
-      <div className={styles.pageHeading}>
-        <p className={styles.eyebrow}>Votre entraînement</p>
-        <h1 id="stats-title">Statistiques</h1>
-      </div>
+    <section className={`${styles.stats} ${styles.profile}`} aria-labelledby="profile-title">
+      {!compact && (
+        <div className={styles.pageHeading}>
+          <p className={styles.eyebrow}>Votre espace Sport</p>
+          <h1 id="profile-title">{username ? `Profil de ${username}` : "Mon profil"}</h1>
+        </div>
+      )}
+      {!compact && <section className={styles.profileHero} aria-label="Progression globale">
+        <div className={styles.profileHeroTop}>
+          <div>
+            <p className={styles.eyebrow}>Statut actuel</p>
+            <ProgressionBadge kind="status" status={globalProgression.status} />
+          </div>
+          <div className={styles.profileHeroMetric}>
+            <strong>{globalProgression.sessions}</strong>
+            <span>séance{globalProgression.sessions > 1 ? "s" : ""}</span>
+          </div>
+        </div>
+        {globalProgression.nextStatus ? (
+          <>
+            <div className={styles.progressionLine}>
+              <span>Progression vers {globalProgression.nextStatus.label}</span>
+              <strong>{globalProgression.target} séances</strong>
+            </div>
+            <div className={styles.progressTrack} aria-label={`${globalProgression.progress}% vers ${globalProgression.nextStatus.label}`}>
+              <span style={{ width: `${globalProgression.progress}%` }} />
+            </div>
+          </>
+        ) : (
+          <p className={styles.profileLead}>Vous avez atteint le sommet actuel. Machine de guerre.</p>
+        )}
+      </section>}
       <div className={styles.segment} aria-label="Période des statistiques">
         {(Object.keys(rangeLabels) as StatsRange[]).map((item) => (
           <button key={item} type="button" aria-pressed={range === item} onClick={() => setRange(item)}>
@@ -180,6 +237,32 @@ export function StatsDashboard({ history }: { history: Session[] }) {
           <p className={styles.statsNote}>
             Le volume chargé additionne charge × répétitions renseignées ; les séries sans répétitions restent comptées, mais pas dans le volume.
           </p>
+
+          {exerciseProgressions.length > 0 && (
+            <section className={styles.statsPanel} aria-labelledby="exercise-levels-title">
+              <div className={styles.statsHeading}>
+                <div>
+                  <p className={styles.eyebrow}>Votre pratique</p>
+                  <h2 id="exercise-levels-title">Niveaux d’exercices</h2>
+                </div>
+                <span className={styles.badge}>{exerciseProgressions.length} pratiqué{exerciseProgressions.length > 1 ? "s" : ""}</span>
+              </div>
+              <ul className={styles.progressionList}>
+                {exerciseProgressions.slice(0, 8).map((exercise) => (
+                  <li key={exercise.exerciseId}>
+                    <span>
+                      <strong>{exercise.name}</strong>
+                      <small>{exercise.practiceCount} séance{exercise.practiceCount > 1 ? "s" : ""}</small>
+                    </span>
+                    <ProgressionBadge kind="exercise" level={exercise.level} compact />
+                  </li>
+                ))}
+              </ul>
+              {exerciseProgressions.length > 8 && (
+                <p className={styles.statsNote}>Les autres niveaux apparaissent au fil de votre pratique.</p>
+              )}
+            </section>
+          )}
 
           <section className={styles.statsPanel} aria-labelledby="rhythm-title">
             <div className={styles.statsHeading}>

@@ -5,7 +5,11 @@ import { getCloud, friendlyError } from "./client";
 import { useSportCloud } from "./provider";
 import { enableSportPush, disableSportPush } from "./push";
 import { storeSchema, type Session } from "../model";
+import { getExerciseProgressions, getGlobalProgression } from "../progression";
+import { ProgressionBadge } from "../progression-badge";
+import { StatsDashboard } from "../stats-dashboard";
 import styles from "./cloud.module.css";
+import sportStyles from "../sport.module.css";
 
 type Person = { id: string; username: string };
 type Friendship = { requester: string; recipient: string; accepted_at: string | null };
@@ -16,6 +20,7 @@ type Comment = {
   body: string;
   created_at: string;
 };
+type FriendView = "history" | "profile";
 
 export function SessionReactions({
   ownerId,
@@ -223,9 +228,12 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
   const [busy, setBusy] = useState(false);
   const [loading, setLoading] = useState(true);
   const [viewing, setViewing] = useState<Person | null>(null);
+  const [viewMode, setViewMode] = useState<FriendView>("history");
   const [history, setHistory] = useState<Session[]>([]);
+  const [profileHistory, setProfileHistory] = useState<Session[]>([]);
   const [historyPage, setHistoryPage] = useState(0);
   const [historyLoading, setHistoryLoading] = useState(false);
+  const [profileLoading, setProfileLoading] = useState(false);
   const [historyMore, setHistoryMore] = useState(false);
   const [likes, setLikes] = useState<Record<string, string[]>>({});
   const [comments, setComments] = useState<Record<string, Comment[]>>({});
@@ -311,7 +319,7 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
     };
   }, [client, id, profile]);
   useEffect(() => {
-    if (!client || !viewing) return;
+    if (!client || !viewing || viewMode !== "history") return;
     let live = true;
     const timer = setTimeout(async () => {
       setHistoryLoading(true);
@@ -384,7 +392,33 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
       live = false;
       clearTimeout(timer);
     };
-  }, [client, viewing, historyPage, id]);
+  }, [client, viewing, historyPage, id, viewMode]);
+  useEffect(() => {
+    if (!client || !viewing || viewMode !== "profile") return;
+    let live = true;
+    void (async () => {
+      try {
+        const { data, error } = await client
+          .from("sport_sessions")
+          .select("payload")
+          .eq("user_id", viewing.id)
+          .order("ended_at", { ascending: false });
+        if (error) throw error;
+        const parsed = storeSchema.shape.history.parse((data ?? []).map((row) => row.payload));
+        if (live) setProfileHistory(parsed);
+      } catch (error) {
+        if (live) {
+          setProfileHistory([]);
+          setMessage(friendlyError(error));
+        }
+      } finally {
+        if (live) setProfileLoading(false);
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [client, viewing, viewMode]);
   async function run(action: () => Promise<void>) {
     setBusy(true);
     setMessage("");
@@ -416,6 +450,13 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
     setDrafts({});
     setHistoryLoading(true);
     setHistoryPage(0);
+    setViewMode("history");
+    setViewing(person);
+  }
+  function openProfile(person: Person) {
+    setProfileHistory([]);
+    setProfileLoading(true);
+    setViewMode("profile");
     setViewing(person);
   }
   function nameOf(actor: string) {
@@ -538,12 +579,38 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
           <button className={styles.backButton} onClick={() => setViewing(null)} type="button">
             ← Mes amis
           </button>
-          <h2>Séances de @{viewing.username}</h2>
-          {historyLoading ? (
-            <p role="status">Chargement des séances…</p>
-          ) : history.length === 0 ? (
-            <p>Aucune séance partagée disponible.</p>
+          {viewMode === "profile" ? (
+            profileLoading ? (
+              <p role="status">Chargement du profil…</p>
+            ) : (
+              <div className={styles.friendProfile}>
+                <div className={styles.friendProfileHeading}>
+                  <div>
+                    <p className={sportStyles.eyebrow}>Profil Sport</p>
+                    <h2>@{viewing.username}</h2>
+                  </div>
+                  <ProgressionBadge kind="status" status={getGlobalProgression(profileHistory).status} />
+                </div>
+                <div className={styles.friendProfileSummary}>
+                  <strong>{getGlobalProgression(profileHistory).sessions}</strong>
+                  <span>séance{getGlobalProgression(profileHistory).sessions > 1 ? "s" : ""}</span>
+                  <strong>{getExerciseProgressions(profileHistory).length}</strong>
+                  <span>exercice{getExerciseProgressions(profileHistory).length > 1 ? "s" : ""}</span>
+                </div>
+                <StatsDashboard history={profileHistory} username={viewing.username} compact />
+                <button className={sportStyles.secondary} onClick={() => setViewMode("history")} type="button">
+                  Voir ses séances
+                </button>
+              </div>
+            )
           ) : (
+            <>
+              <h2>Séances de @{viewing.username}</h2>
+              {historyLoading ? (
+            <p role="status">Chargement des séances…</p>
+              ) : history.length === 0 ? (
+            <p>Aucune séance partagée disponible.</p>
+              ) : (
             <ul className={styles.historyCarousel}>
               {history.map((s) => (
                 <li key={s.id}>
@@ -627,8 +694,8 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                 </li>
               ))}
             </ul>
-          )}
-          {history.length > 0 && (
+              )}
+              {history.length > 0 && (
             <div className={styles.sessionPagination}>
               <button
                 disabled={historyPage === 0 || historyLoading}
@@ -643,6 +710,8 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                 Séances suivantes
               </button>
             </div>
+              )}
+            </>
           )}
         </div>
       ) : (
@@ -690,13 +759,22 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                   )}
                   <div className={f.accepted_at ? styles.friendActions : styles.actions}>
                     {f.accepted_at && (
-                      <button
-                        className={styles.friendPrimaryAction}
-                        onClick={() => openHistory({ id: other, username })}
-                        type="button"
-                      >
-                        Voir ses séances
-                      </button>
+                      <div className={styles.friendActionsRow}>
+                        <button
+                          className={styles.friendPrimaryAction}
+                          onClick={() => openProfile({ id: other, username })}
+                          type="button"
+                        >
+                          Voir le profil
+                        </button>
+                        <button
+                          className={styles.friendSecondaryAction}
+                          onClick={() => openHistory({ id: other, username })}
+                          type="button"
+                        >
+                          Voir ses séances
+                        </button>
+                      </div>
                     )}
                     {!f.accepted_at && f.recipient === id && (
                       <button

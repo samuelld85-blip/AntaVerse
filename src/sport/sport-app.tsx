@@ -12,6 +12,8 @@ import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
 import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
 import { StatsDashboard } from "./stats-dashboard";
+import { getExerciseProgression, getGlobalProgression } from "./progression";
+import { ProgressionBadge } from "./progression-badge";
 import {
   configsForRecommendedWorkout,
   recommendedWorkoutsFor,
@@ -511,12 +513,14 @@ function ConfigForm({
 function Catalog({
   kind,
   favorites,
+  history,
   freeSession,
   lastConfigFor,
   onChoose,
 }: {
   kind: SessionKind;
   favorites: ExerciseConfig[];
+  history: Session[];
   freeSession: boolean;
   lastConfigFor: (exerciseId: string) => ExerciseConfig | null;
   onChoose: (c: ExerciseConfig) => void;
@@ -543,6 +547,9 @@ function Catalog({
   );
   const regions = [...new Set(base.filter((ex) => ex.primary === muscle).map((ex) => ex.region))];
   const results = searchExercises(sessionFilter, query, muscle, region, equipment);
+  const exerciseProgressions = new Map(
+    results.map((exercise) => [exercise.id, getExerciseProgression(history, exercise.id)]),
+  );
   const matchingFavorites = favorites.filter(
     (c) =>
       results.some((ex) => ex.id === c.exerciseId) && (!equipment || equipment === c.equipment),
@@ -682,6 +689,13 @@ function Catalog({
               >
                 <ExerciseIcon exercise={ex} />
                 <strong>{ex.name}</strong>
+                {exerciseProgressions.get(ex.id)!.practiceCount > 0 && (
+                  <ProgressionBadge
+                    kind="exercise"
+                    level={exerciseProgressions.get(ex.id)!.level}
+                    compact
+                  />
+                )}
               </button>
             ))}
       </div>
@@ -715,10 +729,42 @@ function Catalog({
 const homeMenu = [
   ["training", "Séances", "Démarrer ou reprendre une séance"],
   ["history", "Historique", "Vos séances passées, exercice par exercice"],
-  ["stats", "Statistiques", "Volume, progression et muscles travaillés"],
+  ["stats", "Profil", "Votre progression et vos statistiques"],
   ["favorites", "Favoris", "Exercices et séances enregistrés"],
   ["social", "Social", "Vos amis et leurs entraînements"],
 ] as const;
+
+function relativeSessionAge(date: string) {
+  const startOfDay = (value: Date) => new Date(value.getFullYear(), value.getMonth(), value.getDate()).getTime();
+  const days = Math.max(0, Math.floor((startOfDay(new Date()) - startOfDay(new Date(date))) / 86_400_000));
+  if (days === 0) return "aujourd’hui";
+  if (days === 1) return "hier";
+  return `il y a ${days} jours`;
+}
+
+function HomeProgressPrompt({ history, active }: { history: Session[]; active: Session | null }) {
+  const progression = getGlobalProgression(history);
+  const lastSession = [...history]
+    .filter((session) => session.endedAt)
+    .sort((a, b) => Date.parse(b.endedAt ?? b.startedAt) - Date.parse(a.endedAt ?? a.startedAt))[0];
+  let message = "Votre première séance vous attend pour débloquer le statut Explorateur.";
+  if (active) {
+    message = "Vous avez une séance en cours : reprenez-la pour continuer votre progression.";
+  } else if (lastSession && progression.nextStatus) {
+    const remaining = progression.nextStatus.threshold - progression.sessions;
+    const sessionName = lastSession.name || sessionLabels[lastSession.kind];
+    message = `Votre dernière séance ${sessionName} était ${relativeSessionAge(lastSession.endedAt ?? lastSession.startedAt)} · plus que ${remaining} séance${remaining > 1 ? "s" : ""} avant le statut ${progression.nextStatus.label}.`;
+  } else if (lastSession) {
+    const sessionName = lastSession.name || sessionLabels[lastSession.kind];
+    message = `Votre dernière séance ${sessionName} était ${relativeSessionAge(lastSession.endedAt ?? lastSession.startedAt)} · statut ${progression.status.label} atteint.`;
+  }
+  return (
+    <section className={styles.homeProgressPrompt} aria-label="Prochaine étape">
+      <ProgressionBadge kind="status" status={progression.status} compact />
+      <p>{message}</p>
+    </section>
+  );
+}
 
 function HomeIcon({ id }: { id: (typeof homeMenu)[number][0] }) {
   const common = {
@@ -829,12 +875,11 @@ export function SportApp() {
     const client = getCloud();
     const id = cloud.session?.user.id;
     if (tab !== "history" || !client || !id || !cloud.profile) {
-      setFriendHistory([]);
       return;
     }
     let live = true;
-    setFriendHistoryLoading(true);
     void (async () => {
+      if (live) setFriendHistoryLoading(true);
       try {
         const { data: relations, error: relationsError } = await client
           .from("friendships")
@@ -1077,7 +1122,7 @@ export function SportApp() {
       username: cloud.profile?.username ?? "moi",
       isFriend: false,
     })),
-    ...friendHistory,
+    ...(tab === "history" && cloud.session && cloud.profile ? friendHistory : []),
   ].sort(
     (a, b) => new Date(b.session.startedAt).getTime() - new Date(a.session.startedAt).getTime(),
   );
@@ -1156,7 +1201,7 @@ export function SportApp() {
           [
             ["training", "Séance"],
             ["history", "Historique"],
-            ["stats", "Statistiques"],
+            ["stats", "Profil"],
             ["favorites", "Favoris"],
             ["social", "Social"],
           ] as const
@@ -1206,12 +1251,13 @@ export function SportApp() {
                 </div>
                 <h1>Carnet de sport</h1>
               </div>
+              <HomeProgressPrompt history={store.history} active={store.active} />
               <div className={styles.homeMenu}>
                 {homeMenu.map(([id, label, desc]) => (
                   <button
                     key={id}
                     type="button"
-                    className={styles.homeButton}
+                    className={`${styles.homeButton} ${id === "training" ? styles.homeButtonPrimary : ""}`}
                     onClick={() => {
                       navigateToTab(id);
                       if (id === "training" && !active) setWorkoutType("recommended");
@@ -1756,6 +1802,7 @@ export function SportApp() {
                   <Catalog
                     kind={active.kind}
                     favorites={store.favorites}
+                    history={store.history}
                     freeSession={active.source !== "recommended"}
                     lastConfigFor={(exerciseId) =>
                       lastConfigForExercise(store.history, exerciseId)
@@ -2264,7 +2311,9 @@ export function SportApp() {
               )}
             </>
           )}
-          {tab === "stats" && <StatsDashboard history={store.history} />}
+          {tab === "stats" && (
+            <StatsDashboard history={store.history} username={cloud.profile?.username} />
+          )}
           {tab === "social" && (
             <>
               <div className={styles.pageHeading}>

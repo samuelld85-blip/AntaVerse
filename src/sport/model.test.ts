@@ -195,6 +195,17 @@ describe("exercise discovery", () => {
     expect(searchExercises("legs", "squat").length).toBeGreaterThan(0);
     expect(searchExercises("pull", "", "shoulders").some((e) => e.id === "reverse-fly")).toBe(true);
   });
+  it("includes vertical chest press in the relevant session types", () => {
+    expect(searchExercises("push", "vertical chest press").map((e) => e.id)).toEqual([
+      "vertical-chest-press",
+    ]);
+    expect(searchExercises("upper", "chest press").map((e) => e.id)).toContain(
+      "vertical-chest-press",
+    );
+    expect(searchExercises("full", "chest press").map((e) => e.id)).toContain(
+      "vertical-chest-press",
+    );
+  });
   it("has unique stable IDs and valid defaults for every exercise", () => {
     expect(new Set(exercises.map((e) => e.id)).size).toBe(exercises.length);
     for (const exercise of exercises)

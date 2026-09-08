@@ -44,6 +44,7 @@ export type Exercise = {
 
 const compoundExerciseIds = new Set([
   "bench-press",
+  "vertical-chest-press",
   "incline-press",
   "decline-press",
   "push-up",
@@ -78,6 +79,16 @@ export const exercises: Exercise[] = [
     equipment: ["barbell", "dumbbell", "machine"],
     pattern: "push",
     aliases: "bench press pecs",
+  },
+  {
+    id: "vertical-chest-press",
+    name: "Vertical chest press",
+    primary: "chest",
+    secondary: ["triceps", "shoulders"],
+    region: "Pectoraux · ensemble",
+    equipment: ["machine"],
+    pattern: "push",
+    aliases: "chest press machine machine press développé assis",
   },
   {
     id: "incline-press",
