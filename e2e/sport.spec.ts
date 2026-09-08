@@ -526,7 +526,7 @@ test("sport: small screen filters, empty session and invalid storage", async ({
   expect(await page.evaluate(() => localStorage.getItem("antaverse:sport:v1"))).toBe("{bad");
 });
 
-test("sport: statistics turns stored sessions into concise progress insights", async ({ page }) => {
+test("sport: profile brings progression and statistics together", async ({ page }) => {
   await page.goto("/sport/");
   await page.evaluate(() => {
     const set = (date: string, loadKg: number) => ({
@@ -571,8 +571,11 @@ test("sport: statistics turns stored sessions into concise progress insights", a
     );
   });
   await page.reload();
-  await page.getByRole("button", { name: "Statistiques", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "Statistiques", exact: true })).toBeVisible();
+  await expect(page.getByText(/Votre dernière séance Push était/)).toBeVisible();
+  await page.getByRole("button", { name: "Profil", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Mon profil", exact: true })).toBeVisible();
+  await expect(page.getByText("Explorateur", { exact: true })).toBeVisible();
+  await expect(page.getByText("Niveau 1", { exact: true })).toBeVisible();
   await expect(page.getByText("Exercices les plus pratiqués", { exact: true })).toBeVisible();
   await expect(
     page.getByLabel("Exercices les plus pratiqués").getByText("Développé couché", { exact: true }),
