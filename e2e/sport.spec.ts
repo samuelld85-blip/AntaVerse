@@ -9,6 +9,28 @@ async function startFreeSession(page: Page, format = "Full body") {
   await page.getByRole("button", { name: "Commencer ma séance", exact: true }).click();
 }
 
+test("sport: sections keep a Sport home step and confirm exit", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "Ouvrir Sport" }).click();
+  await expect(page.getByRole("heading", { name: "Carnet de sport", exact: true })).toBeVisible();
+
+  await page.getByRole("button", { name: /^Historique/ }).click();
+  await expect(page).toHaveURL(/\/sport\/\?section=history/);
+  await expect(page.getByRole("heading", { name: "Historique", exact: true })).toBeVisible();
+
+  await page.goBack();
+  await expect(page).toHaveURL(/\/sport\/?$/);
+  await expect(page.getByRole("heading", { name: "Carnet de sport", exact: true })).toBeVisible();
+
+  await page.goBack();
+  await expect(page.getByRole("dialog", { name: "Quitter l’application Sport ?" })).toBeVisible();
+  await page.getByRole("button", { name: "Annuler", exact: true }).click();
+  await page.getByRole("button", { name: "Retour aux jeux AntaVerse" }).click();
+  await expect(page.getByRole("dialog", { name: "Quitter l’application Sport ?" })).toBeVisible();
+  await page.getByRole("button", { name: "Quitter Sport", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Choisissez votre jeu.", exact: true })).toBeVisible();
+});
+
 test("sport: free sessions can record a superset as one exercise", async ({ page }) => {
   await page.goto("/sport/");
   await startFreeSession(page);

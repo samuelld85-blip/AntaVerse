@@ -16,7 +16,10 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   les variations de charge et de répétitions série par série. Les séries restent
   identifiables par exercice pour les statistiques. Ces unités et IDs permettent de
   futures statistiques sans en afficher en V1.
-- `sport-app.tsx` : séance, catalogue, réglages, historique et favoris. Les séances
+- `sport-app.tsx` : page d’accueil du carnet et sections séance, catalogue, réglages,
+  historique et favoris. `/sport/` reste l’accueil Sport ; les sections utilisent le
+  paramètre `section` de l’URL pour conserver un retour navigateur vers cet accueil.
+  Les séances
   libres peuvent chaîner deux exercices en superset avec un seul repos par tour, ou
   activer le mode pyramidal pour modifier la charge et les répétitions de chaque série. Un favori
   d’exercice distingue chaque configuration. Une séance favorite copie les réglages

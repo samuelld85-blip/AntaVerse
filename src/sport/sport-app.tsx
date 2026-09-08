@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { SessionReactions, SportSocial } from "./cloud/social";
 import { useSportCloud } from "./cloud/provider";
 import { getCloud, friendlyError } from "./cloud/client";
@@ -57,6 +58,33 @@ type HistoryItem = {
 };
 
 type HistoryFilter = "all" | "mine" | "friends";
+type SportTab = "home" | "training" | "history" | "stats" | "favorites" | "social";
+
+const sportTabs: Exclude<SportTab, "home">[] = [
+  "training",
+  "history",
+  "stats",
+  "favorites",
+  "social",
+];
+
+function tabFromLocation(): SportTab {
+  if (typeof window === "undefined") return "home";
+  const section = new URLSearchParams(window.location.search).get("section");
+  if (section && sportTabs.includes(section as Exclude<SportTab, "home">)) {
+    return section as Exclude<SportTab, "home">;
+  }
+  if (new URLSearchParams(window.location.search).get("social") === "1") return "social";
+  return "home";
+}
+
+function sportTabUrl(tab: SportTab) {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("social");
+  if (tab === "home") url.searchParams.delete("section");
+  else url.searchParams.set("section", tab);
+  return `${url.pathname}${url.search}${url.hash}`;
+}
 
 const dateLabel = (date: string) =>
   new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(
@@ -706,9 +734,10 @@ export function SportApp() {
   const storeRef = useRef<SportStore | null>(null);
   const [error, setError] = useState("");
   const [readBlocked, setReadBlocked] = useState(false);
-  const [tab, setTab] = useState<
-    "home" | "training" | "history" | "stats" | "favorites" | "social"
-  >("home");
+  const [tab, setTab] = useState<SportTab>("home");
+  const tabRef = useRef<SportTab>("home");
+  const [exitConfirmation, setExitConfirmation] = useState(false);
+  const router = useRouter();
   const { theme, selectTheme } = useThemeMode("dark");
   const [kind, setKind] = useState<Extract<SessionKind, "full" | "half" | "ppl">>("full");
   const [workoutType, setWorkoutType] = useState<"recommended" | "free">("recommended");
@@ -732,6 +761,34 @@ export function SportApp() {
   const [friendHistoryLoading, setFriendHistoryLoading] = useState(false);
   const timer = useRestTimer();
   const cloud = useSportCloud();
+
+  function navigateToTab(next: SportTab, replace = false) {
+    if (typeof window !== "undefined") {
+      const nextState = {
+        ...(window.history.state ?? {}),
+        antaverseSport: true,
+        sportView: next,
+      };
+      window.history[replace ? "replaceState" : "pushState"](
+        nextState,
+        "",
+        sportTabUrl(next),
+      );
+    }
+    tabRef.current = next;
+    setTab(next);
+  }
+
+  function resetSectionState() {
+    setDetailId(null);
+    setEditing(null);
+    setSupersetDraft(null);
+    setEditHistory(false);
+    setDeleteHistory(false);
+    setConfirmFinish(false);
+    setNotice("");
+  }
+
   useEffect(() => {
     const client = getCloud();
     const id = cloud.session?.user.id;
@@ -807,16 +864,68 @@ export function SportApp() {
     let mounted = true;
     void Promise.resolve().then(() => {
       if (!mounted) return;
+      const initialTab = tabFromLocation();
+      const currentState = window.history.state ?? {};
+      const homeUrl = sportTabUrl("home");
+      const initialUrl = sportTabUrl(initialTab);
+
+      // Keep a real Sport home entry in the browser history. A section opened
+      // directly is treated as if it had been reached from that home page.
+      window.history.replaceState(
+        { ...currentState, antaverseSport: true, sportView: "home", sportHomeBoundary: true },
+        "",
+        homeUrl,
+      );
+      window.history.pushState(
+        { antaverseSport: true, sportView: "home", sportHomeGuard: true },
+        "",
+        homeUrl,
+      );
+      if (initialTab !== "home") {
+        window.history.pushState(
+          { antaverseSport: true, sportView: initialTab },
+          "",
+          initialUrl,
+        );
+      }
+      tabRef.current = initialTab;
+      setTab(initialTab);
       const loaded = loadStore();
       storeRef.current = loaded.store;
       setStore(loaded.store);
       setError(loaded.error);
       setReadBlocked(Boolean(loaded.error));
-      if (new URLSearchParams(window.location.search).get("social") === "1") setTab("social");
     });
     return () => {
       mounted = false;
     };
+  }, []);
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      const previousTab = tabRef.current;
+      const nextTab = tabFromLocation();
+      const isLeavingSportHome =
+        previousTab === "home" &&
+        nextTab === "home" &&
+        Boolean(event.state?.sportHomeBoundary);
+
+      if (isLeavingSportHome) {
+        window.history.pushState(
+          { antaverseSport: true, sportView: "home", sportHomeGuard: true },
+          "",
+          sportTabUrl("home"),
+        );
+        setExitConfirmation(true);
+        return;
+      }
+
+      tabRef.current = nextTab;
+      setTab(nextTab);
+      setExitConfirmation(false);
+      resetSectionState();
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
   useEffect(() => {
     if (!photoViewer) return;
@@ -871,7 +980,7 @@ export function SportApp() {
     source: "free" | "recommended" = "free",
   ) {
     if (storeRef.current?.active) {
-      setTab("training");
+      navigateToTab("training");
       setNotice("Votre séance en cours vous attend. Terminez-la avant d’en commencer une autre.");
       return;
     }
@@ -885,7 +994,7 @@ export function SportApp() {
     setSupersetDraft(null);
     setFeedbackEntryId(null);
     setSessionFeedbackOpen(false);
-    setTab("training");
+    navigateToTab("training");
     setNotice("");
     setDetailId(null);
   }
@@ -962,7 +1071,7 @@ export function SportApp() {
       finished.exercises.length ? "Séance enregistrée. Bien joué !" : "Séance vide fermée.",
     );
     if (finished.exercises.length) {
-      setTab("history");
+      navigateToTab("history");
       setDetailId(finished.id);
     }
   }
@@ -971,22 +1080,21 @@ export function SportApp() {
     <main className={styles.shell} data-theme={theme}>
       <header className={styles.header}>
         {tab === "home" ? (
-          <Link href="/" className={styles.back} aria-label="Retour aux jeux AntaVerse">
+          <button
+            type="button"
+            className={styles.back}
+            aria-label="Retour aux jeux AntaVerse"
+            onClick={() => setExitConfirmation(true)}
+          >
             ← <span>AntaVerse</span>
-          </Link>
+          </button>
         ) : (
           <button
             type="button"
             className={styles.back}
             onClick={() => {
-              setTab("home");
-              setDetailId(null);
-              setEditing(null);
-              setSupersetDraft(null);
-              setEditHistory(false);
-              setDeleteHistory(false);
-              setConfirmFinish(false);
-              setNotice("");
+              navigateToTab("home", true);
+              resetSectionState();
             }}
           >
             ← <span>Accueil</span>
@@ -1017,7 +1125,7 @@ export function SportApp() {
             key={id}
             aria-current={tab === id ? "page" : undefined}
             onClick={() => {
-              setTab(id);
+              navigateToTab(id);
               if (id === "training" && !active) setWorkoutType("recommended");
               setDetailId(null);
               setEditHistory(false);
@@ -1065,7 +1173,7 @@ export function SportApp() {
                     type="button"
                     className={styles.homeButton}
                     onClick={() => {
-                      setTab(id);
+                      navigateToTab(id);
                       if (id === "training" && !active) setWorkoutType("recommended");
                       setDetailId(null);
                       setEditing(null);
@@ -2028,7 +2136,7 @@ export function SportApp() {
                       : "Vos séances terminées apparaîtront ici, avec les exercices, les charges et les séries effectuées."}
                   </p>
                   {historyFilter !== "friends" && (
-                    <button className={styles.primary} onClick={() => setTab("training")}>
+                    <button className={styles.primary} onClick={() => navigateToTab("training")}>
                       Commencer une séance
                     </button>
                   )}
@@ -2047,7 +2155,7 @@ export function SportApp() {
                   setDetailId(sessionId);
                   setEditHistory(false);
                   setDeleteHistory(false);
-                  setTab("history");
+                  navigateToTab("history");
                 }}
               />
             </>
@@ -2078,11 +2186,11 @@ export function SportApp() {
                         if (storeRef.current?.active) {
                           if (current) {
                             setNotice("Terminez l’exercice en cours avant d’en ajouter un autre.");
-                            setTab("training");
+                            navigateToTab("training");
                             return;
                           }
                           setEditing({ config: c });
-                          setTab("training");
+                          navigateToTab("training");
                         } else {
                           start(kind);
                           setEditing({ config: c });
@@ -2129,6 +2237,37 @@ export function SportApp() {
                 </p>
               )}
             </>
+          )}
+          {exitConfirmation && (
+            <div className={styles.exitOverlay} role="presentation">
+              <section
+                className={styles.exitDialog}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="exit-sport-title"
+              >
+                <p className={styles.eyebrow}>Carnet de sport</p>
+                <h2 id="exit-sport-title">Quitter l’application Sport ?</h2>
+                <p>Êtes-vous sûr de vouloir revenir à l’accueil AntaVerse et à ses jeux ?</p>
+                <div className={styles.actions}>
+                  <button
+                    type="button"
+                    className={styles.secondary}
+                    autoFocus
+                    onClick={() => setExitConfirmation(false)}
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    type="button"
+                    className={styles.primary}
+                    onClick={() => router.push("/")}
+                  >
+                    Quitter Sport
+                  </button>
+                </div>
+              </section>
+            </div>
           )}
           {photoViewer && (
             <div
