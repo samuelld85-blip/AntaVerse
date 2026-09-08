@@ -240,6 +240,7 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [feedbackBusy, setFeedbackBusy] = useState<string | null>(null);
   const [push, setPush] = useState(false);
+  const [friendPhotos, setFriendPhotos] = useState<Record<string, string>>({});
   const id = session?.user.id;
   const client = getCloud();
   const refresh = useCallback(async () => {
@@ -292,6 +293,42 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
       clearInterval(timer);
     };
   }, [client, id, profile, refresh]);
+  useEffect(() => {
+    if (!client || !id || !profile) return;
+    const acceptedIds = friends
+      .filter((friendship) => friendship.accepted_at)
+      .map((friendship) => (friendship.requester === id ? friendship.recipient : friendship.requester));
+    if (!acceptedIds.length) return;
+    let live = true;
+    void (async () => {
+      try {
+        const { data, error } = await client
+          .from("sport_sessions")
+          .select("user_id,payload")
+          .in("user_id", acceptedIds)
+          .order("ended_at", { ascending: false });
+        if (error) throw error;
+        const next: Record<string, string> = {};
+        for (const row of (data ?? []) as { user_id: string; payload: unknown }[]) {
+          if (next[row.user_id]) continue;
+          try {
+            const sportSession = storeSchema.shape.history.parse([row.payload])[0];
+            if (!sportSession) continue;
+            const photo = sportSession.feedback?.photos?.[0];
+            if (photo) next[row.user_id] = photo;
+          } catch {
+            // Ignore a malformed session and continue looking for the latest valid photo.
+          }
+        }
+        if (live) setFriendPhotos(next);
+      } catch {
+        if (live) setFriendPhotos({});
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [client, friends, id, profile]);
   useEffect(() => {
     if (!client || !id || !profile) return;
     let live = true;
@@ -744,7 +781,16 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
               return (
                 <li className={f.accepted_at ? styles.friendItem : undefined} key={other}>
                   <div className={styles.friendHeader}>
-                    <strong>@{username}</strong>
+                    <div className={styles.friendIdentity}>
+                      {friendPhotos[other] && (
+                        <img
+                          className={styles.friendThumbnail}
+                          src={friendPhotos[other]}
+                          alt={`Dernière photo de @${username}`}
+                        />
+                      )}
+                      <strong>@{username}</strong>
+                    </div>
                     {f.accepted_at && (
                       <button
                         aria-label={`Retirer @${username}`}
