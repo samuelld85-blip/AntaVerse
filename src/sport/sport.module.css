@@ -1523,61 +1523,6 @@
 .stats {
   padding-bottom: 20px;
 }
-.profileHero {
-  padding: 18px;
-  border: 1px solid var(--sport-accent-line);
-  border-radius: 18px;
-  background: linear-gradient(145deg, color-mix(in srgb, var(--sport-accent-soft) 88%, var(--sport-panel)), var(--sport-panel));
-  box-shadow: var(--sport-shadow);
-}
-.profileHeroTop {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 14px;
-}
-.profileHeroMetric {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
-  color: var(--sport-muted);
-  font-size: 11px;
-}
-.profileHeroMetric small {
-  color: var(--sport-accent);
-  font-size: 10px;
-  font-weight: 700;
-}
-.profileHeroMetric strong,
-.profileHeroCount {
-  color: var(--sport-ink);
-  font-size: 28px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-.profileHeroCount {
-  display: block;
-  margin-top: 18px;
-}
-.profileLead {
-  margin: 15px 0 0;
-  color: var(--sport-muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
-.progressionLine {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 20px 0 8px;
-  color: var(--sport-muted);
-  font-size: 11px;
-}
-.progressionLine strong {
-  color: var(--sport-ink);
-  white-space: nowrap;
-}
 .progressionBadge {
   display: inline-flex;
   align-items: center;
@@ -1588,8 +1533,14 @@
   border: 1px solid var(--sport-accent-line);
   border-radius: 999px;
   color: var(--sport-ink);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--sport-accent-soft) 92%, transparent), var(--sport-field));
-  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--sport-accent) 20%, transparent), 0 3px 10px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sport-accent-soft) 92%, transparent),
+    var(--sport-field)
+  );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--sport-accent) 20%, transparent),
+    0 3px 10px rgba(0, 0, 0, 0.08);
   font-size: 11px;
   font-weight: 750;
   letter-spacing: 0.01em;
@@ -1671,13 +1622,13 @@
   box-shadow: var(--sport-shadow);
 }
 .statCard {
-  min-height: 106px;
-  padding: 14px;
+  min-height: 84px;
+  padding: 11px 12px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
 }
 .statCard span,
 .progressSummary span {
@@ -1690,9 +1641,6 @@
   line-height: 1;
   letter-spacing: -1px;
   overflow-wrap: anywhere;
-}
-.statCard:last-child strong {
-  font-size: clamp(19px, 6vw, 26px);
 }
 .statsNote {
   color: var(--sport-muted);

@@ -4,10 +4,12 @@ Dernière vérification des exigences stores : 2026-08-24. Document
 préparatoire pour remplir le questionnaire "App Privacy" d'App Store
 Connect, basé exclusivement sur l'audit réel du code
 (`docs/compliance/DATA_INVENTORY.md`, `docs/compliance/THIRD_PARTY_SERVICES.md`).
-**À revalider obligatoirement à chaque ajout de SDK ou plugin natif.** La
-version Android Capacitor actuelle a été auditée : elle embarque l'export
-statique dans l'AAB, sans analytics, crash reporting, identifiant transmis ni
-service Capacitor distant configuré. Voir
+**À revalider obligatoirement à chaque ajout de SDK ou plugin natif.** Les
+wrappers Capacitor Android et iOS embarquent l'export statique, sans analytics,
+crash reporting, identifiant transmis ni service Capacitor distant configuré.
+Le chronomètre iOS utilise localement ActivityKit/Live Activities et le
+chronomètre Android une notification locale ; aucun de ces affichages ne
+transmet de donnée à l’éditeur. Voir
 `docs/compliance/THIRD_PARTY_SERVICES.md` et
 `docs/compliance/PERMISSIONS_INVENTORY.md`.
 

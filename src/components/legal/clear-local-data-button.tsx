@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AntaverseTimer } from "@/lib/native-timer";
 
 // Namespace complet des données locales AntaVerse (voir docs/compliance/DATA_INVENTORY.md).
 // Cette liste doit rester synchronisée avec les clés réellement utilisées par
@@ -52,6 +53,7 @@ async function clearAntaVerseLocalData(): Promise<void> {
       // Stockage indisponible (navigation privée) : rien à effacer.
     }
   }
+  await AntaverseTimer.stop();
   if (window.name.startsWith(WINDOW_NAME_PREFIX)) window.name = "";
   try {
     window.indexedDB.deleteDatabase(INDEXED_DB_NAME);

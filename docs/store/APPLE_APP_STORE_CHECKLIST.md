@@ -32,9 +32,9 @@ réelle**, les exigences (versions Xcode minimum, formulaires, libellés)
 
 ## Build
 
-- [ ] Choisir et mettre en œuvre une stratégie de packaging natif (voir
-      `docs/store/NATIVE_PACKAGING_OPTIONS.md`) — non fait dans ce
-      chantier
+- [x] Choisir et mettre en œuvre une stratégie de packaging natif : Capacitor
+      8 avec l’extension Live Activity du chronomètre (voir
+      `docs/store/NATIVE_PACKAGING_OPTIONS.md`)
 - [ ] Vérifier la version Xcode / SDK iOS minimum exigée par Apple au
       moment de la soumission (change à chaque cycle iOS)
 - [ ] Définir le bundle identifier

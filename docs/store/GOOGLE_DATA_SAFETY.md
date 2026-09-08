@@ -60,9 +60,10 @@ documents n'a pas été mis à jour après un changement de code.
 
 L'intégration Capacitor Android ne change pas les réponses : elle embarque
 l'export statique localement, n'ajoute ni analytics ni backend, et ne transmet
-aucune partie ou préférence. La permission Android `INTERNET` est une capacité
-de WebView, pas la preuve d'une collecte ; la déclaration doit décrire le
-comportement effectif du code et être réauditée avant chaque release.
+aucune partie ou préférence. Les permissions Android `INTERNET` et
+`POST_NOTIFICATIONS` servent respectivement à la WebView et à l’affichage local
+du chronomètre ; elles ne constituent pas une collecte. La déclaration doit
+décrire le comportement effectif du code et être réauditée avant chaque release.
 
 ## Ce qui déclenche une réévaluation obligatoire
 

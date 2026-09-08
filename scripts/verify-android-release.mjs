@@ -131,7 +131,7 @@ expectMatch(
 const permissions = [...manifest.matchAll(/<uses-permission\s+android:name="([^"]+)"/g)].map(
   (match) => match[1],
 );
-if (permissions.join(",") !== "android.permission.INTERNET") {
+if (permissions.join(",") !== "android.permission.INTERNET,android.permission.POST_NOTIFICATIONS") {
   fail(
     `Permissions Android inattendues (${permissions.join(", ") || "aucune"}) : réauditer la confidentialité avant release.`,
   );

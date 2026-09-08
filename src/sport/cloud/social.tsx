@@ -5,7 +5,7 @@ import { getCloud, friendlyError } from "./client";
 import { useSportCloud } from "./provider";
 import { enableSportPush, disableSportPush } from "./push";
 import { storeSchema, type Session } from "../model";
-import { getExerciseProgressions, getGlobalProgression } from "../progression";
+import { getGlobalProgression } from "../progression";
 import { ProgressionBadge } from "../progression-badge";
 import { StatsDashboard } from "../stats-dashboard";
 import styles from "./cloud.module.css";
@@ -568,8 +568,9 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                 : "Activer les notifications de mes amis"}
             </button>
             <p className={styles.muted}>
-              Un push quand un ami termine une séance. Sur iPhone, installez l’app depuis l’écran
-              d’accueil.
+              Un push quand un ami termine une séance. Sur iPhone, ajoutez le site à l’écran
+              d’accueil puis ouvrez Sport depuis son icône ; sur Android, utilisez un navigateur
+              compatible comme Chrome.
             </p>
           </div>
         </>
@@ -590,12 +591,6 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                     <h2>@{viewing.username}</h2>
                   </div>
                   <ProgressionBadge kind="status" status={getGlobalProgression(profileHistory).status} />
-                </div>
-                <div className={styles.friendProfileSummary}>
-                  <strong>{getGlobalProgression(profileHistory).sessions}</strong>
-                  <span>séance{getGlobalProgression(profileHistory).sessions > 1 ? "s" : ""}</span>
-                  <strong>{getExerciseProgressions(profileHistory).length}</strong>
-                  <span>exercice{getExerciseProgressions(profileHistory).length > 1 ? "s" : ""}</span>
                 </div>
                 <StatsDashboard history={profileHistory} username={viewing.username} compact />
                 <button className={sportStyles.secondary} onClick={() => setViewMode("history")} type="button">

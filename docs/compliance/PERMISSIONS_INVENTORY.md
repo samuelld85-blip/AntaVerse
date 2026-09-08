@@ -13,13 +13,14 @@ Recherche exhaustive de `navigator.geolocation`, `getUserMedia`,
 | `navigator.vibrate`              | **Oui**    | `triman/features/game/game-client.tsx`, `purple/features/game/game-client.tsx`, `sans-le-dire/features/game/game-client.tsx`, `quoi-de-9/features/game/game-client.tsx` | Non — API de retour haptique sans prompt de permission sur les navigateurs qui la supportent (non disponible sur Safari iOS, appel silencieusement ignoré) |
 | `navigator.geolocation`          | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
 | `getUserMedia` / caméra / micro  | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
-| `Notification.requestPermission` | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
+| `Notification.requestPermission` | **Oui** | `src/lib/web-timer-notification.ts` | Oui — demandée au toucher sur « Démarrer le chrono », uniquement pour afficher le repos actif hors de l’application |
 | `navigator.share`                | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
 | `navigator.clipboard`            | Non        | —                                                                                                                                                                       | —                                                                                                                                                          |
 
-**Aucune permission navigateur nécessitant un prompt n'est demandée
-aujourd'hui.** Le seul usage d'API sensible (`navigator.vibrate`) est un
-retour haptique pur, sans permission associée dans les navigateurs actuels.
+La permission de notification n’est demandée qu’au toucher sur « Démarrer le
+chrono », pour rendre le repos actif visible hors de l’application. Le seul
+autre usage d'API sensible (`navigator.vibrate`) est un retour haptique pur,
+sans permission associée dans les navigateurs actuels.
 
 ## Manifeste PWA (`public/manifest.webmanifest`)
 
@@ -29,12 +30,12 @@ sans `permissions` ni capacité native demandée.
 
 ## Version Android Capacitor actuelle
 
-Le manifeste final a été inspecté dans l'APK API 36 généré le 24 août 2026.
-AntaVerse déclare explicitement une seule permission :
+Le manifeste final déclare deux permissions :
 
 | Permission Android            | Origine                  | Prompt utilisateur ? | Justification                                                                                                                                                      |
 | ----------------------------- | ------------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `android.permission.INTERNET` | Modèle Capacitor/WebView | Non                  | Capacité réseau standard de la WebView et accès éventuel aux pages légales/support publiques. Aucun appel applicatif ni SDK de collecte n'est présent aujourd'hui. |
+| `android.permission.POST_NOTIFICATIONS` | Chronomètre système (`AntaverseTimerPlugin`) | Oui, au premier démarrage d’un chrono | Afficher le compte à rebours dans la barre d’état et le volet des notifications ; aucun contenu distant ni suivi n’est associé. |
 
 Android ajoute aussi automatiquement au package une permission interne
 spécifique à l'application (`com.antaverse.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`)
@@ -42,7 +43,8 @@ pour sécuriser ses receivers non exportés. Ce n'est pas une permission sensibl
 demandée à l'utilisateur ni un accès aux données de l'appareil.
 
 Le manifeste ne demande ni caméra, ni micro, ni localisation, ni contacts,
-ni photos/fichiers, ni notifications. Le trafic HTTP non chiffré est interdit,
+ni photos/fichiers. Les notifications sont demandées uniquement au premier
+démarrage d’un chronomètre. Le trafic HTTP non chiffré est interdit,
 la sauvegarde cloud/transfert des données locales est désactivée et la WebView
 de production n'est pas débogable.
 

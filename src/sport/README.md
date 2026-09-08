@@ -37,17 +37,20 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   ajout/retrait d’exercices. Les favoris restent des copies indépendantes. Une
   suppression d’historique demande confirmation. La sortie de séance entre deux
   exercices propose de conserver les séries ou de quitter sans historique.
-- `use-rest-timer.ts` : échéance absolue en mémoire, signal Web Audio à 5 secondes
-  et à zéro. Un repos seul ne compte aucune série. Recharger réinitialise seulement
-  le repos ; les séries sont sauvegardées immédiatement. Le son en arrière-plan ou
-  écran verrouillé dépend du navigateur : aucun service natif n’est ajouté.
+- `use-rest-timer.ts` : échéance absolue namespacée et persistée, signal Web Audio à
+  5 secondes et à zéro, et synchronisation avec la notification système native. Un
+  repos seul ne compte aucune série. Le chronomètre reprend exactement après
+  suspension, navigation ou rechargement ; Android affiche un chronomètre dans la
+  notification persistante et iOS 16.1+ dans une Live Activity. Sur navigateur,
+  une notification PWA cliquable est proposée quand l’API est disponible.
   Saisie séparée minutes/secondes et affichage m:ss. Le lancement automatique
   après une série est facultatif ; le bouton de chrono seul est toujours accessible.
 
-Stockage : `antaverse:sport:v1` dans localStorage. Aucun compteur de repos n’est
-persisté. Une erreur de lecture préserve les données brutes ; une erreur d’écriture
-est visible et permet de réessayer. Les données restent sur cet appareil jusqu’à
-effacement via les informations de confidentialité ou le navigateur.
+Stockage : `antaverse:sport:v1` dans localStorage, plus `antaverse:sport:rest-timer`
+pour l’échéance du repos actif. Une erreur de lecture préserve les données brutes ;
+une erreur d’écriture n’empêche pas le chronomètre de fonctionner en mémoire. Les
+données restent sur cet appareil jusqu’à effacement via les informations de
+confidentialité ou le navigateur.
 
 `cloud/` ajoute les comptes e-mail/mot de passe sans confirmation, Google et Apple
 via le navigateur, la sauvegarde Supabase versionnée, les pseudos et les amis.

@@ -65,7 +65,8 @@ d'identité développeur et le target API level, qui évoluent régulièrement.
       d'origine) — si des comptes sont introduits plus tard, prévoir un
       chemin de suppression in-app et une ressource web publique
       équivalente
-- [x] Audit du manifeste natif : permission `INTERNET` seulement côté
+- [x] Audit du manifeste natif : permissions `INTERNET` et
+      `POST_NOTIFICATIONS` côté
       AntaVerse ; voir `docs/compliance/PERMISSIONS_INVENTORY.md`
 
 ## Alcool

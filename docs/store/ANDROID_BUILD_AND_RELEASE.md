@@ -17,7 +17,9 @@ ne charge pas le site Vercel et reste jouable sans connexion Internet.
 - Android minimum : API 24 (Android 7.0) ;
 - compile/target SDK : API 36 ;
 - format de publication : Android App Bundle (`.aab`) ;
-- permission déclarée par AntaVerse : `android.permission.INTERNET` seulement ;
+- permissions déclarées par AntaVerse : `android.permission.INTERNET` et
+  `android.permission.POST_NOTIFICATIONS` (ce dernier uniquement pour le
+  chronomètre système, demandé au premier démarrage) ;
 - sauvegarde cloud/transfert des parties locales : désactivés ;
 - trafic HTTP non chiffré : interdit ;
 - débogage de la WebView en production : désactivé ;

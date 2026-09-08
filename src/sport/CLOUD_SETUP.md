@@ -103,8 +103,16 @@ dans Cron et les résultats Edge Functions. Après 5 tentatives infructueuses,
 un job reste à diagnostiquer avant purge après 7 jours ; ne pas le déclarer livré.
 
 Le client demande la permission seulement après le bouton Social. Sur iPhone,
-il faut iOS 16.4+ et l’application ajoutée à l’écran d’accueil. Sur un navigateur
-compatible Android/desktop, la notification web utilise le service worker.
+il faut iOS/iPadOS 16.4+ et le site ajouté à l’écran d’accueil ; la permission doit
+être demandée depuis cette application web installée. Sur Android/desktop, utilisez
+un navigateur compatible ; la notification web utilise le service worker.
+La version native Capacitor du dépôt n’est pas encore un client de push distant :
+le bouton Social y refuse volontairement l’activation, tandis que la permission
+Android actuellement déclarée sert au minuteur local. Pour des notifications d’amis
+dans les applications natives publiées, il faudra ajouter le plugin Push Notifications,
+configurer APNs côté iOS et Firebase Cloud Messaging côté Android, puis adapter le
+stockage des tokens et l’Edge Function. Cette voie nécessite aussi la configuration
+manuelle des comptes Apple Developer et Firebase ; elle est distincte du Web Push.
 Les déconnexions retirent l’abonnement de cet appareil. Les autres appareils
 gardent leurs préférences. Le destinataire doit toujours être ami à l’envoi.
 

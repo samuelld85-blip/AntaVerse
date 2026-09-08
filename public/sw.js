@@ -166,9 +166,12 @@ self.addEventListener("push", (event) => {
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
   event.waitUntil((async () => {
-    const url = new URL("/sport/?social=1", self.location.origin).href;
+    const target = typeof event.notification.data?.url === "string"
+      ? event.notification.data.url
+      : "/sport/?social=1";
+    const url = new URL(target, self.location.origin).href;
     const windows = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
-    const existing = windows.find(client => new URL(client.url).pathname.startsWith("/sport"));
+    const existing = windows.find(client => new URL(client.url).origin === self.location.origin);
     if (existing) { await existing.navigate(url); await existing.focus(); }
     else await self.clients.openWindow(url);
   })());

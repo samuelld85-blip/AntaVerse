@@ -1,6 +1,11 @@
 import { getCloud } from "./client";
+import { Capacitor } from "@capacitor/core";
 
 export async function enableSportPush(userId: string) {
+  if (Capacitor.isNativePlatform())
+    throw new Error(
+      "Les notifications des amis ne sont pas encore disponibles dans l’application native. Ouvrez AntaVerse depuis son site installé comme application web.",
+    );
   if (!("serviceWorker" in navigator) || !("PushManager" in window) || !("Notification" in window))
     throw new Error(
       "Sur iPhone, ajoutez Sport à l’écran d’accueil puis ouvrez-le depuis son icône. Ce navigateur doit prendre en charge les notifications web.",

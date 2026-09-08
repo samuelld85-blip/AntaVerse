@@ -18,7 +18,7 @@ réseau) et **SDK** (communique avec un serveur).
 | `react` / `react-dom`                    | Bibliothèque d'interface utilisateur                                               | Non                                                           | Non                                                         |
 | `idb`                                    | Enveloppe utilitaire autour de l'API IndexedDB native du navigateur                | Non — 100 % local                                             | Non                                                         |
 | `zod`                                    | Validation de schémas de données                                                   | Non — 100 % local                                             | Non                                                         |
-| `@capacitor/core` / `@capacitor/android` | Pont et conteneur natif Android ; sert les fichiers statiques depuis l'application | Non — aucun service distant Capacitor n'est configuré         | Non                                                         |
+| `@capacitor/core` / `@capacitor/android` / `@capacitor/ios` | Pont et conteneur natif Android/iOS ; sert les fichiers statiques et expose le chronomètre système local | Non — aucun service distant Capacitor n'est configuré | Non |
 
 **Aucune de ces dépendances n'est un SDK de collecte au sens où l'entend cet
 audit** : ce sont des bibliothèques exécutées entièrement dans le

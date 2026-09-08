@@ -1,9 +1,8 @@
 # Packaging natif — décision et état
 
-Dernière mise à jour : 2026-08-24. La décision Android est prise : Capacitor
-8 est intégré et le build statique est embarqué dans le projet `android/`.
-La PWA Vercel continue d'exister en parallèle. iOS n'est pas traité dans ce
-chantier.
+Dernière mise à jour : 2026-09-08. Capacitor 8 cible désormais Android et iOS ;
+les builds statiques sont embarqués dans `android/` et `ios/`. La PWA Vercel
+continue d'exister en parallèle.
 
 ## Point de départ technique réel
 
@@ -66,6 +65,9 @@ soumission — ce document ne peut pas garantir une acceptation.
 ## État d'implémentation
 
 Le projet Android, les assets, la signature externalisée, les tests Windows
-et le pipeline AAB sont maintenant implémentés. Voir
-`docs/store/ANDROID_BUILD_AND_RELEASE.md`. Aucun projet Xcode/iOS n'a été
-créé.
+et le pipeline AAB sont implémentés. Le projet Xcode iOS contient en plus
+l’extension `AntaverseTimerWidget` pour la Live Activity du repos. Voir
+`docs/store/ANDROID_BUILD_AND_RELEASE.md` et le fichier
+`ios/App/AppTimerWidget/RestTimerLiveActivity.swift`. La compilation et la
+signature iOS doivent être finalisées sur macOS avec Xcode et un compte Apple
+Developer.

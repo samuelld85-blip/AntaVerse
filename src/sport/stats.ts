@@ -2,6 +2,7 @@ import { exercises, muscleLabels, sessionLabels, type Muscle } from "./catalog";
 import { setExerciseId, type Session } from "./model";
 
 export type StatsRange = "30d" | "90d" | "all";
+export type RhythmUnit = "day" | "week" | "month";
 
 export type ExerciseTrend = {
   exerciseId: string;
@@ -45,6 +46,12 @@ function startOfWeek(value: Date) {
   return date;
 }
 
+function startOfMonth(value: Date) {
+  const date = startOfDay(value);
+  date.setDate(1);
+  return date;
+}
+
 function inRange(session: Session, range: StatsRange, now: Date) {
   if (range === "all") return true;
   const days = range === "30d" ? 30 : 90;
@@ -69,6 +76,38 @@ export function formatStatNumber(value: number, maximumFractionDigits = 0) {
 export function formatVolume(volume: number) {
   if (volume >= 1000) return `${formatStatNumber(volume / 1000, 1)} t`;
   return `${formatStatNumber(volume)} kg`;
+}
+
+export function getRhythmBuckets(sessions: Session[], unit: RhythmUnit, now = new Date()) {
+  const bucketCount = unit === "day" ? 7 : 6;
+  const currentBucket =
+    unit === "day" ? startOfDay(now) : unit === "week" ? startOfWeek(now) : startOfMonth(now);
+  const dateFormatter =
+    unit === "day"
+      ? new Intl.DateTimeFormat("fr-FR", { weekday: "short", day: "numeric" })
+      : unit === "week"
+        ? new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short" })
+        : new Intl.DateTimeFormat("fr-FR", { month: "short" });
+
+  return Array.from({ length: bucketCount }, (_, index) => {
+    const start = new Date(currentBucket);
+    if (unit === "day") start.setDate(start.getDate() - (bucketCount - 1 - index));
+    if (unit === "week") start.setDate(start.getDate() - (bucketCount - 1 - index) * 7);
+    if (unit === "month") start.setMonth(start.getMonth() - (bucketCount - 1 - index));
+
+    const next = new Date(start);
+    if (unit === "day") next.setDate(next.getDate() + 1);
+    if (unit === "week") next.setDate(next.getDate() + 7);
+    if (unit === "month") next.setMonth(next.getMonth() + 1);
+
+    return {
+      label: dateFormatter.format(start),
+      count: sessions.filter((session) => {
+        const date = new Date(session.startedAt);
+        return date >= start && date < next;
+      }).length,
+    };
+  });
 }
 
 export function getSportStats(history: Session[], range: StatsRange, now = new Date()): SportStats {
@@ -125,20 +164,7 @@ export function getSportStats(history: Session[], range: StatsRange, now = new D
     }
   }
 
-  const currentWeek = startOfWeek(now);
-  const weeklySessions = Array.from({ length: 6 }, (_, index) => {
-    const week = new Date(currentWeek);
-    week.setDate(week.getDate() - (5 - index) * 7);
-    const nextWeek = new Date(week);
-    nextWeek.setDate(nextWeek.getDate() + 7);
-    return {
-      label: new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "short" }).format(week),
-      count: sessions.filter((session) => {
-        const date = new Date(session.startedAt);
-        return date >= week && date < nextWeek;
-      }).length,
-    };
-  });
+  const weeklySessions = getRhythmBuckets(sessions, "week", now);
 
   return {
     sessions,

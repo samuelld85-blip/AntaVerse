@@ -298,24 +298,6 @@
 .friendProfileHeading h2 {
   margin: 0;
 }
-.friendProfileSummary {
-  display: grid;
-  grid-template-columns: auto 1fr auto 1fr;
-  align-items: baseline;
-  gap: 4px 8px;
-  padding: 12px;
-  border: 1px solid var(--sport-line, #415369);
-  border-radius: 12px;
-  background: var(--sport-field, #121e2b);
-}
-.friendProfileSummary strong {
-  color: var(--sport-ink, #f5f1eb);
-  font-size: 20px;
-}
-.friendProfileSummary span {
-  color: var(--sport-muted, #bcc8d6);
-  font-size: 0.8rem;
-}
 .muted {
   color: #bcc8d6;
   font-size: 0.9rem;

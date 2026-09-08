@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { completeSet, createEntry, createSession, defaultConfig } from "./model";
-import { getExerciseProgress, getSportStats, percentageChange } from "./stats";
+import { getExerciseProgress, getRhythmBuckets, getSportStats, percentageChange } from "./stats";
 
 function session(date: string, kind: "push" | "legs", loadKg: number, reps = 8) {
   const workout = createSession(kind, [
@@ -44,6 +44,14 @@ describe("sport statistics", () => {
     expect(points.map((point) => point.load)).toEqual([50, 60]);
     expect(points[1]!.estimated1Rm).toBe(80);
     expect(percentageChange(points[0]!.load, points[1]!.load)).toBe(20);
+  });
+
+  it("groups the rhythm by days, weeks, or months", () => {
+    expect(getRhythmBuckets(history, "day", now)).toHaveLength(7);
+    expect(getRhythmBuckets(history, "week", now).map((bucket) => bucket.count)).toEqual([
+      0, 0, 0, 0, 1, 1,
+    ]);
+    expect(getRhythmBuckets(history, "month", now).at(-1)?.count).toBe(1);
   });
 
   it("splits superset sets by movement while keeping one session entry", () => {
