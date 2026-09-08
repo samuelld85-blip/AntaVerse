@@ -298,6 +298,29 @@
 .friendProfileHeading h2 {
   margin: 0;
 }
+.friendProfilePhoto {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #415369;
+  border-radius: 12px;
+  background: #172536;
+}
+.friendProfilePhoto img {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+.friendProfilePhoto figcaption {
+  color: #bcc8d6;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
 .muted {
   color: #bcc8d6;
   font-size: 0.9rem;

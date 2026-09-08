@@ -468,6 +468,43 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
     friends.filter((friendship) => friendship.accepted_at).map(personId),
   );
   const peopleToAdd = people.filter((person) => !acceptedFriendIds.has(person.id));
+  const latestPhotoSession = profileHistory.find(
+    (item) => (item.feedback?.photos?.length ?? 0) > 0,
+  );
+  const latestPhoto = latestPhotoSession?.feedback?.photos?.[0];
+  async function togglePush() {
+    setBusy(true);
+    setMessage("");
+    try {
+      if (push) await disableSportPush();
+      else await enableSportPush(id!);
+      setPush(!push);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : friendlyError(error));
+    } finally {
+      setBusy(false);
+    }
+  }
+  function pushControl(showHint: boolean) {
+    return (
+      <div className={styles.socialGroup}>
+        <button disabled={busy} onClick={() => void togglePush()} type="button">
+          {push
+            ? "Désactiver les notifications sur cet appareil"
+            : "Activer les notifications de mes amis"}
+        </button>
+        {showHint ? (
+          <p className={styles.muted}>
+            Un push quand un ami termine une séance. Sur iPhone, ajoutez le site à l’écran d’accueil
+            puis ouvrez Sport depuis son icône ; sur Android, utilisez un navigateur compatible
+            comme Chrome.
+          </p>
+        ) : (
+          <p className={styles.muted}>Notifications activées sur cet appareil.</p>
+        )}
+      </div>
+    );
+  }
   async function toggleLike(sessionId: string) {
     if (!client || !viewing || feedbackBusy) return;
     const mine = (likes[sessionId] ?? []).includes(id!);
@@ -546,33 +583,7 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
             Seuls vos amis acceptés voient vos séances terminées. Votre séance en cours et vos favoris
             restent privés.
           </p>
-          <div className={styles.socialGroup}>
-            <button
-              disabled={busy}
-              onClick={async () => {
-                setBusy(true);
-                setMessage("");
-                try {
-                  if (push) await disableSportPush();
-                  else await enableSportPush(id);
-                  setPush(!push);
-                } catch (error) {
-                  setMessage(error instanceof Error ? error.message : friendlyError(error));
-                } finally {
-                  setBusy(false);
-                }
-              }}
-            >
-              {push
-                ? "Désactiver les notifications sur cet appareil"
-                : "Activer les notifications de mes amis"}
-            </button>
-            <p className={styles.muted}>
-              Un push quand un ami termine une séance. Sur iPhone, ajoutez le site à l’écran
-              d’accueil puis ouvrez Sport depuis son icône ; sur Android, utilisez un navigateur
-              compatible comme Chrome.
-            </p>
-          </div>
+          {!push && pushControl(true)}
         </>
       )}
       {viewing ? (
@@ -592,6 +603,15 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
                   </div>
                   <ProgressionBadge kind="status" status={getGlobalProgression(profileHistory).status} />
                 </div>
+                {latestPhoto && latestPhotoSession && (
+                  <figure className={styles.friendProfilePhoto}>
+                    <img src={latestPhoto} alt={`Dernière photo de @${viewing.username}`} />
+                    <figcaption>
+                      Dernière photo publiée ·{" "}
+                      {new Date(latestPhotoSession.startedAt).toLocaleDateString("fr-FR")}
+                    </figcaption>
+                  </figure>
+                )}
                 <StatsDashboard history={profileHistory} username={viewing.username} compact />
                 <button className={sportStyles.secondary} onClick={() => setViewMode("history")} type="button">
                   Voir ses séances
@@ -602,109 +622,109 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
             <>
               <h2>Séances de @{viewing.username}</h2>
               {historyLoading ? (
-            <p role="status">Chargement des séances…</p>
+                <p role="status">Chargement des séances…</p>
               ) : history.length === 0 ? (
-            <p>Aucune séance partagée disponible.</p>
+                <p>Aucune séance partagée disponible.</p>
               ) : (
-            <ul className={styles.historyCarousel}>
-              {history.map((s) => (
-                <li key={s.id}>
-                  <div className={styles.sessionSummary}>
-                    <strong>{s.name || "Séance"}</strong>
-                    <span>
-                      {new Date(s.startedAt).toLocaleDateString("fr-FR")} ·{" "}
-                      {s.exercises.reduce((n, e) => n + e.completedSets.length, 0)} séries
-                    </span>
-                    <button type="button" onClick={() => onOpenHistory(s.id)}>
-                      Ouvrir dans l’historique
-                    </button>
-                  </div>
-                  {(() => {
-                    const sessionLikes = likes[s.id] ?? [];
-                    const liked = sessionLikes.includes(id!);
-                    const thread = comments[s.id] ?? [];
-                    return (
-                      <div className={styles.feedback}>
-                        <div className={styles.actions}>
-                          <button
-                            aria-pressed={liked}
-                            disabled={feedbackBusy === s.id}
-                            onClick={() => void toggleLike(s.id)}
-                          >
-                            {liked ? "❤️ Aimé" : "🤍 J’aime"}
-                            {sessionLikes.length ? ` · ${sessionLikes.length}` : ""}
-                          </button>
-                        </div>
-                        {sessionLikes.length > 0 && (
-                          <p className={styles.muted}>
-                            Aimé par {sessionLikes.map(nameOf).map((n) => `@${n}`).join(", ")}
-                          </p>
-                        )}
-                        {thread.length > 0 && (
-                          <ul className={styles.commentList}>
-                            {thread.map((c) => (
-                              <li key={c.id}>
-                                <span className={styles.commentBody}>
-                                  <strong>@{nameOf(c.actor)}</strong> {c.body}
-                                </span>
-                                {c.actor === id && (
-                                  <button
-                                    className={styles.quiet}
-                                    disabled={feedbackBusy === s.id}
-                                    onClick={() => void deleteComment(s.id, c.id)}
-                                  >
-                                    Supprimer
-                                  </button>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                        <form
-                          className={styles.commentForm}
-                          onSubmit={(e) => {
-                            e.preventDefault();
-                            void postComment(s.id);
-                          }}
-                        >
-                          <input
-                            aria-label={`Commenter la séance ${s.name || ""}`.trim()}
-                            maxLength={500}
-                            placeholder="Écrire un commentaire…"
-                            value={drafts[s.id] ?? ""}
-                            onChange={(e) =>
-                              setDrafts((d) => ({ ...d, [s.id]: e.target.value }))
-                            }
-                          />
-                          <button
-                            disabled={feedbackBusy === s.id || !(drafts[s.id] ?? "").trim()}
-                            type="submit"
-                          >
-                            Publier
-                          </button>
-                        </form>
+                <ul className={styles.historyCarousel}>
+                  {history.map((s) => (
+                    <li key={s.id}>
+                      <div className={styles.sessionSummary}>
+                        <strong>{s.name || "Séance"}</strong>
+                        <span>
+                          {new Date(s.startedAt).toLocaleDateString("fr-FR")} ·{" "}
+                          {s.exercises.reduce((n, e) => n + e.completedSets.length, 0)} séries
+                        </span>
+                        <button type="button" onClick={() => onOpenHistory(s.id)}>
+                          Ouvrir dans l’historique
+                        </button>
                       </div>
-                    );
-                  })()}
-                </li>
-              ))}
-            </ul>
+                      {(() => {
+                        const sessionLikes = likes[s.id] ?? [];
+                        const liked = sessionLikes.includes(id!);
+                        const thread = comments[s.id] ?? [];
+                        return (
+                          <div className={styles.feedback}>
+                            <div className={styles.actions}>
+                              <button
+                                aria-pressed={liked}
+                                disabled={feedbackBusy === s.id}
+                                onClick={() => void toggleLike(s.id)}
+                              >
+                                {liked ? "❤️ Aimé" : "🤍 J’aime"}
+                                {sessionLikes.length ? ` · ${sessionLikes.length}` : ""}
+                              </button>
+                            </div>
+                            {sessionLikes.length > 0 && (
+                              <p className={styles.muted}>
+                            Aimé par {sessionLikes.map(nameOf).map((n) => `@${n}`).join(", ")}
+                              </p>
+                            )}
+                            {thread.length > 0 && (
+                              <ul className={styles.commentList}>
+                                {thread.map((c) => (
+                                  <li key={c.id}>
+                                    <span className={styles.commentBody}>
+                                      <strong>@{nameOf(c.actor)}</strong> {c.body}
+                                    </span>
+                                    {c.actor === id && (
+                                      <button
+                                        className={styles.quiet}
+                                        disabled={feedbackBusy === s.id}
+                                        onClick={() => void deleteComment(s.id, c.id)}
+                                      >
+                                        Supprimer
+                                      </button>
+                                    )}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            <form
+                              className={styles.commentForm}
+                              onSubmit={(e) => {
+                                e.preventDefault();
+                                void postComment(s.id);
+                              }}
+                            >
+                              <input
+                                aria-label={`Commenter la séance ${s.name || ""}`.trim()}
+                                maxLength={500}
+                                placeholder="Écrire un commentaire…"
+                                value={drafts[s.id] ?? ""}
+                                onChange={(e) =>
+                                  setDrafts((d) => ({ ...d, [s.id]: e.target.value }))
+                                }
+                              />
+                              <button
+                                disabled={feedbackBusy === s.id || !(drafts[s.id] ?? "").trim()}
+                                type="submit"
+                              >
+                                Publier
+                              </button>
+                            </form>
+                          </div>
+                        );
+                      })()}
+                    </li>
+                  ))}
+                </ul>
               )}
               {history.length > 0 && (
-            <div className={styles.sessionPagination}>
-              <button
-                disabled={historyPage === 0 || historyLoading}
-                onClick={() => setHistoryPage((p) => p - 1)}
-              >
-                Séances précédentes
-              </button>
-              <button
-                disabled={!historyMore || historyLoading}
-                onClick={() => setHistoryPage((p) => p + 1)}
-              >
-                Séances suivantes
-              </button>
-            </div>
+                <div className={styles.sessionPagination}>
+                  <button
+                    disabled={historyPage === 0 || historyLoading}
+                    onClick={() => setHistoryPage((p) => p - 1)}
+                  >
+                    Séances précédentes
+                  </button>
+                  <button
+                    disabled={!historyMore || historyLoading}
+                    onClick={() => setHistoryPage((p) => p + 1)}
+                  >
+                    Séances suivantes
+                  </button>
+                </div>
               )}
             </>
           )}
@@ -850,6 +870,7 @@ export function SportSocial({ onOpenHistory }: { onOpenHistory: (sessionId: stri
             </ul>
           )}
           <hr className={styles.socialRule} />
+          {push && pushControl(false)}
           <Link className={styles.linkButton} href="/sport/compte">
             Mon compte
           </Link>
