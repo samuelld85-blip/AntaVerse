@@ -1630,17 +1630,13 @@
   justify-content: space-between;
   gap: 12px;
 }
-.profileAlbumHeading h2 {
-  margin: 0;
-  font-size: 18px;
-}
 .profileAlbumHeading .eyebrow {
-  margin-bottom: 4px;
+  margin: 0;
 }
 .profileAlbumHeading .secondary {
   flex: 0 0 auto;
-  min-height: 40px;
-  padding: 8px 12px;
+  min-height: 38px;
+  padding: 7px 11px;
   font-size: 12px;
 }
 .albumCount {

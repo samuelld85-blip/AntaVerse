@@ -198,12 +198,12 @@ function PhotoAlbum({ history, username }: { history: Session[]; username?: stri
   }, [photos.length, viewerIndex]);
 
   return (
-    <section className={styles.profileAlbum} aria-labelledby="profile-album-title">
+    <section
+      className={styles.profileAlbum}
+      aria-label={username ? `Album de ${ownerLabel}` : "Votre album"}
+    >
       <div className={styles.profileAlbumHeading}>
-        <div>
-          <p className={styles.eyebrow}>Souvenirs de séances</p>
-          <h2 id="profile-album-title">{username ? `Album de ${ownerLabel}` : "Votre album"}</h2>
-        </div>
+        <p className={styles.eyebrow}>Souvenirs de séances</p>
         <button
           type="button"
           className={styles.secondary}
