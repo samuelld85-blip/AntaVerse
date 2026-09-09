@@ -566,6 +566,36 @@ function TricepsExtension() {
   );
 }
 
+// Seated with the back supported, one arm bent behind the head and extending
+// the dumbbell overhead.
+function OverheadTricepsExtension() {
+  return (
+    <Scene
+      cut={
+        <>
+          <path d="M42 29c-3 3-4 7-4 11" />
+          <path d="M38 20c4 2 7 5 9 9" />
+          <path d="M45 48c-3 4-4 8-4 13" />
+        </>
+      }
+    >
+      <Pad x={28} y={52} w={38} h={5} />
+      <Post x={33} y={56} h={14} />
+      <Pad x={34} y={27} w={5} h={27} />
+      <Limb d="M43 31 38 20l9-10" w={ARM} />
+      <Joint x={38} y={20} r={3.6} />
+      <Dumbbell x={48} y={8} a={90} len={13} rx={3} ry={6.4} />
+      <Limb d="M48 30v21" w={TORSO} />
+      <Limb d="m46 52 14 5" w={THIGH} />
+      <Limb d="M60 57 62 68" w={SHIN} />
+      <Limb d="M59 70h12" w={FOOT} />
+      <Joint x={43} y={30} />
+      <Head x={50} y={19} />
+      <Floor x={8} w={80} />
+    </Scene>
+  );
+}
+
 // Lying with the upper arms vertical, bar lowered toward the forehead.
 function SkullCrusher() {
   return (
@@ -1307,6 +1337,7 @@ const iconById: Record<string, () => React.ReactElement> = {
   "reverse-fly": ReverseFly,
   "face-pull": FacePull,
   "triceps-extension": TricepsExtension,
+  "overhead-triceps-extension": OverheadTricepsExtension,
   "skull-crusher": SkullCrusher,
   "pull-up": PullUp,
   "lat-pulldown": LatPulldown,

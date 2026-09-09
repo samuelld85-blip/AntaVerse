@@ -98,6 +98,13 @@ const dateLabel = (date: string) =>
   new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(
     new Date(date),
   );
+const dateTimeLabel = (date: string) =>
+  `${dateLabel(date)}, ${new Intl.DateTimeFormat("fr-FR", {
+    hour: "numeric",
+    minute: "2-digit",
+  })
+    .format(new Date(date))
+    .replace(":", "h")}`;
 const exerciseName = (id: string) => exercises.find((ex) => ex.id === id)!.name;
 const loadLabel = (c: ExerciseConfig) =>
   c.equipment === "bodyweight"
@@ -111,6 +118,9 @@ const loadInputLabel = (equipment: Equipment) =>
     : equipment === "dumbbell"
       ? "Kg par haltère"
       : "Charge (kg)";
+const DEFAULT_RECOVERY_SECONDS = 120;
+const recoveryDurations = [30, 60, 90, 120, 180, 300] as const;
+
 function ConfigSummary({ config }: { config: ExerciseConfig }) {
   return (
     <span>
@@ -316,6 +326,51 @@ function FeedbackForm({
   );
 }
 
+function RecoveryTimer({
+  durationSeconds,
+  remaining,
+  onDurationChange,
+}: {
+  durationSeconds: number;
+  remaining: number | null;
+  onDurationChange: (seconds: number) => void;
+}) {
+  const running = remaining !== null && remaining > 0;
+  const displayedSeconds = remaining ?? durationSeconds;
+
+  return (
+    <aside className={styles.recoveryTimer} aria-label="Récupération entre les exercices">
+      <div className={styles.recoveryTimerMain}>
+        <span className={styles.recoveryTimerLabel}>Récupération</span>
+        <strong
+          className={styles.recoveryClock}
+          role="timer"
+          aria-live={running ? "polite" : "off"}
+        >
+          {timeLabel(displayedSeconds ?? 0)}
+        </strong>
+      </div>
+      <details className={styles.recoverySettings}>
+        <summary>Durée</summary>
+        <label>
+          <span className={styles.visuallyHidden}>Durée de récupération</span>
+          <select
+            aria-label="Durée de récupération"
+            value={durationSeconds}
+            onChange={(event) => onDurationChange(Number(event.target.value))}
+          >
+            {recoveryDurations.map((seconds) => (
+              <option key={seconds} value={seconds}>
+                {timeLabel(seconds)}
+              </option>
+            ))}
+          </select>
+        </label>
+      </details>
+    </aside>
+  );
+}
+
 function ConfigForm({
   initial,
   minimumSets = 1,
@@ -516,6 +571,10 @@ function Catalog({
   history,
   freeSession,
   lastConfigFor,
+  recoveryTimerVisible,
+  recoveryDuration,
+  recoveryRemaining,
+  onRecoveryDurationChange,
   onChoose,
 }: {
   kind: SessionKind;
@@ -523,6 +582,10 @@ function Catalog({
   history: Session[];
   freeSession: boolean;
   lastConfigFor: (exerciseId: string) => ExerciseConfig | null;
+  recoveryTimerVisible: boolean;
+  recoveryDuration: number;
+  recoveryRemaining: number | null;
+  onRecoveryDurationChange: (seconds: number) => void;
   onChoose: (c: ExerciseConfig) => void;
 }) {
   const [query, setQuery] = useState("");
@@ -556,10 +619,17 @@ function Catalog({
   );
   return (
     <section className={styles.catalog} aria-labelledby="exercise-list-title">
-      <div className={styles.sectionHeading}>
+      <div className={`${styles.sectionHeading} ${styles.catalogHeading}`}>
         <div>
           <h2 id="exercise-list-title">Prochain exercice</h2>
         </div>
+        {recoveryTimerVisible && (
+          <RecoveryTimer
+            durationSeconds={recoveryDuration}
+            remaining={recoveryRemaining}
+            onDurationChange={onRecoveryDurationChange}
+          />
+        )}
       </div>
       {filterOptions && (
         <div className={styles.segment} aria-label="Filtrer les exercices par séance">
@@ -839,6 +909,8 @@ export function SportApp() {
   const [sessionFeedbackOpen, setSessionFeedbackOpen] = useState(false);
   const [photoViewer, setPhotoViewer] = useState<{ photos: string[]; index: number } | null>(null);
   const [notice, setNotice] = useState("");
+  const [recoveryDuration, setRecoveryDuration] = useState(DEFAULT_RECOVERY_SECONDS);
+  const [recoveryTimerVisible, setRecoveryTimerVisible] = useState(false);
   const [friendHistory, setFriendHistory] = useState<HistoryItem[]>([]);
   const [friendHistoryLoading, setFriendHistoryLoading] = useState(false);
   const timer = useRestTimer();
@@ -1075,6 +1147,7 @@ export function SportApp() {
     );
     update((s) => ({ ...s, active: session }));
     timer.stop();
+    setRecoveryTimerVisible(false);
     setEditing(null);
     setSupersetDraft(null);
     setFeedbackEntryId(null);
@@ -1110,6 +1183,9 @@ export function SportApp() {
     );
   const active = store.active;
   const current = active?.exercises.find((e) => !e.finished);
+  const showRecoveryTimer = Boolean(
+    active && !current && (recoveryTimerVisible || timer.remaining !== null),
+  );
   const feedbackEntry =
     active?.exercises.find((e) => e.id === feedbackEntryId) ??
     active?.exercises.find(
@@ -1462,7 +1538,7 @@ export function SportApp() {
                     setConfirmFinish(true);
                   }}
                 >
-                  Terminer
+                  Terminer la séance
                 </button>
               </div>
               {confirmFinish ? null : feedbackEntry ? (
@@ -1475,12 +1551,14 @@ export function SportApp() {
                       (entry) => !entry.finished && entry.id !== feedbackEntry.id,
                     )
                       ? "Passer à l’exercice suivant"
-                      : "Retourner à la liste des exercices"
+                      : "Choisir l’exercice suivant"
                   }
                   onSubmit={(feedback) => {
                     updateEntry(feedbackEntry.id, (entry) => ({ ...entry, feedback }));
                     setFeedbackEntryId(null);
-                    setNotice("Ressenti enregistré.");
+                    setRecoveryTimerVisible(true);
+                    timer.start(recoveryDuration);
+                    setNotice("Ressenti enregistré. Récupération lancée.");
                   }}
                 />
               ) : editing ? (
@@ -1804,10 +1882,19 @@ export function SportApp() {
                     favorites={store.favorites}
                     history={store.history}
                     freeSession={active.source !== "recommended"}
+                    recoveryTimerVisible={showRecoveryTimer}
+                    recoveryDuration={recoveryDuration}
+                    recoveryRemaining={timer.remaining}
+                    onRecoveryDurationChange={(seconds) => {
+                      setRecoveryDuration(seconds);
+                      if (timer.remaining !== null && timer.remaining > 0) timer.start(seconds);
+                    }}
                     lastConfigFor={(exerciseId) =>
                       lastConfigForExercise(store.history, exerciseId)
                     }
-                    onChoose={(config) =>
+                    onChoose={(config) => {
+                      timer.stop();
+                      setRecoveryTimerVisible(false);
                       setEditing({
                         config,
                         ...(supersetDraft
@@ -1815,8 +1902,8 @@ export function SportApp() {
                               superset: supersetDraft,
                             }
                           : {}),
-                      })
-                    }
+                      });
+                    }}
                   />
                 </>
               ) : null}
@@ -2011,7 +2098,7 @@ export function SportApp() {
                   <section className={styles.panel}>
                     <div className={styles.sectionHeading}>
                       <div>
-                        <p className={styles.eyebrow}>{dateLabel(detail.startedAt)}</p>
+                        <p className={styles.eyebrow}>{dateTimeLabel(detail.startedAt)}</p>
                         <p
                           className={
                             detailIsFriend ? styles.friendHistoryOwner : styles.historyOwner
@@ -2239,7 +2326,7 @@ export function SportApp() {
                       onClick={() => setDetailId(item.session.id)}
                     >
                       <span>
-                        <span>{dateLabel(item.session.startedAt)}</span>
+                        <span>{dateTimeLabel(item.session.startedAt)}</span>
                         <span
                           className={
                             item.isFriend ? styles.friendHistoryOwner : styles.historyOwner

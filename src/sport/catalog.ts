@@ -185,6 +185,17 @@ export const exercises: Exercise[] = [
     aliases: "pushdown",
   },
   {
+    id: "overhead-triceps-extension",
+    name: "Extension triceps overhead",
+    primary: "triceps",
+    secondary: [],
+    region: "Triceps · ensemble",
+    equipment: ["dumbbell"],
+    pattern: "push",
+    aliases:
+      "extension triceps au-dessus de la tête extension triceps derrière la nuque extension nuque unilatérale overhead triceps extension dumbbell",
+  },
+  {
     id: "skull-crusher",
     name: "Barre au front",
     primary: "triceps",

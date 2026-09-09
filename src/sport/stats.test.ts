@@ -74,4 +74,28 @@ describe("sport statistics", () => {
     ]);
     expect(getExerciseProgress([workout], "leg-extension")[0]?.volume).toBe(600);
   });
+
+  it("includes the overhead triceps extension in exercise and muscle statistics", () => {
+    const workout = createSession("push", []);
+    let entry = createEntry({
+      ...defaultConfig("overhead-triceps-extension"),
+      sets: 2,
+      loadKg: 12,
+      reps: 10,
+    });
+    entry = completeSet(entry, "2026-09-03T10:00:00.000Z");
+    entry = completeSet(entry, "2026-09-03T10:03:00.000Z");
+    workout.startedAt = "2026-09-03T10:00:00.000Z";
+    workout.endedAt = workout.startedAt;
+    workout.exercises = [entry];
+
+    const stats = getSportStats([workout], "all");
+    expect(stats.topExercises[0]).toMatchObject({
+      exerciseId: "overhead-triceps-extension",
+      name: "Extension triceps overhead",
+      sets: 2,
+      volume: 240,
+    });
+    expect(stats.muscles).toContainEqual({ muscle: "triceps", sets: 2 });
+  });
 });

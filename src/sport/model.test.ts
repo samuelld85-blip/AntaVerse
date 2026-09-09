@@ -206,6 +206,19 @@ describe("exercise discovery", () => {
       "vertical-chest-press",
     );
   });
+  it("finds the unilateral overhead triceps extension by its movement aliases", () => {
+    const exercise = exercises.find((item) => item.id === "overhead-triceps-extension");
+    expect(exercise).toMatchObject({
+      name: "Extension triceps overhead",
+      primary: "triceps",
+      secondary: [],
+      equipment: ["dumbbell"],
+      pattern: "push",
+    });
+    expect(searchExercises("push", "extension derriere la nuque").map((e) => e.id)).toEqual([
+      "overhead-triceps-extension",
+    ]);
+  });
   it("has unique stable IDs and valid defaults for every exercise", () => {
     expect(new Set(exercises.map((e) => e.id)).size).toBe(exercises.length);
     for (const exercise of exercises)
