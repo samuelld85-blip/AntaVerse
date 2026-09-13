@@ -1,0 +1,235 @@
+:root {
+  --interpol-accent: #b3261e;
+  --interpol-accent-dark: #7a1a15;
+  --interpol-accent-light: #ff8a80;
+  --interpol-accent-glow: rgba(179, 38, 30, 0.2);
+}
+
+html[data-theme="light"]:has(.brand-mark--interpol) {
+  --interpol-accent: #a61b15;
+  --interpol-accent-dark: #7a1a15;
+  --interpol-accent-light: #9a201b;
+  --interpol-accent-glow: rgba(166, 27, 21, 0.14);
+}
+
+:root:has(.brand-mark--interpol) {
+  --game-accent: var(--interpol-accent);
+  --game-accent-dark: var(--interpol-accent-dark);
+  --game-accent-light: var(--interpol-accent-light);
+  --game-accent-glow: var(--interpol-accent-glow);
+}
+
+.brand-mark--interpol {
+  width: 8rem;
+}
+.brand-mark--interpol.brand-mark--small {
+  width: 5.6rem;
+}
+html[data-theme="light"] .brand-mark--interpol {
+  content: url("/brand/games/interpol.png");
+}
+
+.interpol-shell {
+  display: grid;
+  height: 100dvh;
+  min-height: 0;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  overflow: hidden;
+}
+.interpol-shell > .round-pill {
+  justify-self: start;
+}
+.interpol-loading {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.rules-subheading {
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.interpol-panel {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: clamp(0.65rem, 2vh, 1.35rem) 0;
+  overflow-y: auto;
+  text-align: center;
+}
+.interpol-panel h1 {
+  max-width: 100%;
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.9rem, 8vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.interpol-instruction {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.interpol-instruction strong {
+  color: var(--text);
+}
+
+.interpol-portrait-frame {
+  overflow: hidden;
+  width: min(55vw, 13rem);
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  background: var(--surface);
+}
+.interpol-portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interpol-charge-card {
+  width: 100%;
+  border: 1px solid var(--interpol-accent);
+  border-radius: 1.1rem;
+  padding: 1rem 1.15rem;
+  background: var(--interpol-accent-glow);
+  text-align: left;
+}
+.interpol-charge-card p:first-child {
+  margin: 0 0 0.35rem;
+  color: var(--interpol-accent-light);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.interpol-charge-card p:last-child {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.interpol-guesser-list {
+  display: grid;
+  width: 100%;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.interpol-guesser-button {
+  display: flex;
+  width: 100%;
+  min-height: 3.4rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition:
+    transform 120ms ease,
+    filter 120ms ease;
+}
+.interpol-guesser-button:active {
+  transform: scale(0.98);
+}
+.interpol-guesser-button:hover {
+  background: var(--interpol-accent-glow);
+}
+
+.interpol-outcome-badge {
+  display: grid;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin-bottom: 0.2rem;
+  place-items: center;
+  border-radius: 1.4rem;
+  background: linear-gradient(135deg, #0f9d58, #34d399);
+  color: white;
+  font-size: 2rem;
+}
+.interpol-reveal-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.interpol-reveal-meta {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.interpol-reveal-link {
+  margin: 0.3rem 0 0;
+  color: var(--interpol-accent-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.interpol-ranking {
+  display: grid;
+  width: 100%;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.interpol-ranking li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(255, 255, 255, 0.045);
+}
+.interpol-ranking li:first-child {
+  border-color: var(--game-accent);
+  background: var(--game-accent-glow);
+}
+.interpol-rank-badge {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+.interpol-rank-name {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.interpol-rank-score {
+  flex: 0 0 auto;
+  color: var(--game-accent);
+  font-weight: 900;
+}

@@ -302,6 +302,28 @@ Avoid unnecessary confirmation screens or data-entry steps when an interaction c
 
 The phone should support the game, not force players to record every real-world decision inside the app.
 
+## OneShot UX/UI guardrails
+
+Before creating or polishing a game, consult
+`docs/UX_UI_GAME_AUDIT_GUIDELINES.md`. It records the OneShot audit findings
+and is the shared UX/UI handoff for Claude and Codex.
+
+Always check the complete flow and its non-happy states: home, rules, setup,
+play, result, resume, loading, empty, error and completion. For mobile UI,
+inspect 320/360/375/390/430 px widths and short heights. Do not let display
+titles, logos, long names or primary CTAs overflow.
+
+When a new pattern is genuinely shared, add it to shared primitives or use an
+explicitly scoped OneShot class; do not broaden a selector such as `.player-form`
+in a way that can restyle older games. Game accents must stay scoped through a
+brand marker (`:root:has(.brand-mark--<game>)` or equivalent), and light/dark
+themes must be audited independently.
+
+Treat labels, focus, keyboard behavior, custom radios/comboboxes, modal Escape
+handling and touch targets as part of the implementation. If saved content is
+stale, validate it and recover after render rather than crashing or calling
+`setState` during render.
+
 ## Validation
 
 ### Native (Capacitor Android + iOS) validation is opt-in

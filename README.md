@@ -14,7 +14,11 @@ AntaVerse
 ├── Palmier
 ├── Fuck
 ├── La Traversée
-└── PMU
+├── PMU
+├── EthnoGuessr
+├── Interpol
+├── Bac Enchaîné
+└── Pifomètre
 ```
 
 ## Lancer le projet

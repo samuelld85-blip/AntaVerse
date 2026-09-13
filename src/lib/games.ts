@@ -10,6 +10,10 @@ import {
   FUCK_ACCENT,
   LA_TRAVERSEE_ACCENT,
   PMU_ACCENT,
+  INTERPOL_ACCENT,
+  PIFOMETRE_ACCENT,
+  ETHNOGUESSR_ACCENT,
+  BAC_ENCHAINE_ACCENT,
 } from "@/games/shared/lib/launcher-accents";
 
 export type GameId =
@@ -22,7 +26,11 @@ export type GameId =
   | "palmier"
   | "fuck"
   | "la-traversee"
-  | "pmu";
+  | "pmu"
+  | "interpol"
+  | "pifometre"
+  | "ethnoguessr"
+  | "bac-enchaine";
 
 export interface GameDefinition {
   id: GameId;
@@ -149,5 +157,48 @@ export const games: readonly GameDefinition[] = [
     accent: PMU_ACCENT,
     iconBackground: "#111923",
     drinkingGame: true,
+  },
+  {
+    id: "interpol",
+    name: "Interpol",
+    description: "Un maître du jeu connaît la charge, les autres questionnent et proposent à l'oral",
+    route: "/interpol",
+    icon: "/brand/games/interpol.png",
+    iconLight: "/brand/games/interpol.png",
+    accent: INTERPOL_ACCENT,
+    iconBackground: "#0B1118",
+  },
+  {
+    id: "pifometre",
+    name: "Le Pifomètre",
+    description:
+      "Estimez, révélez la vraie réponse et distribuez les points à la table",
+    route: "/pifometre",
+    icon: "/brand/games/pifometre-logo-dark.png",
+    iconLight: "/brand/games/pifometre-logo-light.png",
+    accent: PIFOMETRE_ACCENT,
+    iconBackground: "#1B1220",
+    modes: ["competition", "fun"],
+  },
+  {
+    id: "ethnoguessr",
+    name: "EthnoGuessr",
+    description: "Observez le duo, placez votre réponse sur la carte et devinez sa zone d'origine",
+    route: "/ethnoguessr",
+    icon: "/brand/games/ethnoguessr.png",
+    iconLight: "/brand/games/ethnoguessr.png",
+    accent: ETHNOGUESSR_ACCENT,
+    iconBackground: "#0B1118",
+  },
+  {
+    id: "bac-enchaine",
+    name: "Bac Enchaîné",
+    description: "Trouvez une réponse, validez les points et passez vite à la lettre suivante",
+    route: "/bac-enchaine",
+    icon: "/brand/games/bac-enchaine.png",
+    iconLight: "/brand/games/bac-enchaine.png",
+    accent: BAC_ENCHAINE_ACCENT,
+    iconBackground: "#10170A",
+    modes: ["competition", "fun"],
   },
 ] as const;

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bac Enchaîné">
+  <rect width="512" height="512" rx="112" fill="#10170A"/>
+  <path d="M104 132h304v248H104z" fill="#FF8A3D" transform="rotate(-5 256 256)"/>
+  <text x="256" y="292" fill="#1B1220" font-family="Arial, sans-serif" font-size="128" font-weight="900" text-anchor="middle">BE</text>
+</svg>

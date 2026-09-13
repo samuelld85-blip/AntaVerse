@@ -15,3 +15,7 @@ export const PALMIER_ACCENT = "#FFC940"; // --plm-accent (palmier/styles.css)
 export const FUCK_ACCENT = "#10B981"; // --fuck-accent (fuck/styles.css)
 export const LA_TRAVERSEE_ACCENT = "#60A5FA"; // --traversee-accent (la-traversee/styles.css)
 export const PMU_ACCENT = "#F59E0B"; // --pmu-accent (pmu/styles.css)
+export const ETHNOGUESSR_ACCENT = "#6366F1"; // --eg-accent (ethnoguessr/styles.css)
+export const PIFOMETRE_ACCENT = "#FF8A3D";
+export const INTERPOL_ACCENT = "#B3261E"; // --interpol-accent (interpol/styles.css)
+export const BAC_ENCHAINE_ACCENT = "#FF8A3D"; // --bac-accent (bac-enchaine/styles.css)

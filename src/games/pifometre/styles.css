@@ -1,0 +1,426 @@
+:root {
+  --pifometre-accent: #f05a68;
+  --pifometre-accent-dark: #b73549;
+  --pifometre-accent-light: #ff9aa8;
+  --pifometre-accent-glow: rgba(240, 90, 104, 0.2);
+}
+
+:root:has(.pifometre-logo) {
+  --game-accent: var(--pifometre-accent);
+  --game-accent-dark: var(--pifometre-accent-dark);
+  --game-accent-light: var(--pifometre-accent-light);
+  --game-accent-glow: var(--pifometre-accent-glow);
+  --game-accent-ink: #1b1220;
+}
+
+html[data-theme="light"]:has(.pifometre-logo) {
+  --pifometre-accent: #c23b52;
+  --pifometre-accent-dark: #8f263b;
+  --pifometre-accent-light: #9d2d43;
+  --pifometre-accent-glow: rgba(194, 59, 82, 0.16);
+  --game-accent-ink: #ffffff;
+}
+
+.pifometre-logo {
+  display: block;
+  width: clamp(7.8rem, 32vw, 12rem);
+  line-height: 0;
+}
+.pifometre-logo--small {
+  width: clamp(6.4rem, 25vw, 8.8rem);
+}
+.pifometre-logo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.pifometre-logo__image--light {
+  display: none;
+}
+html[data-theme="light"] .pifometre-logo__image--dark {
+  display: none;
+}
+html[data-theme="light"] .pifometre-logo__image--light {
+  display: block;
+}
+html[data-theme="dark"] .pifometre-logo__image--dark {
+  filter: drop-shadow(0 0 0.45rem rgba(255, 248, 242, 0.08));
+}
+
+.pifometre-home .home-hero h1 {
+  color: var(--text);
+  font-size: clamp(3.3rem, 15vw, 5rem);
+  overflow-wrap: anywhere;
+}
+.pifometre-home .home-hero h1::first-line {
+  color: var(--pifometre-accent);
+}
+.pifometre-home .home-tagline strong {
+  color: var(--pifometre-accent-light);
+}
+
+.pifometre-player-fields {
+  max-height: 49vh;
+}
+.pifometre-mode-fieldset {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.pifometre-mode-fieldset legend {
+  margin-bottom: 0.1rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pifometre-mode-switch,
+.pifometre-award-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+.pifometre-mode-switch button,
+.pifometre-award-switch button {
+  display: grid;
+  gap: 0.2rem;
+  min-height: 3.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 0.6rem;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  text-align: left;
+}
+.pifometre-mode-switch button.is-selected,
+.pifometre-award-switch button.is-selected {
+  border-color: var(--pifometre-accent);
+  background: var(--pifometre-accent-glow);
+  color: var(--text);
+  box-shadow: 0 0 0 2px var(--pifometre-accent-glow);
+}
+.pifometre-mode-switch strong {
+  color: var(--text);
+  font-size: 0.8rem;
+}
+.pifometre-mode-switch span {
+  font-size: 0.68rem;
+}
+.mode-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.73rem;
+  line-height: 1.35;
+}
+
+.pifometre-game {
+  gap: clamp(0.7rem, 2vh, 1.1rem);
+}
+.pifometre-scoreboard {
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding-bottom: 0.1rem;
+  scrollbar-width: none;
+}
+.pifometre-scoreboard::-webkit-scrollbar {
+  display: none;
+}
+.pifometre-score {
+  display: flex;
+  min-width: 4.5rem;
+  flex: 1 0 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  border: 1px solid var(--line);
+  border-bottom: 3px solid var(--pifometre-accent);
+  border-radius: 0.9rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--surface);
+}
+.pifometre-score span {
+  max-width: 5.6rem;
+  overflow: hidden;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pifometre-score strong {
+  color: var(--pifometre-accent-light);
+  font-size: 1.1rem;
+}
+
+.question-stage,
+.reveal-stage {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0.9rem;
+  overflow-y: auto;
+  padding: 0.25rem 0 0.1rem;
+}
+.question-card {
+  display: grid;
+  min-height: 14rem;
+  align-content: center;
+  gap: 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--pifometre-accent) 34%, var(--line));
+  border-radius: 1.55rem;
+  padding: 1.35rem;
+  background:
+    radial-gradient(circle at 80% 0%, var(--pifometre-accent-glow), transparent 50%), var(--surface);
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.14);
+  text-align: center;
+}
+.question-card__meta,
+.award-panel__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.question-card__meta span:first-child {
+  color: var(--pifometre-accent-light);
+}
+.question-card h1,
+.handoff-card h1 {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.8rem, 8vw, 3.1rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-wrap: balance;
+  text-transform: uppercase;
+}
+.estimate-form {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: auto;
+}
+.estimate-form label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.estimate-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--surface);
+}
+.estimate-input-wrap:focus-within {
+  border-color: var(--pifometre-accent);
+  box-shadow: 0 0 0 3px var(--pifometre-accent-glow);
+}
+.estimate-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 850;
+}
+.estimate-input-wrap > span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.handoff-card {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+.handoff-card p:not(.eyebrow) {
+  max-width: 22rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.handoff-icon {
+  display: grid;
+  width: 4.4rem;
+  height: 4.4rem;
+  place-items: center;
+  border-radius: 1.4rem;
+  background: var(--pifometre-accent);
+  color: var(--ink);
+  font-size: 2.2rem;
+  font-weight: 900;
+  transform: rotate(-8deg);
+}
+.handoff-card .button {
+  max-width: 22rem;
+  margin-top: 1rem;
+}
+
+.answer-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  border-radius: 1.45rem;
+  padding: 1.2rem 1rem;
+  background: var(--pifometre-accent);
+  color: var(--ink);
+  text-align: center;
+}
+.answer-card .eyebrow {
+  color: var(--ink);
+  opacity: 0.68;
+}
+.answer-value {
+  margin: 0;
+  font-size: clamp(2.4rem, 11vw, 4.5rem);
+  font-weight: 1000;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+.answer-value span {
+  display: inline-block;
+  max-width: 7rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+.source-link {
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.answer-note {
+  max-width: 24rem;
+  margin: 0.2rem 0 0;
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+.award-panel {
+  display: grid;
+  gap: 0.55rem;
+  padding-bottom: 0.2rem;
+}
+.award-panel__heading p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.guess-list {
+  display: grid;
+  gap: 0.5rem;
+}
+.guess-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 0.65rem 0.65rem 0.65rem 0.8rem;
+  background: var(--surface);
+}
+.guess-row > div:first-child {
+  display: grid;
+  min-width: 0;
+  gap: 0.15rem;
+}
+.guess-row strong {
+  overflow: hidden;
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.guess-row span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+.guess-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.35rem;
+}
+.guess-actions button {
+  min-width: 2.7rem;
+  min-height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--pifometre-accent-light);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.guess-actions button:hover:not(:disabled) {
+  background: var(--pifometre-accent);
+  color: var(--ink);
+}
+.award-player-button {
+  min-width: 3.5rem !important;
+}
+.guess-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.pifometre-result .result-card h1 span {
+  color: var(--pifometre-accent-light);
+}
+.pifometre-result .result-card .pifometre-scoreboard {
+  width: 100%;
+  max-width: 22rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: visible;
+}
+.pifometre-result .pifometre-score {
+  min-width: 0;
+}
+
+@media (max-height: 680px) {
+  .question-card {
+    min-height: 10rem;
+    gap: 0.7rem;
+    padding: 0.9rem;
+  }
+  .question-card h1 {
+    font-size: clamp(1.55rem, 7vw, 2.4rem);
+  }
+  .handoff-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .answer-card {
+    padding: 0.8rem;
+  }
+}

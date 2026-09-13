@@ -79,6 +79,25 @@ AntaVerse is mobile-first. Preserve touch usability, readable text, responsive l
 
 Use UX/design tooling only when the task actually needs design reasoning. For UI changes, verify the affected viewport or state when practical.
 
+## OneShot UX/UI guardrails
+
+For new games and cross-game UI work, read `docs/UX_UI_GAME_AUDIT_GUIDELINES.md`
+before implementation. Apply its checklist to the full flow (home, setup,
+play, result, resume, loading and error), not only the happy-path screen.
+
+In particular:
+
+- target the installed PWA at 320/360/375/390/430 px and short phone heights;
+- keep titles and primary actions from overflowing or being pushed below the fold;
+- scope new shared styles with explicit OneShot classes so older games are not
+  recolored or restyled accidentally;
+- scope each game’s accent through its brand marker, never a bare shared `:root`
+  custom property;
+- make custom controls, focus states, labels, keyboard navigation and lightbox
+  dismissal behavior intentional;
+- validate light and dark themes independently and recover stale saved content
+  without calling `setState` during render.
+
 ## Validation
 
 ### Native (Capacitor Android + iOS) validation is opt-in

@@ -9,6 +9,7 @@ import {
   ROULETTE_DU_CHAOS_ACCENT,
   SANS_LE_DIRE_ACCENT,
   TRIMAN_ACCENT,
+  BAC_ENCHAINE_ACCENT,
 } from "./launcher-accents";
 import { TEAM_PALETTE } from "./team-palette";
 
@@ -28,6 +29,7 @@ const GAMES: { game: string; cssVar: string; constant: string }[] = [
   { game: "triman", cssVar: "--triman-accent", constant: TRIMAN_ACCENT },
   { game: "roulette-du-chaos", cssVar: "--rdc-accent", constant: ROULETTE_DU_CHAOS_ACCENT },
   { game: "palmier", cssVar: "--plm-accent", constant: PALMIER_ACCENT },
+  { game: "bac-enchaine", cssVar: "--bac-accent", constant: BAC_ENCHAINE_ACCENT },
 ];
 
 function stylesheet(game: string): string {

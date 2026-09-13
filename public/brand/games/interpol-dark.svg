@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interpol">
+  <rect x="10" y="10" width="180" height="180" rx="36" fill="#1a1f26" stroke="#f7f8fa" stroke-width="6"/>
+  <circle cx="100" cy="95" r="30" fill="#f7f8fa"/>
+  <path d="M55 172c0-38 20-64 45-64s45 26 45 64z" fill="#f7f8fa"/>
+  <circle cx="140" cy="140" r="26" fill="none" stroke="#B3261E" stroke-width="10"/>
+  <line x1="158" y1="158" x2="178" y2="178" stroke="#B3261E" stroke-width="10" stroke-linecap="round"/>
+</svg>

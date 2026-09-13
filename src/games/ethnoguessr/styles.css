@@ -1,0 +1,441 @@
+:root {
+  --eg-accent: #6366f1;
+  --eg-accent-dark: #3730a3;
+  --eg-accent-light: #a5b4fc;
+  --eg-accent-glow: rgba(99, 102, 241, 0.2);
+  --eg-ocean: #111923;
+  --eg-land: #2b3446;
+  --eg-land-highlight: #6366f1;
+  --eg-pin-guess: #f97316;
+  --eg-pin-answer: #22c55e;
+}
+
+/* --game-accent* is shared by NAME across every game's stylesheet — see
+   palmier/styles.css for why this must be scoped via :has() on this game's
+   own brand mark rather than declared on a bare :root. */
+:root:has(.brand-mark--eg) {
+  --game-accent: var(--eg-accent);
+  --game-accent-dark: var(--eg-accent-dark);
+  --game-accent-light: var(--eg-accent-light);
+  --game-accent-glow: var(--eg-accent-glow);
+  --game-accent-ink: #ffffff;
+}
+
+html[data-theme="light"]:has(.brand-mark--eg) {
+  --game-accent-ink: #ffffff;
+  --eg-accent-light: #4338ca;
+  --eg-ocean: #e6e9f5;
+  --eg-land: #c7cfe8;
+  --eg-land-highlight: #4338ca;
+}
+
+/* "EthnoGuessr" is one long word with no natural break — the shared
+   `.home-hero h1` size (tuned for short names like "Palmier") pushes it off
+   the edge of a phone screen since it can't wrap. */
+.home-hero h1 {
+  font-size: clamp(2.2rem, 10.5vw, 3.6rem);
+  overflow-wrap: anywhere;
+}
+
+/* Brand ------------------------------------------------------------------ */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 1rem;
+}
+.brand-mark {
+  display: block;
+  width: 9rem;
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+.brand-mark--small {
+  width: 6.5rem;
+}
+html[data-theme="light"] .brand-mark--eg {
+  content: url("/brand/games/ethnoguessr.png");
+}
+
+/* This game doesn't use the shared 4-row `.game-shell` grid: each phase
+   (photo / map / result) needs a different internal split between its stage
+   and its action button, so — like Palmier and Roulette du Chaos — the shell
+   is a flex column that lets whichever phase is current size itself. */
+.eg-shell {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 2vh, 1rem);
+}
+.eg-loading {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.eg-hint {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Photo phase -------------------------------------------------------------- */
+
+.eg-stage {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.eg-portrait {
+  display: flex;
+  width: 100%;
+  max-width: 26rem;
+  gap: 2px;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.eg-portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.eg-stage .button {
+  max-width: 26rem;
+  margin-top: 0.5rem;
+}
+
+/* Guessing phase ------------------------------------------------------------ */
+
+.eg-guess-stage {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.eg-guess-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.eg-portrait-thumb {
+  display: flex;
+  flex: 0 0 auto;
+  width: 5.2rem;
+  height: 3.4rem;
+  gap: 1px;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+.eg-portrait-thumb .eg-portrait-img {
+  width: auto;
+  height: 100%;
+  aspect-ratio: auto;
+  flex: 1 1 0;
+  min-width: 0;
+  object-fit: cover;
+}
+.eg-map-viewport.eg-guess-map {
+  flex: 0 0 auto;
+  height: min(43vh, 21rem);
+}
+
+/* Result phase --------------------------------------------------------------- */
+
+.eg-result-stage {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  animation: point-enter 220ms ease-out;
+}
+.eg-map-viewport.eg-result-map {
+  flex: 0 0 auto;
+  height: min(43vh, 21rem);
+}
+.eg-result-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: center;
+}
+.eg-result-points {
+  margin: 0;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(2.2rem, 9vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+}
+.eg-result-points--0,
+.eg-result-points--1 {
+  color: #ff6b6b;
+}
+.eg-result-points--2,
+.eg-result-points--3 {
+  color: #ffc940;
+}
+.eg-result-points--4,
+.eg-result-points--5 {
+  color: #22c55e;
+}
+.eg-result-country {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.eg-result-distance {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.eg-result-people {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+.eg-photo-credit {
+  max-width: 22rem;
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.4;
+}
+.eg-photo-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+
+/* World map ------------------------------------------------------------------ */
+
+.eg-map-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1.1rem;
+  background: var(--eg-ocean);
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.eg-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.eg-map[data-interactive="true"] {
+  cursor: crosshair;
+}
+.eg-map-ocean {
+  fill: var(--eg-ocean);
+}
+.eg-map-reset {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  z-index: 2;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  background: rgba(17, 25, 35, 0.82);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.eg-map-reset:hover,
+.eg-map-reset:focus-visible {
+  background: rgba(17, 25, 35, 0.95);
+}
+.eg-map-country {
+  fill: var(--eg-land);
+  stroke: var(--eg-ocean);
+  stroke-width: 0.6;
+}
+.eg-map-country[data-highlighted="true"] {
+  fill: var(--eg-land-highlight);
+}
+.eg-map-line {
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+  opacity: 0.7;
+}
+.eg-map-pin-halo {
+  fill: currentColor;
+  opacity: 0.28;
+}
+.eg-map-pin-dot {
+  fill: currentColor;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+.eg-map-pin--guess {
+  color: var(--eg-pin-guess);
+}
+.eg-map-pin--answer {
+  color: var(--eg-pin-answer);
+}
+
+/* Country search -------------------------------------------------------------- */
+
+.eg-search {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+.eg-search-input {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  padding: 0 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.eg-search-input::placeholder {
+  color: var(--muted);
+}
+.eg-search-input:focus-visible {
+  outline: 2px solid var(--game-accent);
+  outline-offset: 1px;
+}
+.eg-search-results {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  display: grid;
+  max-height: 14rem;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  list-style: none;
+}
+.eg-search-results li {
+  display: block;
+}
+.eg-search-results button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.6rem;
+  background: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  text-align: left;
+  cursor: pointer;
+}
+.eg-search-results button:hover,
+.eg-search-results button:focus-visible,
+.eg-search-results button[aria-selected="true"] {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Lightbox --------------------------------------------------------------------- */
+
+.eg-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.82);
+  animation: point-enter 160ms ease-out;
+}
+.eg-lightbox-photos {
+  display: flex;
+  width: 100%;
+  max-width: 34rem;
+  gap: 0.5rem;
+}
+.eg-lightbox-img {
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.eg-lightbox-close {
+  position: absolute;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* End-of-game recap -------------------------------------------------------------- */
+
+.eg-recap {
+  display: grid;
+  width: 100%;
+  max-width: 22rem;
+  gap: 0.4rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.eg-recap li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.82rem;
+}
+.eg-recap li span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.eg-recap li strong {
+  flex: 0 0 auto;
+}
