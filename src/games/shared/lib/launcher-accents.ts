@@ -19,3 +19,4 @@ export const ETHNOGUESSR_ACCENT = "#6366F1"; // --eg-accent (ethnoguessr/styles.
 export const PIFOMETRE_ACCENT = "#FF8A3D";
 export const INTERPOL_ACCENT = "#B3261E"; // --interpol-accent (interpol/styles.css)
 export const BAC_ENCHAINE_ACCENT = "#FF8A3D"; // --bac-accent (bac-enchaine/styles.css)
+export const QUI_DE_NOUS_DEUX_ACCENT = "#7357F4"; // --qndd-violet (qui-de-nous-deux/styles.css)

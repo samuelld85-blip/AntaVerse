@@ -14,6 +14,7 @@ import {
   PIFOMETRE_ACCENT,
   ETHNOGUESSR_ACCENT,
   BAC_ENCHAINE_ACCENT,
+  QUI_DE_NOUS_DEUX_ACCENT,
 } from "@/games/shared/lib/launcher-accents";
 
 export type GameId =
@@ -30,7 +31,8 @@ export type GameId =
   | "interpol"
   | "pifometre"
   | "ethnoguessr"
-  | "bac-enchaine";
+  | "bac-enchaine"
+  | "qui-de-nous-deux";
 
 export interface GameDefinition {
   id: GameId;
@@ -199,6 +201,16 @@ export const games: readonly GameDefinition[] = [
     iconLight: "/brand/games/bac-enchaine.png",
     accent: BAC_ENCHAINE_ACCENT,
     iconBackground: "#10170A",
+    modes: ["competition", "fun"],
+  },
+  {
+    id: "qui-de-nous-deux",
+    name: "Qui de nous deux ?",
+    description: "Dos à dos, devinez qui pense comme vous. Sinon, les poseurs marquent",
+    route: "/qui-de-nous-deux" as Route,
+    icon: "/brand/games/qui-de-nous-deux.png",
+    accent: QUI_DE_NOUS_DEUX_ACCENT,
+    iconBackground: "#10151F",
     modes: ["competition", "fun"],
   },
 ] as const;

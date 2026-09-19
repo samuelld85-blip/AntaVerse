@@ -1,0 +1,121 @@
+:root {
+  --qndd-violet: #7357f4;
+  --qndd-violet-dark: #4d35b3;
+  --qndd-lilac: #b58cff;
+  --qndd-lilac-dark: #7d5bc6;
+  --qndd-ink: #151142;
+  --qndd-violet-glow: rgba(115, 87, 244, 0.2);
+}
+
+:root:has(.qndd-logo) {
+  --game-accent: var(--qndd-violet);
+  --game-accent-dark: var(--qndd-violet-dark);
+  --game-accent-light: var(--qndd-lilac);
+  --game-accent-glow: var(--qndd-violet-glow);
+  --game-accent-ink: var(--qndd-ink);
+}
+
+html[data-theme="light"]:has(.qndd-logo) {
+  --qndd-violet: #5d45d0;
+  --qndd-violet-dark: #3d2a9e;
+  --qndd-lilac: #7047b7;
+  --qndd-lilac-dark: #573596;
+  --qndd-violet-glow: rgba(93, 69, 208, 0.15);
+  --game-accent-ink: #fff;
+}
+
+.qndd-logo { display: block; width: clamp(7.8rem, 34vw, 11.5rem); line-height: 0; }
+.qndd-logo--small { width: clamp(6.2rem, 26vw, 8rem); }
+.qndd-logo img { display: block; width: 100%; height: auto; border-radius: 0.75rem; }
+.qndd-home .home-hero h1 { color: var(--text); font-size: clamp(3.6rem, 17vw, 6rem); }
+.qndd-home .home-hero h1::first-line { color: var(--qndd-violet); }
+.qndd-home .home-tagline strong { color: var(--qndd-lilac); }
+.qndd-home .home-actions > p { letter-spacing: 0.045em; }
+.qndd-resume-card { border-color: color-mix(in srgb, var(--qndd-lilac) 24%, var(--line)); }
+.qndd-resume-card .eyebrow { color: var(--qndd-lilac); }
+
+.qndd-rules-list li:nth-child(odd) > span { background: var(--qndd-violet); color: white; }
+.qndd-rules-list li:nth-child(even) > span { background: var(--qndd-lilac); color: var(--qndd-ink); }
+.qndd-setup-heading { padding-bottom: 1.2rem; }
+.qndd-setup-form { align-content: start; gap: 0.85rem; }
+.qndd-name-fields, .qndd-options { display: grid; gap: 0.65rem; }
+.qndd-field { display: grid; gap: 0.34rem; }
+.qndd-field > span, .qndd-choice-fieldset legend { color: var(--muted); font-size: 0.68rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.qndd-field input { width: 100%; min-height: 3.15rem; border: 1px solid var(--line); border-radius: 0.95rem; padding: 0.75rem 0.9rem; background: var(--surface); color: var(--text); outline: 0; }
+.qndd-field input:focus { border-color: var(--qndd-violet); box-shadow: 0 0 0 3px var(--qndd-violet-glow); }
+.qndd-options { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr); align-items: end; }
+.qndd-number-field > div { display: flex; align-items: center; gap: 0.5rem; }
+.qndd-number-field input { max-width: 7rem; font-size: 1.1rem; font-weight: 800; }
+.qndd-number-field small { color: var(--muted); font-size: 0.75rem; }
+.qndd-choice-fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.qndd-choice-fieldset legend { margin-bottom: 0.34rem; }
+.qndd-choice-switch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35rem; }
+.qndd-choice-switch button { min-height: 3.15rem; border: 1px solid var(--line); border-radius: 0.85rem; background: var(--surface); color: var(--muted); cursor: pointer; font-weight: 900; }
+.qndd-choice-switch button.is-selected { border-color: var(--qndd-violet); background: var(--qndd-violet-glow); color: var(--text); box-shadow: 0 0 0 2px var(--qndd-violet-glow); }
+.qndd-setup-form .setup-note { margin-top: 0.15rem; }
+
+.qndd-game { gap: clamp(0.7rem, 1.8vh, 1rem); }
+.qndd-round-line { display: flex; align-items: center; justify-content: space-between; gap: 0.65rem; }
+.qndd-timer { display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 999px; padding: 0.52rem 0.75rem; background: var(--qndd-lilac); color: var(--qndd-ink); font-size: 0.72rem; font-weight: 950; }
+.qndd-timer--done { background: var(--qndd-violet); color: white; }
+.qndd-scoreboard { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.qndd-score { position: relative; display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr) auto; gap: 0.1rem 0.5rem; border: 1px solid var(--line); border-radius: 0.95rem; padding: 0.55rem 0.65rem; background: var(--surface); }
+.qndd-score--duo { border-bottom: 3px solid var(--qndd-violet); }
+.qndd-score--questioners { border-bottom: 3px solid var(--qndd-lilac); }
+.qndd-score span { min-width: 0; overflow: hidden; font-size: 0.7rem; font-weight: 850; text-overflow: ellipsis; white-space: nowrap; }
+.qndd-score strong { grid-row: span 2; align-self: center; font-size: 1.45rem; line-height: 1; }
+.qndd-score--duo strong { color: var(--qndd-violet); }
+.qndd-score--questioners strong { color: var(--qndd-lilac); }
+.qndd-score small { color: var(--muted); font-size: 0.55rem; font-weight: 900; letter-spacing: 0.09em; }
+.qndd-stage { display: flex; min-height: 0; flex-direction: column; gap: 0.8rem; overflow-y: auto; padding: 0.15rem 0 0.1rem; }
+.qndd-question-card { display: grid; min-height: 16rem; align-content: center; justify-items: center; gap: 0.85rem; border: 1px solid color-mix(in srgb, var(--qndd-violet) 36%, var(--line)); border-radius: 1.55rem; padding: 1.25rem; background: radial-gradient(circle at 10% 0%, var(--qndd-violet-glow), transparent 55%), var(--surface); box-shadow: 0 16px 55px rgba(0, 0, 0, 0.15); text-align: center; }
+.qndd-category { align-self: start; border-radius: 999px; padding: 0.38rem 0.6rem; background: var(--qndd-lilac); color: var(--qndd-ink); font-size: 0.6rem; font-weight: 950; letter-spacing: 0.09em; text-transform: uppercase; }
+.qndd-question-card h1, .qndd-result-card h1, .qndd-final-card h1 { max-width: 28rem; margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(1.85rem, 8.1vw, 3.2rem); letter-spacing: -0.045em; line-height: 0.98; text-wrap: balance; text-transform: uppercase; }
+.qndd-duo-hint { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.35rem; color: var(--muted); font-size: 0.72rem; font-weight: 800; }
+.qndd-duo-hint span:first-child { color: var(--qndd-violet); font-size: 1.2rem; }
+.qndd-resolution { display: grid; gap: 0.55rem; margin-top: auto; }
+.qndd-resolution-heading { display: flex; align-items: end; justify-content: space-between; gap: 0.7rem; }
+.qndd-resolution-heading p:last-child { margin: 0; color: var(--muted); font-size: 0.72rem; line-height: 1.3; text-align: right; }
+.qndd-resolution-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.qndd-resolution-buttons .button { min-height: 3.3rem; border-radius: 0.95rem; padding: 0.65rem 0.75rem; font-size: 0.68rem; font-weight: 850; line-height: 1.15; }
+.qndd-resolution-buttons .button span { flex: 0 0 auto; font-size: 0.9rem; }
+.qndd-same-button { border-color: transparent !important; background: linear-gradient(135deg, #7659f4, #6848de) !important; color: #fff !important; box-shadow: 0 8px 22px rgba(92, 65, 220, 0.28) !important; }
+.qndd-same-button:hover { filter: brightness(1.08) !important; }
+.qndd-different-button { border-color: rgba(189, 166, 255, 0.2) !important; background: rgba(255, 255, 255, 0.02) !important; color: var(--qndd-lilac) !important; box-shadow: none !important; }
+.qndd-different-button:hover { border-color: var(--qndd-lilac) !important; background: rgba(115, 87, 244, 0.08) !important; }
+.qndd-reveal-stage { justify-content: center; }
+.qndd-result-card { display: grid; justify-items: center; gap: 0.5rem; border-radius: 1.5rem; padding: 1.4rem 1rem; text-align: center; }
+.qndd-result-card--duo { background: var(--qndd-violet); color: white; }
+.qndd-result-card--questioners { background: var(--qndd-lilac); color: var(--qndd-ink); }
+.qndd-result-card .eyebrow { color: var(--qndd-ink); opacity: 0.64; }
+.qndd-result-card h1 { font-size: clamp(1.65rem, 7.5vw, 2.6rem); }
+.qndd-result-card strong { font-size: 1rem; }
+.qndd-result-card p:last-child { max-width: 22rem; margin: 0.2rem 0 0; font-size: 0.78rem; line-height: 1.35; }
+.qndd-result-symbol { display: grid; width: 3.4rem; height: 3.4rem; place-items: center; border-radius: 1rem; background: rgba(16, 21, 31, 0.12); font-size: 2rem; font-weight: 1000; }
+.qndd-reveal-score { display: grid; gap: 0.7rem; }
+.qndd-reveal-score > .button { min-height: 3.35rem; border-color: rgba(115, 87, 244, 0.28); background: radial-gradient(circle at 50% 0%, rgba(115, 87, 244, 0.14), transparent 75%), rgba(255, 255, 255, 0.025); color: var(--qndd-violet); box-shadow: 0 8px 25px rgba(43, 28, 113, 0.2), inset 0 0 14px rgba(115, 87, 244, 0.12); }
+.qndd-reveal-score > .button:hover { border-color: var(--qndd-violet); color: var(--qndd-lilac); }
+.qndd-result { display: grid; min-height: 100dvh; align-content: center; justify-items: center; gap: 0.8rem; }
+.qndd-result-mark { position: absolute; top: 8vh; color: var(--qndd-violet); font-size: 3rem; animation: qndd-pulse 1.8s ease-in-out infinite; }
+.qndd-final-card { display: grid; width: 100%; justify-items: center; gap: 0.85rem; border: 1px solid var(--line); border-radius: 1.5rem; padding: 1.5rem 1rem; background: var(--surface); text-align: center; }
+.qndd-final-card h1 { font-size: clamp(2.3rem, 11vw, 4rem); }
+.qndd-final-copy { max-width: 22rem; margin: 0; color: var(--muted); line-height: 1.4; }
+.qndd-final-scores { display: grid; width: 100%; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+.qndd-final-scores > div { display: grid; gap: 0.25rem; border-radius: 1rem; padding: 0.8rem 0.5rem; background: color-mix(in srgb, var(--qndd-violet) 10%, var(--surface)); }
+.qndd-final-scores > div:last-child { background: color-mix(in srgb, var(--qndd-lilac) 10%, var(--surface)); }
+.qndd-final-scores span { overflow: hidden; color: var(--muted); font-size: 0.68rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.qndd-final-scores strong { font-size: 2rem; }
+.qndd-final-card .result-actions { display: grid; width: 100%; gap: 0.55rem; }
+.game-loading { display: grid; align-content: center; justify-items: center; gap: 0.8rem; color: var(--muted); }
+.game-loading p { margin: 0; }
+
+@keyframes qndd-pulse { 50% { transform: scale(1.12) rotate(7deg); } }
+
+@media (max-height: 680px) {
+  .qndd-question-card { min-height: 11.5rem; gap: 0.55rem; padding: 0.85rem; }
+  .qndd-question-card h1 { font-size: clamp(1.55rem, 7vw, 2.4rem); }
+  .qndd-resolution-buttons .button { min-height: 3.4rem; }
+  .qndd-result-card { padding: 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .qndd-result-mark { animation: none; } }
