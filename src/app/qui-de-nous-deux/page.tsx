@@ -21,7 +21,7 @@ export default function QuiDeNousDeuxHomePage() {
         <ResumeGameCard />
         <ButtonLink href={"/qui-de-nous-deux/joueurs" as Route}>Jouer <span aria-hidden="true">→</span></ButtonLink>
         <ThemeSelector />
-        <p>230 questions · 2 équipes · 1 téléphone</p>
+        <p>481 questions · 2 équipes · 1 téléphone</p>
       </section>
     </main>
   );

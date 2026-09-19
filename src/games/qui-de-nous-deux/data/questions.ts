@@ -1,10 +1,17 @@
+import { adultPrompts } from "./adult-questions";
+
 export type QuestionCategory =
   | "Vie de soirée"
   | "Personnalité"
   | "Relations"
   | "Habitudes"
   | "Audace"
-  | "Petites polémiques";
+  | "Petites polémiques"
+  | "Ego & tendresse"
+  | "Sexe & séduction"
+  | "Alcool & substances"
+  | "Nuits sombres"
+  | "Chaos général";
 
 export interface Question {
   id: string;
@@ -250,8 +257,16 @@ const prompts: readonly [QuestionCategory, string][] = [
   ["Petites polémiques", "Qui de vous deux a le plus de chances de finir dans une embrouille ?"],
 ];
 
-export const questions: readonly Question[] = prompts.map(([category, prompt], index) => ({
+const baseQuestions = prompts.map(([category, prompt], index) => ({
   id: `qndd-${String(index + 1).padStart(3, "0")}`,
   category,
   prompt,
 }));
+
+const newQuestions = adultPrompts.map(([category, prompt], index) => ({
+  id: `qndd-${String(index + baseQuestions.length + 1).padStart(3, "0")}`,
+  category,
+  prompt,
+}));
+
+export const questions: readonly Question[] = [...baseQuestions, ...newQuestions];
