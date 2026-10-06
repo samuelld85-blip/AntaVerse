@@ -3,7 +3,7 @@
 Route `/sport/`, entrée dans l’en-tête du lanceur. Module indépendant des jeux,
 avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
 
-- `catalog.ts` : source manuelle des 39 exercices, IDs stables, muscles principaux
+- `catalog.ts` : source manuelle des 40 exercices, IDs stables, muscles principaux
   et secondaires, zones, matériel et mouvement. Full body, Half body et Push Pull
   Legs sont les trois formats parents. Une séance libre choisit ensuite Upper body /
   Lower body ou Push / Pull / Leg ; ce type réel préfiltre le catalogue, avec une
@@ -16,14 +16,20 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   tour validé pour chaque mouvement ; le mode pyramidal reste indépendant et conserve
   les variations de charge et de répétitions série par série. Les séries restent
   identifiables par exercice pour les statistiques. Ces unités et IDs permettent de
-  futures statistiques sans en afficher en V1.
+  futures statistiques sans en afficher en V1. Le catalogue comprend notamment
+  l’exercice « Abducteurs en extension » pour l’ouverture vers l’extérieur à la
+  machine ou à la poulie.
 - `sport-app.tsx` : page d’accueil du carnet et sections séance, catalogue, réglages,
   historique et favoris. `/sport/` reste l’accueil Sport ; les sections utilisent le
   paramètre `section` de l’URL pour conserver un retour navigateur vers cet accueil.
   Les séances
   libres peuvent chaîner deux exercices en superset avec un seul repos par tour, ou
   activer le mode pyramidal pour modifier la charge et les répétitions de chaque série. Un favori
-  d’exercice distingue chaque configuration. Une séance favorite copie les réglages
+  d’exercice distingue chaque configuration. Un ressenti « Moyen » sur un exercice
+  conserve ses réglages de reprise, mais retire une répétition à l’objectif suivant
+  (sans jamais descendre sous une répétition). Lors d’un passage Barre → Haltères,
+  la charge est automatiquement divisée entre les deux haltères et arrondie au palier
+  de 2,5 kg le plus proche. Une séance favorite copie les réglages
   dans une nouvelle séance, sans réutiliser les séries, dates ou IDs historiques.
   La grille utilise trois colonnes sur téléphone, quatre à partir de 480 px.
   Les thèmes clair et sombre suivent le réglage de session AntaVerse, avec un
@@ -32,7 +38,9 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   de `sport.module.css` portent les surfaces, dégradés, contrastes et états.
 - `progression.ts`, `progression-badge.tsx` et `stats-dashboard.tsx` : progression personnelle
   Sport avec XP linéaire par séance, statuts globaux, niveaux par exercice, badges et statistiques
-  de charge, volume et muscles. Le profil ami reprend ces mêmes informations depuis Social.
+  de charge, volume et muscles. Le tonnage est calculé à partir des séries validées
+  (charge × répétitions), et apparaît dans le récapitulatif, l’historique et le profil.
+  Le profil ami reprend ces mêmes informations depuis Social.
 - `history-editor.tsx` : correction du titre, de la date, du format et des séries,
   ajout/retrait d’exercices. Les favoris restent des copies indépendantes. Une
   suppression d’historique demande confirmation. La sortie de séance entre deux

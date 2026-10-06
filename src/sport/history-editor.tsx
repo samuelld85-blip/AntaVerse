@@ -8,6 +8,7 @@ import {
   type SessionKind,
 } from "./catalog";
 import {
+  adaptLoadForEquipmentChange,
   completeSet,
   setExerciseId,
   createEntry,
@@ -66,6 +67,7 @@ export function HistoryEditor({
   const [entryComments, setEntryComments] = useState<Record<string, string>>(() =>
     Object.fromEntries(session.exercises.map((entry) => [entry.id, entry.feedback?.comment ?? ""])),
   );
+  const [setEdits, setSetEdits] = useState<Record<string, { equipment: Equipment; loadKg: number }>>({});
 
   async function handleSessionPhotos(event: ChangeEvent<HTMLInputElement>) {
     const files = Array.from(event.currentTarget.files ?? []);
@@ -356,6 +358,8 @@ export function HistoryEditor({
                 </label>
               </div>
               {entry.completedSets.map((set, i) => {
+                const setKey = `${entry.id}-${i}`;
+                const setEdit = setEdits[setKey];
                 const setConfig =
                   entryConfigs.find((config) => config.exerciseId === setExerciseId(entry, set)) ??
                   entry.config;
@@ -370,7 +374,21 @@ export function HistoryEditor({
                       <select
                         aria-label={`Matériel série ${i + 1} ${entry.id}`}
                         name={`${entry.id}-${i}-equipment`}
-                        defaultValue={set.equipment}
+                        value={setEdit?.equipment ?? set.equipment}
+                        onChange={(event) => {
+                          const equipment = event.target.value as Equipment;
+                          setSetEdits((current) => ({
+                            ...current,
+                            [setKey]: {
+                              equipment,
+                              loadKg: adaptLoadForEquipmentChange(
+                                setEdit?.loadKg ?? set.loadKg,
+                                setEdit?.equipment ?? set.equipment,
+                                equipment,
+                              ),
+                            },
+                          }));
+                        }}
                       >
                         {exercises
                           .find((ex) => ex.id === setConfig.exerciseId)!
@@ -391,7 +409,18 @@ export function HistoryEditor({
                         min={0}
                         max={2000}
                         step={0.25}
-                        defaultValue={set.loadKg}
+                        value={setEdit?.loadKg ?? set.loadKg}
+                        onChange={(event) => {
+                          const loadKg = Number(event.target.value);
+                          if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000) return;
+                          setSetEdits((current) => ({
+                            ...current,
+                            [setKey]: {
+                              equipment: setEdit?.equipment ?? set.equipment,
+                              loadKg,
+                            },
+                          }));
+                        }}
                         required
                       />
                     </label>

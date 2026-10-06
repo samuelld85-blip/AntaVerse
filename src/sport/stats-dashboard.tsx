@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { muscleLabels, sessionLabels, type Muscle } from "./catalog";
 import type { Session } from "./model";
 import {
+  formatVolume,
   formatStatNumber,
   getExerciseProgress,
   getRhythmBuckets,
@@ -395,6 +396,10 @@ export function StatsDashboard({
             <div className={styles.statCard}>
               <span>Exercices</span>
               <strong>{stats.exerciseCount}</strong>
+            </div>
+            <div className={styles.statCard}>
+              <span>Tonnage total</span>
+              <strong>{formatVolume(stats.volume)}</strong>
             </div>
           </section>
 

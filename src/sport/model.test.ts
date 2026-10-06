@@ -7,6 +7,7 @@ import {
   workoutDurations,
 } from "./recommended-workouts";
 import {
+  adaptLoadForEquipmentChange,
   completeSet,
   configKey,
   createEntry,
@@ -27,6 +28,11 @@ beforeEach(() => {
   vi.restoreAllMocks();
 });
 describe("sport training log", () => {
+  it("splits a barbell load into 2.5 kg dumbbell increments", () => {
+    expect(adaptLoadForEquipmentChange(50, "barbell", "dumbbell")).toBe(25);
+    expect(adaptLoadForEquipmentChange(65, "barbell", "dumbbell")).toBe(32.5);
+    expect(adaptLoadForEquipmentChange(65, "dumbbell", "barbell")).toBe(65);
+  });
   it("snapshots each performed set and never counts beyond the target", () => {
     let entry = createEntry({ ...defaultConfig("bench-press"), sets: 2, loadKg: 40 });
     entry = completeSet(entry);
@@ -118,6 +124,35 @@ describe("sport training log", () => {
     const unperformed = createSession("push", [defaultConfig("bench-press")]);
     expect(lastConfigForExercise([unperformed], "bench-press")).toBeNull();
   });
+  it("reduces the next repetition target after a neutral exercise rating", () => {
+    const session = createSession("push", []);
+    session.startedAt = "2026-09-08T10:00:00.000Z";
+    const entry = createEntry({ ...defaultConfig("bench-press"), loadKg: 60, reps: 10 });
+    session.exercises = [
+      {
+        ...completeSet(entry, "2026-09-08T10:05:00.000Z"),
+        feedback: { mood: "okay", comment: "" },
+      },
+    ];
+    const finished = { ...finishSession(session), endedAt: "2026-09-08T10:10:00.000Z" };
+
+    expect(lastConfigForExercise([finished], "bench-press")).toMatchObject({
+      loadKg: 60,
+      reps: 9,
+    });
+  });
+  it("keeps a valid one-repetition target after a neutral exercise rating", () => {
+    const session = createSession("push", []);
+    const entry = createEntry({ ...defaultConfig("bench-press"), reps: 1 });
+    session.exercises = [
+      {
+        ...completeSet(entry, "2026-09-08T10:05:00.000Z"),
+        feedback: { mood: "okay", comment: "" },
+      },
+    ];
+
+    expect(lastConfigForExercise([finishSession(session)], "bench-press")?.reps).toBe(1);
+  });
   it("provides useful defaults for a new free-session exercise", () => {
     expect(defaultFreeConfig("bench-press")).toMatchObject({
       sets: 3,
@@ -204,6 +239,11 @@ describe("exercise discovery", () => {
     );
     expect(searchExercises("full", "chest press").map((e) => e.id)).toContain(
       "vertical-chest-press",
+    );
+  });
+  it("finds the outward hip-abduction extension exercise", () => {
+    expect(searchExercises("legs", "abducteurs extension").map((exercise) => exercise.id)).toContain(
+      "hip-abduction-extension",
     );
   });
   it("finds the unilateral overhead triceps extension by its movement aliases", () => {

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { notifySaveChanged } from "./cloud/changed";
-import { defaultFreeRestSeconds, exercises, type SessionKind } from "./catalog";
+import { defaultFreeRestSeconds, exercises, type Equipment, type SessionKind } from "./catalog";
 
 const configSchema = z
   .object({
@@ -95,11 +95,25 @@ export const emptyStore = (): SportStore => ({
 });
 export const configKey = (c: ExerciseConfig) =>
   JSON.stringify([c.exerciseId, c.equipment, c.sets, c.restSeconds, c.loadKg, c.reps]);
+
+/**
+ * Dumbbell loads are stored per dumbbell. Moving from a barbell therefore splits
+ * the total load between both hands and uses the usual 2.5 kg dumbbell increment.
+ */
+export function adaptLoadForEquipmentChange(
+  loadKg: number,
+  previousEquipment: Equipment,
+  nextEquipment: Equipment,
+) {
+  if (previousEquipment !== "barbell" || nextEquipment !== "dumbbell") return loadKg;
+  return Math.round(loadKg / 5) * 2.5;
+}
+
 export function lastConfigForExercise(
   history: Session[],
   exerciseId: string,
 ): ExerciseConfig | null {
-  let latest: { config: ExerciseConfig; timestamp: number } | null = null;
+  let latest: { config: ExerciseConfig; timestamp: number; mood?: ExerciseFeedback["mood"] } | null = null;
   for (const session of history) {
     const timestamp = Date.parse(session.endedAt ?? session.startedAt);
     for (const entry of session.exercises) {
@@ -111,11 +125,20 @@ export function lastConfigForExercise(
             ? entry.superset
             : null;
       if (config && (!latest || timestamp >= latest.timestamp)) {
-        latest = { config: { ...config }, timestamp };
+        latest = { config: { ...config }, timestamp, mood: entry.feedback?.mood };
       }
     }
   }
-  return latest?.config ?? null;
+  if (!latest) return null;
+  return {
+    ...latest.config,
+    // A neutral result keeps the usual plan, with one less repetition next time.
+    // Keep the minimum valid target when the prior set only had one repetition.
+    reps:
+      latest.mood === "okay" && latest.config.reps !== null
+        ? Math.max(1, latest.config.reps - 1)
+        : latest.config.reps,
+  };
 }
 export const defaultConfig = (id: string): ExerciseConfig => ({
   exerciseId: id,

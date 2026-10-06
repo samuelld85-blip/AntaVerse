@@ -1360,6 +1360,7 @@ const iconById: Record<string, () => React.ReactElement> = {
   "leg-curl": LegCurl,
   "hip-thrust": HipThrust,
   "hip-abduction": HipAbduction,
+  "hip-abduction-extension": HipAbduction,
   "calf-raise": CalfRaise,
   crunch: Crunch,
   "leg-raise": LegRaise,

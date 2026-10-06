@@ -78,6 +78,19 @@ export function formatVolume(volume: number) {
   return `${formatStatNumber(volume)} kg`;
 }
 
+/** Total external load moved during a completed session, in kilograms. */
+export function getSessionVolume(session: Session) {
+  return session.exercises.reduce(
+    (sessionTotal, entry) =>
+      sessionTotal +
+      entry.completedSets.reduce(
+        (entryTotal, set) => entryTotal + (set.reps ? set.loadKg * set.reps : 0),
+        0,
+      ),
+    0,
+  );
+}
+
 export function getRhythmBuckets(sessions: Session[], unit: RhythmUnit, now = new Date()) {
   const bucketCount = unit === "day" ? 7 : 6;
   const currentBucket =

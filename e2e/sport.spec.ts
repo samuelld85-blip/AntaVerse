@@ -222,7 +222,9 @@ test("sport: free sessions can record a superset as one exercise", async ({ page
   await page.getByRole("button", { name: "Enregistrer et terminer", exact: true }).click();
   await page.getByRole("button", { name: "Content", exact: true }).click();
   await page.getByRole("button", { name: "Enregistrer la séance", exact: true }).click();
-  await expect(page.getByText("1 exercices · 4 séries effectuées", { exact: true })).toBeVisible();
+  await expect(
+    page.getByText("1 exercices · 4 séries effectuées · tonnage total : 1,1 t", { exact: true }),
+  ).toBeVisible();
   await expect(page.getByRole("heading", { name: /^Leg curl \+ Leg extension/ })).toBeVisible();
 });
 
@@ -435,7 +437,7 @@ test("sport: session, rest, recovery, favorites, history and replay", async ({
   await page.getByRole("button", { name: "Enregistrer et terminer" }).click();
   await page.getByRole("button", { name: "Moyen", exact: true }).click();
   await page.getByRole("button", { name: "Enregistrer la séance", exact: true }).click();
-  await expect(page.getByText("1 exercices · 3 séries effectuées")).toBeVisible();
+  await expect(page.getByText("1 exercices · 3 séries effectuées · tonnage total : 1,3 t")).toBeVisible();
   await expect(page.getByText("Barre · 40 kg", { exact: true })).toBeVisible();
   await expect(page.getByText("Barre · 45 kg", { exact: true })).toHaveCount(2);
   await page.getByRole("button", { name: "Séance favorite", exact: true }).click();

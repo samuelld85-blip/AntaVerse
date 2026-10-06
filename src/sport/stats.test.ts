@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { completeSet, createEntry, createSession, defaultConfig } from "./model";
-import { getExerciseProgress, getRhythmBuckets, getSportStats, percentageChange } from "./stats";
+import {
+  getExerciseProgress,
+  getRhythmBuckets,
+  getSessionVolume,
+  getSportStats,
+  percentageChange,
+} from "./stats";
 
 function session(date: string, kind: "push" | "legs", loadKg: number, reps = 8) {
   const workout = createSession(kind, [
@@ -37,6 +43,7 @@ describe("sport statistics", () => {
       { kind: "legs", count: 1 },
       { kind: "push", count: 1 },
     ]);
+    expect(getSessionVolume(history[1]!)).toBe(1200);
   });
 
   it("builds an exercise timeline and exposes a meaningful relative change", () => {

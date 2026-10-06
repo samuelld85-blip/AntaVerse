@@ -394,6 +394,16 @@ export const exercises: Exercise[] = [
     pattern: "legs",
   },
   {
+    id: "hip-abduction-extension",
+    name: "Abducteurs en extension",
+    primary: "glutes",
+    secondary: [],
+    region: "Fessiers · côté",
+    equipment: ["machine", "cable"],
+    pattern: "legs",
+    aliases: "abducteurs extérieur ouverture extension hanches",
+  },
+  {
     id: "calf-raise",
     name: "Extensions mollets",
     primary: "calves",

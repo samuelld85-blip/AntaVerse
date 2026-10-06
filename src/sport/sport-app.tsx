@@ -12,6 +12,7 @@ import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
 import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
 import { StatsDashboard } from "./stats-dashboard";
+import { formatVolume, getSessionVolume } from "./stats";
 import { getExerciseProgression, getGlobalProgression } from "./progression";
 import { ProgressionBadge } from "./progression-badge";
 import {
@@ -30,6 +31,7 @@ import {
   type SessionKind,
 } from "./catalog";
 import {
+  adaptLoadForEquipmentChange,
   completeSet,
   completedRoundCount,
   configKey,
@@ -387,6 +389,7 @@ function ConfigForm({
   heading?: string;
 }) {
   const [equipment, setEquipment] = useState<Equipment>(initial.equipment);
+  const [loadKg, setLoadKg] = useState(initial.loadKg);
   const [formError, setFormError] = useState("");
   const exercise = exercises.find((ex) => ex.id === initial.exerciseId)!;
   return (
@@ -410,7 +413,7 @@ function ConfigForm({
             equipment,
             sets: Number(values.get("sets")),
             restSeconds,
-            loadKg: Number(values.get("load")),
+            loadKg,
             reps: values.get("reps") ? Number(values.get("reps")) : null,
           });
         }}
@@ -419,7 +422,11 @@ function ConfigForm({
           Matériel
           <select
             value={equipment}
-            onChange={(e) => setEquipment(e.target.value as Equipment)}
+            onChange={(event) => {
+              const nextEquipment = event.target.value as Equipment;
+              setLoadKg(adaptLoadForEquipmentChange(loadKg, equipment, nextEquipment));
+              setEquipment(nextEquipment);
+            }}
           >
             {exercise.equipment.map((item) => (
               <option key={item} value={item}>
@@ -488,7 +495,11 @@ function ConfigForm({
               min={0}
               max={2000}
               step={0.25}
-              defaultValue={initial.loadKg}
+              value={loadKg}
+              onChange={(event) => {
+                const nextLoad = Number(event.target.value);
+                if (Number.isFinite(nextLoad) && nextLoad >= 0 && nextLoad <= 2000) setLoadKg(nextLoad);
+              }}
               required
             />
           </label>
@@ -551,7 +562,7 @@ function ConfigForm({
                   equipment,
                   sets: Number(values.get("sets")),
                   restSeconds,
-                  loadKg: Number(values.get("load")),
+                  loadKg,
                   reps: values.get("reps") ? Number(values.get("reps")) : null,
                 });
               }}
@@ -749,10 +760,24 @@ function Catalog({
                 aria-label={ex.name}
                 onClick={() => {
                   const previous = lastConfigFor(ex.id);
+                  const nextEquipment = equipment ? (equipment as Equipment) : previous?.equipment;
                   onChoose(
                     {
                       ...(previous ?? (freeSession ? defaultFreeConfig(ex.id) : defaultConfig(ex.id))),
-                      ...(equipment ? { equipment: equipment as Equipment } : {}),
+                      ...(nextEquipment
+                        ? {
+                            equipment: nextEquipment,
+                            ...(previous
+                              ? {
+                                  loadKg: adaptLoadForEquipmentChange(
+                                    previous.loadKg,
+                                    previous.equipment,
+                                    nextEquipment,
+                                  ),
+                                }
+                              : {}),
+                          }
+                        : {}),
                     },
                   );
                 }}
@@ -823,10 +848,10 @@ function HomeProgressPrompt({ history, active }: { history: Session[]; active: S
   } else if (lastSession && progression.nextStatus) {
     const remaining = progression.nextStatus.threshold - progression.sessions;
     const sessionName = lastSession.name || sessionLabels[lastSession.kind];
-    message = `Votre dernière séance ${sessionName} était ${relativeSessionAge(lastSession.endedAt ?? lastSession.startedAt)} · plus que ${remaining} séance${remaining > 1 ? "s" : ""} avant le statut ${progression.nextStatus.label}.`;
+    message = `Votre dernière séance ${sessionName} était ${relativeSessionAge(lastSession.endedAt ?? lastSession.startedAt)} · ${formatVolume(getSessionVolume(lastSession))} soulevés · plus que ${remaining} séance${remaining > 1 ? "s" : ""} avant le statut ${progression.nextStatus.label}.`;
   } else if (lastSession) {
     const sessionName = lastSession.name || sessionLabels[lastSession.kind];
-    message = `Votre dernière séance ${sessionName} était ${relativeSessionAge(lastSession.endedAt ?? lastSession.startedAt)} · statut ${progression.status.label} atteint.`;
+    message = `Votre dernière séance ${sessionName} était ${relativeSessionAge(lastSession.endedAt ?? lastSession.startedAt)} · ${formatVolume(getSessionVolume(lastSession))} soulevés · statut ${progression.status.label} atteint.`;
   }
   return (
     <section className={styles.homeProgressPrompt} aria-label="Prochaine étape">
@@ -1229,7 +1254,9 @@ export function SportApp() {
     setEditing(null);
     setSupersetDraft(null);
     setNotice(
-      finished.exercises.length ? "Séance enregistrée. Bien joué !" : "Séance vide fermée.",
+      finished.exercises.length
+        ? `Séance enregistrée · ${formatVolume(getSessionVolume(finished))} soulevés.`
+        : "Séance vide fermée.",
     );
     if (finished.exercises.length) {
       navigateToTab("history");
@@ -2133,7 +2160,7 @@ export function SportApp() {
                     <p className={styles.hint}>
                       {detail.exercises.length} exercices ·{" "}
                       {detail.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)} séries
-                      effectuées
+                      effectuées · tonnage total : {formatVolume(getSessionVolume(detail))}
                     </p>
                     {detail.feedback?.photos && detail.feedback.photos.length > 0 && (
                       <div className={styles.historyPhotoGallery} aria-label="Photos de la séance">
@@ -2357,7 +2384,7 @@ export function SportApp() {
                             (sum, e) => sum + e.completedSets.length,
                             0,
                           )}{" "}
-                          séries
+                          séries · {formatVolume(getSessionVolume(item.session))}
                         </span>
                         {item.session.feedback?.photos &&
                           item.session.feedback.photos.length > 0 && (
