@@ -18,6 +18,7 @@ import {
   finishSession,
   lastConfigForExercise,
   loadStore,
+  nextConfigForFeedback,
   saveStore,
   STORAGE_KEY,
   storeSchema,
@@ -139,6 +140,34 @@ describe("sport training log", () => {
     expect(lastConfigForExercise([finished], "bench-press")).toMatchObject({
       loadKg: 60,
       reps: 9,
+    });
+  });
+  it("progresses a good rating by reps, then load based on the movement type", () => {
+    expect(nextConfigForFeedback({ ...defaultConfig("bench-press"), loadKg: 60, reps: 9 }, "good")).toMatchObject({
+      loadKg: 60,
+      reps: 10,
+    });
+    expect(nextConfigForFeedback({ ...defaultConfig("bench-press"), loadKg: 60, reps: 10 }, "good")).toMatchObject({
+      loadKg: 65,
+      reps: 6,
+    });
+    expect(nextConfigForFeedback({ ...defaultConfig("curl"), loadKg: 12.5, reps: 10 }, "good")).toMatchObject({
+      loadKg: 15,
+      reps: 6,
+    });
+  });
+  it("regresses a bad rating by reps, then load at the six-rep floor", () => {
+    expect(nextConfigForFeedback({ ...defaultConfig("bench-press"), loadKg: 60, reps: 8 }, "bad")).toMatchObject({
+      loadKg: 60,
+      reps: 7,
+    });
+    expect(nextConfigForFeedback({ ...defaultConfig("bench-press"), loadKg: 60, reps: 6 }, "bad")).toMatchObject({
+      loadKg: 55,
+      reps: 10,
+    });
+    expect(nextConfigForFeedback({ ...defaultConfig("curl"), loadKg: 0, reps: 6 }, "bad")).toMatchObject({
+      loadKg: 0,
+      reps: 10,
     });
   });
   it("keeps a valid one-repetition target after a neutral exercise rating", () => {

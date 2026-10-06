@@ -1,6 +1,12 @@
 import { z } from "zod";
 import { notifySaveChanged } from "./cloud/changed";
-import { defaultFreeRestSeconds, exercises, type Equipment, type SessionKind } from "./catalog";
+import {
+  defaultFreeRestSeconds,
+  exercises,
+  progressionLoadIncrementKg,
+  type Equipment,
+  type SessionKind,
+} from "./catalog";
 
 const configSchema = z
   .object({
@@ -109,6 +115,28 @@ export function adaptLoadForEquipmentChange(
   return Math.round(loadKg / 5) * 2.5;
 }
 
+export function nextConfigForFeedback(
+  config: ExerciseConfig,
+  mood: ExerciseFeedback["mood"] | undefined,
+): ExerciseConfig {
+  if (config.reps === null || !mood) return config;
+  const loadStep = progressionLoadIncrementKg(config.exerciseId);
+
+  if (mood === "good") {
+    return config.reps >= 10
+      ? { ...config, loadKg: config.loadKg + loadStep, reps: 6 }
+      : { ...config, reps: config.reps + 1 };
+  }
+
+  if (mood === "bad") {
+    return config.reps <= 6
+      ? { ...config, loadKg: Math.max(0, config.loadKg - loadStep), reps: 10 }
+      : { ...config, reps: config.reps - 1 };
+  }
+
+  return { ...config, reps: Math.max(1, config.reps - 1) };
+}
+
 export function lastConfigForExercise(
   history: Session[],
   exerciseId: string,
@@ -130,15 +158,7 @@ export function lastConfigForExercise(
     }
   }
   if (!latest) return null;
-  return {
-    ...latest.config,
-    // A neutral result keeps the usual plan, with one less repetition next time.
-    // Keep the minimum valid target when the prior set only had one repetition.
-    reps:
-      latest.mood === "okay" && latest.config.reps !== null
-        ? Math.max(1, latest.config.reps - 1)
-        : latest.config.reps,
-  };
+  return nextConfigForFeedback(latest.config, latest.mood);
 }
 export const defaultConfig = (id: string): ExerciseConfig => ({
   exerciseId: id,

@@ -68,6 +68,11 @@ export function defaultFreeRestSeconds(exerciseId: string): number {
   return compoundExerciseIds.has(exerciseId) ? 120 : 90;
 }
 
+/** Progression step: larger for compound lifts, smaller for isolation work. */
+export function progressionLoadIncrementKg(exerciseId: string) {
+  return compoundExerciseIds.has(exerciseId) ? 5 : 2.5;
+}
+
 // Hand-authored source of truth. IDs are permanent: history refers to them.
 export const exercises: Exercise[] = [
   {

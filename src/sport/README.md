@@ -29,7 +29,10 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   conserve ses réglages de reprise, mais retire une répétition à l’objectif suivant
   (sans jamais descendre sous une répétition). Lors d’un passage Barre → Haltères,
   la charge est automatiquement divisée entre les deux haltères et arrondie au palier
-  de 2,5 kg le plus proche. Une séance favorite copie les réglages
+  de 2,5 kg le plus proche. Un ressenti « Content » ajoute une répétition jusqu’à
+  10, puis revient à 6 avec +5 kg pour un mouvement polyarticulaire ou +2,5 kg pour
+  une isolation ; « Pas content » fait l’inverse à partir de 6 répétitions. Une séance
+  favorite copie les réglages
   dans une nouvelle séance, sans réutiliser les séries, dates ou IDs historiques.
   La grille utilise trois colonnes sur téléphone, quatre à partir de 480 px.
   Les thèmes clair et sombre suivent le réglage de session AntaVerse, avec un
