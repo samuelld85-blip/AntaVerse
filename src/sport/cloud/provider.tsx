@@ -63,6 +63,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
   const profileRequest = useRef(0);
   const profileRef = useRef<Profile | null>(null);
   const [resolving, setResolving] = useState(false);
+  const [resolutionError, setResolutionError] = useState("");
 
   // Only one editable Sport tab. Another tab must not overwrite in-memory edits.
   useEffect(() => {
@@ -169,6 +170,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     let busy: Promise<void> | null = null;
     let base: Snapshot | null = null;
     let pendingConflict = false;
+    let conflictRevision = 0;
     let interval: ReturnType<typeof setInterval> | undefined;
     let timer: ReturnType<typeof setTimeout> | undefined;
     const client = getCloud()!;
@@ -219,7 +221,9 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           const decision = syncDecision(latest, remote, base);
           if (decision === "conflict") {
             pendingConflict = true;
+            conflictRevision = revision;
             setConflict({ remote, revision });
+            setResolutionError("");
             setStatus("Deux versions du carnet sont disponibles");
           } else if (decision === "download") {
             writeSnapshot(remote);
@@ -298,6 +302,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         window.addEventListener("focus", changed);
         syncRef.current = sync;
         resolveRef.current = async (useRemote) => {
+          if (!valid()) return;
           const { data, error } = await client
             .from("backups")
             .select("payload, revision")
@@ -306,12 +311,22 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           if (error) throw error;
           if (!valid()) return;
           const remote = data ? snapshotSchema.parse(data.payload) : emptySnapshot();
+          // Never replace a newer remote revision that the user has not reviewed.
+          if ((data?.revision ?? 0) !== conflictRevision) {
+            conflictRevision = data?.revision ?? 0;
+            setConflict({ remote, revision: conflictRevision });
+            setResolutionError(
+              "La version en ligne a changé. Vérifiez les versions puis choisissez à nouveau.",
+            );
+            return;
+          }
           // A restoration is explicit and keeps the losing local copy for export.
           if (useRemote) {
             writeSnapshot(remote);
             saveBase(remote);
             setEpoch((n) => n + 1);
           } else await persist(readSnapshot(), data?.revision ?? 0);
+          if (!valid()) return;
           pendingConflict = false;
           setConflict(null);
           await sync();
@@ -334,6 +349,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       window.removeEventListener("online", changed);
       window.removeEventListener("focus", changed);
       syncRef.current = async () => {};
+      resolveRef.current = async () => {};
     };
   }, [id, loading, exclusive, refreshProfile]);
 
@@ -415,15 +431,18 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       ) : (
         <>
           {conflict ? (
-            <section className={styles.panel} aria-labelledby="conflict-title">
+            <details className={styles.panel}>
+              <summary>Sauvegarde en ligne en pause · choisir une version</summary>
               <h1 id="conflict-title">Quel carnet souhaitez-vous conserver ?</h1>
               <p>
-                Les deux versions ont changé. Votre version locale contient{" "}
+                Vous pouvez continuer à utiliser Sport sur cet appareil. La sauvegarde en ligne
+                reprendra après votre choix. Votre version locale contient{" "}
                 {readSnapshot().history.length} séance(s), la version en ligne{" "}
                 {conflict.remote.history.length}. Exportez votre carnet avant de choisir si vous
                 souhaitez conserver les deux.
               </p>
               <button onClick={() => exportSport(readSnapshot())}>Exporter mon carnet local</button>
+              {resolutionError && <p role="alert">{resolutionError}</p>}
               <div className={styles.actions}>
                 {[false, true].map((remote) => (
                   <button
@@ -431,10 +450,11 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
                     disabled={resolving}
                     onClick={async () => {
                       setResolving(true);
+                      setResolutionError("");
                       try {
                         await resolveRef.current(remote);
                       } catch (error) {
-                        setStatus(friendlyError(error));
+                        setResolutionError(friendlyError(error));
                       } finally {
                         setResolving(false);
                       }
@@ -444,10 +464,9 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
                   </button>
                 ))}
               </div>
-            </section>
-          ) : (
-            <div key={`${id ?? "guest"}:${epoch}`}>{children}</div>
-          )}
+            </details>
+          ) : null}
+          <div key={`${id ?? "guest"}:${epoch}`}>{children}</div>
         </>
       )}
     </Context.Provider>

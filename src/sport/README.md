@@ -76,8 +76,10 @@ d’ambiance n’est synchronisée. La page `/sport/compte` propose récupérati
 mot de passe, export/import et suppression du compte. Dans Historique, Social
 permet les demandes d’amis et la consultation des séances des amis acceptés.
 Les push Web sont facultatifs par appareil. Une seule page Sport est éditable
-à la fois dans un navigateur ; un conflit entre appareils nécessite un choix
-explicite, avec export des données avant remplacement.
+à la fois dans un navigateur. Un conflit entre appareils suspend la sauvegarde
+en ligne, mais le carnet local reste utilisable. Un avertissement repliable permet
+de choisir explicitement la version à conserver, avec export facultatif avant
+remplacement ; les erreurs de ce choix sont affichées dans cet avertissement.
 
 Configuration et validation en ligne : [CLOUD_SETUP.md](CLOUD_SETUP.md).
 

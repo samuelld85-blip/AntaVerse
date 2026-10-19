@@ -153,7 +153,7 @@ describe("Sport provider lifecycle", () => {
     await tick(450);
     expect(server.backups.get("alice")?.payload).toEqual(edited);
   });
-  it("blocks conflicting edits until an explicit choice", async () => {
+  it("keeps the local carnet editable while pausing conflicting uploads until an explicit choice", async () => {
     server.session = session("alice");
     const original = carnet("Original");
     server.backups.set("alice", { payload: original, revision: 1 });
@@ -166,15 +166,69 @@ describe("Sport provider lifecycle", () => {
     });
     await tick(450);
     expect(host.textContent).toContain("Quel carnet souhaitez-vous conserver");
+    expect(host.textContent).toContain("Carnet ouvert");
+    expect(host.querySelector("details")?.open).toBe(false);
     expect(server.writes).toHaveLength(0);
     expect(readSnapshot()).toEqual(local);
+    const continued = { ...local, active: { ...local.active, name: "Séance continuée" } };
+    await act(async () => {
+      saveStore(continued);
+    });
+    await tick(450);
+    expect(readSnapshot()).toEqual(continued);
+    expect(server.backups.get("alice")?.payload).toEqual(remote);
+    expect(server.writes).toHaveLength(0);
     const button = [...host.querySelectorAll("button")].find(
       (b) => b.textContent === "Récupérer la version en ligne",
     )!;
     await act(async () => button.click());
     await tick();
     expect(readSnapshot()).toEqual(remote);
-    expect(JSON.parse(localStorage.getItem("antaverse:sport:before-restore")!)).toEqual(local);
+    expect(JSON.parse(localStorage.getItem("antaverse:sport:before-restore")!)).toEqual(continued);
+    expect(host.querySelector("details")).toBeNull();
+  });
+  it("opens Sport on login with a conflict and lets the user keep the local version without exporting", async () => {
+    const local = carnet("Ce téléphone");
+    const remote = carnet("En ligne");
+    saveStore(local);
+    server.session = session("alice");
+    server.backups.set("alice", { payload: remote, revision: 1 });
+    await mount();
+    expect(host.textContent).toContain("Carnet ouvert");
+    expect(server.writes).toHaveLength(0);
+    const button = [...host.querySelectorAll("button")].find(
+      (b) => b.textContent === "Conserver ma version locale",
+    )!;
+    server.fail = true;
+    await act(async () => button.click());
+    expect(host.querySelector('[role="alert"]')?.textContent).toContain("Connexion interrompue");
+    expect(button.disabled).toBe(false);
+    expect(readSnapshot()).toEqual(local);
+    server.fail = false;
+    await act(async () => button.click());
+    expect(server.backups.get("alice")?.payload).toEqual(local);
+    expect(host.querySelector("details")).toBeNull();
+  });
+  it("asks again if the remote version changes before resolving a conflict", async () => {
+    const local = carnet("Ce téléphone");
+    saveStore(local);
+    server.session = session("alice");
+    server.backups.set("alice", { payload: carnet("En ligne"), revision: 1 });
+    await mount();
+    const newer = carnet("Autre appareil plus récent");
+    server.backups.set("alice", { payload: newer, revision: 2 });
+    const button = [...host.querySelectorAll("button")].find(
+      (b) => b.textContent === "Conserver ma version locale",
+    )!;
+    await act(async () => button.click());
+    expect(host.querySelector('[role="alert"]')?.textContent).toContain(
+      "La version en ligne a changé",
+    );
+    expect(server.writes).toHaveLength(0);
+    expect(readSnapshot()).toEqual(local);
+    expect(server.backups.get("alice")?.payload).toEqual(newer);
+    await act(async () => button.click());
+    expect(server.backups.get("alice")?.payload).toEqual(local);
   });
   it("keeps synchronization active after an initial service outage", async () => {
     server.session = session("alice");

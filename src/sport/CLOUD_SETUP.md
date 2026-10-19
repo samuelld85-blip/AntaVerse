@@ -126,7 +126,10 @@ synchronisation si leur fin est postérieure à la sauvegarde précédente.
 - Seul le carnet Sport est envoyé. Une copie locale reste disponible hors ligne.
 - Un compte possède sa ligne `backups` et les dix révisions précédentes.
 - La comparaison de révision côté serveur empêche l’écrasement concurrent. Un
-  conflit demande de choisir le carnet local ou distant, avec export possible.
+  conflit suspend les envois, sans bloquer l’utilisation du carnet local. Un
+  avertissement repliable propose le choix du carnet local ou distant, avec
+  export facultatif et erreurs visibles. Si la révision distante change avant
+  le choix, elle est présentée à nouveau avant tout remplacement.
 - La dernière version synchronisée sert de base à la réconciliation après une
   coupure. Un stockage local illisible bloque l’envoi au lieu d’envoyer un carnet vide.
 - Les copies locales sont isolées par compte lors des changements d’utilisateur.
