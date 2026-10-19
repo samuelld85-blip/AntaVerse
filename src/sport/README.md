@@ -3,6 +3,22 @@
 Route `/sport/`, entrée dans l’en-tête du lanceur. Module indépendant des jeux,
 avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
 
+- `sport-frame.tsx` et `sport.module.css` : fondations visuelles isolées sur les
+  routes Sport, partagées avec les écrans de compte. Palette encre/cuivre et
+  ivoire/terre cuite, accueil éditorial, navigation basse, anneau du chronomètre,
+  journal et profil. Les transitions et les animations des graphiques respectent
+  la réduction des mouvements. Les mécaniques et le schéma du carnet sont inchangés.
+  `e2e/sport-design.spec.ts` contrôle les thèmes aux largeurs 320/360/375/390/430 px,
+  le petit écran de 568 px de haut et l’accès aux actions au-dessus de la navigation.
+  `e2e/sport-device.spec.ts` utilise les profils Playwright Pixel 10 Pro et iPhone
+  17 Pro/Pro Max : tactile, reprise du repos, saisie numérique, portrait/paysage
+  et gabarits plein écran PWA. Les hauteurs réduites et les insets CDP sont des
+  stress tests ; ils ne remplacent pas un essai du clavier et des découpes sur
+  les appareils physiques. Les spécifications matérielles de référence sont
+  celles de [Google](https://store.google.com/product/pixel_10_pro_specs) et
+  d’[Apple](https://www.apple.com/iphone-17-pro/specs/) ; les tailles CSS utilisées
+  sont celles des profils du Playwright installé, pas les résolutions du panneau.
+
 - `catalog.ts` : source manuelle des 40 exercices, IDs stables, muscles principaux
   et secondaires, zones, matériel et mouvement. Full body, Half body et Push Pull
   Legs sont les trois formats parents. Une séance libre choisit ensuite Upper body /

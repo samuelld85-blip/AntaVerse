@@ -140,7 +140,7 @@ function TrendChart({
       >
         <line x1="16" y1="120" x2="284" y2="120" className={styles.chartGuide} />
         <line x1="16" y1="78" x2="284" y2="78" className={styles.chartGuide} />
-        <path d={path} className={styles.chartLine} />
+        <path key={metric} d={path} pathLength="1" className={styles.chartLine} />
         {pointsForLine.map((point) => (
           <circle
             key={`${point.date}-${point.value}`}
