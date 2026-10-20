@@ -15,6 +15,7 @@ import { requestSportAssistant } from "../cloud/ai-client";
 import { buildAssistantContext } from "./context";
 import { draftToTemplate } from "./draft";
 import { CoachAvatar } from "./coach-avatar";
+import { buildPrepareRequest } from "./prepare-request";
 import styles from "./assistant.module.css";
 
 type Template = { name: string; kind: Draft["kind"]; exercises: SessionTemplateExercise[] };
@@ -29,10 +30,12 @@ const titles: Record<AssistantMode, string> = {
   progress: "Comprendre ma progression",
 };
 const initialRequests: Partial<Record<AssistantMode, string>> = {
-  prepare: "Propose-moi une séance adaptée à mon carnet.",
   review: "Fais le point sur cette séance et mon historique.",
   progress: "Fais le point sur ma progression à partir de mon historique.",
 };
+const isInitialPreparePrompt = (message: Message) =>
+  message.role === "user" &&
+  message.content.startsWith("Prépare ma prochaine séance de musculation");
 
 function ConfigEditor({
   value,
@@ -152,6 +155,7 @@ export function SportAssistant({
   const composer = useRef<HTMLTextAreaElement>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState("");
+  const [initialOrientation, setInitialOrientation] = useState("");
   const [draft, setDraft] = useState<Draft | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -191,7 +195,11 @@ export function SportAssistant({
   const context = buildAssistantContext(history, mode === "review" ? focusSessionId : null);
 
   async function send(requestText?: string) {
-    const content = (requestText ?? text).trim();
+    const isInitialPrepare = mode === "prepare" && messages.length === 0;
+    const orientation = text.trim();
+    const content = isInitialPrepare
+      ? buildPrepareRequest(context, orientation)
+      : (requestText ?? text).trim();
     if (!content || busy || pending.current || !accountReady || !online) return;
     if (draft && !draftSchema.safeParse(draft).success) {
       setError(
@@ -233,6 +241,7 @@ export function SportAssistant({
         ].slice(-8),
       );
       if (response.draft) setDraft(response.draft);
+      if (isInitialPrepare) setInitialOrientation(orientation);
       setText("");
     } catch (caught) {
       if (!controller.signal.aborted && currentRequest === requestId.current)
@@ -262,7 +271,7 @@ export function SportAssistant({
     }
   });
   useEffect(() => {
-    if (!accountReady || mode === "import" || autoSent.current) return;
+    if (!accountReady || mode === "import" || mode === "prepare" || autoSent.current) return;
     const timer = window.setTimeout(() => sendInitial(), 0);
     return () => window.clearTimeout(timer);
   }, [accountReady, mode]);
@@ -310,6 +319,21 @@ export function SportAssistant({
       </div>
       <div className={styles.body}>
         {mode === "import" && <p className={styles.intro}>Collez votre programme.</p>}
+        {mode === "prepare" && messages.length === 0 && (
+          <div className={styles.coachIntro}>
+            <CoachAvatar small />
+            <div className={styles.coachBubbles}>
+              <p className={styles.coachBubble}>
+                Salut, moi c’est Milo, ton coach IA. Je prépare ta prochaine séance à partir de ton
+                historique et de tes dernières séances.
+              </p>
+              <p className={styles.coachBubble}>
+                Une envie précise ou une contrainte aujourd’hui ? Tu peux me la préciser ci-dessous,
+                ou me laisser faire.
+              </p>
+            </div>
+          </div>
+        )}
         {!accountReady ? (
           <div className={styles.card}>
             <p>Connectez votre compte Sport pour utiliser l’assistant.</p>
@@ -329,7 +353,13 @@ export function SportAssistant({
                 {messages
                   .filter(
                     (message, index) =>
-                      !(index === 0 && mode !== "import" && message.role === "user"),
+                      !(
+                        index === 0 &&
+                        mode !== "import" &&
+                        message.role === "user" &&
+                        (mode !== "prepare" ||
+                          (isInitialPreparePrompt(message) && !initialOrientation))
+                      ),
                   )
                   .map((message, index) => (
                     <article
@@ -337,7 +367,11 @@ export function SportAssistant({
                       key={index}
                     >
                       <strong>{message.role === "user" ? "Vous" : "Milo"}</strong>
-                      <p>{message.content}</p>
+                      <p>
+                        {mode === "prepare" && isInitialPreparePrompt(message)
+                          ? initialOrientation
+                          : message.content}
+                      </p>
                       {message.observations?.map((observation, i) => (
                         <div key={i} className={styles.observation}>
                           <p>{observation.text}</p>
@@ -363,7 +397,7 @@ export function SportAssistant({
             {busy && (
               <div className={styles.actions}>
                 <p role="status">Milo réfléchit…</p>
-                {messages.length === 0 && !draft && (
+                {mode !== "prepare" && messages.length === 0 && !draft && (
                   <button type="button" onClick={cancel}>
                     Annuler
                   </button>
@@ -376,16 +410,20 @@ export function SportAssistant({
                 {error}
               </p>
             )}
-            {mode !== "import" && !busy && messages.length === 0 && !draft && (
-              <button
-                className={styles.primary}
-                type="button"
-                disabled={!online}
-                onClick={() => void send(initialRequests[mode])}
-              >
-                Réessayer
-              </button>
-            )}
+            {mode !== "import" &&
+              mode !== "prepare" &&
+              !busy &&
+              messages.length === 0 &&
+              !draft && (
+                <button
+                  className={styles.primary}
+                  type="button"
+                  disabled={!online}
+                  onClick={() => void send(initialRequests[mode])}
+                >
+                  Réessayer
+                </button>
+              )}
             {draft && (
               <section className={styles.draft} aria-labelledby="sport-assistant-draft-title">
                 <h3 id="sport-assistant-draft-title">Brouillon de séance</h3>
@@ -549,7 +587,7 @@ export function SportAssistant({
                 </div>
               </section>
             )}
-            {(mode === "import" || messages.length > 0 || draft) && (
+            {(mode === "import" || mode === "prepare" || messages.length > 0 || draft) && (
               <form
                 className={styles.composer}
                 onSubmit={(event) => {
@@ -557,31 +595,43 @@ export function SportAssistant({
                   void send();
                 }}
               >
-                <label htmlFor="sport-assistant-message">
-                  {messages.length
-                    ? "Votre réponse ou vos ajustements"
-                    : mode === "import"
-                      ? "Votre programme"
-                      : "Votre demande"}
-                </label>
-                <textarea
-                  ref={composer}
-                  id="sport-assistant-message"
-                  rows={4}
-                  maxLength={4000}
-                  value={text}
-                  onChange={(event) => setText(event.target.value)}
-                  disabled={busy}
-                  placeholder={
-                    mode === "import"
-                      ? "Exemple : développé couché, 3 × 8, barre de 40 kg au total, repos 120 s…"
-                      : mode === "review"
-                        ? "Exemple : comment cette séance se compare-t-elle aux précédentes ?"
-                        : mode === "progress"
-                          ? "Exemple : quel exercice mérite plus d’attention ?"
-                          : "Exemple : une séance haut du corps de 45 minutes avec des haltères…"
+                <div
+                  className={
+                    mode === "prepare" && messages.length === 0
+                      ? styles.guidanceCard
+                      : styles.composerFields
                   }
-                />
+                >
+                  <label htmlFor="sport-assistant-message">
+                    {messages.length
+                      ? "Votre réponse ou vos ajustements"
+                      : mode === "import"
+                        ? "Votre programme"
+                        : mode === "prepare"
+                          ? "Ta réponse (facultatif)"
+                          : "Votre demande"}
+                  </label>
+                  <textarea
+                    ref={composer}
+                    id="sport-assistant-message"
+                    rows={mode === "prepare" && messages.length === 0 ? 3 : 4}
+                    maxLength={mode === "prepare" && messages.length === 0 ? 3500 : 4000}
+                    value={text}
+                    onChange={(event) => setText(event.target.value)}
+                    disabled={busy}
+                    placeholder={
+                      mode === "prepare" && messages.length === 0
+                        ? "Ex. : 45 minutes, sans machine, priorité aux jambes…"
+                        : mode === "import"
+                          ? "Exemple : développé couché, 3 × 8, barre de 40 kg au total, repos 120 s…"
+                          : mode === "review"
+                            ? "Exemple : comment cette séance se compare-t-elle aux précédentes ?"
+                            : mode === "progress"
+                              ? "Exemple : quel exercice mérite plus d’attention ?"
+                              : "Exemple : une séance haut du corps de 45 minutes avec des haltères…"
+                    }
+                  />
+                </div>
                 <div className={styles.actions}>
                   {busy ? (
                     <>
@@ -592,10 +642,16 @@ export function SportAssistant({
                   ) : (
                     <button
                       className={styles.primary}
-                      disabled={!text.trim() || !online || !accountReady}
+                      disabled={
+                        (!(mode === "prepare" && messages.length === 0) && !text.trim()) ||
+                        !online ||
+                        !accountReady
+                      }
                       type="submit"
                     >
-                      Envoyer à l’assistant
+                      {mode === "prepare" && messages.length === 0
+                        ? "Créer ma séance personnalisée"
+                        : "Envoyer à l’assistant"}
                     </button>
                   )}
                 </div>

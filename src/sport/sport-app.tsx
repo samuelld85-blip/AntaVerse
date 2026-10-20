@@ -1,17 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SessionReactions, SportSocial } from "./cloud/social";
 import { useSportCloud } from "./cloud/provider";
 import { getCloud, friendlyError } from "./cloud/client";
-import { useEffect, useRef, useState, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type CSSProperties } from "react";
 import { SportIcon } from "@/components/sport-icon";
 import { useThemeMode } from "@/lib/use-theme-mode";
 import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
 import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
 import { StatsDashboard } from "./stats-dashboard";
+import { SportView } from "./sport-view";
 import { SportAssistant } from "./ai/assistant";
 import { CoachAvatar } from "./ai/coach-avatar";
 import type { AssistantMode } from "../../supabase/functions/_shared/sport-ai-contract";
@@ -170,18 +170,32 @@ function Star({
 
 const feedbackOptions: ReadonlyArray<{
   mood: ExerciseFeedback["mood"];
-  emoji: string;
   label: string;
 }> = [
-  { mood: "good", emoji: "🙂", label: "Content" },
-  { mood: "okay", emoji: "😐", label: "Moyen" },
-  { mood: "bad", emoji: "🙁", label: "Pas content" },
+  { mood: "good", label: "Content" },
+  { mood: "okay", label: "Moyen" },
+  { mood: "bad", label: "Pas content" },
 ];
-const feedbackEmojiByMood: Record<ExerciseFeedback["mood"], string> = {
-  good: "🙂",
-  okay: "😐",
-  bad: "🙁",
-};
+function FeedbackFace({ mood }: { mood: ExerciseFeedback["mood"] }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      width="32"
+      height="32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <circle cx="16" cy="16" r="13" />
+      <path d="M11 12h.01M21 12h.01" strokeWidth="3" />
+      <path
+        d={mood === "good" ? "M10 19q6 8 12 0" : mood === "bad" ? "M10 23q6-8 12 0" : "M11 21h10"}
+      />
+    </svg>
+  );
+}
 const feedbackColorClass = (mood: ExerciseFeedback["mood"]) =>
   mood === "good"
     ? styles.feedbackGood
@@ -261,7 +275,7 @@ function FeedbackForm({
                 onClick={() => setMood(option.mood)}
               >
                 <span className={styles.feedbackEmoji} aria-hidden="true">
-                  {option.emoji}
+                  <FeedbackFace mood={option.mood} />
                 </span>
                 <span>{option.label}</span>
               </button>
@@ -908,6 +922,30 @@ function HomeIcon({ id }: { id: (typeof homeMenu)[number][0] }) {
   );
 }
 
+function TrainingArtwork() {
+  return (
+    <svg className={styles.trainingArtwork} viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="84" stroke="currentColor" strokeWidth="0.75" />
+      <circle
+        cx="100"
+        cy="100"
+        r="67"
+        stroke="currentColor"
+        strokeWidth="0.75"
+        strokeDasharray="2 8"
+      />
+      <path d="M100 4v24M100 172v24M4 100h24M172 100h24" stroke="currentColor" />
+      <g transform="rotate(-32 100 100)" stroke="currentColor" strokeWidth="3">
+        <rect x="40" y="67" width="15" height="66" rx="4" />
+        <rect x="55" y="51" width="20" height="98" rx="5" />
+        <rect x="125" y="51" width="20" height="98" rx="5" />
+        <rect x="145" y="67" width="15" height="66" rx="4" />
+        <path d="M75 95h50M75 105h50M30 100h10M160 100h10" />
+      </g>
+    </svg>
+  );
+}
+
 export function SportApp() {
   const [store, setStore] = useState<SportStore | null>(null);
   const storeRef = useRef<SportStore | null>(null);
@@ -949,7 +987,6 @@ export function SportApp() {
   const cloud = useSportCloud();
 
   function openAssistant(mode: AssistantMode, trigger: HTMLButtonElement, focusSessionId?: string) {
-    // Touch Safari does not focus tapped buttons; preserve an explicit return target.
     trigger.focus();
     setAssistant({ mode, focusSessionId });
   }
@@ -1268,7 +1305,7 @@ export function SportApp() {
   }
 
   return (
-    <main className={styles.shell} data-theme={theme}>
+    <main className={styles.shell} data-theme={theme} data-section={tab}>
       <header className={styles.header}>
         {tab === "home" ? (
           <button
@@ -1299,7 +1336,24 @@ export function SportApp() {
           aria-label={theme === "dark" ? "Mode clair" : "Mode sombre"}
           onClick={() => selectTheme(theme === "dark" ? "light" : "dark")}
         >
-          {theme === "dark" ? "☀" : "◐"}
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            aria-hidden="true"
+          >
+            {theme === "dark" ? (
+              <>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5" />
+              </>
+            ) : (
+              <path d="M20.5 13A9 9 0 0 1 11 3.5 9 9 0 1 0 20.5 13Z" />
+            )}
+          </svg>
         </button>
       </header>
       <nav className={styles.nav} aria-label="Carnet de sport" hidden={tab === "home"}>
@@ -1324,6 +1378,7 @@ export function SportApp() {
               setConfirmFinish(false);
             }}
           >
+            <HomeIcon id={id} />
             {label}
             {id === "training" && active && <span className={styles.dot} aria-label="en cours" />}
           </button>
@@ -1349,425 +1404,384 @@ export function SportApp() {
         </div>
       ) : (
         <>
-          {tab === "home" && (
-            <section className={styles.home}>
-              <div className={styles.homeHero}>
-                <div className={styles.homeMark} aria-hidden="true">
-                  <SportIcon />
+          <SportView
+            key={tab}
+            screen={`${tab}:${current?.id ?? ""}:${Boolean(editing)}:${feedbackEntry?.id ?? ""}:${detailId ?? ""}:${editHistory}:${confirmFinish}:${sessionFeedbackOpen}`}
+          >
+            {tab === "home" && (
+              <section className={styles.home}>
+                <div className={styles.homeHero}>
+                  <h1>
+                    Carnet de <span>sport</span>
+                  </h1>
                 </div>
-                <h1>Carnet de sport</h1>
-              </div>
-              <HomeProgressPrompt history={store.history} active={store.active} />
-              <div className={styles.homeMenu}>
-                {homeMenu.map(([id, label, desc]) => (
-                  <button
-                    key={id}
-                    type="button"
-                    className={`${styles.homeButton} ${id === "training" ? styles.homeButtonPrimary : ""}`}
-                    onClick={() => {
-                      navigateToTab(id);
-                      if (id === "training" && !active) setWorkoutType("recommended");
-                      setDetailId(null);
-                      setEditing(null);
-                      setSupersetDraft(null);
-                      setEditHistory(false);
-                      setDeleteHistory(false);
-                      setConfirmFinish(false);
-                      setNotice("");
-                    }}
-                  >
-                    <span className={styles.homeButtonIcon}>
-                      <HomeIcon id={id} />
-                    </span>
-                    <span className={styles.homeButtonText}>
-                      <strong>
-                        {label}
-                        {id === "training" && active && (
-                          <span className={styles.dot} aria-label="séance en cours" />
-                        )}
-                      </strong>
-                      <span>{desc}</span>
-                    </span>
-                    <span className={styles.homeButtonChevron} aria-hidden="true">
-                      →
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
-          {tab === "training" && !active && (
-            <>
-              <section className={styles.hero}>
-                <h1>Nouvelle séance</h1>
-                <div className={styles.heroMark} aria-hidden="true">
-                  <SportIcon />
-                </div>
-              </section>
-              <section className={`${styles.panel} ${styles.coachEntry}`} aria-label="Assistant Sport">
-                <p className={styles.eyebrow}>
-                  <CoachAvatar small /> Milo · coach IA
-                </p>
-                <div className={styles.actions}>
-                  <button
-                    className={styles.secondary}
-                    type="button"
-                    onClick={(event) => openAssistant("prepare", event.currentTarget)}
-                  >
-                    Préparer ma séance
-                  </button>
-                  <button
-                    className={styles.textButton}
-                    type="button"
-                    onClick={(event) => openAssistant("import", event.currentTarget)}
-                  >
-                    Depuis un texte
-                  </button>
-                </div>
-              </section>
-              <section className={styles.panel}>
-                <h2>Format de séance</h2>
-                <div className={styles.segment} aria-label="Format d’entraînement">
-                  {(
-                    [
-                      ["full", "Full body"],
-                      ["half", "Half body"],
-                      ["ppl", "Push Pull Legs"],
-                    ] as const
-                  ).map(([id, label]) => (
+                <HomeProgressPrompt history={store.history} active={store.active} />
+                <div className={styles.homeMenu}>
+                  {homeMenu.map(([id, label, desc]) => (
                     <button
                       key={id}
-                      aria-label={label}
-                      aria-pressed={kind === id}
+                      type="button"
+                      className={`${styles.homeButton} ${id === "training" ? styles.homeButtonPrimary : ""}`}
                       onClick={() => {
-                        setKind(id);
-                        setCustomKind(id === "full" ? "full" : null);
+                        navigateToTab(id);
+                        if (id === "training" && !active) setWorkoutType("recommended");
+                        setDetailId(null);
+                        setEditing(null);
+                        setSupersetDraft(null);
+                        setEditHistory(false);
+                        setDeleteHistory(false);
+                        setConfirmFinish(false);
+                        setNotice("");
                       }}
                     >
-                      {label}
+                      <span className={styles.homeButtonIcon}>
+                        <HomeIcon id={id} />
+                      </span>
+                      {id === "training" && <TrainingArtwork />}
+                      <span className={styles.homeButtonText}>
+                        <strong>
+                          {label}
+                          {id === "training" && active && (
+                            <span className={styles.dot} aria-label="séance en cours" />
+                          )}
+                          {id !== "training" && (
+                            <span className={styles.homeButtonChevron} aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                  d="m9 6 6 6-6 6"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </span>
+                          )}
+                        </strong>
+                        <span>{desc}</span>
+                      </span>
                     </button>
                   ))}
                 </div>
-                <h2>Construction de séance</h2>
-                <div className={styles.segment} aria-label="Type d’entraînement">
-                  <button
-                    aria-label="Séances recommandées"
-                    aria-pressed={workoutType === "recommended"}
-                    onClick={() => setWorkoutType("recommended")}
-                  >
-                    Séances recommandées
-                  </button>
-                  <button
-                    aria-label="Entraînement libre"
-                    aria-pressed={workoutType === "free"}
-                    onClick={() => setWorkoutType("free")}
-                  >
-                    Entraînement libre
-                  </button>
-                </div>
-                {workoutType === "free" && kind === "half" && (
-                  <>
-                    <h2>Partie du corps</h2>
-                    <div className={styles.segment} aria-label="Partie du corps travaillée">
-                      {(["upper", "lower"] as const).map((id) => (
-                        <button
-                          key={id}
-                          aria-pressed={customKind === id}
-                          onClick={() => setCustomKind(id)}
-                        >
-                          {sessionLabels[id]}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-                {workoutType === "free" && kind === "ppl" && (
-                  <>
-                    <h2>Partie du corps</h2>
-                    <div className={styles.segment} aria-label="Partie du corps travaillée">
-                      {(["push", "pull", "legs"] as const).map((id) => (
-                        <button
-                          key={id}
-                          aria-pressed={customKind === id}
-                          onClick={() => setCustomKind(id)}
-                        >
-                          {sessionLabels[id]}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-                {workoutType === "recommended" ? (
-                  <div className={styles.recommendedSetup}>
-                    <h3>Durée disponible</h3>
-                    <div className={styles.segment} aria-label="Durée de l’entraînement">
-                      {(
-                        Object.entries(workoutDurations) as [
-                          WorkoutDuration,
-                          (typeof workoutDurations)[WorkoutDuration],
-                        ][]
-                      ).map(([id, duration]) => (
-                        <button
-                          key={id}
-                          aria-pressed={workoutDuration === id}
-                          onClick={() => setWorkoutDuration(id)}
-                        >
-                          {duration.label}
-                          <br />
-                          <small>{duration.minutes} min</small>
-                        </button>
-                      ))}
-                    </div>
-                    <div className={styles.recommendedList}>
-                      {recommendedWorkoutsFor(kind, workoutDuration).map((workout) => (
-                        <button
-                          className={styles.recommendedWorkout}
-                          key={workout.id}
-                          onClick={() =>
-                            start(
-                              workout.sessionKind,
-                              configsForRecommendedWorkout(workout),
-                              workout.name,
-                              "recommended",
-                            )
-                          }
-                        >
-                          <span>
-                            <strong>{workout.name}</strong>
-                            <em>
-                              {workout.exercises.length} exercices ·{" "}
-                              {workoutDurations[workout.duration].minutes} min environ
-                            </em>
-                          </span>
-                          <span aria-hidden="true">→</span>
-                        </button>
-                      ))}
-                    </div>
+              </section>
+            )}
+            {tab === "training" && !active && (
+              <>
+                <section className={styles.hero}>
+                  <h1>Nouvelle séance</h1>
+                  <div className={styles.heroMark} aria-hidden="true">
+                    <SportIcon />
                   </div>
-                ) : workoutType === "free" ? (
+                </section>
+                <section className={`${styles.panel} ${styles.coachEntry}`} aria-label="Assistant Sport">
+                  <div className={styles.actions}>
+                    <button
+                      className={styles.secondary}
+                      type="button"
+                      onClick={(event) => openAssistant("prepare", event.currentTarget)}
+                    >
+                      <CoachAvatar small />
+                      <span>Préparer ma séance à l’aide du coach</span>
+                    </button>
+                  </div>
+                </section>
+                <section className={styles.panel}>
+                  <h2>Format de séance</h2>
+                  <div className={styles.segment} aria-label="Format d’entraînement">
+                    {(
+                      [
+                        ["full", "Full body"],
+                        ["half", "Half body"],
+                        ["ppl", "Push Pull Legs"],
+                      ] as const
+                    ).map(([id, label]) => (
+                      <button
+                        key={id}
+                        aria-label={label}
+                        aria-pressed={kind === id}
+                        onClick={() => {
+                          setKind(id);
+                          setCustomKind(id === "full" ? "full" : null);
+                        }}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  <h2>Construction de séance</h2>
+                  <div className={styles.segment} aria-label="Type d’entraînement">
+                    <button
+                      aria-label="Séances recommandées"
+                      aria-pressed={workoutType === "recommended"}
+                      onClick={() => setWorkoutType("recommended")}
+                    >
+                      Séances recommandées
+                    </button>
+                    <button
+                      aria-label="Entraînement libre"
+                      aria-pressed={workoutType === "free"}
+                      onClick={() => setWorkoutType("free")}
+                    >
+                      Entraînement libre
+                    </button>
+                  </div>
+                  {workoutType === "free" && kind === "half" && (
+                    <>
+                      <h2>Partie du corps</h2>
+                      <div className={styles.segment} aria-label="Partie du corps travaillée">
+                        {(["upper", "lower"] as const).map((id) => (
+                          <button
+                            key={id}
+                            aria-pressed={customKind === id}
+                            onClick={() => setCustomKind(id)}
+                          >
+                            {sessionLabels[id]}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {workoutType === "free" && kind === "ppl" && (
+                    <>
+                      <h2>Partie du corps</h2>
+                      <div className={styles.segment} aria-label="Partie du corps travaillée">
+                        {(["push", "pull", "legs"] as const).map((id) => (
+                          <button
+                            key={id}
+                            aria-pressed={customKind === id}
+                            onClick={() => setCustomKind(id)}
+                          >
+                            {sessionLabels[id]}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {workoutType === "recommended" ? (
+                    <div className={styles.recommendedSetup}>
+                      <h3>Durée disponible</h3>
+                      <div className={styles.segment} aria-label="Durée de l’entraînement">
+                        {(
+                          Object.entries(workoutDurations) as [
+                            WorkoutDuration,
+                            (typeof workoutDurations)[WorkoutDuration],
+                          ][]
+                        ).map(([id, duration]) => (
+                          <button
+                            key={id}
+                            aria-pressed={workoutDuration === id}
+                            onClick={() => setWorkoutDuration(id)}
+                          >
+                            {duration.label}
+                            <br />
+                            <small>{duration.minutes} min</small>
+                          </button>
+                        ))}
+                      </div>
+                      <div className={styles.recommendedList}>
+                        {recommendedWorkoutsFor(kind, workoutDuration).map((workout) => (
+                          <button
+                            className={styles.recommendedWorkout}
+                            key={workout.id}
+                            onClick={() =>
+                              start(
+                                workout.sessionKind,
+                                configsForRecommendedWorkout(workout),
+                                workout.name,
+                                "recommended",
+                              )
+                            }
+                          >
+                            <span>
+                              <strong>{workout.name}</strong>
+                            </span>
+                            <span aria-hidden="true">→</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ) : workoutType === "free" ? (
+                    <button
+                      className={styles.primary}
+                      disabled={!customKind}
+                      onClick={() => {
+                        if (customKind) start(customKind);
+                      }}
+                    >
+                      Commencer ma séance <span aria-hidden="true">→</span>
+                    </button>
+                  ) : null}
+                </section>
+              </>
+            )}
+            {tab === "training" && active && (
+              <>
+                <div className={styles.sessionHeading}>
+                  <div>
+                    <p className={styles.eyebrow}>
+                      Séance en cours · {dateLabel(active.startedAt)}
+                    </p>
+                    <h1>{active.name || sessionLabels[active.kind]}</h1>
+                    {active.name && (
+                      <p className={styles.sessionFormat}>{sessionLabels[active.kind]}</p>
+                    )}
+                  </div>
                   <button
-                    className={styles.primary}
-                    disabled={!customKind}
+                    className={styles.secondary}
+                    aria-label="Terminer ma séance"
+                    disabled={Boolean(feedbackEntry) || sessionFeedbackOpen}
                     onClick={() => {
-                      if (customKind) start(customKind);
+                      timer.stop();
+                      setConfirmFinish(true);
                     }}
                   >
-                    Commencer ma séance <span aria-hidden="true">→</span>
+                    Terminer la séance
                   </button>
-                ) : null}
-              </section>
-              {!cloud.profile && (
-                <section className={styles.panel} aria-labelledby="social-invite">
-                  <h2 id="social-invite">Social</h2>
-                  <p className={styles.hint}>
-                    Retrouvez vos amis, consultez leurs séances et encouragez-les après un
-                    entraînement.
-                  </p>
-                  <Link className={styles.secondary} href="/sport/compte">
-                    {cloud.session ? "Choisir mon pseudo" : "Me connecter pour retrouver mes amis"}
-                  </Link>
-                </section>
-              )}
-            </>
-          )}
-          {tab === "training" && active && (
-            <>
-              <div className={styles.sessionHeading}>
-                <div>
-                  <p className={styles.eyebrow}>Séance en cours · {dateLabel(active.startedAt)}</p>
-                  <h1>{active.name || sessionLabels[active.kind]}</h1>
-                  {active.name && (
-                    <p className={styles.sessionFormat}>{sessionLabels[active.kind]}</p>
-                  )}
                 </div>
-                <button
-                  className={styles.secondary}
-                  aria-label="Terminer ma séance"
-                  disabled={Boolean(feedbackEntry) || sessionFeedbackOpen}
-                  onClick={() => {
-                    timer.stop();
-                    setConfirmFinish(true);
-                  }}
-                >
-                  Terminer la séance
-                </button>
-              </div>
-              {confirmFinish ? null : feedbackEntry ? (
-                <FeedbackForm
-                  eyebrow="Exercice terminé"
-                  title={`Comment s’est passé ${feedbackEntry.superset ? "le superset" : exerciseName(feedbackEntry.config.exerciseId)} ?`}
-                  commentPlaceholder="Une remarque sur l’exercice ?"
-                  nextLabel={
-                    active.exercises.some(
-                      (entry) => !entry.finished && entry.id !== feedbackEntry.id,
-                    )
-                      ? "Passer à l’exercice suivant"
-                      : "Choisir l’exercice suivant"
-                  }
-                  onSubmit={(feedback) => {
-                    updateEntry(feedbackEntry.id, (entry) => ({ ...entry, feedback }));
-                    setFeedbackEntryId(null);
-                    setRecoveryTimerVisible(true);
-                    timer.start(recoveryDuration);
-                    setNotice("Ressenti enregistré. Récupération lancée.");
-                  }}
-                />
-              ) : editing ? (
-                <ConfigForm
-                  key={`${editing.entryId ?? "new"}-${configKey(editing.config)}`}
-                  initial={editing.config}
-                  minimumSets={
-                    editing.entryId
-                      ? (active.exercises.find((e) => e.id === editing.entryId)?.completedSets
-                          .length ?? 0) + 1
-                      : 1
-                  }
-                  onCancel={() => {
-                    setEditing(null);
-                    setSupersetDraft(null);
-                  }}
-                  onSubmit={(config) => {
-                    const alignedConfig =
-                      editing.superset && !editing.entryId
-                        ? {
-                            ...config,
-                            sets: editing.superset.sets,
-                            restSeconds: editing.superset.restSeconds,
-                          }
-                        : config;
-                    if (editing.entryId)
-                      updateEntry(editing.entryId, (e) => ({
-                        ...e,
-                        config: alignedConfig,
-                        ...(editing.superset ? { superset: editing.superset } : {}),
-                      }));
-                    else
-                      update((s) =>
-                        s.active
+                {confirmFinish ? null : feedbackEntry ? (
+                  <FeedbackForm
+                    eyebrow="Exercice terminé"
+                    title={`Comment s’est passé ${feedbackEntry.superset ? "le superset" : exerciseName(feedbackEntry.config.exerciseId)} ?`}
+                    commentPlaceholder="Une remarque sur l’exercice ?"
+                    nextLabel={
+                      active.exercises.some(
+                        (entry) => !entry.finished && entry.id !== feedbackEntry.id,
+                      )
+                        ? "Passer à l’exercice suivant"
+                        : "Choisir l’exercice suivant"
+                    }
+                    onSubmit={(feedback) => {
+                      updateEntry(feedbackEntry.id, (entry) => ({ ...entry, feedback }));
+                      setFeedbackEntryId(null);
+                      setRecoveryTimerVisible(true);
+                      timer.start(recoveryDuration);
+                      setNotice("Ressenti enregistré. Récupération lancée.");
+                    }}
+                  />
+                ) : editing ? (
+                  <ConfigForm
+                    key={`${editing.entryId ?? "new"}-${configKey(editing.config)}`}
+                    initial={editing.config}
+                    minimumSets={
+                      editing.entryId
+                        ? (active.exercises.find((e) => e.id === editing.entryId)?.completedSets
+                            .length ?? 0) + 1
+                        : 1
+                    }
+                    onCancel={() => {
+                      setEditing(null);
+                      setSupersetDraft(null);
+                    }}
+                    onSubmit={(config) => {
+                      const alignedConfig =
+                        editing.superset && !editing.entryId
                           ? {
-                              ...s,
-                              active: {
-                                ...s.active,
-                                exercises: [
-                                  ...s.active.exercises,
-                                  createEntry(
-                                    editing.superset ?? alignedConfig,
-                                    editing.superset ? alignedConfig : undefined,
-                                  ),
-                                ],
-                              },
+                              ...config,
+                              sets: editing.superset.sets,
+                              restSeconds: editing.superset.restSeconds,
                             }
-                          : s,
-                      );
-                    setEditing(null);
-                    setSupersetDraft(null);
-                    setNotice("");
-                  }}
-                  onAddSuperset={
-                    active.source !== "recommended" && !editing.entryId && !editing.superset
-                      ? (config) => {
-                          setSupersetDraft(config);
-                          setEditing(null);
-                          setNotice("Choisissez le deuxième exercice du superset.");
-                        }
-                      : undefined
-                  }
-                  heading={editing.superset ? "Deuxième exercice du superset" : undefined}
-                />
-              ) : current ? (
-                <section
-                  className={`${styles.workout} ${styles.guidedWorkout}`}
-                  aria-label="Exercice en cours"
-                >
-                  <header className={styles.workoutHeader}>
-                    <div className={styles.workoutIdentity}>
-                      <h2>{exerciseCountLabel(current)}</h2>
-                      {current.superset && (
-                        <p className={styles.sessionFormat}>Superset · 2 exercices</p>
-                      )}
-                    </div>
-                    <div className={styles.workoutTools}>
-                      {!current.superset && (
-                        <button
-                          type="button"
-                          className={`${styles.pyramidToggle} ${current.pyramid ? styles.pyramidActive : ""}`}
-                          aria-pressed={current.pyramid}
-                          onClick={() =>
-                            updateEntry(current.id, (entry) => ({
-                              ...entry,
-                              pyramid: !entry.pyramid,
-                            }))
-                          }
-                        >
-                          Pyramidal
-                        </button>
-                      )}
-                      <Star
-                        selected={isFavorite(current.config)}
-                        label="Configuration favorite"
-                        onClick={() => toggleFavorite(current.config)}
-                      />
-                    </div>
-                  </header>
-                  <div className={styles.workoutFocus}>
-                    <div className={styles.guidedFocusTop}>
-                      <div className={styles.quickProgress}>
-                        <div
-                          className={`${styles.sets} ${styles.quickSets}`}
-                          aria-label={`${completedRoundCount(current)} ${current.superset ? "tours sur" : "séries sur"} ${current.config.sets} ${current.superset ? "effectués" : "effectuées"}`}
-                        >
-                          {Array.from({ length: current.config.sets }, (_, i) => (
-                            <span
-                              key={i}
-                              className={
-                                i < completedRoundCount(current)
-                                  ? styles.setDone
-                                  : i === completedRoundCount(current)
-                                    ? styles.setCurrent
-                                    : ""
+                          : config;
+                      if (editing.entryId)
+                        updateEntry(editing.entryId, (e) => ({
+                          ...e,
+                          config: alignedConfig,
+                          ...(editing.superset ? { superset: editing.superset } : {}),
+                        }));
+                      else
+                        update((s) =>
+                          s.active
+                            ? {
+                                ...s,
+                                active: {
+                                  ...s.active,
+                                  exercises: [
+                                    ...s.active.exercises,
+                                    createEntry(
+                                      editing.superset ?? alignedConfig,
+                                      editing.superset ? alignedConfig : undefined,
+                                    ),
+                                  ],
+                                },
                               }
-                            >
-                              {i < completedRoundCount(current) ? "✓" : i + 1}
-                            </span>
-                          ))}
-                        </div>
+                            : s,
+                        );
+                      setEditing(null);
+                      setSupersetDraft(null);
+                      setNotice("");
+                    }}
+                    onAddSuperset={
+                      active.source !== "recommended" && !editing.entryId && !editing.superset
+                        ? (config) => {
+                            setSupersetDraft(config);
+                            setEditing(null);
+                            setNotice("Choisissez le deuxième exercice du superset.");
+                          }
+                        : undefined
+                    }
+                    heading={editing.superset ? "Deuxième exercice du superset" : undefined}
+                  />
+                ) : current ? (
+                  <section
+                    className={`${styles.workout} ${styles.guidedWorkout}`}
+                    aria-label="Exercice en cours"
+                  >
+                    <header className={styles.workoutHeader}>
+                      <div className={styles.workoutIdentity}>
+                        <h2>{exerciseCountLabel(current)}</h2>
+                        {current.superset && (
+                          <p className={styles.sessionFormat}>Superset · 2 exercices</p>
+                        )}
                       </div>
-                      {active.source === "recommended" && (
-                        <label className={styles.quickLoad}>
-                          <span>{loadInputLabel(current.config.equipment)}</span>
-                          <input
-                            aria-label={`Charge pour ${exerciseName(current.config.exerciseId)}`}
-                            type="number"
-                            inputMode="decimal"
-                            min={0}
-                            max={2000}
-                            step={0.25}
-                            value={current.config.loadKg}
-                            onChange={(event) => {
-                              const loadKg = Number(event.target.value);
-                              if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000) return;
+                      <div className={styles.workoutTools}>
+                        {!current.superset && (
+                          <button
+                            type="button"
+                            className={`${styles.pyramidToggle} ${current.pyramid ? styles.pyramidActive : ""}`}
+                            aria-pressed={current.pyramid}
+                            onClick={() =>
                               updateEntry(current.id, (entry) => ({
                                 ...entry,
-                                config: { ...entry.config, loadKg },
-                              }));
-                            }}
-                          />
-                        </label>
-                      )}
-                    </div>
-                    {current.pyramid && (
-                      <div
-                        className={styles.pyramidPanel}
-                        aria-label="Réglages de la prochaine série"
-                      >
-                        <p className={styles.eyebrow}>
-                          Pyramidal · série {completedRoundCount(current) + 1}
-                        </p>
-                        <div className={styles.pyramidFields}>
+                                pyramid: !entry.pyramid,
+                              }))
+                            }
+                          >
+                            Pyramidal
+                          </button>
+                        )}
+                        <Star
+                          selected={isFavorite(current.config)}
+                          label="Configuration favorite"
+                          onClick={() => toggleFavorite(current.config)}
+                        />
+                      </div>
+                    </header>
+                    <div className={styles.workoutFocus}>
+                      <div className={styles.guidedFocusTop}>
+                        <div className={styles.quickProgress}>
+                          <div
+                            className={`${styles.sets} ${styles.quickSets}`}
+                            aria-label={`${completedRoundCount(current)} ${current.superset ? "tours sur" : "séries sur"} ${current.config.sets} ${current.superset ? "effectués" : "effectuées"}`}
+                          >
+                            {Array.from({ length: current.config.sets }, (_, i) => (
+                              <span
+                                key={i}
+                                className={
+                                  i < completedRoundCount(current)
+                                    ? styles.setDone
+                                    : i === completedRoundCount(current)
+                                      ? styles.setCurrent
+                                      : ""
+                                }
+                              >
+                                {i < completedRoundCount(current) ? "✓" : i + 1}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        {active.source === "recommended" && (
                           <label className={styles.quickLoad}>
                             <span>{loadInputLabel(current.config.equipment)}</span>
                             <input
-                              aria-label={`Charge de la série ${completedRoundCount(current) + 1}`}
+                              aria-label={`Charge pour ${exerciseName(current.config.exerciseId)}`}
                               type="number"
                               inputMode="decimal"
                               min={0}
@@ -1784,796 +1798,856 @@ export function SportApp() {
                               }}
                             />
                           </label>
-                          <label className={styles.quickLoad}>
-                            <span>
-                              Répétitions <span className={styles.optional}>facultatif</span>
-                            </span>
-                            <input
-                              aria-label={`Répétitions de la série ${completedRoundCount(current) + 1}`}
-                              type="number"
-                              inputMode="numeric"
-                              min={1}
-                              max={200}
-                              step={1}
-                              placeholder="—"
-                              value={current.config.reps ?? ""}
-                              onChange={(event) => {
-                                const reps = event.target.value ? Number(event.target.value) : null;
-                                if (
-                                  reps !== null &&
-                                  (!Number.isInteger(reps) || reps < 1 || reps > 200)
-                                )
-                                  return;
-                                updateEntry(current.id, (entry) => ({
-                                  ...entry,
-                                  config: { ...entry.config, reps },
-                                }));
-                              }}
-                            />
-                          </label>
-                        </div>
-                        <p className={styles.hint}>
-                          Ces valeurs seront enregistrées sur la prochaine série. Ajustez-les avant
-                          chaque validation.
-                        </p>
+                        )}
                       </div>
-                    )}
-                    <div className={styles.timerRow}>
-                      <div className={styles.timer}>
-                        <span className={styles.timerLabel}>
-                          {current.superset ? "Repos après le superset" : "Repos"}
-                        </span>
+                      {current.pyramid && (
                         <div
-                          className={styles.clock}
-                          role="timer"
-                          aria-label="Temps de repos restant"
+                          className={styles.pyramidPanel}
+                          aria-label="Réglages de la prochaine série"
                         >
-                          {timer.remaining === null
-                            ? timeLabel(current.config.restSeconds)
-                            : timeLabel(timer.remaining)}
+                          <p className={styles.eyebrow}>
+                            Pyramidal · série {completedRoundCount(current) + 1}
+                          </p>
+                          <div className={styles.pyramidFields}>
+                            <label className={styles.quickLoad}>
+                              <span>{loadInputLabel(current.config.equipment)}</span>
+                              <input
+                                aria-label={`Charge de la série ${completedRoundCount(current) + 1}`}
+                                type="number"
+                                inputMode="decimal"
+                                min={0}
+                                max={2000}
+                                step={0.25}
+                                value={current.config.loadKg}
+                                onChange={(event) => {
+                                  const loadKg = Number(event.target.value);
+                                  if (!Number.isFinite(loadKg) || loadKg < 0 || loadKg > 2000)
+                                    return;
+                                  updateEntry(current.id, (entry) => ({
+                                    ...entry,
+                                    config: { ...entry.config, loadKg },
+                                  }));
+                                }}
+                              />
+                            </label>
+                            <label className={styles.quickLoad}>
+                              <span>
+                                Répétitions <span className={styles.optional}>facultatif</span>
+                              </span>
+                              <input
+                                aria-label={`Répétitions de la série ${completedRoundCount(current) + 1}`}
+                                type="number"
+                                inputMode="numeric"
+                                min={1}
+                                max={200}
+                                step={1}
+                                placeholder="—"
+                                value={current.config.reps ?? ""}
+                                onChange={(event) => {
+                                  const reps = event.target.value
+                                    ? Number(event.target.value)
+                                    : null;
+                                  if (
+                                    reps !== null &&
+                                    (!Number.isInteger(reps) || reps < 1 || reps > 200)
+                                  )
+                                    return;
+                                  updateEntry(current.id, (entry) => ({
+                                    ...entry,
+                                    config: { ...entry.config, reps },
+                                  }));
+                                }}
+                              />
+                            </label>
+                          </div>
+                          <p className={styles.hint}>
+                            Ces valeurs seront enregistrées sur la prochaine série. Ajustez-les
+                            avant chaque validation.
+                          </p>
+                        </div>
+                      )}
+                      <div className={styles.timerRow}>
+                        <div
+                          className={styles.timer}
+                          style={
+                            {
+                              "--rest-progress": `${Math.min(1, Math.max(0, (timer.remaining ?? current.config.restSeconds) / current.config.restSeconds)) * 100}%`,
+                            } as CSSProperties
+                          }
+                        >
+                          <span className={styles.timerLabel}>
+                            {current.superset ? "Repos après le superset" : "Repos"}
+                          </span>
+                          <div
+                            className={styles.clock}
+                            role="timer"
+                            aria-label="Temps de repos restant"
+                          >
+                            {timer.remaining === null
+                              ? timeLabel(current.config.restSeconds)
+                              : timeLabel(timer.remaining)}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {timer.remaining !== null && timer.remaining > 0 ? (
-                    <button className={styles.primary} onClick={timer.stop}>
-                      Passer le repos
-                    </button>
-                  ) : (
-                    <button
-                      className={styles.primary}
-                      onClick={() => {
-                        const latest = storeRef.current?.active?.exercises.find(
-                          (e) => e.id === current.id,
-                        );
-                        if (!latest || latest.finished) return;
-                        const next = completeSet(latest);
-                        updateEntry(current.id, () => next);
-                        if (next.finished) {
-                          timer.stop();
-                          setFeedbackEntryId(current.id);
-                          setNotice("");
-                        } else timer.start(current.config.restSeconds);
-                      }}
-                    >
-                      {completedRoundCount(current) + 1 === current.config.sets
-                        ? current.superset
-                          ? "Dernier superset terminé ✓"
-                          : "Dernière série terminée ✓"
-                        : current.superset
-                          ? "Superset terminé · démarrer le repos"
-                          : "Série terminée · démarrer le repos"}
-                    </button>
-                  )}
-                  <div className={`${styles.actions} ${styles.workoutActions}`}>
-                    <button
-                      className={styles.textButton}
-                      onClick={() => timer.start(current.config.restSeconds)}
-                    >
-                      {timer.remaining !== null && timer.remaining > 0
-                        ? "Recommencer le repos"
-                        : "Démarrer le chrono"}
-                    </button>
-                    <button
-                      className={styles.textButton}
-                      onClick={() =>
-                        setEditing({
-                          config: current.config,
-                          entryId: current.id,
-                          ...(current.superset ? { superset: current.superset } : {}),
-                        })
-                      }
-                    >
-                      Modifier les réglages
-                    </button>
-                    {current.completedSets.length > 0 && (
+                    {timer.remaining !== null && timer.remaining > 0 ? (
+                      <button className={styles.primary} onClick={timer.stop}>
+                        Passer le repos
+                      </button>
+                    ) : (
+                      <button
+                        className={styles.primary}
+                        onClick={() => {
+                          const latest = storeRef.current?.active?.exercises.find(
+                            (e) => e.id === current.id,
+                          );
+                          if (!latest || latest.finished) return;
+                          const next = completeSet(latest);
+                          updateEntry(current.id, () => next);
+                          if (next.finished) {
+                            timer.stop();
+                            setFeedbackEntryId(current.id);
+                            setNotice("");
+                          } else timer.start(current.config.restSeconds);
+                        }}
+                      >
+                        {completedRoundCount(current) + 1 === current.config.sets
+                          ? current.superset
+                            ? "Dernier superset terminé ✓"
+                            : "Dernière série terminée ✓"
+                          : current.superset
+                            ? "Superset terminé · démarrer le repos"
+                            : "Série terminée · démarrer le repos"}
+                      </button>
+                    )}
+                    <div className={`${styles.actions} ${styles.workoutActions}`}>
+                      <button
+                        className={styles.textButton}
+                        onClick={() => timer.start(current.config.restSeconds)}
+                      >
+                        {timer.remaining !== null && timer.remaining > 0
+                          ? "Recommencer le repos"
+                          : "Démarrer le chrono"}
+                      </button>
+                      <button
+                        className={styles.textButton}
+                        onClick={() =>
+                          setEditing({
+                            config: current.config,
+                            entryId: current.id,
+                            ...(current.superset ? { superset: current.superset } : {}),
+                          })
+                        }
+                      >
+                        Modifier les réglages
+                      </button>
+                      {current.completedSets.length > 0 && (
+                        <button
+                          className={styles.secondary}
+                          onClick={() => {
+                            timer.stop();
+                            updateEntry(current.id, (e) => ({
+                              ...e,
+                              completedSets: e.completedSets.slice(0, e.superset ? -2 : -1),
+                              completedRounds: e.superset
+                                ? Math.max(0, e.completedRounds - 1)
+                                : e.completedSets.length - 1,
+                              finished: false,
+                            }));
+                          }}
+                        >
+                          Annuler la dernière série
+                        </button>
+                      )}
                       <button
                         className={styles.secondary}
                         onClick={() => {
                           timer.stop();
-                          updateEntry(current.id, (e) => ({
-                            ...e,
-                            completedSets: e.completedSets.slice(0, e.superset ? -2 : -1),
-                            completedRounds: e.superset
-                              ? Math.max(0, e.completedRounds - 1)
-                              : e.completedSets.length - 1,
-                            finished: false,
-                          }));
+                          updateEntry(current.id, (e) => ({ ...e, finished: true }));
+                          setNotice(
+                            "Exercice arrêté. Seules les séries validées seront conservées.",
+                          );
                         }}
                       >
-                        Annuler la dernière série
+                        Arrêter cet exercice
                       </button>
-                    )}
-                    <button
-                      className={styles.secondary}
-                      onClick={() => {
-                        timer.stop();
-                        updateEntry(current.id, (e) => ({ ...e, finished: true }));
-                        setNotice("Exercice arrêté. Seules les séries validées seront conservées.");
-                      }}
-                    >
-                      Arrêter cet exercice
-                    </button>
-                  </div>
-                </section>
-              ) : !confirmFinish ? (
-                <>
-                  {supersetDraft && (
-                    <section className={styles.panel} aria-label="Premier exercice du superset">
-                      <p className={styles.eyebrow}>Superset · premier exercice</p>
-                      <h2>{exerciseName(supersetDraft.exerciseId)}</h2>
-                      <p className={styles.hint}>
-                        {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos unique entre
-                        les tours
-                      </p>
-                    </section>
-                  )}
-                  <Catalog
-                    kind={active.kind}
-                    favorites={store.favorites}
-                    history={store.history}
-                    freeSession={active.source !== "recommended"}
-                    recoveryTimerVisible={showRecoveryTimer}
-                    recoveryDuration={recoveryDuration}
-                    recoveryRemaining={timer.remaining}
-                    onRecoveryDurationChange={(seconds) => {
-                      setRecoveryDuration(seconds);
-                      if (timer.remaining !== null && timer.remaining > 0) timer.start(seconds);
-                    }}
-                    lastConfigFor={(exerciseId) => lastConfigForExercise(store.history, exerciseId)}
-                    onChoose={(config) => {
-                      timer.stop();
-                      setRecoveryTimerVisible(false);
-                      setEditing({
-                        config,
-                        ...(supersetDraft
-                          ? {
-                              superset: supersetDraft,
-                            }
-                          : {}),
-                      });
-                    }}
-                  />
-                </>
-              ) : null}
-              {!feedbackEntryId && active.source === "recommended" && (
-                <details className={`${styles.recap} ${styles.programRecap}`} open>
-                  <summary>Programme de la séance · {active.exercises.length} exercices</summary>
-                  <ol className={styles.programList}>
-                    {active.exercises.map((entry, index) => {
-                      const status = entry.finished
-                        ? "Terminé"
-                        : entry.id === current?.id
-                          ? "En cours"
-                          : "À venir";
-                      return (
-                        <li key={entry.id} data-status={status}>
-                          <span>{index + 1}</span>
-                          <div>
-                            <strong>{exerciseCountLabel(entry)}</strong>
-                            <small>
-                              {entry.config.sets} {entry.superset ? "tours" : "séries"} · repos{" "}
-                              {timeLabel(entry.config.restSeconds)}
-                            </small>
-                          </div>
-                          <em>{status}</em>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </details>
-              )}
-              {!feedbackEntryId && active.exercises.some((e) => e.finished) && (
-                <details className={styles.recap}>
-                  <summary>
-                    Dans cette séance · {active.exercises.filter((e) => e.finished).length}{" "}
-                    exercice(s) terminé(s)
-                  </summary>
-                  {active.exercises
-                    .filter((e) => e.finished)
-                    .map((e) => (
-                      <div key={e.id} className={styles.recapRow}>
-                        <div>
-                          <strong>{exerciseCountLabel(e)}</strong>
-                          <p>
-                            {completedRoundCount(e)}/{e.config.sets}{" "}
-                            {e.superset ? "tours" : "séries"} · {loadLabel(e.config)}
-                            {e.superset && ` · ${loadLabel(e.superset)}`}
-                          </p>
-                        </div>
-                        <Star
-                          selected={isFavorite(e.config)}
-                          label={`Favori : ${exerciseName(e.config.exerciseId)}`}
-                          onClick={() => toggleFavorite(e.config)}
-                        />
-                        {!current && e.completedSets.length > 0 && (
-                          <button
-                            className={styles.textButton}
-                            onClick={() => {
-                              setEditing(null);
-                              updateEntry(e.id, (entry) => ({
-                                ...entry,
-                                finished: false,
-                                completedSets: entry.completedSets.slice(
-                                  0,
-                                  entry.superset ? -2 : -1,
-                                ),
-                                completedRounds: entry.superset
-                                  ? Math.max(0, entry.completedRounds - 1)
-                                  : entry.completedSets.length - 1,
-                              }));
-                              setNotice("Dernière série annulée.");
-                            }}
-                          >
-                            Annuler la dernière série
-                          </button>
-                        )}
-                      </div>
-                    ))}
-                </details>
-              )}
-              {confirmFinish ? (
-                <section className={styles.confirm} aria-label="Terminer la séance">
-                  {sessionFeedbackOpen ? (
-                    <FeedbackForm
-                      eyebrow="Séance terminée"
-                      title="Comment s’est passée votre séance ?"
-                      commentPlaceholder="Une remarque sur la séance ?"
-                      allowPhotos
-                      nextLabel="Enregistrer la séance"
-                      onSubmit={saveActiveSession}
-                    />
-                  ) : (
-                    <>
-                      <h2>
-                        {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
-                      </h2>
-                      <p>
-                        {totalSets
-                          ? `${totalSets} série(s) validée(s) seront conservées. Les séries non effectuées ne seront pas comptées.`
-                          : "Aucune série n’a été validée. Rien ne sera ajouté à l’historique."}
-                      </p>
-                      <div className={styles.actions}>
-                        <button
-                          className={styles.primary}
-                          onClick={() => {
-                            if (totalSets) setSessionFeedbackOpen(true);
-                            else saveActiveSession();
-                          }}
-                        >
-                          {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
-                        </button>
-                        <button
-                          className={styles.secondary}
-                          onClick={() => setConfirmFinish(false)}
-                        >
-                          Continuer ma séance
-                        </button>
-                        {totalSets > 0 && (
-                          <button
-                            className={styles.secondary}
-                            onClick={() => {
-                              update((s) => ({ ...s, active: null }));
-                              timer.stop();
-                              setConfirmFinish(false);
-                              setEditing(null);
-                              setSupersetDraft(null);
-                              setSessionFeedbackOpen(false);
-                              setNotice("Séance quittée sans ajout à l’historique.");
-                            }}
-                          >
-                            Quitter sans enregistrer
-                          </button>
-                        )}
-                      </div>
-                    </>
-                  )}
-                </section>
-              ) : null}
-            </>
-          )}
-          {tab === "history" && (
-            <>
-              <div className={styles.pageHeading}>
-                <h1>Historique</h1>
-              </div>
-              <div
-                className={`${styles.segment} ${styles.historyFilters}`}
-                role="group"
-                aria-label="Filtrer les séances"
-              >
-                {(
-                  [
-                    ["all", "Tout"],
-                    ["mine", "Moi uniquement"],
-                    ["friends", "Mes amis"],
-                  ] as const
-                ).map(([filter, label]) => (
-                  <button
-                    key={filter}
-                    type="button"
-                    aria-pressed={historyFilter === filter}
-                    onClick={() => setHistoryFilter(filter)}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-              {detail && editHistory ? (
-                <HistoryEditor
-                  key={detail.id}
-                  session={detail}
-                  onCancel={() => setEditHistory(false)}
-                  onSave={(updated) => {
-                    update((s) => ({
-                      ...s,
-                      history: s.history.map((item) => (item.id === updated.id ? updated : item)),
-                    }));
-                    setEditHistory(false);
-                    setNotice("Séance modifiée.");
-                  }}
-                />
-              ) : detail ? (
-                <>
-                  <button
-                    className={styles.textButton}
-                    onClick={() => {
-                      setDetailId(null);
-                      setDeleteHistory(false);
-                    }}
-                  >
-                    ← Toutes les séances
-                  </button>
-                  <section className={styles.panel}>
-                    <div className={styles.sectionHeading}>
-                      <div>
-                        <p className={styles.eyebrow}>{dateTimeLabel(detail.startedAt)}</p>
-                        <p
-                          className={
-                            detailIsFriend ? styles.friendHistoryOwner : styles.historyOwner
-                          }
-                        >
-                          @{detailItem?.username}
-                        </p>
-                        <h2>
-                          {detail.name || sessionLabels[detail.kind]}
-                          {detail.feedback && (
-                            <span
-                              className={`${styles.historyFeedback} ${feedbackColorClass(detail.feedback.mood)}`}
-                              title={`Ressenti : ${detail.feedback.mood}`}
-                              aria-label={`Ressenti : ${detail.feedback.mood}`}
-                            >
-                              {feedbackEmojiByMood[detail.feedback.mood]}
-                            </span>
-                          )}
-                        </h2>
-                      </div>
-                      {!detailIsFriend && (
-                        <Star
-                          selected={store.templates.some((t) => t.id === detail.id)}
-                          label="Séance favorite"
-                          onClick={() => toggleTemplate(detail)}
-                        />
-                      )}
                     </div>
-                    {detail.feedback?.comment.trim() && (
-                      <p className={styles.historySessionComment}>{detail.feedback.comment}</p>
+                  </section>
+                ) : !confirmFinish ? (
+                  <>
+                    {supersetDraft && (
+                      <section className={styles.panel} aria-label="Premier exercice du superset">
+                        <p className={styles.eyebrow}>Superset · premier exercice</p>
+                        <h2>{exerciseName(supersetDraft.exerciseId)}</h2>
+                        <p className={styles.hint}>
+                          {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos unique
+                          entre les tours
+                        </p>
+                      </section>
                     )}
-                    <p className={styles.hint}>
-                      {detail.exercises.length} exercices ·{" "}
-                      {detail.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)} séries
-                      effectuées · tonnage total : {formatVolume(getSessionVolume(detail))}
-                    </p>
-                    {detail.feedback?.photos && detail.feedback.photos.length > 0 && (
-                      <div className={styles.historyPhotoGallery} aria-label="Photos de la séance">
-                        {detail.feedback.photos.map((photo, index) => (
-                          <button
-                            key={photo}
-                            type="button"
-                            className={styles.historyPhotoButton}
-                            aria-label={`Agrandir la photo ${index + 1}`}
-                            onClick={() =>
-                              setPhotoViewer({ photos: detail.feedback?.photos ?? [], index })
-                            }
-                          >
-                            <img src={photo} alt={`Photo de la séance ${index + 1}`} />
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                    {detailIsFriend && detailItem && (
-                      <SessionReactions
-                        ownerId={detailItem.ownerId}
-                        ownerName={detailItem.username}
-                        sessionId={detail.id}
-                      />
-                    )}
-                    {detail.exercises.map((e) => {
-                      const groups = [e.config, ...(e.superset ? [e.superset] : [])].map(
-                        (config) => ({
+                    <Catalog
+                      kind={active.kind}
+                      favorites={store.favorites}
+                      history={store.history}
+                      freeSession={active.source !== "recommended"}
+                      recoveryTimerVisible={showRecoveryTimer}
+                      recoveryDuration={recoveryDuration}
+                      recoveryRemaining={timer.remaining}
+                      onRecoveryDurationChange={(seconds) => {
+                        setRecoveryDuration(seconds);
+                        if (timer.remaining !== null && timer.remaining > 0) timer.start(seconds);
+                      }}
+                      lastConfigFor={(exerciseId) =>
+                        lastConfigForExercise(store.history, exerciseId)
+                      }
+                      onChoose={(config) => {
+                        timer.stop();
+                        setRecoveryTimerVisible(false);
+                        setEditing({
                           config,
-                          sets: e.completedSets.filter(
-                            (set) => setExerciseId(e, set) === config.exerciseId,
-                          ),
-                        }),
-                      );
-                      return (
-                        <div className={styles.historyExercise} key={e.id}>
-                          <div className={styles.sectionHeading}>
-                            <h3>
-                              {exerciseCountLabel(e)}
-                              {e.superset && <span className={styles.historyMode}>Superset</span>}
-                              {e.pyramid && <span className={styles.historyMode}>Pyramidal</span>}
-                              {e.feedback && (
-                                <span
-                                  className={`${styles.historyFeedback} ${feedbackColorClass(e.feedback.mood)}`}
-                                  title={`Ressenti : ${e.feedback.mood}`}
-                                  aria-label={`Ressenti : ${e.feedback.mood}`}
-                                >
-                                  {feedbackEmojiByMood[e.feedback.mood]}
-                                </span>
-                              )}
-                            </h3>
-                            <Star
-                              selected={isFavorite(e.config)}
-                              label={`Favori : ${exerciseName(e.config.exerciseId)}`}
-                              onClick={() => toggleFavorite(e.config)}
-                            />
-                          </div>
-                          <p>
-                            {e.superset
-                              ? `${equipmentLabels[e.config.equipment]} + ${equipmentLabels[e.superset.equipment]} · repos prévu `
-                              : `${equipmentLabels[e.config.equipment]} · repos prévu `}
-                            {timeLabel(e.config.restSeconds)}
-                          </p>
-                          {e.feedback?.comment.trim() && (
-                            <p className={styles.historyComment}>{e.feedback.comment}</p>
-                          )}
-                          <ol>
-                            {groups.flatMap(({ config, sets }) => {
-                              const first = sets[0];
-                              const canCompact =
-                                !e.pyramid &&
-                                !e.superset &&
-                                sets.length > 1 &&
-                                Boolean(first) &&
-                                sets.every(
-                                  (set) =>
-                                    set.equipment === first!.equipment &&
-                                    set.loadKg === first!.loadKg &&
-                                    set.reps === first!.reps,
-                                );
-                              if (canCompact) {
-                                return [
-                                  <li key={`${config.exerciseId}-compact`}>
-                                    <span>{sets.length} séries</span>
-                                    <strong>
-                                      {equipmentLabels[first!.equipment]} ·{" "}
-                                      {loadLabel({
-                                        ...config,
-                                        equipment: first!.equipment,
-                                        loadKg: first!.loadKg,
-                                      })}
-                                      {first!.reps ? ` · ${first!.reps} rép.` : ""}
-                                    </strong>
-                                  </li>,
-                                ];
+                          ...(supersetDraft
+                            ? {
+                                superset: supersetDraft,
                               }
-                              return sets.map((set, index) => (
-                                <li key={`${config.exerciseId}-${index}`}>
-                                  <span>
-                                    {e.superset ? `${exerciseName(config.exerciseId)} · ` : ""}Série{" "}
-                                    {index + 1}
-                                  </span>
-                                  <strong>
-                                    {equipmentLabels[set.equipment]} ·{" "}
-                                    {loadLabel({
-                                      ...config,
-                                      equipment: set.equipment,
-                                      loadKg: set.loadKg,
-                                    })}
-                                    {set.reps ? ` · ${set.reps} rép.` : ""}
-                                  </strong>
-                                </li>
-                              ));
-                            })}
-                          </ol>
+                            : {}),
+                        });
+                      }}
+                    />
+                  </>
+                ) : null}
+                {!feedbackEntryId && active.source === "recommended" && (
+                  <details className={`${styles.recap} ${styles.programRecap}`} open>
+                    <summary>Programme de la séance · {active.exercises.length} exercices</summary>
+                    <ol className={styles.programList}>
+                      {active.exercises.map((entry, index) => {
+                        const status = entry.finished
+                          ? "Terminé"
+                          : entry.id === current?.id
+                            ? "En cours"
+                            : "À venir";
+                        return (
+                          <li key={entry.id} data-status={status}>
+                            <span>{index + 1}</span>
+                            <div>
+                              <strong>{exerciseCountLabel(entry)}</strong>
+                              <small>
+                                {entry.config.sets} {entry.superset ? "tours" : "séries"} · repos{" "}
+                                {timeLabel(entry.config.restSeconds)}
+                              </small>
+                            </div>
+                            <em>{status}</em>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </details>
+                )}
+                {!feedbackEntryId && active.exercises.some((e) => e.finished) && (
+                  <details className={styles.recap}>
+                    <summary>
+                      Dans cette séance · {active.exercises.filter((e) => e.finished).length}{" "}
+                      exercice(s) terminé(s)
+                    </summary>
+                    {active.exercises
+                      .filter((e) => e.finished)
+                      .map((e) => (
+                        <div key={e.id} className={styles.recapRow}>
+                          <div>
+                            <strong>{exerciseCountLabel(e)}</strong>
+                            <p>
+                              {completedRoundCount(e)}/{e.config.sets}{" "}
+                              {e.superset ? "tours" : "séries"} · {loadLabel(e.config)}
+                              {e.superset && ` · ${loadLabel(e.superset)}`}
+                            </p>
+                          </div>
+                          <Star
+                            selected={isFavorite(e.config)}
+                            label={`Favori : ${exerciseName(e.config.exerciseId)}`}
+                            onClick={() => toggleFavorite(e.config)}
+                          />
+                          {!current && e.completedSets.length > 0 && (
+                            <button
+                              className={styles.textButton}
+                              onClick={() => {
+                                setEditing(null);
+                                updateEntry(e.id, (entry) => ({
+                                  ...entry,
+                                  finished: false,
+                                  completedSets: entry.completedSets.slice(
+                                    0,
+                                    entry.superset ? -2 : -1,
+                                  ),
+                                  completedRounds: entry.superset
+                                    ? Math.max(0, entry.completedRounds - 1)
+                                    : entry.completedSets.length - 1,
+                                }));
+                                setNotice("Dernière série annulée.");
+                              }}
+                            >
+                              Annuler la dernière série
+                            </button>
+                          )}
                         </div>
-                      );
-                    })}
-                    {!detailIsFriend && (
+                      ))}
+                  </details>
+                )}
+                {confirmFinish ? (
+                  <section className={styles.confirm} aria-label="Terminer la séance">
+                    {sessionFeedbackOpen ? (
+                      <FeedbackForm
+                        eyebrow="Séance terminée"
+                        title="Comment s’est passée votre séance ?"
+                        commentPlaceholder="Une remarque sur la séance ?"
+                        allowPhotos
+                        nextLabel="Enregistrer la séance"
+                        onSubmit={saveActiveSession}
+                      />
+                    ) : (
                       <>
-                        {detail.endedAt && (
-                          <button
-                            className={styles.secondary}
-                            type="button"
-                            onClick={(event) =>
-                              openAssistant("review", event.currentTarget, detail.id)
-                            }
-                          >
-                            Faire le point sur cette séance
-                          </button>
-                        )}
-                        <button
-                          className={styles.primary}
-                          onClick={() =>
-                            start(
-                              detail.kind,
-                              detail.exercises.map((e) => ({
-                                config: e.config,
-                                ...(e.superset ? { superset: e.superset } : {}),
-                              })),
-                            )
-                          }
-                        >
-                          Refaire cette séance
-                        </button>
+                        <h2>
+                          {totalSets ? "Enregistrer cette séance ?" : "Quitter cette séance vide ?"}
+                        </h2>
+                        <p>
+                          {totalSets
+                            ? `${totalSets} série(s) validée(s) seront conservées. Les séries non effectuées ne seront pas comptées.`
+                            : "Aucune série n’a été validée. Rien ne sera ajouté à l’historique."}
+                        </p>
                         <div className={styles.actions}>
-                          <button
-                            className={styles.textButton}
-                            onClick={() => {
-                              setEditHistory(true);
-                              setDeleteHistory(false);
-                            }}
-                          >
-                            Modifier cette séance
-                          </button>
-                          <button
-                            className={styles.textButton}
-                            onClick={() => setDeleteHistory(true)}
-                          >
-                            Supprimer cette séance
-                          </button>
-                        </div>
-                      </>
-                    )}
-                    {!detailIsFriend && deleteHistory && (
-                      <div className={styles.confirm}>
-                        <h3>Supprimer de l’historique ?</h3>
-                        <p>Cette séance sera supprimée définitivement.</p>
-                        <div className={styles.actions}>
-                          <button
-                            className={styles.secondary}
-                            onClick={() => setDeleteHistory(false)}
-                          >
-                            Annuler
-                          </button>
                           <button
                             className={styles.primary}
                             onClick={() => {
-                              update((s) => ({
-                                ...s,
-                                history: s.history.filter((item) => item.id !== detail.id),
-                              }));
-                              setDetailId(null);
-                              setDeleteHistory(false);
-                              setNotice("Séance supprimée de l’historique.");
+                              if (totalSets) setSessionFeedbackOpen(true);
+                              else saveActiveSession();
                             }}
                           >
-                            Confirmer la suppression
+                            {totalSets ? "Enregistrer et terminer" : "Quitter la séance"}
                           </button>
+                          <button
+                            className={styles.secondary}
+                            onClick={() => setConfirmFinish(false)}
+                          >
+                            Continuer ma séance
+                          </button>
+                          {totalSets > 0 && (
+                            <button
+                              className={styles.secondary}
+                              onClick={() => {
+                                update((s) => ({ ...s, active: null }));
+                                timer.stop();
+                                setConfirmFinish(false);
+                                setEditing(null);
+                                setSupersetDraft(null);
+                                setSessionFeedbackOpen(false);
+                                setNotice("Séance quittée sans ajout à l’historique.");
+                              }}
+                            >
+                              Quitter sans enregistrer
+                            </button>
+                          )}
                         </div>
-                      </div>
+                      </>
                     )}
                   </section>
-                </>
-              ) : historyItems.length ? (
-                <div className={styles.exerciseList}>
-                  {historyItems.map((item) => (
+                ) : null}
+              </>
+            )}
+            {tab === "history" && (
+              <>
+                <div className={styles.pageHeading}>
+                  <h1>Historique</h1>
+                </div>
+                <button
+                  className={`${styles.secondary} ${styles.coachEntry} ${styles.coachProgress}`}
+                  type="button"
+                  onClick={(event) => openAssistant("progress", event.currentTarget)}
+                >
+                  <CoachAvatar small />
+                  <span>Comprendre ma progression</span>
+                </button>
+                <div
+                  className={`${styles.segment} ${styles.historyFilters}`}
+                  role="group"
+                  aria-label="Filtrer les séances"
+                >
+                  {(
+                    [
+                      ["all", "Tout"],
+                      ["mine", "Moi uniquement"],
+                      ["friends", "Mes amis"],
+                    ] as const
+                  ).map(([filter, label]) => (
                     <button
-                      className={`${styles.exerciseRow} ${item.isFriend ? styles.friendHistoryRow : ""}`}
-                      key={`${item.ownerId}:${item.session.id}`}
-                      onClick={() => setDetailId(item.session.id)}
+                      key={filter}
+                      type="button"
+                      aria-pressed={historyFilter === filter}
+                      onClick={() => setHistoryFilter(filter)}
                     >
-                      <span>
-                        <span>{dateTimeLabel(item.session.startedAt)}</span>
-                        <span
-                          className={
-                            item.isFriend ? styles.friendHistoryOwner : styles.historyOwner
-                          }
-                        >
-                          @{item.username}
-                        </span>
-                        <strong>
-                          {item.session.name || sessionLabels[item.session.kind]}
-                          {item.session.feedback && (
-                            <span
-                              className={`${styles.historyFeedback} ${feedbackColorClass(item.session.feedback.mood)}`}
-                              title={`Ressenti : ${item.session.feedback.mood}`}
-                              aria-label={`Ressenti : ${item.session.feedback.mood}`}
-                            >
-                              {feedbackEmojiByMood[item.session.feedback.mood]}
-                            </span>
-                          )}
-                        </strong>
-                        {item.session.feedback?.comment.trim() && (
-                          <span className={styles.historySummaryComment}>
-                            {item.session.feedback.comment}
-                          </span>
-                        )}
-                        <span>
-                          {item.session.exercises.length} exercices ·{" "}
-                          {item.session.exercises.reduce(
-                            (sum, e) => sum + e.completedSets.length,
-                            0,
-                          )}{" "}
-                          séries · {formatVolume(getSessionVolume(item.session))}
-                        </span>
-                        {item.session.feedback?.photos &&
-                          item.session.feedback.photos.length > 0 && (
-                            <span
-                              className={styles.historyThumbnails}
-                              aria-label="Photos de la séance"
-                            >
-                              {item.session.feedback.photos.map((photo, index) => (
-                                <img
-                                  key={photo}
-                                  src={photo}
-                                  alt={`Photo ${index + 1} de la séance`}
-                                  onClick={(event) => {
-                                    event.stopPropagation();
-                                    setPhotoViewer({
-                                      photos: item.session.feedback?.photos ?? [],
-                                      index,
-                                    });
-                                  }}
-                                />
-                              ))}
-                            </span>
-                          )}
-                      </span>
-                      <span aria-hidden="true">→</span>
+                      {label}
                     </button>
                   ))}
                 </div>
-              ) : friendHistoryLoading && historyFilter !== "mine" ? (
-                <p role="status" className={styles.emptySmall}>
-                  Chargement des séances de vos amis…
-                </p>
-              ) : (
-                <div className={styles.empty}>
-                  <SportIcon />
-                  <h2>
-                    {historyFilter === "friends"
-                      ? "Aucune séance d’ami"
-                      : "Le début de votre carnet"}
-                  </h2>
-                  <p>
-                    {historyFilter === "friends"
-                      ? "Les séances de vos amis apparaîtront ici lorsqu’ils auront partagé un entraînement."
-                      : "Vos séances terminées apparaîtront ici, avec les exercices, les charges et les séries effectuées."}
-                  </p>
-                  {historyFilter !== "friends" && (
-                    <button className={styles.primary} onClick={() => navigateToTab("training")}>
-                      Commencer une séance
+                {detail && editHistory ? (
+                  <HistoryEditor
+                    key={detail.id}
+                    session={detail}
+                    onCancel={() => setEditHistory(false)}
+                    onSave={(updated) => {
+                      update((s) => ({
+                        ...s,
+                        history: s.history.map((item) => (item.id === updated.id ? updated : item)),
+                      }));
+                      setEditHistory(false);
+                      setNotice("Séance modifiée.");
+                    }}
+                  />
+                ) : detail ? (
+                  <>
+                    <button
+                      className={styles.textButton}
+                      onClick={() => {
+                        setDetailId(null);
+                        setDeleteHistory(false);
+                      }}
+                    >
+                      ← Toutes les séances
                     </button>
-                  )}
-                </div>
-              )}
-            </>
-          )}
-          {tab === "stats" && (
-            <>
+                    <section className={styles.panel}>
+                      <div className={styles.sectionHeading}>
+                        <div>
+                          <p className={styles.eyebrow}>{dateTimeLabel(detail.startedAt)}</p>
+                          <p
+                            className={
+                              detailIsFriend ? styles.friendHistoryOwner : styles.historyOwner
+                            }
+                          >
+                            @{detailItem?.username}
+                          </p>
+                          <h2>
+                            {detail.name || sessionLabels[detail.kind]}
+                            {detail.feedback && (
+                              <span
+                                className={`${styles.historyFeedback} ${feedbackColorClass(detail.feedback.mood)}`}
+                                title={`Ressenti : ${detail.feedback.mood}`}
+                                aria-label={`Ressenti : ${detail.feedback.mood}`}
+                              >
+                                <FeedbackFace mood={detail.feedback.mood} />
+                              </span>
+                            )}
+                          </h2>
+                        </div>
+                        {!detailIsFriend && (
+                          <Star
+                            selected={store.templates.some((t) => t.id === detail.id)}
+                            label="Séance favorite"
+                            onClick={() => toggleTemplate(detail)}
+                          />
+                        )}
+                      </div>
+                      {detail.feedback?.comment.trim() && (
+                        <p className={styles.historySessionComment}>{detail.feedback.comment}</p>
+                      )}
+                      <p className={styles.hint}>
+                        {detail.exercises.length} exercices ·{" "}
+                        {detail.exercises.reduce((sum, e) => sum + e.completedSets.length, 0)}{" "}
+                        séries effectuées · tonnage total : {formatVolume(getSessionVolume(detail))}
+                      </p>
+                      {detail.feedback?.photos && detail.feedback.photos.length > 0 && (
+                        <div
+                          className={styles.historyPhotoGallery}
+                          aria-label="Photos de la séance"
+                        >
+                          {detail.feedback.photos.map((photo, index) => (
+                            <button
+                              key={photo}
+                              type="button"
+                              className={styles.historyPhotoButton}
+                              aria-label={`Agrandir la photo ${index + 1}`}
+                              onClick={() =>
+                                setPhotoViewer({ photos: detail.feedback?.photos ?? [], index })
+                              }
+                            >
+                              <img src={photo} alt={`Photo de la séance ${index + 1}`} />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {detailIsFriend && detailItem && (
+                        <SessionReactions
+                          ownerId={detailItem.ownerId}
+                          ownerName={detailItem.username}
+                          sessionId={detail.id}
+                        />
+                      )}
+                      {detail.exercises.map((e) => {
+                        const groups = [e.config, ...(e.superset ? [e.superset] : [])].map(
+                          (config) => ({
+                            config,
+                            sets: e.completedSets.filter(
+                              (set) => setExerciseId(e, set) === config.exerciseId,
+                            ),
+                          }),
+                        );
+                        return (
+                          <div className={styles.historyExercise} key={e.id}>
+                            <div className={styles.sectionHeading}>
+                              <h3>
+                                {exerciseCountLabel(e)}
+                                {e.superset && <span className={styles.historyMode}>Superset</span>}
+                                {e.pyramid && <span className={styles.historyMode}>Pyramidal</span>}
+                                {e.feedback && (
+                                  <span
+                                    className={`${styles.historyFeedback} ${feedbackColorClass(e.feedback.mood)}`}
+                                    title={`Ressenti : ${e.feedback.mood}`}
+                                    aria-label={`Ressenti : ${e.feedback.mood}`}
+                                  >
+                                    <FeedbackFace mood={e.feedback.mood} />
+                                  </span>
+                                )}
+                              </h3>
+                              <Star
+                                selected={isFavorite(e.config)}
+                                label={`Favori : ${exerciseName(e.config.exerciseId)}`}
+                                onClick={() => toggleFavorite(e.config)}
+                              />
+                            </div>
+                            <p>
+                              {e.superset
+                                ? `${equipmentLabels[e.config.equipment]} + ${equipmentLabels[e.superset.equipment]} · repos prévu `
+                                : `${equipmentLabels[e.config.equipment]} · repos prévu `}
+                              {timeLabel(e.config.restSeconds)}
+                            </p>
+                            {e.feedback?.comment.trim() && (
+                              <p className={styles.historyComment}>{e.feedback.comment}</p>
+                            )}
+                            <ol>
+                              {groups.flatMap(({ config, sets }) => {
+                                const first = sets[0];
+                                const canCompact =
+                                  !e.pyramid &&
+                                  !e.superset &&
+                                  sets.length > 1 &&
+                                  Boolean(first) &&
+                                  sets.every(
+                                    (set) =>
+                                      set.equipment === first!.equipment &&
+                                      set.loadKg === first!.loadKg &&
+                                      set.reps === first!.reps,
+                                  );
+                                if (canCompact) {
+                                  return [
+                                    <li key={`${config.exerciseId}-compact`}>
+                                      <span>{sets.length} séries</span>
+                                      <strong>
+                                        {equipmentLabels[first!.equipment]} ·{" "}
+                                        {loadLabel({
+                                          ...config,
+                                          equipment: first!.equipment,
+                                          loadKg: first!.loadKg,
+                                        })}
+                                        {first!.reps ? ` · ${first!.reps} rép.` : ""}
+                                      </strong>
+                                    </li>,
+                                  ];
+                                }
+                                return sets.map((set, index) => (
+                                  <li key={`${config.exerciseId}-${index}`}>
+                                    <span>
+                                      {e.superset ? `${exerciseName(config.exerciseId)} · ` : ""}
+                                      Série {index + 1}
+                                    </span>
+                                    <strong>
+                                      {equipmentLabels[set.equipment]} ·{" "}
+                                      {loadLabel({
+                                        ...config,
+                                        equipment: set.equipment,
+                                        loadKg: set.loadKg,
+                                      })}
+                                      {set.reps ? ` · ${set.reps} rép.` : ""}
+                                    </strong>
+                                  </li>
+                                ));
+                              })}
+                            </ol>
+                          </div>
+                        );
+                      })}
+                      {!detailIsFriend && (
+                        <>
+                          {detail.endedAt && (
+                            <button
+                              className={styles.secondary}
+                              type="button"
+                              onClick={(event) =>
+                                openAssistant("review", event.currentTarget, detail.id)
+                              }
+                            >
+                              Faire le point sur cette séance
+                            </button>
+                          )}
+                          <button
+                            className={styles.primary}
+                            onClick={() =>
+                              start(
+                                detail.kind,
+                                detail.exercises.map((e) => ({
+                                  config: e.config,
+                                  ...(e.superset ? { superset: e.superset } : {}),
+                                })),
+                              )
+                            }
+                          >
+                            Refaire cette séance
+                          </button>
+                          <div className={styles.actions}>
+                            <button
+                              className={styles.textButton}
+                              onClick={() => {
+                                setEditHistory(true);
+                                setDeleteHistory(false);
+                              }}
+                            >
+                              Modifier cette séance
+                            </button>
+                            <button
+                              className={styles.textButton}
+                              onClick={() => setDeleteHistory(true)}
+                            >
+                              Supprimer cette séance
+                            </button>
+                          </div>
+                        </>
+                      )}
+                      {!detailIsFriend && deleteHistory && (
+                        <div className={styles.confirm}>
+                          <h3>Supprimer de l’historique ?</h3>
+                          <p>Cette séance sera supprimée définitivement.</p>
+                          <div className={styles.actions}>
+                            <button
+                              className={styles.secondary}
+                              onClick={() => setDeleteHistory(false)}
+                            >
+                              Annuler
+                            </button>
+                            <button
+                              className={styles.primary}
+                              onClick={() => {
+                                update((s) => ({
+                                  ...s,
+                                  history: s.history.filter((item) => item.id !== detail.id),
+                                }));
+                                setDetailId(null);
+                                setDeleteHistory(false);
+                                setNotice("Séance supprimée de l’historique.");
+                              }}
+                            >
+                              Confirmer la suppression
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </section>
+                  </>
+                ) : historyItems.length ? (
+                  <div className={styles.exerciseList}>
+                    {historyItems.map((item) => (
+                      <button
+                        className={`${styles.exerciseRow} ${styles.historyRow} ${item.isFriend ? styles.friendHistoryRow : ""}`}
+                        key={`${item.ownerId}:${item.session.id}`}
+                        onClick={() => setDetailId(item.session.id)}
+                      >
+                        <span>
+                          <span>{dateTimeLabel(item.session.startedAt)}</span>
+                          <span
+                            className={
+                              item.isFriend ? styles.friendHistoryOwner : styles.historyOwner
+                            }
+                          >
+                            @{item.username}
+                          </span>
+                          <strong>
+                            {item.session.name || sessionLabels[item.session.kind]}
+                            {item.session.feedback && (
+                              <span
+                                className={`${styles.historyFeedback} ${feedbackColorClass(item.session.feedback.mood)}`}
+                                title={`Ressenti : ${item.session.feedback.mood}`}
+                                aria-label={`Ressenti : ${item.session.feedback.mood}`}
+                              >
+                                <FeedbackFace mood={item.session.feedback.mood} />
+                              </span>
+                            )}
+                          </strong>
+                          {item.session.feedback?.comment.trim() && (
+                            <span className={styles.historySummaryComment}>
+                              {item.session.feedback.comment}
+                            </span>
+                          )}
+                          <span>
+                            {item.session.exercises.length} exercices ·{" "}
+                            {item.session.exercises.reduce(
+                              (sum, e) => sum + e.completedSets.length,
+                              0,
+                            )}{" "}
+                            séries · {formatVolume(getSessionVolume(item.session))}
+                          </span>
+                          {item.session.feedback?.photos &&
+                            item.session.feedback.photos.length > 0 && (
+                              <span
+                                className={styles.historyThumbnails}
+                                aria-label="Photos de la séance"
+                              >
+                                {item.session.feedback.photos.map((photo, index) => (
+                                  <img
+                                    key={photo}
+                                    src={photo}
+                                    alt={`Photo ${index + 1} de la séance`}
+                                    onClick={(event) => {
+                                      event.stopPropagation();
+                                      setPhotoViewer({
+                                        photos: item.session.feedback?.photos ?? [],
+                                        index,
+                                      });
+                                    }}
+                                  />
+                                ))}
+                              </span>
+                            )}
+                        </span>
+                        <span aria-hidden="true">→</span>
+                      </button>
+                    ))}
+                  </div>
+                ) : friendHistoryLoading && historyFilter !== "mine" ? (
+                  <p role="status" className={styles.emptySmall}>
+                    Chargement des séances de vos amis…
+                  </p>
+                ) : (
+                  <div className={styles.empty}>
+                    <SportIcon />
+                    <h2>
+                      {historyFilter === "friends"
+                        ? "Aucune séance d’ami"
+                        : "Le début de votre carnet"}
+                    </h2>
+                    <p>
+                      {historyFilter === "friends"
+                        ? "Les séances de vos amis apparaîtront ici lorsqu’ils auront partagé un entraînement."
+                        : "Vos séances terminées apparaîtront ici, avec les exercices, les charges et les séries effectuées."}
+                    </p>
+                    {historyFilter !== "friends" && (
+                      <button className={styles.primary} onClick={() => navigateToTab("training")}>
+                        Commencer une séance
+                      </button>
+                    )}
+                  </div>
+                )}
+              </>
+            )}
+            {tab === "stats" && (
               <StatsDashboard
                 history={store.history}
                 username={cloud.profile?.username}
                 onUnderstandProgress={(trigger) => openAssistant("progress", trigger)}
               />
-            </>
-          )}
-          {tab === "social" && (
-            <>
-              <div className={styles.pageHeading}>
-                <h1>Social</h1>
-              </div>
-              <SportSocial
-                onOpenHistory={(sessionId) => {
-                  setDetailId(sessionId);
-                  setEditHistory(false);
-                  setDeleteHistory(false);
-                  navigateToTab("history");
-                }}
-              />
-            </>
-          )}
-          {tab === "favorites" && (
-            <>
-              <div className={styles.pageHeading}>
-                <h1>Vos favoris</h1>
-              </div>
-              <h2 className={styles.subheading}>
-                Exercices <span>{store.favorites.length}</span>
-              </h2>
-              {store.favorites.length ? (
-                store.favorites.map((c) => (
-                  <div className={styles.favoriteRow} key={configKey(c)}>
-                    <div>
-                      <h3>{exerciseName(c.exerciseId)}</h3>
-                      <ConfigSummary config={c} />
-                    </div>
-                    <Star
-                      selected
-                      label={`Retirer le favori ${exerciseName(c.exerciseId)}`}
-                      onClick={() => toggleFavorite(c)}
-                    />
-                    <button
-                      className={styles.secondary}
-                      onClick={() => {
-                        if (storeRef.current?.active) {
-                          if (current) {
-                            setNotice("Terminez l’exercice en cours avant d’en ajouter un autre.");
+            )}
+            {tab === "social" && (
+              <>
+                <div className={styles.pageHeading}>
+                  <h1>Social</h1>
+                </div>
+                <SportSocial
+                  onOpenHistory={(sessionId) => {
+                    setDetailId(sessionId);
+                    setEditHistory(false);
+                    setDeleteHistory(false);
+                    navigateToTab("history");
+                  }}
+                />
+              </>
+            )}
+            {tab === "favorites" && (
+              <>
+                <div className={styles.pageHeading}>
+                  <h1>Vos favoris</h1>
+                </div>
+                <h2 className={styles.subheading}>
+                  Exercices <span>{store.favorites.length}</span>
+                </h2>
+                {store.favorites.length ? (
+                  store.favorites.map((c) => (
+                    <div className={styles.favoriteRow} key={configKey(c)}>
+                      <div>
+                        <h3>{exerciseName(c.exerciseId)}</h3>
+                        <ConfigSummary config={c} />
+                      </div>
+                      <Star
+                        selected
+                        label={`Retirer le favori ${exerciseName(c.exerciseId)}`}
+                        onClick={() => toggleFavorite(c)}
+                      />
+                      <button
+                        className={styles.secondary}
+                        onClick={() => {
+                          if (storeRef.current?.active) {
+                            if (current) {
+                              setNotice(
+                                "Terminez l’exercice en cours avant d’en ajouter un autre.",
+                              );
+                              navigateToTab("training");
+                              return;
+                            }
+                            setEditing({ config: c });
                             navigateToTab("training");
-                            return;
+                          } else {
+                            start(selectedCustomSessionKind());
+                            setEditing({ config: c });
                           }
-                          setEditing({ config: c });
-                          navigateToTab("training");
-                        } else {
-                          start(selectedCustomSessionKind());
-                          setEditing({ config: c });
-                        }
-                      }}
-                    >
-                      Utiliser
-                    </button>
-                  </div>
-                ))
-              ) : (
-                <p className={styles.emptySmall}>
-                  Touchez l’étoile d’un exercice pour garder sa charge, ses séries et son repos.
-                </p>
-              )}
-              <h2 className={styles.subheading}>
-                Séances <span>{store.templates.length}</span>
-              </h2>
-              {store.templates.length ? (
-                store.templates.map((t) => (
-                  <div className={styles.favoriteRow} key={t.id}>
-                    <div>
-                      <h3>{t.name}</h3>
-                      <p>{t.exercises.length} exercices · réglages inclus</p>
+                        }}
+                      >
+                        Utiliser
+                      </button>
                     </div>
-                    <Star
-                      selected
-                      label={`Retirer la séance favorite ${t.name}`}
-                      onClick={() =>
-                        update((s) => ({
-                          ...s,
-                          templates: s.templates.filter((item) => item.id !== t.id),
-                        }))
-                      }
-                    />
-                    <button className={styles.secondary} onClick={() => start(t.kind, t.exercises)}>
-                      Démarrer cette séance
-                    </button>
-                  </div>
-                ))
-              ) : (
-                <p className={styles.emptySmall}>
-                  Ajoutez une séance à vos favoris depuis son détail dans l’historique.
-                </p>
-              )}
-            </>
-          )}
+                  ))
+                ) : (
+                  <p className={styles.emptySmall}>
+                    Touchez l’étoile d’un exercice pour garder sa charge, ses séries et son repos.
+                  </p>
+                )}
+                <h2 className={styles.subheading}>
+                  Séances <span>{store.templates.length}</span>
+                </h2>
+                {store.templates.length ? (
+                  store.templates.map((t) => (
+                    <div className={styles.favoriteRow} key={t.id}>
+                      <div>
+                        <h3>{t.name}</h3>
+                        <p>{t.exercises.length} exercices · réglages inclus</p>
+                      </div>
+                      <Star
+                        selected
+                        label={`Retirer la séance favorite ${t.name}`}
+                        onClick={() =>
+                          update((s) => ({
+                            ...s,
+                            templates: s.templates.filter((item) => item.id !== t.id),
+                          }))
+                        }
+                      />
+                      <button
+                        className={styles.secondary}
+                        onClick={() => start(t.kind, t.exercises)}
+                      >
+                        Démarrer cette séance
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <p className={styles.emptySmall}>
+                    Ajoutez une séance à vos favoris depuis son détail dans l’historique.
+                  </p>
+                )}
+              </>
+            )}
+          </SportView>
           {assistant && (
             <SportAssistant
               key={`${cloud.session?.user.id ?? "local"}:${assistant.mode}:${assistant.focusSessionId ?? ""}`}

@@ -6,6 +6,7 @@ import { useSportCloud } from "./provider";
 import { snapshotSchema, writeSnapshot } from "./snapshot";
 import { notifySaveChanged } from "./changed";
 import styles from "./cloud.module.css";
+import { SportIcon } from "@/components/sport-icon";
 
 export function SportAccount() {
   const cloud = useSportCloud();
@@ -116,6 +117,10 @@ export function SportAccount() {
   return (
     <main className={styles.panel}>
       <Link href="/sport">← Mon carnet Sport</Link>
+      <div className={styles.accountBrand} aria-hidden="true">
+        <SportIcon />
+        <span>ANTAVERSE / SPORT</span>
+      </div>
       <h1>
         {cloud.recovery
           ? "Nouveau mot de passe"

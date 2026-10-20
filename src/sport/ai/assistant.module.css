@@ -10,6 +10,7 @@
   background: var(--sport-bg);
   color: var(--sport-ink);
   font: inherit;
+  font-size: 0.95rem;
   overflow: auto;
   overscroll-behavior: contain;
 }
@@ -23,22 +24,22 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
-  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 16px
-    max(16px, env(safe-area-inset-left));
+  gap: 11px;
+  padding: max(15px, env(safe-area-inset-top)) max(15px, env(safe-area-inset-right)) 15px
+    max(15px, env(safe-area-inset-left));
   border-bottom: 1px solid var(--sport-line);
   background: var(--sport-bg);
 }
 .header h2 {
   margin: 4px 0 0;
-  font-size: clamp(1.2rem, 5vw, 1.65rem);
+  font-size: clamp(1.14rem, 4.75vw, 1.57rem);
   line-height: 1.25;
   overflow-wrap: anywhere;
 }
 .identity {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
   min-width: 0;
 }
 .identity > div {
@@ -51,12 +52,15 @@
   height: 48px;
   vertical-align: middle;
 }
-.avatar svg {
+.avatar img {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 .avatarSmall {
+  flex-basis: 24px;
   width: 24px;
   height: 24px;
   vertical-align: -6px;
@@ -79,39 +83,18 @@
     animation: none;
   }
 }
-.avatarBackdrop {
-  fill: var(--sport-accent-soft);
-  stroke: var(--sport-accent-line);
-}
-.avatarBody {
-  fill: var(--sport-accent);
-}
-.avatarFace {
-  fill: #f0d6b8;
-}
-.avatarHair {
-  fill: #24384b;
-}
-.avatarBand {
-  fill: #bd8050;
-}
-.avatarDetail {
-  stroke: #24384b;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-}
 .eyebrow {
   margin: 0;
   color: var(--sport-accent);
-  font-size: 0.75rem;
+  font-size: 0.71rem;
   letter-spacing: 0.08em;
 }
 .body {
   display: grid;
-  gap: 18px;
+  gap: 16px;
   min-width: 0;
-  padding: 18px max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom))
-    max(16px, env(safe-area-inset-left));
+  padding: 16px max(15px, env(safe-area-inset-right)) max(23px, env(safe-area-inset-bottom))
+    max(15px, env(safe-area-inset-left));
 }
 .body p {
   margin: 0;
@@ -123,7 +106,44 @@
   color: var(--sport-muted);
 }
 .muted {
-  font-size: 0.85rem;
+  font-size: 0.81rem;
+}
+.coachIntro {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+.coachBubbles {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.coachBubble {
+  padding: 10px 12px;
+  border: 1px solid var(--sport-line);
+  border-radius: 4px 13px 13px 13px;
+  background: var(--sport-surface);
+}
+.coachIntro > span {
+  flex: 0 0 24px;
+  margin-top: 3px;
+}
+.composerFields,
+.guidanceCard {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.guidanceCard {
+  margin-left: clamp(20px, 9vw, 46px);
+  padding: 13px;
+  border: 1px solid var(--sport-accent-line);
+  border-radius: 13px 4px 13px 13px;
+  background: var(--sport-accent-soft);
+}
+.guidanceCard label {
+  font-weight: 650;
 }
 .card,
 .message,
@@ -145,7 +165,7 @@
   display: grid;
   gap: 6px;
   min-width: 0;
-  font-size: 0.9rem;
+  font-size: 0.855rem;
 }
 .dialog input:not([type="checkbox"]),
 .dialog select,
@@ -171,19 +191,23 @@
   min-height: 44px;
   border: 1px solid var(--sport-line);
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 9px 13px;
   background: var(--sport-raised);
   color: var(--sport-ink);
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.855rem;
   line-height: 1.4;
   cursor: pointer;
   overflow-wrap: anywhere;
 }
 .dialog button.primary {
-  background: var(--sport-accent);
-  border-color: var(--sport-accent);
-  color: var(--sport-on-accent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sport-accent) 10%, var(--sport-raised)),
+    color-mix(in srgb, var(--sport-accent) 4%, var(--sport-surface))
+  );
+  border-color: var(--sport-accent-line);
+  color: var(--sport-accent);
   font-weight: 650;
 }
 .dialog button:disabled {

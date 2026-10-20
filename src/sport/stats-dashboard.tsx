@@ -141,7 +141,7 @@ function TrendChart({
       >
         <line x1="16" y1="120" x2="284" y2="120" className={styles.chartGuide} />
         <line x1="16" y1="78" x2="284" y2="78" className={styles.chartGuide} />
-        <path d={path} className={styles.chartLine} />
+        <path key={metric} d={path} pathLength="1" className={styles.chartLine} />
         {pointsForLine.map((point) => (
           <circle
             key={`${point.date}-${point.value}`}
@@ -346,6 +346,16 @@ export function StatsDashboard({
   const latestOneRm =
     [...progress].reverse().find((point) => point.estimated1Rm !== null)?.estimated1Rm ?? null;
   const hasOneRm = progress.some((point) => point.estimated1Rm !== null);
+  const progressAction = onUnderstandProgress ? (
+    <button
+      className={`${styles.secondary} ${styles.coachEntry} ${styles.coachProgress}`}
+      type="button"
+      onClick={(event) => onUnderstandProgress(event.currentTarget)}
+    >
+      <CoachAvatar small />
+      <span>Comprendre ma progression</span>
+    </button>
+  ) : null;
 
   if (!history.length)
     return (
@@ -356,6 +366,7 @@ export function StatsDashboard({
             <h1 id="profile-title">{username ? `Profil de ${username}` : "Mon profil"}</h1>
           </div>
         )}
+        {progressAction}
         <PhotoAlbum history={history} username={username} />
         <div className={styles.empty}>
           <h2>Votre profil se construit ici</h2>
@@ -372,6 +383,7 @@ export function StatsDashboard({
           <h1 id="profile-title">{username ? `Profil de ${username}` : "Mon profil"}</h1>
         </div>
       )}
+      {progressAction}
       <PhotoAlbum history={history} username={username} />
       <div className={styles.segment} aria-label="Période des statistiques">
         {(Object.keys(rangeLabels) as StatsRange[]).map((item) => (
@@ -554,15 +566,6 @@ export function StatsDashboard({
                 </button>
               </div>
               <TrendChart points={progress} metric={progressMetric} />
-              {onUnderstandProgress && (
-                <button
-                  className={styles.secondary}
-                  type="button"
-                  onClick={(event) => onUnderstandProgress(event.currentTarget)}
-                >
-                  <CoachAvatar small /> Comprendre ma progression
-                </button>
-              )}
               <p className={styles.statsNote}>
                 Le 1RM estimé utilise la formule d’Epley (charge × (1 + répétitions / 30)). C’est un
                 repère de progression, pas un test maximal.
