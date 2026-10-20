@@ -318,7 +318,7 @@
 .homeHero {
   position: relative;
   text-align: left;
-  padding: 12px 0 10px;
+  padding: 12px 0 16px;
 }
 .homeMark {
   color: var(--sport-accent);
@@ -339,22 +339,11 @@
 .homeHero h1 span {
   color: var(--sport-accent);
 }
-.heroRule {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 12px;
-  margin-top: 12px;
-  border-top: 1px solid var(--sport-line);
-  color: var(--sport-muted);
-  font-size: 8px;
-  letter-spacing: 0.16em;
-}
 .homeProgressPrompt {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   padding: 0 0 0 12px;
   border: 0;
   border-left: 2px solid var(--sport-accent);

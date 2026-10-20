@@ -1414,10 +1414,6 @@ export function SportApp() {
                   <h1>
                     Carnet de <span>sport</span>
                   </h1>
-                  <div className={styles.heroRule} aria-hidden="true">
-                    <span>ANTAVERSE</span>
-                    <span>TRAINING JOURNAL — 01</span>
-                  </div>
                 </div>
                 <HomeProgressPrompt history={store.history} active={store.active} />
                 <div className={styles.homeMenu}>
@@ -1451,9 +1447,11 @@ export function SportApp() {
                         </strong>
                         <span>{desc}</span>
                       </span>
-                      <span className={styles.homeButtonChevron} aria-hidden="true">
-                        ↗
-                      </span>
+                      {id !== "training" && (
+                        <span className={styles.homeButtonChevron} aria-hidden="true">
+                          ↗
+                        </span>
+                      )}
                     </button>
                   ))}
                 </div>
