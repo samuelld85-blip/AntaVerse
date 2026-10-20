@@ -1,6 +1,6 @@
 # Prestataires et SDK tiers
 
-Dernière vérification technique : 2026-09-08.
+Dernière vérification technique : 2026-10-20.
 
 ## Méthode
 
@@ -20,7 +20,7 @@ réseau) et **SDK** (communique avec un serveur).
 | `zod`                                    | Validation de schémas de données                                                   | Non — 100 % local                                             | Non                                                         |
 | `@capacitor/core` / `@capacitor/android` / `@capacitor/ios` | Pont et conteneur natif Android/iOS ; sert les fichiers statiques et expose le chronomètre système local | Non — aucun service distant Capacitor n'est configuré | Non |
 | `@supabase/supabase-js` | **SDK** du backend Sport : Auth (e-mail/mot de passe, OAuth Google/Apple), base PostgreSQL (carnet, amis, likes/commentaires), abonnements Web Push | **Oui** — mais uniquement importé par `src/sport/cloud/`, uniquement si Supabase est configuré au build, uniquement sur `/sport`, et sans effet tant qu'aucun compte n'est créé | **Oui** dès que la couche compte est activée en production — voir `docs/store/APPLE_PRIVACY_DECLARATION.md` et `GOOGLE_DATA_SAFETY.md` |
-| OpenRouter (API via Edge Function `sport-assistant`) | Intermédiaire de modèle pour les demandes explicites de l’assistant Sport ; modèle fixe `openai/gpt-6.1-sol`, raisonnement `medium` | **Oui** — uniquement après action de l’utilisateur connecté ; contexte sportif minimisé et texte saisi transitent vers OpenRouter puis le fournisseur. Configuration demandant `data_collection: deny` et `zdr: true` | **Oui**, pour la build/configuration où l’assistant est activé ; voir inventaire, déclarations store et politique de confidentialité |
+| OpenRouter (API via Edge Function `sport-assistant`) | Intermédiaire de modèle pour les demandes contextuelles de l’assistant Sport ; modèle fixe `openai/gpt-6.1-sol`, raisonnement `medium` | **Oui** — un clic sur Préparer, Relire ou Progression envoie la demande ; l’import est transmis après saisie et un seul envoi. Le contexte contient toutes les séances terminées du compte, tous leurs sets terminés et les statistiques calculées. Configuration demandant `data_collection: deny` et `zdr: true` | **Oui**, pour les données transmises au service et au fournisseur ; voir inventaire, déclarations store et politique de confidentialité |
 
 À l'exception de `@supabase/supabase-js`, **aucune de ces dépendances n'est
 un SDK de collecte** : ce sont des bibliothèques exécutées entièrement dans
@@ -40,12 +40,13 @@ couche compte optionnelle du module Sport (`src/sport/cloud/`, `supabase/`).
   `docs/compliance/DATA_INVENTORY.md` § "Compte Sport cloud". En résumé :
   identité de connexion (e-mail ou identité Google/Apple), pseudo, carnet
   Sport et ses 10 dernières révisions, relations d'amitié, likes/commentaires
-  d'amis sur des séances terminées, abonnements Web Push. Pour une demande
-  explicite à l’assistant, Supabase reçoit également le texte et le contexte
-  minimal construit depuis le carnet, puis les relaie à OpenRouter.
-- **Région** : choisie à la création du projet Supabase (préférer l'UE pour
-  ce public). L'éditeur doit renseigner la région retenue et vérifier les
-  garanties de transfert avant activation en production —
+  d'amis sur des séances terminées, abonnements Web Push. Quand l’utilisateur
+  touche Préparer, Relire ou Progression, Supabase reçoit le texte de la
+  demande et toutes ses séances terminées avec toutes leurs séries et
+  statistiques, puis les relaie à OpenRouter. L’import est transmis après
+  saisie et un seul envoi.
+- **Région** : choisie à la création du projet Supabase. La région et les
+  garanties de transfert applicables doivent être tenues à jour dans
   `/legal/confidentialite` § 7.
 - **Sous-traitance / e-mails** : les e-mails de récupération de mot de passe
   passent par le SMTP de production configuré par l'éditeur dans Supabase.

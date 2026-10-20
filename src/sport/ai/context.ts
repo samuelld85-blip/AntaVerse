@@ -2,12 +2,9 @@ import type { AssistantContext } from "../../../supabase/functions/_shared/sport
 import { setExerciseId, type Session } from "../model";
 import { getSessionVolume } from "../stats";
 
-const dayMs = 86_400_000;
-
 /** Explicit projection: never serialize the carnet, feedback, photos or social data. */
 export function buildAssistantContext(
   history: Session[],
-  rangeDays: 30 | 90 = 30,
   focusSessionId: string | null = null,
   now = new Date(),
 ): AssistantContext {
@@ -15,13 +12,7 @@ export function buildAssistantContext(
     (session) => session.endedAt && session.exercises.some((entry) => entry.completedSets.length),
   );
   const end = now.getTime();
-  const cutoff = end - rangeDays * dayMs;
-  const previousCutoff = cutoff - rangeDays * dayMs;
   const date = (session: Session) => Date.parse(session.startedAt);
-  const current = completed.filter((session) => date(session) >= cutoff && date(session) <= end);
-  const previous = completed.filter(
-    (session) => date(session) >= previousCutoff && date(session) < cutoff,
-  );
   const summarize = (sessions: Session[]) => ({
     sessions: sessions.length,
     sets: sessions.reduce(
@@ -31,20 +22,13 @@ export function buildAssistantContext(
     ),
     volumeKg: sessions.reduce((sum, session) => sum + getSessionVolume(session), 0),
   });
-  const focus = completed.find((session) => session.id === focusSessionId);
   const recent = completed
-    .filter(
-      (session) =>
-        date(session) >= previousCutoff && date(session) <= end && session.id !== focus?.id,
-    )
-    .sort((a, b) => date(b) - date(a))
-    .slice(0, focus ? 11 : 12);
-  if (focus) recent.unshift(focus);
+    .filter((session) => date(session) <= end)
+    .sort((a, b) => date(b) - date(a));
+  const focus = recent.find((session) => session.id === focusSessionId);
   return {
     generatedAt: now.toISOString(),
-    rangeDays,
-    summary: summarize(current),
-    previousSummary: summarize(previous),
+    summary: summarize(recent),
     focusSessionId: focus?.id ?? null,
     recentSessions: recent.map((session) => ({
       id: session.id,
@@ -59,8 +43,7 @@ export function buildAssistantContext(
             loadKg: set.loadKg,
             reps: set.reps,
           })),
-        )
-        .slice(0, 80),
+        ),
     })),
   };
 }

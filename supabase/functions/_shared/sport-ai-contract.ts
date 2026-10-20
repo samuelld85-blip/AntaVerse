@@ -59,8 +59,8 @@ export const draftSchema = z
 export type Draft = z.infer<typeof draftSchema>;
 const summarySchema = z
   .object({
-    sessions: z.number().int().min(0).max(100000),
-    sets: z.number().int().min(0).max(10000000),
+    sessions: z.number().int().min(0),
+    sets: z.number().int().min(0),
     volumeKg: z.number().min(0).max(1e13),
   })
   .strict();
@@ -81,9 +81,7 @@ const setSchema = z
 export const contextSchema = z
   .object({
     generatedAt: z.string().datetime(),
-    rangeDays: z.union([z.literal(30), z.literal(90)]),
     summary: summarySchema,
-    previousSummary: summarySchema,
     recentSessions: z
       .array(
         z
@@ -92,11 +90,10 @@ export const contextSchema = z
             date: z.string().datetime(),
             kind: kindSchema,
             volumeKg: z.number().min(0).max(1e13),
-            sets: z.array(setSchema).max(80),
+            sets: z.array(setSchema),
           })
           .strict(),
-      )
-      .max(12),
+      ),
     focusSessionId: z.string().min(1).max(100).nullable(),
   })
   .strict();

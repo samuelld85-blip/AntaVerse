@@ -15,3 +15,4 @@ verify_jwt = false
 # sport-assistant verifies the bearer token using auth.getUser itself.
 [functions.sport-assistant]
 verify_jwt = false
+import_map = "./functions/deno.json"

@@ -44,7 +44,7 @@ const history = fixture.map((item, index) => {
   return session;
 });
 const now = new Date("2026-10-19T12:00:00.000Z");
-const context = buildAssistantContext(history, 30, null, now);
+const context = buildAssistantContext(history, null, now);
 // Real provider, synthetic fixture only; no account, quota RPC or hosted DB writes.
 const handler = createHandler({
   env: (name) => process.env[name],
@@ -98,17 +98,17 @@ await ask(
   "Importer un programme depuis un texte",
   "import",
   "Importe ce programme débutant sans ajouter d'exercice : développé couché barre 3 séries de 8 à 20 kg barre comprise, repos 120 secondes ; rowing haltères 3 séries de 10 à 8 kg par haltère, repos 90 secondes. Tous ces réglages sont confirmés. Réponds brièvement.",
-  { context: buildAssistantContext([], 30, null, now) },
+  { context: buildAssistantContext([], null, now) },
 );
 await ask(
   "Faire le point après la cinquième séance",
   "review",
   "Milo, qu’est-ce que tu penses de ma dernière séance ? Qu’est-ce que je devrais garder en tête pour la prochaine ?",
-  { context: buildAssistantContext(history, 30, "demo-5", now) },
+  { context: buildAssistantContext(history, "demo-5", now) },
 );
 const progressPrompt =
   "Je débute et j’ai fait ces cinq séances. Est-ce que je suis sur la bonne voie ? Qu’est-ce que tu me conseilles pour la suite ?";
-const progress = await ask("Comprendre ma progression sur 30 jours", "progress", progressPrompt);
+const progress = await ask("Comprendre ma progression", "progress", progressPrompt);
 const nextSessionPrompt =
   "D’accord, prépare ma prochaine séance avec les mêmes trois exercices que la dernière fois. Je confirme la reprise des charges et répétitions de cette dernière séance pour le brouillon. Garde les temps de repos habituels.";
 const nextSession = await ask(
@@ -160,7 +160,7 @@ const lines = [
       `| ${index + 1} | ${item.date} | 3 × ${item.bench[1]} à ${item.bench[0]} kg | 3 × ${item.row[1]} à ${item.row[0]} kg/haltère | 3 × ${item.press[1]} à ${item.press[0]} kg | ${moneyless(getSessionVolume(history[index]))} kg |`,
   ),
   "",
-  `Bilan déterministe : **${context.summary.sessions} séances, ${context.summary.sets} séries, ${moneyless(context.summary.volumeKg)} kg** selon la convention de tonnage existante (pas de doublement de la charge des haltères). Aucune séance sur la période précédente.`,
+  `Bilan déterministe : **${context.summary.sessions} séances, ${context.summary.sets} séries, ${moneyless(context.summary.volumeKg)} kg** selon la convention de tonnage existante (pas de doublement de la charge des haltères).`,
   "",
   "## Le parcours dans l’application",
   "",

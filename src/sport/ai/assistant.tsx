@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
 import {
   draftSchema,
   type AssistantMode,
   type AssistantRequest,
   type Draft,
 } from "../../../supabase/functions/_shared/sport-ai-contract";
-import coachKnowledge from "../../../supabase/functions/_shared/coach-knowledge.json";
 import { equipmentLabels, exercises, sessionLabels, type Equipment } from "../catalog";
 import type { Session, SessionTemplateExercise } from "../model";
 import { useSportCloud } from "../cloud/provider";
@@ -29,11 +28,10 @@ const titles: Record<AssistantMode, string> = {
   review: "Faire le point sur cette séance",
   progress: "Comprendre ma progression",
 };
-const prompts: Record<AssistantMode, string> = {
-  prepare: "Quel est votre objectif, votre matériel et le temps disponible ?",
-  import: "Collez votre programme. Précisez les charges et le matériel si nécessaire.",
-  review: "Que souhaitez-vous comprendre ou ajuster dans cette séance ?",
-  progress: "Sur quels exercices ou aspects de votre progression souhaitez-vous faire le point ?",
+const initialRequests: Partial<Record<AssistantMode, string>> = {
+  prepare: "Propose-moi une séance adaptée à mon carnet.",
+  review: "Fais le point sur cette séance et mon historique.",
+  progress: "Fais le point sur ma progression à partir de mon historique.",
 };
 
 function ConfigEditor({
@@ -149,12 +147,12 @@ export function SportAssistant({
   const cloud = useSportCloud();
   const dialog = useRef<HTMLDialogElement>(null);
   const pending = useRef<AbortController | null>(null);
+  const requestId = useRef(0);
+  const autoSent = useRef(false);
+  const composer = useRef<HTMLTextAreaElement>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState("");
   const [draft, setDraft] = useState<Draft | null>(null);
-  const [consent, setConsent] = useState(false);
-  const [shareHistory, setShareHistory] = useState(false);
-  const [rangeDays, setRangeDays] = useState<30 | 90>(30);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
@@ -166,7 +164,16 @@ export function SportAssistant({
     element?.showModal();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const updateOnline = () => setOnline(navigator.onLine);
+    const updateOnline = () => {
+      const connected = navigator.onLine;
+      setOnline(connected);
+      if (!connected && pending.current) {
+        pending.current.abort();
+        pending.current = null;
+        requestId.current += 1;
+        setBusy(false);
+      }
+    };
     updateOnline();
     window.addEventListener("online", updateOnline);
     window.addEventListener("offline", updateOnline);
@@ -180,21 +187,12 @@ export function SportAssistant({
     };
   }, []);
   const accountReady = Boolean(cloud.session && cloud.profile);
-  const template = draft && draft.questions.length === 0 ? draftToTemplate(draft) : null;
-  const selectedHistory = shareHistory ? history : [];
-  const context = buildAssistantContext(
-    selectedHistory,
-    rangeDays,
-    mode === "review" && shareHistory ? focusSessionId : null,
-  );
-  const needsHistory = mode === "review" || mode === "progress";
-  const readyToSend =
-    !needsHistory || (shareHistory && (mode !== "review" || Boolean(context.focusSessionId)));
+  const template = draft ? draftToTemplate(draft) : null;
+  const context = buildAssistantContext(history, mode === "review" ? focusSessionId : null);
 
-  async function send() {
-    const content = text.trim();
-    if (!content || busy || pending.current || !consent || !accountReady || !online || !readyToSend)
-      return;
+  async function send(requestText?: string) {
+    const content = (requestText ?? text).trim();
+    if (!content || busy || pending.current || !accountReady || !online) return;
     if (draft && !draftSchema.safeParse(draft).success) {
       setError(
         "Vérifiez le brouillon : nom, nombre d’exercices, valeurs autorisées et nombre de tours identique dans chaque superset.",
@@ -202,6 +200,7 @@ export function SportAssistant({
       return;
     }
     const controller = new AbortController();
+    const currentRequest = ++requestId.current;
     pending.current = controller;
     setBusy(true);
     setError("");
@@ -222,7 +221,7 @@ export function SportAssistant({
         },
         controller.signal,
       );
-      if (controller.signal.aborted) return;
+      if (controller.signal.aborted || currentRequest !== requestId.current) return;
       setMessages(
         [
           ...nextMessages,
@@ -236,7 +235,7 @@ export function SportAssistant({
       if (response.draft) setDraft(response.draft);
       setText("");
     } catch (caught) {
-      if (!controller.signal.aborted)
+      if (!controller.signal.aborted && currentRequest === requestId.current)
         setError(
           caught instanceof Error
             ? caught.message
@@ -250,11 +249,26 @@ export function SportAssistant({
     }
   }
   function cancel() {
+    requestId.current += 1;
     pending.current?.abort();
     pending.current = null;
     setBusy(false);
     setStatus("Demande annulée. Votre texte est conservé.");
   }
+  const sendInitial = useEffectEvent(() => {
+    if (!autoSent.current) {
+      autoSent.current = true;
+      void send(initialRequests[mode]);
+    }
+  });
+  useEffect(() => {
+    if (!accountReady || mode === "import" || autoSent.current) return;
+    const timer = window.setTimeout(() => sendInitial(), 0);
+    return () => window.clearTimeout(timer);
+  }, [accountReady, mode]);
+  useEffect(() => {
+    if (mode === "import" && accountReady) composer.current?.focus();
+  }, [accountReady, mode]);
   function editExercise(index: number, next: Draft["exercises"][number]) {
     setDraft((current) =>
       current
@@ -295,7 +309,7 @@ export function SportAssistant({
         </button>
       </div>
       <div className={styles.body}>
-        <p className={styles.intro}>{prompts[mode]}</p>
+        {mode === "import" && <p className={styles.intro}>Collez votre programme.</p>}
         {!accountReady ? (
           <div className={styles.card}>
             <p>Connectez votre compte Sport pour utiliser l’assistant.</p>
@@ -305,121 +319,76 @@ export function SportAssistant({
           </div>
         ) : (
           <>
-            <div className={styles.privacy}>
-              <p>Votre demande passe par OpenRouter et OpenAI, uniquement après votre accord.</p>
-              <details>
-                <summary>Vos données avant chaque envoi</summary>
-                <p>
-                  Votre texte, les derniers échanges (8 messages maximum) et le brouillon sont
-                  envoyés à notre service, puis à OpenRouter et au fournisseur OpenAI pour produire
-                  une réponse. Évitez toute information personnelle ou médicale dans votre texte.
-                </p>
-                <p>
-                  Vous pouvez joindre les séries validées, dates et statistiques utiles du carnet.
-                  La période précédente de même durée sert de comparaison ; au maximum 12 séances et
-                  80 séries par séance sont détaillées. Les commentaires, photos et données des amis
-                  sont exclus. Cette conversation reste en mémoire et disparaît à la fermeture.
-                </p>
-              </details>
-              <label className={styles.check}>
-                <input
-                  type="checkbox"
-                  checked={consent}
-                  onChange={(event) => setConsent(event.target.checked)}
-                  disabled={busy}
-                />
-                J’accepte cet envoi à l’assistant pour cette conversation.
-              </label>
-            </div>
-            <div className={styles.card}>
-              <label className={styles.check}>
-                <input
-                  type="checkbox"
-                  checked={shareHistory}
-                  onChange={(event) => setShareHistory(event.target.checked)}
-                  disabled={busy}
-                />
-                {mode === "review"
-                  ? "Joindre cette séance et mes séances récentes"
-                  : "Joindre les données de mon carnet"}
-              </label>
-              {mode !== "review" && shareHistory && (
-                <label className={styles.range}>
-                  Période
-                  <select
-                    value={rangeDays}
-                    onChange={(event) => setRangeDays(Number(event.target.value) as 30 | 90)}
-                    disabled={busy}
-                  >
-                    <option value={30}>30 derniers jours</option>
-                    <option value={90}>90 derniers jours</option>
-                  </select>
-                </label>
-              )}
-              <p className={styles.muted}>
-                {shareHistory
-                  ? `${context.recentSessions.length} séance(s) détaillée(s) ; bilan de ${context.summary.sessions} séance(s) sur la période et ${context.previousSummary.sessions} sur la période précédente.`
-                  : "Aucune donnée de séance jointe."}
-              </p>
-              {context.recentSessions.length > 0 && (
-                <details>
-                  <summary>Voir les séances sélectionnées</summary>
-                  <ul>
-                    {context.recentSessions.map((session) => (
-                      <li key={session.id}>
-                        {sessionLabels[session.kind]} ·{" "}
-                        {new Date(session.date).toLocaleDateString("fr-FR")}
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              )}
-            </div>
-            <div
-              className={styles.conversation}
-              role="log"
-              aria-live="polite"
-              aria-label="Conversation"
-            >
-              {messages.map((message, index) => (
-                <article
-                  className={`${styles.message} ${message.role === "user" ? styles.user : ""}`}
-                  key={index}
-                >
-                  <strong>{message.role === "user" ? "Vous" : "Milo"}</strong>
-                  <p>{message.content}</p>
-                  {message.observations?.map((observation, i) => (
-                    <div key={i} className={styles.observation}>
-                      <p>{observation.text}</p>
-                      {observation.sessionIds.length > 0 && (
-                        <small>
-                          Séances :{" "}
-                          {observation.sessionIds
-                            .map((id) => {
-                              const session = history.find((item) => item.id === id);
-                              return session
-                                ? new Date(session.startedAt).toLocaleDateString("fr-FR")
-                                : "référence indisponible";
-                            })
-                            .join(", ")}
-                        </small>
-                      )}
-                    </div>
+            {messages.length > 0 && (
+              <div
+                className={styles.conversation}
+                role="log"
+                aria-live="polite"
+                aria-label="Conversation"
+              >
+                {messages
+                  .filter(
+                    (message, index) =>
+                      !(index === 0 && mode !== "import" && message.role === "user"),
+                  )
+                  .map((message, index) => (
+                    <article
+                      className={`${styles.message} ${message.role === "user" ? styles.user : ""}`}
+                      key={index}
+                    >
+                      <strong>{message.role === "user" ? "Vous" : "Milo"}</strong>
+                      <p>{message.content}</p>
+                      {message.observations?.map((observation, i) => (
+                        <div key={i} className={styles.observation}>
+                          <p>{observation.text}</p>
+                          {observation.sessionIds.length > 0 && (
+                            <small>
+                              Séances :{" "}
+                              {observation.sessionIds
+                                .map((id) => {
+                                  const session = history.find((item) => item.id === id);
+                                  return session
+                                    ? new Date(session.startedAt).toLocaleDateString("fr-FR")
+                                    : "référence indisponible";
+                                })
+                                .join(", ")}
+                            </small>
+                          )}
+                        </div>
+                      ))}
+                    </article>
                   ))}
-                </article>
-              ))}
-            </div>
+              </div>
+            )}
+            {busy && (
+              <div className={styles.actions}>
+                <p role="status">Milo réfléchit…</p>
+                {messages.length === 0 && !draft && (
+                  <button type="button" onClick={cancel}>
+                    Annuler
+                  </button>
+                )}
+              </div>
+            )}
+            {!online && <p role="status">Hors ligne.</p>}
+            {error && (
+              <p className={styles.error} role="alert">
+                {error}
+              </p>
+            )}
+            {mode !== "import" && !busy && messages.length === 0 && !draft && (
+              <button
+                className={styles.primary}
+                type="button"
+                disabled={!online}
+                onClick={() => void send(initialRequests[mode])}
+              >
+                Réessayer
+              </button>
+            )}
             {draft && (
               <section className={styles.draft} aria-labelledby="sport-assistant-draft-title">
                 <h3 id="sport-assistant-draft-title">Brouillon de séance</h3>
-                <p>Vérifiez chaque réglage avant de démarrer ou d’enregistrer.</p>
-                <details className={styles.unitHelp}>
-                  <summary>Comprendre les charges et le matériel</summary>
-                  <p>
-                    Les charges d’haltères sont par haltère ; une barre inclut son poids ; au poids
-                    du corps, indiquez uniquement le lest ajouté (0 sans lest).
-                  </p>
-                </details>
                 <fieldset disabled={busy}>
                   <label>
                     Nom
@@ -447,25 +416,8 @@ export function SportAssistant({
                   {draft.questions.length > 0 && (
                     <div className={styles.questions}>
                       <h4>Points à préciser</h4>
-                      <p>
-                        Répondez dans la conversation ou corrigez le brouillon, puis confirmez
-                        chaque point résolu.
-                      </p>
                       {draft.questions.map((question, index) => (
-                        <div key={index}>
-                          <p>{question}</p>
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setDraft({
-                                ...draft,
-                                questions: draft.questions.filter((_, i) => i !== index),
-                              })
-                            }
-                          >
-                            J’ai vérifié ce point
-                          </button>
-                        </div>
+                        <p key={index}>{question}</p>
                       ))}
                     </div>
                   )}
@@ -559,8 +511,7 @@ export function SportAssistant({
                 </fieldset>
                 {!template && (
                   <p className={styles.muted}>
-                    Complétez les réglages et vérifiez les points à préciser pour démarrer ou
-                    enregistrer.
+                    Complétez les champs nécessaires pour démarrer ou enregistrer.
                   </p>
                 )}
                 {hasActiveSession && (
@@ -598,101 +549,61 @@ export function SportAssistant({
                 </div>
               </section>
             )}
-            <form
-              className={styles.composer}
-              onSubmit={(event) => {
-                event.preventDefault();
-                void send();
-              }}
-            >
-              <label htmlFor="sport-assistant-message">
-                {messages.length
-                  ? "Votre réponse ou vos ajustements"
-                  : mode === "import"
-                    ? "Votre programme"
-                    : "Votre demande"}
-              </label>
-              <textarea
-                id="sport-assistant-message"
-                rows={4}
-                maxLength={4000}
-                value={text}
-                onChange={(event) => setText(event.target.value)}
-                disabled={busy}
-                placeholder={
-                  mode === "import"
-                    ? "Exemple : développé couché, 3 × 8, barre de 40 kg au total, repos 120 s…"
-                    : mode === "review"
-                      ? "Exemple : comment cette séance se compare-t-elle aux précédentes ?"
-                      : mode === "progress"
-                        ? "Exemple : sur quels exercices ai-je progressé ces 30 derniers jours ?"
-                        : "Exemple : une séance haut du corps de 45 minutes avec des haltères…"
-                }
-              />
-              <small className={styles.muted}>{text.length}/4 000 caractères</small>
-              {!online && (
-                <p role="status">
-                  Vous êtes hors ligne. Votre texte est conservé ; reconnectez-vous pour l’envoyer.
-                </p>
-              )}
-              {error && (
-                <p className={styles.error} role="alert">
-                  {error}
-                </p>
-              )}
-              <div className={styles.actions}>
-                {busy ? (
-                  <>
-                    <p role="status">Milo prépare sa réponse…</p>
-                    <button type="button" onClick={cancel}>
-                      Annuler la demande
+            {(mode === "import" || messages.length > 0 || draft) && (
+              <form
+                className={styles.composer}
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  void send();
+                }}
+              >
+                <label htmlFor="sport-assistant-message">
+                  {messages.length
+                    ? "Votre réponse ou vos ajustements"
+                    : mode === "import"
+                      ? "Votre programme"
+                      : "Votre demande"}
+                </label>
+                <textarea
+                  ref={composer}
+                  id="sport-assistant-message"
+                  rows={4}
+                  maxLength={4000}
+                  value={text}
+                  onChange={(event) => setText(event.target.value)}
+                  disabled={busy}
+                  placeholder={
+                    mode === "import"
+                      ? "Exemple : développé couché, 3 × 8, barre de 40 kg au total, repos 120 s…"
+                      : mode === "review"
+                        ? "Exemple : comment cette séance se compare-t-elle aux précédentes ?"
+                        : mode === "progress"
+                          ? "Exemple : quel exercice mérite plus d’attention ?"
+                          : "Exemple : une séance haut du corps de 45 minutes avec des haltères…"
+                  }
+                />
+                <div className={styles.actions}>
+                  {busy ? (
+                    <>
+                      <button type="button" onClick={cancel}>
+                        Annuler la demande
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      className={styles.primary}
+                      disabled={!text.trim() || !online || !accountReady}
+                      type="submit"
+                    >
+                      Envoyer à l’assistant
                     </button>
-                  </>
-                ) : (
-                  <button
-                    className={styles.primary}
-                    disabled={!text.trim() || !consent || !online || !readyToSend}
-                    type="submit"
-                  >
-                    Envoyer à l’assistant
-                  </button>
-                )}
-              </div>
-              {!consent && (
-                <p className={styles.muted}>
-                  Consultez les données envoyées et cochez votre accord pour activer l’envoi.
-                </p>
-              )}
-              {!readyToSend && (
-                <p className={styles.muted}>
-                  Joignez les données de {mode === "review" ? "cette séance" : "votre carnet"} pour
-                  demander ce bilan.
-                </p>
-              )}
-            </form>
+                  )}
+                </div>
+              </form>
+            )}
           </>
         )}
         {status && <p role="status">{status}</p>}
-        <p className={styles.muted}>
-          Les propositions peuvent contenir des erreurs. Adaptez-les à vos capacités ; l’assistant
-          ne fournit pas de diagnostic médical.
-        </p>
-        <details className={styles.unitHelp}>
-          <summary>Les repères de Milo</summary>
-          <p>
-            Repères vérifiés le 20/10/2026. Milo s’appuie sur cette synthèse et n’effectue pas de
-            recherche web en direct.
-          </p>
-          <ul>
-            {coachKnowledge.sources.map((source) => (
-              <li key={source.id}>
-                <a href={source.url} target="_blank" rel="noreferrer">
-                  {source.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </details>
       </div>
     </dialog>
   );

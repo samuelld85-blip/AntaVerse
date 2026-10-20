@@ -1,9 +1,9 @@
 # Évaluation manuelle — assistant Sport
 
-Cette grille sert à relire les réponses avec des données fictives avant
-l’activation d’OpenRouter. Ne pas utiliser de carnet réel ni saisir de clé
-fournisseur dans les tests automatisés. Les tests d’intégration doivent mocker
-le transport et vérifier qu’aucune requête externe ne part.
+Cette grille sert à relire les réponses avec des données fictives lors d’une
+mise à jour du modèle ou du comportement. Ne pas utiliser de carnet réel ni
+saisir de clé fournisseur dans les tests automatisés. Les tests d’intégration
+doivent mocker le transport et vérifier qu’aucune requête externe ne part.
 
 ## 20 cas fonctionnels
 
@@ -20,32 +20,41 @@ le transport et vérifier qu’aucune requête externe ne part.
    modifiable et exprimer l’incertitude, sans prétendre à une validation médicale.
 9. Relire une séance terminée complète : observations liées à cette séance.
 10. Relire une séance avec répétitions manquantes : les signaler comme inconnues.
-11. Relire une séance très ancienne explicitement sélectionnée : incluse dans le
-    contexte sans déplacer ses dates ou la présenter comme récente.
-12. Progression 30 jours avec un historique fourni : période et unités explicites.
-13. Progression 90 jours avec assez de données : utiliser la comparaison à 90 jours.
-14. Comparer une période sans séances : ne pas inventer de tendance ni de volume.
-15. Comparer des périodes avec données manquantes : signaler la limite.
-16. Dossier avec plus de 12 séances récentes : contexte borné comme prévu.
-17. Séance contenant plus de 80 séries validées : contexte borné et réponse prudente.
-18. Exercice hors catalogue : ne pas attribuer d’ID ou de caractéristiques inventés.
-19. Suggestion de suivi contextuel : pertinente et aucun nouvel appel avant envoi
-    explicite par l’utilisateur.
-20. Texte contenant un nom, une adresse ou un détail privé : rappel de transmission
-    visible et aucune répétition inutile de ces éléments dans la réponse.
+11. Relire une séance ancienne : inclure toutes les séances terminées de
+    l’utilisateur et conserver les vraies dates.
+12. Progression : utiliser l’historique terminé complet, toutes les séries et
+    les statistiques, sans demander une période de 30 ou 90 jours.
+13. Comparer un historique sans séances ou avec des données manquantes : ne pas
+    inventer de tendance ni de volume.
+14. Préparation : appel au toucher du bouton dans « Nouvelle séance » ; aucun
+    bloc Milo sur l’accueil.
+15. Relecture et progression : le bouton adapté déclenche l’appel ; aucun appel
+    depuis une page sans action de l’assistant.
+16. Importer un texte : ouvrir le champ de saisie ne transmet rien ; un seul
+    envoi transmet le texte et le contexte.
+17. Contexte : aucune donnée de nom, e-mail, pseudo, commentaire, photo ou ami ;
+    toutes les séances terminées et leurs séries sont incluses.
+18. Corps de requête dépassant 2 000 000 octets : erreur claire, aucun appel
+    fournisseur, quota non consommé et aucune troncature silencieuse.
+19. Corps de requête sous la limite : validation normale, sans supprimer
+    silencieusement des séances ou des séries.
+20. Vérifier la configuration : champs requis valides avant démarrage ou
+    enregistrement, sans case « J’ai vérifié ce point ».
 
 ## Contrôles de sécurité et produit
 
 - Une visite, ouverture d’écran ou saisie locale ne déclenche aucun appel.
-- L’envoi exige un compte valide et un clic explicite ; l’origine non autorisée
+- Les boutons contextuels exigent un compte valide et déclenchent la demande au
+  clic ; l’import n’envoie qu’après le bouton d’envoi. L’origine non autorisée
   est refusée.
 - Vérifier séparément le quota minute, le quota journalier utilisateur et le
   quota global, y compris deux appels concurrents autour de la limite.
 - Vérifier que le nettoyage retire les compteurs âgés de plus de sept jours et
   que la suppression du compte cascade vers ses compteurs.
 - La clé absente donne un état indisponible sans contacter ni facturer le
-  fournisseur. Les erreurs utilisateur ne révèlent pas les messages bruts
-  OpenRouter.
+  fournisseur. Une demande de plus de 2 000 000 octets est refusée clairement,
+  sans appeler le fournisseur ni tronquer son contenu. Les erreurs utilisateur
+  ne révèlent pas les messages bruts OpenRouter.
 - Prompt, réponse, jeton et clé n’apparaissent ni dans les journaux ni dans le
   stockage du carnet. La réponse n’est pas enregistrée automatiquement.
 

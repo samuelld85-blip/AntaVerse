@@ -16,6 +16,7 @@ import {
 } from "./stats";
 import { getExerciseProgressions } from "./progression";
 import { ProgressionBadge } from "./progression-badge";
+import { CoachAvatar } from "./ai/coach-avatar";
 import styles from "./sport.module.css";
 
 const rangeLabels: Record<StatsRange, string> = {
@@ -315,10 +316,12 @@ export function StatsDashboard({
   history,
   username,
   compact = false,
+  onUnderstandProgress,
 }: {
   history: Session[];
   username?: string;
   compact?: boolean;
+  onUnderstandProgress?: (trigger: HTMLButtonElement) => void;
 }) {
   const [range, setRange] = useState<StatsRange>("all");
   const [rhythmUnit, setRhythmUnit] = useState<RhythmUnit>("week");
@@ -551,6 +554,15 @@ export function StatsDashboard({
                 </button>
               </div>
               <TrendChart points={progress} metric={progressMetric} />
+              {onUnderstandProgress && (
+                <button
+                  className={styles.secondary}
+                  type="button"
+                  onClick={(event) => onUnderstandProgress(event.currentTarget)}
+                >
+                  <CoachAvatar small /> Comprendre ma progression
+                </button>
+              )}
               <p className={styles.statsNote}>
                 Le 1RM estimé utilise la formule d’Epley (charge × (1 + répétitions / 30)). C’est un
                 repère de progression, pas un test maximal.

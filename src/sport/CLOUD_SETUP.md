@@ -187,7 +187,7 @@ Le catalogue serveur est généré depuis `src/sport/catalog.ts` avec
 `npm run sport:ai:catalog:check` ; ne pas éditer directement le JSON généré.
 
 Appliquer la migration `supabase/migrations/202610190001_sport_ai_quota.sql`
-avec les autres migrations, puis déployer la fonction :
+au projet Supabase, puis déployer la fonction :
 
 ```
 supabase functions deploy sport-assistant --no-verify-jwt
@@ -199,6 +199,10 @@ Edge Functions → Secrets, définir `OPENROUTER_API_KEY` (secret privé, jamais
 dans le dépôt, la conversation ou une variable `NEXT_PUBLIC_*`) et
 `SPORT_AI_ALLOWED_ORIGINS`, liste séparée par des virgules d’origines exactes
 autorisées, par exemple `https://antaverse.vercel.app,http://localhost:3000`.
+Pour les déploiements du même projet Vercel, une entrée explicite telle que
+`https://antaverse-*-sam-f305.vercel.app` autorise ses adresses de branche et de
+déploiement. Le joker est limité à un seul label de nom d’hôte, pour ce projet et
+cette équipe ; il n’autorise ni autre domaine, ni HTTP, ni port arbitraire.
 Ne pas inclure de chemins ni de barre oblique finale. Saisir la clé directement
 dans le tableau de bord, sans la passer en argument de commande ou l’écrire dans
 un fichier versionné.
@@ -240,23 +244,32 @@ d’[OpenRouter](https://openrouter.ai/privacy/) et du
 [fournisseur de modèle](https://openai.com/policies/how-your-data-is-used-to-improve-model-performance/)
 avant la mise en service et périodiquement.
 
-Le contexte transmis est minimisé : résumé statistique des 30/90 derniers jours,
-totaux de la période précédente de même durée, jusqu’à 12 séances récentes
-(80 séries validées maximum chacune), et séance sélectionnée pour la relecture
-même si elle est antérieure. Les noms, e-mails, pseudos, commentaires, photos et
-données d’amis sont exclus. Les exercices, identifiants utiles, dates,
-équipement, charges et répétitions peuvent être transmis. Le texte saisi par
-l’utilisateur est aussi envoyé après son action explicite et peut révéler des
-informations personnelles. Le modèle n’a aucun accès à la base de données et
-n’utilise aucun outil.
+Les boutons contextuels de préparation, relecture et progression déclenchent
+leur demande au toucher. L’import ouvre un champ de texte puis transmet le
+programme avec un seul envoi de l’utilisateur. L’assistant n’est pas appelé
+depuis les pages sans action correspondante. La préparation n’exige pas de
+case de consentement ou de partage de l’historique ; les détails de traitement
+et les destinataires sont exposés dans `/legal/confidentialite`.
 
-Sans `OPENROUTER_API_KEY`, l’interface indique que l’assistant est indisponible
-après la demande ; aucun appel au fournisseur ni coût modèle n’est engagé.
-Avant activation réelle, exécuter les tests avec transport simulé, confirmer les
-origines autorisées, les limites et le nettoyage des compteurs, puis suivre
+Le contexte transmis comprend toutes les séances terminées de l’utilisateur,
+y compris les anciennes, toutes les séries terminées de ces séances et les
+statistiques calculées depuis le carnet. Il ne comprend pas le carnet complet :
+les noms, e-mails, pseudos, commentaires, photos et données d’amis sont exclus.
+Les exercices, identifiants utiles, dates, équipement, charges et répétitions
+peuvent être transmis. Le texte saisi peut lui-même contenir des informations
+personnelles. Le modèle n’a aucun accès à la base de données et n’utilise aucun
+outil. Le corps de requête est limité à 2 000 000 octets ; une demande qui
+dépasse cette limite est rejetée avec une erreur visible, sans suppression
+silencieuse de séances ou de séries.
+
+Si `OPENROUTER_API_KEY` n’est pas configurée, l’interface indique que
+l’assistant est indisponible après la demande ; aucun appel au fournisseur ni
+coût modèle n’est engagé. Pour chaque mise en service ou changement de
+configuration, exécuter les tests avec transport simulé, confirmer les origines
+autorisées, les limites et le nettoyage des compteurs, puis suivre
 [`docs/sport-ai-evaluation.md`](../../docs/sport-ai-evaluation.md). Les tests
 automatisés ne doivent jamais contacter OpenRouter. La fonction n’est pas
-activée tant que la clé n’est pas configurée.
+utilisable sans clé valide.
 
 Voir aussi la [revue produit Milo](../../docs/sport-ai-product-review.md) et les
 [exemples d’évaluation](../../docs/examples/sport-ai-beginner.md).

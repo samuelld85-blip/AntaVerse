@@ -501,7 +501,8 @@ function ConfigForm({
               value={loadKg}
               onChange={(event) => {
                 const nextLoad = Number(event.target.value);
-                if (Number.isFinite(nextLoad) && nextLoad >= 0 && nextLoad <= 2000) setLoadKg(nextLoad);
+                if (Number.isFinite(nextLoad) && nextLoad >= 0 && nextLoad <= 2000)
+                  setLoadKg(nextLoad);
               }}
               required
             />
@@ -744,11 +745,7 @@ function Catalog({
       <div className={onlyFavorites ? styles.exerciseList : styles.exerciseGrid}>
         {onlyFavorites
           ? matchingFavorites.map((c) => (
-              <button
-                key={configKey(c)}
-                className={styles.exerciseRow}
-                onClick={() => onChoose(c)}
-              >
+              <button key={configKey(c)} className={styles.exerciseRow} onClick={() => onChoose(c)}>
                 <span>
                   <strong>{exerciseName(c.exerciseId)}</strong>
                   <ConfigSummary config={c} />
@@ -764,25 +761,24 @@ function Catalog({
                 onClick={() => {
                   const previous = lastConfigFor(ex.id);
                   const nextEquipment = equipment ? (equipment as Equipment) : previous?.equipment;
-                  onChoose(
-                    {
-                      ...(previous ?? (freeSession ? defaultFreeConfig(ex.id) : defaultConfig(ex.id))),
-                      ...(nextEquipment
-                        ? {
-                            equipment: nextEquipment,
-                            ...(previous
-                              ? {
-                                  loadKg: adaptLoadForEquipmentChange(
-                                    previous.loadKg,
-                                    previous.equipment,
-                                    nextEquipment,
-                                  ),
-                                }
-                              : {}),
-                          }
-                        : {}),
-                    },
-                  );
+                  onChoose({
+                    ...(previous ??
+                      (freeSession ? defaultFreeConfig(ex.id) : defaultConfig(ex.id))),
+                    ...(nextEquipment
+                      ? {
+                          equipment: nextEquipment,
+                          ...(previous
+                            ? {
+                                loadKg: adaptLoadForEquipmentChange(
+                                  previous.loadKg,
+                                  previous.equipment,
+                                  nextEquipment,
+                                ),
+                              }
+                            : {}),
+                        }
+                      : {}),
+                  });
                 }}
               >
                 <ExerciseIcon exercise={ex} />
@@ -833,8 +829,12 @@ const homeMenu = [
 ] as const;
 
 function relativeSessionAge(date: string) {
-  const startOfDay = (value: Date) => new Date(value.getFullYear(), value.getMonth(), value.getDate()).getTime();
-  const days = Math.max(0, Math.floor((startOfDay(new Date()) - startOfDay(new Date(date))) / 86_400_000));
+  const startOfDay = (value: Date) =>
+    new Date(value.getFullYear(), value.getMonth(), value.getDate()).getTime();
+  const days = Math.max(
+    0,
+    Math.floor((startOfDay(new Date()) - startOfDay(new Date(date))) / 86_400_000),
+  );
   if (days === 0) return "aujourd’hui";
   if (days === 1) return "hier";
   return `il y a ${days} jours`;
@@ -961,11 +961,7 @@ export function SportApp() {
         antaverseSport: true,
         sportView: next,
       };
-      window.history[replace ? "replaceState" : "pushState"](
-        nextState,
-        "",
-        sportTabUrl(next),
-      );
+      window.history[replace ? "replaceState" : "pushState"](nextState, "", sportTabUrl(next));
     }
     tabRef.current = next;
     setTab(next);
@@ -1073,11 +1069,7 @@ export function SportApp() {
         homeUrl,
       );
       if (initialTab !== "home") {
-        window.history.pushState(
-          { antaverseSport: true, sportView: initialTab },
-          "",
-          initialUrl,
-        );
+        window.history.pushState({ antaverseSport: true, sportView: initialTab }, "", initialUrl);
       }
       tabRef.current = initialTab;
       setTab(initialTab);
@@ -1096,9 +1088,7 @@ export function SportApp() {
       const previousTab = tabRef.current;
       const nextTab = tabFromLocation();
       const isLeavingSportHome =
-        previousTab === "home" &&
-        nextTab === "home" &&
-        Boolean(event.state?.sportHomeBoundary);
+        previousTab === "home" && nextTab === "home" && Boolean(event.state?.sportHomeBoundary);
 
       if (isLeavingSportHome) {
         window.history.pushState(
@@ -1404,31 +1394,6 @@ export function SportApp() {
                   </button>
                 ))}
               </div>
-              <section className={styles.panel} aria-label="Assistant Sport">
-                  <p className={styles.eyebrow}>
-                    <CoachAvatar small /> Milo · coach IA
-                  </p>
-                <h2>Une séance à votre mesure</h2>
-                <p>
-                  Décrivez votre objectif ou importez un programme, puis ajustez chaque réglage.
-                </p>
-                <div className={styles.actions}>
-                  <button
-                    className={styles.secondary}
-                    type="button"
-                    onClick={(event) => openAssistant("prepare", event.currentTarget)}
-                  >
-                    Préparer ma séance
-                  </button>
-                  <button
-                    className={styles.textButton}
-                    type="button"
-                    onClick={(event) => openAssistant("import", event.currentTarget)}
-                  >
-                    Depuis un texte
-                  </button>
-                </div>
-              </section>
             </section>
           )}
           {tab === "training" && !active && (
@@ -1439,10 +1404,10 @@ export function SportApp() {
                   <SportIcon />
                 </div>
               </section>
-              <section className={styles.panel} aria-label="Assistant Sport">
-                  <p className={styles.eyebrow}>
-                    <CoachAvatar small /> Milo · coach IA
-                  </p>
+              <section className={`${styles.panel} ${styles.coachEntry}`} aria-label="Assistant Sport">
+                <p className={styles.eyebrow}>
+                  <CoachAvatar small /> Milo · coach IA
+                </p>
                 <div className={styles.actions}>
                   <button
                     className={styles.secondary}
@@ -1958,8 +1923,8 @@ export function SportApp() {
                       <p className={styles.eyebrow}>Superset · premier exercice</p>
                       <h2>{exerciseName(supersetDraft.exerciseId)}</h2>
                       <p className={styles.hint}>
-                        {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos
-                        unique entre les tours
+                        {supersetDraft.sets} tours · {loadLabel(supersetDraft)} · repos unique entre
+                        les tours
                       </p>
                     </section>
                   )}
@@ -1975,9 +1940,7 @@ export function SportApp() {
                       setRecoveryDuration(seconds);
                       if (timer.remaining !== null && timer.remaining > 0) timer.start(seconds);
                     }}
-                    lastConfigFor={(exerciseId) =>
-                      lastConfigForExercise(store.history, exerciseId)
-                    }
+                    lastConfigFor={(exerciseId) => lastConfigForExercise(store.history, exerciseId)}
                     onChoose={(config) => {
                       timer.stop();
                       setRecoveryTimerVisible(false);
@@ -2511,14 +2474,11 @@ export function SportApp() {
           )}
           {tab === "stats" && (
             <>
-              <button
-                className={styles.secondary}
-                type="button"
-                onClick={(event) => openAssistant("progress", event.currentTarget)}
-              >
-                Comprendre ma progression
-              </button>
-              <StatsDashboard history={store.history} username={cloud.profile?.username} />
+              <StatsDashboard
+                history={store.history}
+                username={cloud.profile?.username}
+                onUnderstandProgress={(trigger) => openAssistant("progress", trigger)}
+              />
             </>
           )}
           {tab === "social" && (
@@ -2666,11 +2626,7 @@ export function SportApp() {
                   >
                     Annuler
                   </button>
-                  <button
-                    type="button"
-                    className={styles.primary}
-                    onClick={() => router.push("/")}
-                  >
+                  <button type="button" className={styles.primary} onClick={() => router.push("/")}>
                     Quitter Sport
                   </button>
                 </div>

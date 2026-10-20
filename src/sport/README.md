@@ -96,21 +96,24 @@ Validation : `npx vitest run src/sport/model.test.ts`, `npm run typecheck`,
 
 L’assistant aide à préparer une séance à partir des contraintes de l’historique,
 à transformer un texte fourni par l’utilisateur en brouillon, à relire une séance
-terminée et à comparer la progression sur 30 ou 90 jours. Chaque préparation
-reste un brouillon modifiable : elle ne démarre ni n’enregistre une séance sans
-action explicite. Les suggestions de suivi sont contextuelles. L’assistant ne
-fait aucun appel au modèle automatiquement. Avant l’envoi, l’utilisateur choisit
-de transmettre sa demande et le contexte limité décrit dans la politique de
-confidentialité. Les textes saisis peuvent contenir des données personnelles.
+terminée et à observer la progression. Depuis « Nouvelle séance », les boutons
+de préparation, relecture et progression lancent la demande au toucher. Pour
+importer un programme, l’interface ouvre le champ de texte ; un seul envoi
+explicite transmet le texte et le contexte. Ces actions n’ajoutent pas de carte
+Milo à l’accueil et aucun appel ne part depuis une page sans action de l’assistant.
+Chaque préparation reste un brouillon modifiable : elle ne démarre ni
+n’enregistre une séance sans action distincte de l’utilisateur.
 
 L’assistant est réservé aux utilisateurs connectés et passe par la fonction
 serveur Supabase `sport-assistant`. Le modèle fixé est
 `openai/gpt-6.1-sol` via OpenRouter, avec un raisonnement de niveau `medium`.
-OpenRouter et le fournisseur retenu peuvent traiter la requête. L’historique du
-carnet est réduit à des résumés/statistiques, à la période précédente comparable
-et à au plus 12 séances récentes (80 séries validées maximum par séance), plus
-la séance sélectionnée pour sa relecture si elle est plus ancienne. Les noms,
-adresses e-mail, pseudos, commentaires, photos et données d’amis sont exclus.
+OpenRouter et le fournisseur retenu peuvent traiter la requête. Le contexte
+comprend toutes les séances terminées de l’utilisateur, y compris les séances
+anciennes, toutes leurs séries terminées et les statistiques qui en sont
+calculées. Les noms, adresses e-mail, pseudos, commentaires, photos et données
+d’amis sont exclus. La demande saisie peut elle-même contenir des informations
+personnelles. Les détails de transmission et les prestataires sont décrits dans
+la [politique de confidentialité](../app/legal/confidentialite/page.tsx).
 Les demandes et réponses de l’assistant restent en mémoire et ne sont ni
 sauvegardées dans le cloud ni ajoutées automatiquement au carnet.
 

@@ -10,7 +10,7 @@
       "endedAt": "2026-10-03T09:40:00.000Z",
       "exercises": [
         {
-          "id": "e56d73c8-88ba-438a-ba1c-b07f61658cb3",
+          "id": "c04aae4e-f541-4930-a8ff-69e58e072a9c",
           "config": {
             "exerciseId": "bench-press",
             "equipment": "barbell",
@@ -47,7 +47,7 @@
           "finished": true
         },
         {
-          "id": "3cf1ac3a-7ef3-4809-9786-3467b3350c8f",
+          "id": "f1244b0b-f775-4539-ae6d-601faccabeab",
           "config": {
             "exerciseId": "row",
             "equipment": "dumbbell",
@@ -84,7 +84,7 @@
           "finished": true
         },
         {
-          "id": "4aec8b5a-16dc-4886-b722-aa36179dad7b",
+          "id": "9210ce3f-a25c-4537-9fa1-4800a3f2af88",
           "config": {
             "exerciseId": "leg-press",
             "equipment": "machine",
@@ -130,7 +130,7 @@
       "endedAt": "2026-10-06T09:40:00.000Z",
       "exercises": [
         {
-          "id": "497fbc45-699f-4ec8-b86f-7cab6fc859b4",
+          "id": "c81c4e37-eca7-4284-9b00-d1300b22ffa7",
           "config": {
             "exerciseId": "bench-press",
             "equipment": "barbell",
@@ -167,7 +167,7 @@
           "finished": true
         },
         {
-          "id": "53db43f3-09d3-4e61-9e92-6a001b014e29",
+          "id": "0ab8c86e-1832-48fd-a86c-298c168b5bc9",
           "config": {
             "exerciseId": "row",
             "equipment": "dumbbell",
@@ -204,7 +204,7 @@
           "finished": true
         },
         {
-          "id": "d9b947aa-e5af-4a46-b4d7-67633aad10c2",
+          "id": "55811e14-fcd5-434f-a8b8-f6be46711f23",
           "config": {
             "exerciseId": "leg-press",
             "equipment": "machine",
@@ -250,7 +250,7 @@
       "endedAt": "2026-10-10T09:40:00.000Z",
       "exercises": [
         {
-          "id": "ad858e06-1be9-421d-968d-f9e92a6d5967",
+          "id": "46a28752-dc3f-4df4-8803-fbc0e5b3bcd1",
           "config": {
             "exerciseId": "bench-press",
             "equipment": "barbell",
@@ -287,7 +287,7 @@
           "finished": true
         },
         {
-          "id": "7a96c160-592d-4b9e-b2eb-3e0fbba7133d",
+          "id": "0896d7b5-ccf0-4d62-9242-6a9f2757515f",
           "config": {
             "exerciseId": "row",
             "equipment": "dumbbell",
@@ -324,7 +324,7 @@
           "finished": true
         },
         {
-          "id": "172d3ce3-09ee-4445-b584-da4d4970b87d",
+          "id": "64e2f30f-53f9-4837-8d08-92b01afe64aa",
           "config": {
             "exerciseId": "leg-press",
             "equipment": "machine",
@@ -370,7 +370,7 @@
       "endedAt": "2026-10-13T09:40:00.000Z",
       "exercises": [
         {
-          "id": "c04d54c1-2d6d-4e5f-a342-0d2192125643",
+          "id": "50ec3d77-ed02-47fa-aca8-c31f361adea2",
           "config": {
             "exerciseId": "bench-press",
             "equipment": "barbell",
@@ -407,7 +407,7 @@
           "finished": true
         },
         {
-          "id": "28c368c8-cf1d-4337-8991-6806f8150eb5",
+          "id": "baf7b736-2329-4972-a160-516dc9f3250f",
           "config": {
             "exerciseId": "row",
             "equipment": "dumbbell",
@@ -444,7 +444,7 @@
           "finished": true
         },
         {
-          "id": "95bb7276-63a1-466b-b920-3f5c6f33c084",
+          "id": "7962d78c-e4f6-49c7-8ad3-7c10a2fc4e21",
           "config": {
             "exerciseId": "leg-press",
             "equipment": "machine",
@@ -490,7 +490,7 @@
       "endedAt": "2026-10-17T09:40:00.000Z",
       "exercises": [
         {
-          "id": "8b2805be-a11c-4e19-9224-5cb76b002197",
+          "id": "8e173cc2-49ee-4773-870c-f7aa3ddce916",
           "config": {
             "exerciseId": "bench-press",
             "equipment": "barbell",
@@ -527,7 +527,7 @@
           "finished": true
         },
         {
-          "id": "e9d2a157-1530-44eb-9ba3-20fdf6ea12dc",
+          "id": "32e449a5-0090-47fa-81aa-7cda551af28a",
           "config": {
             "exerciseId": "row",
             "equipment": "dumbbell",
@@ -564,7 +564,7 @@
           "finished": true
         },
         {
-          "id": "ec8fdbde-e06b-4b37-bc33-ab2eb8352107",
+          "id": "1d5dff37-ae54-4d87-9c05-0573089719f4",
           "config": {
             "exerciseId": "leg-press",
             "equipment": "machine",
@@ -616,16 +616,10 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
             "sessions": 5,
             "sets": 45,
             "volumeKg": 9864
-          },
-          "previousSummary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
           },
           "focusSessionId": null,
           "recentSessions": [
@@ -944,10 +938,16 @@
         "draft": null
       },
       "response": {
-        "message": "Je reprends les charges et répétitions du 17 octobre que tu as confirmées, avec trois séries par exercice : une poussée, un tirage et un mouvement de jambes. Prévois environ 5 minutes d’échauffement avec des séries légères, puis réalise les exercices dans l’ordre proposé, avec 90 secondes de repos entre les séries : vise environ 30 minutes selon les transitions. Pour cette séance, garde ces paramètres sans chercher l’échec, afin de consolider tes repères techniques.",
+        "message": "Je reprends les charges et répétitions du 17 octobre, comme tu les confirmes : tes trois exercices couvrent poussée, tirage et jambes, une base simple pour débuter. Prévois environ 5 minutes d’échauffement avec quelques séries légères, puis réalise le brouillon dans l’ordre avec 90 secondes de repos entre les séries, pour viser 30 minutes selon les transitions. Garde environ 2 répétitions possibles en fin de série plutôt que de forcer jusqu’à l’échec : l’objectif est de répéter cette séance avec une exécution maîtrisée.",
         "observations": [
           {
-            "text": "Le 17 octobre, tu as consigné trois séries de 7 répétitions au développé couché à 25 kg, de 9 au rowing à 10 kg et de 9 à la presse à cuisses à 45 kg. Les équipements correspondent à ta demande.",
+            "text": "Le 17 octobre 2026, tu as consigné 3 séries de 7 répétitions au développé couché barre à 25 kg, barre comprise.",
+            "sessionIds": [
+              "demo-5"
+            ]
+          },
+          {
+            "text": "Le 17 octobre 2026, tu as consigné 3 séries de 9 répétitions au rowing haltères à 10 kg par haltère et à la presse à cuisses à 45 kg.",
             "sessionIds": [
               "demo-5"
             ]
@@ -1000,7 +1000,7 @@
           },
           {
             "role": "assistant",
-            "content": "Je reprends les charges et répétitions du 17 octobre que tu as confirmées, avec trois séries par exercice : une poussée, un tirage et un mouvement de jambes. Prévois environ 5 minutes d’échauffement avec des séries légères, puis réalise les exercices dans l’ordre proposé, avec 90 secondes de repos entre les séries : vise environ 30 minutes selon les transitions. Pour cette séance, garde ces paramètres sans chercher l’échec, afin de consolider tes repères techniques."
+            "content": "Je reprends les charges et répétitions du 17 octobre, comme tu les confirmes : tes trois exercices couvrent poussée, tirage et jambes, une base simple pour débuter. Prévois environ 5 minutes d’échauffement avec quelques séries légères, puis réalise le brouillon dans l’ordre avec 90 secondes de repos entre les séries, pour viser 30 minutes selon les transitions. Garde environ 2 répétitions possibles en fin de série plutôt que de forcer jusqu’à l’échec : l’objectif est de répéter cette séance avec une exécution maîtrisée."
           },
           {
             "role": "user",
@@ -1009,16 +1009,10 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
             "sessions": 5,
             "sets": 45,
             "volumeKg": 9864
-          },
-          "previousSummary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
           },
           "focusSessionId": null,
           "recentSessions": [
@@ -1370,7 +1364,7 @@
         }
       },
       "response": {
-        "message": "Le brouillon remplace uniquement la presse à cuisses par le squat au poids du corps : 2 séries de 10, 90 secondes de repos, sans lest. Le développé couché barre et le rowing haltères restent inchangés pour conserver tes repères.",
+        "message": "Le brouillon remplace uniquement la presse à cuisses par le squat au poids du corps : 2 × 10, repos de 90 secondes, sans lest. Le développé couché et le rowing restent inchangés : tu conserves ainsi poussée, tirage et jambes malgré la machine occupée.",
         "observations": [],
         "draft": {
           "name": "Full body simple — 30 minutes",
@@ -1420,13 +1414,7 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
-          },
-          "previousSummary": {
             "sessions": 0,
             "sets": 0,
             "volumeKg": 0
@@ -1437,10 +1425,10 @@
         "draft": null
       },
       "response": {
-        "message": "Voici le brouillon fidèle à tes réglages confirmés, sans ajout d’exercice. Les charges sont conservées : 20 kg barre comprise et 8 kg par haltère ; aucune écriture automatique n’est effectuée.",
+        "message": "Le brouillon reprend tes réglages confirmés, sans ajout d’exercice. Les charges sont bien notées barre comprise au développé couché et par haltère au rowing.",
         "observations": [],
         "draft": {
-          "name": "Débutant — Développé couché et rowing",
+          "name": "Programme débutant",
           "kind": "upper",
           "exercises": [
             {
@@ -1478,16 +1466,10 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
             "sessions": 5,
             "sets": 45,
             "volumeKg": 9864
-          },
-          "previousSummary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
           },
           "focusSessionId": "demo-5",
           "recentSessions": [
@@ -1806,17 +1788,17 @@
         "draft": null
       },
       "response": {
-        "message": "Ta séance du 17 octobre garde une structure simple : une poussée, un tirage et un mouvement pour les jambes, avec trois séries chacun. Les répétitions consignées progressent à charges identiques, mais le carnet ne permet pas de vérifier la technique ni l’effort nécessaire. Pour la prochaine, renseigne soigneusement ton ressenti Content/Moyen/Pas content selon les règles du carnet : c’est le repère à conserver pour la suite, plutôt que d’augmenter les charges sur la seule base des chiffres.",
+        "message": "Le 17 octobre, tu as ajouté une répétition à chaque série sur les trois exercices, à charges et matériel identiques au 13 octobre : c’est une progression nette des répétitions consignées. Le carnet ne permet toutefois pas de savoir si la technique et l’effort sont restés comparables. Pour la prochaine séance, garde les mêmes charges et cherche d’abord à reproduire ces répétitions avec une exécution maîtrisée, sans forcer l’échec : tu pourras ainsi confirmer ce niveau avant d’envisager une hausse.",
         "observations": [
           {
-            "text": "Au développé couché à la barre, tu passes de 3 × 6 répétitions le 13 octobre à 3 × 7 le 17 octobre, toujours à 25 kg.",
+            "text": "Au développé couché à la barre, tu passes de 3 × 6 le 13 octobre à 3 × 7 le 17 octobre, toujours à 25 kg.",
             "sessionIds": [
               "demo-4",
               "demo-5"
             ]
           },
           {
-            "text": "Du 13 au 17 octobre, le rowing avec haltère passe de 3 × 8 à 3 × 9 à 10 kg par haltère ; la presse à cuisses passe également de 3 × 8 à 3 × 9, à 45 kg sur machine.",
+            "text": "Du 13 au 17 octobre, le rowing avec haltères et la presse à cuisses passent chacun de 3 × 8 à 3 × 9, respectivement à 10 kg par haltère et 45 kg sur la machine.",
             "sessionIds": [
               "demo-4",
               "demo-5"
@@ -1827,7 +1809,7 @@
       }
     },
     {
-      "title": "Comprendre ma progression sur 30 jours",
+      "title": "Comprendre ma progression",
       "request": {
         "mode": "progress",
         "messages": [
@@ -1838,16 +1820,10 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
             "sessions": 5,
             "sets": 45,
             "volumeKg": 9864
-          },
-          "previousSummary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
           },
           "focusSessionId": null,
           "recentSessions": [
@@ -2166,10 +2142,10 @@
         "draft": null
       },
       "response": {
-        "message": "Oui, ton carnet montre un départ cohérent : des séances espacées et davantage de répétitions à charge identique, ce qui est un signe encourageant de progression sur ces exercices. Cela ne permet pas encore de juger ta technique ni de conclure à un gain de muscle. Pour la suite, garde cette routine simple autour de deux séances non consécutives par semaine, sans chercher à augmenter les charges à chaque séance. Note ton ressenti avec Content/Moyen/Pas content : cela aidera à suivre les règles de progression du carnet sans transformer chaque entraînement en test maximal.",
+        "message": "Oui, ton carnet montre un début cohérent : des séances régulières et davantage de répétitions à charges identiques, notamment entre le 13 et le 17 octobre. Cela indique une progression des performances consignées, sans permettre de juger ta technique ni un gain de muscle. Garde pour l’instant deux séances full body non consécutives par semaine : c’est un point de départ classique pour débuter. Pour la prochaine, le brouillon reprend tes dernières charges et répétitions sans augmentation ; vise une exécution contrôlée, avec environ deux répétitions encore possibles en fin de série, puis renseigne ton ressenti dans le carnet.",
         "observations": [
           {
-            "text": "Du 3 au 17 octobre, tes cinq séances sont espacées de trois à quatre jours : ce rythme correspond à un point de départ classique pour débuter en full body.",
+            "text": "Du 3 au 17 octobre, tes cinq séances sont espacées de trois ou quatre jours : un rythme régulier avec des jours sans musculation entre les séances.",
             "sessionIds": [
               "demo-1",
               "demo-2",
@@ -2179,24 +2155,47 @@
             ]
           },
           {
-            "text": "Entre le 13 et le 17 octobre, à exercice, équipement et charge identiques, tu passes de 6 à 7 répétitions par série au développé couché barre, et de 8 à 9 au rowing haltères ainsi qu’à la presse à cuisses.",
+            "text": "Entre le 13 et le 17 octobre, à exercice et équipement identiques, tu passes de 6 à 7 répétitions par série au développé couché à 25 kg, et de 8 à 9 au rowing à 10 kg par haltère ainsi qu’à la presse à cuisses à 45 kg, sur les trois séries de chaque exercice.",
             "sessionIds": [
-              "demo-4",
-              "demo-5"
-            ]
-          },
-          {
-            "text": "Chaque séance comprend une poussée, un tirage et un exercice de jambes, avec trois séries chacun : une base simple à conserver pour apprendre et comparer tes performances.",
-            "sessionIds": [
-              "demo-1",
-              "demo-2",
-              "demo-3",
               "demo-4",
               "demo-5"
             ]
           }
         ],
-        "draft": null
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
       }
     },
     {
@@ -2210,7 +2209,7 @@
           },
           {
             "role": "assistant",
-            "content": "Oui, ton carnet montre un départ cohérent : des séances espacées et davantage de répétitions à charge identique, ce qui est un signe encourageant de progression sur ces exercices. Cela ne permet pas encore de juger ta technique ni de conclure à un gain de muscle. Pour la suite, garde cette routine simple autour de deux séances non consécutives par semaine, sans chercher à augmenter les charges à chaque séance. Note ton ressenti avec Content/Moyen/Pas content : cela aidera à suivre les règles de progression du carnet sans transformer chaque entraînement en test maximal."
+            "content": "Oui, ton carnet montre un début cohérent : des séances régulières et davantage de répétitions à charges identiques, notamment entre le 13 et le 17 octobre. Cela indique une progression des performances consignées, sans permettre de juger ta technique ni un gain de muscle. Garde pour l’instant deux séances full body non consécutives par semaine : c’est un point de départ classique pour débuter. Pour la prochaine, le brouillon reprend tes dernières charges et répétitions sans augmentation ; vise une exécution contrôlée, avec environ deux répétitions encore possibles en fin de série, puis renseigne ton ressenti dans le carnet."
           },
           {
             "role": "user",
@@ -2219,16 +2218,10 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
             "sessions": 5,
             "sets": 45,
             "volumeKg": 9864
-          },
-          "previousSummary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
           },
           "focusSessionId": null,
           "recentSessions": [
@@ -2544,20 +2537,8 @@
             }
           ]
         },
-        "draft": null
-      },
-      "response": {
-        "message": "Le brouillon reprend les trois exercices du 17 octobre, avec les charges et répétitions que tu as confirmées, sur trois séries chacun. Garde ces paramètres pour la prochaine séance : cela te donnera un repère comparable sans ajouter d’effort. Les repos habituels ne figurent pas dans le carnet fourni ; je les laisse à compléter plutôt que de les inventer.",
-        "observations": [
-          {
-            "text": "La séance du 17 octobre associe une poussée avec le développé couché, un tirage avec le rowing et un travail des jambes avec la presse à cuisses.",
-            "sessionIds": [
-              "demo-5"
-            ]
-          }
-        ],
         "draft": {
-          "name": "Full body — reprise du 17 octobre",
+          "name": "Full body — consolider les repères",
           "kind": "full",
           "exercises": [
             {
@@ -2565,7 +2546,7 @@
               "equipment": "barbell",
               "sets": 3,
               "reps": 7,
-              "restSeconds": null,
+              "restSeconds": 120,
               "loadKg": 25,
               "superset": null
             },
@@ -2574,7 +2555,7 @@
               "equipment": "dumbbell",
               "sets": 3,
               "reps": 9,
-              "restSeconds": null,
+              "restSeconds": 120,
               "loadKg": 10,
               "superset": null
             },
@@ -2583,14 +2564,57 @@
               "equipment": "machine",
               "sets": 3,
               "reps": 9,
-              "restSeconds": null,
+              "restSeconds": 120,
               "loadKg": 45,
               "superset": null
             }
           ],
-          "questions": [
-            "Quels sont tes repos habituels entre les séries du développé couché, du rowing et de la presse à cuisses ?"
-          ]
+          "questions": []
+        }
+      },
+      "response": {
+        "message": "Le brouillon reprend les trois exercices du 17 octobre, avec les mêmes séries, répétitions et charges, comme tu l’as confirmé. Je conserve les 2 minutes de repos déjà prévues dans le brouillon. Pour cette séance, cherche surtout à reproduire les répétitions avec une exécution contrôlée, sans augmenter la charge : cela te donnera un repère comparable.",
+        "observations": [
+          {
+            "text": "Le 17 octobre : développé couché à 25 kg pour 3 × 7, rowing à 10 kg par haltère pour 3 × 9 et presse à cuisses à 45 kg pour 3 × 9.",
+            "sessionIds": [
+              "demo-5"
+            ]
+          }
+        ],
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
         }
       }
     },
@@ -2605,7 +2629,7 @@
           },
           {
             "role": "assistant",
-            "content": "Oui, ton carnet montre un départ cohérent : des séances espacées et davantage de répétitions à charge identique, ce qui est un signe encourageant de progression sur ces exercices. Cela ne permet pas encore de juger ta technique ni de conclure à un gain de muscle. Pour la suite, garde cette routine simple autour de deux séances non consécutives par semaine, sans chercher à augmenter les charges à chaque séance. Note ton ressenti avec Content/Moyen/Pas content : cela aidera à suivre les règles de progression du carnet sans transformer chaque entraînement en test maximal."
+            "content": "Oui, ton carnet montre un début cohérent : des séances régulières et davantage de répétitions à charges identiques, notamment entre le 13 et le 17 octobre. Cela indique une progression des performances consignées, sans permettre de juger ta technique ni un gain de muscle. Garde pour l’instant deux séances full body non consécutives par semaine : c’est un point de départ classique pour débuter. Pour la prochaine, le brouillon reprend tes dernières charges et répétitions sans augmentation ; vise une exécution contrôlée, avec environ deux répétitions encore possibles en fin de série, puis renseigne ton ressenti dans le carnet."
           },
           {
             "role": "user",
@@ -2613,7 +2637,7 @@
           },
           {
             "role": "assistant",
-            "content": "Le brouillon reprend les trois exercices du 17 octobre, avec les charges et répétitions que tu as confirmées, sur trois séries chacun. Garde ces paramètres pour la prochaine séance : cela te donnera un repère comparable sans ajouter d’effort. Les repos habituels ne figurent pas dans le carnet fourni ; je les laisse à compléter plutôt que de les inventer."
+            "content": "Le brouillon reprend les trois exercices du 17 octobre, avec les mêmes séries, répétitions et charges, comme tu l’as confirmé. Je conserve les 2 minutes de repos déjà prévues dans le brouillon. Pour cette séance, cherche surtout à reproduire les répétitions avec une exécution contrôlée, sans augmenter la charge : cela te donnera un repère comparable."
           },
           {
             "role": "user",
@@ -2622,16 +2646,10 @@
         ],
         "context": {
           "generatedAt": "2026-10-19T12:00:00.000Z",
-          "rangeDays": 30,
           "summary": {
             "sessions": 5,
             "sets": 45,
             "volumeKg": 9864
-          },
-          "previousSummary": {
-            "sessions": 0,
-            "sets": 0,
-            "volumeKg": 0
           },
           "focusSessionId": null,
           "recentSessions": [
@@ -2948,7 +2966,7 @@
           ]
         },
         "draft": {
-          "name": "Full body — reprise du 17 octobre",
+          "name": "Full body — consolider les repères",
           "kind": "full",
           "exercises": [
             {
@@ -2956,7 +2974,7 @@
               "equipment": "barbell",
               "sets": 3,
               "reps": 7,
-              "restSeconds": null,
+              "restSeconds": 120,
               "loadKg": 25,
               "superset": null
             },
@@ -2965,7 +2983,7 @@
               "equipment": "dumbbell",
               "sets": 3,
               "reps": 9,
-              "restSeconds": null,
+              "restSeconds": 120,
               "loadKg": 10,
               "superset": null
             },
@@ -2974,21 +2992,19 @@
               "equipment": "machine",
               "sets": 3,
               "reps": 9,
-              "restSeconds": null,
+              "restSeconds": 120,
               "loadKg": 45,
               "superset": null
             }
           ],
-          "questions": [
-            "Quels sont tes repos habituels entre les séries du développé couché, du rowing et de la presse à cuisses ?"
-          ]
+          "questions": []
         }
       },
       "response": {
-        "message": "Le brouillon est complété avec tes repos confirmés : 120 secondes au développé couché, 90 secondes au rowing et 120 secondes à la presse à cuisses. Rien d’autre ne change : mêmes exercices, séries, répétitions et charges que le 17 octobre. Tu peux vérifier le brouillon puis le valider dans le carnet.",
+        "message": "Le brouillon reprend tes repos confirmés : 120 secondes au développé couché, 90 secondes au rowing et 120 secondes à la presse à cuisses. Rien d’autre ne change : les exercices, séries, répétitions et charges restent identiques.",
         "observations": [],
         "draft": {
-          "name": "Full body — reprise du 17 octobre",
+          "name": "Full body — consolider les repères",
           "kind": "full",
           "exercises": [
             {

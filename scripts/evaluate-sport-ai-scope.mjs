@@ -8,7 +8,7 @@ if (!process.env.OPENROUTER_API_KEY) throw new Error("Secret serveur OpenRouter 
 const demo = JSON.parse(
   await readFile(new URL("../docs/examples/sport-ai-beginner.json", import.meta.url), "utf8"),
 );
-const context = buildAssistantContext(demo.history, 30, null, new Date("2026-10-19T12:00:00.000Z"));
+const context = buildAssistantContext(demo.history, null, new Date("2026-10-19T12:00:00.000Z"));
 const cases = [
   {
     name: "Recette sans rapport",

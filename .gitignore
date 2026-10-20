@@ -39,6 +39,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+/supabase/.temp/
 
 # Android release signing (never commit private keys or passwords)
 /android/keystore.properties

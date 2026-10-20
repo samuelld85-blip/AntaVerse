@@ -69,18 +69,20 @@ export default function PrivacyPolicyPage() {
         compte efface les réactions et commentaires associés.
       </p>
       <p>
-        L’assistant Sport est facultatif et réservé aux comptes connectés. Il ne contacte aucun
-        modèle automatiquement : avant chaque demande, vous choisissez de transmettre votre texte et
-        un contexte limité du carnet à notre fonction Supabase, puis à OpenRouter et au fournisseur
-        du modèle configuré. Le modèle fixe est OpenAI GPT-6.1 Sol, avec un niveau de raisonnement
-        moyen. Le contexte peut inclure des résumés et totaux des périodes de 30 ou 90 jours,
-        jusqu’à 12 séances récentes (au plus 80 séries chacune) et la séance choisie pour relecture.
+        L’assistant Sport est facultatif et réservé aux comptes connectés. Le toucher sur un bouton
+        de préparation, de relecture ou de progression envoie la demande et le contexte du carnet à
+        notre fonction Supabase, puis à OpenRouter et au fournisseur du modèle configuré. Pour
+        importer un programme, vous saisissez le texte puis le transmettez avec un seul envoi. Le
+        modèle fixe est OpenAI GPT-6.1 Sol, avec un niveau de raisonnement moyen. Le contexte comprend
+        toutes vos séances terminées, y compris les plus anciennes, toutes les séries terminées et
+        les statistiques calculées depuis le carnet.
         Les noms, e-mails, pseudos, commentaires, photos et données d’amis sont exclus. Les
         exercices, dates, équipement, charges et répétitions peuvent être transmis. Votre texte peut
         lui-même contenir des données personnelles : évitez d’y saisir des informations que vous ne
         souhaitez pas transmettre. L’assistant ne reçoit aucun accès à la base et ses réponses
         restent en mémoire ; elles ne sont ni sauvegardées dans votre compte ni ajoutées
-        automatiquement au carnet. Des compteurs techniques de quota (identifiant de compte et
+        automatiquement au carnet. Les demandes supérieures à 2 000 000 octets sont refusées sans
+        troncature silencieuse. Des compteurs techniques de quota (identifiant de compte et
         nombres de demandes, sans texte) sont supprimés avec le compte. À chaque nouvelle demande,
         les compteurs de plus de sept jours sont effacés. OpenRouter agit comme intermédiaire ; les
         réglages de refus de collecte fournisseur et de rétention nulle sont demandés, sans garantie

@@ -20,21 +20,21 @@ function session(id: string, date: string): Session {
   };
 }
 describe("Sport assistant context", () => {
-  it("projects only approved fields and computes comparable complete period totals", () => {
+  it("projects only approved fields and computes totals across all completed history", () => {
     const history = [
       session("recent", "2026-10-18T12:00:00Z"),
       session("previous", "2026-09-01T12:00:00Z"),
       session("old", "2026-01-01T12:00:00Z"),
       { ...session("active", "2026-10-18T12:00:00Z"), endedAt: null },
     ];
-    const context = buildAssistantContext(history, 30, null, now);
+    const context = buildAssistantContext(history, null, now);
     expect(contextSchema.safeParse(context).success).toBe(true);
-    expect(context.summary).toEqual({ sessions: 1, sets: 1, volumeKg: 480 });
-    expect(context.previousSummary).toEqual({ sessions: 1, sets: 1, volumeKg: 480 });
+    expect(context.summary).toEqual({ sessions: 3, sets: 3, volumeKg: 1440 });
+    expect(context.recentSessions.map((item) => item.id)).toEqual(["recent", "previous", "old"]);
     expect(JSON.stringify(context)).not.toMatch(/PRIVATE|feedback|photos|name|active/);
     expect(history[0]?.name).toBe("PRIVATE TITLE");
   });
-  it("keeps a selected older session, bounds context and separates superset movements", () => {
+  it("keeps all historical sessions and separates superset movements", () => {
     const history = Array.from({ length: 20 }, (_, index) =>
       session(`${index}`, `2026-10-${String(index + 1).padStart(2, "0")}T00:00:00Z`),
     );
@@ -48,20 +48,20 @@ describe("Sport assistant context", () => {
         focus.startedAt,
       ),
     ];
-    const context = buildAssistantContext([...history, focus], 30, "focus", now);
-    expect(context.recentSessions).toHaveLength(12);
-    expect(context.recentSessions[0]?.id).toBe("focus");
-    expect(context.recentSessions[0]?.sets.map((set) => set.exerciseId)).toEqual([
+    const context = buildAssistantContext([...history, focus], "focus", now);
+    expect(context.recentSessions).toHaveLength(20);
+    expect(context.recentSessions.some((entry) => entry.id === "focus")).toBe(true);
+    expect(context.recentSessions.find((entry) => entry.id === "focus")?.sets.map((set) => set.exerciseId)).toEqual([
       "bench-press",
       "row",
     ]);
     expect(context.recentSessions.some((entry) => entry.id === "19")).toBe(false); // future
   });
-  it("caps set details but preserves whole-session and whole-period totals", () => {
+  it("includes every set while preserving complete history totals", () => {
     const big = session("big", "2026-10-18T00:00:00Z");
     big.exercises = Array.from({ length: 100 }, () => big.exercises[0]!);
-    const context = buildAssistantContext([big], 30, null, now);
-    expect(context.recentSessions[0]?.sets).toHaveLength(80);
+    const context = buildAssistantContext([big], null, now);
+    expect(context.recentSessions[0]?.sets).toHaveLength(100);
     expect(context.summary.sets).toBe(100);
     expect(context.summary.volumeKg).toBe(48000);
   });

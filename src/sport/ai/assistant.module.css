@@ -126,7 +126,6 @@
   font-size: 0.85rem;
 }
 .card,
-.privacy,
 .message,
 .draft {
   display: grid;
@@ -137,39 +136,16 @@
   background: var(--sport-surface);
   min-width: 0;
 }
-.privacy summary,
 .card summary {
   cursor: pointer;
   min-height: 36px;
   color: var(--sport-accent);
-}
-.privacy[open] summary {
-  margin-bottom: 12px;
-}
-.privacy p + p {
-  margin-top: 10px;
-}
-.privacy .check {
-  margin-top: 14px;
 }
 .dialog label {
   display: grid;
   gap: 6px;
   min-width: 0;
   font-size: 0.9rem;
-}
-.dialog .check {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.5;
-}
-.check input {
-  flex: 0 0 auto;
-  width: 22px;
-  height: 22px;
-  margin-top: 1px;
-  accent-color: var(--sport-accent);
 }
 .dialog input:not([type="checkbox"]),
 .dialog select,
@@ -256,17 +232,6 @@
 .draft h4 {
   margin: 0;
 }
-.unitHelp {
-  display: grid;
-  gap: 8px;
-  color: var(--sport-muted);
-  font-size: 0.85rem;
-}
-.unitHelp summary {
-  min-height: 36px;
-  color: var(--sport-accent);
-  cursor: pointer;
-}
 .draft > fieldset {
   display: grid;
   gap: 14px;
@@ -326,7 +291,6 @@
 }
 @media (max-width: 359px) {
   .card,
-  .privacy,
   .message,
   .draft {
     padding: 12px;
