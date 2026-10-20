@@ -50,6 +50,9 @@ d'identité développeur et le target API level, qui évoluent régulièrement.
 
 - [ ] Remplir le formulaire Data Safety à partir de
       `docs/store/GOOGLE_DATA_SAFETY.md`
+- [ ] Si l’assistant Sport est activé, déclarer aussi le transfert du texte et
+      du contexte d’entraînement à OpenRouter et au fournisseur du modèle ;
+      réévaluer les catégories Santé et fitness / autres données utilisateur
 - [ ] Remplir le questionnaire de classification de contenu IARC à partir
       de `docs/compliance/AGE_RATING.md`
 - [ ] Déclarer le public cible (Target Audience) de façon cohérente avec

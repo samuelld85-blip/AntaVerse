@@ -3,7 +3,8 @@
   "specifiers": {
     "npm:@supabase/supabase-js@2.115.0": "2.115.0",
     "npm:@types/web-push@3.6.4": "3.6.4",
-    "npm:web-push@3.6.7": "3.6.7"
+    "npm:web-push@3.6.7": "3.6.7",
+    "npm:zod@4.4.3": "4.4.3"
   },
   "npm": {
     "@supabase/auth-js@2.115.0": {
@@ -155,6 +156,14 @@
         "minimist"
       ],
       "bin": true
+    },
+    "zod@4.4.3": {
+      "integrity": "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="
     }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:zod@4.4.3"
+    ]
   }
 }

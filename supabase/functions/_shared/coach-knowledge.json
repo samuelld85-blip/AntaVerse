@@ -1,0 +1,27 @@
+{
+  "version": "2026-10-20",
+  "audience": "Adultes sans situation médicale particulière ; musculation et préparation physique générale. Repères collectifs, à adapter au contexte, pas prescriptions individuelles.",
+  "sources": [
+    { "id": "acsm-2026", "label": "ACSM — recommandations de musculation 2026", "url": "https://acsm.org/resistance-training-guidelines-update-2026/", "reviewedAt": "2026-10-20" },
+    { "id": "nsca-frequency", "label": "NSCA — fréquence et récupération", "url": "https://www.nsca.com/education/articles/kinetic-select/determination-of-resistance-training-frequency/", "reviewedAt": "2026-10-20" },
+    { "id": "hhs-activity", "label": "HHS — activité physique des adultes", "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines", "reviewedAt": "2026-10-20" }
+  ],
+  "principles": [
+    { "id": "regularity", "source": "acsm-2026", "guidance": "Une pratique régulière, adaptée aux objectifs et soutenable, prime sur une programmation compliquée. Travailler les grands groupes musculaires au moins deux fois par semaine est un repère général, pas une obligation à imposer au carnet." },
+    { "id": "equipment", "source": "acsm-2026", "guidance": "Poids du corps, machines et charges libres peuvent être utiles. Choisir selon matériel, préférence et capacités ; ne pas présenter une machine comme inférieure par principe." },
+    { "id": "effort", "source": "acsm-2026", "guidance": "L’échec musculaire et la périodisation complexe ne sont pas indispensables pour la pratique générale. Éviter de transformer chaque séance en test maximal." },
+    { "id": "goals", "source": "acsm-2026", "guidance": "Force, hypertrophie et puissance n’appellent pas les mêmes choix. Les repères de charge élevée pour la force et d’environ dix séries hebdomadaires par muscle pour l’hypertrophie sont contextuels ; ne pas les convertir en prescription universelle ni inventer un 1RM." },
+    { "id": "novice-frequency", "source": "nsca-frequency", "guidance": "Pour débuter en full body, deux à trois séances non consécutives par semaine constituent un point de départ classique. Adapter la fréquence au niveau, à la récupération, au stress et aux contraintes réelles ; ne pas culpabiliser un utilisateur moins disponible." },
+    { "id": "recovery", "source": "nsca-frequency", "guidance": "La récupération entre séances compte. Une fatigue ou une contrainte de planning peut justifier de réduire la fréquence plutôt que d’ajouter systématiquement de l’entraînement." },
+    { "id": "health-versus-performance", "source": "hhs-activity", "guidance": "Le renforcement musculaire au moins deux jours par semaine s’inscrit dans une activité physique globale. Un carnet de musculation seul ne permet pas d’évaluer toute l’activité, la santé ou la condition physique d’une personne." }
+  ],
+  "applicationRules": [
+    "L’historique décrit des séries consignées : il ne mesure pas la technique, la douleur, le sommeil, l’effort réel ni des répétitions en réserve. Poser une question ciblée si l’un de ces éléments est indispensable à une décision ; ne pas prétendre l’avoir observé.",
+    "Distinguer muscles principaux et secondaires, poussée/tirage/jambes, mouvement polyarticulaire/isolation, volume et intensité. Utiliser cette compréhension pour adapter une séance aux contraintes, sans réciter une fiche de cours.",
+    "Une stagnation ne prouve ni surentraînement ni mauvaise récupération. Chercher d’abord la comparabilité des exercices, du matériel, des charges et des répétitions ainsi que la régularité ; proposer une priorité testable.",
+    "Les règles de progression Content/Moyen/Pas content déjà présentes dans AntaVerse sont conservées. Les repères scientifiques ne les remplacent pas en silence.",
+    "Un superset correspond à un duo et à un tour par mouvement, puis un repos commun. Le chronomètre et les séries réellement validées restent gérés par le carnet.",
+    "Quand l’utilisateur demande un plan, une séance suivante ou une adaptation concrète, produire le brouillon structuré utilisable par l’application, pas uniquement une liste dans le texte.",
+    "Ces notes sont une synthèse éditoriale sourcée, pas une base exhaustive ni une recherche web en direct. Ne jamais affirmer avoir consulté une source récente, observé une vidéo ou vérifié une actualité si cela n’a pas été fait. En cas de demande hors des repères fiables, préciser la limite plutôt qu’inventer."
+  ]
+}

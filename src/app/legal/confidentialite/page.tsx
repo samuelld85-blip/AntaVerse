@@ -68,6 +68,25 @@ export default function PrivacyPolicyPage() {
         séance peut retirer tout commentaire laissé sur ses séances. Supprimer une séance ou un
         compte efface les réactions et commentaires associés.
       </p>
+      <p>
+        L’assistant Sport est facultatif et réservé aux comptes connectés. Il ne contacte aucun
+        modèle automatiquement : avant chaque demande, vous choisissez de transmettre votre texte et
+        un contexte limité du carnet à notre fonction Supabase, puis à OpenRouter et au fournisseur
+        du modèle configuré. Le modèle fixe est OpenAI GPT-6.1 Sol, avec un niveau de raisonnement
+        moyen. Le contexte peut inclure des résumés et totaux des périodes de 30 ou 90 jours,
+        jusqu’à 12 séances récentes (au plus 80 séries chacune) et la séance choisie pour relecture.
+        Les noms, e-mails, pseudos, commentaires, photos et données d’amis sont exclus. Les
+        exercices, dates, équipement, charges et répétitions peuvent être transmis. Votre texte peut
+        lui-même contenir des données personnelles : évitez d’y saisir des informations que vous ne
+        souhaitez pas transmettre. L’assistant ne reçoit aucun accès à la base et ses réponses
+        restent en mémoire ; elles ne sont ni sauvegardées dans votre compte ni ajoutées
+        automatiquement au carnet. Des compteurs techniques de quota (identifiant de compte et
+        nombres de demandes, sans texte) sont supprimés avec le compte. À chaque nouvelle demande,
+        les compteurs de plus de sept jours sont effacés. OpenRouter agit comme intermédiaire ; les
+        réglages de refus de collecte fournisseur et de rétention nulle sont demandés, sans garantie
+        d’absence absolue de traitement ou de rétention. Les politiques des prestataires
+        s’appliquent également.
+      </p>
       <h2 id="stockage-local">3. Stockage local</h2>
       <ul>
         <li>
@@ -107,24 +126,30 @@ export default function PrivacyPolicyPage() {
       <h2>6. Destinataires</h2>
       <p>
         {legalConfig.hostName} héberge le site et peut traiter les journaux techniques nécessaires à
-        sa distribution. Supabase fournit les comptes et la base Sport. Google ou Apple
-        interviennent si vous choisissez leur connexion. Les services push du navigateur acheminent
-        les notifications autorisées. Vos amis acceptés reçoivent les informations décrites
-        ci-dessus.
+        sa distribution. Supabase fournit les comptes, la base Sport et la fonction de l’assistant.
+        OpenRouter relaie les demandes vers le modèle configuré. Google ou Apple interviennent si
+        vous choisissez leur connexion. Les services push du navigateur acheminent les notifications
+        autorisées. Vos amis acceptés reçoivent les informations décrites ci-dessus.
       </p>
       <h2>7. Hébergement et transferts</h2>
       <p>
         La région de la base Sport est choisie à la création du projet Supabase. L’hébergement web,
-        les connexions sociales et les push peuvent utiliser des infrastructures internationales.
-        L’éditeur doit renseigner la région retenue et vérifier les garanties contractuelles des
-        prestataires avant activation du service en production.
+        les connexions sociales, les push et le traitement assistant via OpenRouter et le
+        fournisseur du modèle peuvent utiliser des infrastructures internationales. L’éditeur doit
+        renseigner la région retenue et vérifier les garanties contractuelles des prestataires avant
+        activation du service en production. Aucune résidence UE ni absence absolue de rétention
+        n’est garantie pour l’assistant.
       </p>
       <h2>8. Conservation</h2>
       <p>
         Les données locales restent jusqu’à effacement. Le compte Sport et ses données en ligne
         restent jusqu’à suppression du compte. Les dix versions précédentes du carnet permettent une
         restauration. Les tâches push sont purgées après sept jours par le service d’envoi ; les
-        identifiants des séances déjà annoncées restent pour éviter les doublons. Les journaux
+        identifiants des séances déjà annoncées restent pour éviter les doublons. Les compteurs de
+        quota de l’assistant ne contiennent pas de texte : ceux de plus de sept jours sont purgés
+        lors de la demande suivante, et les compteurs personnels sont supprimés avec le compte. Les
+        demandes et réponses ne sont pas conservées dans le carnet ; les durées de traitement et de
+        rétention des prestataires dépendent de leurs politiques et réglages. Les journaux
         d’infrastructure suivent les politiques des prestataires.
       </p>
       <h2>9. Vos droits et contrôles</h2>

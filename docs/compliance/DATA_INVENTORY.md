@@ -20,7 +20,9 @@ il faut distinguer deux régimes :
    (`NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`),
    uniquement sur la route `/sport`, et seulement si l'utilisateur crée un
    compte. Ce régime **transmet** un ensemble défini de données à Supabase
-   (et, au choix de l'utilisateur, à Google ou Apple pour la connexion). Il
+   (et, au choix de l'utilisateur, à Google ou Apple pour la connexion ;
+   les demandes volontaires à l’assistant passent aussi par OpenRouter et le
+   fournisseur du modèle). Il
    est détaillé dans sa propre section plus bas.
 
 ## Méthode
@@ -130,6 +132,8 @@ Source auditée : `src/sport/cloud/*`, `supabase/migrations/*.sql`,
 sous le layout `/sport` ; (3) l'utilisateur crée un compte. Sans compte, le
 carnet Sport reste dans le régime local ci-dessus. Aucun jeu n'initialise
 Supabase. Seul le **carnet Sport** est synchronisé : rien des jeux d'ambiance.
+L’assistant est une fonction séparée, disponible uniquement à la demande d’un
+utilisateur connecté si la fonction et sa clé OpenRouter sont configurées.
 
 | Donnée | Où | Finalité | Destinataire(s) | Stockage / durée | Base | Suppression |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -146,6 +150,9 @@ Supabase. Seul le **carnet Sport** est synchronisé : rien des jeux d'ambiance.
 | Abonnement Web Push (endpoint, clés `p256dh`/`auth`) | `public.push_subscriptions` ; navigateur | Envoyer une notification « un ami a terminé une séance » | Supabase ; service push du navigateur (Google/Mozilla/Apple/Microsoft selon le navigateur) | Jusqu'à désactivation, déconnexion de l'appareil, ou expiration (nettoyée sur 404/410) | Consentement (permission navigateur) | Bouton Social « désactiver », déconnexion, réglages navigateur |
 | File de tâches push + événements de séance | `public.push_jobs`, `public.session_events` | Livraison différée / anti-doublon des notifications | Supabase (interne, non exposé aux clients) | `push_jobs` purgées après 7 jours ; `session_events` conservés pour dédoublonnage | Exécution du service | Cascade à la suppression de compte |
 | Adresse IP de l'appareil | Vue par Supabase (et les services OAuth / push) comme par tout serveur contacté | Acheminement des requêtes | Supabase / fournisseurs concernés | Selon la rétention du prestataire | Nécessité technique | Hors contrôle direct d'AntaVerse |
+| Demande écrite volontairement à l’assistant Sport | Transitoire dans `sport-assistant` ; envoyée à OpenRouter puis au fournisseur choisi | Répondre à la demande explicite de préparation, d’import texte, de relecture ou de progression | Supabase Edge Function, OpenRouter et fournisseur du modèle | Non enregistrée dans le carnet ; rétention chez les prestataires selon leurs politiques et réglages | Action explicite de l’utilisateur | Non conservée par AntaVerse ; supprimer la conversation/fermer l’écran |
+| Contexte sportif transmis à l’assistant | Construit à la demande depuis le carnet : résumés et totaux 30/90 jours, périodes précédentes comparables, 12 séances récentes maximum avec jusqu’à 80 séries chacune, séance sélectionnée pour relecture même si antérieure | Aider à préparer, comprendre ou revoir sa progression | Supabase Edge Function, OpenRouter et fournisseur du modèle | Transitoire ; aucune écriture dans le carnet ou sauvegarde cloud par l’assistant | Action explicite de l’utilisateur | Aucun stockage applicatif durable |
+| Compteurs de quota assistant (UUID, jour, compteurs de jour et minute) | Table dédiée Supabase, sans prompt ni réponse | Limiter les appels par utilisateur et globalement | Supabase uniquement | Fenêtres de plus de 7 jours purgées au prochain appel ; compteurs personnels supprimés avec le compte | Sécurité et limitation d’abus | Suppression du compte ; purge lors des appels |
 
 Notes :
 
@@ -160,8 +167,21 @@ Notes :
 - Suppression de compte : `public.delete_my_account()` supprime la ligne
   `auth.users`, ce qui cascade vers profil, sauvegardes, révisions, séances,
   amitiés, likes, commentaires et abonnements.
+- Assistant Sport : aucun nom, e-mail, pseudo, commentaire, photo ou donnée
+  d’ami n’est ajouté au contexte. Les identifiants d’exercice, dates,
+  équipement, charges et répétitions restent des données liées à la personne
+  via le compte qui demande l’analyse. Le texte saisi librement peut contenir
+  des informations personnelles. Le modèle ne reçoit ni accès à la base ni
+  outil. Les paramètres OpenRouter demandent `data_collection: deny` et
+  `zdr: true` ; ils ne permettent pas de garantir une absence absolue de
+  traitement/rétention chez l’intermédiaire, ni une région UE.
 
 ## Ce qui a changé cette conclusion / ce qui la changerait encore
+
+**Changé (2026-10)** : ajout de l’assistant Sport optionnel, qui transmet à
+OpenRouter et au fournisseur sélectionné le texte et le contexte sportif
+minimal requis par une demande explicite. Les compteurs techniques sont
+documentés ci-dessus.
 
 **Changé (2026-09)** : ajout du module Sport et de sa couche compte cloud
 Supabase — premier backend, premier système de compte, premières

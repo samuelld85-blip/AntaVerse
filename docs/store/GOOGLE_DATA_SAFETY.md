@@ -50,6 +50,14 @@ Sport cloud".
 | Informations sur l'app et les performances | Non | — | — | Aucun SDK de diagnostic |
 | Identifiants de l'appareil | Non | — | — | Aucun identifiant d'appareil publicitaire. L'abonnement Web Push est un jeton technique par appareil, non un identifiant de suivi |
 
+Si l’assistant Sport est activé dans la build, mettre à jour la déclaration
+pour signaler aussi le traitement/transfert à OpenRouter et au fournisseur de
+modèle des données de santé et du texte que l’utilisateur soumet
+volontairement. Le modèle reçoit un contexte limité du carnet (résumés,
+totaux et séances retenues pour la demande) ; ne pas supposer que les réponses
+du questionnaire ci-dessus couvrent déjà ce nouveau destinataire. Les
+compteurs de quota (UUID et nombres, sans contenu) restent chez Supabase.
+
 Toutes les collectes "Oui" ont pour finalité **le fonctionnement de
 l'application** (fonctionnalité de compte et fonctionnalités sociales) ;
 aucune n'est destinée à la publicité, au marketing, ou à l'analyse d'usage.

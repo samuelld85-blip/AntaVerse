@@ -1,0 +1,505 @@
+[
+  {
+    "id": "bench-press",
+    "name": "Développé couché",
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "machine"
+    ],
+    "primary": "chest",
+    "secondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "vertical-chest-press",
+    "name": "Vertical chest press",
+    "equipment": [
+      "machine"
+    ],
+    "primary": "chest",
+    "secondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "incline-press",
+    "name": "Développé incliné",
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "machine"
+    ],
+    "primary": "chest",
+    "secondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "decline-press",
+    "name": "Développé décliné",
+    "equipment": [
+      "barbell",
+      "dumbbell"
+    ],
+    "primary": "chest",
+    "secondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "chest-fly",
+    "name": "Écartés pectoraux",
+    "equipment": [
+      "cable",
+      "dumbbell",
+      "machine"
+    ],
+    "primary": "chest",
+    "secondary": [
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "push-up",
+    "name": "Pompes",
+    "equipment": [
+      "bodyweight"
+    ],
+    "primary": "chest",
+    "secondary": [
+      "triceps",
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "dips",
+    "name": "Dips",
+    "equipment": [
+      "bodyweight",
+      "machine"
+    ],
+    "primary": "triceps",
+    "secondary": [
+      "chest",
+      "shoulders"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "shoulder-press",
+    "name": "Développé militaire",
+    "equipment": [
+      "dumbbell",
+      "barbell",
+      "machine"
+    ],
+    "primary": "shoulders",
+    "secondary": [
+      "triceps"
+    ],
+    "pattern": "push"
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Élévations latérales",
+    "equipment": [
+      "dumbbell",
+      "cable",
+      "machine"
+    ],
+    "primary": "shoulders",
+    "secondary": [],
+    "pattern": "push"
+  },
+  {
+    "id": "reverse-fly",
+    "name": "Oiseau",
+    "equipment": [
+      "dumbbell",
+      "machine",
+      "cable"
+    ],
+    "primary": "shoulders",
+    "secondary": [
+      "back"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "face-pull",
+    "name": "Face pull",
+    "equipment": [
+      "cable"
+    ],
+    "primary": "shoulders",
+    "secondary": [
+      "back"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "triceps-extension",
+    "name": "Extension triceps",
+    "equipment": [
+      "cable",
+      "dumbbell"
+    ],
+    "primary": "triceps",
+    "secondary": [],
+    "pattern": "push"
+  },
+  {
+    "id": "overhead-triceps-extension",
+    "name": "Extension triceps overhead",
+    "equipment": [
+      "dumbbell"
+    ],
+    "primary": "triceps",
+    "secondary": [],
+    "pattern": "push"
+  },
+  {
+    "id": "skull-crusher",
+    "name": "Barre au front",
+    "equipment": [
+      "barbell",
+      "dumbbell"
+    ],
+    "primary": "triceps",
+    "secondary": [],
+    "pattern": "push"
+  },
+  {
+    "id": "pull-up",
+    "name": "Tractions",
+    "equipment": [
+      "bodyweight",
+      "machine"
+    ],
+    "primary": "back",
+    "secondary": [
+      "biceps"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Tirage vertical",
+    "equipment": [
+      "cable",
+      "machine"
+    ],
+    "primary": "back",
+    "secondary": [
+      "biceps"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "row",
+    "name": "Rowing",
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "machine"
+    ],
+    "primary": "back",
+    "secondary": [
+      "biceps",
+      "shoulders"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "cable-row",
+    "name": "Tirage horizontal",
+    "equipment": [
+      "cable",
+      "machine"
+    ],
+    "primary": "back",
+    "secondary": [
+      "biceps",
+      "shoulders"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "shrug",
+    "name": "Shrugs",
+    "equipment": [
+      "dumbbell",
+      "barbell"
+    ],
+    "primary": "back",
+    "secondary": [],
+    "pattern": "pull"
+  },
+  {
+    "id": "curl",
+    "name": "Curl biceps",
+    "equipment": [
+      "dumbbell",
+      "barbell",
+      "cable",
+      "machine"
+    ],
+    "primary": "biceps",
+    "secondary": [],
+    "pattern": "pull"
+  },
+  {
+    "id": "incline-curl",
+    "name": "Curl incliné",
+    "equipment": [
+      "dumbbell"
+    ],
+    "primary": "biceps",
+    "secondary": [],
+    "pattern": "pull"
+  },
+  {
+    "id": "preacher-curl",
+    "name": "Curl pupitre",
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "machine"
+    ],
+    "primary": "biceps",
+    "secondary": [],
+    "pattern": "pull"
+  },
+  {
+    "id": "hammer-curl",
+    "name": "Curl marteau",
+    "equipment": [
+      "dumbbell",
+      "cable"
+    ],
+    "primary": "biceps",
+    "secondary": [],
+    "pattern": "pull"
+  },
+  {
+    "id": "squat",
+    "name": "Squat",
+    "equipment": [
+      "barbell",
+      "dumbbell",
+      "bodyweight",
+      "machine"
+    ],
+    "primary": "quads",
+    "secondary": [
+      "glutes"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "front-squat",
+    "name": "Front squat",
+    "equipment": [
+      "barbell"
+    ],
+    "primary": "quads",
+    "secondary": [
+      "glutes"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "hack-squat",
+    "name": "Hack squat",
+    "equipment": [
+      "machine"
+    ],
+    "primary": "quads",
+    "secondary": [
+      "glutes"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "leg-press",
+    "name": "Presse à cuisses",
+    "equipment": [
+      "machine"
+    ],
+    "primary": "quads",
+    "secondary": [
+      "glutes"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "lunge",
+    "name": "Fentes",
+    "equipment": [
+      "dumbbell",
+      "barbell",
+      "bodyweight"
+    ],
+    "primary": "quads",
+    "secondary": [
+      "glutes"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "bulgarian-squat",
+    "name": "Squat bulgare",
+    "equipment": [
+      "dumbbell",
+      "bodyweight"
+    ],
+    "primary": "quads",
+    "secondary": [
+      "glutes"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "leg-extension",
+    "name": "Leg extension",
+    "equipment": [
+      "machine"
+    ],
+    "primary": "quads",
+    "secondary": [],
+    "pattern": "legs"
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Soulevé de terre",
+    "equipment": [
+      "barbell",
+      "dumbbell"
+    ],
+    "primary": "back",
+    "secondary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "pullover",
+    "name": "Pull-over",
+    "equipment": [
+      "dumbbell",
+      "cable",
+      "machine"
+    ],
+    "primary": "back",
+    "secondary": [
+      "chest"
+    ],
+    "pattern": "pull"
+  },
+  {
+    "id": "leg-curl",
+    "name": "Leg curl",
+    "equipment": [
+      "machine"
+    ],
+    "primary": "hamstrings",
+    "secondary": [
+      "calves"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Hip thrust",
+    "equipment": [
+      "barbell",
+      "machine",
+      "bodyweight"
+    ],
+    "primary": "glutes",
+    "secondary": [
+      "hamstrings"
+    ],
+    "pattern": "legs"
+  },
+  {
+    "id": "hip-abduction",
+    "name": "Abduction de hanches",
+    "equipment": [
+      "machine",
+      "cable"
+    ],
+    "primary": "glutes",
+    "secondary": [],
+    "pattern": "legs"
+  },
+  {
+    "id": "hip-abduction-extension",
+    "name": "Abducteurs en extension",
+    "equipment": [
+      "machine",
+      "cable"
+    ],
+    "primary": "glutes",
+    "secondary": [],
+    "pattern": "legs"
+  },
+  {
+    "id": "calf-raise",
+    "name": "Extensions mollets",
+    "equipment": [
+      "machine",
+      "dumbbell",
+      "bodyweight"
+    ],
+    "primary": "calves",
+    "secondary": [],
+    "pattern": "legs"
+  },
+  {
+    "id": "crunch",
+    "name": "Crunch",
+    "equipment": [
+      "bodyweight",
+      "cable",
+      "machine"
+    ],
+    "primary": "abs",
+    "secondary": [],
+    "pattern": "core"
+  },
+  {
+    "id": "leg-raise",
+    "name": "Relevés de jambes",
+    "equipment": [
+      "bodyweight"
+    ],
+    "primary": "abs",
+    "secondary": [],
+    "pattern": "core"
+  },
+  {
+    "id": "russian-twist",
+    "name": "Russian twist",
+    "equipment": [
+      "bodyweight",
+      "dumbbell"
+    ],
+    "primary": "abs",
+    "secondary": [],
+    "pattern": "core"
+  }
+]

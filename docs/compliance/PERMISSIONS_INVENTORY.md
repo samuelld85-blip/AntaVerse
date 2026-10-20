@@ -39,6 +39,13 @@ pur, sans permission associée dans les navigateurs actuels.
 
 ## Manifeste PWA (`public/manifest.webmanifest`)
 
+L’assistant Sport optionnel n’ajoute aucune permission du navigateur : ses
+requêtes HTTPS nécessitent un compte connecté et un envoi volontaire, après
+présentation des données transmises à Supabase, OpenRouter et au fournisseur
+du modèle. Joindre l’historique est un choix distinct. Il n’utilise ni micro,
+ni caméra, ni localisation, ni carnet d’amis. Cet accord dans l’interface
+n’est pas une autorisation système et peut être retiré avant tout nouvel envoi.
+
 Aucune permission déclarée — c'est un manifeste standard (nom, icônes,
 couleurs, `display: "standalone"`, `orientation: "portrait-primary"`),
 sans `permissions` ni capacité native demandée.

@@ -11,3 +11,7 @@ enable_confirmations = false
 
 [functions.send-session-push]
 verify_jwt = false
+
+# sport-assistant verifies the bearer token using auth.getUser itself.
+[functions.sport-assistant]
+verify_jwt = false

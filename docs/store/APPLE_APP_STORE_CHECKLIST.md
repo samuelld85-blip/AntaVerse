@@ -79,6 +79,9 @@ réelle**, les exigences (versions Xcode minimum, formulaires, libellés)
 
 ## Privacy
 
+- [ ] Si l’assistant Sport est activé dans le build, actualiser App Privacy
+      pour les demandes et le contexte d’entraînement transmis à OpenRouter et
+      au fournisseur du modèle (`docs/store/APPLE_PRIVACY_DECLARATION.md`).
 - [ ] Remplir le questionnaire App Privacy à partir de
       `docs/store/APPLE_PRIVACY_DECLARATION.md`
 - [ ] Vérifier les permissions natives réellement demandées par le

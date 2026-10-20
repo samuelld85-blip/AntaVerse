@@ -52,6 +52,15 @@ restauration du carnet, fonctionnalités sociales explicitement demandées par
 l'utilisateur, notifications opt-in). Ni publicité, ni analytics, ni
 partage à des fins de tracking.
 
+Si l’assistant Sport est activé dans la build, réévaluer le questionnaire
+App Privacy : les données de santé/fitness et le texte volontairement soumis
+transitent aussi par OpenRouter et le fournisseur de modèle. Le contexte est
+limité à la demande, les identifiants directs mentionnés dans le texte par
+l’utilisateur ne peuvent pas être automatiquement exclus. Cette nouvelle
+transmission doit être reflétée dans les catégories et destinataires déclarés
+avant soumission ; ne pas considérer le tableau actuel comme validé pour une
+build assistant.
+
 ## Tracking (ATT)
 
 **Non applicable** dans les deux cas. Aucune donnée n'est partagée avec un
@@ -77,6 +86,8 @@ non mis à jour.
 
 - Nouveau champ synchronisé vers Supabase, extension du partage social,
   passage d'un push Web à un push natif (APNs).
+- Activation de l’assistant Sport ou changement de son fournisseur, modèle,
+  contexte ou paramètres de rétention.
 - Ajout d'analytics, de publicité, d'un paiement, ou d'un SDK natif.
 - Changement de la build de production quant à la présence de la
   configuration Supabase (cas A ↔ cas B).

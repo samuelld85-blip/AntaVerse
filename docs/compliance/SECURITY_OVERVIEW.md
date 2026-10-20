@@ -63,6 +63,16 @@ présents au build, sur la route `/sport`, après création d'un compte.
   (1–500 caractères) ; l'auteur ou le propriétaire de la séance peut les
   supprimer. Modération, signalement et blocage restent à construire avant
   une soumission store — voir `docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md`.
+- **Assistant Sport** : la fonction `sport-assistant` est une surface serveur
+  distincte. Le JWT est vérifié avec `auth.getUser` dans le handler
+  (`verify_jwt=false` côté passerelle), l’origine est limitée à
+  `SPORT_AI_ALLOWED_ORIGINS` et les quotas sont appliqués atomiquement côté
+  base. Les erreurs ne doivent pas exposer la réponse brute du fournisseur ;
+  ne jamais journaliser le prompt, la réponse, le jeton de session ou la clé
+  OpenRouter. Le modèle n’a ni accès direct à la base ni outils. Le contexte
+  utilisateur est transmis à OpenRouter ; les paramètres demandent refus de
+  collecte fournisseur et ZDR, sans garantir une rétention nulle absolue ni
+  un traitement en UE.
 - **Tests de sécurité** : `npx vitest run src/sport/cloud` exécute la vraie
   migration SQL dans PGlite avec des rôles distincts et vérifie RLS,
   versions, amitiés et file push ; le test Deno de l'edge function couvre le
