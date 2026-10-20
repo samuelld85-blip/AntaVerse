@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SessionReactions, SportSocial } from "./cloud/social";
 import { useSportCloud } from "./cloud/provider";
@@ -1412,7 +1411,6 @@ export function SportApp() {
             {tab === "home" && (
               <section className={styles.home}>
                 <div className={styles.homeHero}>
-                  <p className={styles.eyebrow}>L’effort d’aujourd’hui. Le progrès de demain.</p>
                   <h1>
                     Carnet de <span>sport</span>
                   </h1>
@@ -1470,16 +1468,14 @@ export function SportApp() {
                   </div>
                 </section>
                 <section className={`${styles.panel} ${styles.coachEntry}`} aria-label="Assistant Sport">
-                  <p className={styles.eyebrow}>
-                    <CoachAvatar small /> Milo · coach IA
-                  </p>
                   <div className={styles.actions}>
                     <button
                       className={styles.secondary}
                       type="button"
                       onClick={(event) => openAssistant("prepare", event.currentTarget)}
                     >
-                      Préparer ma séance
+                      <CoachAvatar small />
+                      <span>Préparer ma séance à l’aide du coach</span>
                     </button>
                   </div>
                 </section>
@@ -1592,10 +1588,6 @@ export function SportApp() {
                           >
                             <span>
                               <strong>{workout.name}</strong>
-                              <em>
-                                {workout.exercises.length} exercices ·{" "}
-                                {workoutDurations[workout.duration].minutes} min environ
-                              </em>
                             </span>
                             <span aria-hidden="true">→</span>
                           </button>
@@ -2159,6 +2151,14 @@ export function SportApp() {
                 <div className={styles.pageHeading}>
                   <h1>Historique</h1>
                 </div>
+                <button
+                  className={`${styles.secondary} ${styles.coachEntry} ${styles.coachProgress}`}
+                  type="button"
+                  onClick={(event) => openAssistant("progress", event.currentTarget)}
+                >
+                  <CoachAvatar small />
+                  <span>Comprendre ma progression</span>
+                </button>
                 <div
                   className={`${styles.segment} ${styles.historyFilters}`}
                   role="group"

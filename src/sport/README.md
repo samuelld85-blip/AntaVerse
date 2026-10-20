@@ -112,10 +112,13 @@ Validation : `npx vitest run src/sport/model.test.ts`, `npm run typecheck`,
 
 L’assistant aide à préparer une séance à partir des contraintes de l’historique,
 à transformer un texte fourni par l’utilisateur en brouillon, à relire une séance
-terminée et à observer la progression. Depuis « Nouvelle séance », les boutons
-de préparation, relecture et progression lancent la demande au toucher. Pour
-importer un programme, l’interface ouvre le champ de texte ; un seul envoi
-explicite transmet le texte et le contexte. Ces actions n’ajoutent pas de carte
+terminée et à observer la progression. Depuis « Nouvelle séance », le seul bouton
+« Préparer ma séance à l’aide du coach » ouvre une orientation textuelle facultative.
+Aucun appel ne part avant « Créer ma séance personnalisée » : sans texte, Milo utilise le carnet et
+la dernière séance terminée pour poursuivre le cycle Push → Pull → Legs ou
+Upper → Lower ; avec du texte, cette orientation complète la même base.
+La relecture et la progression lancent leur demande au toucher.
+Ces actions n’ajoutent pas de carte
 Milo à l’accueil et aucun appel ne part depuis une page sans action de l’assistant.
 Chaque préparation reste un brouillon modifiable : elle ne démarre ni
 n’enregistre une séance sans action distincte de l’utilisateur.

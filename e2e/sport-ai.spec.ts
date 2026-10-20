@@ -161,7 +161,7 @@ async function login(page: Page, friends = false) {
 async function readStore(page: Page): Promise<SportStore> {
   return page.evaluate(() => JSON.parse(localStorage.getItem("antaverse:sport:v1")!));
 }
-async function open(page: Page, name = "Préparer ma séance") {
+async function open(page: Page, name = "Préparer ma séance à l’aide du coach") {
   const trigger = page.getByRole("button", { name, exact: true });
   if (!(await trigger.isVisible().catch(() => false))) {
     await page.getByRole("button", { name: /^Séances/ }).click();
@@ -181,23 +181,41 @@ test("Milo prepares once with full private history and fits small phones in both
     await route.fulfill({ json: response });
   });
   await login(page);
-  for (const [width, theme] of [
-    [320, "dark"],
-    [390, "light"],
+  for (const [width, height, theme] of [
+    [320, 568, "dark"],
+    [360, 808, "light"],
   ] as const) {
-    await page.setViewportSize({ width, height: 568 });
+    await page.setViewportSize({ width, height });
     if (theme === "light")
       await page.getByRole("button", { name: "Mode clair", exact: true }).click();
     await expect(page.getByText("Milo · coach IA", { exact: true })).toHaveCount(0);
     await page.screenshot({ path: testInfo.outputPath(`assistant-home-${width}-${theme}.png`) });
     const before = requests.length;
     await page.getByRole("button", { name: /^Séances/ }).click();
-    const trigger = page.getByRole("button", { name: "Préparer ma séance", exact: true });
+    const trigger = page.getByRole("button", {
+      name: "Préparer ma séance à l’aide du coach",
+      exact: true,
+    });
     await expect(trigger).toBeVisible();
     await page.screenshot({
       path: testInfo.outputPath(`assistant-training-${width}-${theme}.png`),
     });
     const dialog = await open(page);
+    await expect(
+      dialog.getByText("Salut, moi c’est Milo, ton coach IA.", { exact: false }),
+    ).toBeVisible();
+    await expect(
+      dialog.getByText("Une envie précise ou une contrainte aujourd’hui ?", { exact: false }),
+    ).toBeVisible();
+    await expect(dialog.getByRole("textbox", { name: "Ta réponse (facultatif)" })).toBeVisible();
+    await expect(
+      dialog.getByRole("button", { name: "Créer ma séance personnalisée" }),
+    ).toBeInViewport();
+    expect(requests).toHaveLength(before);
+    await page.screenshot({
+      path: testInfo.outputPath(`assistant-prepare-before-${width}-${theme}.png`),
+    });
+    await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
     await expect(dialog.getByText("Milo · coach IA", { exact: true })).toBeVisible();
     await expect(dialog.getByRole("checkbox")).toHaveCount(0);
     await expect(
@@ -215,6 +233,9 @@ test("Milo prepares once with full private history and fits small phones in both
       "own-400",
     ]);
     expect(requests.at(-1)!.context.summary.sessions).toBe(3);
+    expect(requests.at(-1)!.messages.at(-1)!.content).toContain(
+      "Le prochain type du cycle est lower.",
+    );
     expect(JSON.stringify(requests.at(-1))).not.toMatch(/COMMENTAIRE_PRIVE|PHOTO_PRIVEE/);
     await page.keyboard.press("Escape");
     await expect(dialog).not.toBeVisible();
@@ -223,7 +244,7 @@ test("Milo prepares once with full private history and fits small phones in both
   }
 });
 
-test("An automatic request failure stays visible and can be retried directly", async ({ page }) => {
+test("A preparation failure preserves the optional orientation for retry", async ({ page }) => {
   let calls = 0;
   await page.route("**/functions/v1/sport-assistant", async (route) => {
     calls += 1;
@@ -235,10 +256,18 @@ test("An automatic request failure stays visible and can be retried directly", a
   });
   await login(page);
   const dialog = await open(page);
+  const orientation = dialog.getByRole("textbox", {
+    name: "Ta réponse (facultatif)",
+  });
+  await orientation.fill("45 minutes sans machine");
+  expect(calls).toBe(0);
+  await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
   await expect(dialog.getByRole("alert")).toContainText("indisponible");
   expect(calls).toBe(1);
-  await dialog.getByRole("button", { name: "Réessayer", exact: true }).click();
+  await expect(orientation).toHaveValue("45 minutes sans machine");
+  await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
   await expect(dialog.getByRole("heading", { name: "Brouillon de séance" })).toBeVisible();
+  await expect(dialog.getByText("45 minutes sans machine", { exact: true })).toBeVisible();
   await expect(dialog.getByRole("alert")).toHaveCount(0);
   expect(calls).toBe(2);
   expect((await readStore(page)).active).toBeNull();
@@ -252,6 +281,7 @@ test("A draft is editable, favorites are independent, and starting creates no co
   );
   await login(page);
   let dialog = await open(page);
+  await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
   await expect(dialog.getByRole("heading", { name: "Brouillon de séance" })).toBeVisible();
   expect((await readStore(page)).active).toBeNull();
   expect((await readStore(page)).templates).toEqual([]);
@@ -282,10 +312,10 @@ test("A draft is editable, favorites are independent, and starting creates no co
   expect((await readStore(page)).active!.id).toBe(stored.active!.id);
 });
 
-test("Text imports keep unknown required values unresolved until the user fills them", async ({
+test("Preparation keeps unknown required values unresolved until the user fills them", async ({
   page,
 }) => {
-  let requests = 0;
+  const requests: AssistantRequest[] = [];
   const incomplete: Draft = {
     ...draft,
     questions: ["Quelle charge et quel matériel ?"],
@@ -302,18 +332,19 @@ test("Text imports keep unknown required values unresolved until the user fills 
     ],
   };
   await page.route("**/functions/v1/sport-assistant", (route) => {
-    requests += 1;
+    requests.push(route.request().postDataJSON() as AssistantRequest);
     return route.fulfill({ json: { ...response, draft: incomplete } });
   });
   await login(page);
-  const dialog = await open(page, "Depuis un texte");
-  await expect(dialog.getByRole("textbox", { name: "Votre programme", exact: true })).toBeFocused();
-  expect(requests).toBe(0);
+  const dialog = await open(page);
+  expect(requests).toHaveLength(0);
   await dialog
-    .getByRole("textbox", { name: "Votre programme", exact: true })
+    .getByRole("textbox", { name: "Ta réponse (facultatif)" })
     .fill("Développé couché, réglages à préciser");
-  await dialog.getByRole("button", { name: "Envoyer à l’assistant" }).click();
-  await expect.poll(() => requests).toBe(1);
+  await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
+  await expect.poll(() => requests.length).toBe(1);
+  expect(requests[0]!.mode).toBe("prepare");
+  expect(requests[0]!.messages.at(-1)!.content).toContain("Développé couché, réglages à préciser");
   const start = dialog.getByRole("button", { name: "Démarrer cette séance", exact: true });
   await expect(start).toBeDisabled();
   await expect(dialog.getByRole("button", { name: "Enregistrer en favori" })).toBeDisabled();
@@ -350,6 +381,8 @@ test("Progress and own-session reviews require selected data and cite only own s
   await login(page, true);
   await page.setViewportSize({ width: 320, height: 568 });
   await page.getByRole("button", { name: /^Profil/ }).click();
+  await expect(page.getByRole("heading", { name: "Profil de sport_test" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Comprendre ma progression" })).toBeVisible();
   let dialog = await open(page, "Comprendre ma progression");
   await expect(dialog.getByText("Comparaison avec votre séance précédente.")).toBeVisible();
   expect(requests[0]!.context.summary.sessions).toBe(3);
@@ -368,6 +401,11 @@ test("Progress and own-session reviews require selected data and cite only own s
   await page.screenshot({ path: testInfo.outputPath("assistant-profile-390-light.png") });
   await dialog.getByRole("button", { name: "Fermer l’assistant" }).click();
   await page.getByRole("button", { name: "Historique", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Historique" })).toBeVisible();
+  dialog = await open(page, "Comprendre ma progression");
+  await expect(dialog.getByText("Comparaison avec votre séance précédente.")).toBeVisible();
+  expect(requests.at(-1)!.mode).toBe("progress");
+  await dialog.getByRole("button", { name: "Fermer l’assistant" }).click();
   await page.getByRole("button").filter({ hasText: "Séance amie privée" }).click();
   await expect(
     page.getByRole("button", { name: "Faire le point sur cette séance", exact: true }),
@@ -380,7 +418,7 @@ test("Progress and own-session reviews require selected data and cite only own s
   expect(JSON.stringify(requests)).not.toMatch(/COMMENTAIRE_PRIVE|PHOTO_PRIVEE|friend-session/);
 });
 
-test("Import errors and offline states preserve text; closing aborts pending answers", async ({
+test("Preparation errors and offline states preserve orientation; closing aborts pending answers", async ({
   page,
   context,
 }) => {
@@ -404,26 +442,28 @@ test("Import errors and offline states preserve text; closing aborts pending ans
   });
   await login(page);
   const original = await readStore(page);
-  let dialog = await open(page, "Depuis un texte");
-  const input = dialog.getByRole("textbox", { name: "Votre programme", exact: true });
+  let dialog = await open(page);
+  const input = dialog.getByRole("textbox", {
+    name: "Ta réponse (facultatif)",
+  });
   await input.fill("Une séance simple sans perdre ce texte");
-  await dialog.getByRole("button", { name: "Envoyer à l’assistant" }).click();
+  await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
   await expect(dialog.getByRole("alert")).toContainText("limite de demandes");
   await expect(input).toHaveValue("Une séance simple sans perdre ce texte");
   await context.setOffline(true);
   await expect(dialog.getByText("Hors ligne.", { exact: true })).toBeVisible();
-  await expect(dialog.getByRole("button", { name: "Envoyer à l’assistant" })).toBeDisabled();
+  await expect(
+    dialog.getByRole("button", { name: "Créer ma séance personnalisée" }),
+  ).toBeDisabled();
   await context.setOffline(false);
-  await dialog.getByRole("button", { name: "Envoyer à l’assistant" }).click();
+  await dialog.getByRole("button", { name: "Créer ma séance personnalisée" }).click();
   await expect.poll(() => requests).toBe(2);
   await dialog.getByRole("button", { name: "Fermer l’assistant" }).click();
   release();
   await expect.poll(() => aborted).toBeGreaterThan(0);
-  dialog = await open(page, "Depuis un texte");
+  dialog = await open(page);
   await expect(dialog.getByRole("heading", { name: "Brouillon de séance" })).toHaveCount(0);
-  await expect(dialog.getByRole("textbox", { name: "Votre programme", exact: true })).toHaveValue(
-    "",
-  );
+  await expect(dialog.getByRole("textbox", { name: "Ta réponse (facultatif)" })).toHaveValue("");
   expect(requests).toBe(2);
   expect(await readStore(page)).toEqual(original);
 });

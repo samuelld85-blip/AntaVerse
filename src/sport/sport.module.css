@@ -35,6 +35,7 @@
   background: var(--sport-bg);
   color: var(--sport-ink);
   font-family: var(--launcher-font);
+  font-size: 95%;
   color-scheme: dark;
 }
 .frame[data-theme="light"] {
@@ -54,6 +55,10 @@
   --sport-shadow: 0 10px 24px #24344008;
   --sport-button-shadow: 0 5px 16px #89533214;
   color-scheme: light;
+}
+:global(html):has(.frame),
+:global(body):has(.frame) {
+  min-width: 0;
 }
 .themeButton {
   display: grid;
@@ -268,19 +273,19 @@
   overflow-wrap: anywhere;
 }
 .shell h1 {
-  font-size: clamp(26px, 6vw, 34px);
+  font-size: clamp(25px, 5.7vw, 32px);
   line-height: 1.12;
   font-weight: 750;
   letter-spacing: -1.2px;
 }
 .shell h2 {
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.25;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 .shell h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 650;
 }
 .shell p {
@@ -308,12 +313,12 @@
   text-decoration: none;
 }
 .home {
-  padding-top: 8px;
+  padding-top: 0;
 }
 .homeHero {
   position: relative;
   text-align: left;
-  padding: 26px 0 22px;
+  padding: 12px 0 10px;
 }
 .homeMark {
   color: var(--sport-accent);
@@ -324,42 +329,32 @@
   height: 46px;
 }
 .homeHero h1 {
-  font-size: clamp(46px, 13vw, 76px);
-  font-weight: 650;
-  line-height: 0.98;
-  letter-spacing: -0.065em;
-  max-width: 8ch;
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(24px, 8vw, 32px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
 }
 .homeHero h1 span {
   color: var(--sport-accent);
-}
-.shell .homeHero .eyebrow {
-  max-width: none;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  margin-bottom: 16px;
 }
 .heroRule {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 18px;
-  margin-top: 20px;
+  padding-top: 12px;
+  margin-top: 12px;
   border-top: 1px solid var(--sport-line);
   color: var(--sport-muted);
   font-size: 8px;
   letter-spacing: 0.16em;
 }
-.homeHero p {
-  margin-top: 0;
-  color: var(--sport-muted);
-  font-size: 10px;
-}
 .homeProgressPrompt {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 22px;
+  margin: 0 0 14px;
   padding: 0 0 0 12px;
   border: 0;
   border-left: 2px solid var(--sport-accent);
@@ -381,8 +376,8 @@
   gap: 0 18px;
 }
 .homeButton:not(.homeButtonPrimary) {
-  min-height: 124px;
-  padding: 16px 0;
+  min-height: 118px;
+  padding: 15px 0;
   border: 0;
   border-top: 1px solid var(--sport-line);
   border-radius: 0;
@@ -398,8 +393,8 @@
   align-items: start;
   gap: 14px 8px;
   width: 100%;
-  min-height: 142px;
-  padding: 18px;
+  min-height: 135px;
+  padding: 17px;
   text-align: left;
   border: 1px solid var(--sport-line);
   border-radius: var(--sport-radius);
@@ -418,15 +413,15 @@
 }
 .homeButtonPrimary .homeButtonText {
   grid-column: 1;
-  padding-top: 18px;
+  padding-top: 16px;
 }
 .trainingArtwork {
   position: absolute;
   pointer-events: none;
-  right: -14px;
+  right: -12px;
   top: 3px;
-  width: 180px;
-  height: 180px;
+  width: 162px;
+  height: 162px;
   opacity: 0.42;
 }
 .homeButton:hover {
@@ -435,32 +430,38 @@
 }
 .homeButtonPrimary {
   grid-column: 1 / -1;
-  min-height: 168px;
+  min-height: 144px;
   overflow: hidden;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  padding: 15px;
   border-color: var(--sport-accent-line);
-  background: var(--sport-button);
-  color: var(--sport-on-accent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sport-accent) 10%, var(--sport-raised)),
+    color-mix(in srgb, var(--sport-accent) 4%, var(--sport-surface))
+  );
+  color: var(--sport-accent);
   box-shadow: var(--sport-button-shadow);
 }
 .homeButtonPrimary .homeButtonText strong {
-  font-size: 28px;
-  letter-spacing: -0.04em;
+  font-size: 24px;
+  letter-spacing: -0.02em;
 }
 .homeButtonPrimary .homeButtonText > span {
   max-width: 18ch;
 }
 .homeButtonPrimary:hover {
-  background: var(--sport-button);
   filter: brightness(1.04);
 }
 .homeButtonPrimary .homeButtonIcon {
-  color: var(--sport-on-accent);
-  background: color-mix(in srgb, var(--sport-on-accent) 12%, transparent);
+  width: 27px;
+  height: 27px;
+  color: var(--sport-accent);
+  background: color-mix(in srgb, var(--sport-accent) 12%, transparent);
 }
 .homeButtonPrimary .homeButtonText span,
 .homeButtonPrimary .homeButtonChevron {
-  color: var(--sport-on-accent);
+  color: var(--sport-accent);
 }
 .homeButtonIcon {
   display: grid;
@@ -529,9 +530,9 @@
   justify-content: center;
   align-items: center;
   gap: 4px;
-  min-height: 54px;
+  min-height: 52px;
   padding: 6px 2px;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 14px;
   color: var(--sport-muted);
   /* Five tabs must stay on one line down to the narrowest phones. */
@@ -541,9 +542,14 @@
   background: transparent;
 }
 .nav button[aria-current] {
+  border: 1px solid var(--sport-accent-line);
   color: var(--sport-accent);
   font-weight: 700;
-  background: var(--sport-accent-soft);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sport-accent) 10%, var(--sport-raised)),
+    color-mix(in srgb, var(--sport-accent) 4%, var(--sport-surface))
+  );
 }
 .nav svg {
   width: 20px;
@@ -574,7 +580,7 @@
 }
 .hero {
   position: relative;
-  padding: 26px 0 22px;
+  padding: 18px 0 12px;
   overflow: hidden;
 }
 .shell .eyebrow {
@@ -586,7 +592,7 @@
   margin-bottom: 10px;
 }
 .hero h1 {
-  font-size: clamp(30px, 7vw, 40px);
+  font-size: clamp(29px, 6.7vw, 38px);
   margin-bottom: 0;
   position: relative;
   z-index: 1;
@@ -605,7 +611,19 @@
 }
 .panel,
 .coachEntry {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+.coachEntry {
+  margin-bottom: 8px;
+}
+.coachEntry .actions {
+  margin-top: 0;
+}
+.coachEntry .secondary {
+  min-height: 44px;
+  padding: 8px 12px;
+  gap: 8px;
+  font-size: 12.5px !important;
 }
 .workout {
   padding: 22px;
@@ -624,12 +642,12 @@
   padding: 16px;
 }
 .panel h2 {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 .setupChoices,
 .recommendedList {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 .setupChoice,
 .recommendedWorkout,
@@ -646,9 +664,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  min-height: 74px;
-  padding: 14px;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 12px;
+}
+.setupChoice {
+  min-height: 70px;
+  padding: 13px;
 }
 .setupChoice:hover,
 .recommendedWorkout:hover {
@@ -665,7 +687,11 @@
 .setupChoice strong,
 .recommendedWorkout strong,
 .setupMode strong {
-  font-size: 15px;
+  font-size: 14px;
+}
+.recommendedWorkout strong {
+  color: var(--sport-cool);
+  font-weight: 500;
 }
 .setupChoice small,
 .recommendedWorkout small,
@@ -684,38 +710,45 @@
 .recommendedWorkout > span:last-child {
   flex-shrink: 0;
   color: var(--sport-accent);
-  font-size: 20px;
+  font-size: 19px;
 }
 .recommendedSetup {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .recommendedSetup h3 {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .segment {
   display: flex;
-  padding: 4px;
+  padding: 3px;
   gap: 4px;
   background: color-mix(in srgb, var(--sport-bg) 75%, var(--sport-surface));
   border: 1px solid var(--sport-line);
   border-radius: 10px;
-  margin: 14px 0;
+  margin: 12px 0;
 }
 .segment button {
   flex: 1;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 7px;
-  min-height: 48px;
-  padding: 8px 5px;
+  min-height: 46px;
+  padding: 7px 5px;
   background: transparent;
   color: var(--sport-muted);
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.3;
 }
 .segment button[aria-pressed="true"] {
-  background: var(--sport-raised);
-  color: var(--sport-ink);
-  box-shadow: 0 2px 8px #0000000d;
+  border-color: var(--sport-accent-line);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sport-accent) 10%, var(--sport-raised)),
+    color-mix(in srgb, var(--sport-accent) 4%, var(--sport-surface))
+  );
+  color: var(--sport-accent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--sport-accent) 14%, transparent),
+    0 2px 8px #0000000d;
   font-weight: 700;
 }
 .historyFilters {
@@ -733,10 +766,10 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: 52px;
-  padding: 13px 16px;
+  min-height: 50px;
+  padding: 12px 15px;
   border-radius: 12px;
-  font-size: 14px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
   line-height: 1.4;
   text-align: center;
@@ -744,8 +777,12 @@
 .primary {
   width: 100%;
   border: 1px solid var(--sport-accent-line);
-  background: var(--sport-button);
-  color: var(--sport-on-accent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sport-accent) 10%, var(--sport-raised)),
+    color-mix(in srgb, var(--sport-accent) 4%, var(--sport-surface))
+  );
+  color: var(--sport-accent);
   box-shadow: var(--sport-button-shadow);
 }
 .primary:hover {
@@ -764,6 +801,26 @@
 .exerciseRow:hover {
   background: var(--sport-raised);
   border-color: var(--sport-cool);
+}
+.coachProgress {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin-bottom: 12px;
+  padding: 6px 2px;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--sport-muted);
+  box-shadow: none;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  text-align: left;
+}
+.coachProgress:hover {
+  border-color: transparent;
+  background: transparent;
+  color: var(--sport-accent);
 }
 .sessionHeading,
 .sectionHeading {
@@ -1667,22 +1724,22 @@
   font-size: 13px;
 }
 .pageHeading {
-  padding: 32px 0 26px;
+  padding: 24px 0 18px;
 }
 .empty {
-  padding: 40px 12px;
+  padding: 32px 12px;
   text-align: center;
 }
 .empty > svg {
   display: block;
-  margin: 0 auto 18px;
+  margin: 0 auto 14px;
   width: 38px;
   height: 38px;
   color: var(--sport-accent);
 }
 .empty p {
   max-width: 350px;
-  margin: 14px auto 22px;
+  margin: 12px auto 18px;
   color: var(--sport-muted);
   font-size: 14px;
 }
@@ -1699,7 +1756,7 @@
   font-size: 18px !important;
 }
 .subheading:not(:first-child) {
-  margin-top: 28px !important;
+  margin-top: 20px !important;
 }
 .subheading span {
   font-size: 12px;
@@ -1709,13 +1766,13 @@
 .favoriteRow {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 14px;
-  padding: 20px;
+  gap: 12px;
+  padding: 18px;
   border: 1px solid var(--sport-line);
   background: var(--sport-panel);
   box-shadow: var(--sport-shadow);
   border-radius: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .favoriteRow > div > span,
 .favoriteRow p {
@@ -2106,8 +2163,8 @@
   border: 0;
   border-top: 1px solid var(--sport-line);
   border-radius: 0;
-  padding: 26px 0;
-  margin: 16px 0 0;
+  padding: 22px 0;
+  margin: 12px 0 0;
   background: transparent;
   box-shadow: none;
 }
@@ -2116,7 +2173,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .statsHeading h2 {
   margin: 0;
@@ -2270,13 +2327,13 @@
 .progressSummary {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 17px 0 4px;
+  gap: 8px;
+  margin: 14px 0 4px;
 }
 .progressSummary > div {
   display: flex;
   flex-direction: column;
-  min-height: 95px;
+  min-height: 90px;
   gap: 6px;
   padding: 12px;
   border: 1px solid var(--sport-line);
@@ -2348,13 +2405,13 @@
 }
 @media (max-height: 740px) {
   .homeHero {
-    padding-top: 20px;
+    padding-top: 10px;
   }
   .homeHero h1 {
-    font-size: clamp(40px, 11vw, 60px);
+    font-size: clamp(24px, 8vw, 32px);
   }
   .homeButtonPrimary {
-    min-height: 144px;
+    min-height: 130px;
   }
   .homeButtonPrimary .homeButtonText {
     padding-top: 0;
@@ -2417,7 +2474,6 @@
     padding-left: 14px;
     padding-right: 14px;
   }
-  .panel,
   .workout {
     padding: 18px;
   }
