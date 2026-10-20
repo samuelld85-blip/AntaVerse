@@ -39,6 +39,16 @@ pur, sans permission associée dans les navigateurs actuels.
 
 ## Manifeste PWA (`public/manifest.webmanifest`)
 
+L’assistant Sport n’ajoute aucune permission du navigateur : ses requêtes HTTPS
+nécessitent un compte connecté. Les boutons Préparer, Relire et Progression
+envoient la demande au toucher ; l’import n’envoie le texte qu’après sa saisie
+et un clic sur Envoyer. Toutes les séances terminées du compte, leurs séries
+et leurs statistiques sont incluses automatiquement, sans case de partage de
+l’historique. Aucun appel ne part d’une page sans action de l’assistant. Les
+destinataires et les données transmises sont décrits dans
+`/legal/confidentialite`. L’assistant n’utilise ni micro, ni caméra, ni
+localisation, ni carnet d’amis.
+
 Aucune permission déclarée — c'est un manifeste standard (nom, icônes,
 couleurs, `display: "standalone"`, `orientation: "portrait-primary"`),
 sans `permissions` ni capacité native demandée.

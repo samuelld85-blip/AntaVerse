@@ -13,6 +13,9 @@ import { HistoryEditor } from "./history-editor";
 import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
 import { StatsDashboard } from "./stats-dashboard";
 import { SportView } from "./sport-view";
+import { SportAssistant } from "./ai/assistant";
+import { CoachAvatar } from "./ai/coach-avatar";
+import type { AssistantMode } from "../../supabase/functions/_shared/sport-ai-contract";
 import { formatVolume, getSessionVolume } from "./stats";
 import { getExerciseProgression, getGlobalProgression } from "./progression";
 import { ProgressionBadge } from "./progression-badge";
@@ -965,6 +968,10 @@ export function SportApp() {
   } | null>(null);
   const [supersetDraft, setSupersetDraft] = useState<ExerciseConfig | null>(null);
   const [detailId, setDetailId] = useState<string | null>(null);
+  const [assistant, setAssistant] = useState<{
+    mode: AssistantMode;
+    focusSessionId?: string;
+  } | null>(null);
   const [editHistory, setEditHistory] = useState(false);
   const [deleteHistory, setDeleteHistory] = useState(false);
   const [historyFilter, setHistoryFilter] = useState<HistoryFilter>("all");
@@ -979,6 +986,11 @@ export function SportApp() {
   const [friendHistoryLoading, setFriendHistoryLoading] = useState(false);
   const timer = useRestTimer();
   const cloud = useSportCloud();
+
+  function openAssistant(mode: AssistantMode, trigger: HTMLButtonElement, focusSessionId?: string) {
+    trigger.focus();
+    setAssistant({ mode, focusSessionId });
+  }
 
   function navigateToTab(next: SportTab, replace = false) {
     if (typeof window !== "undefined") {
@@ -1457,6 +1469,20 @@ export function SportApp() {
                     <SportIcon />
                   </div>
                 </section>
+                <section className={`${styles.panel} ${styles.coachEntry}`} aria-label="Assistant Sport">
+                  <p className={styles.eyebrow}>
+                    <CoachAvatar small /> Milo · coach IA
+                  </p>
+                  <div className={styles.actions}>
+                    <button
+                      className={styles.secondary}
+                      type="button"
+                      onClick={(event) => openAssistant("prepare", event.currentTarget)}
+                    >
+                      Préparer ma séance
+                    </button>
+                  </div>
+                </section>
                 <section className={styles.panel}>
                   <h2>Format de séance</h2>
                   <div className={styles.segment} aria-label="Format d’entraînement">
@@ -1588,20 +1614,6 @@ export function SportApp() {
                     </button>
                   ) : null}
                 </section>
-                {!cloud.profile && (
-                  <section className={styles.panel} aria-labelledby="social-invite">
-                    <h2 id="social-invite">Social</h2>
-                    <p className={styles.hint}>
-                      Retrouvez vos amis, consultez leurs séances et encouragez-les après un
-                      entraînement.
-                    </p>
-                    <Link className={styles.secondary} href="/sport/compte">
-                      {cloud.session
-                        ? "Choisir mon pseudo"
-                        : "Me connecter pour retrouver mes amis"}
-                    </Link>
-                  </section>
-                )}
               </>
             )}
             {tab === "training" && active && (
@@ -2356,6 +2368,17 @@ export function SportApp() {
                       })}
                       {!detailIsFriend && (
                         <>
+                          {detail.endedAt && (
+                            <button
+                              className={styles.secondary}
+                              type="button"
+                              onClick={(event) =>
+                                openAssistant("review", event.currentTarget, detail.id)
+                              }
+                            >
+                              Faire le point sur cette séance
+                            </button>
+                          )}
                           <button
                             className={styles.primary}
                             onClick={() =>
@@ -2515,7 +2538,11 @@ export function SportApp() {
               </>
             )}
             {tab === "stats" && (
-              <StatsDashboard history={store.history} username={cloud.profile?.username} />
+              <StatsDashboard
+                history={store.history}
+                username={cloud.profile?.username}
+                onUnderstandProgress={(trigger) => openAssistant("progress", trigger)}
+              />
             )}
             {tab === "social" && (
               <>
@@ -2616,6 +2643,38 @@ export function SportApp() {
               </>
             )}
           </SportView>
+          {assistant && (
+            <SportAssistant
+              key={`${cloud.session?.user.id ?? "local"}:${assistant.mode}:${assistant.focusSessionId ?? ""}`}
+              mode={assistant.mode}
+              focusSessionId={assistant.focusSessionId}
+              history={store.history}
+              hasActiveSession={Boolean(store.active)}
+              onClose={() => setAssistant(null)}
+              onStart={(template) => {
+                if (
+                  !cloud.session ||
+                  !cloud.profile ||
+                  !storeRef.current ||
+                  readBlocked ||
+                  storeRef.current.active
+                )
+                  return false;
+                start(template.kind, template.exercises, template.name, "recommended");
+                return Boolean(storeRef.current.active);
+              }}
+              onSave={(template) => {
+                if (!cloud.session || !cloud.profile || !storeRef.current || readBlocked)
+                  return false;
+                const templateId = crypto.randomUUID();
+                update((currentStore) => ({
+                  ...currentStore,
+                  templates: [...currentStore.templates, { id: templateId, ...template }],
+                }));
+                return storeRef.current.templates.some((item) => item.id === templateId);
+              }}
+            />
+          )}
           {exitConfirmation && (
             <div className={styles.exitOverlay} role="presentation">
               <section

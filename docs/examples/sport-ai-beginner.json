@@ -1,0 +1,3043 @@
+{
+  "model": "openai/gpt-6.1-sol",
+  "reasoning": "medium",
+  "history": [
+    {
+      "id": "demo-1",
+      "name": "Séance fictive 1",
+      "kind": "full",
+      "startedAt": "2026-10-03T09:00:00.000Z",
+      "endedAt": "2026-10-03T09:40:00.000Z",
+      "exercises": [
+        {
+          "id": "c04aae4e-f541-4930-a8ff-69e58e072a9c",
+          "config": {
+            "exerciseId": "bench-press",
+            "equipment": "barbell",
+            "loadKg": 20,
+            "reps": 8,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 8
+            },
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 8
+            },
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 8
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "f1244b0b-f775-4539-ae6d-601faccabeab",
+          "config": {
+            "exerciseId": "row",
+            "equipment": "dumbbell",
+            "loadKg": 8,
+            "reps": 10,
+            "sets": 3,
+            "restSeconds": 90
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 10
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "9210ce3f-a25c-4537-9fa1-4800a3f2af88",
+          "config": {
+            "exerciseId": "leg-press",
+            "equipment": "machine",
+            "loadKg": 40,
+            "reps": 10,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-03T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 10
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        }
+      ]
+    },
+    {
+      "id": "demo-2",
+      "name": "Séance fictive 2",
+      "kind": "full",
+      "startedAt": "2026-10-06T09:00:00.000Z",
+      "endedAt": "2026-10-06T09:40:00.000Z",
+      "exercises": [
+        {
+          "id": "c81c4e37-eca7-4284-9b00-d1300b22ffa7",
+          "config": {
+            "exerciseId": "bench-press",
+            "equipment": "barbell",
+            "loadKg": 20,
+            "reps": 9,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 9
+            },
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 9
+            },
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 9
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "0ab8c86e-1832-48fd-a86c-298c168b5bc9",
+          "config": {
+            "exerciseId": "row",
+            "equipment": "dumbbell",
+            "loadKg": 8,
+            "reps": 10,
+            "sets": 3,
+            "restSeconds": 90
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 10
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "55811e14-fcd5-434f-a8b8-f6be46711f23",
+          "config": {
+            "exerciseId": "leg-press",
+            "equipment": "machine",
+            "loadKg": 40,
+            "reps": 10,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-06T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 10
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        }
+      ]
+    },
+    {
+      "id": "demo-3",
+      "name": "Séance fictive 3",
+      "kind": "full",
+      "startedAt": "2026-10-10T09:00:00.000Z",
+      "endedAt": "2026-10-10T09:40:00.000Z",
+      "exercises": [
+        {
+          "id": "46a28752-dc3f-4df4-8803-fbc0e5b3bcd1",
+          "config": {
+            "exerciseId": "bench-press",
+            "equipment": "barbell",
+            "loadKg": 20,
+            "reps": 10,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 10
+            },
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 20,
+              "reps": 10
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "0896d7b5-ccf0-4d62-9242-6a9f2757515f",
+          "config": {
+            "exerciseId": "row",
+            "equipment": "dumbbell",
+            "loadKg": 8,
+            "reps": 11,
+            "sets": 3,
+            "restSeconds": 90
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 11
+            },
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 11
+            },
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 8,
+              "reps": 11
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "64e2f30f-53f9-4837-8d08-92b01afe64aa",
+          "config": {
+            "exerciseId": "leg-press",
+            "equipment": "machine",
+            "loadKg": 40,
+            "reps": 11,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 11
+            },
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 11
+            },
+            {
+              "completedAt": "2026-10-10T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 40,
+              "reps": 11
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        }
+      ]
+    },
+    {
+      "id": "demo-4",
+      "name": "Séance fictive 4",
+      "kind": "full",
+      "startedAt": "2026-10-13T09:00:00.000Z",
+      "endedAt": "2026-10-13T09:40:00.000Z",
+      "exercises": [
+        {
+          "id": "50ec3d77-ed02-47fa-aca8-c31f361adea2",
+          "config": {
+            "exerciseId": "bench-press",
+            "equipment": "barbell",
+            "loadKg": 25,
+            "reps": 6,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 25,
+              "reps": 6
+            },
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 25,
+              "reps": 6
+            },
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 25,
+              "reps": 6
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "baf7b736-2329-4972-a160-516dc9f3250f",
+          "config": {
+            "exerciseId": "row",
+            "equipment": "dumbbell",
+            "loadKg": 10,
+            "reps": 8,
+            "sets": 3,
+            "restSeconds": 90
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 10,
+              "reps": 8
+            },
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 10,
+              "reps": 8
+            },
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 10,
+              "reps": 8
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "7962d78c-e4f6-49c7-8ad3-7c10a2fc4e21",
+          "config": {
+            "exerciseId": "leg-press",
+            "equipment": "machine",
+            "loadKg": 45,
+            "reps": 8,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 45,
+              "reps": 8
+            },
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 45,
+              "reps": 8
+            },
+            {
+              "completedAt": "2026-10-13T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 45,
+              "reps": 8
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        }
+      ]
+    },
+    {
+      "id": "demo-5",
+      "name": "Séance fictive 5",
+      "kind": "full",
+      "startedAt": "2026-10-17T09:00:00.000Z",
+      "endedAt": "2026-10-17T09:40:00.000Z",
+      "exercises": [
+        {
+          "id": "8e173cc2-49ee-4773-870c-f7aa3ddce916",
+          "config": {
+            "exerciseId": "bench-press",
+            "equipment": "barbell",
+            "loadKg": 25,
+            "reps": 7,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 25,
+              "reps": 7
+            },
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 25,
+              "reps": 7
+            },
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "loadKg": 25,
+              "reps": 7
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "32e449a5-0090-47fa-81aa-7cda551af28a",
+          "config": {
+            "exerciseId": "row",
+            "equipment": "dumbbell",
+            "loadKg": 10,
+            "reps": 9,
+            "sets": 3,
+            "restSeconds": 90
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 10,
+              "reps": 9
+            },
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 10,
+              "reps": 9
+            },
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "loadKg": 10,
+              "reps": 9
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        },
+        {
+          "id": "1d5dff37-ae54-4d87-9c05-0573089719f4",
+          "config": {
+            "exerciseId": "leg-press",
+            "equipment": "machine",
+            "loadKg": 45,
+            "reps": 9,
+            "sets": 3,
+            "restSeconds": 120
+          },
+          "pyramid": false,
+          "completedSets": [
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 45,
+              "reps": 9
+            },
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 45,
+              "reps": 9
+            },
+            {
+              "completedAt": "2026-10-17T09:40:00.000Z",
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "loadKg": 45,
+              "reps": 9
+            }
+          ],
+          "completedRounds": 3,
+          "finished": true
+        }
+      ]
+    }
+  ],
+  "demonstrations": [
+    {
+      "title": "Préparer ma séance",
+      "request": {
+        "mode": "prepare",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Je débute. Prépare-moi un full body simple de 30 minutes avec développé couché barre, rowing haltères et presse à cuisses. Tu peux reprendre les charges et répétitions de ma dernière séance : je les confirme pour cette proposition."
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 5,
+            "sets": 45,
+            "volumeKg": 9864
+          },
+          "focusSessionId": null,
+          "recentSessions": [
+            {
+              "id": "demo-5",
+              "date": "2026-10-17T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2010,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "demo-4",
+              "date": "2026-10-13T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1770,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "demo-3",
+              "date": "2026-10-10T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2184,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                }
+              ]
+            },
+            {
+              "id": "demo-2",
+              "date": "2026-10-06T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1980,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "demo-1",
+              "date": "2026-10-03T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1920,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        "draft": null
+      },
+      "response": {
+        "message": "Je reprends les charges et répétitions du 17 octobre, comme tu les confirmes : tes trois exercices couvrent poussée, tirage et jambes, une base simple pour débuter. Prévois environ 5 minutes d’échauffement avec quelques séries légères, puis réalise le brouillon dans l’ordre avec 90 secondes de repos entre les séries, pour viser 30 minutes selon les transitions. Garde environ 2 répétitions possibles en fin de série plutôt que de forcer jusqu’à l’échec : l’objectif est de répéter cette séance avec une exécution maîtrisée.",
+        "observations": [
+          {
+            "text": "Le 17 octobre 2026, tu as consigné 3 séries de 7 répétitions au développé couché barre à 25 kg, barre comprise.",
+            "sessionIds": [
+              "demo-5"
+            ]
+          },
+          {
+            "text": "Le 17 octobre 2026, tu as consigné 3 séries de 9 répétitions au rowing haltères à 10 kg par haltère et à la presse à cuisses à 45 kg.",
+            "sessionIds": [
+              "demo-5"
+            ]
+          }
+        ],
+        "draft": {
+          "name": "Full body simple — 30 minutes",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 90,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 90,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 90,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      }
+    },
+    {
+      "title": "Ajuster la proposition en conversation",
+      "request": {
+        "mode": "prepare",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Je débute. Prépare-moi un full body simple de 30 minutes avec développé couché barre, rowing haltères et presse à cuisses. Tu peux reprendre les charges et répétitions de ma dernière séance : je les confirme pour cette proposition."
+          },
+          {
+            "role": "assistant",
+            "content": "Je reprends les charges et répétitions du 17 octobre, comme tu les confirmes : tes trois exercices couvrent poussée, tirage et jambes, une base simple pour débuter. Prévois environ 5 minutes d’échauffement avec quelques séries légères, puis réalise le brouillon dans l’ordre avec 90 secondes de repos entre les séries, pour viser 30 minutes selon les transitions. Garde environ 2 répétitions possibles en fin de série plutôt que de forcer jusqu’à l’échec : l’objectif est de répéter cette séance avec une exécution maîtrisée."
+          },
+          {
+            "role": "user",
+            "content": "La presse est occupée : remplace uniquement cet exercice par un squat au poids du corps, 2 séries de 10, 90 secondes de repos, sans lest (0 kg). Je confirme ces réglages. Conserve les deux autres exercices. Réponse brève."
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 5,
+            "sets": 45,
+            "volumeKg": 9864
+          },
+          "focusSessionId": null,
+          "recentSessions": [
+            {
+              "id": "demo-5",
+              "date": "2026-10-17T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2010,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "demo-4",
+              "date": "2026-10-13T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1770,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "demo-3",
+              "date": "2026-10-10T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2184,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                }
+              ]
+            },
+            {
+              "id": "demo-2",
+              "date": "2026-10-06T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1980,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "demo-1",
+              "date": "2026-10-03T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1920,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        "draft": {
+          "name": "Full body simple — 30 minutes",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 90,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 90,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 90,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      },
+      "response": {
+        "message": "Le brouillon remplace uniquement la presse à cuisses par le squat au poids du corps : 2 × 10, repos de 90 secondes, sans lest. Le développé couché et le rowing restent inchangés : tu conserves ainsi poussée, tirage et jambes malgré la machine occupée.",
+        "observations": [],
+        "draft": {
+          "name": "Full body simple — 30 minutes",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 90,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 90,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "squat",
+              "equipment": "bodyweight",
+              "sets": 2,
+              "reps": 10,
+              "restSeconds": 90,
+              "loadKg": 0,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      }
+    },
+    {
+      "title": "Importer un programme depuis un texte",
+      "request": {
+        "mode": "import",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Importe ce programme débutant sans ajouter d'exercice : développé couché barre 3 séries de 8 à 20 kg barre comprise, repos 120 secondes ; rowing haltères 3 séries de 10 à 8 kg par haltère, repos 90 secondes. Tous ces réglages sont confirmés. Réponds brièvement."
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 0,
+            "sets": 0,
+            "volumeKg": 0
+          },
+          "focusSessionId": null,
+          "recentSessions": []
+        },
+        "draft": null
+      },
+      "response": {
+        "message": "Le brouillon reprend tes réglages confirmés, sans ajout d’exercice. Les charges sont bien notées barre comprise au développé couché et par haltère au rowing.",
+        "observations": [],
+        "draft": {
+          "name": "Programme débutant",
+          "kind": "upper",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 8,
+              "restSeconds": 120,
+              "loadKg": 20,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 10,
+              "restSeconds": 90,
+              "loadKg": 8,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      }
+    },
+    {
+      "title": "Faire le point après la cinquième séance",
+      "request": {
+        "mode": "review",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Milo, qu’est-ce que tu penses de ma dernière séance ? Qu’est-ce que je devrais garder en tête pour la prochaine ?"
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 5,
+            "sets": 45,
+            "volumeKg": 9864
+          },
+          "focusSessionId": "demo-5",
+          "recentSessions": [
+            {
+              "id": "demo-5",
+              "date": "2026-10-17T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2010,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "demo-4",
+              "date": "2026-10-13T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1770,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "demo-3",
+              "date": "2026-10-10T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2184,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                }
+              ]
+            },
+            {
+              "id": "demo-2",
+              "date": "2026-10-06T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1980,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "demo-1",
+              "date": "2026-10-03T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1920,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        "draft": null
+      },
+      "response": {
+        "message": "Le 17 octobre, tu as ajouté une répétition à chaque série sur les trois exercices, à charges et matériel identiques au 13 octobre : c’est une progression nette des répétitions consignées. Le carnet ne permet toutefois pas de savoir si la technique et l’effort sont restés comparables. Pour la prochaine séance, garde les mêmes charges et cherche d’abord à reproduire ces répétitions avec une exécution maîtrisée, sans forcer l’échec : tu pourras ainsi confirmer ce niveau avant d’envisager une hausse.",
+        "observations": [
+          {
+            "text": "Au développé couché à la barre, tu passes de 3 × 6 le 13 octobre à 3 × 7 le 17 octobre, toujours à 25 kg.",
+            "sessionIds": [
+              "demo-4",
+              "demo-5"
+            ]
+          },
+          {
+            "text": "Du 13 au 17 octobre, le rowing avec haltères et la presse à cuisses passent chacun de 3 × 8 à 3 × 9, respectivement à 10 kg par haltère et 45 kg sur la machine.",
+            "sessionIds": [
+              "demo-4",
+              "demo-5"
+            ]
+          }
+        ],
+        "draft": null
+      }
+    },
+    {
+      "title": "Comprendre ma progression",
+      "request": {
+        "mode": "progress",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Je débute et j’ai fait ces cinq séances. Est-ce que je suis sur la bonne voie ? Qu’est-ce que tu me conseilles pour la suite ?"
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 5,
+            "sets": 45,
+            "volumeKg": 9864
+          },
+          "focusSessionId": null,
+          "recentSessions": [
+            {
+              "id": "demo-5",
+              "date": "2026-10-17T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2010,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "demo-4",
+              "date": "2026-10-13T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1770,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "demo-3",
+              "date": "2026-10-10T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2184,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                }
+              ]
+            },
+            {
+              "id": "demo-2",
+              "date": "2026-10-06T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1980,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "demo-1",
+              "date": "2026-10-03T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1920,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        "draft": null
+      },
+      "response": {
+        "message": "Oui, ton carnet montre un début cohérent : des séances régulières et davantage de répétitions à charges identiques, notamment entre le 13 et le 17 octobre. Cela indique une progression des performances consignées, sans permettre de juger ta technique ni un gain de muscle. Garde pour l’instant deux séances full body non consécutives par semaine : c’est un point de départ classique pour débuter. Pour la prochaine, le brouillon reprend tes dernières charges et répétitions sans augmentation ; vise une exécution contrôlée, avec environ deux répétitions encore possibles en fin de série, puis renseigne ton ressenti dans le carnet.",
+        "observations": [
+          {
+            "text": "Du 3 au 17 octobre, tes cinq séances sont espacées de trois ou quatre jours : un rythme régulier avec des jours sans musculation entre les séances.",
+            "sessionIds": [
+              "demo-1",
+              "demo-2",
+              "demo-3",
+              "demo-4",
+              "demo-5"
+            ]
+          },
+          {
+            "text": "Entre le 13 et le 17 octobre, à exercice et équipement identiques, tu passes de 6 à 7 répétitions par série au développé couché à 25 kg, et de 8 à 9 au rowing à 10 kg par haltère ainsi qu’à la presse à cuisses à 45 kg, sur les trois séries de chaque exercice.",
+            "sessionIds": [
+              "demo-4",
+              "demo-5"
+            ]
+          }
+        ],
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      }
+    },
+    {
+      "title": "Passer du bilan à une séance utilisable",
+      "request": {
+        "mode": "progress",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Je débute et j’ai fait ces cinq séances. Est-ce que je suis sur la bonne voie ? Qu’est-ce que tu me conseilles pour la suite ?"
+          },
+          {
+            "role": "assistant",
+            "content": "Oui, ton carnet montre un début cohérent : des séances régulières et davantage de répétitions à charges identiques, notamment entre le 13 et le 17 octobre. Cela indique une progression des performances consignées, sans permettre de juger ta technique ni un gain de muscle. Garde pour l’instant deux séances full body non consécutives par semaine : c’est un point de départ classique pour débuter. Pour la prochaine, le brouillon reprend tes dernières charges et répétitions sans augmentation ; vise une exécution contrôlée, avec environ deux répétitions encore possibles en fin de série, puis renseigne ton ressenti dans le carnet."
+          },
+          {
+            "role": "user",
+            "content": "D’accord, prépare ma prochaine séance avec les mêmes trois exercices que la dernière fois. Je confirme la reprise des charges et répétitions de cette dernière séance pour le brouillon. Garde les temps de repos habituels."
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 5,
+            "sets": 45,
+            "volumeKg": 9864
+          },
+          "focusSessionId": null,
+          "recentSessions": [
+            {
+              "id": "demo-5",
+              "date": "2026-10-17T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2010,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "demo-4",
+              "date": "2026-10-13T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1770,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "demo-3",
+              "date": "2026-10-10T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2184,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                }
+              ]
+            },
+            {
+              "id": "demo-2",
+              "date": "2026-10-06T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1980,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "demo-1",
+              "date": "2026-10-03T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1920,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      },
+      "response": {
+        "message": "Le brouillon reprend les trois exercices du 17 octobre, avec les mêmes séries, répétitions et charges, comme tu l’as confirmé. Je conserve les 2 minutes de repos déjà prévues dans le brouillon. Pour cette séance, cherche surtout à reproduire les répétitions avec une exécution contrôlée, sans augmenter la charge : cela te donnera un repère comparable.",
+        "observations": [
+          {
+            "text": "Le 17 octobre : développé couché à 25 kg pour 3 × 7, rowing à 10 kg par haltère pour 3 × 9 et presse à cuisses à 45 kg pour 3 × 9.",
+            "sessionIds": [
+              "demo-5"
+            ]
+          }
+        ],
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      }
+    },
+    {
+      "title": "Préciser les repos puis démarrer dans le carnet",
+      "request": {
+        "mode": "progress",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Je débute et j’ai fait ces cinq séances. Est-ce que je suis sur la bonne voie ? Qu’est-ce que tu me conseilles pour la suite ?"
+          },
+          {
+            "role": "assistant",
+            "content": "Oui, ton carnet montre un début cohérent : des séances régulières et davantage de répétitions à charges identiques, notamment entre le 13 et le 17 octobre. Cela indique une progression des performances consignées, sans permettre de juger ta technique ni un gain de muscle. Garde pour l’instant deux séances full body non consécutives par semaine : c’est un point de départ classique pour débuter. Pour la prochaine, le brouillon reprend tes dernières charges et répétitions sans augmentation ; vise une exécution contrôlée, avec environ deux répétitions encore possibles en fin de série, puis renseigne ton ressenti dans le carnet."
+          },
+          {
+            "role": "user",
+            "content": "D’accord, prépare ma prochaine séance avec les mêmes trois exercices que la dernière fois. Je confirme la reprise des charges et répétitions de cette dernière séance pour le brouillon. Garde les temps de repos habituels."
+          },
+          {
+            "role": "assistant",
+            "content": "Le brouillon reprend les trois exercices du 17 octobre, avec les mêmes séries, répétitions et charges, comme tu l’as confirmé. Je conserve les 2 minutes de repos déjà prévues dans le brouillon. Pour cette séance, cherche surtout à reproduire les répétitions avec une exécution contrôlée, sans augmenter la charge : cela te donnera un repère comparable."
+          },
+          {
+            "role": "user",
+            "content": "Mes repos : 120 secondes au développé couché, 90 secondes au rowing et 120 secondes à la presse. Je confirme. Complète la séance avec ces temps, sans rien changer d’autre."
+          }
+        ],
+        "context": {
+          "generatedAt": "2026-10-19T12:00:00.000Z",
+          "summary": {
+            "sessions": 5,
+            "sets": 45,
+            "volumeKg": 9864
+          },
+          "focusSessionId": null,
+          "recentSessions": [
+            {
+              "id": "demo-5",
+              "date": "2026-10-17T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2010,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 7
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 9
+                }
+              ]
+            },
+            {
+              "id": "demo-4",
+              "date": "2026-10-13T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1770,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 25,
+                  "reps": 6
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 10,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 45,
+                  "reps": 8
+                }
+              ]
+            },
+            {
+              "id": "demo-3",
+              "date": "2026-10-10T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 2184,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 11
+                }
+              ]
+            },
+            {
+              "id": "demo-2",
+              "date": "2026-10-06T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1980,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 9
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            },
+            {
+              "id": "demo-1",
+              "date": "2026-10-03T09:00:00.000Z",
+              "kind": "full",
+              "volumeKg": 1920,
+              "sets": [
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "bench-press",
+                  "equipment": "barbell",
+                  "loadKg": 20,
+                  "reps": 8
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "row",
+                  "equipment": "dumbbell",
+                  "loadKg": 8,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                },
+                {
+                  "exerciseId": "leg-press",
+                  "equipment": "machine",
+                  "loadKg": 40,
+                  "reps": 10
+                }
+              ]
+            }
+          ]
+        },
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      },
+      "response": {
+        "message": "Le brouillon reprend tes repos confirmés : 120 secondes au développé couché, 90 secondes au rowing et 120 secondes à la presse à cuisses. Rien d’autre ne change : les exercices, séries, répétitions et charges restent identiques.",
+        "observations": [],
+        "draft": {
+          "name": "Full body — consolider les repères",
+          "kind": "full",
+          "exercises": [
+            {
+              "exerciseId": "bench-press",
+              "equipment": "barbell",
+              "sets": 3,
+              "reps": 7,
+              "restSeconds": 120,
+              "loadKg": 25,
+              "superset": null
+            },
+            {
+              "exerciseId": "row",
+              "equipment": "dumbbell",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 90,
+              "loadKg": 10,
+              "superset": null
+            },
+            {
+              "exerciseId": "leg-press",
+              "equipment": "machine",
+              "sets": 3,
+              "reps": 9,
+              "restSeconds": 120,
+              "loadKg": 45,
+              "superset": null
+            }
+          ],
+          "questions": []
+        }
+      }
+    }
+  ]
+}

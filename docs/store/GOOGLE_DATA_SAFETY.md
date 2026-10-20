@@ -1,6 +1,6 @@
 # Préparation — Data Safety (Google Play Console)
 
-Dernière vérification des exigences stores : 2026-09-08. Basé sur le même
+Dernière vérification des exigences stores : 2026-10-20. Basé sur le même
 audit que `docs/store/APPLE_PRIVACY_DECLARATION.md` — les deux déclarations
 et `/legal/confidentialite` doivent rester cohérentes.
 
@@ -40,8 +40,9 @@ Sport cloud".
 | Informations personnelles — Adresse e-mail | Oui (compte e-mail) | Non | Oui (le compte est optionnel) | Gestion du compte, connexion, récupération |
 | Informations personnelles — Noms d'utilisateur | Oui (pseudo) | Non | Oui | Identification auprès des amis ; liste des joueurs connectés |
 | Informations personnelles — ID utilisateur | Oui (UUID de compte) | Non | Oui | Fonctionnement du compte et du partage |
-| Santé et fitness | Oui (carnet Sport synchronisé) | Non | Oui | Sauvegarde/restauration ; partage des séances terminées avec les amis acceptés |
+| Santé et fitness | Oui (carnet Sport synchronisé) | Oui, au fournisseur IA lors des demandes contextuelles | Oui | Sauvegarde/restauration ; préparation, relecture et progression assistées ; partage social |
 | Messages — Autres messages en jeu | Oui (commentaires d'amis sur les séances) | Non | Oui | Fonctionnalité sociale demandée par l'utilisateur |
+| Autre contenu fourni par l'utilisateur | Oui (texte saisi pour l’assistant) | Oui, à OpenRouter et au fournisseur du modèle | Oui | Préparer ou importer une séance, relire l’historique et observer la progression |
 | Contacts | Non | — | — | Aucun accès au carnet d'adresses |
 | Localisation | Non | — | — | — |
 | Informations financières | Non | — | — | — |
@@ -49,6 +50,13 @@ Sport cloud".
 | Activité dans l'application | Non | — | — | Aucun analytics |
 | Informations sur l'app et les performances | Non | — | — | Aucun SDK de diagnostic |
 | Identifiants de l'appareil | Non | — | — | Aucun identifiant d'appareil publicitaire. L'abonnement Web Push est un jeton technique par appareil, non un identifiant de suivi |
+
+Dans une build qui inclut l’assistant Sport, un clic sur Préparer, Relire ou
+Progression envoie à Supabase, OpenRouter et au fournisseur du modèle toutes
+les séances terminées du compte, toutes leurs séries terminées, les statistiques
+calculées et, pour l’import, le texte saisi puis envoyé une fois. Les noms,
+e-mails, pseudos, commentaires, photos et données d’amis sont exclus du contexte.
+Les compteurs de quota (UUID et nombres, sans contenu) restent chez Supabase.
 
 Toutes les collectes "Oui" ont pour finalité **le fonctionnement de
 l'application** (fonctionnalité de compte et fonctionnalités sociales) ;

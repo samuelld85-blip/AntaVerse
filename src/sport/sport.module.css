@@ -604,6 +604,9 @@
   height: 160px;
 }
 .panel,
+.coachEntry {
+  margin-bottom: 16px;
+}
 .workout {
   padding: 22px;
   background: var(--sport-panel);

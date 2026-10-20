@@ -174,3 +174,102 @@ Sur le projet configuré, vérifier avec deux comptes A/B et un troisième C :
 
 Ne pas annoncer ces points validés tant que les services n’ont pas été configurés
 et ces scénarios exécutés réellement.
+
+## 7. Assistant Sport (optionnel)
+
+Pour le développement local, `supabase/functions/.env.example` décrit les
+variables attendues. Le fichier réel `supabase/functions/.env` est ignoré par
+Git et chargé par le runtime Edge local ; il ne fait pas partie du build PWA.
+La configuration locale des secrets ne configure pas le projet hébergé.
+
+Le catalogue serveur est généré depuis `src/sport/catalog.ts` avec
+`npm run sport:ai:catalog`. Le build vérifie sa concordance avec
+`npm run sport:ai:catalog:check` ; ne pas éditer directement le JSON généré.
+
+Appliquer la migration `supabase/migrations/202610190001_sport_ai_quota.sql`
+au projet Supabase, puis déployer la fonction :
+
+```
+supabase functions deploy sport-assistant --no-verify-jwt
+```
+
+`verify_jwt=false` est intentionnel : le handler appelle `auth.getUser` avec le
+jeton reçu et refuse toute requête non authentifiée. Dans Supabase Dashboard →
+Edge Functions → Secrets, définir `OPENROUTER_API_KEY` (secret privé, jamais
+dans le dépôt, la conversation ou une variable `NEXT_PUBLIC_*`) et
+`SPORT_AI_ALLOWED_ORIGINS`, liste séparée par des virgules d’origines exactes
+autorisées, par exemple `https://antaverse.vercel.app,http://localhost:3000`.
+Pour les déploiements du même projet Vercel, une entrée explicite telle que
+`https://antaverse-*-sam-f305.vercel.app` autorise ses adresses de branche et de
+déploiement. Le joker est limité à un seul label de nom d’hôte, pour ce projet et
+cette équipe ; il n’autorise ni autre domaine, ni HTTP, ni port arbitraire.
+Ne pas inclure de chemins ni de barre oblique finale. Saisir la clé directement
+dans le tableau de bord, sans la passer en argument de commande ou l’écrire dans
+un fichier versionné.
+
+### Repères et limites de Milo
+
+Milo est le coach IA de Sport. Ses repères éditoriaux pour l’entraînement
+général sont définis dans
+[`supabase/functions/_shared/coach-knowledge.json`](../../supabase/functions/_shared/coach-knowledge.json),
+version `2026-10-20`, avec des sources ACSM, NSCA et HHS. Ce JSON est maintenu
+manuellement et doit être revérifié lors de ses mises à jour ; il ne déclenche
+aucune recherche web en direct. Le catalogue des exercices suit un pipeline
+distinct, généré depuis `src/sport/catalog.ts`.
+
+Le serveur demande au modèle de classer chaque demande comme liée à
+l’entraînement, hors sujet ou médicale. Pour les demandes hors sujet ou
+médicales, le serveur remplace la réponse générée par une redirection fixe sans
+séance. La classification et la génération se font dans le même appel : la
+demande est transmise au fournisseur. La classification étant produite par un modèle,
+elle n’offre pas de garantie absolue. Milo ne prétend pas avoir de diplôme ni
+fournir un avis médical.
+
+Les limites par défaut sont 20 requêtes par utilisateur et par jour, 100 au
+total par jour et 3 par minute et utilisateur. Elles peuvent être ajustées via
+les secrets Edge Function `SPORT_AI_USER_DAILY_LIMIT`,
+`SPORT_AI_GLOBAL_DAILY_LIMIT` et `SPORT_AI_MINUTE_LIMIT` (entiers positifs).
+La RPC atomique `consume_sport_ai_quota` enregistre uniquement l’UUID, le jour,
+le compteur et la fenêtre minute, jamais les prompts ni les réponses. Elle
+supprime les compteurs de plus de 7 jours au fil des appels. La suppression
+d’un compte supprime aussi ses compteurs. Ne pas créer de journal applicatif
+contenant le texte, l’en-tête d’authentification ou la clé fournisseur.
+
+Dans OpenRouter, restreindre la clé au modèle requis et activer le refus de
+collecte fournisseur (`data_collection: deny`) et le routage ZDR
+(`zdr: true`). Ces contrôles limitent les fournisseurs admissibles selon leurs
+réglages déclarés ; ils ne garantissent ni localisation UE ni absence absolue
+de traitement/rétention chez l’intermédiaire. Revoir les politiques courantes
+d’[OpenRouter](https://openrouter.ai/privacy/) et du
+[fournisseur de modèle](https://openai.com/policies/how-your-data-is-used-to-improve-model-performance/)
+avant la mise en service et périodiquement.
+
+Les boutons contextuels de préparation, relecture et progression déclenchent
+leur demande au toucher. L’import ouvre un champ de texte puis transmet le
+programme avec un seul envoi de l’utilisateur. L’assistant n’est pas appelé
+depuis les pages sans action correspondante. La préparation n’exige pas de
+case de consentement ou de partage de l’historique ; les détails de traitement
+et les destinataires sont exposés dans `/legal/confidentialite`.
+
+Le contexte transmis comprend toutes les séances terminées de l’utilisateur,
+y compris les anciennes, toutes les séries terminées de ces séances et les
+statistiques calculées depuis le carnet. Il ne comprend pas le carnet complet :
+les noms, e-mails, pseudos, commentaires, photos et données d’amis sont exclus.
+Les exercices, identifiants utiles, dates, équipement, charges et répétitions
+peuvent être transmis. Le texte saisi peut lui-même contenir des informations
+personnelles. Le modèle n’a aucun accès à la base de données et n’utilise aucun
+outil. Le corps de requête est limité à 2 000 000 octets ; une demande qui
+dépasse cette limite est rejetée avec une erreur visible, sans suppression
+silencieuse de séances ou de séries.
+
+Si `OPENROUTER_API_KEY` n’est pas configurée, l’interface indique que
+l’assistant est indisponible après la demande ; aucun appel au fournisseur ni
+coût modèle n’est engagé. Pour chaque mise en service ou changement de
+configuration, exécuter les tests avec transport simulé, confirmer les origines
+autorisées, les limites et le nettoyage des compteurs, puis suivre
+[`docs/sport-ai-evaluation.md`](../../docs/sport-ai-evaluation.md). Les tests
+automatisés ne doivent jamais contacter OpenRouter. La fonction n’est pas
+utilisable sans clé valide.
+
+Voir aussi la [revue produit Milo](../../docs/sport-ai-product-review.md) et les
+[exemples d’évaluation](../../docs/examples/sport-ai-beginner.md).

@@ -10,7 +10,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run encoding:check && npm run content:schema && npm run content:bundle && npm run questions:editorial && npm run questions:playability",
+    "prebuild": "npm run sport:ai:catalog:check && npm run encoding:check && npm run content:schema && npm run content:bundle && npm run questions:editorial && npm run questions:playability",
+    "sport:ai:catalog": "node scripts/generate-sport-ai-catalog.mjs",
+    "sport:ai:catalog:check": "node scripts/generate-sport-ai-catalog.mjs --check",
     "build": "next build",
     "postbuild": "node scripts/prepare-static-pwa.mjs",
     "preview": "node scripts/serve-static.mjs",

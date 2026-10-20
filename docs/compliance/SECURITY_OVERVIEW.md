@@ -1,6 +1,6 @@
 # Sécurité — vue d'ensemble
 
-Dernière vérification technique : 2026-09-08.
+Dernière vérification technique : 2026-10-20.
 
 Ce document décrit les mesures réellement en place. Aucune mesure de
 sécurité ne garantit une protection absolue ; ce document ne prétend pas le
@@ -22,8 +22,9 @@ contraire.
 
 ## Surface Sport cloud (Supabase)
 
-Périmètre : `src/sport/cloud/*`, `supabase/migrations/*.sql`,
-`supabase/functions/send-session-push/`. Actif uniquement quand
+Périmètre : `src/sport/cloud/*`, `src/sport/ai/*`,
+`supabase/migrations/*.sql`, `supabase/functions/send-session-push/` et
+`supabase/functions/sport-assistant/`. Actif uniquement quand
 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` sont
 présents au build, sur la route `/sport`, après création d'un compte.
 
@@ -63,6 +64,19 @@ présents au build, sur la route `/sport`, après création d'un compte.
   (1–500 caractères) ; l'auteur ou le propriétaire de la séance peut les
   supprimer. Modération, signalement et blocage restent à construire avant
   une soumission store — voir `docs/compliance/FUTURE_SOCIAL_REQUIREMENTS.md`.
+- **Assistant Sport** : la fonction `sport-assistant` est une surface serveur
+  distincte. Le JWT est vérifié avec `auth.getUser` dans le handler
+  (`verify_jwt=false` côté passerelle), l’origine est limitée à
+  `SPORT_AI_ALLOWED_ORIGINS` et les quotas sont appliqués atomiquement côté
+  base. Les erreurs ne doivent pas exposer la réponse brute du fournisseur ;
+  ne jamais journaliser le prompt, la réponse, le jeton de session ou la clé
+  OpenRouter. Le modèle n’a ni accès direct à la base ni outils. Le contexte
+  contient toutes les séances terminées du compte, y compris les anciennes,
+  toutes leurs séries terminées et les statistiques calculées ; noms, e-mails,
+  pseudos, commentaires, photos et données d’amis sont exclus. Les requêtes
+  supérieures à 2 000 000 octets sont rejetées sans troncature silencieuse.
+  Les paramètres OpenRouter demandent le refus de collecte fournisseur et
+  ZDR, sans garantir une rétention nulle absolue ni un traitement en UE.
 - **Tests de sécurité** : `npx vitest run src/sport/cloud` exécute la vraie
   migration SQL dans PGlite avec des rôles distincts et vérifie RLS,
   versions, amitiés et file push ; le test Deno de l'edge function couvre le

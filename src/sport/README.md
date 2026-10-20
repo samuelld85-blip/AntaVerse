@@ -107,3 +107,57 @@ prescrit ; les séances restent entièrement choisies par l’utilisateur.
 
 Validation : `npx vitest run src/sport/model.test.ts`, `npm run typecheck`,
 `npm run lint`, `npm run build`, puis `npx playwright test e2e/sport.spec.ts`.
+
+## Assistant Sport (optionnel, compte connecté)
+
+L’assistant aide à préparer une séance à partir des contraintes de l’historique,
+à transformer un texte fourni par l’utilisateur en brouillon, à relire une séance
+terminée et à observer la progression. Depuis « Nouvelle séance », les boutons
+de préparation, relecture et progression lancent la demande au toucher. Pour
+importer un programme, l’interface ouvre le champ de texte ; un seul envoi
+explicite transmet le texte et le contexte. Ces actions n’ajoutent pas de carte
+Milo à l’accueil et aucun appel ne part depuis une page sans action de l’assistant.
+Chaque préparation reste un brouillon modifiable : elle ne démarre ni
+n’enregistre une séance sans action distincte de l’utilisateur.
+
+L’assistant est réservé aux utilisateurs connectés et passe par la fonction
+serveur Supabase `sport-assistant`. Le modèle fixé est
+`openai/gpt-6.1-sol` via OpenRouter, avec un raisonnement de niveau `medium`.
+OpenRouter et le fournisseur retenu peuvent traiter la requête. Le contexte
+comprend toutes les séances terminées de l’utilisateur, y compris les séances
+anciennes, toutes leurs séries terminées et les statistiques qui en sont
+calculées. Les noms, adresses e-mail, pseudos, commentaires, photos et données
+d’amis sont exclus. La demande saisie peut elle-même contenir des informations
+personnelles. Les détails de transmission et les prestataires sont décrits dans
+la [politique de confidentialité](../app/legal/confidentialite/page.tsx).
+Les demandes et réponses de l’assistant restent en mémoire et ne sont ni
+sauvegardées dans le cloud ni ajoutées automatiquement au carnet.
+
+Milo est le coach IA du carnet : il s’appuie sur des repères éditoriaux pour
+l’entraînement général, sans prétendre à un diplôme ni à une expertise médicale.
+Les repères et leurs sources ACSM, NSCA et HHS sont tenus manuellement dans
+[`coach-knowledge.json`](../../supabase/functions/_shared/coach-knowledge.json),
+versionnés au 20 octobre 2026 ; ce fichier doit être revérifié lors de ses mises
+à jour. Milo n’effectue pas de recherche web en direct. Le catalogue d’exercices
+est une source distincte, générée depuis `catalog.ts` par la commande décrite
+dans [CLOUD_SETUP.md](CLOUD_SETUP.md).
+
+Le modèle classe la demande dans le même appel que la génération : entraînement,
+hors sujet ou médical. Pour les deux dernières catégories, le serveur écarte la
+réponse générée et renvoie une redirection fixe sans séance. La demande est bien
+transmise au fournisseur ; cette classification par modèle ne constitue pas une
+garantie absolue.
+
+La fonction refuse les origines navigateur absentes de
+`SPORT_AI_ALLOWED_ORIGINS`, vérifie l’utilisateur Supabase côté serveur et
+applique des quotas atomiques par utilisateur et globaux. Sans clé OpenRouter,
+la fonction signale que le service est indisponible et ne fait aucun appel
+payant. Configuration, rétention des compteurs et vérifications :
+[CLOUD_SETUP.md](CLOUD_SETUP.md). Les exemples d’évaluation manuelle sont dans
+[`docs/sport-ai-evaluation.md`](../../docs/sport-ai-evaluation.md).
+La [revue produit Milo](../../docs/sport-ai-product-review.md) et un exemple
+d’évaluation manuelle sur cinq séances fictives de débutant sont disponibles ici :
+[`docs/examples/sport-ai-beginner.md`](../../docs/examples/sport-ai-beginner.md).
+Le script manuel `scripts/demo-sport-ai.mjs` les régénère depuis
+`scripts/fixtures/sport-ai-beginner.json` ; ses appels payants ne font partie
+d’aucun test ni build.

@@ -1,6 +1,6 @@
 # Préparation — App Privacy (App Store Connect)
 
-Dernière vérification des exigences stores : 2026-09-08. Document
+Dernière vérification des exigences stores : 2026-10-20. Document
 préparatoire pour remplir le questionnaire "App Privacy" d'App Store
 Connect, basé sur l'audit réel du code (`docs/compliance/DATA_INVENTORY.md`,
 `docs/compliance/THIRD_PARTY_SERVICES.md`,
@@ -34,8 +34,8 @@ choisit une connexion sociale, à Google ou Apple. Détail exhaustif :
 | Catégorie Apple | Collecte ? | Liée à l'utilisateur ? | Tracking ? | Détail |
 | --- | --- | --- | --- | --- |
 | Contact Info — Email | **Oui** (si compte e-mail) | Oui | Non | E-mail du compte, géré par Supabase Auth ; sert à la connexion et à la récupération de mot de passe |
-| Health & Fitness | **Oui** | Oui | Non | Le carnet Sport synchronisé : séances, exercices, séries, charges, répétitions. Uniquement avec un compte |
-| User Content — Autre contenu | **Oui** | Oui | Non | Commentaires laissés par l'utilisateur sur les séances d'amis ; séances terminées partagées avec les amis acceptés |
+| Health & Fitness | **Oui** | Oui | Non | Le carnet Sport synchronisé : séances, exercices, séries, charges, répétitions ; transmis pour les requêtes contextuelles de l’assistant |
+| User Content — Autre contenu | **Oui** | Oui | Non | Commentaires laissés par l'utilisateur sur les séances d'amis ; texte saisi pour l’assistant Sport |
 | Identifiers — User ID | **Oui** | Oui | Non | Identifiant de compte (UUID Supabase) ; pseudo choisi visible des autres utilisateurs connectés |
 | Contacts | Non | — | — | Aucun accès au carnet d'adresses ; les "amis" sont des comptes AntaVerse ajoutés manuellement par pseudo |
 | Location | Non | — | — | `navigator.geolocation` non utilisé |
@@ -48,9 +48,19 @@ choisit une connexion sociale, à Google ou Apple. Détail exhaustif :
 | Other Data | **Oui** | Oui | Non | Graphe d'amitié (qui est ami avec qui) ; abonnement Web Push technique par appareil |
 
 Finalité pour toutes les lignes "Oui" : **App Functionality** (sauvegarde et
-restauration du carnet, fonctionnalités sociales explicitement demandées par
-l'utilisateur, notifications opt-in). Ni publicité, ni analytics, ni
-partage à des fins de tracking.
+restauration du carnet, fonctionnalités sociales, notifications, préparation,
+relecture et progression assistées). Ni publicité, ni analytics, ni partage à
+des fins de tracking.
+
+Dans une build qui inclut l’assistant Sport, un clic sur Préparer, Relire ou
+Progression envoie la demande et le contexte sportif à Supabase, OpenRouter et
+au fournisseur du modèle ; l’import est transmis après saisie et un seul envoi.
+Le contexte comprend toutes les séances terminées du compte, toutes leurs
+séries terminées et les statistiques calculées. Les noms, e-mails, pseudos,
+commentaires, photos et données d’amis sont exclus. Le texte libre peut contenir
+des identifiants directs que l’application ne peut pas filtrer automatiquement.
+Ces traitements et destinataires sont à déclarer pour toute build qui inclut
+cette fonction.
 
 ## Tracking (ATT)
 
@@ -77,6 +87,8 @@ non mis à jour.
 
 - Nouveau champ synchronisé vers Supabase, extension du partage social,
   passage d'un push Web à un push natif (APNs).
+- Activation de l’assistant Sport ou changement de son fournisseur, modèle,
+  contexte ou paramètres de rétention.
 - Ajout d'analytics, de publicité, d'un paiement, ou d'un SDK natif.
 - Changement de la build de production quant à la présence de la
   configuration Supabase (cas A ↔ cas B).
