@@ -317,7 +317,7 @@ export const regleEvents: EventDefinition[] = [
     prompt:
       "Choisis deux joueurs : pendant trois tours de table, ils portent le prénom de l'autre.",
     visualHint: "none",
-    weight: 6,
+    weight: 2,
     resolve(input) {
       const pair = input.targetRounds[0];
       if (!pair || pair.length !== 2)
