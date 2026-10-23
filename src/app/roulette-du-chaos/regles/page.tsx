@@ -17,6 +17,8 @@ const steps = [
 
 const miniGames = [
   ["Duel de réflexes", "Le premier à toucher sa zone après le signal gagne."],
+  ["Fais-le dire", "En 20 secondes, fais prononcer un mot à ton adversaire sans le dire toi-même."],
+  ["Chaîne débile", "Répétez la suite de gestes puis ajoutez-en un. Le premier qui oublie perd."],
   ["Chrono commun", "Arrêtez un chrono caché le plus près possible de 5 secondes."],
   ["Pierre-feuille-ciseaux", "Jouez en vrai, l’appli enregistre le vainqueur désigné."],
   ["Plus ou moins", "Devinez si le prochain tirage sera plus grand ou plus petit."],
@@ -60,8 +62,8 @@ export default function RulesPage() {
 
       <h2 className="rules-subheading">Les mini-jeux</h2>
       <p>
-        Certains événements (surtout DUEL) déclenchent un mini-jeu rapide entre deux joueurs, ou
-        parfois un défi en solo. Toujours 10 à 30 secondes, toujours sur ce téléphone.
+        Certains événements lancent un duel ou un défi express. L’appli donne la consigne et guide
+        les étapes ; les joueurs peuvent aussi répondre ou faire un geste autour du téléphone.
       </p>
       <ul className="rules-list">
         {miniGames.map(([title, copy]) => (
@@ -92,9 +94,30 @@ export default function RulesPage() {
           <div>
             <h2>Les règles temporaires</h2>
             <p>
-              Un événement RÈGLE peut activer une contrainte pour tout le groupe (mot interdit,
-              geste obligatoire…). Une seule règle active à la fois ; elle s’affiche en bandeau tant
-              qu’elle dure.
+              Les contraintes absurdes restent actives plusieurs tours de table et peuvent se
+              cumuler, jusqu’à quatre. Ouvrez le compteur de règles pour les relire et repérer les
+              oublis.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span aria-hidden="true">🕵️</span>
+          <div>
+            <h2>Les missions secrètes</h2>
+            <p>
+              Seul le joueur désigné lit sa mission sur le téléphone. Il tente de la réussir pendant
+              les tours suivants, puis révèle sa réussite. Un autre joueur peut annoncer son soupçon
+              : le détenteur de la mission vérifie en privé si l’accusation est juste.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span aria-hidden="true">🪄</span>
+          <div>
+            <h2>L’objet maudit</h2>
+            <p>
+              Faites circuler discrètement l’objet indiqué. À la fin du compte à rebours, l’appli
+              demande qui le possède et révèle la conséquence.
             </p>
           </div>
         </li>

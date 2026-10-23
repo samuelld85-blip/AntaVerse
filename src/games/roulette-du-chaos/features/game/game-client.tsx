@@ -5,20 +5,34 @@ import { useRouter } from "next/navigation";
 import { QuitGameButton } from "@/games/shared/components/quit-game-button";
 import { Brand } from "@/games/roulette-du-chaos/components/brand";
 import { EventCard } from "@/games/roulette-du-chaos/components/event-card";
+import {
+  CursedObjectPanel,
+  CursedRevealCard,
+} from "@/games/roulette-du-chaos/components/cursed-object-panel";
 import { MiniGameRouter } from "@/games/roulette-du-chaos/components/mini-games/mini-game-router";
-import { RuleBanner } from "@/games/roulette-du-chaos/components/rule-banner";
+import { RuleStack } from "@/games/roulette-du-chaos/components/rule-banner";
+import {
+  SecretChallengeHub,
+  SecretRevealCard,
+} from "@/games/roulette-du-chaos/components/secret-challenge-hub";
 import { Wheel } from "@/games/roulette-du-chaos/components/wheel";
 import {
   clearActiveRule,
   completeMiniGame,
   completeTurn,
+  dismissSecretReveal,
+  dismissCursedReveal,
   finishSpin,
   getActivePlayer,
+  getDisplayPlayers,
   revealEvent,
+  resolveSecretChallenge,
+  resolveCursedObject,
   spinWheel,
   submitChoice,
   submitMysteryPick,
   submitReveal,
+  submitSecretAccepted,
   submitNeighbor,
   submitTargets,
 } from "@/games/roulette-du-chaos/lib/game/engine";
@@ -79,6 +93,9 @@ export function GameClient() {
   }
 
   const activePlayer = getActivePlayer(game);
+  const displayPlayers = getDisplayPlayers(game);
+  const activeDisplayName = displayPlayers[game.activePlayerIndex]?.name ?? activePlayer.name;
+  const cursedObjectDue = game.cursedObjects.some((object) => object.dueTurn <= game.turnNumber);
   const category = game.selectedCategory ? getCategory(game.selectedCategory) : null;
 
   return (
@@ -88,21 +105,58 @@ export function GameClient() {
         <QuitGameButton homeHref="/roulette-du-chaos" />
       </header>
 
-      {game.activeRule ? (
-        <RuleBanner
-          key={game.activeRule.ruleId}
-          rule={game.activeRule}
-          ownerName={
-            game.players.find((p) => p.id === game.activeRule!.ownerId)?.name ?? "Joueur inconnu"
+      <RuleStack
+        rules={game.activeRules}
+        players={game.players}
+        turnNumber={game.turnNumber}
+        onClear={(instanceId) => commit(clearActiveRule(game, instanceId))}
+      />
+
+      {game.phase === "idle" && !game.secretReveal ? (
+        <SecretChallengeHub
+          challenges={game.secretChallenges}
+          players={game.players}
+          onResolve={(instanceId, success) =>
+            commit(resolveSecretChallenge(game, instanceId, success))
           }
-          onClear={() => commit(clearActiveRule(game))}
+        />
+      ) : null}
+      {game.phase === "idle" && !game.secretReveal && !game.cursedReveal ? (
+        <CursedObjectPanel
+          objects={game.cursedObjects}
+          turnNumber={game.turnNumber}
+          players={game.players}
+          onResolve={(instanceId, holderId) =>
+            commit(resolveCursedObject(game, instanceId, holderId))
+          }
         />
       ) : null}
 
-      {WHEEL_PHASES.has(game.phase) ? (
+      {game.secretReveal ? (
+        <SecretRevealCard
+          reveal={game.secretReveal}
+          players={game.players}
+          onContinue={() => commit(dismissSecretReveal(game))}
+        />
+      ) : null}
+      {game.cursedReveal ? (
+        <CursedRevealCard
+          reveal={game.cursedReveal}
+          players={game.players}
+          onContinue={() => commit(dismissCursedReveal(game))}
+        />
+      ) : null}
+
+      {WHEEL_PHASES.has(game.phase) &&
+      !game.secretReveal &&
+      !game.cursedReveal &&
+      !cursedObjectDue ? (
         <section className="wheel-stage">
           <p className="current-player-label">Au tour de</p>
-          <h1 className="current-player-name">{activePlayer.name}</h1>
+          <h1 className="current-player-name">{activeDisplayName}</h1>
+          {activeDisplayName !== activePlayer.name ? (
+            <p className="current-player-alias">En vrai : {activePlayer.name}</p>
+          ) : null}
           <Wheel
             targetCategory={game.selectedCategory}
             spinning={game.phase === "spinning"}
@@ -125,21 +179,22 @@ export function GameClient() {
         </section>
       ) : null}
 
-      {game.phase === "event" ? (
+      {game.phase === "event" && !game.secretReveal ? (
         <EventCard
-          game={game}
+          game={{ ...game, players: displayPlayers }}
           onSubmitTargets={(ids) => commit(submitTargets(game, ids))}
           onSubmitNeighbor={(side) => commit(submitNeighbor(game, side))}
           onSubmitChoice={(key) => commit(submitChoice(game, key))}
           onSubmitMysteryPick={(index) => commit(submitMysteryPick(game, index))}
           onReveal={() => commit(submitReveal(game))}
+          onSecretAccepted={() => commit(submitSecretAccepted(game))}
           onContinue={() => commit(completeTurn(game))}
         />
       ) : null}
 
-      {game.phase === "miniGame" ? (
+      {game.phase === "miniGame" && !game.secretReveal ? (
         <MiniGameRouter
-          game={game}
+          game={{ ...game, players: displayPlayers }}
           onComplete={(outcome: MiniGameOutcome) => commit(completeMiniGame(game, outcome))}
         />
       ) : null}

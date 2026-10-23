@@ -1,11 +1,22 @@
 import { readJson, removeJson, writeJson } from "@/lib/local-storage-json";
 import { MIN_PLAYERS } from "./engine";
-import type { GamePhase, GameState, Player, ResolutionState } from "./types";
+import type { ActiveRule, GamePhase, GameState, Player, ResolutionState } from "./types";
 
 const STORAGE_KEY = "roulette-du-chaos:current-game";
 
 export function loadCurrentGame(): GameState | null {
-  return readJson(STORAGE_KEY, isGameState);
+  const value = readJson(STORAGE_KEY, (item): item is Record<string, unknown> =>
+    Boolean(item && typeof item === "object" && !Array.isArray(item)),
+  );
+  if (!value) return null;
+  if (isGameState(value)) return value;
+  if (isLegacyGameState(value)) {
+    const migrated = migrateLegacyGame(value);
+    saveCurrentGame(migrated);
+    return migrated;
+  }
+  removeJson(STORAGE_KEY);
+  return null;
 }
 
 export function saveCurrentGame(game: GameState): void {
@@ -32,7 +43,7 @@ function isGameState(value: unknown): value is GameState {
   if (!value || typeof value !== "object") return false;
   const game = value as Partial<GameState>;
 
-  if (game.schemaVersion !== 1) return false;
+  if (game.schemaVersion !== 2) return false;
   if (!Array.isArray(game.players) || game.players.length < MIN_PLAYERS) return false;
   if (!game.players.every(isPlayer)) return false;
   if (
@@ -53,7 +64,12 @@ function isGameState(value: unknown): value is GameState {
   if (game.selectedEventId !== null && typeof game.selectedEventId !== "string") return false;
   if (game.resolution !== null && !isResolutionState(game.resolution)) return false;
   if (game.miniGame !== null && !isMiniGameSession(game.miniGame)) return false;
-  if (game.activeRule !== null && !isActiveRule(game.activeRule)) return false;
+  if (typeof game.turnNumber !== "number" || !Number.isInteger(game.turnNumber) || game.turnNumber < 0) return false;
+  if (!Array.isArray(game.activeRules) || !game.activeRules.every(isActiveRule)) return false;
+  if (!Array.isArray(game.secretChallenges) || !game.secretChallenges.every(isSecretChallenge)) return false;
+  if (game.secretReveal !== null && !isSecretReveal(game.secretReveal)) return false;
+  if (!Array.isArray(game.cursedObjects) || !game.cursedObjects.every(isCursedObject)) return false;
+  if (game.cursedReveal !== null && !isCursedReveal(game.cursedReveal)) return false;
   if (
     !Array.isArray(game.recentEventIds) ||
     !game.recentEventIds.every((id) => typeof id === "string")
@@ -61,6 +77,48 @@ function isGameState(value: unknown): value is GameState {
     return false;
   }
   return true;
+}
+
+interface LegacyGameState extends Omit<GameState, "schemaVersion" | "activeRules" | "turnNumber" | "secretChallenges" | "secretReveal" | "cursedObjects" | "cursedReveal"> {
+  schemaVersion: 1;
+  activeRule: Omit<ActiveRule, "instanceId" | "expiresAtTurn"> | null;
+}
+
+function isLegacyGameState(value: unknown): value is LegacyGameState {
+  if (!value || typeof value !== "object") return false;
+  const game = value as Partial<LegacyGameState>;
+  return game.schemaVersion === 1 &&
+    Array.isArray(game.players) &&
+    game.players.length >= MIN_PLAYERS &&
+    game.players.every(isPlayer) &&
+    typeof game.activePlayerIndex === "number" &&
+    game.activePlayerIndex >= 0 &&
+    game.activePlayerIndex < game.players.length &&
+    typeof game.phase === "string" &&
+    PHASES.includes(game.phase) &&
+    (game.activeRule === null || isLegacyRule(game.activeRule));
+}
+
+function migrateLegacyGame(game: LegacyGameState): GameState {
+  const rule = game.activeRule;
+  const { activeRule: _oldRule, ...rest } = game;
+  void _oldRule;
+  return {
+    ...rest,
+    schemaVersion: 2,
+    turnNumber: 0,
+    activeRules: rule ? [{
+      ...rule,
+      instanceId: "legacy-rule",
+      expiresAtTurn: game.players.length,
+      durationTurns: game.players.length,
+    }] : [],
+    secretChallenges: [],
+    secretReveal: null,
+    cursedObjects: [],
+    cursedReveal: null,
+    resolution: game.resolution ? { ...game.resolution, secretAccepted: false } : null,
+  };
 }
 
 function isPlayer(value: unknown): value is Player {
@@ -85,6 +143,7 @@ function isResolutionState(value: unknown): value is ResolutionState {
       resolution.neighborSide === "right") &&
     (resolution.choiceKey === null || typeof resolution.choiceKey === "string") &&
     (resolution.mysteryPickIndex === null || typeof resolution.mysteryPickIndex === "number")
+    && typeof resolution.secretAccepted === "boolean"
   );
 }
 
@@ -107,6 +166,55 @@ function isActiveRule(value: unknown): boolean {
     typeof rule.title === "string" &&
     typeof rule.description === "string" &&
     typeof rule.ownerId === "string" &&
-    (rule.expiry === "ownerNextTurn" || rule.expiry === "firstViolation" || rule.expiry === "timer")
+    typeof rule.instanceId === "string" &&
+    typeof rule.expiresAtTurn === "number" &&
+    (rule.expiry === "ownerNextTurn" || rule.expiry === "firstViolation" || rule.expiry === "timer" || rule.expiry === "turns")
   );
+}
+
+function isLegacyRule(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const rule = value as Record<string, unknown>;
+  return typeof rule.ruleId === "string" &&
+    typeof rule.title === "string" &&
+    typeof rule.description === "string" &&
+    typeof rule.ownerId === "string";
+}
+
+function isSecretChallenge(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const challenge = value as Record<string, unknown>;
+  return typeof challenge.instanceId === "string" &&
+    typeof challenge.challengeId === "string" &&
+    typeof challenge.ownerId === "string" &&
+    typeof challenge.task === "string" &&
+    typeof challenge.rewardSips === "number";
+}
+
+function isSecretReveal(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const reveal = value as Record<string, unknown>;
+  return typeof reveal.ownerId === "string" &&
+    typeof reveal.task === "string" &&
+    typeof reveal.success === "boolean" &&
+    typeof reveal.sips === "number";
+}
+
+function isCursedObject(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const item = value as Record<string, unknown>;
+  return typeof item.instanceId === "string" &&
+    typeof item.objectLabel === "string" &&
+    typeof item.startingHolderId === "string" &&
+    typeof item.dueTurn === "number" &&
+    typeof item.durationTurns === "number";
+}
+
+function isCursedReveal(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const item = value as Record<string, unknown>;
+  return typeof item.objectLabel === "string" &&
+    typeof item.startingHolderId === "string" &&
+    typeof item.holderId === "string" &&
+    typeof item.sips === "number";
 }

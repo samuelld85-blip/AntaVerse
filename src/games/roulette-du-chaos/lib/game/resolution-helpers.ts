@@ -4,7 +4,7 @@
 // resolver a handful of readable lines.
 
 import type {
-  ActiveRule,
+  PendingRule,
   CategoryId,
   ChoiceOption,
   EventDefinition,
@@ -137,7 +137,7 @@ export function outcome(
   return { headline, lines, tone };
 }
 
-export function done(turnOutcome: TurnOutcome, rule?: ActiveRule): ResolveResult {
+export function done(turnOutcome: TurnOutcome, rule?: PendingRule): ResolveResult {
   return { status: "done", outcome: turnOutcome, rule };
 }
 
@@ -148,7 +148,8 @@ export function makeRule(
   ownerId: string,
   expiry: RuleExpiry,
   timerMs: number | null = null,
-): ActiveRule {
+  durationTurns?: number,
+): PendingRule {
   return {
     ruleId,
     title,
@@ -156,6 +157,7 @@ export function makeRule(
     ownerId,
     expiry,
     timerEndsAt: timerMs !== null ? new Date(Date.now() + timerMs).toISOString() : null,
+    durationTurns,
   };
 }
 

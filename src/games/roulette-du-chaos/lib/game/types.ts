@@ -74,6 +74,22 @@ export interface RevealRequest {
   detail: string | null;
 }
 
+export interface SecretChallengeRequest {
+  kind: "secretChallenge";
+  ownerId: string;
+  challengeId: string;
+  task: string;
+  rewardSips: number;
+}
+
+export interface WordDuelRequest {
+  kind: "wordDuel";
+  word: string;
+  attackerId: string;
+  defenderId: string;
+  durationSeconds: number;
+}
+
 export interface EngineRandomRequest {
   kind: "engineRandom";
   slots: string[];
@@ -85,6 +101,8 @@ export type NextInputRequest =
   | ChoiceRequest
   | MysteryPickRequest
   | RevealRequest
+  | SecretChallengeRequest
+  | WordDuelRequest
   | EngineRandomRequest;
 
 export type MiniGameKind =
@@ -118,16 +136,60 @@ export interface TurnOutcome {
   tone: "normal" | "jackpot" | "rule";
 }
 
-export type RuleExpiry = "ownerNextTurn" | "firstViolation" | "timer";
+export type RuleExpiry = "ownerNextTurn" | "firstViolation" | "timer" | "turns";
 
-export interface ActiveRule {
+export interface PendingRule {
   ruleId: string;
   title: string;
   description: string;
   ownerId: string;
   expiry: RuleExpiry;
-  /** Only set for expiry === "timer" (e.g. R8's 30s silence window). */
   timerEndsAt: string | null;
+  /** Number of completed spins before expiry; defaults to one lap for legacy rules. */
+  durationTurns?: number;
+  conflictGroup?: string;
+  identitySwap?: [string, string];
+}
+
+export interface ActiveRule extends PendingRule {
+  instanceId: string;
+  expiresAtTurn: number;
+}
+
+export interface SecretChallengeDraft {
+  challengeId: string;
+  ownerId: string;
+  task: string;
+  rewardSips: number;
+}
+
+export interface SecretChallenge extends SecretChallengeDraft {
+  instanceId: string;
+}
+
+export interface SecretReveal {
+  ownerId: string;
+  task: string;
+  success: boolean;
+  sips: number;
+}
+
+export interface CursedObjectDraft {
+  objectLabel: string;
+  startingHolderId: string;
+  durationTurns: number;
+}
+
+export interface CursedObject extends CursedObjectDraft {
+  instanceId: string;
+  dueTurn: number;
+}
+
+export interface CursedReveal {
+  objectLabel: string;
+  startingHolderId: string;
+  holderId: string;
+  sips: number;
 }
 
 export interface ResolveInput {
@@ -141,13 +203,14 @@ export interface ResolveInput {
   choiceKey: string | null;
   mysteryPickIndex: number | null;
   revealConfirmed: boolean;
+  secretAccepted: boolean;
   miniGameResult: MiniGameOutcome | null;
 }
 
 export type ResolveResult =
   | { status: "needsInput"; next: NextInputRequest }
   | { status: "needsMiniGame"; request: MiniGameRequest }
-  | { status: "done"; outcome: TurnOutcome; rule?: ActiveRule };
+  | { status: "done"; outcome: TurnOutcome; rule?: PendingRule; rules?: PendingRule[]; secretChallenge?: SecretChallengeDraft; cursedObject?: CursedObjectDraft };
 
 export interface EventDefinition {
   id: string;
@@ -156,6 +219,8 @@ export interface EventDefinition {
   /** Short static instruction shown at the top of the event card, understandable in ~3s. */
   prompt: string;
   visualHint: VisualHint;
+  /** Relative chance within its category; defaults to 1. */
+  weight?: number;
   resolve: (input: ResolveInput) => ResolveResult;
 }
 
@@ -169,6 +234,7 @@ export interface ResolutionState {
   choiceKey: string | null;
   mysteryPickIndex: number | null;
   revealConfirmed: boolean;
+  secretAccepted: boolean;
   miniGameResult: MiniGameOutcome | null;
   pending: NextInputRequest | null;
   outcome: TurnOutcome | null;
@@ -182,7 +248,7 @@ export interface MiniGameSession {
 }
 
 export interface GameState {
-  schemaVersion: 1;
+  schemaVersion: 2;
   id: string;
   players: Player[];
   activePlayerIndex: number;
@@ -192,7 +258,12 @@ export interface GameState {
   selectedEventId: string | null;
   resolution: ResolutionState | null;
   miniGame: MiniGameSession | null;
-  activeRule: ActiveRule | null;
+  turnNumber: number;
+  activeRules: ActiveRule[];
+  secretChallenges: SecretChallenge[];
+  secretReveal: SecretReveal | null;
+  cursedObjects: CursedObject[];
+  cursedReveal: CursedReveal | null;
   recentEventIds: string[];
   createdAt: string;
   updatedAt: string;

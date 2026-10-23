@@ -7,12 +7,14 @@ import { rollDie } from "@/games/roulette-du-chaos/lib/game/resolution-helpers";
 import { getCategory } from "@/games/roulette-du-chaos/lib/game/wheel";
 import type { TurnOutcome, VisualHint } from "@/games/roulette-du-chaos/lib/game/types";
 import type { GameState } from "@/games/roulette-du-chaos/lib/game/types";
+import { SecretChallengePicker } from "./secret-challenge-picker";
 import { ChoiceButtons } from "./choice-buttons";
 import { CoinFlip } from "./coin-flip";
 import { DieFace } from "./die-face";
 import { MysteryPicker } from "./mystery-picker";
 import { NeighborPicker } from "./neighbor-picker";
 import { TargetPicker } from "./target-picker";
+import { WordDuel } from "./word-duel";
 
 const REVEAL_ANIMATION_MS = 1000;
 
@@ -84,6 +86,7 @@ export function EventCard({
   onSubmitChoice,
   onSubmitMysteryPick,
   onReveal,
+  onSecretAccepted,
   onContinue,
 }: {
   game: GameState;
@@ -92,6 +95,7 @@ export function EventCard({
   onSubmitChoice: (key: string) => void;
   onSubmitMysteryPick: (index: number) => void;
   onReveal: () => void;
+  onSecretAccepted: () => void;
   onContinue: () => void;
 }) {
   const resolution = game.resolution;
@@ -102,6 +106,7 @@ export function EventCard({
   if (!resolution || !event) return null;
   const category = getCategory(event.category);
   const outcomeKey = outcome ? `${eventId}:${outcome.headline}:${outcome.lines.join("|")}` : null;
+  const secretPending = resolution.pending?.kind === "secretChallenge" ? resolution.pending : null;
 
   return (
     <section
@@ -156,6 +161,22 @@ export function EventCard({
             {resolution.pending.label}
           </Button>
         </div>
+      ) : null}
+      {!outcome && secretPending ? (
+        <SecretChallengePicker
+          key={secretPending.challengeId}
+          request={secretPending}
+          ownerName={game.players.find((player) => player.id === secretPending.ownerId)?.name ?? "Joueur"}
+          onAccepted={onSecretAccepted}
+        />
+      ) : null}
+      {!outcome && resolution.pending?.kind === "wordDuel" ? (
+        <WordDuel
+          key={eventId}
+          request={resolution.pending}
+          players={game.players}
+          onResult={onSubmitChoice}
+        />
       ) : null}
     </section>
   );

@@ -1,9 +1,11 @@
 import { choisisEvents } from "./choisis";
+import { cursedObjectEvent } from "./cursed-object";
 import { destinEvents } from "./destin";
 import { distribueEvents } from "./distribue";
 import { duelEvents } from "./duel";
 import { jackpotEvents } from "./jackpot";
 import { regleEvents } from "./regle";
+import { secretEvents } from "./secret";
 import { subisEvents } from "./subis";
 import { tousEvents } from "./tous";
 import type { CategoryId, EventDefinition } from "../../lib/game/types";
@@ -13,10 +15,10 @@ export const EVENTS_BY_CATEGORY: Record<CategoryId, readonly EventDefinition[]> 
   SUBIS: subisEvents,
   DUEL: duelEvents,
   TOUS: tousEvents,
-  CHOISIS: choisisEvents,
-  DESTIN: destinEvents,
+  CHOISIS: [...choisisEvents, ...secretEvents.filter((event) => event.category === "CHOISIS")],
+  DESTIN: [...destinEvents, ...secretEvents.filter((event) => event.category === "DESTIN"), cursedObjectEvent],
   REGLE: regleEvents,
-  JACKPOT: jackpotEvents,
+  JACKPOT: [...jackpotEvents, ...secretEvents.filter((event) => event.category === "JACKPOT")],
 };
 
 export const ALL_EVENTS: readonly EventDefinition[] = Object.values(EVENTS_BY_CATEGORY).flat();

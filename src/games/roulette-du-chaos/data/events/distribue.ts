@@ -9,6 +9,7 @@ import {
   flipCoin,
   freeDistributeEvent,
   hasSlots,
+  makeRule,
   narratedEvent,
   needChoice,
   needNeighbor,
@@ -24,168 +25,210 @@ function activeIndex(input: { players: { id: string }[]; activePlayerId: string 
   return input.players.findIndex((player) => player.id === input.activePlayerId);
 }
 
-export const distribueEvents: EventDefinition[] = [
-  freeDistributeEvent(
-    "d1",
-    "DISTRIBUE",
-    "Petit cadeau",
-    "Distribue 2 gorgées : à un seul joueur, ou 1 + 1 entre deux joueurs.",
-    2,
-  ),
-  freeDistributeEvent("d2", "DISTRIBUE", "Généreux", "Distribue 3 gorgées comme tu veux.", 3),
-  freeDistributeEvent("d3", "DISTRIBUE", "Grande tournée", "Distribue 4 gorgées comme tu veux.", 4),
-  {
-    id: "d4",
-    category: "DISTRIBUE",
-    title: "Double cible",
-    prompt: "Choisis deux joueurs différents. Chacun reçoit 2 gorgées.",
-    visualHint: "none",
-    resolve() {
-      return done(
-        outcome("Double cible", ["Désignez 2 joueurs entre vous — chacun boit 2 gorgées."]),
-      );
+export const distribueEvents: EventDefinition[] = (
+  [
+    freeDistributeEvent(
+      "d1",
+      "DISTRIBUE",
+      "Petit cadeau",
+      "Distribue 2 gorgées : à un seul joueur, ou 1 + 1 entre deux joueurs.",
+      2,
+    ),
+    freeDistributeEvent("d2", "DISTRIBUE", "Généreux", "Distribue 3 gorgées comme tu veux.", 3),
+    freeDistributeEvent(
+      "d3",
+      "DISTRIBUE",
+      "Grande tournée",
+      "Distribue 4 gorgées comme tu veux.",
+      4,
+    ),
+    {
+      id: "d4",
+      category: "DISTRIBUE",
+      title: "Double cible",
+      prompt: "Choisis deux joueurs différents. Chacun reçoit 2 gorgées.",
+      visualHint: "none",
+      resolve() {
+        return done(
+          outcome("Double cible", ["Désignez 2 joueurs entre vous — chacun boit 2 gorgées."]),
+        );
+      },
     },
-  },
-  {
-    id: "d5",
-    category: "DISTRIBUE",
-    title: "Voisinage",
-    prompt: "Choisis ton voisin de gauche ou de droite. Il ou elle reçoit 3 gorgées.",
-    visualHint: "none",
-    resolve(input) {
-      if (!input.neighborSide) return needNeighbor();
-      const side = input.neighborSide === "left" ? "gauche" : "droite";
-      const index = activeIndex(input);
-      const neighborIndex =
-        input.neighborSide === "left"
-          ? previousPlayerIndex(index, input.players.length)
-          : nextPlayerIndex(index, input.players.length);
-      const neighbor = input.players[neighborIndex]!;
-      return done(
-        outcome("Voisinage", [
-          `${neighbor.name} est ton voisin de ${side}.`,
-          receives(neighbor.name, 3),
-        ]),
-      );
+    {
+      id: "d5",
+      category: "DISTRIBUE",
+      title: "Voisinage",
+      prompt: "Choisis ton voisin de gauche ou de droite. Il ou elle reçoit 3 gorgées.",
+      visualHint: "none",
+      resolve(input) {
+        if (!input.neighborSide) return needNeighbor();
+        const side = input.neighborSide === "left" ? "gauche" : "droite";
+        const index = activeIndex(input);
+        const neighborIndex =
+          input.neighborSide === "left"
+            ? previousPlayerIndex(index, input.players.length)
+            : nextPlayerIndex(index, input.players.length);
+        const neighbor = input.players[neighborIndex]!;
+        return done(
+          outcome("Voisinage", [
+            `${neighbor.name} est ton voisin de ${side}.`,
+            receives(neighbor.name, 3),
+          ]),
+        );
+      },
     },
-  },
-  {
-    id: "d6",
-    category: "DISTRIBUE",
-    title: "Rien de personnel",
-    prompt: "L'application choisit une victime au hasard. Elle reçoit 2 gorgées.",
-    visualHint: "none",
-    resolve(input) {
-      if (!hasSlots(input.randomSlots, "target")) return needRandom("target");
-      const others = eligibleOthers(input.players, input.activePlayerId);
-      const target = pickBySlot(others, input.randomSlots.target!);
-      return done(outcome("Rien de personnel", [receives(target.name, 2)]));
+    {
+      id: "d6",
+      category: "DISTRIBUE",
+      title: "Rien de personnel",
+      prompt: "L'application choisit une victime au hasard. Elle reçoit 2 gorgées.",
+      visualHint: "none",
+      resolve(input) {
+        if (!hasSlots(input.randomSlots, "target")) return needRandom("target");
+        const others = eligibleOthers(input.players, input.activePlayerId);
+        const target = pickBySlot(others, input.randomSlots.target!);
+        return done(outcome("Rien de personnel", [receives(target.name, 2)]));
+      },
     },
-  },
-  freeDistributeEvent(
-    "d7",
-    "DISTRIBUE",
-    "Un pour chacun",
-    "Choisis trois joueurs différents. Chacun reçoit 1 gorgée.",
-    3,
-  ),
-  {
-    id: "d8",
-    category: "DISTRIBUE",
-    title: "Tête-à-tête",
-    prompt: "Choisis un adversaire pour un pile ou face virtuel. Le perdant boit 2 gorgées.",
-    visualHint: "coin",
-    resolve(input) {
-      const target = input.targetRounds[0]?.[0];
-      if (!target) {
-        return needTargets(1, 1, {
-          excludeIds: [input.activePlayerId],
-          label: "Choisis ton adversaire",
-        });
-      }
-      if (!hasSlots(input.randomSlots, "coin")) return needRandom("coin");
-      const activeName = playerName(input.players, input.activePlayerId);
-      const targetName = playerName(input.players, target);
-      const loserName = flipCoin(input.randomSlots.coin!) === "heads" ? targetName : activeName;
-      return done(outcome("Tête-à-tête", [drinks(loserName, 2)]));
+    freeDistributeEvent(
+      "d7",
+      "DISTRIBUE",
+      "Un pour chacun",
+      "Choisis trois joueurs différents. Chacun reçoit 1 gorgée.",
+      3,
+    ),
+    {
+      id: "d8",
+      category: "DISTRIBUE",
+      title: "Tête-à-tête",
+      prompt: "Choisis un adversaire pour un pile ou face virtuel. Le perdant boit 2 gorgées.",
+      visualHint: "coin",
+      resolve(input) {
+        const target = input.targetRounds[0]?.[0];
+        if (!target) {
+          return needTargets(1, 1, {
+            excludeIds: [input.activePlayerId],
+            label: "Choisis ton adversaire",
+          });
+        }
+        if (!hasSlots(input.randomSlots, "coin")) return needRandom("coin");
+        const activeName = playerName(input.players, input.activePlayerId);
+        const targetName = playerName(input.players, target);
+        const loserName = flipCoin(input.randomSlots.coin!) === "heads" ? targetName : activeName;
+        return done(outcome("Tête-à-tête", [drinks(loserName, 2)]));
+      },
     },
-  },
-  {
-    id: "d9",
-    category: "DISTRIBUE",
-    title: "La chaîne",
-    prompt:
-      "Choisis un premier joueur qui boit 1 gorgée. Il désigne ensuite un autre joueur, puis ce joueur en désigne un troisième. Personne ne peut être choisi deux fois.",
-    visualHint: "none",
-    resolve(input) {
-      const first = input.targetRounds[0]?.[0];
-      if (!first) {
-        return needTargets(1, 1, {
-          excludeIds: [input.activePlayerId],
-          label: "Choisis le premier maillon",
-        });
-      }
-      return done(
-        outcome("La chaîne", [
-          drinks(playerName(input.players, first), 1),
-          "Il ou elle désigne un deuxième joueur, qui boit 1 gorgée et en désigne un troisième.",
-          "Personne ne peut être choisi deux fois.",
-        ]),
-      );
+    {
+      id: "d9",
+      category: "DISTRIBUE",
+      title: "La chaîne",
+      prompt:
+        "Choisis un premier joueur qui boit 1 gorgée. Il désigne ensuite un autre joueur, puis ce joueur en désigne un troisième. Personne ne peut être choisi deux fois.",
+      visualHint: "none",
+      resolve(input) {
+        const first = input.targetRounds[0]?.[0];
+        if (!first) {
+          return needTargets(1, 1, {
+            excludeIds: [input.activePlayerId],
+            label: "Choisis le premier maillon",
+          });
+        }
+        return done(
+          outcome("La chaîne", [
+            drinks(playerName(input.players, first), 1),
+            "Il ou elle désigne un deuxième joueur, qui boit 1 gorgée et en désigne un troisième.",
+            "Personne ne peut être choisi deux fois.",
+          ]),
+        );
+      },
     },
-  },
-  {
-    id: "d10",
-    category: "DISTRIBUE",
-    title: "Tout sur un ou presque",
-    prompt:
-      "Choisis : distribuer 4 gorgées à une seule personne, ou 5 gorgées réparties entre au moins trois joueurs.",
-    visualHint: "none",
-    resolve(input) {
-      if (!input.choiceKey) {
-        return needChoice([
-          { key: "concentre", label: "4 SUR UNE SEULE" },
-          { key: "reparti", label: "5 SUR TROIS +" },
-        ]);
-      }
-      return input.choiceKey === "concentre"
-        ? done(outcome("Tout sur un", ["Une seule personne encaisse 4 gorgées."]))
-        : done(
-            outcome("Ou presque", [
-              "Distribue 5 gorgées entre au moins trois joueurs — gérez entre vous.",
-            ]),
-          );
+    {
+      id: "d10",
+      category: "DISTRIBUE",
+      title: "Tout sur un ou presque",
+      prompt:
+        "Choisis : distribuer 4 gorgées à une seule personne, ou 5 gorgées réparties entre au moins trois joueurs.",
+      visualHint: "none",
+      resolve(input) {
+        if (!input.choiceKey) {
+          return needChoice([
+            { key: "concentre", label: "4 SUR UNE SEULE" },
+            { key: "reparti", label: "5 SUR TROIS +" },
+          ]);
+        }
+        return input.choiceKey === "concentre"
+          ? done(outcome("Tout sur un", ["Une seule personne encaisse 4 gorgées."]))
+          : done(
+              outcome("Ou presque", [
+                "Distribue 5 gorgées entre au moins trois joueurs — gérez entre vous.",
+              ]),
+            );
+      },
     },
-  },
-  {
-    id: "d11",
-    category: "DISTRIBUE",
-    title: "Passe le pouvoir",
-    prompt:
-      "Choisis un joueur : il distribue 4 gorgées comme il veut, mais il n'a pas le droit de t'en donner.",
-    visualHint: "none",
-    resolve(input) {
-      const heir = input.targetRounds[0]?.[0];
-      if (!heir) {
-        return needTargets(1, 1, {
-          excludeIds: [input.activePlayerId],
-          label: "À qui passes-tu le pouvoir ?",
-        });
-      }
-      const activeName = playerName(input.players, input.activePlayerId);
-      return done(
-        outcome("Passe le pouvoir", [
-          `${playerName(input.players, heir)} distribue 4 gorgées comme il ou elle veut.`,
-          `Interdiction d'en donner à ${activeName}.`,
-        ]),
-      );
+    {
+      id: "d11",
+      category: "DISTRIBUE",
+      title: "Passe le pouvoir",
+      prompt:
+        "Choisis un joueur : il distribue 4 gorgées comme il veut, mais il n'a pas le droit de t'en donner.",
+      visualHint: "none",
+      resolve(input) {
+        const heir = input.targetRounds[0]?.[0];
+        if (!heir) {
+          return needTargets(1, 1, {
+            excludeIds: [input.activePlayerId],
+            label: "À qui passes-tu le pouvoir ?",
+          });
+        }
+        const activeName = playerName(input.players, input.activePlayerId);
+        return done(
+          outcome("Passe le pouvoir", [
+            `${playerName(input.players, heir)} distribue 4 gorgées comme il ou elle veut.`,
+            `Interdiction d'en donner à ${activeName}.`,
+          ]),
+        );
+      },
     },
-  },
-  narratedEvent(
-    "d12",
-    "DISTRIBUE",
-    "Arrosage contrôlé",
-    "Distribue 5 gorgées comme tu veux, avec un maximum de 2 gorgées par personne.",
-    ["Distribue 5 gorgées — maximum 2 par personne. Gérez entre vous."],
-  ),
-];
+    narratedEvent(
+      "d12",
+      "DISTRIBUE",
+      "Arrosage contrôlé",
+      "Distribue 5 gorgées comme tu veux, avec un maximum de 2 gorgées par personne.",
+      ["Distribue 5 gorgées — maximum 2 par personne. Gérez entre vous."],
+    ),
+    {
+      id: "d13",
+      category: "DISTRIBUE",
+      title: "Mon banquier",
+      prompt:
+        "Choisis quelqu'un : donne-lui 1 gorgée. Pendant trois tours de table, cette personne t'appelle « mon banquier ».",
+      visualHint: "none",
+      resolve(input) {
+        const targetId = input.targetRounds[0]?.[0];
+        if (!targetId)
+          return needTargets(1, 1, {
+            excludeIds: [input.activePlayerId],
+            label: "Qui devient ton client ?",
+          });
+        const name = playerName(input.players, targetId);
+        const banker = playerName(input.players, input.activePlayerId);
+        const instruction = `${name} appelle ${banker} « mon banquier ». Chaque oubli coûte 1 gorgée à ${name}.`;
+        return done(
+          outcome("Mon banquier", [`${name} boit 1 gorgée.`, instruction], "rule"),
+          makeRule(
+            "d13",
+            "Mon banquier",
+            instruction,
+            input.activePlayerId,
+            "turns",
+            null,
+            input.players.length * 3,
+          ),
+        );
+      },
+    },
+  ] satisfies EventDefinition[]
+).map((event) => ({
+  ...event,
+  weight: ["d4", "d5", "d7", "d8", "d9", "d10", "d11", "d12", "d13"].includes(event.id) ? 5 : 1,
+}));

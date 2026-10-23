@@ -15,11 +15,13 @@ import { nextPlayerIndex } from "./players";
 import { pickEvent, pickWeightedCategory, RECENT_EVENT_HISTORY_SIZE } from "./wheel";
 import type {
   CreateGameInput,
+  CursedObject,
   GameState,
   MiniGameOutcome,
   Player,
   ResolutionState,
   ResolveInput,
+  SecretChallenge,
 } from "./types";
 
 export const MIN_PLAYERS = 3;
@@ -47,7 +49,7 @@ export function createGame(
   const timestamp = new Date(now).toISOString();
 
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     id: createGameId(now, random),
     players,
     activePlayerIndex,
@@ -56,7 +58,12 @@ export function createGame(
     selectedEventId: null,
     resolution: null,
     miniGame: null,
-    activeRule: null,
+    turnNumber: 0,
+    activeRules: [],
+    secretChallenges: [],
+    secretReveal: null,
+    cursedObjects: [],
+    cursedReveal: null,
     recentEventIds: [],
     createdAt: timestamp,
     updatedAt: timestamp,
@@ -75,13 +82,31 @@ export function getActivePlayer(game: GameState): Player {
   return game.players[game.activePlayerIndex]!;
 }
 
+/** Display aliases may change; player IDs and saved names never do. */
+export function getDisplayPlayers(game: GameState): Player[] {
+  const swap = [...game.activeRules].reverse().find((rule) => rule.identitySwap)?.identitySwap;
+  if (!swap) return game.players;
+  const first = game.players.find((player) => player.id === swap[0]);
+  const second = game.players.find((player) => player.id === swap[1]);
+  if (!first || !second) return game.players;
+  return game.players.map((player) => ({
+    ...player,
+    name: player.id === first.id ? second.name : player.id === second.id ? first.name : player.name,
+  }));
+}
+
 /** Picks the category and event the wheel will land on. Never rejected by rapid double-taps: only fires from "idle". */
 export function spinWheel(
   game: GameState,
   random: () => number = Math.random,
   now = Date.now(),
 ): GameState {
-  if (game.phase !== "idle") return game;
+  if (
+    game.phase !== "idle" ||
+    game.secretReveal ||
+    game.cursedReveal ||
+    game.cursedObjects.some((object) => object.dueTurn <= game.turnNumber)
+  ) return game;
   const category = pickWeightedCategory(random());
   const events = EVENTS_BY_CATEGORY[category];
   const event = pickEvent(events, game.recentEventIds, random());
@@ -112,6 +137,7 @@ export function revealEvent(
     choiceKey: null,
     mysteryPickIndex: null,
     revealConfirmed: false,
+    secretAccepted: false,
     miniGameResult: null,
     pending: null,
     outcome: null,
@@ -157,7 +183,10 @@ export function submitChoice(
   random: () => number = Math.random,
   now = Date.now(),
 ): GameState {
-  const resolution = expectingPending(game, "choice");
+  const resolution = game.phase === "event" &&
+    (game.resolution?.pending?.kind === "choice" || game.resolution?.pending?.kind === "wordDuel")
+    ? game.resolution
+    : null;
   if (!resolution) return game;
   return runResolutionLoop(game, { ...resolution, choiceKey: key }, random, now);
 }
@@ -183,6 +212,16 @@ export function submitReveal(
   return runResolutionLoop(game, { ...resolution, revealConfirmed: true }, random, now);
 }
 
+export function submitSecretAccepted(
+  game: GameState,
+  random: () => number = Math.random,
+  now = Date.now(),
+): GameState {
+  const resolution = expectingPending(game, "secretChallenge");
+  if (!resolution) return game;
+  return runResolutionLoop(game, { ...resolution, secretAccepted: true }, random, now);
+}
+
 /** A mini-game session finished — feed its outcome back into the event that requested it. */
 export function completeMiniGame(
   game: GameState,
@@ -204,13 +243,8 @@ export function completeTurn(game: GameState, now = Date.now()): GameState {
   );
   const nextIndex = nextPlayerIndex(game.activePlayerIndex, game.players.length);
 
-  let activeRule = game.activeRule;
-  if (
-    activeRule?.expiry === "ownerNextTurn" &&
-    game.players[nextIndex]?.id === activeRule.ownerId
-  ) {
-    activeRule = null;
-  }
+  const turnNumber = game.turnNumber + 1;
+  const activeRules = game.activeRules.filter((rule) => rule.expiresAtTurn > turnNumber);
 
   return touch(
     {
@@ -222,23 +256,79 @@ export function completeTurn(game: GameState, now = Date.now()): GameState {
       resolution: null,
       miniGame: null,
       recentEventIds,
-      activeRule,
+      turnNumber,
+      activeRules,
     },
     now,
   );
 }
 
-/** Manually ends the active rule — used for firstViolation/timer rules once the group calls an infraction, or once a timer elapses. */
-export function clearActiveRule(game: GameState, now = Date.now()): GameState {
-  if (!game.activeRule) return game;
-  return touch({ ...game, activeRule: null }, now);
+/** The table can report a one-shot violation or clear one specific rule. */
+export function clearActiveRule(game: GameState, instanceId?: string, now = Date.now()): GameState {
+  if (game.activeRules.length === 0) return game;
+  const activeRules = instanceId
+    ? game.activeRules.filter((rule) => rule.instanceId !== instanceId)
+    : [];
+  return touch({ ...game, activeRules }, now);
+}
+
+export function resolveSecretChallenge(
+  game: GameState,
+  instanceId: string,
+  success: boolean,
+  now = Date.now(),
+): GameState {
+  if (game.phase !== "idle" || game.secretReveal) return game;
+  const challenge = game.secretChallenges.find((item) => item.instanceId === instanceId);
+  if (!challenge) return game;
+  return touch({
+    ...game,
+    secretChallenges: game.secretChallenges.filter((item) => item.instanceId !== instanceId),
+    secretReveal: {
+      ownerId: challenge.ownerId,
+      task: challenge.task,
+      success,
+      sips: success ? challenge.rewardSips : 1,
+    },
+  }, now);
+}
+
+export function dismissSecretReveal(game: GameState, now = Date.now()): GameState {
+  if (!game.secretReveal) return game;
+  return touch({ ...game, secretReveal: null }, now);
+}
+
+export function resolveCursedObject(
+  game: GameState,
+  instanceId: string,
+  holderId: string,
+  now = Date.now(),
+): GameState {
+  if (game.phase !== "idle" || game.cursedReveal || game.secretReveal) return game;
+  const object = game.cursedObjects.find((item) => item.instanceId === instanceId);
+  if (!object || object.dueTurn > game.turnNumber || !game.players.some((player) => player.id === holderId)) return game;
+  return touch({
+    ...game,
+    cursedObjects: game.cursedObjects.filter((item) => item.instanceId !== instanceId),
+    cursedReveal: {
+      objectLabel: object.objectLabel,
+      startingHolderId: object.startingHolderId,
+      holderId,
+      sips: 2,
+    },
+  }, now);
+}
+
+export function dismissCursedReveal(game: GameState, now = Date.now()): GameState {
+  if (!game.cursedReveal) return game;
+  return touch({ ...game, cursedReveal: null }, now);
 }
 
 // --- Internals ---------------------------------------------------------
 
 function buildResolveInput(game: GameState, resolution: ResolutionState): ResolveInput {
   return {
-    players: game.players,
+    players: getDisplayPlayers(game),
     activePlayerId: getActivePlayer(game).id,
     recentEventIds: game.recentEventIds,
     randomSlots: resolution.randomSlots,
@@ -247,6 +337,7 @@ function buildResolveInput(game: GameState, resolution: ResolutionState): Resolv
     choiceKey: resolution.choiceKey,
     mysteryPickIndex: resolution.mysteryPickIndex,
     revealConfirmed: resolution.revealConfirmed,
+    secretAccepted: resolution.secretAccepted,
     miniGameResult: resolution.miniGameResult,
   };
 }
@@ -303,11 +394,45 @@ function runResolutionLoop(
     }
 
     current = { ...current, pending: null, outcome: result.outcome };
+    const newRules = [result.rule, ...(result.rules ?? [])].filter(
+      (rule): rule is NonNullable<typeof rule> => Boolean(rule),
+    );
+    const incomingConflictGroups = new Set(newRules.map((rule) => rule.conflictGroup).filter(Boolean));
+    const activeRules = [
+      ...game.activeRules.filter((rule) =>
+        !newRules.some((incoming) => incoming.ruleId === rule.ruleId) &&
+        (!rule.conflictGroup || !incomingConflictGroups.has(rule.conflictGroup))
+      ),
+      ...newRules.map((rule, index) => ({
+      ...rule,
+      instanceId: `${game.turnNumber}:${current.eventId}:${rule.ruleId}:${index}`,
+      expiresAtTurn: game.turnNumber + (rule.durationTurns ?? game.players.length) + 1,
+      })),
+    ].slice(-4);
+    const secretChallenge: SecretChallenge | null = result.secretChallenge
+      ? {
+          ...result.secretChallenge,
+          instanceId: `${game.turnNumber}:${current.eventId}:${result.secretChallenge.challengeId}`,
+        }
+      : null;
+    const cursedObject: CursedObject | null = result.cursedObject
+      ? {
+          ...result.cursedObject,
+          instanceId: `${game.turnNumber}:${current.eventId}:cursed`,
+          dueTurn: game.turnNumber + result.cursedObject.durationTurns + 1,
+        }
+      : null;
     return touch(
       {
         ...game,
         resolution: current,
-        activeRule: result.rule ?? game.activeRule,
+        activeRules,
+        secretChallenges: secretChallenge
+          ? [...game.secretChallenges, secretChallenge]
+          : game.secretChallenges,
+        cursedObjects: cursedObject
+          ? [...game.cursedObjects, cursedObject]
+          : game.cursedObjects,
       },
       now,
     );

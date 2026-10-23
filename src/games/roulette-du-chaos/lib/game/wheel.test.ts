@@ -16,6 +16,13 @@ describe("CATEGORIES", () => {
     expect(CATEGORIES.reduce((sum, category) => sum + category.weight, 0)).toBe(100);
   });
 
+  it("favors persistent rules and reduces direct sip categories", () => {
+    const weights = Object.fromEntries(CATEGORIES.map((category) => [category.id, category.weight]));
+    expect(weights.REGLE).toBe(24);
+    expect(weights.DISTRIBUE).toBe(6);
+    expect(weights.SUBIS).toBe(5);
+  });
+
   it("has exactly the eight documented categories", () => {
     expect(CATEGORIES.map((category) => category.id)).toEqual([
       "JACKPOT",
@@ -82,5 +89,18 @@ describe("pickEvent", () => {
     const twoEvents = makeEvents(["x", "y"]);
     const result = pickEvent(twoEvents, ["x", "y"], 0);
     expect(["x", "y"]).toContain(result.id);
+  });
+
+  it("uses event weights within the anti-repetition pool", () => {
+    const weighted = [
+      { ...events[0]!, weight: 1 },
+      { ...events[1]!, weight: 4 },
+    ];
+    expect(pickEvent(weighted, [], 0.19).id).toBe("a");
+    expect(pickEvent(weighted, [], 0.2).id).toBe("b");
+  });
+
+  it("defaults missing event weights to one", () => {
+    expect(pickEvent(events, [], 0.25).id).toBe("b");
   });
 });

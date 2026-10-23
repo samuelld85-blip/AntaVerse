@@ -32,7 +32,7 @@ export default function HomePage() {
         </ButtonLink>
         <ThemeSelector />
         <p>
-          {MIN_PLAYERS} à {MAX_PLAYERS} joueurs · aucun accessoire nécessaire
+          {MIN_PLAYERS} à {MAX_PLAYERS} joueurs · autour d’un seul téléphone
         </p>
       </section>
     </main>

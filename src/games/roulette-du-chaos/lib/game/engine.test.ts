@@ -5,17 +5,23 @@ import {
   completeMiniGame,
   completeTurn,
   createGame,
+  dismissCursedReveal,
+  dismissSecretReveal,
   finishSpin,
   getActivePlayer,
+  getDisplayPlayers,
   MAX_PLAYERS,
   MIN_PLAYERS,
   replayGame,
   revealEvent,
+  resolveCursedObject,
+  resolveSecretChallenge,
   spinWheel,
   submitChoice,
   submitMysteryPick,
   submitNeighbor,
   submitReveal,
+  submitSecretAccepted,
   submitTargets,
 } from "./engine";
 import { CATEGORIES } from "./wheel";
@@ -70,7 +76,9 @@ function spinToEvent(
       `${eventId} isn't selectable right now (anti-repeat) — pick a different id for this test`,
     );
   }
-  const slot = (index + 0.5) / pool.length;
+  const totalWeight = pool.reduce((sum, event) => sum + (event.weight ?? 1), 0);
+  const before = pool.slice(0, index).reduce((sum, event) => sum + (event.weight ?? 1), 0);
+  const slot = (before + (pool[index]!.weight ?? 1) / 2) / totalWeight;
   const random = queueRandom([categorySlot(category), slot, ...extraRandom]);
   let next = spinWheel(game, random);
   next = finishSpin(next);
@@ -83,7 +91,7 @@ describe("createGame", () => {
     const game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
     expect(game.players.map((player) => player.name)).toEqual(PLAYER_NAMES);
     expect(game.phase).toBe("idle");
-    expect(game.activeRule).toBeNull();
+    expect(game.activeRules).toEqual([]);
     expect(game.resolution).toBeNull();
   });
 
@@ -177,40 +185,109 @@ describe("neighbor picking wraps around", () => {
 });
 
 describe("temporary rules", () => {
-  it("R1 activates a rule that expires when play returns to its owner", () => {
+  it("R1 lasts four table laps and coexists with another rule", () => {
     let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
-    const owner = getActivePlayer(game); // Samuel
-
     game = spinToEvent(game, "REGLE", "r1");
-    expect(game.activeRule?.ownerId).toBe(owner.id);
-    game = completeTurn(game); // -> Diane's turn, rule still active
-    expect(game.activeRule).not.toBeNull();
-
-    game = spinToEvent(game, "SUBIS", "s1");
-    game = completeTurn(game); // -> Thomas's turn, rule still active
-    expect(game.activeRule).not.toBeNull();
-
-    game = spinToEvent(game, "SUBIS", "s2");
-    game = completeTurn(game); // -> back to Samuel (the owner): rule expires
-    expect(getActivePlayer(game).id).toBe(owner.id);
-    expect(game.activeRule).toBeNull();
+    expect(game.activeRules.map((rule) => rule.ruleId)).toEqual(["r1"]);
+    game = completeTurn(game);
+    game = spinToEvent(game, "REGLE", "r2");
+    expect(game.activeRules.map((rule) => rule.ruleId)).toEqual(["r1", "r2"]);
+    game = completeTurn(game);
+    for (let i = 0; i < 11; i += 1) {
+      game = spinToEvent(game, "SUBIS", ["s1", "s2", "s3"][i % 3]!);
+      game = completeTurn(game);
+    }
+    expect(game.activeRules.some((rule) => rule.ruleId === "r1")).toBe(false);
   });
 
-  it("a new REGLE event replaces any existing rule (V1 supports only one at a time)", () => {
+  it("keeps at most four rules and refreshes duplicates", () => {
     let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
-    game = spinToEvent(game, "REGLE", "r1");
-    expect(game.activeRule?.ruleId).toBe("r1");
-    game = completeTurn(game);
-    game = spinToEvent(game, "REGLE", "r3");
-    expect(game.activeRule?.ruleId).toBe("r3");
+    for (const id of ["r1", "r2", "r3", "r5", "r6", "r7", "r8", "r6"]) {
+      game = spinToEvent(game, "REGLE", id, [0.42]);
+      game = completeTurn(game);
+    }
+    expect(game.activeRules).toHaveLength(4);
+    expect(game.activeRules.filter((rule) => rule.ruleId === "r6")).toHaveLength(1);
   });
 
   it("clearActiveRule manually ends a firstViolation/timer rule", () => {
     let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
     game = spinToEvent(game, "REGLE", "r5");
-    expect(game.activeRule).not.toBeNull();
+    expect(game.activeRules).toHaveLength(1);
     game = clearActiveRule(game);
-    expect(game.activeRule).toBeNull();
+    expect(game.activeRules).toEqual([]);
+  });
+});
+
+describe("new chaos effects", () => {
+  it("guides Fais-le dire and penalizes the player who says the word", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "DUEL", "dl17", [0.1]);
+    const defender = game.players[1]!;
+    game = submitTargets(game, [defender.id], queueRandom([0.1]));
+    expect(game.resolution?.pending?.kind).toBe("wordDuel");
+    game = submitChoice(game, "defenderSaid");
+    expect(game.resolution?.outcome?.lines.join(" ")).toContain(defender.name);
+    expect(game.resolution?.outcome?.lines.join(" ")).toContain(`${defender.name} boit 2`);
+  });
+
+  it("keeps a clandestine mission hidden until the owner reveals success", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "CHOISIS", "sc1", [0.1]);
+    expect(game.resolution?.pending?.kind).toBe("secretChallenge");
+    expect(game.secretChallenges).toEqual([]);
+    game = submitSecretAccepted(game);
+    expect(game.resolution?.outcome?.lines.join(" ")).not.toContain(game.secretChallenges[0]?.task);
+    expect(game.secretChallenges).toHaveLength(1);
+    const mission = game.secretChallenges[0]!;
+    game = completeTurn(game);
+    game = resolveSecretChallenge(game, mission.instanceId, true);
+    expect(game.secretChallenges).toEqual([]);
+    expect(game.secretReveal?.task).toBe(mission.task);
+    expect(game.secretReveal?.sips).toBe(3);
+    expect(spinWheel(game)).toBe(game);
+    game = dismissSecretReveal(game);
+    expect(game.secretReveal).toBeNull();
+  });
+
+  it("lets the table unmask a clandestine mission", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = submitSecretAccepted(spinToEvent(game, "CHOISIS", "sc1", [0.2]));
+    const mission = game.secretChallenges[0]!;
+    game = completeTurn(game);
+    game = resolveSecretChallenge(game, mission.instanceId, false);
+    expect(game.secretReveal?.success).toBe(false);
+    expect(game.secretReveal?.sips).toBe(1);
+  });
+
+  it("asks for the holder of a cursed object after four more spins", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    game = spinToEvent(game, "DESTIN", "co1");
+    expect(game.resolution?.pending?.kind).toBe("choice");
+    game = submitChoice(game, "verre");
+    game = submitTargets(game, [game.players[0]!.id]);
+    expect(game.cursedObjects).toHaveLength(1);
+    game = completeTurn(game);
+    for (const id of ["s1", "s2", "s3", "s4"]) {
+      game = completeTurn(spinToEvent(game, "SUBIS", id));
+    }
+    expect(game.cursedObjects[0]?.dueTurn).toBe(game.turnNumber);
+    expect(spinWheel(game)).toBe(game);
+    game = resolveCursedObject(game, game.cursedObjects[0]!.instanceId, game.players[2]!.id);
+    expect(game.cursedReveal?.holderId).toBe(game.players[2]!.id);
+    game = dismissCursedReveal(game);
+    expect(game.cursedReveal).toBeNull();
+  });
+
+  it("swaps displayed names while preserving real player IDs", () => {
+    let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
+    const originalIds = game.players.map((player) => player.id);
+    game = spinToEvent(game, "REGLE", "r35");
+    game = submitTargets(game, [game.players[0]!.id, game.players[1]!.id]);
+    expect(game.activeRules[0]?.identitySwap).toEqual(originalIds.slice(0, 2));
+    expect(getDisplayPlayers(game).map((player) => player.name).slice(0, 2)).toEqual(["Diane", "Samuel"]);
+    expect(game.players.map((player) => player.id)).toEqual(originalIds);
+    expect(game.players.map((player) => player.name)).toEqual(PLAYER_NAMES);
   });
 });
 
@@ -331,14 +408,14 @@ describe("event catalogue", () => {
     expect(game.resolution?.outcome?.lines[0]).toBe("Nombre maudit : 3");
   });
 
-  it("carries the full 8 x 12 rule set with unique ids", () => {
+  it("keeps eight categories and unique event ids", () => {
     const categories = Object.keys(EVENTS_BY_CATEGORY) as CategoryId[];
     expect(categories).toHaveLength(8);
 
     const ids = new Set<string>();
     for (const category of categories) {
       const events = EVENTS_BY_CATEGORY[category];
-      expect(events).toHaveLength(12);
+      expect(events.length).toBeGreaterThanOrEqual(12);
       for (const event of events) {
         expect(event.category).toBe(category);
         expect(event.title.length).toBeGreaterThan(0);
@@ -347,7 +424,7 @@ describe("event catalogue", () => {
         ids.add(event.id);
       }
     }
-    expect(ids.size).toBe(96);
+    expect(ids.size).toBeGreaterThan(96);
   });
 
   it("resolves every event to an outcome from a plain first spin, whatever it asks for", () => {
@@ -387,6 +464,10 @@ describe("event catalogue", () => {
             game = submitMysteryPick(game, 0);
           } else if (pending.kind === "reveal") {
             game = submitReveal(game);
+          } else if (pending.kind === "secretChallenge") {
+            game = submitSecretAccepted(game);
+          } else if (pending.kind === "wordDuel") {
+            game = submitChoice(game, "held");
           }
         }
 
@@ -413,12 +494,12 @@ describe("replayGame", () => {
   it("resets to a clean idle state, keeping the same player names", () => {
     let game = createGame({ playerNames: PLAYER_NAMES }, startingIndexZero());
     game = spinToEvent(game, "REGLE", "r1");
-    expect(game.activeRule).not.toBeNull();
+    expect(game.activeRules).toHaveLength(1);
 
     const restarted = replayGame(game, startingIndexZero());
     expect(restarted.players.map((player) => player.name)).toEqual(PLAYER_NAMES);
     expect(restarted.phase).toBe("idle");
-    expect(restarted.activeRule).toBeNull();
+    expect(restarted.activeRules).toEqual([]);
     expect(restarted.resolution).toBeNull();
     expect(restarted.miniGame).toBeNull();
     expect(restarted.recentEventIds).toEqual([]);

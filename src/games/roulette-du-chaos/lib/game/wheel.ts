@@ -15,49 +15,49 @@ export const CATEGORIES: readonly CategoryDefinition[] = [
   {
     id: "DISTRIBUE",
     label: "Distribue",
-    weight: 15,
+    weight: 6,
     icon: "🎁",
     description: "Tu distribues des gorgées autour de toi.",
   },
   {
     id: "SUBIS",
     label: "Subis",
-    weight: 13,
+    weight: 5,
     icon: "💀",
     description: "Tu subis les conséquences.",
   },
   {
     id: "DUEL",
     label: "Duel",
-    weight: 13,
+    weight: 16,
     icon: "⚔️",
     description: "Affronte un autre joueur dans un mini-jeu.",
   },
   {
     id: "TOUS",
     label: "Tous",
-    weight: 13,
+    weight: 16,
     icon: "👥",
     description: "Tout le monde participe.",
   },
   {
     id: "CHOISIS",
     label: "Choisis",
-    weight: 16,
+    weight: 14,
     icon: "🎲",
     description: "Risque ou sécurité, à toi de choisir.",
   },
   {
     id: "DESTIN",
     label: "Destin",
-    weight: 14,
+    weight: 11,
     icon: "🔮",
     description: "L'application décide pour toi.",
   },
   {
     id: "REGLE",
     label: "Règle",
-    weight: 8,
+    weight: 24,
     icon: "📜",
     description: "Une règle temporaire s'applique au groupe.",
   },
@@ -82,7 +82,7 @@ export function pickWeightedCategory(slotValue: number): CategoryId {
 }
 
 /**
- * Picks one event from `events` using a slot value, avoiding the exact same
+ * Picks one event from `events` using a slot value and optional event weights, avoiding the exact same
  * event as the most recent one or two draws when the category has enough
  * other options — a lightweight anti-repetition mechanism, not a fairness
  * engine (see spec: "do not build a complex fairness engine").
@@ -95,8 +95,15 @@ export function pickEvent(
   const avoided = new Set(recentEventIds.slice(-2));
   const candidates = events.filter((event) => !avoided.has(event.id));
   const pool = candidates.length > 0 ? candidates : events;
-  const index = Math.min(pool.length - 1, Math.floor(slotValue * pool.length));
-  return pool[index]!;
+  const totalWeight = pool.reduce((sum, event) => sum + Math.max(0, event.weight ?? 1), 0);
+  if (totalWeight <= 0) return pool[0]!;
+
+  let roll = slotValue * totalWeight;
+  for (const event of pool) {
+    roll -= Math.max(0, event.weight ?? 1);
+    if (roll < 0) return event;
+  }
+  return pool[pool.length - 1]!;
 }
 
 export const RECENT_EVENT_HISTORY_SIZE = 6;
