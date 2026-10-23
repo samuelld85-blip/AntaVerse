@@ -51,7 +51,8 @@ export function WordDuel({
         <>
           <h2>À toi de jouer</h2>
           <p>
-            {attacker} a 20 secondes pour faire dire le mot à {defender} sans le prononcer lui-même.
+            {attacker} a {request.durationSeconds} secondes pour faire dire le mot à {defender} sans
+            le prononcer lui-même.
           </p>
           <button
             type="button"
@@ -62,7 +63,7 @@ export function WordDuel({
               setPhase("running");
             }}
           >
-            Lancer les 20 secondes
+            Lancer les {request.durationSeconds} secondes
           </button>
         </>
       ) : phase === "running" ? (

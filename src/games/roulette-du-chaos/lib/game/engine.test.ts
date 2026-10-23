@@ -160,12 +160,27 @@ describe("target picking", () => {
     expect(game.resolution?.outcome?.lines[0]).toContain("1 gorgée");
   });
 
-  it("D7 Un pour chacun narrates its distribution without asking for targets", () => {
+  it("D7 Un pour chacun guides three distinct targets", () => {
     let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
     game = spinToEvent(game, "DISTRIBUE", "d7");
+    expect(game.resolution?.pending?.kind).toBe("pickTargets");
+    expect(submitTargets(game, [game.players[0]!.id, game.players[0]!.id])).toBe(game);
+    game = submitTargets(
+      game,
+      game.players.map((player) => player.id),
+    );
+    expect(game.resolution?.outcome?.lines).toHaveLength(3);
+    expect(game.resolution?.outcome?.lines[0]).toContain("Samuel");
+  });
 
-    expect(game.resolution?.pending).toBeNull();
-    expect(game.resolution?.outcome?.lines[0]).toContain("3 gorgées");
+  it("D4 guides two other players and names both recipients", () => {
+    let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
+    game = spinToEvent(game, "DISTRIBUE", "d4");
+    expect(game.resolution?.pending?.kind).toBe("pickTargets");
+    expect(submitTargets(game, [game.players[0]!.id, game.players[1]!.id])).toBe(game);
+    game = submitTargets(game, [game.players[1]!.id, game.players[2]!.id]);
+    expect(game.resolution?.outcome?.lines.join(" ")).toContain("Diane");
+    expect(game.resolution?.outcome?.lines.join(" ")).toContain("Thomas");
   });
 });
 
@@ -185,6 +200,21 @@ describe("neighbor picking wraps around", () => {
 });
 
 describe("temporary rules", () => {
+  it("ends a shield before its owner's next turn and can consume it early", () => {
+    let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
+    game = spinToEvent(game, "CHOISIS", "c11");
+    game = submitChoice(game, "bouclier");
+    expect(game.activeRules.some((rule) => rule.ruleId === "c11")).toBe(true);
+    const instanceId = game.activeRules.find((rule) => rule.ruleId === "c11")!.instanceId;
+    expect(clearActiveRule(game, instanceId).activeRules).toEqual([]);
+    game = completeTurn(game);
+    expect(game.activeRules).toHaveLength(1);
+    for (let i = 0; i < 2; i += 1) {
+      game = spinToEvent(game, "SUBIS", i === 0 ? "s1" : "s2");
+      game = completeTurn(game);
+    }
+    expect(game.activeRules).toEqual([]);
+  });
   it("R1 lasts four table laps and coexists with another rule", () => {
     let game = createGame({ playerNames: ["Samuel", "Diane", "Thomas"] }, startingIndexZero());
     game = spinToEvent(game, "REGLE", "r1");
@@ -285,7 +315,11 @@ describe("new chaos effects", () => {
     game = spinToEvent(game, "REGLE", "r35");
     game = submitTargets(game, [game.players[0]!.id, game.players[1]!.id]);
     expect(game.activeRules[0]?.identitySwap).toEqual(originalIds.slice(0, 2));
-    expect(getDisplayPlayers(game).map((player) => player.name).slice(0, 2)).toEqual(["Diane", "Samuel"]);
+    expect(
+      getDisplayPlayers(game)
+        .map((player) => player.name)
+        .slice(0, 2),
+    ).toEqual(["Diane", "Samuel"]);
     expect(game.players.map((player) => player.id)).toEqual(originalIds);
     expect(game.players.map((player) => player.name)).toEqual(PLAYER_NAMES);
   });

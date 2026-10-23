@@ -106,7 +106,8 @@ export function spinWheel(
     game.secretReveal ||
     game.cursedReveal ||
     game.cursedObjects.some((object) => object.dueTurn <= game.turnNumber)
-  ) return game;
+  )
+    return game;
   const category = pickWeightedCategory(random());
   const events = EVENTS_BY_CATEGORY[category];
   const event = pickEvent(events, game.recentEventIds, random());
@@ -159,6 +160,17 @@ export function submitTargets(
 ): GameState {
   const resolution = expectingPending(game, "pickTargets");
   if (!resolution) return game;
+  const pending = resolution.pending;
+  if (pending?.kind !== "pickTargets") return game;
+  if (
+    targetIds.length < pending.min ||
+    targetIds.length > pending.max ||
+    new Set(targetIds).size !== targetIds.length ||
+    targetIds.some(
+      (id) => !game.players.some((player) => player.id === id) || pending.excludeIds.includes(id),
+    )
+  )
+    return game;
   const next: ResolutionState = {
     ...resolution,
     targetRounds: [...resolution.targetRounds, targetIds],
@@ -183,10 +195,11 @@ export function submitChoice(
   random: () => number = Math.random,
   now = Date.now(),
 ): GameState {
-  const resolution = game.phase === "event" &&
+  const resolution =
+    game.phase === "event" &&
     (game.resolution?.pending?.kind === "choice" || game.resolution?.pending?.kind === "wordDuel")
-    ? game.resolution
-    : null;
+      ? game.resolution
+      : null;
   if (!resolution) return game;
   return runResolutionLoop(game, { ...resolution, choiceKey: key }, random, now);
 }
@@ -281,16 +294,19 @@ export function resolveSecretChallenge(
   if (game.phase !== "idle" || game.secretReveal) return game;
   const challenge = game.secretChallenges.find((item) => item.instanceId === instanceId);
   if (!challenge) return game;
-  return touch({
-    ...game,
-    secretChallenges: game.secretChallenges.filter((item) => item.instanceId !== instanceId),
-    secretReveal: {
-      ownerId: challenge.ownerId,
-      task: challenge.task,
-      success,
-      sips: success ? challenge.rewardSips : 1,
+  return touch(
+    {
+      ...game,
+      secretChallenges: game.secretChallenges.filter((item) => item.instanceId !== instanceId),
+      secretReveal: {
+        ownerId: challenge.ownerId,
+        task: challenge.task,
+        success,
+        sips: success ? challenge.rewardSips : 1,
+      },
     },
-  }, now);
+    now,
+  );
 }
 
 export function dismissSecretReveal(game: GameState, now = Date.now()): GameState {
@@ -306,17 +322,25 @@ export function resolveCursedObject(
 ): GameState {
   if (game.phase !== "idle" || game.cursedReveal || game.secretReveal) return game;
   const object = game.cursedObjects.find((item) => item.instanceId === instanceId);
-  if (!object || object.dueTurn > game.turnNumber || !game.players.some((player) => player.id === holderId)) return game;
-  return touch({
-    ...game,
-    cursedObjects: game.cursedObjects.filter((item) => item.instanceId !== instanceId),
-    cursedReveal: {
-      objectLabel: object.objectLabel,
-      startingHolderId: object.startingHolderId,
-      holderId,
-      sips: 2,
+  if (
+    !object ||
+    object.dueTurn > game.turnNumber ||
+    !game.players.some((player) => player.id === holderId)
+  )
+    return game;
+  return touch(
+    {
+      ...game,
+      cursedObjects: game.cursedObjects.filter((item) => item.instanceId !== instanceId),
+      cursedReveal: {
+        objectLabel: object.objectLabel,
+        startingHolderId: object.startingHolderId,
+        holderId,
+        sips: 2,
+      },
     },
-  }, now);
+    now,
+  );
 }
 
 export function dismissCursedReveal(game: GameState, now = Date.now()): GameState {
@@ -397,16 +421,22 @@ function runResolutionLoop(
     const newRules = [result.rule, ...(result.rules ?? [])].filter(
       (rule): rule is NonNullable<typeof rule> => Boolean(rule),
     );
-    const incomingConflictGroups = new Set(newRules.map((rule) => rule.conflictGroup).filter(Boolean));
+    const incomingConflictGroups = new Set(
+      newRules.map((rule) => rule.conflictGroup).filter(Boolean),
+    );
     const activeRules = [
-      ...game.activeRules.filter((rule) =>
-        !newRules.some((incoming) => incoming.ruleId === rule.ruleId) &&
-        (!rule.conflictGroup || !incomingConflictGroups.has(rule.conflictGroup))
+      ...game.activeRules.filter(
+        (rule) =>
+          !newRules.some((incoming) => incoming.ruleId === rule.ruleId) &&
+          (!rule.conflictGroup || !incomingConflictGroups.has(rule.conflictGroup)),
       ),
       ...newRules.map((rule, index) => ({
-      ...rule,
-      instanceId: `${game.turnNumber}:${current.eventId}:${rule.ruleId}:${index}`,
-      expiresAtTurn: game.turnNumber + (rule.durationTurns ?? game.players.length) + 1,
+        ...rule,
+        instanceId: `${game.turnNumber}:${current.eventId}:${rule.ruleId}:${index}`,
+        expiresAtTurn:
+          game.turnNumber +
+          (rule.durationTurns ?? game.players.length) +
+          (rule.expiry === "ownerNextTurn" ? 0 : 1),
       })),
     ].slice(-4);
     const secretChallenge: SecretChallenge | null = result.secretChallenge
@@ -430,9 +460,7 @@ function runResolutionLoop(
         secretChallenges: secretChallenge
           ? [...game.secretChallenges, secretChallenge]
           : game.secretChallenges,
-        cursedObjects: cursedObject
-          ? [...game.cursedObjects, cursedObject]
-          : game.cursedObjects,
+        cursedObjects: cursedObject ? [...game.cursedObjects, cursedObject] : game.cursedObjects,
       },
       now,
     );

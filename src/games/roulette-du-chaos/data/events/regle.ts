@@ -40,6 +40,10 @@ function ruleEvent(
         input.players.length * rounds,
       );
       if (id === "r1" || id === "r4" || id === "r33") rule.conflictGroup = "names";
+      if (id === "r10" || id === "r12") {
+        rule.endConditionLabel = "Jusqu'au geste";
+        rule.completionLabel = "Geste déclenché";
+      }
       return done(outcome(title, [description], "rule"), rule);
     },
   };

@@ -17,7 +17,7 @@ function randomQuestion() {
   return ESTIMATION_QUESTIONS[pickQuestionIndex(Math.random(), ESTIMATION_QUESTIONS.length)]!;
 }
 
-/** Estimation éclair (spec §19): both guess a number for the same question; closest wins, a tie draws a new question. */
+/** Both players guess privately; the answer is revealed before a win or an explicit rematch. */
 export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
   const opponent = playerB!;
   const [question, setQuestion] = useState(randomQuestion);
@@ -37,16 +37,19 @@ export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
       return;
     }
     const result = resolveEstimation(question.answer, guessA!, value);
-    if (result === "tie") {
-      setQuestion(randomQuestion());
-      setGuessA(null);
-      setGuessB(null);
-      setStep("handoffA");
-      return;
-    }
     setGuessB(value);
-    setWinner(result);
+    setWinner(result === "tie" ? null : result);
     setStep("result");
+  }
+
+  function replay() {
+    const currentIndex = ESTIMATION_QUESTIONS.indexOf(question);
+    const offset = 1 + Math.floor(Math.random() * (ESTIMATION_QUESTIONS.length - 1));
+    setQuestion(ESTIMATION_QUESTIONS[(currentIndex + offset) % ESTIMATION_QUESTIONS.length]!);
+    setGuessA(null);
+    setGuessB(null);
+    setWinner(null);
+    setStep("handoffA");
   }
 
   const unit = question.unit ?? "";
@@ -63,6 +66,7 @@ export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
       <input
         type="number"
         inputMode="decimal"
+        step="any"
         className="estimation-input"
         value={guessInput}
         onChange={(event) => setGuessInput(event.target.value)}
@@ -87,26 +91,35 @@ export function Estimation({ playerA, playerB, onComplete }: MiniGameProps) {
         />
       ) : null}
       {step === "playB" ? guessForm("b") : null}
-      {step === "result" && winner ? (
+      {step === "result" ? (
         <div className="mini-game-result">
           <div className="mini-game-answer-reveal">
             <p className="mini-game-answer-reveal-label">Bonne réponse</p>
             <p className="mini-game-answer-reveal-value">
               {question.answer}
-              {unit}
+              {unit ? ` ${unit}` : ""}
             </p>
           </div>
           <p className="mini-game-result-detail">
             {playerA.name} : {guessA}
-            {unit} · {opponent.name} : {guessB}
-            {unit}
+            {unit ? ` ${unit}` : ""} · {opponent.name} : {guessB}
+            {unit ? ` ${unit}` : ""}
           </p>
           <p className="mini-game-result-headline">
-            {winner === "a" ? playerA.name : opponent.name} gagne !
+            {winner ? `${winner === "a" ? playerA.name : opponent.name} gagne !` : "Égalité !"}
           </p>
-          <Button type="button" onClick={() => onComplete(duelOutcome(winner, playerA, opponent))}>
-            Continuer <span aria-hidden="true">→</span>
-          </Button>
+          {winner ? (
+            <Button
+              type="button"
+              onClick={() => onComplete(duelOutcome(winner, playerA, opponent))}
+            >
+              Continuer <span aria-hidden="true">→</span>
+            </Button>
+          ) : (
+            <Button type="button" onClick={replay}>
+              Nouvelle question <span aria-hidden="true">→</span>
+            </Button>
+          )}
         </div>
       ) : null}
     </MiniGameShell>

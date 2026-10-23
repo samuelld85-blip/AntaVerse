@@ -23,7 +23,7 @@ const OPTIONS = Array.from(
   (_, index) => SECRET_NUMBER_MIN + index,
 );
 
-/** Nombre secret (spec §18): both guess 1–10, closest to the drawn target wins; a tie redraws. */
+/** Both players guess privately; the target is revealed before a win or an explicit rematch. */
 export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
   const opponent = playerB!;
   const [step, setStep] = useState<Step>("handoffA");
@@ -40,16 +40,18 @@ export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
     }
     const target = drawTarget();
     const result = resolveSecretNumber(target, guessA!, guess);
-    if (result === "tie") {
-      setGuessA(null);
-      setRevealedTarget(null);
-      setStep("handoffA");
-      return;
-    }
     setRevealedTarget(target);
     setFinalGuessB(guess);
-    setWinner(result);
+    setWinner(result === "tie" ? null : result);
     setStep("result");
+  }
+
+  function replay() {
+    setGuessA(null);
+    setFinalGuessB(null);
+    setRevealedTarget(null);
+    setWinner(null);
+    setStep("handoffA");
   }
 
   const numberGrid = (who: "a" | "b") => (
@@ -76,10 +78,10 @@ export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
         />
       ) : null}
       {step === "playB" ? numberGrid("b") : null}
-      {step === "result" && winner ? (
+      {step === "result" ? (
         <div className="mini-game-result">
           <p className="mini-game-result-headline">
-            {winner === "a" ? playerA.name : opponent.name} gagne !
+            {winner ? `${winner === "a" ? playerA.name : opponent.name} gagne !` : "Égalité !"}
           </p>
           {revealedTarget !== null ? (
             <p className="mini-game-result-detail">
@@ -87,9 +89,18 @@ export function SecretNumber({ playerA, playerB, onComplete }: MiniGameProps) {
               {finalGuessB}
             </p>
           ) : null}
-          <Button type="button" onClick={() => onComplete(duelOutcome(winner, playerA, opponent))}>
-            Continuer <span aria-hidden="true">→</span>
-          </Button>
+          {winner ? (
+            <Button
+              type="button"
+              onClick={() => onComplete(duelOutcome(winner, playerA, opponent))}
+            >
+              Continuer <span aria-hidden="true">→</span>
+            </Button>
+          ) : (
+            <Button type="button" onClick={replay}>
+              Rejouer <span aria-hidden="true">→</span>
+            </Button>
+          )}
         </div>
       ) : null}
     </MiniGameShell>

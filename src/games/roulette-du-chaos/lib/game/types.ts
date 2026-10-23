@@ -149,6 +149,8 @@ export interface PendingRule {
   durationTurns?: number;
   conflictGroup?: string;
   identitySwap?: [string, string];
+  endConditionLabel?: string;
+  completionLabel?: string;
 }
 
 export interface ActiveRule extends PendingRule {
@@ -210,7 +212,14 @@ export interface ResolveInput {
 export type ResolveResult =
   | { status: "needsInput"; next: NextInputRequest }
   | { status: "needsMiniGame"; request: MiniGameRequest }
-  | { status: "done"; outcome: TurnOutcome; rule?: PendingRule; rules?: PendingRule[]; secretChallenge?: SecretChallengeDraft; cursedObject?: CursedObjectDraft };
+  | {
+      status: "done";
+      outcome: TurnOutcome;
+      rule?: PendingRule;
+      rules?: PendingRule[];
+      secretChallenge?: SecretChallengeDraft;
+      cursedObject?: CursedObjectDraft;
+    };
 
 export interface EventDefinition {
   id: string;

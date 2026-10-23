@@ -48,9 +48,18 @@ export const distribueEvents: EventDefinition[] = (
       title: "Double cible",
       prompt: "Choisis deux joueurs différents. Chacun reçoit 2 gorgées.",
       visualHint: "none",
-      resolve() {
+      resolve(input) {
+        const targets = input.targetRounds[0];
+        if (!targets)
+          return needTargets(2, 2, {
+            excludeIds: [input.activePlayerId],
+            label: "Choisis deux joueurs",
+          });
         return done(
-          outcome("Double cible", ["Désignez 2 joueurs entre vous — chacun boit 2 gorgées."]),
+          outcome(
+            "Double cible",
+            targets.map((id) => receives(playerName(input.players, id), 2)),
+          ),
         );
       },
     },
@@ -90,13 +99,23 @@ export const distribueEvents: EventDefinition[] = (
         return done(outcome("Rien de personnel", [receives(target.name, 2)]));
       },
     },
-    freeDistributeEvent(
-      "d7",
-      "DISTRIBUE",
-      "Un pour chacun",
-      "Choisis trois joueurs différents. Chacun reçoit 1 gorgée.",
-      3,
-    ),
+    {
+      id: "d7",
+      category: "DISTRIBUE",
+      title: "Un pour chacun",
+      prompt: "Choisis trois joueurs différents, toi compris si besoin. Chacun reçoit 1 gorgée.",
+      visualHint: "none",
+      resolve(input) {
+        const targets = input.targetRounds[0];
+        if (!targets) return needTargets(3, 3, { label: "Choisis trois joueurs" });
+        return done(
+          outcome(
+            "Un pour chacun",
+            targets.map((id) => receives(playerName(input.players, id), 1)),
+          ),
+        );
+      },
+    },
     {
       id: "d8",
       category: "DISTRIBUE",

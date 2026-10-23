@@ -33,13 +33,30 @@ function RuleRow({
     <li className="rule-stack-item">
       <div className="rule-stack-item-top">
         <strong>{rule.title}</strong>
-        <span>{rule.expiry === "firstViolation" ? "Jusqu'à la 1re faute" : `${lapsLeft} tour${lapsLeft > 1 ? "s" : ""} de table`}</span>
+        <span>
+          {rule.expiry === "firstViolation"
+            ? (rule.endConditionLabel ?? "Jusqu'à la 1re faute")
+            : rule.expiry === "ownerNextTurn"
+              ? "Jusqu'au prochain tour"
+              : `${lapsLeft} tour${lapsLeft > 1 ? "s" : ""} de table`}
+        </span>
       </div>
       <p>{rule.description}</p>
       <small>Posée par {ownerName}</small>
-      {rule.expiry === "firstViolation" || rule.expiry === "timer" ? (
-        <button type="button" className="rule-banner-report" onClick={() => onClear(rule.instanceId)}>
-          {rule.expiry === "timer" ? "Terminer la règle" : "Infraction constatée"}
+      {rule.expiry === "firstViolation" ||
+      rule.expiry === "timer" ||
+      rule.expiry === "ownerNextTurn" ? (
+        <button
+          type="button"
+          className="rule-banner-report"
+          onClick={() => onClear(rule.instanceId)}
+        >
+          {rule.completionLabel ??
+            (rule.expiry === "timer"
+              ? "Terminer la règle"
+              : rule.expiry === "ownerNextTurn"
+                ? "Protection utilisée"
+                : "Infraction constatée")}
         </button>
       ) : null}
     </li>
@@ -62,8 +79,12 @@ export function RuleStack({
     <details className="rule-stack">
       <summary>
         <span aria-hidden="true">📜</span>
-        <span>{rules.length} règle{rules.length > 1 ? "s" : ""} active{rules.length > 1 ? "s" : ""}</span>
-        <span className="rule-stack-chevron" aria-hidden="true">⌄</span>
+        <span>
+          {rules.length} règle{rules.length > 1 ? "s" : ""} active{rules.length > 1 ? "s" : ""}
+        </span>
+        <span className="rule-stack-chevron" aria-hidden="true">
+          ⌄
+        </span>
       </summary>
       <ol className="rule-stack-list">
         {rules.map((rule) => (

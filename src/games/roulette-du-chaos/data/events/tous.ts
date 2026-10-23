@@ -55,11 +55,11 @@ export const tousEvents: EventDefinition[] = (
         if (!input.choiceKey) {
           return needChoice(
             [
-              { key: "left", label: prompt.left },
-              { key: "right", label: prompt.right },
+              { key: "left", label: `Majorité : ${prompt.left}` },
+              { key: "right", label: `Majorité : ${prompt.right}` },
               { key: "tie", label: "Égalité" },
             ],
-            `${prompt.left} ou ${prompt.right} ? Votez à main levée.`,
+            `${prompt.left} ou ${prompt.right} ? Votez à main levée, puis indiquez le camp majoritaire.`,
           );
         }
         if (input.choiceKey === "tie")
@@ -213,11 +213,11 @@ export const tousEvents: EventDefinition[] = (
         if (!input.choiceKey) {
           return needChoice(
             [
-              { key: "left", label: prompt.left },
-              { key: "right", label: prompt.right },
+              { key: "left", label: `Majorité : ${prompt.left}` },
+              { key: "right", label: `Majorité : ${prompt.right}` },
               { key: "tie", label: "Égalité" },
             ],
-            `${prompt.left} ou ${prompt.right} ? 3, 2, 1 : choisissez votre camp.`,
+            `${prompt.left} ou ${prompt.right} ? 3, 2, 1 : choisissez votre camp, puis indiquez la majorité.`,
           );
         }
         if (input.choiceKey === "tie")

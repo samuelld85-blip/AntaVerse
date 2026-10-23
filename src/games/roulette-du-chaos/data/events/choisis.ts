@@ -193,8 +193,8 @@ export const choisisEvents: EventDefinition[] = (
         if (!input.choiceKey) {
           return needChoice(
             [
-              { key: "a", label: "JE PRENDS A" },
-              { key: "b", label: "JE PRENDS B" },
+              { key: "a", label: "JE PRENDS A · L'AUTRE B" },
+              { key: "b", label: "JE PRENDS B · L'AUTRE A" },
             ],
             "Qui prend quelle case ? Les effets ne sont révélés qu'après.",
           );
