@@ -125,12 +125,13 @@ synchronisation si leur fin est postérieure à la sauvegarde précédente.
 
 - Seul le carnet Sport est envoyé. Une copie locale reste disponible hors ligne.
 - Un compte possède sa ligne `backups` et les dix révisions précédentes.
-- La comparaison de révision côté serveur empêche l’écrasement concurrent. Le
-  carnet local prime toujours : en cas de révision distante différente, il est
-  renvoyé avec la révision lue, sans écran de conflit. Un refus serveur est
-  réessayé à la synchronisation suivante, et le carnet local reste utilisable.
-- La dernière version synchronisée sert de repère pour savoir si cet appareil a
-  déjà synchronisé. Un appareil vierge récupère le carnet en ligne ; un stockage
+- La comparaison de révision côté serveur empêche l’écrasement concurrent. Un
+  écart d’au moins une séance terminée entre l’appareil et la sauvegarde ouvre un
+  choix (carnet de l’appareil ou version en ligne) sans bloquer l’appli ; sinon le
+  carnet local prime. « Garder ma version locale » relit la révision et réessaie
+  en cas d’écriture concurrente.
+- Un appareil vidé (stockage effacé) récupère toujours le carnet en ligne et
+  n’envoie jamais de carnet vide par-dessus les données du cloud. Un stockage
   local illisible bloque l’envoi au lieu d’envoyer un carnet vide.
 - Les copies locales sont isolées par compte lors des changements d’utilisateur.
 - La liste publique aux utilisateurs connectés contient seulement les pseudos/IDs.
@@ -163,8 +164,9 @@ Sur le projet configuré, vérifier avec deux comptes A/B et un troisième C :
 3. Mot de passe oublié, e-mail reçu, ouverture et changement effectif.
 4. Séance enregistrée sur A ; effacement des données navigateur ; reconnexion
    et restauration de l’historique, favoris et séance active.
-5. Modification hors ligne puis retour réseau ; deux appareils modifiés : le
-   carnet local est renvoyé sans conflit ; changement A/B sans mélange de carnets.
+5. Modification hors ligne puis retour réseau ; écart d’une séance entre deux
+   appareils : le choix s’affiche et chaque bouton fonctionne ; modification sans
+   écart : le carnet local est renvoyé ; changement A/B sans mélange de carnets.
 6. A ajoute B, B accepte ; historique visible ; C ne peut pas lire les séances
    par appel direct. Retrait d’ami puis refus effectif de lecture.
 7. B active les push, A termine une nouvelle séance ; réception écran fermé sur

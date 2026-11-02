@@ -16,7 +16,6 @@ const mock = vi.hoisted(() => ({
   recovery: false,
 }));
 vi.mock("./provider", () => ({
-  exportSport: vi.fn(),
   useSportCloud: () => ({
     session: null,
     profile: null,

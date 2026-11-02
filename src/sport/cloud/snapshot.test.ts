@@ -5,25 +5,32 @@ import { readSnapshot, writeSnapshot, syncDecision } from "./snapshot";
 beforeEach(() => localStorage.clear());
 describe("Sport cloud reconciliation", () => {
   const first = () => ({ ...emptyStore(), active: createSession("full", []) });
+  const finished = (count: number) => ({
+    ...emptyStore(),
+    history: Array.from({ length: count }, (_, index) => ({
+      ...createSession("full", []),
+      id: `session-${index}`,
+      startedAt: "2026-10-01T10:00:00.000Z",
+      endedAt: "2026-10-01T11:00:00.000Z",
+    })),
+  });
   it("restores remote data after site storage has been cleared", () => {
-    expect(syncDecision(emptyStore(), first(), null)).toBe("download");
+    expect(syncDecision(emptyStore(), first())).toBe("download");
   });
   it("uploads a legacy local carnet into a new account", () => {
-    expect(syncDecision(first(), emptyStore(), null)).toBe("upload");
+    expect(syncDecision(first(), emptyStore())).toBe("upload");
   });
-  it("keeps local edits when the cloud copy changed too, without any conflict", () => {
-    const base = first();
-    const local = { ...base, active: { ...base.active, name: "Téléphone" } };
-    const remote = { ...base, active: { ...base.active, name: "Tablette" } };
-    expect(syncDecision(local, remote, base)).toBe("upload");
-    expect(syncDecision(local, base, base)).toBe("upload");
+  it("never sends an emptied carnet over cloud data", () => {
+    expect(syncDecision(emptyStore(), finished(3))).toBe("download");
   });
-  it("uploads an intentionally emptied carnet instead of restoring the cloud copy", () => {
-    const base = first();
-    expect(syncDecision(emptyStore(), base, base)).toBe("upload");
+  it("asks the user when one or more finished sessions differ", () => {
+    expect(syncDecision(finished(10), finished(8))).toBe("conflict");
+    expect(syncDecision(finished(8), finished(9))).toBe("conflict");
   });
-  it("does not restore from the cloud on a device that already synced before", () => {
-    expect(syncDecision(emptyStore(), first(), emptyStore())).toBe("upload");
+  it("keeps local edits silently when the finished session counts match", () => {
+    expect(syncDecision({ ...finished(2), active: createSession("full", []) }, finished(2))).toBe(
+      "upload",
+    );
   });
   it("validates restoration and preserves previous data and unrelated games", () => {
     const old = first();

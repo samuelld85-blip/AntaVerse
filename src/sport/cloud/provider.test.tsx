@@ -62,6 +62,17 @@ const carnet = (name: string) => ({
   ...emptyStore(),
   active: { ...createSession("full", []), name },
 });
+const withHistory = (count: number) => ({
+  ...emptyStore(),
+  history: Array.from({ length: count }, (_, index) => ({
+    ...createSession("full", []),
+    id: `session-${index}`,
+    startedAt: "2026-10-01T10:00:00.000Z",
+    endedAt: "2026-10-01T11:00:00.000Z",
+  })),
+});
+const button = (label: string) =>
+  [...host.querySelectorAll("button")].find((b) => b.textContent === label)!;
 const tick = async (ms = 30) => {
   await act(async () => {
     await new Promise((r) => setTimeout(r, ms));
@@ -181,6 +192,58 @@ describe("Sport provider lifecycle", () => {
     expect(host.textContent).not.toContain("Quel carnet souhaitez-vous conserver");
     expect(readSnapshot()).toEqual(local);
     expect(server.backups.get("alice")?.payload).toEqual(local);
+  });
+  it("asks which carnet to keep when one finished session differs, without uploading", async () => {
+    server.session = session("alice");
+    server.backups.set("alice", { payload: withHistory(8), revision: 1 });
+    saveStore(withHistory(9));
+    await mount();
+    expect(host.textContent).toContain("Quel carnet souhaitez-vous conserver");
+    expect(host.textContent).toContain("Carnet ouvert");
+    expect(server.writes).toHaveLength(0);
+    expect(readSnapshot()).toEqual(withHistory(9));
+    expect(server.backups.get("alice")?.payload).toEqual(withHistory(8));
+  });
+  it("keeps the local carnet when chosen, even if the cloud changed meanwhile", async () => {
+    server.session = session("alice");
+    server.backups.set("alice", { payload: withHistory(8), revision: 1 });
+    const local = withHistory(10);
+    saveStore(local);
+    await mount();
+    server.backups.set("alice", { payload: withHistory(7), revision: 2 });
+    await act(async () => button("Conserver ma version locale").click());
+    await tick();
+    expect(server.backups.get("alice")).toEqual({ payload: local, revision: 3 });
+    expect(host.textContent).not.toContain("Quel carnet souhaitez-vous conserver");
+    expect(readSnapshot()).toEqual(local);
+  });
+  it("restores the cloud carnet when chosen", async () => {
+    server.session = session("alice");
+    const remote = withHistory(8);
+    server.backups.set("alice", { payload: remote, revision: 1 });
+    saveStore(withHistory(10));
+    await mount();
+    await act(async () => button("Récupérer la version en ligne").click());
+    await tick();
+    expect(readSnapshot()).toEqual(remote);
+    expect(host.textContent).not.toContain("Quel carnet souhaitez-vous conserver");
+    expect(server.writes).toHaveLength(0);
+  });
+  it("shows a retryable error when the choice fails, then succeeds on retry", async () => {
+    server.session = session("alice");
+    server.backups.set("alice", { payload: withHistory(8), revision: 1 });
+    const local = withHistory(10);
+    saveStore(local);
+    await mount();
+    server.fail = true;
+    await act(async () => button("Conserver ma version locale").click());
+    expect(host.querySelector('[role="alert"]')?.textContent).toContain("Connexion interrompue");
+    expect(button("Conserver ma version locale").disabled).toBe(false);
+    expect(readSnapshot()).toEqual(local);
+    server.fail = false;
+    await act(async () => button("Conserver ma version locale").click());
+    expect(server.backups.get("alice")?.payload).toEqual(local);
+    expect(host.textContent).not.toContain("Quel carnet souhaitez-vous conserver");
   });
   it("keeps synchronization active after an initial service outage", async () => {
     server.session = session("alice");
