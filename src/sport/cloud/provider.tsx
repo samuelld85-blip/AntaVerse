@@ -53,17 +53,13 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
   const [recovery, setRecovery] = useState(false);
   const [status, setStatus] = useState("Sauvegarde sur cet appareil uniquement");
   const [epoch, setEpoch] = useState(0);
-  const [conflict, setConflict] = useState<{ remote: Snapshot; revision: number } | null>(null);
   const [exclusive, setExclusive] = useState(false);
   const [initializing, setInitializing] = useState(cloudConfigured);
   const [fatal, setFatal] = useState("");
   const syncRef = useRef<() => Promise<void>>(async () => {});
-  const resolveRef = useRef<(remote: boolean) => Promise<void>>(async () => {});
   const sessionRef = useRef<Session | null>(null);
   const profileRequest = useRef(0);
   const profileRef = useRef<Profile | null>(null);
-  const [resolving, setResolving] = useState(false);
-  const [resolutionError, setResolutionError] = useState("");
 
   // Only one editable Sport tab. Another tab must not overwrite in-memory edits.
   useEffect(() => {
@@ -169,8 +165,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     let live = true;
     let busy: Promise<void> | null = null;
     let base: Snapshot | null = null;
-    let pendingConflict = false;
-    let conflictRevision = 0;
     let interval: ReturnType<typeof setInterval> | undefined;
     let timer: ReturnType<typeof setTimeout> | undefined;
     const client = getCloud()!;
@@ -192,7 +186,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       );
     };
     const sync = async () => {
-      if (!valid() || !id || pendingConflict) return;
+      if (!valid() || !id) return;
       if (busy) return busy;
       busy = (async () => {
         try {
@@ -219,13 +213,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           // Read again after the request: edits made while fetching must participate.
           const latest = readSnapshot();
           const decision = syncDecision(latest, remote, base);
-          if (decision === "conflict") {
-            pendingConflict = true;
-            conflictRevision = revision;
-            setConflict({ remote, revision });
-            setResolutionError("");
-            setStatus("Deux versions du carnet sont disponibles");
-          } else if (decision === "download") {
+          if (decision === "download") {
             writeSnapshot(remote);
             saveBase(remote);
             localStorage.setItem(cacheKey(id), JSON.stringify(remote));
@@ -269,7 +257,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     };
     async function initialize() {
       setInitializing(true);
-      setConflict(null);
       setProfile(null);
       profileRef.current = null;
       try {
@@ -301,36 +288,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         window.addEventListener("online", changed);
         window.addEventListener("focus", changed);
         syncRef.current = sync;
-        resolveRef.current = async (useRemote) => {
-          if (!valid()) return;
-          const { data, error } = await client
-            .from("backups")
-            .select("payload, revision")
-            .eq("user_id", id)
-            .maybeSingle();
-          if (error) throw error;
-          if (!valid()) return;
-          const remote = data ? snapshotSchema.parse(data.payload) : emptySnapshot();
-          // Never replace a newer remote revision that the user has not reviewed.
-          if ((data?.revision ?? 0) !== conflictRevision) {
-            conflictRevision = data?.revision ?? 0;
-            setConflict({ remote, revision: conflictRevision });
-            setResolutionError(
-              "La version en ligne a changé. Vérifiez les versions puis choisissez à nouveau.",
-            );
-            return;
-          }
-          // A restoration is explicit and keeps the losing local copy for export.
-          if (useRemote) {
-            writeSnapshot(remote);
-            saveBase(remote);
-            setEpoch((n) => n + 1);
-          } else await persist(readSnapshot(), data?.revision ?? 0);
-          if (!valid()) return;
-          pendingConflict = false;
-          setConflict(null);
-          await sync();
-        };
       } catch {
         if (live)
           setFatal(
@@ -349,7 +306,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       window.removeEventListener("online", changed);
       window.removeEventListener("focus", changed);
       syncRef.current = async () => {};
-      resolveRef.current = async () => {};
     };
   }, [id, loading, exclusive, refreshProfile]);
 
@@ -430,42 +386,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         </div>
       ) : (
         <>
-          {conflict ? (
-            <details className={styles.panel}>
-              <summary>Sauvegarde en ligne en pause · choisir une version</summary>
-              <h1 id="conflict-title">Quel carnet souhaitez-vous conserver ?</h1>
-              <p>
-                Vous pouvez continuer à utiliser Sport sur cet appareil. La sauvegarde en ligne
-                reprendra après votre choix. Votre version locale contient{" "}
-                {readSnapshot().history.length} séance(s), la version en ligne{" "}
-                {conflict.remote.history.length}. Exportez votre carnet avant de choisir si vous
-                souhaitez conserver les deux.
-              </p>
-              <button onClick={() => exportSport(readSnapshot())}>Exporter mon carnet local</button>
-              {resolutionError && <p role="alert">{resolutionError}</p>}
-              <div className={styles.actions}>
-                {[false, true].map((remote) => (
-                  <button
-                    key={String(remote)}
-                    disabled={resolving}
-                    onClick={async () => {
-                      setResolving(true);
-                      setResolutionError("");
-                      try {
-                        await resolveRef.current(remote);
-                      } catch (error) {
-                        setResolutionError(friendlyError(error));
-                      } finally {
-                        setResolving(false);
-                      }
-                    }}
-                  >
-                    {remote ? "Récupérer la version en ligne" : "Conserver ma version locale"}
-                  </button>
-                ))}
-              </div>
-            </details>
-          ) : null}
           <div key={`${id ?? "guest"}:${epoch}`}>{children}</div>
         </>
       )}
