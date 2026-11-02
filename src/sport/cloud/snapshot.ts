@@ -16,9 +16,11 @@ export const equalSnapshot = (a: Snapshot, b: Snapshot) => JSON.stringify(a) ===
 export function hasData(s: Snapshot) {
   return Boolean(s.active || s.history.length || s.favorites.length || s.templates.length);
 }
-// Local data always wins. The cloud copy is only taken by a device that has
-// never synced and holds no Sport data (cleared storage, new browser).
-export function syncDecision(local: Snapshot, remote: Snapshot, base: Snapshot | null) {
+// A device left without Sport data always takes the cloud copy, so it can never
+// send an empty carnet. A difference of at least one finished session is a
+// conflict the user decides on. Any other difference: the local carnet wins.
+export function syncDecision(local: Snapshot, remote: Snapshot) {
   if (equalSnapshot(local, remote)) return "equal";
-  return !base && !hasData(local) && hasData(remote) ? "download" : "upload";
+  if (!hasData(local) && hasData(remote)) return "download";
+  return local.history.length !== remote.history.length ? "conflict" : "upload";
 }

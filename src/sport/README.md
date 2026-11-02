@@ -89,12 +89,13 @@ confidentialité ou le navigateur.
 via le navigateur, la sauvegarde Supabase versionnée, les pseudos et les amis.
 Le layout `/sport` est le seul à charger ce système : aucune donnée des jeux
 d’ambiance n’est synchronisée. La page `/sport/compte` propose récupération de
-mot de passe, export/import et suppression du compte. Dans Historique, Social
+mot de passe et suppression du compte. Dans Historique, Social
 permet les demandes d’amis et la consultation des séances des amis acceptés.
 Les push Web sont facultatifs par appareil. Une seule page Sport est éditable
-à la fois dans un navigateur. Le carnet local prime toujours : la sauvegarde en
-ligne est remplacée par le carnet de l’appareil, sans écran de conflit. Seul un
-appareil sans données ni historique de synchronisation récupère le carnet en ligne.
+à la fois dans un navigateur. Si le nombre de séances terminées diffère d’au moins
+une entre l’appareil et la sauvegarde en ligne, un choix est proposé : garder le
+carnet de l’appareil ou récupérer la version en ligne. Sinon, le carnet local prime.
+Un appareil vidé récupère toujours le carnet en ligne.
 
 Configuration et validation en ligne : [CLOUD_SETUP.md](CLOUD_SETUP.md).
 

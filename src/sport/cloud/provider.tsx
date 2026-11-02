@@ -53,10 +53,14 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
   const [recovery, setRecovery] = useState(false);
   const [status, setStatus] = useState("Sauvegarde sur cet appareil uniquement");
   const [epoch, setEpoch] = useState(0);
+  const [conflict, setConflict] = useState<{ remote: Snapshot; revision: number } | null>(null);
+  const [resolving, setResolving] = useState(false);
+  const [resolutionError, setResolutionError] = useState("");
   const [exclusive, setExclusive] = useState(false);
   const [initializing, setInitializing] = useState(cloudConfigured);
   const [fatal, setFatal] = useState("");
   const syncRef = useRef<() => Promise<void>>(async () => {});
+  const resolveRef = useRef<(useRemote: boolean) => Promise<void>>(async () => {});
   const sessionRef = useRef<Session | null>(null);
   const profileRequest = useRef(0);
   const profileRef = useRef<Profile | null>(null);
@@ -164,29 +168,42 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     if (!cloudConfigured || loading || !exclusive) return;
     let live = true;
     let busy: Promise<void> | null = null;
-    let base: Snapshot | null = null;
+    let pendingConflict = false;
     let interval: ReturnType<typeof setInterval> | undefined;
     let timer: ReturnType<typeof setTimeout> | undefined;
     const client = getCloud()!;
     const valid = () => live && sessionRef.current?.user.id === id;
-    const saveBase = (snapshot: Snapshot) => {
-      localStorage.setItem(baseKey(id!), JSON.stringify(snapshot));
-      base = snapshot;
-    };
     const persist = async (snapshot: Snapshot, revision: number) => {
       if (!valid()) return;
       const { error } = await client.rpc("save_backup", { expected_revision: revision, snapshot });
       if (error) throw error;
       if (!valid()) return;
-      saveBase(snapshot);
       setStatus(
         equalSnapshot(readSnapshot(), snapshot)
           ? `Sauvegardé en ligne à ${new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })}`
           : "Modifications en attente de sauvegarde",
       );
     };
+    // Retries only after a concurrent write (40001), re-reading the revision each time.
+    const uploadLocal = async () => {
+      for (let attempt = 1; ; attempt++) {
+        const { data, error } = await client
+          .from("backups")
+          .select("revision")
+          .eq("user_id", id)
+          .maybeSingle();
+        if (error) throw error;
+        if (!valid()) return;
+        try {
+          await persist(readSnapshot(), data?.revision ?? 0);
+          return;
+        } catch (error) {
+          if ((error as { code?: string })?.code !== "40001" || attempt === 3) throw error;
+        }
+      }
+    };
     const sync = async () => {
-      if (!valid() || !id) return;
+      if (!valid() || !id || pendingConflict) return;
       if (busy) return busy;
       busy = (async () => {
         try {
@@ -212,18 +229,22 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           const revision = data?.revision ?? 0;
           // Read again after the request: edits made while fetching must participate.
           const latest = readSnapshot();
-          const decision = syncDecision(latest, remote, base);
+          // Without a backup row yet, there is nothing to compare: the local carnet is the first copy.
+          const decision = data ? syncDecision(latest, remote) : "upload";
           if (decision === "download") {
             writeSnapshot(remote);
-            saveBase(remote);
             localStorage.setItem(cacheKey(id), JSON.stringify(remote));
             setEpoch((n) => n + 1);
             setStatus("Carnet récupéré depuis la sauvegarde en ligne");
-          } else if (decision === "upload" || !data) {
+          } else if (decision === "conflict") {
+            pendingConflict = true;
+            setConflict({ remote, revision });
+            setResolutionError("");
+            setStatus("Deux versions du carnet sont disponibles");
+          } else if (decision === "upload") {
             setStatus("Sauvegarde en ligne…");
             await persist(latest, revision);
           } else {
-            saveBase(remote);
             setStatus("Sauvegardé en ligne");
           }
         } catch (error) {
@@ -257,6 +278,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     };
     async function initialize() {
       setInitializing(true);
+      setConflict(null);
       setProfile(null);
       profileRef.current = null;
       try {
@@ -276,8 +298,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           setStatus("Sauvegarde sur cet appareil uniquement");
           return;
         }
-        const rawBase = localStorage.getItem(baseKey(id));
-        base = rawBase ? snapshotSchema.parse(JSON.parse(rawBase)) : null;
         await refreshProfile().catch((error) => {
           if (valid()) setStatus(friendlyError(error));
         });
@@ -288,6 +308,28 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         window.addEventListener("online", changed);
         window.addEventListener("focus", changed);
         syncRef.current = sync;
+        resolveRef.current = async (useRemote) => {
+          if (!valid()) return;
+          if (useRemote) {
+            const { data, error } = await client
+              .from("backups")
+              .select("payload")
+              .eq("user_id", id)
+              .maybeSingle();
+            if (error) throw error;
+            if (!valid()) return;
+            writeSnapshot(data ? snapshotSchema.parse(data.payload) : emptySnapshot());
+            localStorage.setItem(cacheKey(id), JSON.stringify(readSnapshot()));
+            setEpoch((n) => n + 1);
+          } else {
+            await uploadLocal();
+          }
+          if (!valid()) return;
+          pendingConflict = false;
+          setConflict(null);
+          setResolutionError("");
+          await sync();
+        };
       } catch {
         if (live)
           setFatal(
@@ -306,6 +348,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       window.removeEventListener("online", changed);
       window.removeEventListener("focus", changed);
       syncRef.current = async () => {};
+      resolveRef.current = async () => {};
     };
   }, [id, loading, exclusive, refreshProfile]);
 
@@ -386,20 +429,43 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         </div>
       ) : (
         <>
+          {conflict ? (
+            <details open className={styles.panel}>
+              <summary>Sauvegarde en ligne en pause · choisir une version</summary>
+              <h1 id="conflict-title">Quel carnet souhaitez-vous conserver ?</h1>
+              <p>
+                Vous pouvez continuer à utiliser Sport sur cet appareil. La sauvegarde en ligne
+                reprendra après votre choix. Votre version locale contient{" "}
+                {readSnapshot().history.length} séance(s), la version en ligne{" "}
+                {conflict.remote.history.length}.
+              </p>
+              {resolutionError && <p role="alert">{resolutionError}</p>}
+              <div className={styles.actions}>
+                {[false, true].map((remote) => (
+                  <button
+                    key={String(remote)}
+                    disabled={resolving}
+                    onClick={async () => {
+                      setResolving(true);
+                      setResolutionError("");
+                      try {
+                        await resolveRef.current(remote);
+                      } catch (error) {
+                        setResolutionError(friendlyError(error));
+                      } finally {
+                        setResolving(false);
+                      }
+                    }}
+                  >
+                    {remote ? "Récupérer la version en ligne" : "Conserver ma version locale"}
+                  </button>
+                ))}
+              </div>
+            </details>
+          ) : null}
           <div key={`${id ?? "guest"}:${epoch}`}>{children}</div>
         </>
       )}
     </Context.Provider>
   );
-}
-
-export function exportSport(snapshot: Snapshot) {
-  const url = URL.createObjectURL(
-    new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json" }),
-  );
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `antaverse-sport-${new Date().toISOString().slice(0, 10)}.json`;
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
