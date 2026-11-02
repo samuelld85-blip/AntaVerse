@@ -1398,8 +1398,8 @@ Ce que la couche cloud ajoute, une fois un compte créé :
   changé, la RPC serveur `save_backup` écrit la nouvelle révision en
   comparant à une révision attendue (anti-écrasement concurrent) et garde
   les **10 versions précédentes**. `provider.tsx` (contexte React monté par
-  le layout `/sport`) pilote la réconciliation ; un conflit entre appareils
-  demande un choix explicite, avec export possible avant remplacement.
+  le layout `/sport`) pilote la synchronisation ; le carnet local prime toujours,
+  sans écran de conflit (seul un appareil vierge récupère le carnet en ligne).
 - **Pseudo + amis** : un pseudo public, des demandes d'amis à accepter, et
   la lecture des **séances terminées** d'un ami accepté (jamais la séance
   active ni les favoris). Retirer un ami coupe l'accès serveur immédiatement.

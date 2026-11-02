@@ -11,17 +11,19 @@ describe("Sport cloud reconciliation", () => {
   it("uploads a legacy local carnet into a new account", () => {
     expect(syncDecision(first(), emptyStore(), null)).toBe("upload");
   });
-  it("does not overwrite another device's edits", () => {
+  it("keeps local edits when the cloud copy changed too, without any conflict", () => {
     const base = first();
     const local = { ...base, active: { ...base.active, name: "Téléphone" } };
     const remote = { ...base, active: { ...base.active, name: "Tablette" } };
-    expect(syncDecision(local, remote, base)).toBe("conflict");
-    expect(syncDecision(base, remote, base)).toBe("download");
+    expect(syncDecision(local, remote, base)).toBe("upload");
     expect(syncDecision(local, base, base)).toBe("upload");
   });
-  it("propagates an intentional empty carnet using its baseline", () => {
+  it("uploads an intentionally emptied carnet instead of restoring the cloud copy", () => {
     const base = first();
     expect(syncDecision(emptyStore(), base, base)).toBe("upload");
+  });
+  it("does not restore from the cloud on a device that already synced before", () => {
+    expect(syncDecision(emptyStore(), first(), emptyStore())).toBe("upload");
   });
   it("validates restoration and preserves previous data and unrelated games", () => {
     const old = first();

@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test.use({ serviceWorkers: "block" });
 
-test("Sport stays usable after login with conflicting backups", async ({ page }, testInfo) => {
+test("Sport keeps local data without any conflict prompt after login", async ({ page }, testInfo) => {
   const id = "00000000-0000-0000-0000-000000000001";
   const user = { id, email: "sport-test@example.com", aud: "authenticated", role: "authenticated" };
   const accessToken =
@@ -75,23 +75,17 @@ test("Sport stays usable after login with conflicting backups", async ({ page },
   await page.getByLabel("E-mail", { exact: true }).fill(user.email);
   await page.getByLabel("Mot de passe", { exact: true }).fill("test-password");
   await page.getByRole("button", { name: "Me connecter / Créer mon compte", exact: true }).click();
-  const warning = page.locator("details").filter({ hasText: "Sauvegarde en ligne en pause" });
-  await expect(warning).toBeVisible();
   await page.getByRole("link", { name: "← Mon carnet Sport" }).click();
   await expect(page.getByRole("heading", { name: "Carnet de sport", exact: true })).toBeVisible();
-  await page.screenshot({ path: testInfo.outputPath("sport-conflict-home.png"), fullPage: true });
-  expect(uploads).toBe(0);
+  // Local data is uploaded over the differing cloud copy; no pause panel is shown.
+  await expect.poll(() => uploads).toBeGreaterThan(0);
+  await expect(page.locator("details").filter({ hasText: "Sauvegarde en ligne en pause" })).toHaveCount(0);
+  await page.screenshot({ path: testInfo.outputPath("sport-local-wins-home.png"), fullPage: true });
   await page.getByRole("button", { name: /^Historique/ }).click();
   await expect(page.getByRole("heading", { name: "Historique", exact: true })).toBeVisible();
-  await warning.locator("summary").click();
-  await page.getByRole("button", { name: "Conserver ma version locale", exact: true }).click();
-  await expect(warning.getByRole("alert")).toContainText("Vos données locales sont conservées");
-  await expect(
-    page.getByRole("button", { name: "Conserver ma version locale", exact: true }),
-  ).toBeEnabled();
   expect(
     await page.evaluate(() => JSON.parse(localStorage.getItem("antaverse:sport:v1")!).history),
   ).toEqual(local.history);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.screenshot({ path: testInfo.outputPath("sport-conflict-usable.png"), fullPage: true });
+  await page.screenshot({ path: testInfo.outputPath("sport-local-wins-usable.png"), fullPage: true });
 });
