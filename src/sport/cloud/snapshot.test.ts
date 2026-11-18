@@ -1,8 +1,11 @@
-import { beforeEach, describe, expect, it } from "vitest";
-import { emptyStore, createSession, STORAGE_KEY } from "../model";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { emptyStore, createSession, RESTORE_BACKUP_KEY, STORAGE_KEY } from "../model";
 import { readSnapshot, writeSnapshot, syncDecision } from "./snapshot";
 
-beforeEach(() => localStorage.clear());
+beforeEach(() => {
+  localStorage.clear();
+  vi.restoreAllMocks();
+});
 describe("Sport cloud reconciliation", () => {
   const first = () => ({ ...emptyStore(), active: createSession("full", []) });
   const finished = (count: number) => ({
@@ -41,6 +44,22 @@ describe("Sport cloud reconciliation", () => {
     writeSnapshot(emptyStore());
     expect(JSON.parse(localStorage.getItem("antaverse:sport:before-restore")!)).toEqual(old);
     expect(localStorage.getItem("pmu:current-game")).toBe("untouched");
+  });
+  it("still restores when the replaced carnet cannot be kept as a copy", () => {
+    const old = first();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(old));
+    const setItem = Storage.prototype.setItem;
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(function (
+      this: Storage,
+      key: string,
+      value: string,
+    ) {
+      if (key === RESTORE_BACKUP_KEY) throw new DOMException("full", "QuotaExceededError");
+      setItem.call(this, key, value);
+    });
+    writeSnapshot(emptyStore());
+    expect(readSnapshot()).toEqual(emptyStore());
+    expect(localStorage.getItem(RESTORE_BACKUP_KEY)).toBeNull();
   });
   it("fails closed on corrupted local data instead of uploading empty data", () => {
     localStorage.setItem(STORAGE_KEY, "broken");

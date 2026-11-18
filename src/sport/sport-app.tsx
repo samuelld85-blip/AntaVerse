@@ -1165,7 +1165,7 @@ export function SportApp() {
     setError(
       saved
         ? ""
-        : "Sauvegarde impossible : vos modifications restent en mémoire. Libérez du stockage et réessayez avant de fermer cette page.",
+        : "Sauvegarde impossible : l’espace que le navigateur réserve à Sport est plein, quel que soit le stockage libre du téléphone. Vos modifications restent en mémoire. Retirez des photos d’anciennes séances puis réessayez avant de fermer cette page.",
     );
     storeRef.current = next;
     setStore(next);

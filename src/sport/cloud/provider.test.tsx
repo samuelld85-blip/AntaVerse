@@ -147,6 +147,26 @@ describe("Sport provider lifecycle", () => {
     await login("alice");
     expect(readSnapshot()).toEqual(a);
   });
+  it("keeps a single full copy of the signed-in carnet and drops earlier copies", async () => {
+    const original = carnet("Original");
+    saveStore(original);
+    // Earlier versions mirrored the whole carnet twice more, filling the iOS quota.
+    localStorage.setItem("antaverse:sport:owner", "alice");
+    localStorage.setItem("antaverse:sport:account:alice", JSON.stringify(original));
+    localStorage.setItem("antaverse:sport:base:alice", JSON.stringify(original));
+    server.session = session("alice");
+    server.backups.set("alice", { payload: original, revision: 1 });
+    await mount();
+    const edited = { ...original, active: { ...original.active, name: "Ce téléphone" } };
+    await act(async () => {
+      saveStore(edited);
+    });
+    await tick(450);
+    expect(server.backups.get("alice")?.payload).toEqual(edited);
+    expect(readSnapshot()).toEqual(edited);
+    expect(localStorage.getItem("antaverse:sport:account:alice")).toBeNull();
+    expect(localStorage.getItem("antaverse:sport:base:alice")).toBeNull();
+  });
   it("retries persisted offline edits when the network returns", async () => {
     server.session = session("alice");
     const original = carnet("Original");

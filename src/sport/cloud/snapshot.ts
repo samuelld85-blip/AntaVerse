@@ -1,4 +1,10 @@
-import { emptyStore, storeSchema, STORAGE_KEY, type SportStore } from "../model";
+import {
+  emptyStore,
+  RESTORE_BACKUP_KEY,
+  storeSchema,
+  STORAGE_KEY,
+  type SportStore,
+} from "../model";
 export type Snapshot = SportStore;
 export const snapshotSchema = storeSchema;
 export const emptySnapshot = emptyStore;
@@ -9,7 +15,12 @@ export function readSnapshot(): Snapshot {
 export function writeSnapshot(input: Snapshot) {
   const snapshot = snapshotSchema.parse(input);
   const before = localStorage.getItem(STORAGE_KEY);
-  if (before) localStorage.setItem("antaverse:sport:before-restore", before);
+  // The replaced carnet is kept for export only while the browser quota allows it.
+  try {
+    if (before) localStorage.setItem(RESTORE_BACKUP_KEY, before);
+  } catch {
+    localStorage.removeItem(RESTORE_BACKUP_KEY);
+  }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
 }
 export const equalSnapshot = (a: Snapshot, b: Snapshot) => JSON.stringify(a) === JSON.stringify(b);

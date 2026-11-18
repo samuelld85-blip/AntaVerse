@@ -19,6 +19,7 @@ import {
   lastConfigForExercise,
   loadStore,
   nextConfigForFeedback,
+  RESTORE_BACKUP_KEY,
   saveStore,
   STORAGE_KEY,
   storeSchema,
@@ -216,6 +217,28 @@ describe("sport training log", () => {
       throw new Error("quota");
     });
     expect(saveStore(emptyStore())).toBe(false);
+  });
+  it("gives the carnet priority over the restore copy when the browser quota is full", () => {
+    const store = { ...emptyStore(), active: createSession("pull", [defaultConfig("row")]) };
+    const quota = JSON.stringify(store).length + STORAGE_KEY.length + 10;
+    localStorage.setItem(RESTORE_BACKUP_KEY, "x".repeat(quota));
+    const setItem = Storage.prototype.setItem;
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(function (
+      this: Storage,
+      key: string,
+      value: string,
+    ) {
+      let used = key.length + value.length;
+      for (let i = 0; i < this.length; i++) {
+        const other = this.key(i)!;
+        if (other !== key) used += other.length + this.getItem(other)!.length;
+      }
+      if (used > quota) throw new DOMException("full", "QuotaExceededError");
+      setItem.call(this, key, value);
+    });
+    expect(saveStore(store)).toBe(true);
+    expect(loadStore().store).toEqual(store);
+    expect(localStorage.getItem(RESTORE_BACKUP_KEY)).toBeNull();
   });
   it("rejects unknown exercise IDs, unsupported equipment and invalid numeric values", () => {
     for (const patch of [
