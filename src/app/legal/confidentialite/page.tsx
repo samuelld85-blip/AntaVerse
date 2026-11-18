@@ -95,7 +95,9 @@ export default function PrivacyPolicyPage() {
           localStorage : parties des jeux concernés, carnet Sport, session de connexion et copies du
           carnet par compte.
         </li>
-        <li>IndexedDB : partie Quoi de 9, avec repli local si nécessaire.</li>
+        <li>
+          IndexedDB : partie Quoi de 9, avec repli local si nécessaire, et photos des séances Sport.
+        </li>
         <li>sessionStorage : noms d’équipes Sans le dire pendant la session.</li>
         <li>
           Cache du service worker : fichiers de l’application pour le fonctionnement hors ligne.

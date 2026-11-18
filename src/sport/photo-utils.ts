@@ -1,4 +1,21 @@
+import { savePhotos } from "./photo-store";
+
 export const MAX_SESSION_PHOTOS = 3;
+
+/**
+ * Compresses a picked image and keeps it in the device photo store. Returns
+ * the reference to put in the carnet, or the inline photo where IndexedDB is
+ * unavailable (the carnet then holds it, as before).
+ */
+export async function importPhoto(file: File): Promise<string> {
+  const photo = await compressPhoto(file);
+  try {
+    const [ref] = await savePhotos([photo]);
+    return ref!;
+  } catch {
+    return photo;
+  }
+}
 
 export function compressPhoto(file: File): Promise<string> {
   return new Promise((resolve, reject) => {

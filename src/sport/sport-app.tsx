@@ -9,7 +9,9 @@ import { SportIcon } from "@/components/sport-icon";
 import { useThemeMode } from "@/lib/use-theme-mode";
 import { ExerciseIcon } from "./exercise-icon";
 import { HistoryEditor } from "./history-editor";
-import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
+import { importPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
+import { preparePhotoStorage } from "./carnet-photos";
+import { SportPhoto } from "./sport-photo";
 import { StatsDashboard } from "./stats-dashboard";
 import { SportView } from "./sport-view";
 import { SportAssistant } from "./ai/assistant";
@@ -243,8 +245,8 @@ function FeedbackForm({
     );
     setPhotoBusy(true);
     try {
-      const compressed = await Promise.all(selected.map(compressPhoto));
-      setPhotos((current) => [...current, ...compressed].slice(0, MAX_SESSION_PHOTOS));
+      const imported = await Promise.all(selected.map(importPhoto));
+      setPhotos((current) => [...current, ...imported].slice(0, MAX_SESSION_PHOTOS));
     } catch {
       setPhotoError("Impossible de charger une photo. Essayez une autre image.");
     } finally {
@@ -323,7 +325,7 @@ function FeedbackForm({
               <div className={styles.photoPreviewList}>
                 {photos.map((photo, index) => (
                   <div className={styles.photoPreview} key={photo}>
-                    <img src={photo} alt={`Photo ${index + 1} ajoutée`} />
+                    <SportPhoto src={photo} alt={`Photo ${index + 1} ajoutée`} />
                     <button
                       type="button"
                       className={styles.photoRemove}
@@ -1084,9 +1086,10 @@ export function SportApp() {
     };
   }, [cloud.profile, cloud.session, tab]);
   useEffect(() => {
-    // Defer hydration so server and initial browser markup agree.
+    // Defer hydration so server and initial browser markup agree. Older carnets
+    // move their inline photos to IndexedDB before being read.
     let mounted = true;
-    void Promise.resolve().then(() => {
+    void preparePhotoStorage().then(() => {
       if (!mounted) return;
       const initialTab = tabFromLocation();
       const currentState = window.history.state ?? {};
@@ -2266,7 +2269,7 @@ export function SportApp() {
                                 setPhotoViewer({ photos: detail.feedback?.photos ?? [], index })
                               }
                             >
-                              <img src={photo} alt={`Photo de la séance ${index + 1}`} />
+                              <SportPhoto src={photo} alt={`Photo de la séance ${index + 1}`} />
                             </button>
                           ))}
                         </div>
@@ -2496,7 +2499,7 @@ export function SportApp() {
                                 aria-label="Photos de la séance"
                               >
                                 {item.session.feedback.photos.map((photo, index) => (
-                                  <img
+                                  <SportPhoto
                                     key={photo}
                                     src={photo}
                                     alt={`Photo ${index + 1} de la séance`}
@@ -2748,9 +2751,9 @@ export function SportApp() {
                     ‹
                   </button>
                 )}
-                <img
+                <SportPhoto
                   className={styles.photoLightboxImage}
-                  src={photoViewer.photos[photoViewer.index]}
+                  src={photoViewer.photos[photoViewer.index]!}
                   alt={`Photo agrandie ${photoViewer.index + 1}`}
                 />
                 {photoViewer.photos.length > 1 && (

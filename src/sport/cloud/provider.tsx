@@ -13,6 +13,7 @@ import {
 import type { Session } from "@supabase/supabase-js";
 import { cloudConfigured, friendlyError, getCloud } from "./client";
 import {
+  cloudSnapshot,
   emptySnapshot,
   equalSnapshot,
   readSnapshot,
@@ -23,6 +24,8 @@ import {
 } from "./snapshot";
 import styles from "./cloud.module.css";
 import { RESTORE_BACKUP_KEY, STORAGE_KEY } from "../model";
+import { migrateInlinePhotos } from "../carnet-photos";
+import { prunePhotos } from "../photo-store";
 
 type Profile = { id: string; username: string };
 type CloudContext = {
@@ -173,7 +176,10 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     let timer: ReturnType<typeof setTimeout> | undefined;
     const client = getCloud()!;
     const valid = () => live && sessionRef.current?.user.id === id;
-    const persist = async (snapshot: Snapshot, revision: number) => {
+    // `online` is the backup already online, for photos this device lacks.
+    const persist = async (local: Snapshot, revision: number, online?: Snapshot) => {
+      if (!valid()) return;
+      const snapshot = await cloudSnapshot(local, online);
       if (!valid()) return;
       const { error } = await client.rpc("save_backup", { expected_revision: revision, snapshot });
       if (error) throw error;
@@ -226,11 +232,13 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           const remote = data ? snapshotSchema.parse(data.payload) : emptySnapshot();
           const revision = data?.revision ?? 0;
           // Read again after the request: edits made while fetching must participate.
+          const latestRaw = localStorage.getItem(STORAGE_KEY);
           const latest = readSnapshot();
           // Without a backup row yet, there is nothing to compare: the local carnet is the first copy.
           const decision = data ? syncDecision(latest, remote) : "upload";
           if (decision === "download") {
-            writeSnapshot(remote);
+            // Storing the photos takes a moment: an edit made meanwhile is decided by the next sync.
+            if (!(await writeSnapshot(remote, latestRaw)) || !valid()) return;
             setEpoch((n) => n + 1);
             setStatus("Carnet récupéré depuis la sauvegarde en ligne");
           } else if (decision === "conflict") {
@@ -240,7 +248,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
             setStatus("Deux versions du carnet sont disponibles");
           } else if (decision === "upload") {
             setStatus("Sauvegarde en ligne…");
-            await persist(latest, revision);
+            await persist(latest, revision, remote);
           } else {
             setStatus("Sauvegardé en ligne");
           }
@@ -273,13 +281,17 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       setProfile(null);
       profileRef.current = null;
       try {
+        // Carnets saved before photos moved to IndexedDB: shrink them before copying them around.
+        await migrateInlinePhotos();
         const owner = localStorage.getItem(OWNER);
         const incoming = id ?? "guest";
         if (owner && owner !== incoming) {
           localStorage.setItem(cacheKey(owner), JSON.stringify(readSnapshot()));
           const cached = localStorage.getItem(cacheKey(incoming));
           if (cached || owner !== "guest" || !id) {
-            writeSnapshot(cached ? snapshotSchema.parse(JSON.parse(cached)) : emptySnapshot());
+            await writeSnapshot(
+              cached ? snapshotSchema.parse(JSON.parse(cached)) : emptySnapshot(),
+            );
             setEpoch((n) => n + 1);
           }
         }
@@ -314,7 +326,8 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
               .maybeSingle();
             if (error) throw error;
             if (!valid()) return;
-            writeSnapshot(data ? snapshotSchema.parse(data.payload) : emptySnapshot());
+            await writeSnapshot(data ? snapshotSchema.parse(data.payload) : emptySnapshot());
+            if (!valid()) return;
             setEpoch((n) => n + 1);
           } else {
             await uploadLocal();
@@ -387,6 +400,8 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem(cacheKey(current.user.id));
     localStorage.removeItem(baseKey(current.user.id));
     localStorage.removeItem(RESTORE_BACKUP_KEY);
+    // Photos only that carnet referred to (other accounts' copies keep theirs).
+    await prunePhotos(0).catch(() => {});
     if ("serviceWorker" in navigator) {
       const registration = await navigator.serviceWorker.getRegistration();
       const subscription = await registration?.pushManager?.getSubscription();

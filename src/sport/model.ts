@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { notifySaveChanged } from "./cloud/changed";
+import { PHOTO_REF_PATTERN } from "./photo-store";
 import {
   defaultFreeRestSeconds,
   exercises,
@@ -36,8 +37,14 @@ const exerciseFeedbackSchema = z.object({
   comment: z.string().max(1000),
 });
 export type ExerciseFeedback = z.infer<typeof exerciseFeedbackSchema>;
+// On the device a photo is a reference to the IndexedDB photo store
+// (`photo-store.ts`); the cloud backup and friends' sessions carry it inline.
+const sessionPhotoSchema = z.union([
+  z.string().startsWith("data:image/").max(1_500_000),
+  z.string().regex(PHOTO_REF_PATTERN),
+]);
 const sessionFeedbackSchema = exerciseFeedbackSchema.extend({
-  photos: z.array(z.string().startsWith("data:image/").max(1_500_000)).max(3).optional(),
+  photos: z.array(sessionPhotoSchema).max(3).optional(),
 });
 export type SessionFeedback = z.infer<typeof sessionFeedbackSchema>;
 const entrySchema = z
