@@ -246,14 +246,25 @@ export function loadStore(): { store: SportStore; error: string } {
     };
   }
 }
+/** Disposable copy of the carnet replaced by an explicit cloud restoration. */
+export const RESTORE_BACKUP_KEY = "antaverse:sport:before-restore";
 export function saveStore(store: SportStore): boolean {
+  const serialized = JSON.stringify(store);
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
-    notifySaveChanged();
-    return true;
+    try {
+      localStorage.setItem(STORAGE_KEY, serialized);
+    } catch (error) {
+      // Browsers cap localStorage per site (about 5 MB on iOS) whatever the free
+      // disk space: the carnet itself takes priority over the restore copy.
+      if (localStorage.getItem(RESTORE_BACKUP_KEY) === null) throw error;
+      localStorage.removeItem(RESTORE_BACKUP_KEY);
+      localStorage.setItem(STORAGE_KEY, serialized);
+    }
   } catch {
     return false;
   }
+  notifySaveChanged();
+  return true;
 }
 export const timeLabel = (seconds: number) =>
   `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;

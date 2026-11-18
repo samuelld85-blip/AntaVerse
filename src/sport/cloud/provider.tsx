@@ -22,7 +22,7 @@ import {
   type Snapshot,
 } from "./snapshot";
 import styles from "./cloud.module.css";
-import { STORAGE_KEY } from "../model";
+import { RESTORE_BACKUP_KEY, STORAGE_KEY } from "../model";
 
 type Profile = { id: string; username: string };
 type CloudContext = {
@@ -207,8 +207,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
       if (busy) return busy;
       busy = (async () => {
         try {
-          const local = readSnapshot();
-          localStorage.setItem(cacheKey(id), JSON.stringify(local));
           if (!navigator.onLine) {
             setStatus("Hors ligne · sauvegarde sur cet appareil, envoi au retour du réseau");
             return;
@@ -233,7 +231,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
           const decision = data ? syncDecision(latest, remote) : "upload";
           if (decision === "download") {
             writeSnapshot(remote);
-            localStorage.setItem(cacheKey(id), JSON.stringify(remote));
             setEpoch((n) => n + 1);
             setStatus("Carnet récupéré depuis la sauvegarde en ligne");
           } else if (decision === "conflict") {
@@ -262,12 +259,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     };
     const changed = () => {
       if (!valid() || !id) return;
-      try {
-        localStorage.setItem(cacheKey(id), JSON.stringify(readSnapshot()));
-      } catch {
-        setStatus("Stockage local saturé. Exportez votre carnet avant de fermer.");
-        return;
-      }
       setStatus(
         navigator.onLine
           ? "Modifications en attente de sauvegarde"
@@ -294,10 +285,15 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
         }
         // Unowned legacy data stays on first login and is reconciled with the remote copy.
         localStorage.setItem(OWNER, incoming);
+        // The open carnet lives in STORAGE_KEY: a per-account copy is only kept
+        // for accounts that are not open, so it never doubles the carnet's size.
+        if (localStorage.getItem(STORAGE_KEY) !== null) localStorage.removeItem(cacheKey(incoming));
         if (!id) {
           setStatus("Sauvegarde sur cet appareil uniquement");
           return;
         }
+        // Earlier versions also kept a full copy of the carnet as a sync baseline.
+        localStorage.removeItem(baseKey(id));
         await refreshProfile().catch((error) => {
           if (valid()) setStatus(friendlyError(error));
         });
@@ -319,7 +315,6 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
             if (error) throw error;
             if (!valid()) return;
             writeSnapshot(data ? snapshotSchema.parse(data.payload) : emptySnapshot());
-            localStorage.setItem(cacheKey(id), JSON.stringify(readSnapshot()));
             setEpoch((n) => n + 1);
           } else {
             await uploadLocal();
@@ -391,7 +386,7 @@ export function SportCloudProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem(OWNER);
     localStorage.removeItem(cacheKey(current.user.id));
     localStorage.removeItem(baseKey(current.user.id));
-    localStorage.removeItem("antaverse:sport:before-restore");
+    localStorage.removeItem(RESTORE_BACKUP_KEY);
     if ("serviceWorker" in navigator) {
       const registration = await navigator.serviceWorker.getRegistration();
       const subscription = await registration?.pushManager?.getSubscription();
