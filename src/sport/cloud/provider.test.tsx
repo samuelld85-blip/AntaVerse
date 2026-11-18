@@ -1,8 +1,10 @@
+import "fake-indexeddb/auto";
 import { act, createElement } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Session as AuthSession } from "@supabase/supabase-js";
 import { emptyStore, createSession, saveStore, type SportStore } from "../model";
+import { photoRef } from "../photo-store";
 import { SportCloudProvider } from "./provider";
 import { readSnapshot } from "./snapshot";
 
@@ -275,5 +277,38 @@ describe("Sport provider lifecycle", () => {
     });
     await tick(450);
     expect(server.backups.get("alice")?.payload.active?.name).toBe("Après la panne");
+  });
+  const photo = `data:image/jpeg;base64,${"Q".repeat(200_000)}`;
+  const withPhoto = (src: string) => {
+    const carnet = withHistory(1);
+    carnet.history[0]!.feedback = { mood: "good", comment: "", photos: [src] };
+    return carnet;
+  };
+  it("keeps downloaded photos out of localStorage and backs them up inline", async () => {
+    server.session = session("alice");
+    server.backups.set("alice", { payload: withPhoto(photo), revision: 1 });
+    await mount();
+    expect(readSnapshot()).toEqual(withPhoto(photoRef(photo)));
+    for (const key of Object.keys(localStorage)) {
+      expect(localStorage.getItem(key)).not.toContain("data:image/");
+    }
+    const edited = { ...readSnapshot(), active: createSession("full", []) };
+    await act(async () => {
+      saveStore(edited);
+    });
+    await tick(450);
+    expect(server.backups.get("alice")?.payload).toEqual({
+      ...edited,
+      history: withPhoto(photo).history,
+    });
+  });
+  it("migrates an older carnet's inline photos on login without uploading it again", async () => {
+    saveStore(withPhoto(photo));
+    server.session = session("alice");
+    server.backups.set("alice", { payload: withPhoto(photo), revision: 1 });
+    await mount();
+    expect(localStorage.getItem("antaverse:sport:v1")).not.toContain("data:image/");
+    expect(readSnapshot()).toEqual(withPhoto(photoRef(photo)));
+    expect(server.writes).toHaveLength(0);
   });
 });

@@ -191,6 +191,50 @@ test("sport: history compacts repeated non-pyramid sets", async ({ page }) => {
   await expect(page.getByText("Série 2", { exact: true })).toHaveCount(1);
 });
 
+test("sport: older carnets move their photos out of localStorage", async ({ page }) => {
+  const photo =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";
+  await page.goto("/sport/");
+  await page.evaluate((photo) => {
+    localStorage.setItem(
+      "antaverse:sport:v1",
+      JSON.stringify({
+        version: 1,
+        active: null,
+        history: [
+          {
+            id: "session-photo",
+            kind: "legs",
+            startedAt: "2026-09-08T10:00:00.000Z",
+            endedAt: "2026-09-08T10:30:00.000Z",
+            exercises: [],
+            feedback: { mood: "good", comment: "", photos: [photo] },
+          },
+        ],
+        favorites: [],
+        templates: [],
+      }),
+    );
+  }, photo);
+  await page.reload();
+  await page.getByRole("button", { name: /^Historique/ }).click();
+  await expect(page.getByAltText("Photo 1 de la séance")).toHaveAttribute("src", photo);
+  const stored = await page.evaluate(() => localStorage.getItem("antaverse:sport:v1"));
+  expect(stored).not.toContain("data:image/");
+  expect(stored).toContain('"sport-photo:');
+
+  // The photo now comes from IndexedDB, after a reload too.
+  await page.reload();
+  await page.getByRole("button", { name: /^Historique/ }).click();
+  await expect(page.getByAltText("Photo 1 de la séance")).toHaveAttribute("src", photo);
+  await page.getByRole("button", { name: /Leg/ }).click();
+  await page.getByRole("button", { name: "Agrandir la photo 1", exact: true }).click();
+  await expect(page.getByRole("img", { name: "Photo agrandie 1", exact: true })).toHaveAttribute(
+    "src",
+    photo,
+  );
+});
+
 test("sport: free sessions can record a superset as one exercise", async ({ page }) => {
   await page.goto("/sport/");
   await page.clock.install();

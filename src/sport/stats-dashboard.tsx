@@ -16,6 +16,7 @@ import {
 } from "./stats";
 import { getExerciseProgressions } from "./progression";
 import { ProgressionBadge } from "./progression-badge";
+import { SportPhoto } from "./sport-photo";
 import { CoachAvatar } from "./ai/coach-avatar";
 import styles from "./sport.module.css";
 
@@ -232,7 +233,7 @@ function PhotoAlbum({ history, username }: { history: Session[]; username?: stri
                   aria-label={`Ouvrir la photo ${index + 1} de ${ownerLabel}`}
                   onClick={() => setViewerIndex(index)}
                 >
-                  <img
+                  <SportPhoto
                     src={photo.src}
                     alt={`${photo.sessionName}, ${shortDate(photo.date)}`}
                     loading="lazy"
@@ -283,7 +284,7 @@ function PhotoAlbum({ history, username }: { history: Session[]; username?: stri
                 ‹
               </button>
             )}
-            <img
+            <SportPhoto
               className={styles.photoLightboxImage}
               src={photos[viewerIndex].src}
               alt={`${photos[viewerIndex].sessionName}, ${shortDate(photos[viewerIndex].date)}`}

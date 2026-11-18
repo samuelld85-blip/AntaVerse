@@ -28,6 +28,8 @@ const LOCAL_STORAGE_KEYS = [
 ] as const;
 
 const INDEXED_DB_NAME = "qui-des-9";
+// Sport session photos (src/sport/photo-store.ts).
+const SPORT_PHOTOS_DB_NAME = "antaverse:sport:photos";
 const WINDOW_NAME_PREFIX = "qui-des-9-game:";
 
 async function clearAntaVerseLocalData(): Promise<void> {
@@ -57,6 +59,7 @@ async function clearAntaVerseLocalData(): Promise<void> {
   if (window.name.startsWith(WINDOW_NAME_PREFIX)) window.name = "";
   try {
     window.indexedDB.deleteDatabase(INDEXED_DB_NAME);
+    window.indexedDB.deleteDatabase(SPORT_PHOTOS_DB_NAME);
   } catch {
     // IndexedDB indisponible sur cette origine.
   }

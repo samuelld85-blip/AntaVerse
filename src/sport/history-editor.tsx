@@ -18,7 +18,8 @@ import {
   storeSchema,
   emptyStore,
 } from "./model";
-import { compressPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
+import { importPhoto, MAX_SESSION_PHOTOS } from "./photo-utils";
+import { SportPhoto } from "./sport-photo";
 import styles from "./sport.module.css";
 
 const feedbackOptions: ReadonlyArray<{
@@ -86,8 +87,8 @@ export function HistoryEditor({
     );
     setPhotoBusy(true);
     try {
-      const compressed = await Promise.all(selected.map(compressPhoto));
-      setSessionPhotos((current) => [...current, ...compressed].slice(0, MAX_SESSION_PHOTOS));
+      const imported = await Promise.all(selected.map(importPhoto));
+      setSessionPhotos((current) => [...current, ...imported].slice(0, MAX_SESSION_PHOTOS));
     } catch {
       setPhotoError("Impossible de charger une photo. Essayez une autre image.");
     } finally {
@@ -302,7 +303,7 @@ export function HistoryEditor({
               <div className={styles.photoPreviewList}>
                 {sessionPhotos.map((photo, index) => (
                   <div className={styles.photoPreview} key={photo}>
-                    <img src={photo} alt={`Photo ${index + 1} ajoutée`} />
+                    <SportPhoto src={photo} alt={`Photo ${index + 1} ajoutée`} />
                     <button
                       type="button"
                       className={styles.photoRemove}

@@ -253,7 +253,10 @@ icon in the launcher header, route `src/app/sport/`. It has its own catalog
 history editor, and a persisted rest timer (`use-rest-timer.ts`). Local
 persistence is `localStorage["antaverse:sport:v1"]` plus
 `localStorage["antaverse:sport:rest-timer"]` — namespaced exactly like a
-game's storage key, and listed in `clear-local-data-button.tsx`. Nothing in
+game's storage key, and listed in `clear-local-data-button.tsx`. Session
+photos live in the IndexedDB base `antaverse:sport:photos`
+(`photo-store.ts`); the carnet only holds content-derived references, so
+photos never count against the per-site localStorage quota. Nothing in
 `games/` imports from `src/sport/` and nothing in `src/sport/` imports a
 game. See `src/sport/README.md` for the module's own detail.
 

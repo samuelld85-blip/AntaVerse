@@ -80,7 +80,15 @@ avec sauvegarde locale et comptes cloud facultatifs, sans analytics.
   après une série est facultatif ; le bouton de chrono seul est toujours accessible.
 
 Stockage : `antaverse:sport:v1` dans localStorage, plus `antaverse:sport:rest-timer`
-pour l’échéance du repos actif. Une erreur de lecture préserve les données brutes ;
+pour l’échéance du repos actif. Les photos de séance sont dans IndexedDB (base
+`antaverse:sport:photos`, `photo-store.ts`) : le carnet n’en garde qu’une référence
+courte (`sport-photo:…`, dérivée du contenu), pour que des photos ne puissent plus
+remplir le quota localStorage du navigateur (environ 5 Mo sur iOS, quel que soit
+l’espace libre). Un ancien carnet aux photos intégrées est migré à l’ouverture
+(`carnet-photos.ts`) ; une photo qu’aucun carnet ne référence plus est supprimée
+après 24 h. Sans IndexedDB, les photos restent intégrées au carnet comme avant. La
+sauvegarde en ligne et les séances partagées gardent les photos intégrées (même
+format qu’avant). Une erreur de lecture préserve les données brutes ;
 une erreur d’écriture n’empêche pas le chronomètre de fonctionner en mémoire. Les
 données restent sur cet appareil jusqu’à effacement via les informations de
 confidentialité ou le navigateur.

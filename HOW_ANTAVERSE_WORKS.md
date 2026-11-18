@@ -658,7 +658,7 @@ schéma, énumérations valides, formes de tableaux) avant de faire confiance à
 `JSON.parse`. Si la donnée stockée est corrompue ou d'une version de schéma
 inconnue, elle est simplement rejetée plutôt que de faire planter l'app.
 
-**IndexedDB — Quoi de 9 seulement**, via le paquet `idb`. Base
+**IndexedDB — Quoi de 9 (et les photos Sport, voir plus bas)**, via le paquet `idb`. Base
 `"qui-des-9"`, version `1`, un seul object store `"games"`, clé fixe
 `"current"`. La fonction de sauvegarde/chargement
 (`src/games/quoi-de-9/lib/game/persistence.ts`) a une **chaîne de repli** :
@@ -674,7 +674,11 @@ actuelle. Toutes les données passent aussi par `normalizeUnicodeDeep()` (pour
 **Le carnet Sport suit la même règle locale.** `src/sport/` écrit sous
 `"antaverse:sport:v1"` (le carnet) et `"antaverse:sport:rest-timer"`
 (l'échéance du repos actif) — namespacé comme un jeu, listé dans le bouton
-« Effacer mes données locales ». Sans compte, le carnet Sport ne quitte
+« Effacer mes données locales ». Seule exception : les **photos de séance**
+vont dans une base IndexedDB `"antaverse:sport:photos"` et le carnet n'en
+garde qu'une référence courte. Pourquoi ? localStorage est plafonné par site
+(environ 5 Mo sur iPhone, même avec 30 Go libres) : quelques photos de 100 ko
+suffisaient à bloquer toute sauvegarde du carnet. Sans compte, le carnet Sport ne quitte
 jamais l'appareil, exactement comme une partie de jeu.
 
 **La seule persistance non locale du projet** est la sauvegarde cloud
@@ -1372,8 +1376,8 @@ qui peut parler à un serveur. Deux couches nettement séparées.
 (`sport-app.tsx`) et ses sections (séance, catalogue, historique, favoris,
 réglages), une progression/XP personnelle, un éditeur d'historique et un
 minuteur de repos persistant (`use-rest-timer.ts`). Tout vit dans
-`localStorage["antaverse:sport:v1"]` (+ `antaverse:sport:rest-timer`),
-exactement comme la partie en cours d'un jeu (§7). Sans rien configurer, le
+`localStorage["antaverse:sport:v1"]` (+ `antaverse:sport:rest-timer`, et les
+photos dans IndexedDB), exactement comme la partie en cours d'un jeu (§7). Sans rien configurer, le
 Sport fonctionne entièrement hors ligne et rien ne sort de l'appareil.
 
 ### La couche cloud (`src/sport/cloud/`, optionnelle)

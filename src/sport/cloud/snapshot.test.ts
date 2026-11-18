@@ -1,6 +1,8 @@
+import "fake-indexeddb/auto";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { emptyStore, createSession, RESTORE_BACKUP_KEY, STORAGE_KEY } from "../model";
-import { readSnapshot, writeSnapshot, syncDecision } from "./snapshot";
+import { photoRef } from "../photo-store";
+import { cloudSnapshot, readSnapshot, writeSnapshot, syncDecision } from "./snapshot";
 
 beforeEach(() => {
   localStorage.clear();
@@ -35,17 +37,17 @@ describe("Sport cloud reconciliation", () => {
       "upload",
     );
   });
-  it("validates restoration and preserves previous data and unrelated games", () => {
+  it("validates restoration and preserves previous data and unrelated games", async () => {
     const old = first();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(old));
     localStorage.setItem("pmu:current-game", "untouched");
-    expect(() => writeSnapshot({ version: 400 } as never)).toThrow();
+    await expect(writeSnapshot({ version: 400 } as never)).rejects.toThrow();
     expect(readSnapshot()).toEqual(old);
-    writeSnapshot(emptyStore());
+    await writeSnapshot(emptyStore());
     expect(JSON.parse(localStorage.getItem("antaverse:sport:before-restore")!)).toEqual(old);
     expect(localStorage.getItem("pmu:current-game")).toBe("untouched");
   });
-  it("still restores when the replaced carnet cannot be kept as a copy", () => {
+  it("still restores when the replaced carnet cannot be kept as a copy", async () => {
     const old = first();
     localStorage.setItem(STORAGE_KEY, JSON.stringify(old));
     const setItem = Storage.prototype.setItem;
@@ -57,7 +59,7 @@ describe("Sport cloud reconciliation", () => {
       if (key === RESTORE_BACKUP_KEY) throw new DOMException("full", "QuotaExceededError");
       setItem.call(this, key, value);
     });
-    writeSnapshot(emptyStore());
+    await writeSnapshot(emptyStore());
     expect(readSnapshot()).toEqual(emptyStore());
     expect(localStorage.getItem(RESTORE_BACKUP_KEY)).toBeNull();
   });
@@ -65,5 +67,26 @@ describe("Sport cloud reconciliation", () => {
     localStorage.setItem(STORAGE_KEY, "broken");
     expect(() => readSnapshot()).toThrow();
     expect(localStorage.getItem(STORAGE_KEY)).toBe("broken");
+  });
+  const withPhoto = (photo: string) => {
+    const carnet = finished(1);
+    carnet.history[0]!.feedback = { mood: "good", comment: "", photos: [photo] };
+    return carnet;
+  };
+  const inline = `data:image/jpeg;base64,${"P".repeat(200_000)}`;
+  it("restores cloud photos to the device photo store, not to localStorage", async () => {
+    expect(await writeSnapshot(withPhoto(inline))).toBe(true);
+    expect(localStorage.getItem(STORAGE_KEY)).not.toContain("data:image/");
+    expect(readSnapshot()).toEqual(withPhoto(photoRef(inline)));
+    expect(await cloudSnapshot(readSnapshot())).toEqual(withPhoto(inline));
+  });
+  it("sees no difference between a cloud photo and its device reference", () => {
+    expect(syncDecision(withPhoto(photoRef(inline)), withPhoto(inline))).toBe("equal");
+  });
+  it("does not overwrite a carnet edited while the photos were being stored", async () => {
+    const edited = first();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(edited));
+    expect(await writeSnapshot(withPhoto(inline), null)).toBe(false);
+    expect(readSnapshot()).toEqual(edited);
   });
 });

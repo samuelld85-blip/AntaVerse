@@ -124,6 +124,10 @@ synchronisation si leur fin est postérieure à la sauvegarde précédente.
 ## 5. Modèle et garanties
 
 - Seul le carnet Sport est envoyé. Une copie locale reste disponible hors ligne.
+- Sur l’appareil, les photos de séance sont dans IndexedDB et le carnet n’en garde
+  qu’une référence ; la sauvegarde envoyée et les séances partagées les contiennent
+  intégrées, comme avant (aucun changement de format côté Supabase). Une photo
+  absente de l’appareil est reprise de la sauvegarde en ligne lors de l’envoi.
 - Un compte possède sa ligne `backups` et les dix révisions précédentes.
 - La comparaison de révision côté serveur empêche l’écrasement concurrent. Un
   écart d’au moins une séance terminée entre l’appareil et la sauvegarde ouvre un
